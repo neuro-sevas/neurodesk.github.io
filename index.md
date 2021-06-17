@@ -13,3 +13,9 @@ A compact Docker container with a browser-accessible environment for reproducibl
 You're welcome to complete the survey to help guide future additions to the software library: https://forms.gle/deKy85yniJLP4hDM8
 
 For inquiries, please open a new issue, or contact Steffen Bollmann (https://github.com/stebo85) or Oren Civier (https://github.com/civier) or Aswin Narayanan (https://github.com/aswinnarayanan).
+
+## Acknowledgments
+<img src="https://github.com/NeuroDesk/vnm/blob/master/nif.png" width="250">
+<img src="https://github.com/NeuroDesk/vnm/blob/master/uq_logo.png" width="250">
+<img src="https://github.com/NeuroDesk/vnm/blob/master/logo-long-full.svg" width="250">
+<img src="https://www.gigacrc.uliege.be/upload/docs/image/svg-xml/2018-10/_uliege_giga_crc.svg" width="250">
