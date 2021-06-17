@@ -14,7 +14,7 @@ A compact Docker container with a browser-accessible environment for reproducibl
 
 # Feedback & Inquiries
 
-You're welcome to complete the survey to help guide future additions to the software library: https://forms.gle/deKy85yniJLP4hDM8
+You're welcome to complete [this survey](https://forms.gle/deKy85yniJLP4hDM8) to help guide future additions to the software library
 
 For inquiries, please open a [new issue](https://github.com/NeuroDesk/vnm/issues), or contact [Steffen Bollmann](https://github.com/stebo85) or [Oren Civier](https://github.com/civier) or [Aswin Narayanan](https://github.com/aswinnarayanan).
 
