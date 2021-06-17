@@ -8,7 +8,7 @@ Neurodesk powers the Virtual Neuro Machine (or VNM), which is simple way to acce
 # Virtual Neuro Machine
 A compact Docker container with a browser-accessible environment for reproducible neuroimaging analysis. Only the required applications, already pre-installed, are downloaded from a public library (downloaded as containers).
 
-2-minutes tutorial video from OHBM 2021: https://www.youtube.com/watch?v=JLv_5fycugw
+[2-minutes tutorial video from OHBM 2021](https://www.youtube.com/watch?v=JLv_5fycugw)
 
 [More information on VNM](https://neurodesk.github.io/docs/vnm)
 
