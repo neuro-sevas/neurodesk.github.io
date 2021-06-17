@@ -19,3 +19,13 @@ For inquiries, please open a new issue, or contact Steffen Bollmann (https://git
 <img src="https://github.com/NeuroDesk/vnm/blob/master/uq_logo.png" width="250">
 <img src="https://github.com/NeuroDesk/vnm/blob/master/logo-long-full.svg" width="250">
 <img src="https://www.gigacrc.uliege.be/upload/docs/image/svg-xml/2018-10/_uliege_giga_crc.svg" width="250">
+
+## Funding
+Thank you to Oracle for Research for providing Oracle Cloud credits and related resources to support this project.
+
+<img src="https://user-images.githubusercontent.com/4021595/119061922-db877080-ba18-11eb-9882-d53a25ec88ee.png" width="250">
+
+This project is supported by an Australian Research Data Commons (ARDC) Platform project “Australian
+Electrophysiology Data Analytics PlaTform (AEDAPT)”.
+
+<img src="https://user-images.githubusercontent.com/4021595/119062104-3caf4400-ba19-11eb-8211-e2e9ce831a16.png" width="250">
