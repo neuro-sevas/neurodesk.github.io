@@ -3,7 +3,10 @@ A flexible, scalable, and easy to use data analysis environment for reproducible
 
 Neurodesk powers the Virtual Neuro Machine (or VNM), which is simple way to access the powerful capabilities of Neurodesk.
 
+[Neurodesk architecture](https://neurodesk.github.io/docs/architecture)
+
 [More information on Neurodesk](https://neurodesk.github.io/docs/neurodesk)
+
 
 # Virtual Neuro Machine
 A compact Docker container with a browser-accessible environment for reproducible neuroimaging analysis. Only the required applications, already pre-installed, are downloaded from a public library (downloaded as containers).
