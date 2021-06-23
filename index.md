@@ -22,10 +22,10 @@ You're welcome to complete [this survey](https://forms.gle/deKy85yniJLP4hDM8) to
 For inquiries, please open a [new issue](https://github.com/NeuroDesk/neurodesk/issues), or contact [Steffen Bollmann](https://github.com/stebo85) or [Oren Civier](https://github.com/civier) or [Aswin Narayanan](https://github.com/aswinnarayanan).
 
 ## Acknowledgments
-<img src="https://github.com/NeuroDesk/vnm/blob/master/nif.png" width="250">
-<img src="https://github.com/NeuroDesk/vnm/blob/master/uq_logo.png" width="250">
-<img src="https://github.com/NeuroDesk/vnm/blob/master/logo-long-full.svg" width="250">
-<img src="https://www.gigacrc.uliege.be/upload/docs/image/svg-xml/2018-10/_uliege_giga_crc.svg" width="250">
+<img src="/assets/img/nif.png" width="250">
+<img src="/assets/img/uq_logo.png" width="250">
+<img src="/assets/img/swinburne_uni_logo.svg" width="250">
+<img src="/assets/img/liege_uni_logo.svg" width="250">
 
 ## Funding
 Thank you to Oracle for Research for providing Oracle Cloud credits and related resources to support this project.
