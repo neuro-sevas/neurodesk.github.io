@@ -4,8 +4,11 @@ Quickstart: https://github.com/NeuroDesk/vnm/
 
 ## Linux 
 ### Requirements:
+#### Required
 - python [https://docs.conda.io/en/latest/miniconda.html#linux-installers](https://docs.conda.io/en/latest/miniconda.html#linux-installers)
 - singularity [https://sylabs.io/guides/3.5/user-guide/quick_start.html](https://sylabs.io/guides/3.5/user-guide/quick_start.html)
+
+#### Optional
 - lmod [https://lmod.readthedocs.io/en/latest/](https://sylabs.io/guides/3.5/user-guide/quick_start.html)
 
 ### Inital install
