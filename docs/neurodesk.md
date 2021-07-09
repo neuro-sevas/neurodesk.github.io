@@ -1,6 +1,6 @@
 # Neurodesk installer
 
-_For running Neurodesk in a Docker container, refer to [https://github.com/NeuroDesk/vnm](https://github.com/NeuroDesk/vnm)_
+_For running Neurodesk in a Docker container, refer to [https://github.com/NeuroDesk/vnm](https://neurodesk.github.io/docs/vnm)_
 
 
 ## Linux 
