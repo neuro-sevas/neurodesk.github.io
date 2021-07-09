@@ -2,6 +2,7 @@
 
 _For running Neurodesk in a Docker container, refer to [https://github.com/NeuroDesk/vnm](https://neurodesk.github.io/docs/vnm)_
 
+Requires a Linux host machine, virtual machine or WSL for Windows.
 
 ## Linux 
 ### Requirements:
@@ -75,3 +76,6 @@ Change `port=3389` to `port=3390` and save
 3. Connect to `localhost:3390`
 4. In the next login page, leave Session as `Xorg`. Enter your WSL username and password and click `OK`
 5. This should open an LXDE Linux Desktop environment. Follow Linux guide from here on
+
+## Mac
+Currently supported via [VNM](https://github.com/NeuroDesk/vnm)
