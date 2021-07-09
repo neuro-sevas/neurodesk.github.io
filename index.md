@@ -1,12 +1,14 @@
 # Neurodesk
 
-There are two ways to run neurodesk: VNM and the Neurodesk installer
+There are two ways to run neurodesk:
+- VNM
+- Neurodesk installer
 
 ## 1. Virtual Neuro Machine
 
 _Easiest way to run Neurodesk_
 
-A compact Docker container with a browser-accessible environment for reproducible neuroimaging analysis. Only the required applications, already pre-installed, are downloaded from a public library (downloaded as containers).
+VNM is a compact Docker container with a browser-accessible environment for reproducible neuroimaging analysis. Only the required applications, already pre-installed, are downloaded from a public library (downloaded as containers).
 
 [2-minutes tutorial video from OHBM 2021](https://www.youtube.com/watch?v=JLv_5fycugw)
 
@@ -15,10 +17,9 @@ A compact Docker container with a browser-accessible environment for reproducibl
 ## 2. Neurodesk installer
 _Recommended for Advanced users_
 
-Requires a Linux host OS or WSL for Windows
-A flexible, scalable, and easy to use data analysis environment for reproducible neuroimaging
+A flexible, scalable, and easy to use data analysis environment for reproducible neuroimaging. Virtual Neuro Machine (or VNM) pre-installs Neurodesk in an Ubuntu docker container providing simple access to the powerful capabilities of Neurodesk.
 
-Neurodesk powers the Virtual Neuro Machine (or VNM), which is simple way to access the powerful capabilities of Neurodesk.
+Requires a Linux host machine, virtual machine or WSL for Windows.
 
 [Neurodesk architecture](https://neurodesk.github.io/docs/architecture)
 
