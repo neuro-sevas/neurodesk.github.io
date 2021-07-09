@@ -1,5 +1,6 @@
-## Run Desktop with neurodesk installed in a Docker container
-Quickstart: [https://github.com/NeuroDesk/vnm](https://github.com/NeuroDesk/vnm)
+# Neurodesk installer
+
+_For running Neurodesk in a Docker container, refer to [https://github.com/NeuroDesk/vnm](https://github.com/NeuroDesk/vnm)_
 
 
 ## Linux 
