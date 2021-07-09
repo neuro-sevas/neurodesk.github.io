@@ -1,8 +1,6 @@
 # Neurodesk
 
-There are two ways to run neurodesk:
-- VNM
-- Neurodesk installer
+Neurodesk can be run either using either the prebuilt VNM or using the Neurodesk installer
 
 ## 1. Virtual Neuro Machine
 
