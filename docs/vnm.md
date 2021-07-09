@@ -1,3 +1,5 @@
+# Virtual Neuro Machine (VNM)
+
 ## Requirements
 1. Docker installed
     * Information on installing docker available [here](https://docs.docker.com/get-docker/)
