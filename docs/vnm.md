@@ -6,7 +6,7 @@
 (Windows Users) If installing docker using WSL, Recommend atleast 20GB space recommended for WSL with Ubuntu
 
 ## Quickstart
-1. Install Docker from here: https://docs.docker.com/get-docker/ (Mac, Windows, Linux; for HPC/supercomputer: https://github.com/NeuroDesk/neurodesk)
+1. Install Docker from here: [https://docs.docker.com/get-docker](https://docs.docker.com/get-docker) (Mac, Windows, Linux; for HPC/supercomputer)
 
 2. Create a local folder where the downloaded applications will be stored, e.g. ~/vnm in Mac and Linux, or C:\vnm in Windows 
 
@@ -60,7 +60,7 @@ Alternatively one can download an application from the command line, e.g.:
 ```
 bash /neurodesk/local/fetch_and_run.sh fsl 6.0.3 20200905
 ```
-(Notice: last argument is to be taken from https://github.com/NeuroDesk/neurodesk/blob/master/neurodesk/apps.json)
+(Notice: last argument is to be taken from [https://github.com/NeuroDesk/neurodesk/blob/master/neurodesk/apps.json](https://github.com/NeuroDesk/neurodesk/blob/master/neurodesk/apps.json))
 
 ## Where are my files?
 The `-v C:/vnm:/vnm` part of the docker command links the directory "vnm" on the "C drive" of your Windows computer to the directory /vnm inside the VNM. Everything you store in there will be available inside VNM and on the host computer. You can also mount additional directories by adding another -v parameter set (e.g. `-v D:/moredata:/data`) - this will mount the directory moredata from your D drive to /data inside VNM.  
@@ -76,17 +76,17 @@ The `-v C:/vnm:/vnm` part of the docker command links the directory "vnm" on the
 * Visual Studio Code 1.46.1 (code editor and development environment)
 
 ### List of all available images:
-https://github.com/NeuroDesk/caid/packages
+[https://github.com/NeuroDesk/caid/packages](https://github.com/NeuroDesk/caid/packages)
 
 ### List of all tested images available in neurodesk:
-https://github.com/NeuroDesk/neurodesk/blob/master/neurodesk/apps.json
+[https://github.com/NeuroDesk/neurodesk/blob/master/neurodesk/apps.json](https://github.com/NeuroDesk/neurodesk/blob/master/neurodesk/apps.json)
 ```
 curl -s https://raw.githubusercontent.com/NeuroDesk/neurodesk/master/neurodesk/apps.json
 ```
 
 ### How to use applications from the command line
 1. Open a terminal window (there is a terminal icon in the task bar)
-2. Examine the list of downloaded applications that shows up in the terminal window. If the desired application is not there, follow the instructions under "How to launch/download applications" above (https://github.com/NeuroDesk/vnm/blob/master/README.md#how-to-launchdownload-applications)
+2. Examine the list of downloaded applications that shows up in the terminal window. If the desired application is not there, follow the instructions under "How to launch/download applications" above ([https://github.com/NeuroDesk/vnm/blob/master/README.md#how-to-launchdownload-applications](https://github.com/NeuroDesk/vnm/blob/master/README.md#how-to-launchdownload-applications))
 3. Use the 'module' command, giving the desired downloaded application as an argument, e.g.
 ```
 module load fsl_6.0.3
