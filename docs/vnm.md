@@ -109,3 +109,6 @@ fsleyes
 - [Mount Volume using SSHFS](https://github.com/NeuroDesk/vnm/wiki/Mount-volume-using-SSHFS)
 - [Not enough free space](https://github.com/NeuroDesk/vnm/wiki/Not-enough-free-space)
 - [Technical details](https://github.com/NeuroDesk/vnm/wiki/Technical-Details)
+
+## Advanced usage
+For advanced VNM and Neurodesk installer usage, check [here](https://neurodesk.github.io/docs/advanced)
