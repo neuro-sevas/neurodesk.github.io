@@ -79,3 +79,6 @@ Change `port=3389` to `port=3390` and save
 
 ## Mac
 Currently supported via [VNM](https://github.com/NeuroDesk/vnm)
+
+## Advanced usage
+For advanced VNM and Neurodesk installer usage, check [here](https://neurodesk.github.io/docs/advanced)
