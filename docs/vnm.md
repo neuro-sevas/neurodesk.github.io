@@ -102,13 +102,5 @@ fsleyes
 * window tiling is set to: SHIFT-ALT-CTRL-{left,right,up,down}
 * There are two workspaces available. To shift between them, click on the miniature image of the desired workspace, just right of the icons displayed on the far left of the task bar.
 
-## Advanced instructions
-- [Run Neurodesk VNM for free on cloud providers](https://github.com/NeuroDesk/vnm/wiki/Run-Neurodesk-VNM-for-free-on-cloud-providers)
-- [Start with custom screen resolution for VNC Viewer](https://github.com/NeuroDesk/vnm/wiki/Start-with-custom-screen-resolution-for-VNC-Viewer)
-- [Change screen resolution in browser without restarting VNM](https://github.com/NeuroDesk/vnm/wiki/Change-screen-resolution-in-browser-without-restarting-VNM)
-- [Mount Volume using SSHFS](https://github.com/NeuroDesk/vnm/wiki/Mount-volume-using-SSHFS)
-- [Not enough free space](https://github.com/NeuroDesk/vnm/wiki/Not-enough-free-space)
-- [Technical details](https://github.com/NeuroDesk/vnm/wiki/Technical-Details)
-
 ## Advanced usage
 For advanced VNM and Neurodesk installer usage, check [here](https://neurodesk.github.io/docs/advanced)
