@@ -30,8 +30,8 @@ curl localhost:6079/resize
 5. Click the "Connect" button just below the "noVNC" and the new resized desktop size is ready to use (if clicking on "Connect" results in the message "Fails to connect to server" showing on the top, try to click again every few seconds, until the new resized desktop does come up).
 
 # Run Neurodesk VNM for free on cloud providers
-* Oracle OCI: https://mri.sbollmann.net/index.php/2020/12/08/run-neurodesk-on-oracle-cloud-free-tier/
-* Microsoft Azure: https://henryjburg.medium.com/neurodesk-running-on-azure-3e38c590a152 
+* [Oracle OCI](https://mri.sbollmann.net/index.php/2020/12/08/run-neurodesk-on-oracle-cloud-free-tier)
+* [Microsoft Azure](https://henryjburg.medium.com/neurodesk-running-on-azure-3e38c590a152)
 
 
 # Technical Details
