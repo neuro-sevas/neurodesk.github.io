@@ -15,9 +15,9 @@ VNM is a compact Docker container with a browser-accessible environment for repr
 ## 2. Neurodesk installer
 _Recommended for Advanced users_
 
-A flexible, scalable, and easy to use data analysis environment for reproducible neuroimaging. Virtual Neuro Machine (or VNM) pre-installs Neurodesk in an Ubuntu docker container providing simple access to the powerful capabilities of Neurodesk.
+Installer that turns the host into a flexible, scalable, and easy to use data analysis environment for reproducible neuroimaging. Virtual Neuro Machine (or VNM) pre-installs Neurodesk in an Ubuntu docker container providing simple access to the powerful capabilities of Neurodesk.
 
-Requires a Linux host machine, virtual machine or WSL for Windows.
+Requires a Linux host machine, WSL for Windows, or a virtual machine.
 
 [Neurodesk architecture](https://neurodesk.github.io/docs/architecture)
 
