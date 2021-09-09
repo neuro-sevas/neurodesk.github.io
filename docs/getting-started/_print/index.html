@@ -107,26 +107,168 @@ This the multi-page printable view of this section.
 <div class=td-content style=page-break-before:always>
 <h1 id=pg-88d24c8fcdc06f22d46ae0263fc361f9>1 - Linux</h1>
 <div class=lead>Installation</div>
-<div class="pageinfo pageinfo-primary">
-<p>This is a placeholder page.</p>
-</div>
-<p>Instructions</p>
+<h2 id=minimum-system-requirements>Minimum System Requirements</h2>
+<ol>
+<li>At least 3GB free space for neuromachine base image</li>
+<li>Docker requirements. Details found under <a href=https://docs.docker.com/get-docker/>https://docs.docker.com/get-docker/</a></li>
+</ol>
+<h2 id=quickstart>Quickstart</h2>
+<ol>
+<li>
+<p>Install Docker from here: <a href=https://docs.docker.com/get-docker/>https://docs.docker.com/get-docker/</a></p>
+</li>
+<li>
+<p>Create a local folder where the downloaded applications will be stored, e.g. ~/neurodesktop</p>
+</li>
+<li>
+<p>Open a terminal, and type the folowing command to automatically download the neuromachine container and run it (Mac, Windows, Linux commands listed below)</p>
+</li>
+</ol>
+<pre tabindex=0><code>sudo docker run --shm-size=1gb -it --privileged --name neuromachine -v ~/neurodesktop:/neurodesktop -e USER=user -p 8080:8080 vnmd/neuromachine:latest
+</code></pre><p>(notice: if you get errors in neuromachine then check if the ~/neurodesktop directory is writable to all users, otherwise run <code>chmod a+rwx ~/neurodesktop</code>)</p>
+<ol start=4>
+<li>Once neuromachine is downloaded i.e. <code>guacd[77]: INFO: Listening on host 127.0.0.1, port 4822</code> is displayed in terminal, open a browser and go to:</li>
+</ol>
+<pre tabindex=0><code>http://localhost:8080/#/?username=user&amp;password=password
+</code></pre><p>or open a VNC Client and connect to port 5901 (for this -p 5901:5901 has to be added to the docker call)</p>
+<ol start=5>
+<li>neuromachine is ready to use!</li>
+</ol>
+<ul>
+<li>User is <code>user</code></li>
+<li>Password is <code>password</code></li>
+</ul>
+<h2 id=stopping-neuromachine>Stopping neuromachine:</h2>
+<p>When done processing your data it is important to stop and remove the container - otherwise the next start or container update will give an error ("&mldr; The container name &ldquo;/neuromachine&rdquo; is already in use&mldr;")</p>
+<ol>
+<li>
+<p>Click on the terminal from which you ran neuromachine</p>
+</li>
+<li>
+<p>Press control-C</p>
+</li>
+<li>
+<p>Type:</p>
+</li>
+</ol>
+<pre tabindex=0><code>docker stop neuromachine
+</code></pre><ol start=4>
+<li>Type:</li>
+</ol>
+<pre tabindex=0><code>docker rm neuromachine
+</code></pre>
 </div>
 <div class=td-content style=page-break-before:always>
 <h1 id=pg-f71213883e921fb5f555506880d994d7>2 - MacOS</h1>
 <div class=lead>Installation</div>
-<div class="pageinfo pageinfo-primary">
-<p>This is a placeholder page.</p>
-</div>
-<p>Instructions</p>
+<h2 id=minimum-system-requirements>Minimum System Requirements</h2>
+<ol>
+<li>At least 3GB free space for neuromachine base image</li>
+<li>Docker requirements. Details found under <a href=https://docs.docker.com/get-docker/>https://docs.docker.com/get-docker/</a></li>
+</ol>
+<h2 id=quickstart>Quickstart</h2>
+<ol>
+<li>
+<p>Install Docker from here: <a href=https://docs.docker.com/get-docker/>https://docs.docker.com/get-docker/</a></p>
+</li>
+<li>
+<p>Create a local folder where the downloaded applications will be stored, e.g. ~/neurodesktop</p>
+</li>
+<li>
+<p>Open a terminal, and type the folowing command to automatically download the neuromachine container and run it</p>
+</li>
+</ol>
+<ul>
+<li>Mac:</li>
+</ul>
+<pre tabindex=0><code>docker run --shm-size=1gb -it --privileged --name neuromachine -v ~/neurodesktop:/neurodesktop -e USER=user -p 8080:8080 vnmd/neuromachine:latest
+</code></pre><p>(notice: There is a bug in docker 3.3.0 for Mac that makes this command not run correctly and there will be no application menu when you start the desktop. Update your docker version when you see this!)</p>
+<p>(notice: if you get errors in neuromachine then check if the ~/neurodesktop directory is writable to all users, otherwise run <code>chmod a+rwx ~/neurodesktop</code>)</p>
+<ol start=4>
+<li>Once neuromachine is downloaded i.e. <code>guacd[77]: INFO: Listening on host 127.0.0.1, port 4822</code> is displayed in terminal, open a browser and go to:</li>
+</ol>
+<pre tabindex=0><code>http://localhost:8080/#/?username=user&amp;password=password
+</code></pre><p>or open a VNC Client and connect to port 5901 (for this -p 5901:5901 has to be added to the docker call)</p>
+<ol start=5>
+<li>neuromachine is ready to use!</li>
+</ol>
+<ul>
+<li>User is <code>user</code></li>
+<li>Password is <code>password</code></li>
+</ul>
+<h2 id=stopping-neuromachine>Stopping neuromachine:</h2>
+<p>When done processing your data it is important to stop and remove the container - otherwise the next start or container update will give an error ("&mldr; The container name &ldquo;/neuromachine&rdquo; is already in use&mldr;")</p>
+<ol>
+<li>
+<p>Click on the terminal from which you ran neuromachine</p>
+</li>
+<li>
+<p>Press control-C</p>
+</li>
+<li>
+<p>Type:</p>
+</li>
+</ol>
+<pre tabindex=0><code>docker stop neuromachine
+</code></pre><ol start=4>
+<li>Type:</li>
+</ol>
+<pre tabindex=0><code>docker rm neuromachine
+</code></pre>
 </div>
 <div class=td-content style=page-break-before:always>
 <h1 id=pg-841a3632ecb94a72b9a4a9cf0c2ee199>3 - Windows</h1>
 <div class=lead>Installation</div>
-<div class="pageinfo pageinfo-primary">
-<p>This is a placeholder page.</p>
-</div>
-<p>Instructions</p>
+<h2 id=minimum-system-requirements>Minimum System Requirements</h2>
+<ol>
+<li>At least 3GB free space for neuromachine base image</li>
+<li>Docker requirements. Details found under <a href=https://docs.docker.com/get-docker/>https://docs.docker.com/get-docker/</a></li>
+<li>If installing docker using WSL, atleast 20GB space recommended for WSL with Ubuntu</li>
+</ol>
+<h2 id=quickstart>Quickstart</h2>
+<ol>
+<li>
+<p>Install Docker from here: <a href=https://docs.docker.com/get-docker/>https://docs.docker.com/get-docker/</a></p>
+</li>
+<li>
+<p>Create a local folder where the downloaded applications will be stored, e.g. C:\neurodesktop</p>
+</li>
+<li>
+<p>Open a terminal, and type the folowing command to automatically download the neuromachine container and run it</p>
+</li>
+</ol>
+<pre tabindex=0><code>docker run --shm-size=1gb -it --privileged --name neuromachine -v C:/neurodesktop:/neurodesktop -e USER=user -p 8080:8080 vnmd/neuromachine:latest
+</code></pre><ol start=4>
+<li>Once neuromachine is downloaded i.e. <code>guacd[77]: INFO: Listening on host 127.0.0.1, port 4822</code> is displayed in terminal, open a browser and go to:</li>
+</ol>
+<pre tabindex=0><code>http://localhost:8080/#/?username=user&amp;password=password
+</code></pre><p>or open a VNC Client and connect to port 5901 (for this -p 5901:5901 has to be added to the docker call)</p>
+<ol start=5>
+<li>neuromachine is ready to use!</li>
+</ol>
+<ul>
+<li>User is <code>user</code></li>
+<li>Password is <code>password</code></li>
+</ul>
+<h2 id=stopping-neuromachine>Stopping neuromachine:</h2>
+<p>When done processing your data it is important to stop and remove the container - otherwise the next start or container update will give an error ("&mldr; The container name &ldquo;/neuromachine&rdquo; is already in use&mldr;")</p>
+<ol>
+<li>
+<p>Click on the terminal from which you ran neuromachine</p>
+</li>
+<li>
+<p>Press control-C</p>
+</li>
+<li>
+<p>Type:</p>
+</li>
+</ol>
+<pre tabindex=0><code>docker stop neuromachine
+</code></pre><ol start=4>
+<li>Type:</li>
+</ol>
+<pre tabindex=0><code>docker rm neuromachine
+</code></pre>
 </div>
 <div class=td-content style=page-break-before:always>
 <h1 id=pg-3998d95d234b3b6e31c2ccafdc4b1257>4 - HPC</h1>
@@ -139,10 +281,56 @@ This the multi-page printable view of this section.
 <div class=td-content style=page-break-before:always>
 <h1 id=pg-7063d3ee33256e81d6457cf68fafb20f>5 - Cloud</h1>
 <div class=lead>Installation</div>
-<div class="pageinfo pageinfo-primary">
-<p>This is a placeholder page.</p>
-</div>
-<p>Instructions</p>
+<h2 id=minimum-system-requirements>Minimum System Requirements</h2>
+<ol>
+<li>At least 3GB free space for neuromachine base image</li>
+<li>Docker requirements. Details found under <a href=https://docs.docker.com/get-docker/>https://docs.docker.com/get-docker/</a></li>
+</ol>
+<h2 id=quickstart>Quickstart</h2>
+<ol>
+<li>
+<p>Install Docker from here: <a href=https://docs.docker.com/get-docker/>https://docs.docker.com/get-docker/</a></p>
+</li>
+<li>
+<p>Create a local folder where the downloaded applications will be stored, e.g. ~/neurodesktop</p>
+</li>
+<li>
+<p>Open a terminal, and type the folowing command to automatically download the neuromachine container and run it (Mac, Windows, Linux commands listed below)</p>
+</li>
+</ol>
+<pre tabindex=0><code>sudo docker run --shm-size=1gb -it --privileged --name neuromachine -v ~/neurodesktop:/neurodesktop -e USER=user -p 8080:8080 vnmd/neuromachine:latest
+</code></pre><p>(notice: if you get errors in neuromachine then check if the ~/neurodesktop directory is writable to all users, otherwise run <code>chmod a+rwx ~/neurodesktop</code>)</p>
+<ol start=4>
+<li>Once neuromachine is downloaded i.e. <code>guacd[77]: INFO: Listening on host 127.0.0.1, port 4822</code> is displayed in terminal, open a browser and go to:</li>
+</ol>
+<pre tabindex=0><code>http://localhost:8080/#/?username=user&amp;password=password
+</code></pre><p>or open a VNC Client and connect to port 5901 (for this -p 5901:5901 has to be added to the docker call)</p>
+<ol start=5>
+<li>neuromachine is ready to use!</li>
+</ol>
+<ul>
+<li>User is <code>user</code></li>
+<li>Password is <code>password</code></li>
+</ul>
+<h2 id=stopping-neuromachine>Stopping neuromachine:</h2>
+<p>When done processing your data it is important to stop and remove the container - otherwise the next start or container update will give an error ("&mldr; The container name &ldquo;/neuromachine&rdquo; is already in use&mldr;")</p>
+<ol>
+<li>
+<p>Click on the terminal from which you ran neuromachine</p>
+</li>
+<li>
+<p>Press control-C</p>
+</li>
+<li>
+<p>Type:</p>
+</li>
+</ol>
+<pre tabindex=0><code>docker stop neuromachine
+</code></pre><ol start=4>
+<li>Type:</li>
+</ol>
+<pre tabindex=0><code>docker rm neuromachine
+</code></pre>
 </div>
 <div class=td-content style=page-break-before:always>
 <h1 id=pg-8f4aa4b324994ca51df6e5e1b412db0a>6 - Demo</h1>
