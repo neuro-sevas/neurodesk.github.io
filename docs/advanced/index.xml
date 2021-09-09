@@ -193,7 +193,12 @@ Here are two examples for FreeSurfer and FreeView. This first one only installs 
 &lt;span style="color:#c4a000">Type&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">Application&lt;/span>
 &lt;span style="color:#c4a000">Categories&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">FreeSurfer&lt;/span>
 &lt;span style="color:#c4a000">Terminal&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">true&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Tested</title><link>https://neurodesk.github.io/docs/advanced/tested/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/advanced/tested/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Tested</title><link>https://neurodesk.github.io/docs/advanced/storage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/advanced/storage/</guid><description>
+&lt;h2 id="mount-volume-using-sshfs">Mount volume using SSHFS&lt;/h2>
+&lt;p>&lt;code>sshfs -o allow_root USER@TARGET_HOST:TARGET_PATH SOURCE_PATH&lt;/code>&lt;/p>
+&lt;h2 id="not-enough-free-space">Not enough free space&lt;/h2>
+&lt;p>For Windows&lt;/p>
+&lt;p>&lt;a href="https://yjmantilla.github.io/tutorials/wsl2-move-vhdx.html">https://yjmantilla.github.io/tutorials/wsl2-move-vhdx.html&lt;/a>&lt;/p></description></item><item><title>Docs: Tested</title><link>https://neurodesk.github.io/docs/advanced/tested/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/advanced/tested/</guid><description>
 &lt;p>Please test and add if working :)&lt;/p>
 &lt;table>
 &lt;thead>
@@ -280,4 +285,9 @@ Here are two examples for FreeSurfer and FreeView. This first one only installs 
 &lt;td>Oren&lt;/td>
 &lt;/tr>
 &lt;/tbody>
-&lt;/table></description></item></channel></rss>
+&lt;/table>
+&lt;h1 id="run-neurodesk-vnm-for-free-on-cloud-providers">Run Neurodesk VNM for free on cloud providers&lt;/h1>
+&lt;ul>
+&lt;li>&lt;a href="https://mri.sbollmann.net/index.php/2020/12/08/run-neurodesk-on-oracle-cloud-free-tier">Oracle OCI&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://henryjburg.medium.com/neurodesk-running-on-azure-3e38c590a152">Microsoft Azure&lt;/a>&lt;/li>
+&lt;/ul></description></item></channel></rss>

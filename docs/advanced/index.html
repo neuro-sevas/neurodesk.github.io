@@ -101,6 +101,8 @@
 <ul class="ul-2 foldable">
 <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsadvancedadd_tool-li>
 <a href=/docs/advanced/add_tool/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsadvancedadd_tool><span>Add tool</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsadvancedstorage-li>
+<a href=/docs/advanced/storage/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsadvancedstorage><span>Tested</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsadvancedtested-li>
 <a href=/docs/advanced/tested/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsadvancedtested><span>Tested</span></a>
 </li>
@@ -129,16 +131,6 @@
 <a href=https://github.com/NeuroDesk/neurodesk.github.io/issues/new target=_blank><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
 <a id=print href=https://neurodesk.github.io/docs/advanced/_print/><i class="fa fa-print fa-fw"></i> Print entire section</a>
 </div>
-<div class=td-toc><nav id=TableOfContents>
-<ul>
-<li><a href=#mount-volume-using-sshfs>Mount volume using SSHFS</a></li>
-<li><a href=#not-enough-free-space>Not enough free space</a></li>
-</ul>
-<ul>
-<li><a href=#start-with-custom-screen-resolution-for-vnc-viewer>Start with custom screen resolution for VNC Viewer</a></li>
-<li><a href=#change-screen-resolution-in-browser-without-restarting-vnm>Change screen resolution in browser without restarting VNM</a></li>
-</ul>
-</nav></div>
 </aside>
 <main class="col-12 col-md-9 col-xl-8 pl-md-5" role=main>
 <nav aria-label=breadcrumb class="d-none d-md-block d-print-none">
@@ -156,37 +148,6 @@
 <div class=lead>Advanced usage</div>
 <header class=article-meta>
 </header>
-<h1 id=storage>Storage</h1>
-<h2 id=mount-volume-using-sshfs>Mount volume using SSHFS</h2>
-<p><code>sshfs -o allow_root USER@TARGET_HOST:TARGET_PATH SOURCE_PATH</code></p>
-<h2 id=not-enough-free-space>Not enough free space</h2>
-<p>For Windows</p>
-<p><a href=https://yjmantilla.github.io/tutorials/wsl2-move-vhdx.html>https://yjmantilla.github.io/tutorials/wsl2-move-vhdx.html</a></p>
-<h1 id=display>Display</h1>
-<h2 id=start-with-custom-screen-resolution-for-vnc-viewer>Start with custom screen resolution for VNC Viewer</h2>
-<p>Add the following parameter to the docker call:</p>
-<pre tabindex=0><code>-e RESOLUTION=1920x980
-open in VNC viewer:  http://localhost:5900
-</code></pre><h2 id=change-screen-resolution-in-browser-without-restarting-vnm>Change screen resolution in browser without restarting VNM</h2>
-<p>IMPORTANT NOTICE: All graphical and terminal applications running within the VNM will be terminated after the resize. If desired, terminal applications CAN be made to survive by executing the &ldquo;screen&rdquo; command before running the application. If &ldquo;screen&rdquo; is not installed on your VNM, please let us know by starting a discussion at <a href=https://github.com/NeuroDesk/neurodesk/discussions>https://github.com/NeuroDesk/neurodesk/discussions</a></p>
-<ol>
-<li>Change the size of the browser window within which the VNM runs to the desired size</li>
-<li>Click on the terminal icon in the task bar of the VNM (4th icon from the left). If the task bar is not visible, the terminal can be started by clicking on the vnm folder icon on the top-left corner of the VNM desktop, click on &ldquo;Applications&rdquo; on the left, click the &ldquo;System Tools&rdquo; icon, and then the &ldquo;LXTerminal&rdquo; icon.</li>
-<li>Type the following command into the terminal and press ENTER:</li>
-</ol>
-<pre tabindex=0><code>curl localhost:6079/resize 
-</code></pre><ol start=4>
-<li>Wait until the desktop is replaced with a page that says &ldquo;noVNC&rdquo; in big letters (should take between a few seconds to half a minute)</li>
-<li>Click the &ldquo;Connect&rdquo; button just below the &ldquo;noVNC&rdquo; and the new resized desktop size is ready to use (if clicking on &ldquo;Connect&rdquo; results in the message &ldquo;Fails to connect to server&rdquo; showing on the top, try to click again every few seconds, until the new resized desktop does come up).</li>
-</ol>
-<h1 id=run-neurodesk-vnm-for-free-on-cloud-providers>Run Neurodesk VNM for free on cloud providers</h1>
-<ul>
-<li><a href=https://mri.sbollmann.net/index.php/2020/12/08/run-neurodesk-on-oracle-cloud-free-tier>Oracle OCI</a></li>
-<li><a href=https://henryjburg.medium.com/neurodesk-running-on-azure-3e38c590a152>Microsoft Azure</a></li>
-</ul>
-<h1 id=technical-details>Technical Details</h1>
-<p>Operating system within the docker: Linux Ubuntu 20.04 LTS</p>
-<p>Desktop environemnt within the docker: LXDE/LxQT</p>
 <div class=section-index>
 <hr class=panel-line>
 <div class=entry>
@@ -194,6 +155,12 @@ open in VNC viewer:  http://localhost:5900
 <a href=/docs/advanced/add_tool/>Add tool</a>
 </h5>
 <p>Add tool</p>
+</div>
+<div class=entry>
+<h5>
+<a href=/docs/advanced/storage/>Tested</a>
+</h5>
+<p>Storage</p>
 </div>
 <div class=entry>
 <h5>
@@ -205,7 +172,7 @@ open in VNC viewer:  http://localhost:5900
 <div class="text-muted mt-5 pt-3 border-top">
 Last modified
 September 9, 2021
-: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/33d18acbbffd7dc73ede7c0c49df7211607adccc>Add placeholder pages (33d18ac)</a>
+: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/29fe84b825247b0687fd2a9f24ac9bd926eaa0e5>more cleanup and moving content around (29fe84b)</a>
 </div>
 </div>
 </main>

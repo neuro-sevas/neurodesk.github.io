@@ -21,12 +21,12 @@
 ">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://neurodesk.github.io/docs/overview/neurodesktop/"><meta property="article:section" content="docs">
-<meta property="article:modified_time" content="2021-09-09T20:34:40+10:00"><meta property="og:site_name" content="NeuroDesk">
+<meta property="article:modified_time" content="2021-09-09T21:08:55+10:00"><meta property="og:site_name" content="NeuroDesk">
 <meta itemprop=name content="Neurodesktop">
 <meta itemprop=description content="A compact Docker container with a browser-accessible environment for reproducible neuroimaging analysis. Only the required applications, already pre-installed, are downloaded from a public library (downloaded as containers).
 ">
-<meta itemprop=dateModified content="2021-09-09T20:34:40+10:00">
-<meta itemprop=wordCount content="308">
+<meta itemprop=dateModified content="2021-09-09T21:08:55+10:00">
+<meta itemprop=wordCount content="9">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="Neurodesktop">
 <meta name=twitter:description content="A compact Docker container with a browser-accessible environment for reproducible neuroimaging analysis. Only the required applications, already pre-installed, are downloaded from a public library (downloaded as containers).
@@ -103,6 +103,8 @@
 <ul class="ul-2 foldable">
 <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsadvancedadd_tool-li>
 <a href=/docs/advanced/add_tool/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsadvancedadd_tool><span>Add tool</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsadvancedstorage-li>
+<a href=/docs/advanced/storage/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsadvancedstorage><span>Tested</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsadvancedtested-li>
 <a href=/docs/advanced/tested/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsadvancedtested><span>Tested</span></a>
 </li>
@@ -131,13 +133,6 @@
 <a href=https://github.com/NeuroDesk/neurodesk.github.io/issues/new target=_blank><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
 <a id=print href=https://neurodesk.github.io/docs/overview/_print/><i class="fa fa-print fa-fw"></i> Print entire section</a>
 </div>
-<div class=td-toc><nav id=TableOfContents>
-<ul>
-<li><a href=#minimum-system-requirements>Minimum System Requirements</a></li>
-<li><a href=#quickstart>Quickstart</a></li>
-<li><a href=#stopping-neuromachine>Stopping neuromachine:</a></li>
-</ul>
-</nav></div>
 </aside>
 <main class="col-12 col-md-9 col-xl-8 pl-md-5" role=main>
 <nav aria-label=breadcrumb class="d-none d-md-block d-print-none">
@@ -158,73 +153,12 @@
 <div class=lead>A compact Docker container with a browser-accessible environment for reproducible neuroimaging analysis. Only the required applications, already pre-installed, are downloaded from a public library (downloaded as containers).</div>
 <header class=article-meta>
 </header>
-<h2 id=minimum-system-requirements>Minimum System Requirements</h2>
-<ol>
-<li>At least 3GB free space for neuromachine base image</li>
-<li>Docker requirements. Details found under <a href=https://docs.docker.com/get-docker/>https://docs.docker.com/get-docker/</a></li>
-<li>(Windows Users) If installing docker using WSL, atleast 20GB space recommended for WSL with Ubuntu</li>
-</ol>
-<h2 id=quickstart>Quickstart</h2>
-<ol>
-<li>
-<p>Install Docker from here: <a href=https://docs.docker.com/get-docker/>https://docs.docker.com/get-docker/</a> (Mac, Windows, Linux; for HPC/supercomputer: <a href=https://github.com/NeuroDesk/neurodesk>https://github.com/NeuroDesk/neurodesk</a>)</p>
-</li>
-<li>
-<p>Create a local folder where the downloaded applications will be stored, e.g. ~/neurodesktop in Mac and Linux, or C:\neurodesktop in Windows</p>
-</li>
-<li>
-<p>Open a terminal, and type the folowing command to automatically download the neuromachine container and run it (Mac, Windows, Linux commands listed below)</p>
-</li>
-</ol>
-<ul>
-<li>Mac:</li>
-</ul>
-<pre tabindex=0><code>docker run --shm-size=1gb -it --privileged --name neuromachine -v ~/neurodesktop:/neurodesktop -e USER=user -p 8080:8080 vnmd/neuromachine:latest
-</code></pre><p>(notice: There is a bug in docker 3.3.0 for Mac that makes this command not run correctly and there will be no application menu when you start the desktop. Update your docker version when you see this!)</p>
-<ul>
-<li>Windows:</li>
-</ul>
-<pre tabindex=0><code>docker run --shm-size=1gb -it --privileged --name neuromachine -v C:/neurodesktop:/neurodesktop -e USER=user -p 8080:8080 vnmd/neuromachine:latest
-</code></pre><ul>
-<li>Linux:</li>
-</ul>
-<pre tabindex=0><code>sudo docker run --shm-size=1gb -it --privileged --name neuromachine -v ~/neurodesktop:/neurodesktop -e USER=user -p 8080:8080 vnmd/neuromachine:latest
-</code></pre><p>(notice: if you get errors in neuromachine then check if the ~/neurodesktop directory is writable to all users, otherwise run <code>chmod a+rwx ~/neurodesktop</code>)</p>
-<ol start=4>
-<li>Once neuromachine is downloaded i.e. <code>guacd[77]: INFO: Listening on host 127.0.0.1, port 4822</code> is displayed in terminal, open a browser and go to:</li>
-</ol>
-<pre tabindex=0><code>http://localhost:8080/#/?username=user&amp;password=password
-</code></pre><p>or open a VNC Client and connect to port 5901 (for this -p 5901:5901 has to be added to the docker call)</p>
-<ol start=5>
-<li>neuromachine is ready to use!</li>
-</ol>
-<ul>
-<li>User is <code>user</code></li>
-<li>Password is <code>password</code></li>
-</ul>
-<h2 id=stopping-neuromachine>Stopping neuromachine:</h2>
-<p>When done processing your data it is important to stop and remove the container - otherwise the next start or container update will give an error ("&mldr; The container name &ldquo;/neuromachine&rdquo; is already in use&mldr;")</p>
-<ol>
-<li>
-<p>Click on the terminal from which you ran neuromachine</p>
-</li>
-<li>
-<p>Press control-C</p>
-</li>
-<li>
-<p>Type:</p>
-</li>
-</ol>
-<pre tabindex=0><code>docker stop neuromachine
-</code></pre><ol start=4>
-<li>Type:</li>
-</ol>
-<pre tabindex=0><code>docker rm neuromachine
-</code></pre>
+<p>For operating system specific instructions see Getting started
+<a href=https://neurodesk.github.io/docs/getting-started/>https://neurodesk.github.io/docs/getting-started/</a></p>
 <div class="text-muted mt-5 pt-3 border-top">
 Last modified
 September 9, 2021
-: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/0982405b3ddbbb12398c25181cb698d1d3f4785c>typos, changed a few names to neurodestkop and added info about neurocontainers (0982405)</a>
+: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/29fe84b825247b0687fd2a9f24ac9bd926eaa0e5>more cleanup and moving content around (29fe84b)</a>
 </div>
 </div>
 </main>

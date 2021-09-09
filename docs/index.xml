@@ -49,69 +49,8 @@
 &lt;/ol>
 &lt;pre tabindex="0">&lt;code>docker rm neuromachine
 &lt;/code>&lt;/pre></description></item><item><title>Docs: Neurodesktop</title><link>https://neurodesk.github.io/docs/overview/neurodesktop/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/overview/neurodesktop/</guid><description>
-&lt;h2 id="minimum-system-requirements">Minimum System Requirements&lt;/h2>
-&lt;ol>
-&lt;li>At least 3GB free space for neuromachine base image&lt;/li>
-&lt;li>Docker requirements. Details found under &lt;a href="https://docs.docker.com/get-docker/">https://docs.docker.com/get-docker/&lt;/a>&lt;/li>
-&lt;li>(Windows Users) If installing docker using WSL, atleast 20GB space recommended for WSL with Ubuntu&lt;/li>
-&lt;/ol>
-&lt;h2 id="quickstart">Quickstart&lt;/h2>
-&lt;ol>
-&lt;li>
-&lt;p>Install Docker from here: &lt;a href="https://docs.docker.com/get-docker/">https://docs.docker.com/get-docker/&lt;/a> (Mac, Windows, Linux; for HPC/supercomputer: &lt;a href="https://github.com/NeuroDesk/neurodesk">https://github.com/NeuroDesk/neurodesk&lt;/a>)&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Create a local folder where the downloaded applications will be stored, e.g. ~/neurodesktop in Mac and Linux, or C:\neurodesktop in Windows&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Open a terminal, and type the folowing command to automatically download the neuromachine container and run it (Mac, Windows, Linux commands listed below)&lt;/p>
-&lt;/li>
-&lt;/ol>
-&lt;ul>
-&lt;li>Mac:&lt;/li>
-&lt;/ul>
-&lt;pre tabindex="0">&lt;code>docker run --shm-size=1gb -it --privileged --name neuromachine -v ~/neurodesktop:/neurodesktop -e USER=user -p 8080:8080 vnmd/neuromachine:latest
-&lt;/code>&lt;/pre>&lt;p>(notice: There is a bug in docker 3.3.0 for Mac that makes this command not run correctly and there will be no application menu when you start the desktop. Update your docker version when you see this!)&lt;/p>
-&lt;ul>
-&lt;li>Windows:&lt;/li>
-&lt;/ul>
-&lt;pre tabindex="0">&lt;code>docker run --shm-size=1gb -it --privileged --name neuromachine -v C:/neurodesktop:/neurodesktop -e USER=user -p 8080:8080 vnmd/neuromachine:latest
-&lt;/code>&lt;/pre>&lt;ul>
-&lt;li>Linux:&lt;/li>
-&lt;/ul>
-&lt;pre tabindex="0">&lt;code>sudo docker run --shm-size=1gb -it --privileged --name neuromachine -v ~/neurodesktop:/neurodesktop -e USER=user -p 8080:8080 vnmd/neuromachine:latest
-&lt;/code>&lt;/pre>&lt;p>(notice: if you get errors in neuromachine then check if the ~/neurodesktop directory is writable to all users, otherwise run &lt;code>chmod a+rwx ~/neurodesktop&lt;/code>)&lt;/p>
-&lt;ol start="4">
-&lt;li>Once neuromachine is downloaded i.e. &lt;code>guacd[77]: INFO: Listening on host 127.0.0.1, port 4822&lt;/code> is displayed in terminal, open a browser and go to:&lt;/li>
-&lt;/ol>
-&lt;pre tabindex="0">&lt;code>http://localhost:8080/#/?username=user&amp;amp;password=password
-&lt;/code>&lt;/pre>&lt;p>or open a VNC Client and connect to port 5901 (for this -p 5901:5901 has to be added to the docker call)&lt;/p>
-&lt;ol start="5">
-&lt;li>neuromachine is ready to use!&lt;/li>
-&lt;/ol>
-&lt;ul>
-&lt;li>User is &lt;code>user&lt;/code>&lt;/li>
-&lt;li>Password is &lt;code>password&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;h2 id="stopping-neuromachine">Stopping neuromachine:&lt;/h2>
-&lt;p>When done processing your data it is important to stop and remove the container - otherwise the next start or container update will give an error (&amp;quot;&amp;hellip; The container name &amp;ldquo;/neuromachine&amp;rdquo; is already in use&amp;hellip;&amp;quot;)&lt;/p>
-&lt;ol>
-&lt;li>
-&lt;p>Click on the terminal from which you ran neuromachine&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Press control-C&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Type:&lt;/p>
-&lt;/li>
-&lt;/ol>
-&lt;pre tabindex="0">&lt;code>docker stop neuromachine
-&lt;/code>&lt;/pre>&lt;ol start="4">
-&lt;li>Type:&lt;/li>
-&lt;/ol>
-&lt;pre tabindex="0">&lt;code>docker rm neuromachine
-&lt;/code>&lt;/pre></description></item><item><title>Docs: MacOS</title><link>https://neurodesk.github.io/docs/getting-started/mac/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/getting-started/mac/</guid><description>
+&lt;p>For operating system specific instructions see Getting started
+&lt;a href="https://neurodesk.github.io/docs/getting-started/">https://neurodesk.github.io/docs/getting-started/&lt;/a>&lt;/p></description></item><item><title>Docs: MacOS</title><link>https://neurodesk.github.io/docs/getting-started/mac/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/getting-started/mac/</guid><description>
 &lt;h2 id="minimum-system-requirements">Minimum System Requirements&lt;/h2>
 &lt;ol>
 &lt;li>At least 3GB free space for neuromachine base image&lt;/li>
@@ -166,7 +105,6 @@
 &lt;/ol>
 &lt;pre tabindex="0">&lt;code>docker rm neuromachine
 &lt;/code>&lt;/pre></description></item><item><title>Docs: Neurocommand</title><link>https://neurodesk.github.io/docs/overview/neurocommand/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/overview/neurocommand/</guid><description>
-&lt;p>&lt;em>For running Neurodesk in a Docker container, refer to &lt;a href="https://neurodesk.github.io/docs/overview/neurodesktop/">https://neurodesk.github.io/docs/overview/neurodesktop/&lt;/a>&lt;/em>&lt;/p>
 &lt;p>Requires a Linux host machine, virtual machine or WSL for Windows.&lt;/p>
 &lt;h2 id="linux">Linux&lt;/h2>
 &lt;h3 id="requirements">Requirements:&lt;/h3>
@@ -240,15 +178,13 @@ Change &lt;code>port=3389&lt;/code> to &lt;code>port=3390&lt;/code> and save&lt;
 &lt;p>Currently supported via &lt;a href="https://github.com/NeuroDesk/vnm">VNM&lt;/a>&lt;/p>
 &lt;h2 id="advanced-usage">Advanced usage&lt;/h2>
 &lt;p>For advanced VNM and Neurodesk installer usage, check &lt;a href="https://neurodesk.github.io/docs/advanced">here&lt;/a>&lt;/p></description></item><item><title>Docs: Neurocontainers</title><link>https://neurodesk.github.io/docs/overview/neurocontainers/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/overview/neurocontainers/</guid><description>
-&lt;div class="pageinfo pageinfo-primary">
 &lt;p>Neurocontainers is our collection of neuro containers hosted on dockerhub (&lt;a href="https://hub.docker.com/orgs/vnmd/repositories">https://hub.docker.com/orgs/vnmd/repositories&lt;/a>) or github (&lt;a href="https://github.com/NeuroDesk/neurocontainers/packages">https://github.com/NeuroDesk/neurocontainers/packages&lt;/a>)&lt;/p>
 &lt;h1 id="pull-containers">pull containers&lt;/h1>
 &lt;p>docker&lt;/p>
 &lt;pre tabindex="0">&lt;code>docker pull vnmd/julia_1.6.1
 &lt;/code>&lt;/pre>&lt;p>build singularity image from dockerhub&lt;/p>
 &lt;pre tabindex="0">&lt;code>singularity build julia_1.6.1.simg docker://vnmd/julia_1.6.1
-&lt;/code>&lt;/pre>
-&lt;/div></description></item><item><title>Docs: Windows</title><link>https://neurodesk.github.io/docs/getting-started/windows/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/getting-started/windows/</guid><description>
+&lt;/code>&lt;/pre></description></item><item><title>Docs: Windows</title><link>https://neurodesk.github.io/docs/getting-started/windows/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/getting-started/windows/</guid><description>
 &lt;h2 id="minimum-system-requirements">Minimum System Requirements&lt;/h2>
 &lt;ol>
 &lt;li>At least 3GB free space for neuromachine base image&lt;/li>
@@ -494,10 +430,12 @@ Here are two examples for FreeSurfer and FreeView. This first one only installs 
 &lt;span style="color:#c4a000">Categories&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">FreeSurfer&lt;/span>
 &lt;span style="color:#c4a000">Terminal&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">true&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: HPC</title><link>https://neurodesk.github.io/docs/getting-started/hpc/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/getting-started/hpc/</guid><description>
-&lt;div class="pageinfo pageinfo-primary">
-&lt;p>This is a placeholder page.&lt;/p>
-&lt;/div>
-&lt;p>Instructions&lt;/p></description></item><item><title>Docs: Tested</title><link>https://neurodesk.github.io/docs/advanced/tested/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/advanced/tested/</guid><description>
+&lt;p>One way of running this project on HPCs is via [Neurocommand]https://neurodesk.github.io/docs/overview/neurocommand/&lt;/p></description></item><item><title>Docs: Tested</title><link>https://neurodesk.github.io/docs/advanced/storage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/advanced/storage/</guid><description>
+&lt;h2 id="mount-volume-using-sshfs">Mount volume using SSHFS&lt;/h2>
+&lt;p>&lt;code>sshfs -o allow_root USER@TARGET_HOST:TARGET_PATH SOURCE_PATH&lt;/code>&lt;/p>
+&lt;h2 id="not-enough-free-space">Not enough free space&lt;/h2>
+&lt;p>For Windows&lt;/p>
+&lt;p>&lt;a href="https://yjmantilla.github.io/tutorials/wsl2-move-vhdx.html">https://yjmantilla.github.io/tutorials/wsl2-move-vhdx.html&lt;/a>&lt;/p></description></item><item><title>Docs: Tested</title><link>https://neurodesk.github.io/docs/advanced/tested/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/advanced/tested/</guid><description>
 &lt;p>Please test and add if working :)&lt;/p>
 &lt;table>
 &lt;thead>
@@ -584,7 +522,12 @@ Here are two examples for FreeSurfer and FreeView. This first one only installs 
 &lt;td>Oren&lt;/td>
 &lt;/tr>
 &lt;/tbody>
-&lt;/table></description></item><item><title>Docs: Cloud</title><link>https://neurodesk.github.io/docs/getting-started/cloud/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/getting-started/cloud/</guid><description>
+&lt;/table>
+&lt;h1 id="run-neurodesk-vnm-for-free-on-cloud-providers">Run Neurodesk VNM for free on cloud providers&lt;/h1>
+&lt;ul>
+&lt;li>&lt;a href="https://mri.sbollmann.net/index.php/2020/12/08/run-neurodesk-on-oracle-cloud-free-tier">Oracle OCI&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://henryjburg.medium.com/neurodesk-running-on-azure-3e38c590a152">Microsoft Azure&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Docs: Cloud</title><link>https://neurodesk.github.io/docs/getting-started/cloud/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/getting-started/cloud/</guid><description>
 &lt;h2 id="minimum-system-requirements">Minimum System Requirements&lt;/h2>
 &lt;ol>
 &lt;li>At least 3GB free space for neuromachine base image&lt;/li>
