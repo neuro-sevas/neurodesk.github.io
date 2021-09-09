@@ -1,54 +1,53 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>NeuroDesk – Overview</title><link>https://neurodesk.github.io/docs/overview/</link><description>Recent content in Overview on NeuroDesk</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://neurodesk.github.io/docs/overview/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Neurodesktop</title><link>https://neurodesk.github.io/docs/overview/neurodesktop/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/overview/neurodesktop/</guid><description>
-&lt;h2 id="requirements">Requirements&lt;/h2>
+&lt;h2 id="minimum-system-requirements">Minimum System Requirements&lt;/h2>
 &lt;ol>
-&lt;li>Docker installed
-&lt;ul>
-&lt;li>Information on installing docker available &lt;a href="https://docs.docker.com/get-docker/">here&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>Atleast 3GB free space&lt;/li>
+&lt;li>Atleast 3GB free space for neuromachine base image&lt;/li>
+&lt;li>Docker requirements. Details found under &lt;a href="https://docs.docker.com/get-docker/">https://docs.docker.com/get-docker/&lt;/a>&lt;/li>
+&lt;li>(Windows Users) If installing docker using WSL, atleast 20GB space recommended for WSL with Ubuntu&lt;/li>
 &lt;/ol>
-&lt;p>(Windows Users) If installing docker using WSL, Recommend atleast 20GB space recommended for WSL with Ubuntu&lt;/p>
 &lt;h2 id="quickstart">Quickstart&lt;/h2>
 &lt;ol>
 &lt;li>
-&lt;p>Install Docker from here: &lt;a href="https://docs.docker.com/get-docker">https://docs.docker.com/get-docker&lt;/a> (Mac, Windows, Linux; for HPC/supercomputer)&lt;/p>
+&lt;p>Install Docker from here: &lt;a href="https://docs.docker.com/get-docker/">https://docs.docker.com/get-docker/&lt;/a> (Mac, Windows, Linux; for HPC/supercomputer: &lt;a href="https://github.com/NeuroDesk/neurodesk">https://github.com/NeuroDesk/neurodesk&lt;/a>)&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Create a local folder where the downloaded applications will be stored, e.g. ~/vnm in Mac and Linux, or C:\vnm in Windows&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>Open a terminal, and type the folowing command to automatically download the VNM container and run it (Mac, Windows, Linux commands listed below)&lt;/p>
+&lt;p>Open a terminal, and type the folowing command to automatically download the neuromachine container and run it (Mac, Windows, Linux commands listed below)&lt;/p>
 &lt;/li>
 &lt;/ol>
 &lt;ul>
 &lt;li>Mac:&lt;/li>
 &lt;/ul>
-&lt;pre tabindex="0">&lt;code>docker run --privileged --name vnm -v ~/vnm:/vnm -e USER=neuro -p 6080:80 vnmd/vnm:20210523
+&lt;pre tabindex="0">&lt;code>docker run --shm-size=1gb -it --privileged --name neuromachine -v ~/vnm:/vnm -e USER=user -p 8080:8080 vnmd/neuromachine:latest
 &lt;/code>&lt;/pre>&lt;p>(notice: There is a bug in docker 3.3.0 for Mac that makes this command not run correctly and there will be no application menu when you start the desktop. Update your docker version when you see this!)&lt;/p>
 &lt;ul>
 &lt;li>Windows:&lt;/li>
 &lt;/ul>
-&lt;pre tabindex="0">&lt;code>docker run --privileged --name vnm -v C:/vnm:/vnm -e USER=neuro -p 6080:80 vnmd/vnm:20210523
+&lt;pre tabindex="0">&lt;code>docker run --shm-size=1gb -it --privileged --name neuromachine -v C:/vnm:/vnm -e USER=user -p 8080:8080 vnmd/neuromachine:latest
 &lt;/code>&lt;/pre>&lt;ul>
 &lt;li>Linux:&lt;/li>
 &lt;/ul>
-&lt;pre tabindex="0">&lt;code>sudo docker run --privileged --name vnm -v ~/vnm:/vnm -v /dev/shm:/dev/shm -e USER=neuro -p 6080:80 vnmd/vnm:20210523
-&lt;/code>&lt;/pre>&lt;p>(notice: if you get errors in VNM then check if the ~/vnm directory is writable to all users, otherwise run &lt;code>chmod a+rwx ~/vnm&lt;/code>)&lt;/p>
+&lt;pre tabindex="0">&lt;code>sudo docker run --shm-size=1gb -it --privileged --name neuromachine -v ~/vnm:/vnm -e USER=user -p 8080:8080 vnmd/neuromachine:latest
+&lt;/code>&lt;/pre>&lt;p>(notice: if you get errors in neuromachine then check if the ~/vnm directory is writable to all users, otherwise run &lt;code>chmod a+rwx ~/vnm&lt;/code>)&lt;/p>
 &lt;ol start="4">
-&lt;li>Once VNM is downloaded i.e. &amp;ldquo;INFO success: novnc entered RUNNING state&amp;rdquo; is displayed in terminal, open a browser and go to:&lt;/li>
+&lt;li>Once neuromachine is downloaded i.e. &lt;code>guacd[77]: INFO: Listening on host 127.0.0.1, port 4822&lt;/code> is displayed in terminal, open a browser and go to:&lt;/li>
 &lt;/ol>
-&lt;pre tabindex="0">&lt;code>http://localhost:6080
-&lt;/code>&lt;/pre>&lt;p>or open a VNC Client and connect to port 5900 (for this -p 5900:5900 has to be added to the docker call)&lt;/p>
+&lt;pre tabindex="0">&lt;code>http://localhost:8080/#/?username=user&amp;amp;password=password
+&lt;/code>&lt;/pre>&lt;p>or open a VNC Client and connect to port 5901 (for this -p 5901:5901 has to be added to the docker call)&lt;/p>
 &lt;ol start="5">
-&lt;li>VNM is ready to use!&lt;/li>
+&lt;li>neuromachine is ready to use!&lt;/li>
 &lt;/ol>
-&lt;p>(The sudo default sudo password is &amp;ldquo;ubuntu&amp;rdquo;)&lt;/p>
-&lt;h2 id="stopping-vnm">Stopping VNM:&lt;/h2>
-&lt;p>When done processing your data it is important to stop and remove the container - otherwise the next start or container update will give an error (&amp;quot;&amp;hellip; The container name &amp;ldquo;/vnm&amp;rdquo; is already in use&amp;hellip;&amp;quot;)&lt;/p>
+&lt;ul>
+&lt;li>User is &lt;code>user&lt;/code>&lt;/li>
+&lt;li>Password is &lt;code>password&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;h2 id="stopping-neuromachine">Stopping neuromachine:&lt;/h2>
+&lt;p>When done processing your data it is important to stop and remove the container - otherwise the next start or container update will give an error (&amp;quot;&amp;hellip; The container name &amp;ldquo;/neuromachine&amp;rdquo; is already in use&amp;hellip;&amp;quot;)&lt;/p>
 &lt;ol>
 &lt;li>
-&lt;p>Click on the terminal from which you ran VNM&lt;/p>
+&lt;p>Click on the terminal from which you ran neuromachine&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Press control-C&lt;/p>
@@ -57,52 +56,12 @@
 &lt;p>Type:&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;pre tabindex="0">&lt;code>docker stop vnm
+&lt;pre tabindex="0">&lt;code>docker stop neuromachine
 &lt;/code>&lt;/pre>&lt;ol start="4">
 &lt;li>Type:&lt;/li>
 &lt;/ol>
-&lt;pre tabindex="0">&lt;code>docker rm vnm
-&lt;/code>&lt;/pre>&lt;h2 id="how-to-launchdownload-applications">How to launch/download applications&lt;/h2>
-&lt;p>Click on the Launcher icon in bottom-left corner and navigate to the &amp;ldquo;VNM Neuroimaging&amp;rdquo; menu, then select the application and version you wish to launch. If it is the first time you launch the application, it will be downloaded to your desktop environment. The application is ready to use when the &amp;ldquo;Singularity&amp;gt;&amp;rdquo; propmpt appears in the terminal window that opens. If you chose in the menu the GUI of the application (e.g., fsleyesGUI 6.0.3), it will open automatically. If you chose tha application itself (e.g., fsl 6.0.3), a terminal window will open, and you can use it to run any of the utilities packaged with the application, including the grphical utilities (e.g., typing &amp;ldquo;fsl&amp;rdquo; to run FSL&amp;rsquo;s main menu).&lt;/p>
-&lt;p>Alternatively one can download an application from the command line, e.g.:&lt;/p>
-&lt;pre tabindex="0">&lt;code>bash /neurodesk/local/fetch_and_run.sh fsl 6.0.3 20200905
-&lt;/code>&lt;/pre>&lt;p>(Notice: last argument is to be taken from &lt;a href="https://github.com/NeuroDesk/neurodesk/blob/master/neurodesk/apps.json">https://github.com/NeuroDesk/neurodesk/blob/master/neurodesk/apps.json&lt;/a>)&lt;/p>
-&lt;h2 id="where-are-my-files">Where are my files?&lt;/h2>
-&lt;p>The &lt;code>-v C:/vnm:/vnm&lt;/code> part of the docker command links the directory &amp;ldquo;vnm&amp;rdquo; on the &amp;ldquo;C drive&amp;rdquo; of your Windows computer to the directory /vnm inside the VNM. Everything you store in there will be available inside VNM and on the host computer. You can also mount additional directories by adding another -v parameter set (e.g. &lt;code>-v D:/moredata:/data&lt;/code>) - this will mount the directory moredata from your D drive to /data inside VNM.&lt;/p>
-&lt;h2 id="applications">Applications&lt;/h2>
-&lt;h3 id="list-of-available-software-in-the-desktop-no-need-to-download-already-included-in-main-container">List of available software in the Desktop (no need to download! already included in main container)&lt;/h3>
-&lt;ul>
-&lt;li>Git 2.25.1 (version control)&lt;/li>
-&lt;li>Lmod 6.6 (for handling different versions of software)&lt;/li>
-&lt;li>Nipype 1.5.0 (workflow system for neuro-imaging)&lt;/li>
-&lt;li>Python 3.8.2 (programming language)&lt;/li>
-&lt;li>Rsync 3.1.3 (synchronization of data)&lt;/li>
-&lt;li>Singularity 3.7.0 (container runtime)&lt;/li>
-&lt;li>Visual Studio Code 1.46.1 (code editor and development environment)&lt;/li>
-&lt;/ul>
-&lt;h3 id="list-of-all-available-images">List of all available images:&lt;/h3>
-&lt;p>&lt;a href="https://github.com/NeuroDesk/caid/packages">https://github.com/NeuroDesk/caid/packages&lt;/a>&lt;/p>
-&lt;h3 id="list-of-all-tested-images-available-in-neurodesk">List of all tested images available in neurodesk:&lt;/h3>
-&lt;p>&lt;a href="https://github.com/NeuroDesk/neurodesk/blob/master/neurodesk/apps.json">https://github.com/NeuroDesk/neurodesk/blob/master/neurodesk/apps.json&lt;/a>&lt;/p>
-&lt;pre tabindex="0">&lt;code>curl -s https://raw.githubusercontent.com/NeuroDesk/neurodesk/master/neurodesk/apps.json
-&lt;/code>&lt;/pre>&lt;h3 id="how-to-use-applications-from-the-command-line">How to use applications from the command line&lt;/h3>
-&lt;ol>
-&lt;li>Open a terminal window (there is a terminal icon in the task bar)&lt;/li>
-&lt;li>Examine the list of downloaded applications that shows up in the terminal window. If the desired application is not there, follow the instructions under &amp;ldquo;How to launch/download applications&amp;rdquo; above (&lt;a href="https://github.com/NeuroDesk/vnm/blob/master/README.md#how-to-launchdownload-applications">https://github.com/NeuroDesk/vnm/blob/master/README.md#how-to-launchdownload-applications&lt;/a>)&lt;/li>
-&lt;li>Use the &amp;lsquo;module&amp;rsquo; command, giving the desired downloaded application as an argument, e.g.&lt;/li>
-&lt;/ol>
-&lt;pre tabindex="0">&lt;code>module load fsl_6.0.3
-&lt;/code>&lt;/pre>&lt;ol start="4">
-&lt;li>Call the utility included in the application as you would do if it was installed on your desktop, e.g.&lt;/li>
-&lt;/ol>
-&lt;pre tabindex="0">&lt;code>fsleyes
-&lt;/code>&lt;/pre>&lt;h2 id="desktop-interface">Desktop interface&lt;/h2>
-&lt;ul>
-&lt;li>window tiling is set to: SHIFT-ALT-CTRL-{left,right,up,down}&lt;/li>
-&lt;li>There are two workspaces available. To shift between them, click on the miniature image of the desired workspace, just right of the icons displayed on the far left of the task bar.&lt;/li>
-&lt;/ul>
-&lt;h2 id="advanced-usage">Advanced usage&lt;/h2>
-&lt;p>For advanced VNM and Neurodesk installer usage, check &lt;a href="https://neurodesk.github.io/docs/advanced">here&lt;/a>&lt;/p></description></item><item><title>Docs: Neurocommand</title><link>https://neurodesk.github.io/docs/overview/neurocommand/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/overview/neurocommand/</guid><description>
+&lt;pre tabindex="0">&lt;code>docker rm neuromachine
+&lt;/code>&lt;/pre></description></item><item><title>Docs: Neurocommand</title><link>https://neurodesk.github.io/docs/overview/neurocommand/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/overview/neurocommand/</guid><description>
 &lt;p>&lt;em>For running Neurodesk in a Docker container, refer to &lt;a href="https://neurodesk.github.io/docs/vnm">https://github.com/NeuroDesk/vnm&lt;/a>&lt;/em>&lt;/p>
 &lt;p>Requires a Linux host machine, virtual machine or WSL for Windows.&lt;/p>
 &lt;h2 id="linux">Linux&lt;/h2>

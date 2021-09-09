@@ -93,6 +93,10 @@ This the multi-page printable view of this section.
 <li>4: <a href=#pg-23695faee9f53cc21616fd61b8186a04>Architecture</a></li>
 <ul>
 </ul>
+<li>5: <a href=#pg-39f3813de34ce5cae320697c88e2a917>Development</a></li>
+<ul>
+<li>5.1: <a href=#pg-3bc9651a1f88ea38dc9bb52f922f0420>Example Page</a></li>
+</ul>
 </ul>
 <div class=content>
 <h1 id=neurodesktop>Neurodesktop</h1>
@@ -150,57 +154,56 @@ Electrophysiology Data Analytics PlaTform (AEDAPT)”.</p>
 </div>
 <div class=td-content style=page-break-before:always>
 <h1 id=pg-96642315191ffc4a5c36e39084e4300e>1.1 - Neurodesktop</h1>
-<div class=lead>Here&rsquo;s where your user finds out if your project is for them.</div>
-<h2 id=requirements>Requirements</h2>
+<div class=lead>A compact Docker container with a browser-accessible environment for reproducible neuroimaging analysis. Only the required applications, already pre-installed, are downloaded from a public library (downloaded as containers).</div>
+<h2 id=minimum-system-requirements>Minimum System Requirements</h2>
 <ol>
-<li>Docker installed
-<ul>
-<li>Information on installing docker available <a href=https://docs.docker.com/get-docker/>here</a></li>
-</ul>
-</li>
-<li>Atleast 3GB free space</li>
+<li>Atleast 3GB free space for neuromachine base image</li>
+<li>Docker requirements. Details found under <a href=https://docs.docker.com/get-docker/>https://docs.docker.com/get-docker/</a></li>
+<li>(Windows Users) If installing docker using WSL, atleast 20GB space recommended for WSL with Ubuntu</li>
 </ol>
-<p>(Windows Users) If installing docker using WSL, Recommend atleast 20GB space recommended for WSL with Ubuntu</p>
 <h2 id=quickstart>Quickstart</h2>
 <ol>
 <li>
-<p>Install Docker from here: <a href=https://docs.docker.com/get-docker>https://docs.docker.com/get-docker</a> (Mac, Windows, Linux; for HPC/supercomputer)</p>
+<p>Install Docker from here: <a href=https://docs.docker.com/get-docker/>https://docs.docker.com/get-docker/</a> (Mac, Windows, Linux; for HPC/supercomputer: <a href=https://github.com/NeuroDesk/neurodesk>https://github.com/NeuroDesk/neurodesk</a>)</p>
 </li>
 <li>
 <p>Create a local folder where the downloaded applications will be stored, e.g. ~/vnm in Mac and Linux, or C:\vnm in Windows</p>
 </li>
 <li>
-<p>Open a terminal, and type the folowing command to automatically download the VNM container and run it (Mac, Windows, Linux commands listed below)</p>
+<p>Open a terminal, and type the folowing command to automatically download the neuromachine container and run it (Mac, Windows, Linux commands listed below)</p>
 </li>
 </ol>
 <ul>
 <li>Mac:</li>
 </ul>
-<pre tabindex=0><code>docker run --privileged --name vnm -v ~/vnm:/vnm -e USER=neuro -p 6080:80 vnmd/vnm:20210523
+<pre tabindex=0><code>docker run --shm-size=1gb -it --privileged --name neuromachine -v ~/vnm:/vnm -e USER=user -p 8080:8080 vnmd/neuromachine:latest
 </code></pre><p>(notice: There is a bug in docker 3.3.0 for Mac that makes this command not run correctly and there will be no application menu when you start the desktop. Update your docker version when you see this!)</p>
 <ul>
 <li>Windows:</li>
 </ul>
-<pre tabindex=0><code>docker run --privileged --name vnm -v C:/vnm:/vnm -e USER=neuro -p 6080:80 vnmd/vnm:20210523
+<pre tabindex=0><code>docker run --shm-size=1gb -it --privileged --name neuromachine -v C:/vnm:/vnm -e USER=user -p 8080:8080 vnmd/neuromachine:latest
 </code></pre><ul>
 <li>Linux:</li>
 </ul>
-<pre tabindex=0><code>sudo docker run --privileged --name vnm -v ~/vnm:/vnm -v /dev/shm:/dev/shm -e USER=neuro -p 6080:80 vnmd/vnm:20210523
-</code></pre><p>(notice: if you get errors in VNM then check if the ~/vnm directory is writable to all users, otherwise run <code>chmod a+rwx ~/vnm</code>)</p>
+<pre tabindex=0><code>sudo docker run --shm-size=1gb -it --privileged --name neuromachine -v ~/vnm:/vnm -e USER=user -p 8080:8080 vnmd/neuromachine:latest
+</code></pre><p>(notice: if you get errors in neuromachine then check if the ~/vnm directory is writable to all users, otherwise run <code>chmod a+rwx ~/vnm</code>)</p>
 <ol start=4>
-<li>Once VNM is downloaded i.e. &ldquo;INFO success: novnc entered RUNNING state&rdquo; is displayed in terminal, open a browser and go to:</li>
+<li>Once neuromachine is downloaded i.e. <code>guacd[77]: INFO: Listening on host 127.0.0.1, port 4822</code> is displayed in terminal, open a browser and go to:</li>
 </ol>
-<pre tabindex=0><code>http://localhost:6080
-</code></pre><p>or open a VNC Client and connect to port 5900 (for this -p 5900:5900 has to be added to the docker call)</p>
+<pre tabindex=0><code>http://localhost:8080/#/?username=user&amp;password=password
+</code></pre><p>or open a VNC Client and connect to port 5901 (for this -p 5901:5901 has to be added to the docker call)</p>
 <ol start=5>
-<li>VNM is ready to use!</li>
+<li>neuromachine is ready to use!</li>
 </ol>
-<p>(The sudo default sudo password is &ldquo;ubuntu&rdquo;)</p>
-<h2 id=stopping-vnm>Stopping VNM:</h2>
-<p>When done processing your data it is important to stop and remove the container - otherwise the next start or container update will give an error ("&mldr; The container name &ldquo;/vnm&rdquo; is already in use&mldr;")</p>
+<ul>
+<li>User is <code>user</code></li>
+<li>Password is <code>password</code></li>
+</ul>
+<h2 id=stopping-neuromachine>Stopping neuromachine:</h2>
+<p>When done processing your data it is important to stop and remove the container - otherwise the next start or container update will give an error ("&mldr; The container name &ldquo;/neuromachine&rdquo; is already in use&mldr;")</p>
 <ol>
 <li>
-<p>Click on the terminal from which you ran VNM</p>
+<p>Click on the terminal from which you ran neuromachine</p>
 </li>
 <li>
 <p>Press control-C</p>
@@ -209,52 +212,12 @@ Electrophysiology Data Analytics PlaTform (AEDAPT)”.</p>
 <p>Type:</p>
 </li>
 </ol>
-<pre tabindex=0><code>docker stop vnm
+<pre tabindex=0><code>docker stop neuromachine
 </code></pre><ol start=4>
 <li>Type:</li>
 </ol>
-<pre tabindex=0><code>docker rm vnm
-</code></pre><h2 id=how-to-launchdownload-applications>How to launch/download applications</h2>
-<p>Click on the Launcher icon in bottom-left corner and navigate to the &ldquo;VNM Neuroimaging&rdquo; menu, then select the application and version you wish to launch. If it is the first time you launch the application, it will be downloaded to your desktop environment. The application is ready to use when the &ldquo;Singularity>&rdquo; propmpt appears in the terminal window that opens. If you chose in the menu the GUI of the application (e.g., fsleyesGUI 6.0.3), it will open automatically. If you chose tha application itself (e.g., fsl 6.0.3), a terminal window will open, and you can use it to run any of the utilities packaged with the application, including the grphical utilities (e.g., typing &ldquo;fsl&rdquo; to run FSL&rsquo;s main menu).</p>
-<p>Alternatively one can download an application from the command line, e.g.:</p>
-<pre tabindex=0><code>bash /neurodesk/local/fetch_and_run.sh fsl 6.0.3 20200905
-</code></pre><p>(Notice: last argument is to be taken from <a href=https://github.com/NeuroDesk/neurodesk/blob/master/neurodesk/apps.json>https://github.com/NeuroDesk/neurodesk/blob/master/neurodesk/apps.json</a>)</p>
-<h2 id=where-are-my-files>Where are my files?</h2>
-<p>The <code>-v C:/vnm:/vnm</code> part of the docker command links the directory &ldquo;vnm&rdquo; on the &ldquo;C drive&rdquo; of your Windows computer to the directory /vnm inside the VNM. Everything you store in there will be available inside VNM and on the host computer. You can also mount additional directories by adding another -v parameter set (e.g. <code>-v D:/moredata:/data</code>) - this will mount the directory moredata from your D drive to /data inside VNM.</p>
-<h2 id=applications>Applications</h2>
-<h3 id=list-of-available-software-in-the-desktop-no-need-to-download-already-included-in-main-container>List of available software in the Desktop (no need to download! already included in main container)</h3>
-<ul>
-<li>Git 2.25.1 (version control)</li>
-<li>Lmod 6.6 (for handling different versions of software)</li>
-<li>Nipype 1.5.0 (workflow system for neuro-imaging)</li>
-<li>Python 3.8.2 (programming language)</li>
-<li>Rsync 3.1.3 (synchronization of data)</li>
-<li>Singularity 3.7.0 (container runtime)</li>
-<li>Visual Studio Code 1.46.1 (code editor and development environment)</li>
-</ul>
-<h3 id=list-of-all-available-images>List of all available images:</h3>
-<p><a href=https://github.com/NeuroDesk/caid/packages>https://github.com/NeuroDesk/caid/packages</a></p>
-<h3 id=list-of-all-tested-images-available-in-neurodesk>List of all tested images available in neurodesk:</h3>
-<p><a href=https://github.com/NeuroDesk/neurodesk/blob/master/neurodesk/apps.json>https://github.com/NeuroDesk/neurodesk/blob/master/neurodesk/apps.json</a></p>
-<pre tabindex=0><code>curl -s https://raw.githubusercontent.com/NeuroDesk/neurodesk/master/neurodesk/apps.json
-</code></pre><h3 id=how-to-use-applications-from-the-command-line>How to use applications from the command line</h3>
-<ol>
-<li>Open a terminal window (there is a terminal icon in the task bar)</li>
-<li>Examine the list of downloaded applications that shows up in the terminal window. If the desired application is not there, follow the instructions under &ldquo;How to launch/download applications&rdquo; above (<a href=https://github.com/NeuroDesk/vnm/blob/master/README.md#how-to-launchdownload-applications>https://github.com/NeuroDesk/vnm/blob/master/README.md#how-to-launchdownload-applications</a>)</li>
-<li>Use the &lsquo;module&rsquo; command, giving the desired downloaded application as an argument, e.g.</li>
-</ol>
-<pre tabindex=0><code>module load fsl_6.0.3
-</code></pre><ol start=4>
-<li>Call the utility included in the application as you would do if it was installed on your desktop, e.g.</li>
-</ol>
-<pre tabindex=0><code>fsleyes
-</code></pre><h2 id=desktop-interface>Desktop interface</h2>
-<ul>
-<li>window tiling is set to: SHIFT-ALT-CTRL-{left,right,up,down}</li>
-<li>There are two workspaces available. To shift between them, click on the miniature image of the desired workspace, just right of the icons displayed on the far left of the task bar.</li>
-</ul>
-<h2 id=advanced-usage>Advanced usage</h2>
-<p>For advanced VNM and Neurodesk installer usage, check <a href=https://neurodesk.github.io/docs/advanced>here</a></p>
+<pre tabindex=0><code>docker rm neuromachine
+</code></pre>
 </div>
 <div class=td-content style=page-break-before:always>
 <h1 id=pg-f0e1e8a629109e724a10db094b88e004>1.2 - Neurocommand</h1>
@@ -772,6 +735,281 @@ Here are two examples for FreeSurfer and FreeView. This first one only installs 
 <li>we are providing pull requests back of recipes</li>
 <li>CI: handled by <a href=https://github.com/ReproNim/neurodocker>neurodocker</a> - testing of generating container recipes</li>
 </ul>
+</div>
+<div class=td-content style=page-break-before:always>
+<h1 id=pg-39f3813de34ce5cae320697c88e2a917>5 - Development</h1>
+<div class=lead>Developer guide</div>
+<p>See Example Page below for Hugo-Docsy page template</p>
+</div>
+<div class=td-content>
+<h1 id=pg-3bc9651a1f88ea38dc9bb52f922f0420>5.1 - Example Page</h1>
+<div class=lead>A short lead description about this content page. It can be <strong>bold</strong> or <em>italic</em> and can be split over multiple paragraphs.</div>
+<div class="pageinfo pageinfo-primary">
+<p>This is a placeholder page. Replace it with your own content.</p>
+</div>
+<p>Text can be <strong>bold</strong>, <em>italic</em>, or <del>strikethrough</del>. <a href=https://gohugo.io>Links</a> should be blue with no underlines (unless hovered over).</p>
+<p>There should be whitespace between paragraphs. Vape migas chillwave sriracha poutine try-hard distillery. Tattooed shabby chic small batch, pabst art party heirloom letterpress air plant pop-up. Sustainable chia skateboard art party banjo cardigan normcore affogato vexillologist quinoa meggings man bun master cleanse shoreditch readymade. Yuccie prism four dollar toast tbh cardigan iPhone, tumblr listicle live-edge VHS. Pug lyft normcore hot chicken biodiesel, actually keffiyeh thundercats photo booth pour-over twee fam food truck microdosing banh mi. Vice activated charcoal raclette unicorn live-edge post-ironic. Heirloom vexillologist coloring book, beard deep v letterpress echo park humblebrag tilde.</p>
+<p>90&rsquo;s four loko seitan photo booth gochujang freegan tumeric listicle fam ugh humblebrag. Bespoke leggings gastropub, biodiesel brunch pug fashion axe meh swag art party neutra deep v chia. Enamel pin fanny pack knausgaard tofu, artisan cronut hammock meditation occupy master cleanse chartreuse lumbersexual. Kombucha kogi viral truffaut synth distillery single-origin coffee ugh slow-carb marfa selfies. Pitchfork schlitz semiotics fanny pack, ugh artisan vegan vaporware hexagon. Polaroid fixie post-ironic venmo wolf ramps <strong>kale chips</strong>.</p>
+<blockquote>
+<p>There should be no margin above this first sentence.</p>
+<p>Blockquotes should be a lighter gray with a border along the left side in the secondary color.</p>
+<p>There should be no margin below this final sentence.</p>
+</blockquote>
+<h2 id=first-header-2>First Header 2</h2>
+<p>This is a normal paragraph following a header. Knausgaard kale chips snackwave microdosing cronut copper mug swag synth bitters letterpress glossier <strong>craft beer</strong>. Mumblecore bushwick authentic gochujang vegan chambray meditation jean shorts irony. Viral farm-to-table kale chips, pork belly palo santo distillery activated charcoal aesthetic jianbing air plant woke lomo VHS organic. Tattooed locavore succulents heirloom, small batch sriracha echo park DIY af. Shaman you probably haven&rsquo;t heard of them copper mug, crucifix green juice vape <em>single-origin coffee</em> brunch actually. Mustache etsy vexillologist raclette authentic fam. Tousled beard humblebrag asymmetrical. I love turkey, I love my job, I love my friends, I love Chardonnay!</p>
+<p>Deae legum paulatimque terra, non vos mutata tacet: dic. Vocant docuique me plumas fila quin afuerunt copia haec o neque.</p>
+<p>On big screens, paragraphs and headings should not take up the full container width, but we want tables, code blocks and similar to take the full width.</p>
+<p>Scenester tumeric pickled, authentic crucifix post-ironic fam freegan VHS pork belly 8-bit yuccie PBR&B. <strong>I love this life we live in</strong>.</p>
+<h2 id=second-header-2>Second Header 2</h2>
+<blockquote>
+<p>This is a blockquote following a header. Bacon ipsum dolor sit amet t-bone doner shank drumstick, pork belly porchetta chuck sausage brisket ham hock rump pig. Chuck kielbasa leberkas, pork bresaola ham hock filet mignon cow shoulder short ribs biltong.</p>
+</blockquote>
+<h3 id=header-3>Header 3</h3>
+<pre tabindex=0><code>This is a code block following a header.
+</code></pre><p>Next level leggings before they sold out, PBR&B church-key shaman echo park. Kale chips occupy godard whatever pop-up freegan pork belly selfies. Gastropub Belinda subway tile woke post-ironic seitan. Shabby chic man bun semiotics vape, chia messenger bag plaid cardigan.</p>
+<h4 id=header-4>Header 4</h4>
+<ul>
+<li>This is an unordered list following a header.</li>
+<li>This is an unordered list following a header.</li>
+<li>This is an unordered list following a header.</li>
+</ul>
+<h5 id=header-5>Header 5</h5>
+<ol>
+<li>This is an ordered list following a header.</li>
+<li>This is an ordered list following a header.</li>
+<li>This is an ordered list following a header.</li>
+</ol>
+<h6 id=header-6>Header 6</h6>
+<table>
+<thead>
+<tr>
+<th>What</th>
+<th>Follows</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A table</td>
+<td>A header</td>
+</tr>
+<tr>
+<td>A table</td>
+<td>A header</td>
+</tr>
+<tr>
+<td>A table</td>
+<td>A header</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p>There&rsquo;s a horizontal rule above and below this.</p>
+<hr>
+<p>Here is an unordered list:</p>
+<ul>
+<li>Liverpool F.C.</li>
+<li>Chelsea F.C.</li>
+<li>Manchester United F.C.</li>
+</ul>
+<p>And an ordered list:</p>
+<ol>
+<li>Michael Brecker</li>
+<li>Seamus Blake</li>
+<li>Branford Marsalis</li>
+</ol>
+<p>And an unordered task list:</p>
+<ul>
+<li><input checked disabled type=checkbox> Create a Hugo theme</li>
+<li><input checked disabled type=checkbox> Add task lists to it</li>
+<li><input disabled type=checkbox> Take a vacation</li>
+</ul>
+<p>And a &ldquo;mixed&rdquo; task list:</p>
+<ul>
+<li><input disabled type=checkbox> Pack bags</li>
+<li>?</li>
+<li><input disabled type=checkbox> Travel!</li>
+</ul>
+<p>And a nested list:</p>
+<ul>
+<li>Jackson 5
+<ul>
+<li>Michael</li>
+<li>Tito</li>
+<li>Jackie</li>
+<li>Marlon</li>
+<li>Jermaine</li>
+</ul>
+</li>
+<li>TMNT
+<ul>
+<li>Leonardo</li>
+<li>Michelangelo</li>
+<li>Donatello</li>
+<li>Raphael</li>
+</ul>
+</li>
+</ul>
+<p>Definition lists can be used with Markdown syntax. Definition headers are bold.</p>
+<dl>
+<dt>Name</dt>
+<dd>Godzilla</dd>
+<dt>Born</dt>
+<dd>1952</dd>
+<dt>Birthplace</dt>
+<dd>Japan</dd>
+<dt>Color</dt>
+<dd>Green</dd>
+</dl>
+<hr>
+<p>Tables should have bold headings and alternating shaded rows.</p>
+<table>
+<thead>
+<tr>
+<th>Artist</th>
+<th>Album</th>
+<th>Year</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Michael Jackson</td>
+<td>Thriller</td>
+<td>1982</td>
+</tr>
+<tr>
+<td>Prince</td>
+<td>Purple Rain</td>
+<td>1984</td>
+</tr>
+<tr>
+<td>Beastie Boys</td>
+<td>License to Ill</td>
+<td>1986</td>
+</tr>
+</tbody>
+</table>
+<p>If a table is too wide, it should scroll horizontally.</p>
+<table>
+<thead>
+<tr>
+<th>Artist</th>
+<th>Album</th>
+<th>Year</th>
+<th>Label</th>
+<th>Awards</th>
+<th>Songs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Michael Jackson</td>
+<td>Thriller</td>
+<td>1982</td>
+<td>Epic Records</td>
+<td>Grammy Award for Album of the Year, American Music Award for Favorite Pop/Rock Album, American Music Award for Favorite Soul/R&B Album, Brit Award for Best Selling Album, Grammy Award for Best Engineered Album, Non-Classical</td>
+<td>Wanna Be Startin' Somethin', Baby Be Mine, The Girl Is Mine, Thriller, Beat It, Billie Jean, Human Nature, P.Y.T. (Pretty Young Thing), The Lady in My Life</td>
+</tr>
+<tr>
+<td>Prince</td>
+<td>Purple Rain</td>
+<td>1984</td>
+<td>Warner Brothers Records</td>
+<td>Grammy Award for Best Score Soundtrack for Visual Media, American Music Award for Favorite Pop/Rock Album, American Music Award for Favorite Soul/R&B Album, Brit Award for Best Soundtrack/Cast Recording, Grammy Award for Best Rock Performance by a Duo or Group with Vocal</td>
+<td>Let&rsquo;s Go Crazy, Take Me With U, The Beautiful Ones, Computer Blue, Darling Nikki, When Doves Cry, I Would Die 4 U, Baby I&rsquo;m a Star, Purple Rain</td>
+</tr>
+<tr>
+<td>Beastie Boys</td>
+<td>License to Ill</td>
+<td>1986</td>
+<td>Mercury Records</td>
+<td>noawardsbutthistablecelliswide</td>
+<td>Rhymin & Stealin, The New Style, She&rsquo;s Crafty, Posse in Effect, Slow Ride, Girls, (You Gotta) Fight for Your Right, No Sleep Till Brooklyn, Paul Revere, Hold It Now, Hit It, Brass Monkey, Slow and Low, Time to Get Ill</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p>Code snippets like <code>var foo = "bar";</code> can be shown inline.</p>
+<p>Also, <code>this should vertically align</code> <del><code>with this</code></del> <del>and this</del>.</p>
+<p>Code can also be shown in a block element.</p>
+<pre tabindex=0><code>foo := &quot;bar&quot;;
+bar := &quot;foo&quot;;
+</code></pre><p>Code can also use syntax highlighting.</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=color:#204a87;font-weight:700>func</span> <span style=color:#000>main</span><span style=color:#000;font-weight:700>()</span> <span style=color:#000;font-weight:700>{</span>
+  <span style=color:#000>input</span> <span style=color:#ce5c00;font-weight:700>:=</span> <span style=color:#4e9a06>`var foo = &#34;bar&#34;;`</span>
+
+  <span style=color:#000>lexer</span> <span style=color:#ce5c00;font-weight:700>:=</span> <span style=color:#000>lexers</span><span style=color:#000;font-weight:700>.</span><span style=color:#000>Get</span><span style=color:#000;font-weight:700>(</span><span style=color:#4e9a06>&#34;javascript&#34;</span><span style=color:#000;font-weight:700>)</span>
+  <span style=color:#000>iterator</span><span style=color:#000;font-weight:700>,</span> <span style=color:#000>_</span> <span style=color:#ce5c00;font-weight:700>:=</span> <span style=color:#000>lexer</span><span style=color:#000;font-weight:700>.</span><span style=color:#000>Tokenise</span><span style=color:#000;font-weight:700>(</span><span style=color:#204a87;font-weight:700>nil</span><span style=color:#000;font-weight:700>,</span> <span style=color:#000>input</span><span style=color:#000;font-weight:700>)</span>
+  <span style=color:#000>style</span> <span style=color:#ce5c00;font-weight:700>:=</span> <span style=color:#000>styles</span><span style=color:#000;font-weight:700>.</span><span style=color:#000>Get</span><span style=color:#000;font-weight:700>(</span><span style=color:#4e9a06>&#34;github&#34;</span><span style=color:#000;font-weight:700>)</span>
+  <span style=color:#000>formatter</span> <span style=color:#ce5c00;font-weight:700>:=</span> <span style=color:#000>html</span><span style=color:#000;font-weight:700>.</span><span style=color:#000>New</span><span style=color:#000;font-weight:700>(</span><span style=color:#000>html</span><span style=color:#000;font-weight:700>.</span><span style=color:#000>WithLineNumbers</span><span style=color:#000;font-weight:700>())</span>
+
+  <span style=color:#204a87;font-weight:700>var</span> <span style=color:#000>buff</span> <span style=color:#000>bytes</span><span style=color:#000;font-weight:700>.</span><span style=color:#000>Buffer</span>
+  <span style=color:#000>formatter</span><span style=color:#000;font-weight:700>.</span><span style=color:#000>Format</span><span style=color:#000;font-weight:700>(</span><span style=color:#ce5c00;font-weight:700>&amp;</span><span style=color:#000>buff</span><span style=color:#000;font-weight:700>,</span> <span style=color:#000>style</span><span style=color:#000;font-weight:700>,</span> <span style=color:#000>iterator</span><span style=color:#000;font-weight:700>)</span>
+
+  <span style=color:#000>fmt</span><span style=color:#000;font-weight:700>.</span><span style=color:#000>Println</span><span style=color:#000;font-weight:700>(</span><span style=color:#000>buff</span><span style=color:#000;font-weight:700>.</span><span style=color:#000>String</span><span style=color:#000;font-weight:700>())</span>
+<span style=color:#000;font-weight:700>}</span>
+</code></pre></div><pre tabindex=0><code>Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
+</code></pre><p>Inline code inside table cells should still be distinguishable.</p>
+<table>
+<thead>
+<tr>
+<th>Language</th>
+<th>Code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Javascript</td>
+<td><code>var foo = "bar";</code></td>
+</tr>
+<tr>
+<td>Ruby</td>
+<td><code>foo = "bar"{</code></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p>Small images should be shown at their actual size.</p>
+<p><img src=https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Picea_abies_shoot_with_buds%2C_Sogndal%2C_Norway.jpg/240px-Picea_abies_shoot_with_buds%2C_Sogndal%2C_Norway.jpg alt></p>
+<p>Large images should always scale down and fit in the content container.</p>
+<p><img src=https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Picea_abies_shoot_with_buds%2C_Sogndal%2C_Norway.jpg/1024px-Picea_abies_shoot_with_buds%2C_Sogndal%2C_Norway.jpg alt></p>
+<p><em>The photo above of the Spruce Picea abies shoot with foliage buds: Bjørn Erik Pedersen, CC-BY-SA.</em></p>
+<h2 id=components>Components</h2>
+<h3 id=alerts>Alerts</h3>
+<p>
+<div class="alert alert-primary" role=alert>
+This is an alert.
+</div>
+<div class="alert alert-primary" role=alert>
+<h4 class=alert-heading>Note</h4>
+This is an alert with a title.
+</div>
+<div class="alert alert-primary" role=alert>
+<h4 class=alert-heading>Note</h4>
+This is an alert with a title and <strong>Markdown</strong>.
+</div>
+<div class="alert alert-success" role=alert>
+This is a successful alert.
+</div>
+<div class="alert alert-warning" role=alert>
+This is a warning.
+</div>
+<div class="alert alert-warning" role=alert>
+<h4 class=alert-heading>Warning</h4>
+This is a warning with a title.
+</div>
+</p>
+<h2 id=another-heading>Another Heading</h2>
+<p>Add some sections here to see how the ToC looks like. Bacon ipsum dolor sit amet t-bone doner shank drumstick, pork belly porchetta chuck sausage brisket ham hock rump pig. Chuck kielbasa leberkas, pork bresaola ham hock filet mignon cow shoulder short ribs biltong.</p>
+<h3 id=this-document>This Document</h3>
+<p>Inguina genus: Anaphen post: lingua violente voce suae meus aetate diversi. Orbis unam nec flammaeque status deam Silenum erat et a ferrea. Excitus rigidum ait: vestro et Herculis convicia: nitidae deseruit coniuge Proteaque adiciam <em>eripitur</em>? Sitim noceat signa <em>probat quidem</em>. Sua longis <em>fugatis</em> quidem genae.</p>
+<h3 id=pixel-count>Pixel Count</h3>
+<p>Tilde photo booth wayfarers cliche lomo intelligentsia man braid kombucha vaporware farm-to-table mixtape portland. PBR&B pickled cornhole ugh try-hard ethical subway tile. Fixie paleo intelligentsia pabst. Ennui waistcoat vinyl gochujang. Poutine salvia authentic affogato, chambray lumbersexual shabby chic.</p>
+<h3 id=contact-info>Contact Info</h3>
+<p>Plaid hell of cred microdosing, succulents tilde pour-over. Offal shabby chic 3 wolf moon blue bottle raw denim normcore poutine pork belly.</p>
+<h3 id=external-links>External Links</h3>
+<p>Stumptown PBR&B keytar plaid street art, forage XOXO pitchfork selvage affogato green juice listicle pickled everyday carry hashtag. Organic sustainable letterpress sartorial scenester intelligentsia swag bushwick. Put a bird on it stumptown neutra locavore. IPhone typewriter messenger bag narwhal. Ennui cold-pressed seitan flannel keytar, single-origin coffee adaptogen occupy yuccie williamsburg chillwave shoreditch forage waistcoat.</p>
+<pre tabindex=0><code>This is the final element on the page and there should be no margin below this.
+</code></pre>
 </div>
 </main>
 </div>
