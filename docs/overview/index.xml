@@ -1,7 +1,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>NeuroDesk – Overview</title><link>https://neurodesk.github.io/docs/overview/</link><description>Recent content in Overview on NeuroDesk</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://neurodesk.github.io/docs/overview/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Neurodesktop</title><link>https://neurodesk.github.io/docs/overview/neurodesktop/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/overview/neurodesktop/</guid><description>
 &lt;h2 id="minimum-system-requirements">Minimum System Requirements&lt;/h2>
 &lt;ol>
-&lt;li>Atleast 3GB free space for neuromachine base image&lt;/li>
+&lt;li>At least 3GB free space for neuromachine base image&lt;/li>
 &lt;li>Docker requirements. Details found under &lt;a href="https://docs.docker.com/get-docker/">https://docs.docker.com/get-docker/&lt;/a>&lt;/li>
 &lt;li>(Windows Users) If installing docker using WSL, atleast 20GB space recommended for WSL with Ubuntu&lt;/li>
 &lt;/ol>
@@ -11,7 +11,7 @@
 &lt;p>Install Docker from here: &lt;a href="https://docs.docker.com/get-docker/">https://docs.docker.com/get-docker/&lt;/a> (Mac, Windows, Linux; for HPC/supercomputer: &lt;a href="https://github.com/NeuroDesk/neurodesk">https://github.com/NeuroDesk/neurodesk&lt;/a>)&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>Create a local folder where the downloaded applications will be stored, e.g. ~/vnm in Mac and Linux, or C:\vnm in Windows&lt;/p>
+&lt;p>Create a local folder where the downloaded applications will be stored, e.g. ~/neurodesktop in Mac and Linux, or C:\neurodesktop in Windows&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Open a terminal, and type the folowing command to automatically download the neuromachine container and run it (Mac, Windows, Linux commands listed below)&lt;/p>
@@ -20,17 +20,17 @@
 &lt;ul>
 &lt;li>Mac:&lt;/li>
 &lt;/ul>
-&lt;pre tabindex="0">&lt;code>docker run --shm-size=1gb -it --privileged --name neuromachine -v ~/vnm:/vnm -e USER=user -p 8080:8080 vnmd/neuromachine:latest
+&lt;pre tabindex="0">&lt;code>docker run --shm-size=1gb -it --privileged --name neuromachine -v ~/neurodesktop:/neurodesktop -e USER=user -p 8080:8080 vnmd/neuromachine:latest
 &lt;/code>&lt;/pre>&lt;p>(notice: There is a bug in docker 3.3.0 for Mac that makes this command not run correctly and there will be no application menu when you start the desktop. Update your docker version when you see this!)&lt;/p>
 &lt;ul>
 &lt;li>Windows:&lt;/li>
 &lt;/ul>
-&lt;pre tabindex="0">&lt;code>docker run --shm-size=1gb -it --privileged --name neuromachine -v C:/vnm:/vnm -e USER=user -p 8080:8080 vnmd/neuromachine:latest
+&lt;pre tabindex="0">&lt;code>docker run --shm-size=1gb -it --privileged --name neuromachine -v C:/neurodesktop:/neurodesktop -e USER=user -p 8080:8080 vnmd/neuromachine:latest
 &lt;/code>&lt;/pre>&lt;ul>
 &lt;li>Linux:&lt;/li>
 &lt;/ul>
-&lt;pre tabindex="0">&lt;code>sudo docker run --shm-size=1gb -it --privileged --name neuromachine -v ~/vnm:/vnm -e USER=user -p 8080:8080 vnmd/neuromachine:latest
-&lt;/code>&lt;/pre>&lt;p>(notice: if you get errors in neuromachine then check if the ~/vnm directory is writable to all users, otherwise run &lt;code>chmod a+rwx ~/vnm&lt;/code>)&lt;/p>
+&lt;pre tabindex="0">&lt;code>sudo docker run --shm-size=1gb -it --privileged --name neuromachine -v ~/neurodesktop:/neurodesktop -e USER=user -p 8080:8080 vnmd/neuromachine:latest
+&lt;/code>&lt;/pre>&lt;p>(notice: if you get errors in neuromachine then check if the ~/neurodesktop directory is writable to all users, otherwise run &lt;code>chmod a+rwx ~/neurodesktop&lt;/code>)&lt;/p>
 &lt;ol start="4">
 &lt;li>Once neuromachine is downloaded i.e. &lt;code>guacd[77]: INFO: Listening on host 127.0.0.1, port 4822&lt;/code> is displayed in terminal, open a browser and go to:&lt;/li>
 &lt;/ol>
@@ -62,7 +62,7 @@
 &lt;/ol>
 &lt;pre tabindex="0">&lt;code>docker rm neuromachine
 &lt;/code>&lt;/pre></description></item><item><title>Docs: Neurocommand</title><link>https://neurodesk.github.io/docs/overview/neurocommand/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/overview/neurocommand/</guid><description>
-&lt;p>&lt;em>For running Neurodesk in a Docker container, refer to &lt;a href="https://neurodesk.github.io/docs/vnm">https://github.com/NeuroDesk/vnm&lt;/a>&lt;/em>&lt;/p>
+&lt;p>&lt;em>For running Neurodesk in a Docker container, refer to &lt;a href="https://neurodesk.github.io/docs/overview/neurodesktop/">https://neurodesk.github.io/docs/overview/neurodesktop/&lt;/a>&lt;/em>&lt;/p>
 &lt;p>Requires a Linux host machine, virtual machine or WSL for Windows.&lt;/p>
 &lt;h2 id="linux">Linux&lt;/h2>
 &lt;h3 id="requirements">Requirements:&lt;/h3>
@@ -137,5 +137,11 @@ Change &lt;code>port=3389&lt;/code> to &lt;code>port=3390&lt;/code> and save&lt;
 &lt;h2 id="advanced-usage">Advanced usage&lt;/h2>
 &lt;p>For advanced VNM and Neurodesk installer usage, check &lt;a href="https://neurodesk.github.io/docs/advanced">here&lt;/a>&lt;/p></description></item><item><title>Docs: Neurocontainers</title><link>https://neurodesk.github.io/docs/overview/neurocontainers/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/overview/neurocontainers/</guid><description>
 &lt;div class="pageinfo pageinfo-primary">
-&lt;p>This is a placeholder page.&lt;/p>
+&lt;p>Neurocontainers is our collection of neuro containers hosted on dockerhub (&lt;a href="https://hub.docker.com/orgs/vnmd/repositories">https://hub.docker.com/orgs/vnmd/repositories&lt;/a>) or github (&lt;a href="https://github.com/NeuroDesk/neurocontainers/packages">https://github.com/NeuroDesk/neurocontainers/packages&lt;/a>)&lt;/p>
+&lt;h1 id="pull-containers">pull containers&lt;/h1>
+&lt;p>docker&lt;/p>
+&lt;pre tabindex="0">&lt;code>docker pull vnmd/julia_1.6.1
+&lt;/code>&lt;/pre>&lt;p>build singularity image from dockerhub&lt;/p>
+&lt;pre tabindex="0">&lt;code>singularity build julia_1.6.1.simg docker://vnmd/julia_1.6.1
+&lt;/code>&lt;/pre>
 &lt;/div></description></item></channel></rss>

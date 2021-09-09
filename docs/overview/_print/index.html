@@ -111,7 +111,7 @@ This the multi-page printable view of this section.
 <div class=lead>A compact Docker container with a browser-accessible environment for reproducible neuroimaging analysis. Only the required applications, already pre-installed, are downloaded from a public library (downloaded as containers).</div>
 <h2 id=minimum-system-requirements>Minimum System Requirements</h2>
 <ol>
-<li>Atleast 3GB free space for neuromachine base image</li>
+<li>At least 3GB free space for neuromachine base image</li>
 <li>Docker requirements. Details found under <a href=https://docs.docker.com/get-docker/>https://docs.docker.com/get-docker/</a></li>
 <li>(Windows Users) If installing docker using WSL, atleast 20GB space recommended for WSL with Ubuntu</li>
 </ol>
@@ -121,7 +121,7 @@ This the multi-page printable view of this section.
 <p>Install Docker from here: <a href=https://docs.docker.com/get-docker/>https://docs.docker.com/get-docker/</a> (Mac, Windows, Linux; for HPC/supercomputer: <a href=https://github.com/NeuroDesk/neurodesk>https://github.com/NeuroDesk/neurodesk</a>)</p>
 </li>
 <li>
-<p>Create a local folder where the downloaded applications will be stored, e.g. ~/vnm in Mac and Linux, or C:\vnm in Windows</p>
+<p>Create a local folder where the downloaded applications will be stored, e.g. ~/neurodesktop in Mac and Linux, or C:\neurodesktop in Windows</p>
 </li>
 <li>
 <p>Open a terminal, and type the folowing command to automatically download the neuromachine container and run it (Mac, Windows, Linux commands listed below)</p>
@@ -130,17 +130,17 @@ This the multi-page printable view of this section.
 <ul>
 <li>Mac:</li>
 </ul>
-<pre tabindex=0><code>docker run --shm-size=1gb -it --privileged --name neuromachine -v ~/vnm:/vnm -e USER=user -p 8080:8080 vnmd/neuromachine:latest
+<pre tabindex=0><code>docker run --shm-size=1gb -it --privileged --name neuromachine -v ~/neurodesktop:/neurodesktop -e USER=user -p 8080:8080 vnmd/neuromachine:latest
 </code></pre><p>(notice: There is a bug in docker 3.3.0 for Mac that makes this command not run correctly and there will be no application menu when you start the desktop. Update your docker version when you see this!)</p>
 <ul>
 <li>Windows:</li>
 </ul>
-<pre tabindex=0><code>docker run --shm-size=1gb -it --privileged --name neuromachine -v C:/vnm:/vnm -e USER=user -p 8080:8080 vnmd/neuromachine:latest
+<pre tabindex=0><code>docker run --shm-size=1gb -it --privileged --name neuromachine -v C:/neurodesktop:/neurodesktop -e USER=user -p 8080:8080 vnmd/neuromachine:latest
 </code></pre><ul>
 <li>Linux:</li>
 </ul>
-<pre tabindex=0><code>sudo docker run --shm-size=1gb -it --privileged --name neuromachine -v ~/vnm:/vnm -e USER=user -p 8080:8080 vnmd/neuromachine:latest
-</code></pre><p>(notice: if you get errors in neuromachine then check if the ~/vnm directory is writable to all users, otherwise run <code>chmod a+rwx ~/vnm</code>)</p>
+<pre tabindex=0><code>sudo docker run --shm-size=1gb -it --privileged --name neuromachine -v ~/neurodesktop:/neurodesktop -e USER=user -p 8080:8080 vnmd/neuromachine:latest
+</code></pre><p>(notice: if you get errors in neuromachine then check if the ~/neurodesktop directory is writable to all users, otherwise run <code>chmod a+rwx ~/neurodesktop</code>)</p>
 <ol start=4>
 <li>Once neuromachine is downloaded i.e. <code>guacd[77]: INFO: Listening on host 127.0.0.1, port 4822</code> is displayed in terminal, open a browser and go to:</li>
 </ol>
@@ -176,7 +176,7 @@ This the multi-page printable view of this section.
 <div class=td-content style=page-break-before:always>
 <h1 id=pg-f0e1e8a629109e724a10db094b88e004>2 - Neurocommand</h1>
 <div class=lead>Here&rsquo;s where your user finds out if your project is for them.</div>
-<p><em>For running Neurodesk in a Docker container, refer to <a href=https://neurodesk.github.io/docs/vnm>https://github.com/NeuroDesk/vnm</a></em></p>
+<p><em>For running Neurodesk in a Docker container, refer to <a href=https://neurodesk.github.io/docs/overview/neurodesktop/>https://neurodesk.github.io/docs/overview/neurodesktop/</a></em></p>
 <p>Requires a Linux host machine, virtual machine or WSL for Windows.</p>
 <h2 id=linux>Linux</h2>
 <h3 id=requirements>Requirements:</h3>
@@ -255,7 +255,13 @@ Change <code>port=3389</code> to <code>port=3390</code> and save</li>
 <h1 id=pg-89af1dd87b6a62754677ce2ae9496470>3 - Neurocontainers</h1>
 <div class=lead>What neurocontainers are about</div>
 <div class="pageinfo pageinfo-primary">
-<p>This is a placeholder page.</p>
+<p>Neurocontainers is our collection of neuro containers hosted on dockerhub (<a href=https://hub.docker.com/orgs/vnmd/repositories>https://hub.docker.com/orgs/vnmd/repositories</a>) or github (<a href=https://github.com/NeuroDesk/neurocontainers/packages>https://github.com/NeuroDesk/neurocontainers/packages</a>)</p>
+<h1 id=pull-containers>pull containers</h1>
+<p>docker</p>
+<pre tabindex=0><code>docker pull vnmd/julia_1.6.1
+</code></pre><p>build singularity image from dockerhub</p>
+<pre tabindex=0><code>singularity build julia_1.6.1.simg docker://vnmd/julia_1.6.1
+</code></pre>
 </div>
 </div>
 </main>
