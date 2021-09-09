@@ -1,0 +1,546 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>NeuroDesk – Documentation</title><link>https://neurodesk.github.io/docs/</link><description>Recent content in Documentation on NeuroDesk</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://neurodesk.github.io/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Add tool</title><link>https://neurodesk.github.io/docs/advanced/_add_tool/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/advanced/_add_tool/</guid><description>
+&lt;p>The goal of &lt;em>VNM&lt;/em> is to provide users with a large choice of tools to use in their pipelines.
+Here is how you can add a tool to &lt;em>VNM&lt;/em>.&lt;/p>
+&lt;p>To decide if a tool should be packaged in a singularity container, or being installed in the main VNM container we are currently following these guiding principles:&lt;/p>
+&lt;ol>
+&lt;li>VNM is not a package manager. This means we are not distribution tools in containers that can easily be installed via a standard package manager&lt;/li>
+&lt;li>VNM allows users to have multiple versions of tools in parallel via lmod, this means that if different versions of tool can&amp;rsquo;t be installed in parallel we package it inside a container.&lt;/li>
+&lt;li>VNM aims to provide simple tooling to link tools from different containers. This means that if a tool if required to coordinate container-tools, it should be in the main image.&lt;/li>
+&lt;/ol>
+&lt;p>Examples:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;/th>
+&lt;th>easy install&lt;/th>
+&lt;th>coordinates containers&lt;/th>
+&lt;th>small in size&lt;/th>
+&lt;th>latest version is ok&lt;/th>
+&lt;th>useful more most users&lt;/th>
+&lt;th>Conclusion&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>git&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>base&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>lmod&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>base&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>nipype&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>base&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>vscode&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>base&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>itksnap&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>container -&amp;gt; could be in base?&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>matlab&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>container due to size?&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>convert3D&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>container&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>fsl&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>container&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>mrtrix&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>container&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>freesurfer&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>container&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>Build container:&lt;/p>
+&lt;ol>
+&lt;li>add recipe to neurodocker if relevant &lt;a href="https://github.com/NeuroDesk/neurodocker">https://github.com/NeuroDesk/neurodocker&lt;/a> and create pull request to neurodocker&lt;/li>
+&lt;li>build container here &lt;a href="https://github.com/NeuroDesk/caid">https://github.com/NeuroDesk/caid&lt;/a>&lt;/li>
+&lt;li>test container and if successful add container to Readme table here &lt;a href="https://github.com/NeuroDesk/neurodesk">https://github.com/NeuroDesk/neurodesk&lt;/a>&lt;/li>
+&lt;/ol>
+&lt;p>As we want to propose several versions of the tools, each peace of software should have its own submenu under &lt;code>VNM Neuroimaging&lt;/code>.
+To do so, you first have to add a submenu to &lt;code>menus/vnm-applications.menu&lt;/code> by adding:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-xml" data-lang="xml">&lt;span style="color:#8f5902;font-style:italic">&amp;lt;!-- [[Tool Name]] submenu --&amp;gt;&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;lt;Menu&amp;gt;&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;lt;Name&amp;gt;&lt;/span>[[Tool Name]]&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/Name&amp;gt;&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;lt;Directory&amp;gt;&lt;/span>vnm-[[tool-name]].directory&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/Directory&amp;gt;&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;lt;Include&amp;gt;&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;lt;And&amp;gt;&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;lt;Category&amp;gt;&lt;/span>[[Tool-Name]]&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/Category&amp;gt;&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/And&amp;gt;&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/Include&amp;gt;&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/Menu&amp;gt;&lt;/span> &lt;span style="color:#8f5902;font-style:italic">&amp;lt;!-- End [[Tool Name]] --&amp;gt;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>The following table showns what to replace by what:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Placeholder&lt;/th>
+&lt;th>Rule&lt;/th>
+&lt;th>Example&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>[[Tool name]]&lt;/code>&lt;/td>
+&lt;td>Capitalized, spaces&lt;/td>
+&lt;td>&lt;code>ITK snap&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>[[tool-name]]&lt;/code>&lt;/td>
+&lt;td>Lower case, no spaces (use &lt;code>-&lt;/code> instead)&lt;/td>
+&lt;td>&lt;code>itk-snap&lt;/code> or &lt;code>itksnap&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>[[Tool-name]]&lt;/code>&lt;/td>
+&lt;td>Capitalized, no spaces (use &lt;code>-&lt;/code> instead)&lt;/td>
+&lt;td>&lt;code>ITK-snap&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>Next, we have to create the submenu itself as we referenced it by &lt;code>vnm-[[tool-name]].directory&lt;/code>. To do so, create the file &lt;code>menus/submenus&lt;/code>vnm-[[tool-name]].directory` and add the following information inside:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-ini" data-lang="ini">&lt;span style="color:#204a87;font-weight:bold">[Desktop Entry]&lt;/span>
+&lt;span style="color:#c4a000">Name&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">[[Tool Name]]&lt;/span>
+&lt;span style="color:#c4a000">Comment&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">[[Tool Name]]&lt;/span>
+&lt;span style="color:#c4a000">Icon&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">/home/neuro/.config/lxpanel/LXDE/icons/[[icon-name]].png&lt;/span>
+&lt;span style="color:#c4a000">Type&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">Directory&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>If a specific icon is available in the &lt;code>menus/icons&lt;/code> directory, replace &lt;code>[[icon-name]]&lt;/code> by its name. Otherwise, use &lt;code>vnm&lt;/code>.&lt;/p>
+&lt;p>Finally, we have to create the actual application by creating the file &lt;code>menus/applications/vnm-[[tool-name]]-[[0.0.0]].desktop&lt;/code>. The name of this file must contain the version of the tool (once again to allow multiple versions to live inside the same directory). Add the following description to this file:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-ini" data-lang="ini">&lt;span style="color:#204a87;font-weight:bold">[Desktop Entry]&lt;/span>
+&lt;span style="color:#c4a000">Name&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">[[Tool Name]] [[0.0.0]] [[(Install only)]]&lt;/span>
+&lt;span style="color:#c4a000">GenericName&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">[[Tool Name]] [[0.0.0]]&lt;/span>
+&lt;span style="color:#c4a000">Comment&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">The description of what clicking on this application does. # This will be the tooltip of the application.&lt;/span>
+&lt;span style="color:#c4a000">Exec&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">The command used to run the application.&lt;/span>
+&lt;span style="color:#c4a000">Icon&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">/home/neuro/.config/lxpanel/LXDE/icons/[[icon-name]].png&lt;/span>
+&lt;span style="color:#c4a000">Type&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">Application&lt;/span>
+&lt;span style="color:#c4a000">Categories&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">[[Tool-name]]&lt;/span>
+&lt;span style="color:#c4a000">Terminal&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">true # or false&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>The important part here is the value of &lt;code>Exec&lt;/code>. If the tool is in the form of a singularity image, you should the following command:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">bash /usr/share/fetch_and_run.sh &lt;span style="color:#ce5c00;font-weight:bold">[[&lt;/span>tool-name&lt;span style="color:#ce5c00;font-weight:bold">]]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[[&lt;/span>0.0.0&lt;span style="color:#ce5c00;font-weight:bold">]]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[[&lt;/span>YYYYMMDD&lt;span style="color:#ce5c00;font-weight:bold">]]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[[&lt;/span>cmd&lt;span style="color:#ce5c00;font-weight:bold">]]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[[&lt;/span>args&lt;span style="color:#ce5c00;font-weight:bold">]]&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>What &lt;code>fetch_and_run.sh&lt;/code> does is check if the image is already installed as a module. If not, it checks whether it can be installed or not (return &lt;code>1&lt;/code> if not possible). After that, it installs the image as a module.
+If &lt;code>[[cmd]]&lt;/code> is specified, once the image is installed, it runs the command by giving the arguments from &lt;code>[[args]]&lt;/code>.
+Here are two examples for FreeSurfer and FreeView. This first one only installs the image as a module:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">bash /usr/share/fetch_and_run.sh freesurfer 6.0.1 &lt;span style="color:#0000cf;font-weight:bold">20200506&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>And this does the same but runs FreeView afterward:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">bash /usr/share/fetch_and_run.sh freesurfer 6.0.1 &lt;span style="color:#0000cf;font-weight:bold">20200506&lt;/span> freeview
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>The resulting &lt;code>.desktop&lt;/code> file corresponding to FreeView contains:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-ini" data-lang="ini">&lt;span style="color:#204a87;font-weight:bold">[Desktop Entry]&lt;/span>
+&lt;span style="color:#c4a000">Name&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">FreeView 6.0.1&lt;/span>
+&lt;span style="color:#c4a000">GenericName&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">FreeView 6.0.1&lt;/span>
+&lt;span style="color:#c4a000">Comment&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">Start FreeView 6.0.1&lt;/span>
+&lt;span style="color:#c4a000">Exec&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">bash /usr/share/fetch_and_run.sh freesurfer 6.0.1 20200506 freeview&lt;/span>
+&lt;span style="color:#c4a000">Icon&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">/home/neuro/.config/lxpanel/LXDE/icons/run.png&lt;/span>
+&lt;span style="color:#c4a000">Type&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">Application&lt;/span>
+&lt;span style="color:#c4a000">Categories&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">FreeSurfer&lt;/span>
+&lt;span style="color:#c4a000">Terminal&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">true&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Tested</title><link>https://neurodesk.github.io/docs/advanced/tested/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/advanced/tested/</guid><description>
+&lt;p>Please test and add if working :)&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;/th>
+&lt;th>hypervisor&lt;/th>
+&lt;th>container engine&lt;/th>
+&lt;th>build&lt;/th>
+&lt;th>client&lt;/th>
+&lt;th>who&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>windows 10 Enterprise, build 18363&lt;/td>
+&lt;td>wsl2, hyperv&lt;/td>
+&lt;td>docker&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>vnc, edge&lt;/td>
+&lt;td>Steffen&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>windows 10 Pro&lt;/td>
+&lt;td>wsl2, hyperv&lt;/td>
+&lt;td>docker&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>Tom&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>windows 10 Home, build 19041&lt;/td>
+&lt;td>wsl2, hyperv&lt;/td>
+&lt;td>docker&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>chrome&lt;/td>
+&lt;td>Geeta&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>windows 10 Home, Docker toolbox&lt;/td>
+&lt;td>virtualbox&lt;/td>
+&lt;td>docker&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>chrome&lt;/td>
+&lt;td>Geeta&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Debian Bullseye&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>docker&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>firefox&lt;/td>
+&lt;td>Jakub&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Ubuntu 20.04&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>docker&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>firefox&lt;/td>
+&lt;td>Martin&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>macOS Catalina (10.15.5)&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>docker&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>firefox, safari, chrome&lt;/td>
+&lt;td>Jakub&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>HPC Centos 6&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>singularity&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>Steffen&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Ubuntu 18.04 on OpenStack (NECTAR)&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>docker&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>firefox&lt;/td>
+&lt;td>Oren&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table></description></item><item><title>Docs: Example Page</title><link>https://neurodesk.github.io/docs/getting-started/example-page/</link><pubDate>Thu, 05 Jan 2017 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/getting-started/example-page/</guid><description>
+&lt;div class="pageinfo pageinfo-primary">
+&lt;p>This is a placeholder page. Replace it with your own content.&lt;/p>
+&lt;/div>
+&lt;p>Text can be &lt;strong>bold&lt;/strong>, &lt;em>italic&lt;/em>, or &lt;del>strikethrough&lt;/del>. &lt;a href="https://gohugo.io">Links&lt;/a> should be blue with no underlines (unless hovered over).&lt;/p>
+&lt;p>There should be whitespace between paragraphs. Vape migas chillwave sriracha poutine try-hard distillery. Tattooed shabby chic small batch, pabst art party heirloom letterpress air plant pop-up. Sustainable chia skateboard art party banjo cardigan normcore affogato vexillologist quinoa meggings man bun master cleanse shoreditch readymade. Yuccie prism four dollar toast tbh cardigan iPhone, tumblr listicle live-edge VHS. Pug lyft normcore hot chicken biodiesel, actually keffiyeh thundercats photo booth pour-over twee fam food truck microdosing banh mi. Vice activated charcoal raclette unicorn live-edge post-ironic. Heirloom vexillologist coloring book, beard deep v letterpress echo park humblebrag tilde.&lt;/p>
+&lt;p>90&amp;rsquo;s four loko seitan photo booth gochujang freegan tumeric listicle fam ugh humblebrag. Bespoke leggings gastropub, biodiesel brunch pug fashion axe meh swag art party neutra deep v chia. Enamel pin fanny pack knausgaard tofu, artisan cronut hammock meditation occupy master cleanse chartreuse lumbersexual. Kombucha kogi viral truffaut synth distillery single-origin coffee ugh slow-carb marfa selfies. Pitchfork schlitz semiotics fanny pack, ugh artisan vegan vaporware hexagon. Polaroid fixie post-ironic venmo wolf ramps &lt;strong>kale chips&lt;/strong>.&lt;/p>
+&lt;blockquote>
+&lt;p>There should be no margin above this first sentence.&lt;/p>
+&lt;p>Blockquotes should be a lighter gray with a border along the left side in the secondary color.&lt;/p>
+&lt;p>There should be no margin below this final sentence.&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="first-header-2">First Header 2&lt;/h2>
+&lt;p>This is a normal paragraph following a header. Knausgaard kale chips snackwave microdosing cronut copper mug swag synth bitters letterpress glossier &lt;strong>craft beer&lt;/strong>. Mumblecore bushwick authentic gochujang vegan chambray meditation jean shorts irony. Viral farm-to-table kale chips, pork belly palo santo distillery activated charcoal aesthetic jianbing air plant woke lomo VHS organic. Tattooed locavore succulents heirloom, small batch sriracha echo park DIY af. Shaman you probably haven&amp;rsquo;t heard of them copper mug, crucifix green juice vape &lt;em>single-origin coffee&lt;/em> brunch actually. Mustache etsy vexillologist raclette authentic fam. Tousled beard humblebrag asymmetrical. I love turkey, I love my job, I love my friends, I love Chardonnay!&lt;/p>
+&lt;p>Deae legum paulatimque terra, non vos mutata tacet: dic. Vocant docuique me plumas fila quin afuerunt copia haec o neque.&lt;/p>
+&lt;p>On big screens, paragraphs and headings should not take up the full container width, but we want tables, code blocks and similar to take the full width.&lt;/p>
+&lt;p>Scenester tumeric pickled, authentic crucifix post-ironic fam freegan VHS pork belly 8-bit yuccie PBR&amp;amp;B. &lt;strong>I love this life we live in&lt;/strong>.&lt;/p>
+&lt;h2 id="second-header-2">Second Header 2&lt;/h2>
+&lt;blockquote>
+&lt;p>This is a blockquote following a header. Bacon ipsum dolor sit amet t-bone doner shank drumstick, pork belly porchetta chuck sausage brisket ham hock rump pig. Chuck kielbasa leberkas, pork bresaola ham hock filet mignon cow shoulder short ribs biltong.&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="header-3">Header 3&lt;/h3>
+&lt;pre tabindex="0">&lt;code>This is a code block following a header.
+&lt;/code>&lt;/pre>&lt;p>Next level leggings before they sold out, PBR&amp;amp;B church-key shaman echo park. Kale chips occupy godard whatever pop-up freegan pork belly selfies. Gastropub Belinda subway tile woke post-ironic seitan. Shabby chic man bun semiotics vape, chia messenger bag plaid cardigan.&lt;/p>
+&lt;h4 id="header-4">Header 4&lt;/h4>
+&lt;ul>
+&lt;li>This is an unordered list following a header.&lt;/li>
+&lt;li>This is an unordered list following a header.&lt;/li>
+&lt;li>This is an unordered list following a header.&lt;/li>
+&lt;/ul>
+&lt;h5 id="header-5">Header 5&lt;/h5>
+&lt;ol>
+&lt;li>This is an ordered list following a header.&lt;/li>
+&lt;li>This is an ordered list following a header.&lt;/li>
+&lt;li>This is an ordered list following a header.&lt;/li>
+&lt;/ol>
+&lt;h6 id="header-6">Header 6&lt;/h6>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>What&lt;/th>
+&lt;th>Follows&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>A table&lt;/td>
+&lt;td>A header&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>A table&lt;/td>
+&lt;td>A header&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>A table&lt;/td>
+&lt;td>A header&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;hr>
+&lt;p>There&amp;rsquo;s a horizontal rule above and below this.&lt;/p>
+&lt;hr>
+&lt;p>Here is an unordered list:&lt;/p>
+&lt;ul>
+&lt;li>Liverpool F.C.&lt;/li>
+&lt;li>Chelsea F.C.&lt;/li>
+&lt;li>Manchester United F.C.&lt;/li>
+&lt;/ul>
+&lt;p>And an ordered list:&lt;/p>
+&lt;ol>
+&lt;li>Michael Brecker&lt;/li>
+&lt;li>Seamus Blake&lt;/li>
+&lt;li>Branford Marsalis&lt;/li>
+&lt;/ol>
+&lt;p>And an unordered task list:&lt;/p>
+&lt;ul>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> Create a Hugo theme&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> Add task lists to it&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Take a vacation&lt;/li>
+&lt;/ul>
+&lt;p>And a &amp;ldquo;mixed&amp;rdquo; task list:&lt;/p>
+&lt;ul>
+&lt;li>&lt;input disabled="" type="checkbox"> Pack bags&lt;/li>
+&lt;li>?&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Travel!&lt;/li>
+&lt;/ul>
+&lt;p>And a nested list:&lt;/p>
+&lt;ul>
+&lt;li>Jackson 5
+&lt;ul>
+&lt;li>Michael&lt;/li>
+&lt;li>Tito&lt;/li>
+&lt;li>Jackie&lt;/li>
+&lt;li>Marlon&lt;/li>
+&lt;li>Jermaine&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>TMNT
+&lt;ul>
+&lt;li>Leonardo&lt;/li>
+&lt;li>Michelangelo&lt;/li>
+&lt;li>Donatello&lt;/li>
+&lt;li>Raphael&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>Definition lists can be used with Markdown syntax. Definition headers are bold.&lt;/p>
+&lt;dl>
+&lt;dt>Name&lt;/dt>
+&lt;dd>Godzilla&lt;/dd>
+&lt;dt>Born&lt;/dt>
+&lt;dd>1952&lt;/dd>
+&lt;dt>Birthplace&lt;/dt>
+&lt;dd>Japan&lt;/dd>
+&lt;dt>Color&lt;/dt>
+&lt;dd>Green&lt;/dd>
+&lt;/dl>
+&lt;hr>
+&lt;p>Tables should have bold headings and alternating shaded rows.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Artist&lt;/th>
+&lt;th>Album&lt;/th>
+&lt;th>Year&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Michael Jackson&lt;/td>
+&lt;td>Thriller&lt;/td>
+&lt;td>1982&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Prince&lt;/td>
+&lt;td>Purple Rain&lt;/td>
+&lt;td>1984&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Beastie Boys&lt;/td>
+&lt;td>License to Ill&lt;/td>
+&lt;td>1986&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>If a table is too wide, it should scroll horizontally.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Artist&lt;/th>
+&lt;th>Album&lt;/th>
+&lt;th>Year&lt;/th>
+&lt;th>Label&lt;/th>
+&lt;th>Awards&lt;/th>
+&lt;th>Songs&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Michael Jackson&lt;/td>
+&lt;td>Thriller&lt;/td>
+&lt;td>1982&lt;/td>
+&lt;td>Epic Records&lt;/td>
+&lt;td>Grammy Award for Album of the Year, American Music Award for Favorite Pop/Rock Album, American Music Award for Favorite Soul/R&amp;amp;B Album, Brit Award for Best Selling Album, Grammy Award for Best Engineered Album, Non-Classical&lt;/td>
+&lt;td>Wanna Be Startin' Somethin', Baby Be Mine, The Girl Is Mine, Thriller, Beat It, Billie Jean, Human Nature, P.Y.T. (Pretty Young Thing), The Lady in My Life&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Prince&lt;/td>
+&lt;td>Purple Rain&lt;/td>
+&lt;td>1984&lt;/td>
+&lt;td>Warner Brothers Records&lt;/td>
+&lt;td>Grammy Award for Best Score Soundtrack for Visual Media, American Music Award for Favorite Pop/Rock Album, American Music Award for Favorite Soul/R&amp;amp;B Album, Brit Award for Best Soundtrack/Cast Recording, Grammy Award for Best Rock Performance by a Duo or Group with Vocal&lt;/td>
+&lt;td>Let&amp;rsquo;s Go Crazy, Take Me With U, The Beautiful Ones, Computer Blue, Darling Nikki, When Doves Cry, I Would Die 4 U, Baby I&amp;rsquo;m a Star, Purple Rain&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Beastie Boys&lt;/td>
+&lt;td>License to Ill&lt;/td>
+&lt;td>1986&lt;/td>
+&lt;td>Mercury Records&lt;/td>
+&lt;td>noawardsbutthistablecelliswide&lt;/td>
+&lt;td>Rhymin &amp;amp; Stealin, The New Style, She&amp;rsquo;s Crafty, Posse in Effect, Slow Ride, Girls, (You Gotta) Fight for Your Right, No Sleep Till Brooklyn, Paul Revere, Hold It Now, Hit It, Brass Monkey, Slow and Low, Time to Get Ill&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;hr>
+&lt;p>Code snippets like &lt;code>var foo = &amp;quot;bar&amp;quot;;&lt;/code> can be shown inline.&lt;/p>
+&lt;p>Also, &lt;code>this should vertically align&lt;/code> &lt;del>&lt;code>with this&lt;/code>&lt;/del> &lt;del>and this&lt;/del>.&lt;/p>
+&lt;p>Code can also be shown in a block element.&lt;/p>
+&lt;pre tabindex="0">&lt;code>foo := &amp;quot;bar&amp;quot;;
+bar := &amp;quot;foo&amp;quot;;
+&lt;/code>&lt;/pre>&lt;p>Code can also use syntax highlighting.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go" data-lang="go">&lt;span style="color:#204a87;font-weight:bold">func&lt;/span> &lt;span style="color:#000">main&lt;/span>&lt;span style="color:#000;font-weight:bold">()&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#000">input&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">:=&lt;/span> &lt;span style="color:#4e9a06">`var foo = &amp;#34;bar&amp;#34;;`&lt;/span>
+&lt;span style="color:#000">lexer&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">:=&lt;/span> &lt;span style="color:#000">lexers&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">Get&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;javascript&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
+&lt;span style="color:#000">iterator&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#000">_&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">:=&lt;/span> &lt;span style="color:#000">lexer&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">Tokenise&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#204a87;font-weight:bold">nil&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#000">input&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
+&lt;span style="color:#000">style&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">:=&lt;/span> &lt;span style="color:#000">styles&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">Get&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;github&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
+&lt;span style="color:#000">formatter&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">:=&lt;/span> &lt;span style="color:#000">html&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">New&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">html&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">WithLineNumbers&lt;/span>&lt;span style="color:#000;font-weight:bold">())&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">var&lt;/span> &lt;span style="color:#000">buff&lt;/span> &lt;span style="color:#000">bytes&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">Buffer&lt;/span>
+&lt;span style="color:#000">formatter&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">Format&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">&amp;amp;&lt;/span>&lt;span style="color:#000">buff&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#000">style&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#000">iterator&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
+&lt;span style="color:#000">fmt&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">Println&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">buff&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">String&lt;/span>&lt;span style="color:#000;font-weight:bold">())&lt;/span>
+&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;pre tabindex="0">&lt;code>Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
+&lt;/code>&lt;/pre>&lt;p>Inline code inside table cells should still be distinguishable.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Language&lt;/th>
+&lt;th>Code&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Javascript&lt;/td>
+&lt;td>&lt;code>var foo = &amp;quot;bar&amp;quot;;&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Ruby&lt;/td>
+&lt;td>&lt;code>foo = &amp;quot;bar&amp;quot;{&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;hr>
+&lt;p>Small images should be shown at their actual size.&lt;/p>
+&lt;p>&lt;img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Picea_abies_shoot_with_buds%2C_Sogndal%2C_Norway.jpg/240px-Picea_abies_shoot_with_buds%2C_Sogndal%2C_Norway.jpg" alt="">&lt;/p>
+&lt;p>Large images should always scale down and fit in the content container.&lt;/p>
+&lt;p>&lt;img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Picea_abies_shoot_with_buds%2C_Sogndal%2C_Norway.jpg/1024px-Picea_abies_shoot_with_buds%2C_Sogndal%2C_Norway.jpg" alt="">&lt;/p>
+&lt;p>&lt;em>The photo above of the Spruce Picea abies shoot with foliage buds: Bjørn Erik Pedersen, CC-BY-SA.&lt;/em>&lt;/p>
+&lt;h2 id="components">Components&lt;/h2>
+&lt;h3 id="alerts">Alerts&lt;/h3>
+&lt;p>
+&lt;div class="alert alert-primary" role="alert">
+This is an alert.
+&lt;/div>
+&lt;div class="alert alert-primary" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+This is an alert with a title.
+&lt;/div>
+&lt;div class="alert alert-primary" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+This is an alert with a title and &lt;strong>Markdown&lt;/strong>.
+&lt;/div>
+&lt;div class="alert alert-success" role="alert">
+This is a successful alert.
+&lt;/div>
+&lt;div class="alert alert-warning" role="alert">
+This is a warning.
+&lt;/div>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Warning&lt;/h4>
+This is a warning with a title.
+&lt;/div>
+&lt;/p>
+&lt;h2 id="another-heading">Another Heading&lt;/h2>
+&lt;p>Add some sections here to see how the ToC looks like. Bacon ipsum dolor sit amet t-bone doner shank drumstick, pork belly porchetta chuck sausage brisket ham hock rump pig. Chuck kielbasa leberkas, pork bresaola ham hock filet mignon cow shoulder short ribs biltong.&lt;/p>
+&lt;h3 id="this-document">This Document&lt;/h3>
+&lt;p>Inguina genus: Anaphen post: lingua violente voce suae meus aetate diversi. Orbis unam nec flammaeque status deam Silenum erat et a ferrea. Excitus rigidum ait: vestro et Herculis convicia: nitidae deseruit coniuge Proteaque adiciam &lt;em>eripitur&lt;/em>? Sitim noceat signa &lt;em>probat quidem&lt;/em>. Sua longis &lt;em>fugatis&lt;/em> quidem genae.&lt;/p>
+&lt;h3 id="pixel-count">Pixel Count&lt;/h3>
+&lt;p>Tilde photo booth wayfarers cliche lomo intelligentsia man braid kombucha vaporware farm-to-table mixtape portland. PBR&amp;amp;B pickled cornhole ugh try-hard ethical subway tile. Fixie paleo intelligentsia pabst. Ennui waistcoat vinyl gochujang. Poutine salvia authentic affogato, chambray lumbersexual shabby chic.&lt;/p>
+&lt;h3 id="contact-info">Contact Info&lt;/h3>
+&lt;p>Plaid hell of cred microdosing, succulents tilde pour-over. Offal shabby chic 3 wolf moon blue bottle raw denim normcore poutine pork belly.&lt;/p>
+&lt;h3 id="external-links">External Links&lt;/h3>
+&lt;p>Stumptown PBR&amp;amp;B keytar plaid street art, forage XOXO pitchfork selvage affogato green juice listicle pickled everyday carry hashtag. Organic sustainable letterpress sartorial scenester intelligentsia swag bushwick. Put a bird on it stumptown neutra locavore. IPhone typewriter messenger bag narwhal. Ennui cold-pressed seitan flannel keytar, single-origin coffee adaptogen occupy yuccie williamsburg chillwave shoreditch forage waistcoat.&lt;/p>
+&lt;pre tabindex="0">&lt;code>This is the final element on the page and there should be no margin below this.
+&lt;/code>&lt;/pre></description></item></channel></rss>
