@@ -193,7 +193,7 @@ Here are two examples for FreeSurfer and FreeView. This first one only installs 
 &lt;span style="color:#c4a000">Type&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">Application&lt;/span>
 &lt;span style="color:#c4a000">Categories&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">FreeSurfer&lt;/span>
 &lt;span style="color:#c4a000">Terminal&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">true&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Tested</title><link>https://neurodesk.github.io/docs/advanced/storage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/advanced/storage/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Storage</title><link>https://neurodesk.github.io/docs/advanced/storage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/advanced/storage/</guid><description>
 &lt;h2 id="mount-volume-using-sshfs">Mount volume using SSHFS&lt;/h2>
 &lt;p>&lt;code>sshfs -o allow_root USER@TARGET_HOST:TARGET_PATH SOURCE_PATH&lt;/code>&lt;/p>
 &lt;h2 id="not-enough-free-space">Not enough free space&lt;/h2>
