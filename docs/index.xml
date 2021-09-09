@@ -1,4 +1,8 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>NeuroDesk – Documentation</title><link>https://neurodesk.github.io/docs/</link><description>Recent content in Documentation on NeuroDesk</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://neurodesk.github.io/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Neurodesktop</title><link>https://neurodesk.github.io/docs/overview/neurodesktop/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/overview/neurodesktop/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>NeuroDesk – Documentation</title><link>https://neurodesk.github.io/docs/</link><description>Recent content in Documentation on NeuroDesk</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://neurodesk.github.io/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Linux</title><link>https://neurodesk.github.io/docs/getting-started/linux/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/getting-started/linux/</guid><description>
+&lt;div class="pageinfo pageinfo-primary">
+&lt;p>This is a placeholder page.&lt;/p>
+&lt;/div>
+&lt;p>Instructions&lt;/p></description></item><item><title>Docs: Neurodesktop</title><link>https://neurodesk.github.io/docs/overview/neurodesktop/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/overview/neurodesktop/</guid><description>
 &lt;h2 id="requirements">Requirements&lt;/h2>
 &lt;ol>
 &lt;li>Docker installed
@@ -102,7 +106,11 @@
 &lt;li>There are two workspaces available. To shift between them, click on the miniature image of the desired workspace, just right of the icons displayed on the far left of the task bar.&lt;/li>
 &lt;/ul>
 &lt;h2 id="advanced-usage">Advanced usage&lt;/h2>
-&lt;p>For advanced VNM and Neurodesk installer usage, check &lt;a href="https://neurodesk.github.io/docs/advanced">here&lt;/a>&lt;/p></description></item><item><title>Docs: Neurocommand</title><link>https://neurodesk.github.io/docs/overview/neurocommand/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/overview/neurocommand/</guid><description>
+&lt;p>For advanced VNM and Neurodesk installer usage, check &lt;a href="https://neurodesk.github.io/docs/advanced">here&lt;/a>&lt;/p></description></item><item><title>Docs: MacOS</title><link>https://neurodesk.github.io/docs/getting-started/mac/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/getting-started/mac/</guid><description>
+&lt;div class="pageinfo pageinfo-primary">
+&lt;p>This is a placeholder page.&lt;/p>
+&lt;/div>
+&lt;p>Instructions&lt;/p></description></item><item><title>Docs: Neurocommand</title><link>https://neurodesk.github.io/docs/overview/neurocommand/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/overview/neurocommand/</guid><description>
 &lt;p>&lt;em>For running Neurodesk in a Docker container, refer to &lt;a href="https://neurodesk.github.io/docs/vnm">https://github.com/NeuroDesk/vnm&lt;/a>&lt;/em>&lt;/p>
 &lt;p>Requires a Linux host machine, virtual machine or WSL for Windows.&lt;/p>
 &lt;h2 id="linux">Linux&lt;/h2>
@@ -179,7 +187,11 @@ Change &lt;code>port=3389&lt;/code> to &lt;code>port=3390&lt;/code> and save&lt;
 &lt;p>For advanced VNM and Neurodesk installer usage, check &lt;a href="https://neurodesk.github.io/docs/advanced">here&lt;/a>&lt;/p></description></item><item><title>Docs: Neurocontainers</title><link>https://neurodesk.github.io/docs/overview/neurocontainers/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/overview/neurocontainers/</guid><description>
 &lt;div class="pageinfo pageinfo-primary">
 &lt;p>This is a placeholder page.&lt;/p>
-&lt;/div></description></item><item><title>Docs: Add tool</title><link>https://neurodesk.github.io/docs/advanced/add_tool/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/advanced/add_tool/</guid><description>
+&lt;/div></description></item><item><title>Docs: Windows</title><link>https://neurodesk.github.io/docs/getting-started/windows/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/getting-started/windows/</guid><description>
+&lt;div class="pageinfo pageinfo-primary">
+&lt;p>This is a placeholder page.&lt;/p>
+&lt;/div>
+&lt;p>Instructions&lt;/p></description></item><item><title>Docs: Add tool</title><link>https://neurodesk.github.io/docs/advanced/add_tool/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/advanced/add_tool/</guid><description>
 &lt;p>The goal of &lt;em>VNM&lt;/em> is to provide users with a large choice of tools to use in their pipelines.
 Here is how you can add a tool to &lt;em>VNM&lt;/em>.&lt;/p>
 &lt;p>To decide if a tool should be packaged in a singularity container, or being installed in the main VNM container we are currently following these guiding principles:&lt;/p>
@@ -374,7 +386,11 @@ Here are two examples for FreeSurfer and FreeView. This first one only installs 
 &lt;span style="color:#c4a000">Type&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">Application&lt;/span>
 &lt;span style="color:#c4a000">Categories&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">FreeSurfer&lt;/span>
 &lt;span style="color:#c4a000">Terminal&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">true&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Tested</title><link>https://neurodesk.github.io/docs/advanced/tested/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/advanced/tested/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: HPC</title><link>https://neurodesk.github.io/docs/getting-started/hpc/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/getting-started/hpc/</guid><description>
+&lt;div class="pageinfo pageinfo-primary">
+&lt;p>This is a placeholder page.&lt;/p>
+&lt;/div>
+&lt;p>Instructions&lt;/p></description></item><item><title>Docs: Tested</title><link>https://neurodesk.github.io/docs/advanced/tested/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/advanced/tested/</guid><description>
 &lt;p>Please test and add if working :)&lt;/p>
 &lt;table>
 &lt;thead>
@@ -468,20 +484,4 @@ Here are two examples for FreeSurfer and FreeView. This first one only installs 
 &lt;p>Instructions&lt;/p></description></item><item><title>Docs: Demo</title><link>https://neurodesk.github.io/docs/getting-started/demo/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/getting-started/demo/</guid><description>
 &lt;div class="pageinfo pageinfo-primary">
 &lt;p>This page needs to link to MyBinder demo&lt;/p>
-&lt;/div></description></item><item><title>Docs: HPC</title><link>https://neurodesk.github.io/docs/getting-started/hpc/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/getting-started/hpc/</guid><description>
-&lt;div class="pageinfo pageinfo-primary">
-&lt;p>This is a placeholder page.&lt;/p>
-&lt;/div>
-&lt;p>Instructions&lt;/p></description></item><item><title>Docs: Linux</title><link>https://neurodesk.github.io/docs/getting-started/linux/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/getting-started/linux/</guid><description>
-&lt;div class="pageinfo pageinfo-primary">
-&lt;p>This is a placeholder page.&lt;/p>
-&lt;/div>
-&lt;p>Instructions&lt;/p></description></item><item><title>Docs: MacOS</title><link>https://neurodesk.github.io/docs/getting-started/mac/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/getting-started/mac/</guid><description>
-&lt;div class="pageinfo pageinfo-primary">
-&lt;p>This is a placeholder page.&lt;/p>
-&lt;/div>
-&lt;p>Instructions&lt;/p></description></item><item><title>Docs: Windows</title><link>https://neurodesk.github.io/docs/getting-started/windows/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/getting-started/windows/</guid><description>
-&lt;div class="pageinfo pageinfo-primary">
-&lt;p>This is a placeholder page.&lt;/p>
-&lt;/div>
-&lt;p>Instructions&lt;/p></description></item></channel></rss>
+&lt;/div></description></item></channel></rss>

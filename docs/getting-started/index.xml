@@ -1,15 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>NeuroDesk – Getting Started</title><link>https://neurodesk.github.io/docs/getting-started/</link><description>Recent content in Getting Started on NeuroDesk</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://neurodesk.github.io/docs/getting-started/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Cloud</title><link>https://neurodesk.github.io/docs/getting-started/cloud/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/getting-started/cloud/</guid><description>
-&lt;div class="pageinfo pageinfo-primary">
-&lt;p>This is a placeholder page.&lt;/p>
-&lt;/div>
-&lt;p>Instructions&lt;/p></description></item><item><title>Docs: Demo</title><link>https://neurodesk.github.io/docs/getting-started/demo/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/getting-started/demo/</guid><description>
-&lt;div class="pageinfo pageinfo-primary">
-&lt;p>This page needs to link to MyBinder demo&lt;/p>
-&lt;/div></description></item><item><title>Docs: HPC</title><link>https://neurodesk.github.io/docs/getting-started/hpc/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/getting-started/hpc/</guid><description>
-&lt;div class="pageinfo pageinfo-primary">
-&lt;p>This is a placeholder page.&lt;/p>
-&lt;/div>
-&lt;p>Instructions&lt;/p></description></item><item><title>Docs: Linux</title><link>https://neurodesk.github.io/docs/getting-started/linux/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/getting-started/linux/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>NeuroDesk – Getting Started</title><link>https://neurodesk.github.io/docs/getting-started/</link><description>Recent content in Getting Started on NeuroDesk</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://neurodesk.github.io/docs/getting-started/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Linux</title><link>https://neurodesk.github.io/docs/getting-started/linux/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/getting-started/linux/</guid><description>
 &lt;div class="pageinfo pageinfo-primary">
 &lt;p>This is a placeholder page.&lt;/p>
 &lt;/div>
@@ -21,4 +10,15 @@
 &lt;div class="pageinfo pageinfo-primary">
 &lt;p>This is a placeholder page.&lt;/p>
 &lt;/div>
-&lt;p>Instructions&lt;/p></description></item></channel></rss>
+&lt;p>Instructions&lt;/p></description></item><item><title>Docs: HPC</title><link>https://neurodesk.github.io/docs/getting-started/hpc/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/getting-started/hpc/</guid><description>
+&lt;div class="pageinfo pageinfo-primary">
+&lt;p>This is a placeholder page.&lt;/p>
+&lt;/div>
+&lt;p>Instructions&lt;/p></description></item><item><title>Docs: Cloud</title><link>https://neurodesk.github.io/docs/getting-started/cloud/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/getting-started/cloud/</guid><description>
+&lt;div class="pageinfo pageinfo-primary">
+&lt;p>This is a placeholder page.&lt;/p>
+&lt;/div>
+&lt;p>Instructions&lt;/p></description></item><item><title>Docs: Demo</title><link>https://neurodesk.github.io/docs/getting-started/demo/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/getting-started/demo/</guid><description>
+&lt;div class="pageinfo pageinfo-primary">
+&lt;p>This page needs to link to MyBinder demo&lt;/p>
+&lt;/div></description></item></channel></rss>
