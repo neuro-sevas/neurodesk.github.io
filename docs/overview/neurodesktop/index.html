@@ -21,12 +21,12 @@
 ">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://neurodesk.github.io/docs/overview/neurodesktop/"><meta property="article:section" content="docs">
-<meta property="article:modified_time" content="2021-09-09T21:08:55+10:00"><meta property="og:site_name" content="NeuroDesk">
+<meta property="article:modified_time" content="2021-09-09T21:16:44+10:00"><meta property="og:site_name" content="NeuroDesk">
 <meta itemprop=name content="Neurodesktop">
 <meta itemprop=description content="A compact Docker container with a browser-accessible environment for reproducible neuroimaging analysis. Only the required applications, already pre-installed, are downloaded from a public library (downloaded as containers).
 ">
-<meta itemprop=dateModified content="2021-09-09T21:08:55+10:00">
-<meta itemprop=wordCount content="9">
+<meta itemprop=dateModified content="2021-09-09T21:16:44+10:00">
+<meta itemprop=wordCount content="212">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="Neurodesktop">
 <meta name=twitter:description content="A compact Docker container with a browser-accessible environment for reproducible neuroimaging analysis. Only the required applications, already pre-installed, are downloaded from a public library (downloaded as containers).
@@ -133,6 +133,12 @@
 <a href=https://github.com/NeuroDesk/neurodesk.github.io/issues/new target=_blank><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
 <a id=print href=https://neurodesk.github.io/docs/overview/_print/><i class="fa fa-print fa-fw"></i> Print entire section</a>
 </div>
+<div class=td-toc><nav id=TableOfContents>
+<ul>
+<li><a href=#how-to-access-files-from-your-host-computer>How to access files from your Host computer?</a></li>
+<li><a href=#how-to-launchdownload-applications>How to launch/download applications</a></li>
+</ul>
+</nav></div>
 </aside>
 <main class="col-12 col-md-9 col-xl-8 pl-md-5" role=main>
 <nav aria-label=breadcrumb class="d-none d-md-block d-print-none">
@@ -155,10 +161,14 @@
 </header>
 <p>For operating system specific instructions see Getting started
 <a href=https://neurodesk.github.io/docs/getting-started/>https://neurodesk.github.io/docs/getting-started/</a></p>
+<h2 id=how-to-access-files-from-your-host-computer>How to access files from your Host computer?</h2>
+<p>The <code>-v C:/neurodesktop:/neurodesktop</code> part of the docker command links the directory &ldquo;neurodesktop&rdquo; on the &ldquo;C drive&rdquo; of your Windows computer to the directory /neurodesktop inside the Desktop environment. Everything you store in there will be available inside VNM and on the host computer. You can also mount additional directories by adding another -v parameter set (e.g. <code>-v D:/moredata:/data</code>) - this will mount the directory moredata from your D drive to /data inside VNM.</p>
+<h2 id=how-to-launchdownload-applications>How to launch/download applications</h2>
+<p>Click on the Launcher icon in bottom-left corner and navigate to the &ldquo;Neurodesktop&rdquo; menu, then select the application and version you wish to launch. If it is the first time you launch the application, it will be downloaded to your desktop environment. The application is ready to use when the &ldquo;Singularity>&rdquo; propmpt appears in the terminal window that opens. If you chose in the menu the GUI of the application (e.g., fsleyesGUI 6.0.3), it will open automatically. If you chose tha application itself (e.g., fsl 6.0.3), a terminal window will open, and you can use it to run any of the utilities packaged with the application, including the grphical utilities (e.g., typing &ldquo;fsl&rdquo; to run FSL&rsquo;s main menu).</p>
 <div class="text-muted mt-5 pt-3 border-top">
 Last modified
 September 9, 2021
-: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/29fe84b825247b0687fd2a9f24ac9bd926eaa0e5>more cleanup and moving content around (29fe84b)</a>
+: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/a190d1968b3c2277f6fa7956a0a7f202f46dda44>added info how to access files (a190d19)</a>
 </div>
 </div>
 </main>

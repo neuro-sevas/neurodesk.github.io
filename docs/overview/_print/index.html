@@ -111,6 +111,10 @@ This the multi-page printable view of this section.
 <div class=lead>A compact Docker container with a browser-accessible environment for reproducible neuroimaging analysis. Only the required applications, already pre-installed, are downloaded from a public library (downloaded as containers).</div>
 <p>For operating system specific instructions see Getting started
 <a href=https://neurodesk.github.io/docs/getting-started/>https://neurodesk.github.io/docs/getting-started/</a></p>
+<h2 id=how-to-access-files-from-your-host-computer>How to access files from your Host computer?</h2>
+<p>The <code>-v C:/neurodesktop:/neurodesktop</code> part of the docker command links the directory &ldquo;neurodesktop&rdquo; on the &ldquo;C drive&rdquo; of your Windows computer to the directory /neurodesktop inside the Desktop environment. Everything you store in there will be available inside VNM and on the host computer. You can also mount additional directories by adding another -v parameter set (e.g. <code>-v D:/moredata:/data</code>) - this will mount the directory moredata from your D drive to /data inside VNM.</p>
+<h2 id=how-to-launchdownload-applications>How to launch/download applications</h2>
+<p>Click on the Launcher icon in bottom-left corner and navigate to the &ldquo;Neurodesktop&rdquo; menu, then select the application and version you wish to launch. If it is the first time you launch the application, it will be downloaded to your desktop environment. The application is ready to use when the &ldquo;Singularity>&rdquo; propmpt appears in the terminal window that opens. If you chose in the menu the GUI of the application (e.g., fsleyesGUI 6.0.3), it will open automatically. If you chose tha application itself (e.g., fsl 6.0.3), a terminal window will open, and you can use it to run any of the utilities packaged with the application, including the grphical utilities (e.g., typing &ldquo;fsl&rdquo; to run FSL&rsquo;s main menu).</p>
 </div>
 <div class=td-content style=page-break-before:always>
 <h1 id=pg-f0e1e8a629109e724a10db094b88e004>2 - Neurocommand</h1>
