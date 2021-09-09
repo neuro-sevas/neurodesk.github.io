@@ -129,6 +129,17 @@
 <a href=https://github.com/NeuroDesk/neurodesk.github.io/issues/new target=_blank><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
 <a id=print href=https://neurodesk.github.io/docs/development/_print/><i class="fa fa-print fa-fw"></i> Print entire section</a>
 </div>
+<div class=td-toc><nav id=TableOfContents>
+<ul>
+<li><a href=#developing-neurodeskgithubio>Developing neurodesk.github.io</a>
+<ul>
+<li><a href=#clone-repository>Clone repository</a></li>
+<li><a href=#download-hugo-binary>Download Hugo binary</a></li>
+<li><a href=#start-local-hugo-server>Start local hugo server</a></li>
+</ul>
+</li>
+</ul>
+</nav></div>
 </aside>
 <main class="col-12 col-md-9 col-xl-8 pl-md-5" role=main>
 <nav aria-label=breadcrumb class="d-none d-md-block d-print-none">
@@ -146,7 +157,20 @@
 <div class=lead>Developer guide</div>
 <header class=article-meta>
 </header>
-<p>See Example Page below for Hugo-Docsy page template</p>
+<h2 id=developing-neurodeskgithubio>Developing neurodesk.github.io</h2>
+<h3 id=clone-repository>Clone repository</h3>
+<p>Using SSH</p>
+<p><code>git clone --recurse-submodules git@github.com:NeuroDesk/neurodesk.github.io.git</code></p>
+<p>or Https:</p>
+<p><code>git clone --recurse-submodules https://github.com/NeuroDesk/neurodesk.github.io.git</code></p>
+<h3 id=download-hugo-binary>Download Hugo binary</h3>
+<p>Hugo releases are on <a href=https://github.com/gohugoio/hugo/releases>https://github.com/gohugoio/hugo/releases</a></p>
+<p>Download latest version of hugo extended</p>
+<p>e.g. for windows: <a href=https://github.com/gohugoio/hugo/releases/download/v0.88.1/hugo_extended_0.88.1_Windows-64bit.zip>https://github.com/gohugoio/hugo/releases/download/v0.88.1/hugo_extended_0.88.1_Windows-64bit.zip</a></p>
+<h3 id=start-local-hugo-server>Start local hugo server</h3>
+<p>Extract hugo binary (hugo.exe) to your neurodesk.github.io dir</p>
+<p>Run server for windows: <code>.\hugo.exe server --disableFastRender</code></p>
+<p>Once started, dev website will be accessible via http://localhost:1313</p>
 <div class=section-index>
 <hr class=panel-line>
 <div class=entry>
@@ -159,7 +183,7 @@
 <div class="text-muted mt-5 pt-3 border-top">
 Last modified
 September 9, 2021
-: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/62f10fc3af19d1d08253cfe462966efe8813eb66>Add an examples page (62f10fc)</a>
+: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/ea21958a140f3756cd9ea6a66a26ee9eb6ff1513>Short guide on starting hugo server (ea21958)</a>
 </div>
 </div>
 </main>
