@@ -154,6 +154,24 @@
 &lt;pre tabindex="0">&lt;code>docker rm neuromachine
 &lt;/code>&lt;/pre></description></item><item><title>Docs: HPC</title><link>https://neurodesk.github.io/docs/getting-started/hpc/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/getting-started/hpc/</guid><description>
 &lt;p>One way of running this project on HPCs is via &lt;a href="https://neurodesk.github.io/docs/overview/neurocommand/">https://neurodesk.github.io/docs/overview/neurocommand/&lt;/a>&lt;/p></description></item><item><title>Docs: Cloud</title><link>https://neurodesk.github.io/docs/getting-started/cloud/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/getting-started/cloud/</guid><description>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Cloud provider&lt;/th>
+&lt;th>link&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Oracle&lt;/td>
+&lt;td>&lt;a href="https://mri.sbollmann.net/index.php/2020/12/08/run-neurodesk-on-oracle-cloud-free-tier/">https://mri.sbollmann.net/index.php/2020/12/08/run-neurodesk-on-oracle-cloud-free-tier/&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Azure&lt;/td>
+&lt;td>&lt;a href="https://henryjburg.medium.com/neurodesk-running-on-azure-3e38c590a152">https://henryjburg.medium.com/neurodesk-running-on-azure-3e38c590a152&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
 &lt;h2 id="minimum-system-requirements">Minimum System Requirements&lt;/h2>
 &lt;ol>
 &lt;li>At least 3GB free space for neuromachine base image&lt;/li>
