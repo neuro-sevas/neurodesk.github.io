@@ -178,20 +178,13 @@ Run &lt;code>bash build.sh&lt;/code>&lt;br>
 &lt;li>Type:&lt;/li>
 &lt;/ol>
 &lt;pre tabindex="0">&lt;code>docker rm neuromachine
-&lt;/code>&lt;/pre></description></item><item><title>Docs: What's next?</title><link>https://neurodesk.github.io/docs/neurodesktop/whats-next/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/whats-next/</guid><description>
+&lt;/code>&lt;/pre></description></item><item><title>Docs: Troubleshooting</title><link>https://neurodesk.github.io/docs/neurocommand/troubleshooting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurocommand/troubleshooting/</guid><description>
+&lt;h2 id="other">Other&lt;/h2>
+&lt;p>Neurodesk is an open-source project that is always evolving. If you are experiencing an issue not listed here, please open a &lt;a href="https://github.com/NeuroDesk/neurodesk/issues">new issue&lt;/a>, so that we can aim to solve it and update our help documentation.&lt;/p></description></item><item><title>Docs: What's next?</title><link>https://neurodesk.github.io/docs/neurodesktop/whats-next/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/whats-next/</guid><description>
 &lt;h2 id="how-to-access-files-from-your-host-computer">How to access files from your Host computer?&lt;/h2>
 &lt;p>The &lt;code>-v C:/neurodesktop:/neurodesktop&lt;/code> part of the docker command links the directory &amp;ldquo;neurodesktop&amp;rdquo; on the &amp;ldquo;C drive&amp;rdquo; of your Windows computer to the directory /neurodesktop inside the Desktop environment. Everything you store in there will be available inside VNM and on the host computer. You can also mount additional directories by adding another -v parameter set (e.g. &lt;code>-v D:/moredata:/data&lt;/code>) - this will mount the directory moredata from your D drive to /data inside VNM.&lt;/p>
 &lt;h2 id="how-to-launchdownload-applications">How to launch/download applications&lt;/h2>
-&lt;p>Click on the Launcher icon in bottom-left corner and navigate to the &amp;ldquo;Neurodesktop&amp;rdquo; menu, then select the application and version you wish to launch. If it is the first time you launch the application, it will be downloaded to your desktop environment. The application is ready to use when the &amp;ldquo;Singularity&amp;gt;&amp;rdquo; propmpt appears in the terminal window that opens. If you chose in the menu the GUI of the application (e.g., fsleyesGUI 6.0.3), it will open automatically. If you chose tha application itself (e.g., fsl 6.0.3), a terminal window will open, and you can use it to run any of the utilities packaged with the application, including the grphical utilities (e.g., typing &amp;ldquo;fsl&amp;rdquo; to run FSL&amp;rsquo;s main menu).&lt;/p></description></item><item><title>Docs: What's in the box?</title><link>https://neurodesk.github.io/docs/neurocommand/troubleshooting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurocommand/troubleshooting/</guid><description>
-&lt;div class="pageinfo pageinfo-primary">
-&lt;p>Coming Soon&lt;/p>
-&lt;/div></description></item><item><title>Docs: What's in the box?</title><link>https://neurodesk.github.io/docs/neurodesktop/release-history/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/release-history/</guid><description>
-&lt;div class="pageinfo pageinfo-primary">
-&lt;p>Coming Soon&lt;/p>
-&lt;/div></description></item><item><title>Docs: What's in the box?</title><link>https://neurodesk.github.io/docs/neurodesktop/troubleshooting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/troubleshooting/</guid><description>
-&lt;div class="pageinfo pageinfo-primary">
-&lt;p>Coming Soon&lt;/p>
-&lt;/div></description></item><item><title>Docs: What's in the box?</title><link>https://neurodesk.github.io/docs/neurodesktop/whatsinthebox/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/whatsinthebox/</guid><description>
+&lt;p>Click on the Launcher icon in bottom-left corner and navigate to the &amp;ldquo;Neurodesktop&amp;rdquo; menu, then select the application and version you wish to launch. If it is the first time you launch the application, it will be downloaded to your desktop environment. The application is ready to use when the &amp;ldquo;Singularity&amp;gt;&amp;rdquo; propmpt appears in the terminal window that opens. If you chose in the menu the GUI of the application (e.g., fsleyesGUI 6.0.3), it will open automatically. If you chose tha application itself (e.g., fsl 6.0.3), a terminal window will open, and you can use it to run any of the utilities packaged with the application, including the grphical utilities (e.g., typing &amp;ldquo;fsl&amp;rdquo; to run FSL&amp;rsquo;s main menu).&lt;/p></description></item><item><title>Docs: What's in the box?</title><link>https://neurodesk.github.io/docs/neurodesktop/whatsinthebox/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/whatsinthebox/</guid><description>
 &lt;div class="pageinfo pageinfo-primary">
 &lt;p>Coming Soon&lt;/p>
 &lt;/div></description></item><item><title>Docs: Windows</title><link>https://neurodesk.github.io/docs/neurocommand/getting-started/windows/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurocommand/getting-started/windows/</guid><description>
@@ -464,7 +457,10 @@ Here are two examples for FreeSurfer and FreeView. This first one only installs 
 &lt;span style="color:#c4a000">Categories&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">FreeSurfer&lt;/span>
 &lt;span style="color:#c4a000">Terminal&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">true&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: HPC</title><link>https://neurodesk.github.io/docs/neurodesktop/getting-started/hpc/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/getting-started/hpc/</guid><description>
-&lt;p>One way of running this project on HPCs is via &lt;a href="https://neurodesk.github.io/docs/overview/neurocommand/">https://neurodesk.github.io/docs/overview/neurocommand/&lt;/a>&lt;/p></description></item><item><title>Docs: Storage</title><link>https://neurodesk.github.io/docs/advanced/storage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/advanced/storage/</guid><description>
+&lt;p>One way of running this project on HPCs is via &lt;a href="https://neurodesk.github.io/docs/overview/neurocommand/">https://neurodesk.github.io/docs/overview/neurocommand/&lt;/a>&lt;/p></description></item><item><title>Docs: Release History</title><link>https://neurodesk.github.io/docs/neurodesktop/release-history/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/release-history/</guid><description>
+&lt;div class="pageinfo pageinfo-primary">
+&lt;p>Coming Soon&lt;/p>
+&lt;/div></description></item><item><title>Docs: Storage</title><link>https://neurodesk.github.io/docs/advanced/storage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/advanced/storage/</guid><description>
 &lt;h2 id="mount-volume-using-sshfs">Mount volume using SSHFS&lt;/h2>
 &lt;p>&lt;code>sshfs -o allow_root USER@TARGET_HOST:TARGET_PATH SOURCE_PATH&lt;/code>&lt;/p>
 &lt;h2 id="not-enough-free-space">Not enough free space&lt;/h2>
@@ -629,7 +625,9 @@ Here are two examples for FreeSurfer and FreeView. This first one only installs 
 &lt;li>Type:&lt;/li>
 &lt;/ol>
 &lt;pre tabindex="0">&lt;code>docker rm neuromachine
-&lt;/code>&lt;/pre></description></item><item><title>Docs: Example Page</title><link>https://neurodesk.github.io/docs/for-developers/example-page/</link><pubDate>Thu, 05 Jan 2017 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/for-developers/example-page/</guid><description>
+&lt;/code>&lt;/pre></description></item><item><title>Docs: Troubleshooting</title><link>https://neurodesk.github.io/docs/neurodesktop/troubleshooting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/troubleshooting/</guid><description>
+&lt;h2 id="other">Other&lt;/h2>
+&lt;p>Neurodesktop is an open-source project that is always evolving. If you are experiencing an issue not listed here, please open a &lt;a href="https://github.com/NeuroDesk/neurodesk/issues">new issue&lt;/a>, so that we can aim to solve it and update our help documentation.&lt;/p></description></item><item><title>Docs: Example Page</title><link>https://neurodesk.github.io/docs/for-developers/example-page/</link><pubDate>Thu, 05 Jan 2017 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/for-developers/example-page/</guid><description>
 &lt;div class="pageinfo pageinfo-primary">
 &lt;p>This is a placeholder page. Replace it with your own content.&lt;/p>
 &lt;/div>
