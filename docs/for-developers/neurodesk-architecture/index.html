@@ -13,23 +13,23 @@
 <link rel=icon type=image/png href=/favicons/android-96x96.png sizes=96x96>
 <link rel=icon type=image/png href=/favicons/android-144x144.png sizes=144x144>
 <link rel=icon type=image/png href=/favicons/android-192x192.png sizes=192x192>
-<title>Neurocommand | NeuroDesk</title>
-<meta name=description content="Setup of Neurocommand
+<title>Neurodesk Architecture | NeuroDesk</title>
+<meta name=description content="The architecture of the Neurodesk ecosystem
 ">
-<meta property="og:title" content="Neurocommand">
-<meta property="og:description" content="Setup of Neurocommand
+<meta property="og:title" content="Neurodesk Architecture">
+<meta property="og:description" content="The architecture of the Neurodesk ecosystem
 ">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://neurodesk.github.io/docs/overview/neurocommand/"><meta property="article:section" content="docs">
-<meta property="article:modified_time" content="2021-09-09T21:08:55+10:00"><meta property="og:site_name" content="NeuroDesk">
-<meta itemprop=name content="Neurocommand">
-<meta itemprop=description content="Setup of Neurocommand
+<meta property="og:url" content="https://neurodesk.github.io/docs/for-developers/neurodesk-architecture/"><meta property="article:section" content="docs">
+<meta property="article:modified_time" content="2021-09-14T12:20:51+10:00"><meta property="og:site_name" content="NeuroDesk">
+<meta itemprop=name content="Neurodesk Architecture">
+<meta itemprop=description content="The architecture of the Neurodesk ecosystem
 ">
-<meta itemprop=dateModified content="2021-09-09T21:08:55+10:00">
-<meta itemprop=wordCount content="441">
+<meta itemprop=dateModified content="2021-09-14T12:20:51+10:00">
+<meta itemprop=wordCount content="167">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
-<meta name=twitter:title content="Neurocommand">
-<meta name=twitter:description content="Setup of Neurocommand
+<meta name=twitter:title content="Neurodesk Architecture">
+<meta name=twitter:description content="The architecture of the Neurodesk ecosystem
 ">
 <link rel=preload href=/scss/main.min.54a6b13de98a6b564f59b9d4cda427d6ae62ab54c015b5b9f5ed167c2da7fdd5.css as=style>
 <link href=/scss/main.min.54a6b13de98a6b564f59b9d4cda427d6ae62ab54c015b5b9f5ed167c2da7fdd5.css rel=stylesheet integrity>
@@ -70,17 +70,8 @@
 <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id=m-docs-li>
 <a href=/docs/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section tree-root" id=m-docs><span>Documentation</span></a>
 <ul class=ul-1>
-<li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id=m-docsoverview-li>
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsoverview-li>
 <a href=/docs/overview/ title="Neurodesk Overview" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsoverview><span>Overview</span></a>
-<ul class="ul-2 foldable">
-<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsoverviewneurodesktop-li>
-<a href=/docs/overview/neurodesktop/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsoverviewneurodesktop><span>Neurodesktop</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id=m-docsoverviewneurocommand-li>
-<a href=/docs/overview/neurocommand/ class="align-left pl-0 active td-sidebar-link td-sidebar-link__page" id=m-docsoverviewneurocommand><span class=td-sidebar-nav-active-item>Neurocommand</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsoverviewneurocontainers-li>
-<a href=/docs/overview/neurocontainers/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsoverviewneurocontainers><span>Neurocontainers</span></a>
-</li>
-</ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-docsneurodesktop-li>
 <a href=/docs/neurodesktop/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsneurodesktop><span>Neurodesktop</span></a>
 <ul class="ul-2 foldable">
@@ -101,10 +92,34 @@
 <a href=/docs/neurodesktop/getting-started/demo/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsneurodesktopgetting-starteddemo><span>Demo</span></a>
 </li>
 </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsneurodesktophow-to-use-neurodesktop-li>
-<a href=/docs/neurodesktop/how-to-use-neurodesktop/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsneurodesktophow-to-use-neurodesktop><span>How to use Neurodesktop</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsneurodesktopwhats-next-li>
+<a href=/docs/neurodesktop/whats-next/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsneurodesktopwhats-next><span>What's next?</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsneurodesktoprelease-history-li>
+<a href=/docs/neurodesktop/release-history/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsneurodesktoprelease-history><span>What's in the box?</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsneurodesktoptroubleshooting-li>
+<a href=/docs/neurodesktop/troubleshooting/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsneurodesktoptroubleshooting><span>What's in the box?</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsneurodesktopwhatsinthebox-li>
+<a href=/docs/neurodesktop/whatsinthebox/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsneurodesktopwhatsinthebox><span>What's in the box?</span></a>
 </li>
 </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-docsneurocommand-li>
+<a href=/docs/neurocommand/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsneurocommand><span>Neurocommand</span></a>
+<ul class="ul-2 foldable">
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-docsneurocommandgetting-started-li>
+<a href=/docs/neurocommand/getting-started/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsneurocommandgetting-started><span>Getting Started</span></a>
+<ul class="ul-3 foldable">
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsneurocommandgetting-startedlinux-li>
+<a href=/docs/neurocommand/getting-started/linux/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsneurocommandgetting-startedlinux><span>Linux</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsneurocommandgetting-startedwindows-li>
+<a href=/docs/neurocommand/getting-started/windows/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsneurocommandgetting-startedwindows><span>Windows</span></a>
+</li>
+</ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsneurocommandtroubleshooting-li>
+<a href=/docs/neurocommand/troubleshooting/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsneurocommandtroubleshooting><span>What's in the box?</span></a>
+</li>
+</ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsneurocontainers-li>
+<a href=/docs/neurocontainers/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsneurocontainers><span>Neurocontainers</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-docsadvanced-li>
 <a href=/docs/advanced/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsadvanced><span>Advanced</span></a>
 <ul class="ul-2 foldable">
@@ -116,13 +131,13 @@
 <a href=/docs/advanced/tested/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsadvancedtested><span>Tested</span></a>
 </li>
 </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsarchitecture-li>
-<a href=/docs/architecture/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsarchitecture><span>Architecture</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-docsdevelopment-li>
-<a href=/docs/development/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsdevelopment><span>Development</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id=m-docsfor-developers-li>
+<a href=/docs/for-developers/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsfor-developers><span>For Developers</span></a>
 <ul class="ul-2 foldable">
-<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsdevelopmentexample-page-li>
-<a href=/docs/development/example-page/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsdevelopmentexample-page><span>Example Page</span></a>
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id=m-docsfor-developersneurodesk-architecture-li>
+<a href=/docs/for-developers/neurodesk-architecture/ class="align-left pl-0 active td-sidebar-link td-sidebar-link__page" id=m-docsfor-developersneurodesk-architecture><span class=td-sidebar-nav-active-item>Neurodesk Architecture</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsfor-developersexample-page-li>
+<a href=/docs/for-developers/example-page/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsfor-developersexample-page><span>Example Page</span></a>
 </li>
 </ul>
 </li>
@@ -134,114 +149,55 @@
 </aside>
 <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
 <div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
-<a href=https://github.com/NeuroDesk/neurodesk.github.io/edit/hugo-docsy/content/en/docs/Overview/neurocommand.md target=_blank><i class="fa fa-edit fa-fw"></i> Edit this page</a>
-<a href="https://github.com/NeuroDesk/neurodesk.github.io/new/hugo-docsy/content/en/docs/Overview/neurocommand.md?filename=change-me.md&value=---%0Atitle%3A+%22Long+Page+Title%22%0AlinkTitle%3A+%22Short+Nav+Title%22%0Aweight%3A+100%0Adescription%3A+%3E-%0A+++++Page+description+for+heading+and+indexes.%0A---%0A%0A%23%23+Heading%0A%0AEdit+this+template+to+create+your+new+page.%0A%0A%2A+Give+it+a+good+name%2C+ending+in+%60.md%60+-+e.g.+%60getting-started.md%60%0A%2A+Edit+the+%22front+matter%22+section+at+the+top+of+the+page+%28weight+controls+how+its+ordered+amongst+other+pages+in+the+same+directory%3B+lowest+number+first%29.%0A%2A+Add+a+good+commit+message+at+the+bottom+of+the+page+%28%3C80+characters%3B+use+the+extended+description+field+for+more+detail%29.%0A%2A+Create+a+new+branch+so+you+can+preview+your+new+file+and+request+a+review+via+Pull+Request.%0A" target=_blank><i class="fa fa-edit fa-fw"></i> Create child page</a>
-<a href="https://github.com/NeuroDesk/neurodesk.github.io/issues/new?title=Neurocommand" target=_blank><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+<a href=https://github.com/NeuroDesk/neurodesk.github.io/edit/hugo-docsy/content/en/docs/For%20Developers/Neurodesk%20Architecture.md target=_blank><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+<a href="https://github.com/NeuroDesk/neurodesk.github.io/new/hugo-docsy/content/en/docs/For%20Developers/Neurodesk%20Architecture.md?filename=change-me.md&value=---%0Atitle%3A+%22Long+Page+Title%22%0AlinkTitle%3A+%22Short+Nav+Title%22%0Aweight%3A+100%0Adescription%3A+%3E-%0A+++++Page+description+for+heading+and+indexes.%0A---%0A%0A%23%23+Heading%0A%0AEdit+this+template+to+create+your+new+page.%0A%0A%2A+Give+it+a+good+name%2C+ending+in+%60.md%60+-+e.g.+%60getting-started.md%60%0A%2A+Edit+the+%22front+matter%22+section+at+the+top+of+the+page+%28weight+controls+how+its+ordered+amongst+other+pages+in+the+same+directory%3B+lowest+number+first%29.%0A%2A+Add+a+good+commit+message+at+the+bottom+of+the+page+%28%3C80+characters%3B+use+the+extended+description+field+for+more+detail%29.%0A%2A+Create+a+new+branch+so+you+can+preview+your+new+file+and+request+a+review+via+Pull+Request.%0A" target=_blank><i class="fa fa-edit fa-fw"></i> Create child page</a>
+<a href="https://github.com/NeuroDesk/neurodesk.github.io/issues/new?title=Neurodesk%20Architecture" target=_blank><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
 <a href=https://github.com/NeuroDesk/neurodesk.github.io/issues/new target=_blank><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
-<a id=print href=https://neurodesk.github.io/docs/overview/_print/><i class="fa fa-print fa-fw"></i> Print entire section</a>
+<a id=print href=https://neurodesk.github.io/docs/for-developers/_print/><i class="fa fa-print fa-fw"></i> Print entire section</a>
 </div>
-<div class=td-toc><nav id=TableOfContents>
-<ul>
-<li><a href=#linux>Linux</a>
-<ul>
-<li><a href=#requirements>Requirements:</a></li>
-<li><a href=#inital-install>Inital install</a></li>
-<li><a href=#to-update>To update</a></li>
-</ul>
-</li>
-<li><a href=#windows>Windows</a>
-<ul>
-<li><a href=#wsl-w-ubuntu--lxde>WSL (w/ Ubuntu + LXDE)</a></li>
-</ul>
-</li>
-<li><a href=#mac>Mac</a></li>
-<li><a href=#advanced-usage>Advanced usage</a></li>
-</ul>
-</nav></div>
 </aside>
 <main class="col-12 col-md-9 col-xl-8 pl-md-5" role=main>
 <div class=td-content>
-<h1>Neurocommand</h1>
-<div class=lead>Setup of Neurocommand</div>
+<h1>Neurodesk Architecture</h1>
+<div class=lead>The architecture of the Neurodesk ecosystem</div>
 <header class=article-meta>
 </header>
-<p>Requires a Linux host machine, virtual machine or WSL for Windows.</p>
-<h2 id=linux>Linux</h2>
-<h3 id=requirements>Requirements:</h3>
-<h4 id=required>Required</h4>
+<h1 id=layers>Layers</h1>
+<p>Neurodesktop: <a href=https://github.com/NeuroDesk/Neurodesktop>https://github.com/NeuroDesk/Neurodesktop</a></p>
 <ul>
-<li>python <a href=https://docs.conda.io/en/latest/miniconda.html#linux-installers>https://docs.conda.io/en/latest/miniconda.html#linux-installers</a></li>
-<li>singularity <a href=https://sylabs.io/guides/3.5/user-guide/quick_start.html>https://sylabs.io/guides/3.5/user-guide/quick_start.html</a></li>
+<li>docker container with interface modifications</li>
+<li>contains tools necessary to manage containers: vscode, git, niype</li>
+<li>CI: builds docker image and tests if it runs</li>
 </ul>
-<h4 id=optional>Optional</h4>
+<p>Neurocommand: <a href=https://github.com/NeuroDesk/Neurocommand>https://github.com/NeuroDesk/Neurocommand</a></p>
 <ul>
-<li>lmod <a href=https://sylabs.io/guides/3.5/user-guide/quick_start.html>https://lmod.readthedocs.io/en/latest/</a></li>
+<li>script to install and manage multiple containers using transparent singularity on any linux system</li>
+<li>this repo would also handle the creation of menu entries in a general form applicable to different desktop environments</li>
+<li>this repo can be re-used in other projects like CVL and the imaging workstations</li>
+<li>CI: tests if containers can be installed</li>
 </ul>
-<h3 id=inital-install>Inital install</h3>
-<h4 id=command-line-mode---for-non-desktop-experience-eg-running-on-an-hpc>command line mode - For non-desktop experience (e.g. running on an HPC)</h4>
-<p>If running on cli only &mldr;</p>
+<p>transparent-singularity: <a href=https://github.com/NeuroDesk/transparent-singularity>https://github.com/NeuroDesk/transparent-singularity</a></p>
 <ul>
-<li>Load singularity and for best performance it should be 3.x e.g. <code>module load singularity/3.5.0</code></li>
-<li>Run <code>git clone https://github.com/NeuroDesk/neurodesk.git</code> to clone the repository - make sure to clone this to a directory with enough storage, write permissions and NOT a symbolic link (to be sure run cd `pwd -P`)!</li>
-<li>Run <code>cd neurodesk</code> to change into the directory</li>
-<li>Run <code>bash build.sh --cli</code> to install in cli mode</li>
-<li>Run <code>bash containers.sh</code> for installing indiviual containers or <code>bash containers.sh --all</code> for installing all containers</li>
-<li>Run <code>module use $PWD/local/containers/modules/</code> to add the containers to your module search path. Add this to your .bashrc if working.</li>
-<li>Run <code>ml avail</code> to see the installed containers at the top of the list (neurodesk containers will take preference over system modules with the same name). If a container is not yet there run <code>ml --ignore_cache avail</code></li>
+<li>script to install neuro-sub-containers, installers are called by neurodesk script</li>
+<li>this repo could provide a simple way of using our containers on HPCs for large scale processing of the pipelines build in VNM</li>
+<li>CI: test if exposing of binaries work</li>
 </ul>
-<h4 id=for-lxde-desktops>For Lxde desktops</h4>
-<p>If running on an lxde desktop&mldr;
-Run <code>bash build.sh --lxde --edit</code></p>
-<h4 id=for-mate-desktops>For Mate desktops</h4>
-<p>Run <code>bash build.sh --init</code> (or <code>bash build.sh --lxde --edit</code>)<br>
-lxde/mate: Mate<br>
-installdir: Where all the neurodesk files will be stored (Default: ./local)<br>
-appmenu: The linux menu xml file. (Usually /etc/xdg/menus/****-applications.menu)<br>
-appdir: Location for the .desktop files for this linux desktop (Usually /usr/share/applications)<br>
-deskdir: Location for the .directory files for this linux desktop (Typically /usr/share/desktop-directories)</p>
-<h4 id=for-desktop-menus>For desktop menus:</h4>
-<p><code>sudo bash install.sh</code> to install<br>
-<em>Creates symlinks to menu files in installation dir</em></p>
-<p><code>sudo bash uninstall.sh</code> to uninstall<br>
-<em>Removes symlinks</em></p>
-<h3 id=to-update>To update</h3>
-<p>Run <code>git pull</code><br>
-Run <code>bash build.sh</code><br>
-<em>install.sh does not need to be run again</em></p>
-<h4 id=to-download-all-containers>To download all containers</h4>
-<p>Run <code>bash containers.sh --all</code></p>
-<h2 id=windows>Windows</h2>
-<h3 id=wsl-w-ubuntu--lxde>WSL (w/ Ubuntu + LXDE)</h3>
-<p>For more information on WSL: <a href=https://docs.microsoft.com/en-us/windows/wsl>https://docs.microsoft.com/en-us/windows/wsl</a></p>
-<h4 id=setting-up>Setting up</h4>
-<ol>
-<li>Setup WSL2 using the following instructions <em>(Ubuntu 18.04 recommended)</em><br>
-<a href=https://docs.microsoft.com/en-us/windows/wsl/install-win10>https://docs.microsoft.com/en-us/windows/wsl/install-win10</a>
-<em>Proceed until a Ubuntu bash shell is available from the Windows Host</em><br>
-<em>Run the remaining commands in the Bash shell</em></li>
-<li><code>sudo apt-get install lxde</code> to install LXDE desktop in WSL</li>
-<li>Reboot</li>
-<li><code>sudo apt-get install xrdp</code> to install XRDP in WSL</li>
-<li>Open <code>/etc/xrdp/xrdp.ini</code>
-Change <code>port=3389</code> to <code>port=3390</code> and save</li>
-<li>Run <code>echo startlxde > ~/.xsession</code></li>
-</ol>
-<h4 id=running>Running</h4>
-<ol>
-<li><code>sudo service xrdp start</code> to start xrdp server</li>
-<li>Open Microsoft Remote Desktop Connection in Windows host</li>
-<li>Connect to <code>localhost:3390</code></li>
-<li>In the next login page, leave Session as <code>Xorg</code>. Enter your WSL username and password and click <code>OK</code></li>
-<li>This should open an LXDE Linux Desktop environment. Follow Linux guide from here on</li>
-</ol>
-<h2 id=mac>Mac</h2>
-<p>Currently supported via <a href=https://github.com/NeuroDesk/vnm>VNM</a></p>
-<h2 id=advanced-usage>Advanced usage</h2>
-<p>For advanced VNM and Neurodesk installer usage, check <a href=https://neurodesk.github.io/docs/advanced>here</a></p>
+<p>Neurocontainers: <a href=https://github.com/NeuroDesk/Neurocontainers>https://github.com/NeuroDesk/Neurocontainers</a></p>
+<ul>
+<li>build scripts for neuro-sub-containers</li>
+<li>CI: building, pushing and testing of containers</li>
+</ul>
+<p>Neurodocker: <a href=https://github.com/NeuroDesk/neurodocker>https://github.com/NeuroDesk/neurodocker</a></p>
+<ul>
+<li>fork of neurodocker project</li>
+<li>provides recipes for our containers built</li>
+<li>we are providing pull requests back of recipes</li>
+<li>CI: handled by <a href=https://github.com/ReproNim/neurodocker>neurodocker</a> - testing of generating container recipes</li>
+</ul>
 <div class="text-muted mt-5 pt-3 border-top">
 Last modified
-September 9, 2021
-: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/29fe84b825247b0687fd2a9f24ac9bd926eaa0e5>more cleanup and moving content around (29fe84b)</a>
+September 14, 2021
+: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/3f19d38b0606cacdffc65a6c45cc87ffbbda8492>Updated menu to proposed structure (3f19d38)</a>
 </div>
 </div>
 </main>

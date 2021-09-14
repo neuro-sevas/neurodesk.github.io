@@ -2,8 +2,8 @@
 <head>
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
-<meta name=generator content="Hugo 0.88.1"><link rel=canonical type=text/html href=https://neurodesk.github.io/docs/architecture/>
-<link rel=alternate type=application/rss+xml href=https://neurodesk.github.io/docs/architecture/index.xml>
+<meta name=generator content="Hugo 0.88.1"><link rel=canonical type=text/html href=https://neurodesk.github.io/docs/neurocontainers/>
+<link rel=alternate type=application/rss+xml href=https://neurodesk.github.io/docs/neurocontainers/index.xml>
 <meta name=ROBOTS content="NOINDEX, NOFOLLOW">
 <link rel="shortcut icon" href=/favicons/favicon.ico>
 <link rel=apple-touch-icon href=/favicons/apple-touch-icon-180x180.png sizes=180x180>
@@ -15,19 +15,19 @@
 <link rel=icon type=image/png href=/favicons/android-96x96.png sizes=96x96>
 <link rel=icon type=image/png href=/favicons/android-144x144.png sizes=144x144>
 <link rel=icon type=image/png href=/favicons/android-192x192.png sizes=192x192>
-<title>Architecture | NeuroDesk</title>
-<meta name=description content="The neurodesk architecture 
+<title>Neurocontainers | NeuroDesk</title>
+<meta name=description content="What neurocontainers are about
 ">
-<meta property="og:title" content="Architecture">
-<meta property="og:description" content="The neurodesk architecture 
+<meta property="og:title" content="Neurocontainers">
+<meta property="og:description" content="What neurocontainers are about
 ">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://neurodesk.github.io/docs/architecture/"><meta property="og:site_name" content="NeuroDesk">
-<meta itemprop=name content="Architecture">
-<meta itemprop=description content="The neurodesk architecture 
+<meta property="og:url" content="https://neurodesk.github.io/docs/neurocontainers/"><meta property="og:site_name" content="NeuroDesk">
+<meta itemprop=name content="Neurocontainers">
+<meta itemprop=description content="What neurocontainers are about
 "><meta name=twitter:card content="summary">
-<meta name=twitter:title content="Architecture">
-<meta name=twitter:description content="The neurodesk architecture 
+<meta name=twitter:title content="Neurocontainers">
+<meta name=twitter:description content="What neurocontainers are about
 ">
 <link rel=preload href=/scss/main.min.54a6b13de98a6b564f59b9d4cda427d6ae62ab54c015b5b9f5ed167c2da7fdd5.css as=style>
 <link href=/scss/main.min.54a6b13de98a6b564f59b9d4cda427d6ae62ab54c015b5b9f5ed167c2da7fdd5.css rel=stylesheet integrity>
@@ -67,46 +67,21 @@
 This the multi-page printable view of this section.
 <a href=# onclick="return print(),!1">Click here to print</a>.
 </p><p>
-<a href=/docs/architecture/>Return to the regular view of this page</a>.
+<a href=/docs/neurocontainers/>Return to the regular view of this page</a>.
 </p>
 </div>
-<h1 class=title>Architecture</h1>
-<div class=lead>The neurodesk architecture</div>
+<h1 class=title>Neurocontainers</h1>
+<div class=lead>What neurocontainers are about</div>
 <ul>
 </ul>
 <div class=content>
-<h1 id=layers>Layers</h1>
-<p>Neurodesktop: <a href=https://github.com/NeuroDesk/Neurodesktop>https://github.com/NeuroDesk/Neurodesktop</a></p>
-<ul>
-<li>docker container with interface modifications</li>
-<li>contains tools necessary to manage containers: vscode, git, niype</li>
-<li>CI: builds docker image and tests if it runs</li>
-</ul>
-<p>Neurocommand: <a href=https://github.com/NeuroDesk/Neurocommand>https://github.com/NeuroDesk/Neurocommand</a></p>
-<ul>
-<li>script to install and manage multiple containers using transparent singularity on any linux system</li>
-<li>this repo would also handle the creation of menu entries in a general form applicable to different desktop environments</li>
-<li>this repo can be re-used in other projects like CVL and the imaging workstations</li>
-<li>CI: tests if containers can be installed</li>
-</ul>
-<p>transparent-singularity: <a href=https://github.com/NeuroDesk/transparent-singularity>https://github.com/NeuroDesk/transparent-singularity</a></p>
-<ul>
-<li>script to install neuro-sub-containers, installers are called by neurodesk script</li>
-<li>this repo could provide a simple way of using our containers on HPCs for large scale processing of the pipelines build in VNM</li>
-<li>CI: test if exposing of binaries work</li>
-</ul>
-<p>Neurocontainers: <a href=https://github.com/NeuroDesk/Neurocontainers>https://github.com/NeuroDesk/Neurocontainers</a></p>
-<ul>
-<li>build scripts for neuro-sub-containers</li>
-<li>CI: building, pushing and testing of containers</li>
-</ul>
-<p>Neurodocker: <a href=https://github.com/NeuroDesk/neurodocker>https://github.com/NeuroDesk/neurodocker</a></p>
-<ul>
-<li>fork of neurodocker project</li>
-<li>provides recipes for our containers built</li>
-<li>we are providing pull requests back of recipes</li>
-<li>CI: handled by <a href=https://github.com/ReproNim/neurodocker>neurodocker</a> - testing of generating container recipes</li>
-</ul>
+<p>Neurocontainers is our collection of neuro containers hosted on dockerhub (<a href=https://hub.docker.com/orgs/vnmd/repositories>https://hub.docker.com/orgs/vnmd/repositories</a>) or github (<a href=https://github.com/NeuroDesk/neurocontainers/packages>https://github.com/NeuroDesk/neurocontainers/packages</a>)</p>
+<h1 id=pull-containers>pull containers</h1>
+<p>docker</p>
+<pre tabindex=0><code>docker pull vnmd/julia_1.6.1
+</code></pre><p>build singularity image from dockerhub</p>
+<pre tabindex=0><code>singularity build julia_1.6.1.simg docker://vnmd/julia_1.6.1
+</code></pre>
 </div>
 </div>
 </main>

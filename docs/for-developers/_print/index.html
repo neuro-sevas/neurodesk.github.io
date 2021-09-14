@@ -2,8 +2,8 @@
 <head>
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
-<meta name=generator content="Hugo 0.88.1"><link rel=canonical type=text/html href=https://neurodesk.github.io/docs/development/>
-<link rel=alternate type=application/rss+xml href=https://neurodesk.github.io/docs/development/index.xml>
+<meta name=generator content="Hugo 0.88.1"><link rel=canonical type=text/html href=https://neurodesk.github.io/docs/for-developers/>
+<link rel=alternate type=application/rss+xml href=https://neurodesk.github.io/docs/for-developers/index.xml>
 <meta name=ROBOTS content="NOINDEX, NOFOLLOW">
 <link rel="shortcut icon" href=/favicons/favicon.ico>
 <link rel=apple-touch-icon href=/favicons/apple-touch-icon-180x180.png sizes=180x180>
@@ -15,18 +15,18 @@
 <link rel=icon type=image/png href=/favicons/android-96x96.png sizes=96x96>
 <link rel=icon type=image/png href=/favicons/android-144x144.png sizes=144x144>
 <link rel=icon type=image/png href=/favicons/android-192x192.png sizes=192x192>
-<title>Development | NeuroDesk</title>
+<title>For Developers | NeuroDesk</title>
 <meta name=description content="Developer guide
 ">
-<meta property="og:title" content="Development">
+<meta property="og:title" content="For Developers">
 <meta property="og:description" content="Developer guide
 ">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://neurodesk.github.io/docs/development/"><meta property="og:site_name" content="NeuroDesk">
-<meta itemprop=name content="Development">
+<meta property="og:url" content="https://neurodesk.github.io/docs/for-developers/"><meta property="og:site_name" content="NeuroDesk">
+<meta itemprop=name content="For Developers">
 <meta itemprop=description content="Developer guide
 "><meta name=twitter:card content="summary">
-<meta name=twitter:title content="Development">
+<meta name=twitter:title content="For Developers">
 <meta name=twitter:description content="Developer guide
 ">
 <link rel=preload href=/scss/main.min.54a6b13de98a6b564f59b9d4cda427d6ae62ab54c015b5b9f5ed167c2da7fdd5.css as=style>
@@ -67,13 +67,14 @@
 This the multi-page printable view of this section.
 <a href=# onclick="return print(),!1">Click here to print</a>.
 </p><p>
-<a href=/docs/development/>Return to the regular view of this page</a>.
+<a href=/docs/for-developers/>Return to the regular view of this page</a>.
 </p>
 </div>
-<h1 class=title>Development</h1>
+<h1 class=title>For Developers</h1>
 <div class=lead>Developer guide</div>
 <ul>
-<li>1: <a href=#pg-3bc9651a1f88ea38dc9bb52f922f0420>Example Page</a></li>
+<li>1: <a href=#pg-08a90f4738abd9b7c845a70e79c1eba4>Neurodesk Architecture</a></li>
+<li>2: <a href=#pg-0d66aa6f71a8c5fe1b2e3c2a34a54d64>Example Page</a></li>
 </ul>
 <div class=content>
 <h2 id=developing-neurodeskgithubio>Developing neurodesk.github.io</h2>
@@ -93,7 +94,43 @@ This the multi-page printable view of this section.
 </div>
 </div>
 <div class=td-content style=page-break-before:always>
-<h1 id=pg-3bc9651a1f88ea38dc9bb52f922f0420>1 - Example Page</h1>
+<h1 id=pg-08a90f4738abd9b7c845a70e79c1eba4>1 - Neurodesk Architecture</h1>
+<div class=lead>The architecture of the Neurodesk ecosystem</div>
+<h1 id=layers>Layers</h1>
+<p>Neurodesktop: <a href=https://github.com/NeuroDesk/Neurodesktop>https://github.com/NeuroDesk/Neurodesktop</a></p>
+<ul>
+<li>docker container with interface modifications</li>
+<li>contains tools necessary to manage containers: vscode, git, niype</li>
+<li>CI: builds docker image and tests if it runs</li>
+</ul>
+<p>Neurocommand: <a href=https://github.com/NeuroDesk/Neurocommand>https://github.com/NeuroDesk/Neurocommand</a></p>
+<ul>
+<li>script to install and manage multiple containers using transparent singularity on any linux system</li>
+<li>this repo would also handle the creation of menu entries in a general form applicable to different desktop environments</li>
+<li>this repo can be re-used in other projects like CVL and the imaging workstations</li>
+<li>CI: tests if containers can be installed</li>
+</ul>
+<p>transparent-singularity: <a href=https://github.com/NeuroDesk/transparent-singularity>https://github.com/NeuroDesk/transparent-singularity</a></p>
+<ul>
+<li>script to install neuro-sub-containers, installers are called by neurodesk script</li>
+<li>this repo could provide a simple way of using our containers on HPCs for large scale processing of the pipelines build in VNM</li>
+<li>CI: test if exposing of binaries work</li>
+</ul>
+<p>Neurocontainers: <a href=https://github.com/NeuroDesk/Neurocontainers>https://github.com/NeuroDesk/Neurocontainers</a></p>
+<ul>
+<li>build scripts for neuro-sub-containers</li>
+<li>CI: building, pushing and testing of containers</li>
+</ul>
+<p>Neurodocker: <a href=https://github.com/NeuroDesk/neurodocker>https://github.com/NeuroDesk/neurodocker</a></p>
+<ul>
+<li>fork of neurodocker project</li>
+<li>provides recipes for our containers built</li>
+<li>we are providing pull requests back of recipes</li>
+<li>CI: handled by <a href=https://github.com/ReproNim/neurodocker>neurodocker</a> - testing of generating container recipes</li>
+</ul>
+</div>
+<div class=td-content style=page-break-before:always>
+<h1 id=pg-0d66aa6f71a8c5fe1b2e3c2a34a54d64>2 - Example Page</h1>
 <div class=lead>A short lead description about this content page. It can be <strong>bold</strong> or <em>italic</em> and can be split over multiple paragraphs.</div>
 <div class="pageinfo pageinfo-primary">
 <p>This is a placeholder page. Replace it with your own content.</p>
