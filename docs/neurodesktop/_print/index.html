@@ -351,12 +351,12 @@ This the multi-page printable view of this section.
 <p><img src=/Desktop.png alt=desktop title=desktop></p>
 <p>In this linux desktop environment, you can access the menu, launch programs, write analysis code, use version control software (i.e. git) and develop analysis pipelines as though you were on your own computer.</p>
 <h2 id=release>Release</h2>
-<p>Keep a note of the release number of the container image that you installed. Regardless of what operating system you installed neurodesktop into, the version number would have been at the end of the <em>docker run</em> command:</p>
+<p>Keep a note of the release date of the container image that you installed. Regardless of what operating system you installed neurodesktop into, the release date would have been at the end of the <em>docker run</em> command:</p>
 <p><img src=/version.png alt=version title=version></p>
 <p>We regularly update neurodesktop to make sure it’s running well and has up-to-date software. You can check the <a href=https://neurodesk.github.io/docs/neurodesktop/release-history/>Release History</a> page for details of previous releases. If you’d like to update your container at any time, simply switch out the release number for the version you would like. If you’ve finished working on an analysis pipeline and would like to share it with others, you can point them toward the stable release number that you worked in. That way anyone, on any computer around the world can replicate your analysis pipeline in the exact same computing environment that you developed it in.</p>
 <h2 id=video-tutorial>Video tutorial</h2>
 <p>Click <a href="https://www.youtube.com/watch?v=JLv_5fycugw">here</a> to watch a 2 minute tutorial video from OHBM 2021</p>
-<h2 id=how-to-access-files-from-your-host-computer>How to access files from your Host computer?</h2>
+<h2 id=how-to-access-files-from-your-host-computer>How to access files from your Host computer</h2>
 <p>The <code>-v C:/neurodesktop:/neurodesktop</code> part of the docker command links the directory &ldquo;neurodesktop&rdquo; on the &ldquo;C drive&rdquo; of your Windows computer to the directory /neurodesktop inside the Desktop environment. Everything you store in there will be available inside neurodesktop and on the host computer. You can also mount additional directories by adding another -v parameter set (e.g. <code>-v D:/moredata:/data</code>) - this will mount the directory moredata from your D drive to /data inside neurodesktop.</p>
 <h2 id=how-to-launchdownload-applications>How to launch/download applications</h2>
 <p>Click on the Launcher icon in bottom-left corner and navigate to the &ldquo;Neurodesktop&rdquo; menu, then select the application and version you wish to launch. If it is the first time you launch the application, it will be downloaded to your desktop environment. The application is ready to use when the &ldquo;Singularity>&rdquo; prompt appears in the terminal window that opens. If you chose in the menu the GUI of the application (e.g., fsleyesGUI 6.0.3), it will open automatically. If you chose that application itself (e.g., fsl 6.0.3), a terminal window will open, and you can use it to run any of the utilities packaged with the application, including the graphical utilities (e.g., typing &ldquo;fsl&rdquo; to run FSL&rsquo;s main menu).</p>
@@ -364,9 +364,27 @@ This the multi-page printable view of this section.
 <div class=td-content style=page-break-before:always>
 <h1 id=pg-3aab88ee1e48cad88e2180be3e99a33b>3 - What's in the box?</h1>
 <div class=lead>The software available in neurodesktop</div>
-<div class="pageinfo pageinfo-primary">
-<p>Coming Soon</p>
-</div>
+<p>Neurodesktop comes with the essential software required for neuroimaging data analysis pre-installed. Each release is built with the most recent version of these programs available at the build date. Some example packages include:</p>
+<ul>
+<li>Visual Studio Code</li>
+<li>Emacs</li>
+<li>Gedit</li>
+<li>Vim</li>
+<li>Python</li>
+<li>Lua</li>
+<li>Git</li>
+<li>Lmod</li>
+<li>Nipype</li>
+<li>Rsync</li>
+<li>Singularity</li>
+<li>GraphVis</li>
+<li>Imagemagic</li>
+<li>Htop</li>
+<li>Firefox</li>
+<li>Nextcloud client</li>
+<li>OpenSSH client</li>
+</ul>
+<p>The neurodesktop environment is built to be light and fast to download and start-up. A number of additional programs are therefore available to use in the container, and will be downloaded when they are first used. A list of these additional programs can be found [here]: <a href=https://github.com/NeuroDesk/neurodesk/blob/master/cvmfs/log.txt>https://github.com/NeuroDesk/neurodesk/blob/master/cvmfs/log.txt</a></p>
 </div>
 <div class=td-content style=page-break-before:always>
 <h1 id=pg-6fcc3ae2c99b700109cf4d44a0a17071>4 - Release History</h1>

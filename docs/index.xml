@@ -185,12 +185,12 @@ Run &lt;code>bash build.sh&lt;/code>&lt;br>
 &lt;p>&lt;img src="https://neurodesk.github.io/Desktop.png" alt="desktop" title="desktop">&lt;/p>
 &lt;p>In this linux desktop environment, you can access the menu, launch programs, write analysis code, use version control software (i.e. git) and develop analysis pipelines as though you were on your own computer.&lt;/p>
 &lt;h2 id="release">Release&lt;/h2>
-&lt;p>Keep a note of the release number of the container image that you installed. Regardless of what operating system you installed neurodesktop into, the version number would have been at the end of the &lt;em>docker run&lt;/em> command:&lt;/p>
+&lt;p>Keep a note of the release date of the container image that you installed. Regardless of what operating system you installed neurodesktop into, the release date would have been at the end of the &lt;em>docker run&lt;/em> command:&lt;/p>
 &lt;p>&lt;img src="https://neurodesk.github.io/version.png" alt="version" title="version">&lt;/p>
 &lt;p>We regularly update neurodesktop to make sure it’s running well and has up-to-date software. You can check the &lt;a href="https://neurodesk.github.io/docs/neurodesktop/release-history/">Release History&lt;/a> page for details of previous releases. If you’d like to update your container at any time, simply switch out the release number for the version you would like. If you’ve finished working on an analysis pipeline and would like to share it with others, you can point them toward the stable release number that you worked in. That way anyone, on any computer around the world can replicate your analysis pipeline in the exact same computing environment that you developed it in.&lt;/p>
 &lt;h2 id="video-tutorial">Video tutorial&lt;/h2>
 &lt;p>Click &lt;a href="https://www.youtube.com/watch?v=JLv_5fycugw">here&lt;/a> to watch a 2 minute tutorial video from OHBM 2021&lt;/p>
-&lt;h2 id="how-to-access-files-from-your-host-computer">How to access files from your Host computer?&lt;/h2>
+&lt;h2 id="how-to-access-files-from-your-host-computer">How to access files from your Host computer&lt;/h2>
 &lt;p>The &lt;code>-v C:/neurodesktop:/neurodesktop&lt;/code> part of the docker command links the directory &amp;ldquo;neurodesktop&amp;rdquo; on the &amp;ldquo;C drive&amp;rdquo; of your Windows computer to the directory /neurodesktop inside the Desktop environment. Everything you store in there will be available inside neurodesktop and on the host computer. You can also mount additional directories by adding another -v parameter set (e.g. &lt;code>-v D:/moredata:/data&lt;/code>) - this will mount the directory moredata from your D drive to /data inside neurodesktop.&lt;/p>
 &lt;h2 id="how-to-launchdownload-applications">How to launch/download applications&lt;/h2>
 &lt;p>Click on the Launcher icon in bottom-left corner and navigate to the &amp;ldquo;Neurodesktop&amp;rdquo; menu, then select the application and version you wish to launch. If it is the first time you launch the application, it will be downloaded to your desktop environment. The application is ready to use when the &amp;ldquo;Singularity&amp;gt;&amp;rdquo; prompt appears in the terminal window that opens. If you chose in the menu the GUI of the application (e.g., fsleyesGUI 6.0.3), it will open automatically. If you chose that application itself (e.g., fsl 6.0.3), a terminal window will open, and you can use it to run any of the utilities packaged with the application, including the graphical utilities (e.g., typing &amp;ldquo;fsl&amp;rdquo; to run FSL&amp;rsquo;s main menu).&lt;/p></description></item><item><title>Docs: Windows</title><link>https://neurodesk.github.io/docs/neurocommand/getting-started/windows/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurocommand/getting-started/windows/</guid><description>
@@ -218,9 +218,27 @@ Change &lt;code>port=3389&lt;/code> to &lt;code>port=3390&lt;/code> and save&lt;
 &lt;li>In the next login page, leave Session as &lt;code>Xorg&lt;/code>. Enter your WSL username and password and click &lt;code>OK&lt;/code>&lt;/li>
 &lt;li>This should open an LXDE Linux Desktop environment. Follow Linux guide from here on&lt;/li>
 &lt;/ol></description></item><item><title>Docs: What's in the box?</title><link>https://neurodesk.github.io/docs/neurodesktop/whatsinthebox/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/whatsinthebox/</guid><description>
-&lt;div class="pageinfo pageinfo-primary">
-&lt;p>Coming Soon&lt;/p>
-&lt;/div></description></item><item><title>Docs: Windows</title><link>https://neurodesk.github.io/docs/neurodesktop/getting-started/windows/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/getting-started/windows/</guid><description>
+&lt;p>Neurodesktop comes with the essential software required for neuroimaging data analysis pre-installed. Each release is built with the most recent version of these programs available at the build date. Some example packages include:&lt;/p>
+&lt;ul>
+&lt;li>Visual Studio Code&lt;/li>
+&lt;li>Emacs&lt;/li>
+&lt;li>Gedit&lt;/li>
+&lt;li>Vim&lt;/li>
+&lt;li>Python&lt;/li>
+&lt;li>Lua&lt;/li>
+&lt;li>Git&lt;/li>
+&lt;li>Lmod&lt;/li>
+&lt;li>Nipype&lt;/li>
+&lt;li>Rsync&lt;/li>
+&lt;li>Singularity&lt;/li>
+&lt;li>GraphVis&lt;/li>
+&lt;li>Imagemagic&lt;/li>
+&lt;li>Htop&lt;/li>
+&lt;li>Firefox&lt;/li>
+&lt;li>Nextcloud client&lt;/li>
+&lt;li>OpenSSH client&lt;/li>
+&lt;/ul>
+&lt;p>The neurodesktop environment is built to be light and fast to download and start-up. A number of additional programs are therefore available to use in the container, and will be downloaded when they are first used. A list of these additional programs can be found [here]: &lt;a href="https://github.com/NeuroDesk/neurodesk/blob/master/cvmfs/log.txt">https://github.com/NeuroDesk/neurodesk/blob/master/cvmfs/log.txt&lt;/a>&lt;/p></description></item><item><title>Docs: Windows</title><link>https://neurodesk.github.io/docs/neurodesktop/getting-started/windows/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/getting-started/windows/</guid><description>
 &lt;h2 id="minimum-system-requirements">Minimum System Requirements&lt;/h2>
 &lt;ol>
 &lt;li>At least 3GB free space for neuromachine base image&lt;/li>
