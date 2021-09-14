@@ -101,14 +101,14 @@ This the multi-page printable view of this section.
 </ul>
 <li>3.2: <a href=#pg-13b67b32e7c5f0ca31dc1aad2d3c567c>Troubleshooting</a></li>
 </ul>
-<li>4: <a href=#pg-88405e8e9824a3a23cd8fda56d2e5574>Neurocontainers</a></li>
+<li>4: <a href=#pg-6c4dd4bbdf2d2146d79c0c0f18f4c96a>Advanced</a></li>
 <ul>
+<li>4.1: <a href=#pg-c0a88d2c479512f10e638c4638d51092>Add tool</a></li>
+<li>4.2: <a href=#pg-b9cd3c04d25cdb41d3043cfa7acab883>Storage</a></li>
+<li>4.3: <a href=#pg-9a7c227f489e066f7d748ce204b03813>Tested</a></li>
 </ul>
-<li>5: <a href=#pg-6c4dd4bbdf2d2146d79c0c0f18f4c96a>Advanced</a></li>
+<li>5: <a href=#pg-88405e8e9824a3a23cd8fda56d2e5574>Neurocontainers</a></li>
 <ul>
-<li>5.1: <a href=#pg-c0a88d2c479512f10e638c4638d51092>Add tool</a></li>
-<li>5.2: <a href=#pg-b9cd3c04d25cdb41d3043cfa7acab883>Storage</a></li>
-<li>5.3: <a href=#pg-9a7c227f489e066f7d748ce204b03813>Tested</a></li>
 </ul>
 <li>6: <a href=#pg-f614fb095a0a23c57b6f9d4a9abcbb11>For Developers</a></li>
 <ul>
@@ -117,14 +117,18 @@ This the multi-page printable view of this section.
 </ul>
 </ul>
 <div class=content>
-<h1 id=overview>Overview</h1>
+<h2 id=overview>Overview</h2>
 <p>For an overview of the Neurodesk platform, go to: <a href=/docs/overview/>Overview</a></p>
-<h1 id=quick-start>Quick Start</h1>
+<h2 id=quick-start>Quick Start</h2>
 <p>To install the Neurodesktop container, go to: <a href=/docs/getting-started>Getting Started</a></p>
-<h1 id=feedback--inquiries>Feedback & Inquiries</h1>
+<h2 id=feedback--inquiries>Feedback & Inquiries</h2>
 <p>You&rsquo;re welcome to complete <a href=https://forms.gle/deKy85yniJLP4hDM8>this survey</a> to help guide future additions to the software library</p>
 <p>For inquiries, please open a <a href=https://github.com/NeuroDesk/neurodesk/issues>new issue</a>, or contact <a href=https://github.com/stebo85>Steffen Bollmann</a> or <a href=https://github.com/civier>Oren Civier</a> or <a href=https://github.com/aswinnarayanan>Aswin Narayanan</a>.</p>
 <h2 id=acknowledgments>Acknowledgments</h2>
+<img src=/assets/img/nif.png width=250>
+<img src=/assets/img/uq_logo.png width=250>
+<img src=/assets/img/swinburne_uni_logo.svg width=250>
+<img src=/assets/img/liege_uni_logo.svg width=250>
 <h2 id=funding>Funding</h2>
 <p>Thank you to Oracle for Research for providing Oracle Cloud credits and related resources to support this project.</p>
 <img src=https://user-images.githubusercontent.com/4021595/119061922-db877080-ba18-11eb-9882-d53a25ec88ee.png width=250>
@@ -141,7 +145,7 @@ Electrophysiology Data Analytics PlaTform (AEDAPT)”.</p>
 <p>The Neurodesk environment allows users to build and use containers for analysing neuroimaging data. Containers can be compared to virtual machines, in that they allow users to create a virtual, isolated computing environment with an operating system separate to that of the host machine. However, containers differ from virtual machines in that they virtualise software rather than hardware. Practically, this means that container images require few system resources to install, start-up quickly, and are easily portable between computers. To read more about Docker containers, visit <a href=https://www.docker.com/resources/what-container>the Docker webpage</a></p>
 <h2 id=the-neurodesk-ecosystem>The Neurodesk ecosystem</h2>
 <p>The Neurodesk ecosystem includes a number of tools for containerised analysis of neuroimaging data. These include:</p>
-<p><img src=/static/architecture.png alt="Architecture image"></p>
+<img src=/assets/img/NeurodeskArchitecture.png width=400>
 <h3 id=neurodesktop>Neurodesktop</h3>
 <blockquote>
 <p>If you’re new to Neurodesk, we recommend you begin with Neurodesktop.</p>
@@ -424,7 +428,7 @@ To get started, see: <a href=/docs/Neurodesktop/>Neurodesktop</a></p>
 </div>
 <div class=td-content style=page-break-before:always>
 <h1 id=pg-784674433df25a8a2fea1ab0994fd949>2.1.6 - Demo</h1>
-<div class=lead>Installation</div>
+<div class=lead>Run a demo of neurodesktop <em>without</em> installing Docker</div>
 <div class="pageinfo pageinfo-primary">
 <p>This page needs to link to MyBinder demo</p>
 </div>
@@ -549,22 +553,11 @@ Change <code>port=3389</code> to <code>port=3390</code> and save</li>
 <p>Neurodesk is an open-source project that is always evolving. If you are experiencing an issue not listed here, please open a <a href=https://github.com/NeuroDesk/neurodesk/issues>new issue</a>, so that we can aim to solve it and update our help documentation.</p>
 </div>
 <div class=td-content style=page-break-before:always>
-<h1 id=pg-88405e8e9824a3a23cd8fda56d2e5574>4 - Neurocontainers</h1>
-<div class=lead>What neurocontainers are about</div>
-<p>Neurocontainers is our collection of neuro containers hosted on dockerhub (<a href=https://hub.docker.com/orgs/vnmd/repositories>https://hub.docker.com/orgs/vnmd/repositories</a>) or github (<a href=https://github.com/NeuroDesk/neurocontainers/packages>https://github.com/NeuroDesk/neurocontainers/packages</a>)</p>
-<h1 id=pull-containers>pull containers</h1>
-<p>docker</p>
-<pre tabindex=0><code>docker pull vnmd/julia_1.6.1
-</code></pre><p>build singularity image from dockerhub</p>
-<pre tabindex=0><code>singularity build julia_1.6.1.simg docker://vnmd/julia_1.6.1
-</code></pre>
-</div>
-<div class=td-content style=page-break-before:always>
-<h1 id=pg-6c4dd4bbdf2d2146d79c0c0f18f4c96a>5 - Advanced</h1>
+<h1 id=pg-6c4dd4bbdf2d2146d79c0c0f18f4c96a>4 - Advanced</h1>
 <div class=lead>Advanced usage</div>
 </div>
 <div class=td-content>
-<h1 id=pg-c0a88d2c479512f10e638c4638d51092>5.1 - Add tool</h1>
+<h1 id=pg-c0a88d2c479512f10e638c4638d51092>4.1 - Add tool</h1>
 <div class=lead>Add tool</div>
 <p>The goal of <em>VNM</em> is to provide users with a large choice of tools to use in their pipelines.
 Here is how you can add a tool to <em>VNM</em>.</p>
@@ -763,7 +756,7 @@ Here are two examples for FreeSurfer and FreeView. This first one only installs 
 </code></pre></div>
 </div>
 <div class=td-content style=page-break-before:always>
-<h1 id=pg-b9cd3c04d25cdb41d3043cfa7acab883>5.2 - Storage</h1>
+<h1 id=pg-b9cd3c04d25cdb41d3043cfa7acab883>4.2 - Storage</h1>
 <div class=lead>Storage</div>
 <h2 id=mount-volume-using-sshfs>Mount volume using SSHFS</h2>
 <p><code>sshfs -o allow_root USER@TARGET_HOST:TARGET_PATH SOURCE_PATH</code></p>
@@ -772,7 +765,7 @@ Here are two examples for FreeSurfer and FreeView. This first one only installs 
 <p><a href=https://yjmantilla.github.io/tutorials/wsl2-move-vhdx.html>https://yjmantilla.github.io/tutorials/wsl2-move-vhdx.html</a></p>
 </div>
 <div class=td-content style=page-break-before:always>
-<h1 id=pg-9a7c227f489e066f7d748ce204b03813>5.3 - Tested</h1>
+<h1 id=pg-9a7c227f489e066f7d748ce204b03813>4.3 - Tested</h1>
 <div class=lead>Advanced usage</div>
 <p>Please test and add if working :)</p>
 <table>
@@ -866,6 +859,17 @@ Here are two examples for FreeSurfer and FreeView. This first one only installs 
 <li><a href=https://mri.sbollmann.net/index.php/2020/12/08/run-neurodesk-on-oracle-cloud-free-tier>Oracle OCI</a></li>
 <li><a href=https://henryjburg.medium.com/neurodesk-running-on-azure-3e38c590a152>Microsoft Azure</a></li>
 </ul>
+</div>
+<div class=td-content style=page-break-before:always>
+<h1 id=pg-88405e8e9824a3a23cd8fda56d2e5574>5 - Neurocontainers</h1>
+<div class=lead>What neurocontainers are about</div>
+<p>Neurocontainers is our collection of neuro containers hosted on dockerhub (<a href=https://hub.docker.com/orgs/vnmd/repositories>https://hub.docker.com/orgs/vnmd/repositories</a>) or github (<a href=https://github.com/NeuroDesk/neurocontainers/packages>https://github.com/NeuroDesk/neurocontainers/packages</a>)</p>
+<h1 id=pull-containers>pull containers</h1>
+<p>docker</p>
+<pre tabindex=0><code>docker pull vnmd/julia_1.6.1
+</code></pre><p>build singularity image from dockerhub</p>
+<pre tabindex=0><code>singularity build julia_1.6.1.simg docker://vnmd/julia_1.6.1
+</code></pre>
 </div>
 <div class=td-content style=page-break-before:always>
 <h1 id=pg-f614fb095a0a23c57b6f9d4a9abcbb11>6 - For Developers</h1>
