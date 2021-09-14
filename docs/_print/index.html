@@ -150,13 +150,13 @@ Electrophysiology Data Analytics PlaTform (AEDAPT)”.</p>
 <blockquote>
 <p>If you’re new to Neurodesk, we recommend you begin with Neurodesktop.</p>
 </blockquote>
-<p><em>Neurodesktop</em> is a compact Docker container with a browser-accessible virtual desktop that allows you develop and implement data analysis pipelines as though you’re on your own computer. The <em>Neurodesktop</em> container has the basic tools required for the analysis of fMRI and EEG data pre-installed.
+<p><em>Neurodesktop</em> is a compact Docker container with a browser-accessible virtual desktop that allows you develop and implement data analysis pipelines as though you’re on your own computer. The <em>neurodesktop</em> container has the basic tools required for the analysis of fMRI and EEG data pre-installed.
 To get started, see: <a href=/content/en/docs/Neurodesktop/>Neurodesktop</a></p>
 <h3 id=neurocommand>Neurocommand</h3>
 <p><em>Neurocommand</em> offers to option of install and manage multiple distinct containers for more advanced users who prefer a command-line interface. <em>Neurocommand</em> is the recommended interface for users seeking to use Neurodesk in high performance computing (HPC) environments.</p>
 <p>To get started, see: <a href=/content/en/docs/Neurocommand/>Neurocommand</a></p>
 <h3 id=transparent-singularity>Transparent-singularity</h3>
-<p>The applications pre-installed in <em>neurdesktop</em> and <em>neurocommand</em> are accessible through <em>transparent-singularity</em>, which allows users to transparently use containerised software as through it were installed natively.</p>
+<p>The applications pre-installed in <em>neurodesktop</em> and <em>neurocommand</em> are accessible through <em>transparent-singularity</em>, which allows users to transparently use containerised software as through it were installed natively.</p>
 <p>To find out more about this open-source project, see: <a href=https://github.com/NeuroDesk/transparent-singularity>transparent-singularity</a></p>
 <h3 id=neurocontainers>Neurocontainers</h3>
 <p>The <em>neurocontainers</em> repository contains build scripts for sub-containers which are wrapped around executables for neuroimaging data-analysis software. These neurocontainers can be used in combination with neurocommand or transparent-singularity.</p>
@@ -176,16 +176,14 @@ To get started, see: <a href=/content/en/docs/Neurodesktop/>Neurodesktop</a></p>
 <div class=td-content style=page-break-before:always>
 <h1 id=pg-ba03213c85edba92d978f939557f31e6>2 - Neurodesktop</h1>
 <div class=lead>The plug-and-play, browser-accessible, containerised data analysis environment.</div>
-<p>Neurodesktop is a compact Docker container with a browser-accessible environment for reproducible neuroimaging analysis. Neurodesktop has the required applications pre-installed, such that these are downloaded as containers from a public library as you use them.</p>
-<p>Click <a href="https://www.youtube.com/watch?v=JLv_5fycugw">here</a> to watch a 2 minute tutorial video from OHBM 2021</p>
 </div>
 <div class=td-content>
 <h1 id=pg-0916fe04e84f6b30644efe9a9fa87a91>2.1 - Getting Started</h1>
-<div class=lead>Descriptions for getting started on various operating systems.</div>
+<div class=lead>Select your operating system to get started with neurodesktop.</div>
 </div>
 <div class=td-content>
 <h1 id=pg-c9662bb32400ec6828eed53f31cf6555>2.1.1 - Linux</h1>
-<div class=lead>Installation</div>
+<div class=lead>Install neurodesktop on Linux</div>
 <h2 id=minimum-system-requirements>Minimum System Requirements</h2>
 <ol>
 <li>At least 3GB free space for neuromachine base image</li>
@@ -239,7 +237,7 @@ To get started, see: <a href=/content/en/docs/Neurodesktop/>Neurodesktop</a></p>
 </div>
 <div class=td-content style=page-break-before:always>
 <h1 id=pg-b38c91c080a0eb8d1b287cce61a2913d>2.1.2 - MacOS</h1>
-<div class=lead>Installation</div>
+<div class=lead>Install neurodesktop on MacOS</div>
 <h2 id=minimum-system-requirements>Minimum System Requirements</h2>
 <ol>
 <li>At least 3GB free space for neuromachine base image</li>
@@ -297,7 +295,7 @@ To get started, see: <a href=/content/en/docs/Neurodesktop/>Neurodesktop</a></p>
 </div>
 <div class=td-content style=page-break-before:always>
 <h1 id=pg-87642ad7e9eab5f4f32e180883213db4>2.1.3 - Windows</h1>
-<div class=lead>Installation</div>
+<div class=lead>Install neurodesktop on Windows</div>
 <h2 id=minimum-system-requirements>Minimum System Requirements</h2>
 <ol>
 <li>At least 3GB free space for neuromachine base image</li>
@@ -316,7 +314,7 @@ To get started, see: <a href=/content/en/docs/Neurodesktop/>Neurodesktop</a></p>
 <p>Open a terminal, and type the folowing command to automatically download the neuromachine container and run it</p>
 </li>
 </ol>
-<pre tabindex=0><code>docker run --shm-size=1gb -it --privileged --name neuromachine -v C:/neurodesktop:/neurodesktop -e USER=user -p 8080:8080 vnmd/neuromachine:latest
+<pre tabindex=0><code>docker run --shm-size=1gb -it --privileged --name neuromachine -v C:/neurodesktop:/neurodesktop -e USER=user -p 8080:8080 vnmd/neuromachine:20210708
 </code></pre><ol start=4>
 <li>Once neuromachine is downloaded i.e. <code>guacd[77]: INFO: Listening on host 127.0.0.1, port 4822</code> is displayed in terminal, open a browser and go to:</li>
 </ol>
@@ -351,12 +349,12 @@ To get started, see: <a href=/content/en/docs/Neurodesktop/>Neurodesktop</a></p>
 </div>
 <div class=td-content style=page-break-before:always>
 <h1 id=pg-f18fe8cf2e51f4592753190891413c14>2.1.4 - HPC</h1>
-<div class=lead>Installation</div>
+<div class=lead>Run neurodesktop in a high performance computing environment</div>
 <p>One way of running this project on HPCs is via <a href=https://neurodesk.github.io/docs/overview/neurocommand/>https://neurodesk.github.io/docs/overview/neurocommand/</a></p>
 </div>
 <div class=td-content style=page-break-before:always>
 <h1 id=pg-2cb39ae1fe927afd991445cce7b9f813>2.1.5 - Cloud</h1>
-<div class=lead>Installation</div>
+<div class=lead>Run neurodesktop using Oracle or Azure cloud computing</div>
 <table>
 <thead>
 <tr>
@@ -436,6 +434,7 @@ To get started, see: <a href=/content/en/docs/Neurodesktop/>Neurodesktop</a></p>
 <div class=td-content style=page-break-before:always>
 <h1 id=pg-a1abf9b90f3887a0021426829e383df4>2.2 - What's next?</h1>
 <div class=lead>Congratulations! You&rsquo;ve installed Neurodesktop. What happens next?</div>
+<p>Click <a href="https://www.youtube.com/watch?v=JLv_5fycugw">here</a> to watch a 2 minute tutorial video from OHBM 2021</p>
 <h2 id=how-to-access-files-from-your-host-computer>How to access files from your Host computer?</h2>
 <p>The <code>-v C:/neurodesktop:/neurodesktop</code> part of the docker command links the directory &ldquo;neurodesktop&rdquo; on the &ldquo;C drive&rdquo; of your Windows computer to the directory /neurodesktop inside the Desktop environment. Everything you store in there will be available inside VNM and on the host computer. You can also mount additional directories by adding another -v parameter set (e.g. <code>-v D:/moredata:/data</code>) - this will mount the directory moredata from your D drive to /data inside VNM.</p>
 <h2 id=how-to-launchdownload-applications>How to launch/download applications</h2>
@@ -443,7 +442,7 @@ To get started, see: <a href=/content/en/docs/Neurodesktop/>Neurodesktop</a></p>
 </div>
 <div class=td-content style=page-break-before:always>
 <h1 id=pg-3aab88ee1e48cad88e2180be3e99a33b>2.3 - What's in the box?</h1>
-<div class=lead>A list of the software available in neurodesktop</div>
+<div class=lead>The software available in neurodesktop</div>
 <div class="pageinfo pageinfo-primary">
 <p>Coming Soon</p>
 </div>

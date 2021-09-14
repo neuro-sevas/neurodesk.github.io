@@ -181,6 +181,7 @@ Run &lt;code>bash build.sh&lt;/code>&lt;br>
 &lt;/code>&lt;/pre></description></item><item><title>Docs: Troubleshooting</title><link>https://neurodesk.github.io/docs/neurocommand/troubleshooting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurocommand/troubleshooting/</guid><description>
 &lt;h2 id="other">Other&lt;/h2>
 &lt;p>Neurodesk is an open-source project that is always evolving. If you are experiencing an issue not listed here, please open a &lt;a href="https://github.com/NeuroDesk/neurodesk/issues">new issue&lt;/a>, so that we can aim to solve it and update our help documentation.&lt;/p></description></item><item><title>Docs: What's next?</title><link>https://neurodesk.github.io/docs/neurodesktop/whats-next/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/whats-next/</guid><description>
+&lt;p>Click &lt;a href="https://www.youtube.com/watch?v=JLv_5fycugw">here&lt;/a> to watch a 2 minute tutorial video from OHBM 2021&lt;/p>
 &lt;h2 id="how-to-access-files-from-your-host-computer">How to access files from your Host computer?&lt;/h2>
 &lt;p>The &lt;code>-v C:/neurodesktop:/neurodesktop&lt;/code> part of the docker command links the directory &amp;ldquo;neurodesktop&amp;rdquo; on the &amp;ldquo;C drive&amp;rdquo; of your Windows computer to the directory /neurodesktop inside the Desktop environment. Everything you store in there will be available inside VNM and on the host computer. You can also mount additional directories by adding another -v parameter set (e.g. &lt;code>-v D:/moredata:/data&lt;/code>) - this will mount the directory moredata from your D drive to /data inside VNM.&lt;/p>
 &lt;h2 id="how-to-launchdownload-applications">How to launch/download applications&lt;/h2>
@@ -230,7 +231,7 @@ Change &lt;code>port=3389&lt;/code> to &lt;code>port=3390&lt;/code> and save&lt;
 &lt;p>Open a terminal, and type the folowing command to automatically download the neuromachine container and run it&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;pre tabindex="0">&lt;code>docker run --shm-size=1gb -it --privileged --name neuromachine -v C:/neurodesktop:/neurodesktop -e USER=user -p 8080:8080 vnmd/neuromachine:latest
+&lt;pre tabindex="0">&lt;code>docker run --shm-size=1gb -it --privileged --name neuromachine -v C:/neurodesktop:/neurodesktop -e USER=user -p 8080:8080 vnmd/neuromachine:20210708
 &lt;/code>&lt;/pre>&lt;ol start="4">
 &lt;li>Once neuromachine is downloaded i.e. &lt;code>guacd[77]: INFO: Listening on host 127.0.0.1, port 4822&lt;/code> is displayed in terminal, open a browser and go to:&lt;/li>
 &lt;/ol>
