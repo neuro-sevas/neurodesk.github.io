@@ -181,7 +181,9 @@ Change &lt;code>port=3389&lt;/code> to &lt;code>port=3390&lt;/code> and save&lt;
 &lt;h2 id="mac">Mac&lt;/h2>
 &lt;p>Currently supported via &lt;a href="https://github.com/NeuroDesk/vnm">VNM&lt;/a>&lt;/p>
 &lt;h2 id="advanced-usage">Advanced usage&lt;/h2>
-&lt;p>For advanced VNM and Neurodesk installer usage, check &lt;a href="https://neurodesk.github.io/docs/advanced">here&lt;/a>&lt;/p></description></item><item><title>Docs: Neurocontainers</title><link>https://neurodesk.github.io/docs/overview/neurocontainers/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/overview/neurocontainers/</guid><description>
+&lt;p>For advanced VNM and Neurodesk installer usage, check &lt;a href="https://neurodesk.github.io/docs/advanced">here&lt;/a>&lt;/p></description></item><item><title>Docs: Neurodesktop</title><link>https://neurodesk.github.io/docs/neurodesktop/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/</guid><description>
+&lt;p>Neurodesktop is a compact Docker container with a browser-accessible environment for reproducible neuroimaging analysis. Neurodesktop has the required applications pre-installed, such that these are downloaded as containers from a public library as you use them.&lt;/p>
+&lt;p>Click &lt;a href="https://www.youtube.com/watch?v=JLv_5fycugw">here&lt;/a> to watch a 2 minute tutorial video from OHBM 2021&lt;/p></description></item><item><title>Docs: Neurocontainers</title><link>https://neurodesk.github.io/docs/overview/neurocontainers/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/overview/neurocontainers/</guid><description>
 &lt;p>Neurocontainers is our collection of neuro containers hosted on dockerhub (&lt;a href="https://hub.docker.com/orgs/vnmd/repositories">https://hub.docker.com/orgs/vnmd/repositories&lt;/a>) or github (&lt;a href="https://github.com/NeuroDesk/neurocontainers/packages">https://github.com/NeuroDesk/neurocontainers/packages&lt;/a>)&lt;/p>
 &lt;h1 id="pull-containers">pull containers&lt;/h1>
 &lt;p>docker&lt;/p>
