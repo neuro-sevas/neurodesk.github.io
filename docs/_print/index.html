@@ -434,11 +434,19 @@ To get started, see: <a href=/content/en/docs/Neurodesktop/>Neurodesktop</a></p>
 <div class=td-content style=page-break-before:always>
 <h1 id=pg-a1abf9b90f3887a0021426829e383df4>2.2 - What's next?</h1>
 <div class=lead>Congratulations! You&rsquo;ve installed Neurodesktop. What happens next?</div>
+<p>Now that you’ve installed and launched neurodesktop, you should see a virtual desktop environment in your browser, which might look something like this:</p>
+<p><img src=/Desktop.png alt=desktop title=desktop></p>
+<p>In this linux desktop environment, you can access the menu, launch programs, write analysis code, use version control software (i.e. git) and develop analysis pipelines as though you were on your own computer.</p>
+<h2 id=release>Release</h2>
+<p>Keep a note of the release number of the container image that you installed. Regardless of what operating system you installed neurodesktop into, the version number would have been at the end of the <em>docker run</em> command:</p>
+<p><img src=/version.png alt=version title=version></p>
+<p>We regularly update neurodesktop to make sure it’s running well and has up-to-date software. You can check the <a href=https://neurodesk.github.io/docs/neurodesktop/release-history/>Release History</a> page for details of previous releases. If you’d like to update your container at any time, simply switch out the release number for the version you would like. If you’ve finished working on an analysis pipeline and would like to share it with others, you can point them toward the stable release number that you worked in. That way anyone, on any computer around the world can replicate your analysis pipeline in the exact same computing environment that you developed it in.</p>
+<h2 id=video-tutorial>Video tutorial</h2>
 <p>Click <a href="https://www.youtube.com/watch?v=JLv_5fycugw">here</a> to watch a 2 minute tutorial video from OHBM 2021</p>
 <h2 id=how-to-access-files-from-your-host-computer>How to access files from your Host computer?</h2>
-<p>The <code>-v C:/neurodesktop:/neurodesktop</code> part of the docker command links the directory &ldquo;neurodesktop&rdquo; on the &ldquo;C drive&rdquo; of your Windows computer to the directory /neurodesktop inside the Desktop environment. Everything you store in there will be available inside VNM and on the host computer. You can also mount additional directories by adding another -v parameter set (e.g. <code>-v D:/moredata:/data</code>) - this will mount the directory moredata from your D drive to /data inside VNM.</p>
+<p>The <code>-v C:/neurodesktop:/neurodesktop</code> part of the docker command links the directory &ldquo;neurodesktop&rdquo; on the &ldquo;C drive&rdquo; of your Windows computer to the directory /neurodesktop inside the Desktop environment. Everything you store in there will be available inside neurodesktop and on the host computer. You can also mount additional directories by adding another -v parameter set (e.g. <code>-v D:/moredata:/data</code>) - this will mount the directory moredata from your D drive to /data inside neurodesktop.</p>
 <h2 id=how-to-launchdownload-applications>How to launch/download applications</h2>
-<p>Click on the Launcher icon in bottom-left corner and navigate to the &ldquo;Neurodesktop&rdquo; menu, then select the application and version you wish to launch. If it is the first time you launch the application, it will be downloaded to your desktop environment. The application is ready to use when the &ldquo;Singularity>&rdquo; propmpt appears in the terminal window that opens. If you chose in the menu the GUI of the application (e.g., fsleyesGUI 6.0.3), it will open automatically. If you chose tha application itself (e.g., fsl 6.0.3), a terminal window will open, and you can use it to run any of the utilities packaged with the application, including the grphical utilities (e.g., typing &ldquo;fsl&rdquo; to run FSL&rsquo;s main menu).</p>
+<p>Click on the Launcher icon in bottom-left corner and navigate to the &ldquo;Neurodesktop&rdquo; menu, then select the application and version you wish to launch. If it is the first time you launch the application, it will be downloaded to your desktop environment. The application is ready to use when the &ldquo;Singularity>&rdquo; prompt appears in the terminal window that opens. If you chose in the menu the GUI of the application (e.g., fsleyesGUI 6.0.3), it will open automatically. If you chose that application itself (e.g., fsl 6.0.3), a terminal window will open, and you can use it to run any of the utilities packaged with the application, including the graphical utilities (e.g., typing &ldquo;fsl&rdquo; to run FSL&rsquo;s main menu).</p>
 </div>
 <div class=td-content style=page-break-before:always>
 <h1 id=pg-3aab88ee1e48cad88e2180be3e99a33b>2.3 - What's in the box?</h1>
@@ -458,7 +466,7 @@ To get started, see: <a href=/content/en/docs/Neurodesktop/>Neurodesktop</a></p>
 <h1 id=pg-71c9f282478b9d11471d083fb454cfd4>2.5 - Troubleshooting</h1>
 <div class=lead>Are you experiencing issues with neurodesktop?</div>
 <h2 id=other>Other</h2>
-<p>Neurodesktop is an open-source project that is always evolving. If you are experiencing an issue not listed here, please open a <a href=https://github.com/NeuroDesk/neurodesk/issues>new issue</a>, so that we can aim to solve it and update our help documentation.</p>
+<p>Neurodesk is an open-source project that is always evolving. If you are experiencing an issue not listed here, please open a <a href=https://github.com/NeuroDesk/neurodesk/issues>new issue</a>, so that we can aim to solve it and update our help documentation.</p>
 </div>
 <div class=td-content style=page-break-before:always>
 <h1 id=pg-216e6b441d02e354a557e95ac5aff8f4>3 - Neurocommand</h1>
@@ -471,7 +479,7 @@ To get started, see: <a href=/content/en/docs/Neurodesktop/>Neurodesktop</a></p>
 </div>
 <div class=td-content>
 <h1 id=pg-b25aa0b6f8dfd4ff32d8bffbdca60e3b>3.1.1 - Linux</h1>
-<div class=lead>Installation</div>
+<div class=lead>Install neurocommand on Linux</div>
 <h2 id=linux>Linux</h2>
 <h3 id=requirements>Requirements:</h3>
 <h4 id=required>Required</h4>
@@ -519,7 +527,7 @@ Run <code>bash build.sh</code><br>
 </div>
 <div class=td-content style=page-break-before:always>
 <h1 id=pg-180aa3bd9988d06cd8c909d2dd3a6340>3.1.2 - Windows</h1>
-<div class=lead>Installation</div>
+<div class=lead>Install neurocommand on Windows</div>
 <h2 id=windows>Windows</h2>
 <h3 id=wsl-w-ubuntu--lxde>WSL (w/ Ubuntu + LXDE)</h3>
 <p>For more information on WSL: <a href=https://docs.microsoft.com/en-us/windows/wsl>https://docs.microsoft.com/en-us/windows/wsl</a></p>
