@@ -75,19 +75,19 @@ This the multi-page printable view of this section.
 <ul>
 </ul>
 <div class=content>
-<h1 id=automatic-container-building-and-testing>Automatic Container building and testing</h1>
+<h2 id=automatic-container-building-and-testing>Automatic container building and testing</h2>
 <p>The containers can for be used in combination with our transparent singularity or neurocommand tool, that wrap the executables inside a container to make them easily available for pipelines:
 <a href=https://github.com/NeuroDesk/transparent-singularity/>https://github.com/NeuroDesk/transparent-singularity/</a>
 <a href=https://github.com/NeuroDesk/neurocommand/>https://github.com/NeuroDesk/neurocommand/</a></p>
 <p>The containers are hosted on dockerhub (<a href=https://hub.docker.com/orgs/vnmd/repositories>https://hub.docker.com/orgs/vnmd/repositories</a>) or on <a href=https://github.com/NeuroDesk/neurocontainers/packages>https://github.com/NeuroDesk/neurocontainers/packages</a></p>
-<h1 id=pull-containers>pull containers</h1>
+<h2 id=pull-containers>Pull containers</h2>
 <p>e.g. for a julia container
 docker</p>
 <pre tabindex=0><code>docker pull vnmd/julia_1.6.1
 </code></pre><p>build singularity image from dockerhub</p>
 <pre tabindex=0><code>singularity build julia_1.6.1.simg docker://vnmd/julia_1.6.1
 </code></pre><p>Replace <code>julia_1.6.1</code> with your selected application</p>
-<h1 id=adding-new-recipes>Adding new recipes</h1>
+<h2 id=adding-new-recipes>Adding new recipes</h2>
 <p>Refer to neurodocker for more information on neurodocker recipes<br>
 <a href=https://github.com/NeuroDesk/neurodocker>https://github.com/NeuroDesk/neurodocker</a><br>
 To add an application (e.g. <em>newapp</em>), follow these steps.</p>
