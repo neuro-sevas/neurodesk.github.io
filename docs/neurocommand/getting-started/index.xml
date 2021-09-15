@@ -66,5 +66,5 @@ Change &lt;code>port=3389&lt;/code> to &lt;code>port=3390&lt;/code> and save&lt;
 &lt;li>Open Microsoft Remote Desktop Connection in Windows host&lt;/li>
 &lt;li>Connect to &lt;code>localhost:3390&lt;/code>&lt;/li>
 &lt;li>In the next login page, leave Session as &lt;code>Xorg&lt;/code>. Enter your WSL username and password and click &lt;code>OK&lt;/code>&lt;/li>
-&lt;li>This should open an LXDE Linux Desktop environment. Follow Linux guide from here on&lt;/li>
+&lt;li>This should open an LXDE Linux Desktop environment. Follow &lt;a href="https://neurodesk.github.io/docs/neurocommand/getting-started/linux">Linux guide&lt;/a> from here on&lt;/li>
 &lt;/ol></description></item></channel></rss>

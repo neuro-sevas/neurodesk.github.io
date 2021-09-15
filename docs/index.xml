@@ -226,7 +226,7 @@ Change &lt;code>port=3389&lt;/code> to &lt;code>port=3390&lt;/code> and save&lt;
 &lt;li>Open Microsoft Remote Desktop Connection in Windows host&lt;/li>
 &lt;li>Connect to &lt;code>localhost:3390&lt;/code>&lt;/li>
 &lt;li>In the next login page, leave Session as &lt;code>Xorg&lt;/code>. Enter your WSL username and password and click &lt;code>OK&lt;/code>&lt;/li>
-&lt;li>This should open an LXDE Linux Desktop environment. Follow Linux guide from here on&lt;/li>
+&lt;li>This should open an LXDE Linux Desktop environment. Follow &lt;a href="https://neurodesk.github.io/docs/neurocommand/getting-started/linux">Linux guide&lt;/a> from here on&lt;/li>
 &lt;/ol></description></item><item><title>Docs: What's in the box?</title><link>https://neurodesk.github.io/docs/neurodesktop/whatsinthebox/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/whatsinthebox/</guid><description>
 &lt;p>Neurodesktop comes with the essential software required for neuroimaging data analysis pre-installed. Each release is built with the most recent version of these packages available at the build date. Some example packages include:&lt;/p>
 &lt;ul>
