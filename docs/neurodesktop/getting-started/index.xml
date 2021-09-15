@@ -162,7 +162,7 @@ newgrp docker
 &lt;/ol>
 &lt;pre tabindex="0">&lt;code>docker rm neuromachine
 &lt;/code>&lt;/pre></description></item><item><title>Docs: HPC</title><link>https://neurodesk.github.io/docs/neurodesktop/getting-started/hpc/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/getting-started/hpc/</guid><description>
-&lt;p>One way of running this project on HPCs is via &lt;a href="https://neurodesk.github.io/docs/overview/neurocommand/">https://neurodesk.github.io/docs/overview/neurocommand/&lt;/a>&lt;/p></description></item><item><title>Docs: Cloud</title><link>https://neurodesk.github.io/docs/neurodesktop/getting-started/cloud/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/getting-started/cloud/</guid><description>
+&lt;p>One way of running this project on HPCs is via &lt;a href="https://neurodesk.github.io/docs/neurocommand/getting-started/linux/">https://neurodesk.github.io/docs/neurocommand/getting-started/linux/&lt;/a>&lt;/p></description></item><item><title>Docs: Cloud</title><link>https://neurodesk.github.io/docs/neurodesktop/getting-started/cloud/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/getting-started/cloud/</guid><description>
 &lt;table>
 &lt;thead>
 &lt;tr>
