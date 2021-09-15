@@ -14,22 +14,22 @@
 <link rel=icon type=image/png href=/favicons/android-144x144.png sizes=144x144>
 <link rel=icon type=image/png href=/favicons/android-192x192.png sizes=192x192>
 <title>Add tool | NeuroDesk</title>
-<meta name=description content="Add tool
+<meta name=description content="Add a tool to neurodesktop
 ">
 <meta property="og:title" content="Add tool">
-<meta property="og:description" content="Add tool
+<meta property="og:description" content="Add a tool to neurodesktop
 ">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://neurodesk.github.io/docs/advanced/add_tool/"><meta property="article:section" content="docs">
-<meta property="article:modified_time" content="2021-09-09T11:08:31+10:00"><meta property="og:site_name" content="NeuroDesk">
+<meta property="article:modified_time" content="2021-09-15T10:58:28+10:00"><meta property="og:site_name" content="NeuroDesk">
 <meta itemprop=name content="Add tool">
-<meta itemprop=description content="Add tool
+<meta itemprop=description content="Add a tool to neurodesktop
 ">
-<meta itemprop=dateModified content="2021-09-09T11:08:31+10:00">
-<meta itemprop=wordCount content="656">
+<meta itemprop=dateModified content="2021-09-15T10:58:28+10:00">
+<meta itemprop=wordCount content="672">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="Add tool">
-<meta name=twitter:description content="Add tool
+<meta name=twitter:description content="Add a tool to neurodesktop
 ">
 <link rel=preload href=/scss/main.min.54a6b13de98a6b564f59b9d4cda427d6ae62ab54c015b5b9f5ed167c2da7fdd5.css as=style>
 <link href=/scss/main.min.54a6b13de98a6b564f59b9d4cda427d6ae62ab54c015b5b9f5ed167c2da7fdd5.css rel=stylesheet integrity>
@@ -155,20 +155,29 @@
 <a href=https://github.com/NeuroDesk/neurodesk.github.io/issues/new target=_blank><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
 <a id=print href=https://neurodesk.github.io/docs/advanced/_print/><i class="fa fa-print fa-fw"></i> Print entire section</a>
 </div>
+<div class=td-toc><nav id=TableOfContents>
+<ul>
+<li><a href=#guiding-principles>Guiding principles</a></li>
+<li><a href=#build-container>Build container</a></li>
+<li><a href=#menu-entry>Menu entry</a></li>
+<li><a href=#create-the-application>Create the application</a></li>
+</ul>
+</nav></div>
 </aside>
 <main class="col-12 col-md-9 col-xl-8 pl-md-5" role=main>
 <div class=td-content>
 <h1>Add tool</h1>
-<div class=lead>Add tool</div>
+<div class=lead>Add a tool to neurodesktop</div>
 <header class=article-meta>
 </header>
-<p>The goal of <em>VNM</em> is to provide users with a large choice of tools to use in their pipelines.
-Here is how you can add a tool to <em>VNM</em>.</p>
-<p>To decide if a tool should be packaged in a singularity container, or being installed in the main VNM container we are currently following these guiding principles:</p>
+<p>The goal of <em>neurodesktop</em> is to provide users with a large choice of tools to use in their pipelines.
+Use the guide below to add a tool to <em>neurodesktop</em>.</p>
+<h2 id=guiding-principles>Guiding principles</h2>
+<p>To decide if a tool should be packaged in a singularity container or be installed in the main neurodesktop container we are currently following these guiding principles:</p>
 <ol>
-<li>VNM is not a package manager. This means we are not distribution tools in containers that can easily be installed via a standard package manager</li>
-<li>VNM allows users to have multiple versions of tools in parallel via lmod, this means that if different versions of tool can&rsquo;t be installed in parallel we package it inside a container.</li>
-<li>VNM aims to provide simple tooling to link tools from different containers. This means that if a tool if required to coordinate container-tools, it should be in the main image.</li>
+<li>Neurodesktop is not a package manager. This means we are not distributing tools in containers that can easily be installed via a standard package manager</li>
+<li>Neurodesktop allows users to have multiple versions of tools in parallel via <a href=https://lmod.readthedocs.io/en/latest/>lmod</a>, this means that if different versions of tool can&rsquo;t be installed in parallel we package the tool inside a container.</li>
+<li>Neurodesktop aims to provide simple tooling to link tools from different containers. This means that if a tool is required to coordinate container-tools, it should be in the main image.</li>
 </ol>
 <p>Examples:</p>
 <table>
@@ -276,13 +285,15 @@ Here is how you can add a tool to <em>VNM</em>.</p>
 </tr>
 </tbody>
 </table>
-<p>Build container:</p>
+<h2 id=build-container>Build container</h2>
+<p>To build a container:</p>
 <ol>
-<li>add recipe to neurodocker if relevant <a href=https://github.com/NeuroDesk/neurodocker>https://github.com/NeuroDesk/neurodocker</a> and create pull request to neurodocker</li>
-<li>build container here <a href=https://github.com/NeuroDesk/caid>https://github.com/NeuroDesk/caid</a></li>
-<li>test container and if successful add container to Readme table here <a href=https://github.com/NeuroDesk/neurodesk>https://github.com/NeuroDesk/neurodesk</a></li>
+<li>Add recipe to neurodocker if relevant (<a href=https://github.com/NeuroDesk/neurodocker>https://github.com/NeuroDesk/neurodocker</a>) and create a pull request to neurodocker</li>
+<li>Build the container <a href=https://github.com/NeuroDesk/caid>here</a></li>
+<li>Test the container, and if successful add the container to the Readme table <a href=https://github.com/NeuroDesk/neurodesk>here</a></li>
 </ol>
-<p>As we want to propose several versions of the tools, each peace of software should have its own submenu under <code>VNM Neuroimaging</code>.
+<h2 id=menu-entry>Menu entry</h2>
+<p>As we want to propose several versions of the tools, each piece of software should have its own submenu under <code>VNM Neuroimaging</code>.
 To do so, you first have to add a submenu to <code>menus/vnm-applications.menu</code> by adding:</p>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=color:#8f5902;font-style:italic>&lt;!-- [[Tool Name]] submenu --&gt;</span>
 <span style=color:#204a87;font-weight:700>&lt;Menu&gt;</span>
@@ -294,7 +305,7 @@ To do so, you first have to add a submenu to <code>menus/vnm-applications.menu</
         <span style=color:#204a87;font-weight:700>&lt;/And&gt;</span>
     <span style=color:#204a87;font-weight:700>&lt;/Include&gt;</span>
 <span style=color:#204a87;font-weight:700>&lt;/Menu&gt;</span> <span style=color:#8f5902;font-style:italic>&lt;!-- End [[Tool Name]] --&gt;</span>
-</code></pre></div><p>The following table showns what to replace by what:</p>
+</code></pre></div><p>The following table shows the formatting rules to follow:</p>
 <table>
 <thead>
 <tr>
@@ -321,13 +332,14 @@ To do so, you first have to add a submenu to <code>menus/vnm-applications.menu</
 </tr>
 </tbody>
 </table>
-<p>Next, we have to create the submenu itself as we referenced it by <code>vnm-[[tool-name]].directory</code>. To do so, create the file <code>menus/submenus</code>vnm-[[tool-name]].directory` and add the following information inside:</p>
+<p>Next, we have to create the submenu itself as we referenced it by <code>vnm-[[tool-name]].directory</code>. To do so, create the file <code>menus/submenus/vnm-[[tool-name]].directory</code> and add the following information inside:</p>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-ini data-lang=ini><span style=color:#204a87;font-weight:700>[Desktop Entry]</span>
 <span style=color:#c4a000>Name</span><span style=color:#ce5c00;font-weight:700>=</span><span style=color:#4e9a06>[[Tool Name]]</span>
 <span style=color:#c4a000>Comment</span><span style=color:#ce5c00;font-weight:700>=</span><span style=color:#4e9a06>[[Tool Name]]</span>
 <span style=color:#c4a000>Icon</span><span style=color:#ce5c00;font-weight:700>=</span><span style=color:#4e9a06>/home/neuro/.config/lxpanel/LXDE/icons/[[icon-name]].png</span>
 <span style=color:#c4a000>Type</span><span style=color:#ce5c00;font-weight:700>=</span><span style=color:#4e9a06>Directory</span>
 </code></pre></div><p>If a specific icon is available in the <code>menus/icons</code> directory, replace <code>[[icon-name]]</code> by its name. Otherwise, use <code>vnm</code>.</p>
+<h2 id=create-the-application>Create the application</h2>
 <p>Finally, we have to create the actual application by creating the file <code>menus/applications/vnm-[[tool-name]]-[[0.0.0]].desktop</code>. The name of this file must contain the version of the tool (once again to allow multiple versions to live inside the same directory). Add the following description to this file:</p>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-ini data-lang=ini><span style=color:#204a87;font-weight:700>[Desktop Entry]</span>
 <span style=color:#c4a000>Name</span><span style=color:#ce5c00;font-weight:700>=</span><span style=color:#4e9a06>[[Tool Name]] [[0.0.0]] [[(Install only)]]</span>
@@ -338,7 +350,7 @@ To do so, you first have to add a submenu to <code>menus/vnm-applications.menu</
 <span style=color:#c4a000>Type</span><span style=color:#ce5c00;font-weight:700>=</span><span style=color:#4e9a06>Application</span>
 <span style=color:#c4a000>Categories</span><span style=color:#ce5c00;font-weight:700>=</span><span style=color:#4e9a06>[[Tool-name]]</span>
 <span style=color:#c4a000>Terminal</span><span style=color:#ce5c00;font-weight:700>=</span><span style=color:#4e9a06>true # or false</span>
-</code></pre></div><p>The important part here is the value of <code>Exec</code>. If the tool is in the form of a singularity image, you should the following command:</p>
+</code></pre></div><p>The important part here is the value of <code>Exec</code>. If the tool is in the form of a singularity image, you should run the following command:</p>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>bash /usr/share/fetch_and_run.sh <span style=color:#ce5c00;font-weight:700>[[</span>tool-name<span style=color:#ce5c00;font-weight:700>]]</span> <span style=color:#ce5c00;font-weight:700>[[</span>0.0.0<span style=color:#ce5c00;font-weight:700>]]</span> <span style=color:#ce5c00;font-weight:700>[[</span>YYYYMMDD<span style=color:#ce5c00;font-weight:700>]]</span> <span style=color:#ce5c00;font-weight:700>[[</span>cmd<span style=color:#ce5c00;font-weight:700>]]</span> <span style=color:#ce5c00;font-weight:700>[[</span>args<span style=color:#ce5c00;font-weight:700>]]</span>
 </code></pre></div><p>What <code>fetch_and_run.sh</code> does is check if the image is already installed as a module. If not, it checks whether it can be installed or not (return <code>1</code> if not possible). After that, it installs the image as a module.
 If <code>[[cmd]]</code> is specified, once the image is installed, it runs the command by giving the arguments from <code>[[args]]</code>.
@@ -359,8 +371,8 @@ Here are two examples for FreeSurfer and FreeView. This first one only installs 
 </code></pre></div>
 <div class="text-muted mt-5 pt-3 border-top">
 Last modified
-September 9, 2021
-: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/33d18acbbffd7dc73ede7c0c49df7211607adccc>Add placeholder pages (33d18ac)</a>
+September 15, 2021
+: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/762ce5dcfdab35c8952d313441538dff7ce016a6>Update Add Tool (762ce5d)</a>
 </div>
 </div>
 </main>

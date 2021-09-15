@@ -287,13 +287,14 @@ Change &lt;code>port=3389&lt;/code> to &lt;code>port=3390&lt;/code> and save&lt;
 &lt;/ol>
 &lt;pre tabindex="0">&lt;code>docker rm neuromachine
 &lt;/code>&lt;/pre></description></item><item><title>Docs: Add tool</title><link>https://neurodesk.github.io/docs/advanced/add_tool/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/advanced/add_tool/</guid><description>
-&lt;p>The goal of &lt;em>VNM&lt;/em> is to provide users with a large choice of tools to use in their pipelines.
-Here is how you can add a tool to &lt;em>VNM&lt;/em>.&lt;/p>
-&lt;p>To decide if a tool should be packaged in a singularity container, or being installed in the main VNM container we are currently following these guiding principles:&lt;/p>
+&lt;p>The goal of &lt;em>neurodesktop&lt;/em> is to provide users with a large choice of tools to use in their pipelines.
+Use the guide below to add a tool to &lt;em>neurodesktop&lt;/em>.&lt;/p>
+&lt;h2 id="guiding-principles">Guiding principles&lt;/h2>
+&lt;p>To decide if a tool should be packaged in a singularity container or be installed in the main neurodesktop container we are currently following these guiding principles:&lt;/p>
 &lt;ol>
-&lt;li>VNM is not a package manager. This means we are not distribution tools in containers that can easily be installed via a standard package manager&lt;/li>
-&lt;li>VNM allows users to have multiple versions of tools in parallel via lmod, this means that if different versions of tool can&amp;rsquo;t be installed in parallel we package it inside a container.&lt;/li>
-&lt;li>VNM aims to provide simple tooling to link tools from different containers. This means that if a tool if required to coordinate container-tools, it should be in the main image.&lt;/li>
+&lt;li>Neurodesktop is not a package manager. This means we are not distributing tools in containers that can easily be installed via a standard package manager&lt;/li>
+&lt;li>Neurodesktop allows users to have multiple versions of tools in parallel via &lt;a href="https://lmod.readthedocs.io/en/latest/">lmod&lt;/a>, this means that if different versions of tool can&amp;rsquo;t be installed in parallel we package the tool inside a container.&lt;/li>
+&lt;li>Neurodesktop aims to provide simple tooling to link tools from different containers. This means that if a tool is required to coordinate container-tools, it should be in the main image.&lt;/li>
 &lt;/ol>
 &lt;p>Examples:&lt;/p>
 &lt;table>
@@ -401,13 +402,15 @@ Here is how you can add a tool to &lt;em>VNM&lt;/em>.&lt;/p>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;p>Build container:&lt;/p>
+&lt;h2 id="build-container">Build container&lt;/h2>
+&lt;p>To build a container:&lt;/p>
 &lt;ol>
-&lt;li>add recipe to neurodocker if relevant &lt;a href="https://github.com/NeuroDesk/neurodocker">https://github.com/NeuroDesk/neurodocker&lt;/a> and create pull request to neurodocker&lt;/li>
-&lt;li>build container here &lt;a href="https://github.com/NeuroDesk/caid">https://github.com/NeuroDesk/caid&lt;/a>&lt;/li>
-&lt;li>test container and if successful add container to Readme table here &lt;a href="https://github.com/NeuroDesk/neurodesk">https://github.com/NeuroDesk/neurodesk&lt;/a>&lt;/li>
+&lt;li>Add recipe to neurodocker if relevant (&lt;a href="https://github.com/NeuroDesk/neurodocker">https://github.com/NeuroDesk/neurodocker&lt;/a>) and create a pull request to neurodocker&lt;/li>
+&lt;li>Build the container &lt;a href="https://github.com/NeuroDesk/caid">here&lt;/a>&lt;/li>
+&lt;li>Test the container, and if successful add the container to the Readme table &lt;a href="https://github.com/NeuroDesk/neurodesk">here&lt;/a>&lt;/li>
 &lt;/ol>
-&lt;p>As we want to propose several versions of the tools, each peace of software should have its own submenu under &lt;code>VNM Neuroimaging&lt;/code>.
+&lt;h2 id="menu-entry">Menu entry&lt;/h2>
+&lt;p>As we want to propose several versions of the tools, each piece of software should have its own submenu under &lt;code>VNM Neuroimaging&lt;/code>.
 To do so, you first have to add a submenu to &lt;code>menus/vnm-applications.menu&lt;/code> by adding:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-xml" data-lang="xml">&lt;span style="color:#8f5902;font-style:italic">&amp;lt;!-- [[Tool Name]] submenu --&amp;gt;&lt;/span>
 &lt;span style="color:#204a87;font-weight:bold">&amp;lt;Menu&amp;gt;&lt;/span>
@@ -419,7 +422,7 @@ To do so, you first have to add a submenu to &lt;code>menus/vnm-applications.men
 &lt;span style="color:#204a87;font-weight:bold">&amp;lt;/And&amp;gt;&lt;/span>
 &lt;span style="color:#204a87;font-weight:bold">&amp;lt;/Include&amp;gt;&lt;/span>
 &lt;span style="color:#204a87;font-weight:bold">&amp;lt;/Menu&amp;gt;&lt;/span> &lt;span style="color:#8f5902;font-style:italic">&amp;lt;!-- End [[Tool Name]] --&amp;gt;&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>The following table showns what to replace by what:&lt;/p>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>The following table shows the formatting rules to follow:&lt;/p>
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -446,13 +449,14 @@ To do so, you first have to add a submenu to &lt;code>menus/vnm-applications.men
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;p>Next, we have to create the submenu itself as we referenced it by &lt;code>vnm-[[tool-name]].directory&lt;/code>. To do so, create the file &lt;code>menus/submenus&lt;/code>vnm-[[tool-name]].directory` and add the following information inside:&lt;/p>
+&lt;p>Next, we have to create the submenu itself as we referenced it by &lt;code>vnm-[[tool-name]].directory&lt;/code>. To do so, create the file &lt;code>menus/submenus/vnm-[[tool-name]].directory&lt;/code> and add the following information inside:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-ini" data-lang="ini">&lt;span style="color:#204a87;font-weight:bold">[Desktop Entry]&lt;/span>
 &lt;span style="color:#c4a000">Name&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">[[Tool Name]]&lt;/span>
 &lt;span style="color:#c4a000">Comment&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">[[Tool Name]]&lt;/span>
 &lt;span style="color:#c4a000">Icon&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">/home/neuro/.config/lxpanel/LXDE/icons/[[icon-name]].png&lt;/span>
 &lt;span style="color:#c4a000">Type&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">Directory&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>If a specific icon is available in the &lt;code>menus/icons&lt;/code> directory, replace &lt;code>[[icon-name]]&lt;/code> by its name. Otherwise, use &lt;code>vnm&lt;/code>.&lt;/p>
+&lt;h2 id="create-the-application">Create the application&lt;/h2>
 &lt;p>Finally, we have to create the actual application by creating the file &lt;code>menus/applications/vnm-[[tool-name]]-[[0.0.0]].desktop&lt;/code>. The name of this file must contain the version of the tool (once again to allow multiple versions to live inside the same directory). Add the following description to this file:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-ini" data-lang="ini">&lt;span style="color:#204a87;font-weight:bold">[Desktop Entry]&lt;/span>
 &lt;span style="color:#c4a000">Name&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">[[Tool Name]] [[0.0.0]] [[(Install only)]]&lt;/span>
@@ -463,7 +467,7 @@ To do so, you first have to add a submenu to &lt;code>menus/vnm-applications.men
 &lt;span style="color:#c4a000">Type&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">Application&lt;/span>
 &lt;span style="color:#c4a000">Categories&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">[[Tool-name]]&lt;/span>
 &lt;span style="color:#c4a000">Terminal&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">true # or false&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>The important part here is the value of &lt;code>Exec&lt;/code>. If the tool is in the form of a singularity image, you should the following command:&lt;/p>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>The important part here is the value of &lt;code>Exec&lt;/code>. If the tool is in the form of a singularity image, you should run the following command:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">bash /usr/share/fetch_and_run.sh &lt;span style="color:#ce5c00;font-weight:bold">[[&lt;/span>tool-name&lt;span style="color:#ce5c00;font-weight:bold">]]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[[&lt;/span>0.0.0&lt;span style="color:#ce5c00;font-weight:bold">]]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[[&lt;/span>YYYYMMDD&lt;span style="color:#ce5c00;font-weight:bold">]]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[[&lt;/span>cmd&lt;span style="color:#ce5c00;font-weight:bold">]]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[[&lt;/span>args&lt;span style="color:#ce5c00;font-weight:bold">]]&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>What &lt;code>fetch_and_run.sh&lt;/code> does is check if the image is already installed as a module. If not, it checks whether it can be installed or not (return &lt;code>1&lt;/code> if not possible). After that, it installs the image as a module.
 If &lt;code>[[cmd]]&lt;/code> is specified, once the image is installed, it runs the command by giving the arguments from &lt;code>[[args]]&lt;/code>.
