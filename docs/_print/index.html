@@ -533,6 +533,8 @@ We recommend the <em>manual</em> install instructions, as the simplified install
 <p>However, if WSL is missing or incorrectly configured, the <em>Resources</em> tab of the Docker settings may look something like this:</p>
 <p><img src=/Docker_WSL_incorrect.png alt=Docker_WSL_incorrect title=Docker_WSL_incorrect></p>
 <p>If this is the case, follow the manual install instructions to install <a href=https://docs.microsoft.com/en-us/windows/wsl/install-win10>WSL 2</a> (including installation of Ubuntu through Microsoft Store).</p>
+<h2 id=not-enough-free-space-on-the-partition-in-windows-and-wsl2>Not enough free space on the partition in Windows and WSL2</h2>
+<p>This could help: <a href=https://yjmantilla.github.io/tutorials/wsl2-move-vhdx.html>https://yjmantilla.github.io/tutorials/wsl2-move-vhdx.html</a></p>
 </div>
 <div class=td-content style=page-break-before:always>
 <h1 id=pg-6fcc3ae2c99b700109cf4d44a0a17071>2.5 - Release History</h1>
@@ -866,12 +868,14 @@ Here are two examples for FreeSurfer and FreeView. This first one only installs 
 </div>
 <div class=td-content style=page-break-before:always>
 <h1 id=pg-b9cd3c04d25cdb41d3043cfa7acab883>5.2 - Storage</h1>
-<div class=lead>Add additional storage</div>
+<div class=lead>Add storage to Neurodesktop</div>
+<h2 id=cloud-storage>Cloud-storage</h2>
+<p>The easiest way to get your data into Neurodesktop is to use a cloud storage provider like CloudStor, Dropbox, OneDrive and their sync tools like OwnCloud, Nextcloud or very flexible tools like rclone. Another good option could be to utilize Globus for large amounts of data.</p>
+<h2 id=mounting-network-storage-on-your-host-computer>Mounting network storage on your host-computer</h2>
+<p>The -v C:/neurodesk:/neurodesk part of the docker command links the directory “neurodesk” on the “C drive” of your Windows computer to the directory /neurodesk inside the Desktop environment. Everything you store in there will be available inside neurodesk and on the host computer. You can also mount additional directories by adding another -v parameter set (e.g. -v D:/moredata:/data) - this will mount the directory moredata from your D drive to /data inside neurodesktop. If you have network storage mounted in a similar way you can also pass this into the Neurodesktop tool.</p>
 <h2 id=mount-volume-using-sshfs>Mount volume using SSHFS</h2>
-<p><code>sshfs -o allow_root USER@TARGET_HOST:TARGET_PATH SOURCE_PATH</code></p>
-<h2 id=not-enough-free-space>Not enough free space</h2>
-<p>For Windows</p>
-<p><a href=https://yjmantilla.github.io/tutorials/wsl2-move-vhdx.html>https://yjmantilla.github.io/tutorials/wsl2-move-vhdx.html</a></p>
+<p>It is theoretically possible to mount an SSH target inside Neurodesktop, but it&rsquo;s not a very reliable way of mounting storage:
+<code>sshfs -o allow_root USER@TARGET_HOST:TARGET_PATH SOURCE_PATH</code></p>
 </div>
 <div class=td-content style=page-break-before:always>
 <h1 id=pg-9a7c227f489e066f7d748ce204b03813>5.3 - System Testing</h1>

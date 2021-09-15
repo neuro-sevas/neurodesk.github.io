@@ -198,11 +198,13 @@ Here are two examples for FreeSurfer and FreeView. This first one only installs 
 &lt;span style="color:#c4a000">Categories&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">FreeSurfer&lt;/span>
 &lt;span style="color:#c4a000">Terminal&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">true&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Storage</title><link>https://neurodesk.github.io/docs/advanced/storage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/advanced/storage/</guid><description>
+&lt;h2 id="cloud-storage">Cloud-storage&lt;/h2>
+&lt;p>The easiest way to get your data into Neurodesktop is to use a cloud storage provider like CloudStor, Dropbox, OneDrive and their sync tools like OwnCloud, Nextcloud or very flexible tools like rclone. Another good option could be to utilize Globus for large amounts of data.&lt;/p>
+&lt;h2 id="mounting-network-storage-on-your-host-computer">Mounting network storage on your host-computer&lt;/h2>
+&lt;p>The -v C:/neurodesk:/neurodesk part of the docker command links the directory “neurodesk” on the “C drive” of your Windows computer to the directory /neurodesk inside the Desktop environment. Everything you store in there will be available inside neurodesk and on the host computer. You can also mount additional directories by adding another -v parameter set (e.g. -v D:/moredata:/data) - this will mount the directory moredata from your D drive to /data inside neurodesktop. If you have network storage mounted in a similar way you can also pass this into the Neurodesktop tool.&lt;/p>
 &lt;h2 id="mount-volume-using-sshfs">Mount volume using SSHFS&lt;/h2>
-&lt;p>&lt;code>sshfs -o allow_root USER@TARGET_HOST:TARGET_PATH SOURCE_PATH&lt;/code>&lt;/p>
-&lt;h2 id="not-enough-free-space">Not enough free space&lt;/h2>
-&lt;p>For Windows&lt;/p>
-&lt;p>&lt;a href="https://yjmantilla.github.io/tutorials/wsl2-move-vhdx.html">https://yjmantilla.github.io/tutorials/wsl2-move-vhdx.html&lt;/a>&lt;/p></description></item><item><title>Docs: System Testing</title><link>https://neurodesk.github.io/docs/advanced/tested/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/advanced/tested/</guid><description>
+&lt;p>It is theoretically possible to mount an SSH target inside Neurodesktop, but it&amp;rsquo;s not a very reliable way of mounting storage:
+&lt;code>sshfs -o allow_root USER@TARGET_HOST:TARGET_PATH SOURCE_PATH&lt;/code>&lt;/p></description></item><item><title>Docs: System Testing</title><link>https://neurodesk.github.io/docs/advanced/tested/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/advanced/tested/</guid><description>
 &lt;h2 id="please-test-and-add-if-working-">Please test and add if working :)&lt;/h2>
 &lt;table>
 &lt;thead>
