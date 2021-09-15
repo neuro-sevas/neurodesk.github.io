@@ -491,8 +491,8 @@ Here are two examples for FreeSurfer and FreeView. This first one only installs 
 &lt;p>&lt;code>sshfs -o allow_root USER@TARGET_HOST:TARGET_PATH SOURCE_PATH&lt;/code>&lt;/p>
 &lt;h2 id="not-enough-free-space">Not enough free space&lt;/h2>
 &lt;p>For Windows&lt;/p>
-&lt;p>&lt;a href="https://yjmantilla.github.io/tutorials/wsl2-move-vhdx.html">https://yjmantilla.github.io/tutorials/wsl2-move-vhdx.html&lt;/a>&lt;/p></description></item><item><title>Docs: Tested</title><link>https://neurodesk.github.io/docs/advanced/tested/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/advanced/tested/</guid><description>
-&lt;p>Please test and add if working :)&lt;/p>
+&lt;p>&lt;a href="https://yjmantilla.github.io/tutorials/wsl2-move-vhdx.html">https://yjmantilla.github.io/tutorials/wsl2-move-vhdx.html&lt;/a>&lt;/p></description></item><item><title>Docs: System Testing</title><link>https://neurodesk.github.io/docs/advanced/tested/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/advanced/tested/</guid><description>
+&lt;h2 id="please-test-and-add-if-working-">Please test and add if working :)&lt;/h2>
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -579,7 +579,7 @@ Here are two examples for FreeSurfer and FreeView. This first one only installs 
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;h1 id="run-neurodesk-vnm-for-free-on-cloud-providers">Run Neurodesk VNM for free on cloud providers&lt;/h1>
+&lt;h2 id="run-neurodesk-vnm-for-free-on-cloud-providers">Run Neurodesk VNM for free on cloud providers&lt;/h2>
 &lt;ul>
 &lt;li>&lt;a href="https://mri.sbollmann.net/index.php/2020/12/08/run-neurodesk-on-oracle-cloud-free-tier">Oracle OCI&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://henryjburg.medium.com/neurodesk-running-on-azure-3e38c590a152">Microsoft Azure&lt;/a>&lt;/li>
