@@ -443,7 +443,7 @@ To get started, see: <a href=/docs/neurodesktop/>Neurodesktop</a></p>
 <h2 id=video-tutorial>Video tutorial</h2>
 <p>Click <a href="https://www.youtube.com/watch?v=JLv_5fycugw">here</a> to watch a 2 minute tutorial video from OHBM 2021</p>
 <h2 id=how-to-access-files-from-your-host-computer>How to access files from your Host computer</h2>
-<p>The <code>-v C:/neurodesktop:/neurodesktop</code> part of the docker command links the directory &ldquo;neurodesktop&rdquo; on the &ldquo;C drive&rdquo; of your Windows computer to the directory /neurodesktop inside the Desktop environment. Everything you store in there will be available inside neurodesktop and on the host computer. You can also mount additional directories by adding another -v parameter set (e.g. <code>-v D:/moredata:/data</code>) - this will mount the directory moredata from your D drive to /data inside neurodesktop.</p>
+<p>The <code>-v C:/neurodesktop:/neurodesktop</code> part of the docker command links the directory &ldquo;neurodesktop&rdquo; on the &ldquo;C drive&rdquo; of your Windows computer to the directory <code>/neurodesktop</code> inside the Desktop environment. Everything you store in there will be available inside neurodesktop and on the host computer. You can also mount additional directories by adding another -v parameter set (e.g. <code>-v D:/moredata:/data</code>) - this will mount the directory moredata from your D drive to <code>/data</code> inside neurodesktop.</p>
 <h2 id=how-to-launchdownload-applications>How to launch/download applications</h2>
 <p>Click on the Launcher icon in bottom-left corner and navigate to the &ldquo;Neurodesktop&rdquo; menu, then select the application and version you wish to launch. If it is the first time you launch the application, it will be downloaded to your desktop environment. The application is ready to use when the &ldquo;Singularity>&rdquo; prompt appears in the terminal window that opens. If you chose in the menu the GUI of the application (e.g., fsleyesGUI 6.0.3), it will open automatically. If you chose that application itself (e.g., fsl 6.0.3), a terminal window will open, and you can use it to run any of the utilities packaged with the application, including the graphical utilities (e.g., typing &ldquo;fsl&rdquo; to run FSL&rsquo;s main menu).</p>
 </div>
@@ -478,7 +478,7 @@ To get started, see: <a href=/docs/neurodesktop/>Neurodesktop</a></p>
 <p>Neurodesk is an open-source project that is always evolving. If you are experiencing an issue not listed here, please open a <a href=https://github.com/NeuroDesk/neurodesk/issues>new issue</a>, so that we can aim to solve it and update our help documentation.</p>
 <p>To ask questions or suggest new features, <a href=https://github.com/NeuroDesk/neurodesk.github.io/discussions>join the discussion</a> on github.</p>
 <h2 id=windows-users-wsl-not-installed-properly>Windows users: WSL not installed properly</h2>
-<p>The Docker engine relies on the Windows subsystem for Linux <a href=https://docs.microsoft.com/en-us/windows/wsl/install-win10>(WSL)</a> to run on a windows machine.</p>
+<p>The Docker engine relies on the Windows subsystem for Linux (<a href=https://docs.microsoft.com/en-us/windows/wsl/install-win10>WSL</a>) to run on a windows machine.</p>
 <div class="alert alert-primary" role=alert>
 <h4 class=alert-heading>Note</h4>
 We recommend the <em>manual</em> install instructions, as the simplified install requires an upgrade to a preview build of Windows that may be unstable.
@@ -536,7 +536,7 @@ Run <code>bash build.sh --lxde --edit</code></p>
 <h3 id=for-mate-desktops>For Mate desktops</h3>
 <p>Run <code>bash build.sh --init</code> (or <code>bash build.sh --lxde --edit</code>)<br>
 lxde/mate: Mate<br>
-installdir: Where all the neurodesk files will be stored (Default: ./local)<br>
+installdir: Where all the neurocommand files will be stored (Default: ./local)<br>
 appmenu: The linux menu xml file. (Usually /etc/xdg/menus/****-applications.menu)<br>
 appdir: Location for the .desktop files for this linux desktop (Usually /usr/share/applications)<br>
 deskdir: Location for the .directory files for this linux desktop (Typically /usr/share/desktop-directories)</p>
@@ -589,10 +589,8 @@ Change <code>port=3389</code> to <code>port=3390</code> and save</li>
 <h1 id=pg-88405e8e9824a3a23cd8fda56d2e5574>4 - Neurocontainers</h1>
 <div class=lead>What neurocontainers are about</div>
 <h2 id=automatic-container-building-and-testing>Automatic container building and testing</h2>
-<p>The containers can for be used in combination with our transparent singularity or neurocommand tool, that wrap the executables inside a container to make them easily available for pipelines:
-<a href=https://github.com/NeuroDesk/transparent-singularity/>https://github.com/NeuroDesk/transparent-singularity/</a>
-<a href=https://github.com/NeuroDesk/neurocommand/>https://github.com/NeuroDesk/neurocommand/</a></p>
-<p>The containers are hosted on dockerhub (<a href=https://hub.docker.com/orgs/vnmd/repositories>https://hub.docker.com/orgs/vnmd/repositories</a>) or on <a href=https://github.com/NeuroDesk/neurocontainers/packages>https://github.com/NeuroDesk/neurocontainers/packages</a></p>
+<p>The containers can for be used in combination with our <a href=https://github.com/NeuroDesk/transparent-singularity/>transparent singularity</a> or <a href=https://github.com/NeuroDesk/neurocommand/>neurocommand</a> tool, that wrap the executables inside a container to make them easily available for pipelines:</p>
+<p>The containers are hosted on <a href=https://hub.docker.com/orgs/vnmd/repositories>dockerhub</a> or on <a href=https://github.com/NeuroDesk/neurocontainers/packages>github</a></p>
 <h2 id=pull-containers>Pull containers</h2>
 <p>e.g. for a julia container
 docker</p>
@@ -601,9 +599,8 @@ docker</p>
 <pre tabindex=0><code>singularity build julia_1.6.1.simg docker://vnmd/julia_1.6.1
 </code></pre><p>Replace <code>julia_1.6.1</code> with your selected application</p>
 <h2 id=adding-new-recipes>Adding new recipes</h2>
-<p>Refer to neurodocker for more information on neurodocker recipes<br>
-<a href=https://github.com/NeuroDesk/neurodocker>https://github.com/NeuroDesk/neurodocker</a><br>
-To add an application (e.g. <em>newapp</em>), follow these steps.</p>
+<p>Refer to <a href=https://github.com/NeuroDesk/neurodocker>neurodocker</a> for more information on neurodocker recipes</p>
+<p>To add an application (e.g. <em>newapp</em>), follow these steps.</p>
 <ol>
 <li>Clone the repository</li>
 <li>Copy the directory template and rename to <em>newapp</em> in <code>caid/recipes</code></li>

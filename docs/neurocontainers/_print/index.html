@@ -76,10 +76,8 @@ This the multi-page printable view of this section.
 </ul>
 <div class=content>
 <h2 id=automatic-container-building-and-testing>Automatic container building and testing</h2>
-<p>The containers can for be used in combination with our transparent singularity or neurocommand tool, that wrap the executables inside a container to make them easily available for pipelines:
-<a href=https://github.com/NeuroDesk/transparent-singularity/>https://github.com/NeuroDesk/transparent-singularity/</a>
-<a href=https://github.com/NeuroDesk/neurocommand/>https://github.com/NeuroDesk/neurocommand/</a></p>
-<p>The containers are hosted on dockerhub (<a href=https://hub.docker.com/orgs/vnmd/repositories>https://hub.docker.com/orgs/vnmd/repositories</a>) or on <a href=https://github.com/NeuroDesk/neurocontainers/packages>https://github.com/NeuroDesk/neurocontainers/packages</a></p>
+<p>The containers can for be used in combination with our <a href=https://github.com/NeuroDesk/transparent-singularity/>transparent singularity</a> or <a href=https://github.com/NeuroDesk/neurocommand/>neurocommand</a> tool, that wrap the executables inside a container to make them easily available for pipelines:</p>
+<p>The containers are hosted on <a href=https://hub.docker.com/orgs/vnmd/repositories>dockerhub</a> or on <a href=https://github.com/NeuroDesk/neurocontainers/packages>github</a></p>
 <h2 id=pull-containers>Pull containers</h2>
 <p>e.g. for a julia container
 docker</p>
@@ -88,9 +86,8 @@ docker</p>
 <pre tabindex=0><code>singularity build julia_1.6.1.simg docker://vnmd/julia_1.6.1
 </code></pre><p>Replace <code>julia_1.6.1</code> with your selected application</p>
 <h2 id=adding-new-recipes>Adding new recipes</h2>
-<p>Refer to neurodocker for more information on neurodocker recipes<br>
-<a href=https://github.com/NeuroDesk/neurodocker>https://github.com/NeuroDesk/neurodocker</a><br>
-To add an application (e.g. <em>newapp</em>), follow these steps.</p>
+<p>Refer to <a href=https://github.com/NeuroDesk/neurodocker>neurodocker</a> for more information on neurodocker recipes</p>
+<p>To add an application (e.g. <em>newapp</em>), follow these steps.</p>
 <ol>
 <li>Clone the repository</li>
 <li>Copy the directory template and rename to <em>newapp</em> in <code>caid/recipes</code></li>
