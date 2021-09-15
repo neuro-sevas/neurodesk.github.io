@@ -16,18 +16,18 @@
 <link rel=icon type=image/png href=/favicons/android-144x144.png sizes=144x144>
 <link rel=icon type=image/png href=/favicons/android-192x192.png sizes=192x192>
 <title>Getting Started | NeuroDesk</title>
-<meta name=description content="Descriptions for getting started on various operating systems.
+<meta name=description content="Select your operating system to get started with neurocommand.
 ">
 <meta property="og:title" content="Getting Started">
-<meta property="og:description" content="Descriptions for getting started on various operating systems.
+<meta property="og:description" content="Select your operating system to get started with neurocommand.
 ">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://neurodesk.github.io/docs/neurocommand/getting-started/"><meta property="og:site_name" content="NeuroDesk">
 <meta itemprop=name content="Getting Started">
-<meta itemprop=description content="Descriptions for getting started on various operating systems.
+<meta itemprop=description content="Select your operating system to get started with neurocommand.
 "><meta name=twitter:card content="summary">
 <meta name=twitter:title content="Getting Started">
-<meta name=twitter:description content="Descriptions for getting started on various operating systems.
+<meta name=twitter:description content="Select your operating system to get started with neurocommand.
 ">
 <link rel=preload href=/scss/main.min.54a6b13de98a6b564f59b9d4cda427d6ae62ab54c015b5b9f5ed167c2da7fdd5.css as=style>
 <link href=/scss/main.min.54a6b13de98a6b564f59b9d4cda427d6ae62ab54c015b5b9f5ed167c2da7fdd5.css rel=stylesheet integrity>
@@ -71,7 +71,7 @@ This the multi-page printable view of this section.
 </p>
 </div>
 <h1 class=title>Getting Started</h1>
-<div class=lead>Descriptions for getting started on various operating systems.</div>
+<div class=lead>Select your operating system to get started with neurocommand.</div>
 <ul>
 <li>1: <a href=#pg-b25aa0b6f8dfd4ff32d8bffbdca60e3b>Linux</a></li>
 <li>2: <a href=#pg-180aa3bd9988d06cd8c909d2dd3a6340>Windows</a></li>
@@ -82,19 +82,18 @@ This the multi-page printable view of this section.
 <div class=td-content>
 <h1 id=pg-b25aa0b6f8dfd4ff32d8bffbdca60e3b>1 - Linux</h1>
 <div class=lead>Install neurocommand on Linux</div>
-<h2 id=linux>Linux</h2>
-<h3 id=requirements>Requirements:</h3>
-<h4 id=required>Required</h4>
+<h2 id=requirements>Requirements:</h2>
+<h3 id=required>Required</h3>
 <ul>
 <li>python <a href=https://docs.conda.io/en/latest/miniconda.html#linux-installers>https://docs.conda.io/en/latest/miniconda.html#linux-installers</a></li>
 <li>singularity <a href=https://sylabs.io/guides/3.5/user-guide/quick_start.html>https://sylabs.io/guides/3.5/user-guide/quick_start.html</a></li>
 </ul>
-<h4 id=optional>Optional</h4>
+<h3 id=optional>Optional</h3>
 <ul>
 <li>lmod <a href=https://sylabs.io/guides/3.5/user-guide/quick_start.html>https://lmod.readthedocs.io/en/latest/</a></li>
 </ul>
-<h3 id=inital-install>Inital install</h3>
-<h4 id=command-line-mode---for-non-desktop-experience-eg-running-on-an-hpc>command line mode - For non-desktop experience (e.g. running on an HPC)</h4>
+<h2 id=inital-install>Inital install</h2>
+<h3 id=command-line-mode---for-non-desktop-experience-eg-running-on-an-hpc>command line mode - For non-desktop experience (e.g. running on an HPC)</h3>
 <p>If running on cli only &mldr;</p>
 <ul>
 <li>Load singularity and for best performance it should be 3.x e.g. <code>module load singularity/3.5.0</code></li>
@@ -105,35 +104,34 @@ This the multi-page printable view of this section.
 <li>Run <code>module use $PWD/local/containers/modules/</code> to add the containers to your module search path. Add this to your .bashrc if working.</li>
 <li>Run <code>ml avail</code> to see the installed containers at the top of the list (neurodesk containers will take preference over system modules with the same name). If a container is not yet there run <code>ml --ignore_cache avail</code></li>
 </ul>
-<h4 id=for-lxde-desktops>For Lxde desktops</h4>
+<h3 id=for-lxde-desktops>For Lxde desktops</h3>
 <p>If running on an lxde desktop&mldr;
 Run <code>bash build.sh --lxde --edit</code></p>
-<h4 id=for-mate-desktops>For Mate desktops</h4>
+<h3 id=for-mate-desktops>For Mate desktops</h3>
 <p>Run <code>bash build.sh --init</code> (or <code>bash build.sh --lxde --edit</code>)<br>
 lxde/mate: Mate<br>
 installdir: Where all the neurodesk files will be stored (Default: ./local)<br>
 appmenu: The linux menu xml file. (Usually /etc/xdg/menus/****-applications.menu)<br>
 appdir: Location for the .desktop files for this linux desktop (Usually /usr/share/applications)<br>
 deskdir: Location for the .directory files for this linux desktop (Typically /usr/share/desktop-directories)</p>
-<h4 id=for-desktop-menus>For desktop menus:</h4>
+<h3 id=for-desktop-menus>For desktop menus:</h3>
 <p><code>sudo bash install.sh</code> to install<br>
 <em>Creates symlinks to menu files in installation dir</em></p>
 <p><code>sudo bash uninstall.sh</code> to uninstall<br>
 <em>Removes symlinks</em></p>
-<h3 id=to-update>To update</h3>
+<h2 id=to-update>To update</h2>
 <p>Run <code>git pull</code><br>
 Run <code>bash build.sh</code><br>
 <em>install.sh does not need to be run again</em></p>
-<h4 id=to-download-all-containers>To download all containers</h4>
+<h3 id=to-download-all-containers>To download all containers</h3>
 <p>Run <code>bash containers.sh --all</code></p>
 </div>
 <div class=td-content style=page-break-before:always>
 <h1 id=pg-180aa3bd9988d06cd8c909d2dd3a6340>2 - Windows</h1>
 <div class=lead>Install neurocommand on Windows</div>
-<h2 id=windows>Windows</h2>
-<h3 id=wsl-w-ubuntu--lxde>WSL (w/ Ubuntu + LXDE)</h3>
+<h2 id=wsl-w-ubuntu--lxde>WSL (w/ Ubuntu + LXDE)</h2>
 <p>For more information on WSL: <a href=https://docs.microsoft.com/en-us/windows/wsl>https://docs.microsoft.com/en-us/windows/wsl</a></p>
-<h4 id=setting-up>Setting up</h4>
+<h3 id=setting-up>Setting up</h3>
 <ol>
 <li>Setup WSL2 using the following instructions <em>(Ubuntu 18.04 recommended)</em><br>
 <a href=https://docs.microsoft.com/en-us/windows/wsl/install-win10>https://docs.microsoft.com/en-us/windows/wsl/install-win10</a>
@@ -146,7 +144,7 @@ Run <code>bash build.sh</code><br>
 Change <code>port=3389</code> to <code>port=3390</code> and save</li>
 <li>Run <code>echo startlxde > ~/.xsession</code></li>
 </ol>
-<h4 id=running>Running</h4>
+<h3 id=running>Running</h3>
 <ol>
 <li><code>sudo service xrdp start</code> to start xrdp server</li>
 <li>Open Microsoft Remote Desktop Connection in Windows host</li>
