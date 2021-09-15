@@ -169,12 +169,9 @@ newgrp docker
 <p>Open a terminal, and type the folowing command to automatically download the neurodesktop container and run it</p>
 </li>
 </ol>
-<ul>
-<li>Mac:</li>
-</ul>
 <pre tabindex=0><code>docker run --shm-size=1gb -it --privileged --name neuromachine -v ~/neurodesktop:/neurodesktop -e USER=user -p 8080:8080 vnmd/neuromachine:latest
 </code></pre><p>(notice: There is a bug in docker 3.3.0 for Mac that makes this command not run correctly and there will be no application menu when you start the desktop. Update your docker version when you see this!)</p>
-<p>(notice: if you get errors in neurodesktop then check if the ~/neurodesktop directory is writable to all users, otherwise run <code>chmod a+rwx ~/neurodesktop</code>)</p>
+<p>if you get errors in neurodesktop then check if the ~/neurodesktop directory is writable to all users, otherwise run <code>chmod a+rwx ~/neurodesktop</code></p>
 <ol start=4>
 <li>Once neurodesktop is downloaded i.e. <code>guacd[77]: INFO: Listening on host 127.0.0.1, port 4822</code> is displayed in terminal, open a browser and go to:</li>
 </ol>
