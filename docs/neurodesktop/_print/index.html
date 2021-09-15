@@ -104,9 +104,21 @@ This the multi-page printable view of this section.
 </ol>
 <h2 id=quickstart>Quickstart</h2>
 <ol>
-<li>
-<p>Install Docker from here: <a href=https://docs.docker.com/get-docker/>https://docs.docker.com/get-docker/</a></p>
-</li>
+<li>Install Docker from here: <a href=https://docs.docker.com/get-docker/>https://docs.docker.com/get-docker/</a></li>
+</ol>
+<p>one example to install docker in a yum-based distribution could look like this:</p>
+<pre tabindex=0><code>sudo dnf install -y yum-utils 
+sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+sudo dnf install docker-ce docker-ce-cli containerd.io
+sudo systemctl enable docker
+sudo systemctl start docker
+sudo docker version
+sudo docker info
+sudo groupadd docker
+sudo usermod -aG docker $USER
+sudo chown root:docker /var/run/docker.sock
+newgrp docker
+</code></pre><ol start=2>
 <li>
 <p>Create a local folder where the downloaded applications will be stored, e.g. ~/neurodesktop</p>
 </li>
