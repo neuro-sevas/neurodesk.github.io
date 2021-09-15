@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>NeuroDesk – For Developers</title><link>https://neurodesk.github.io/docs/for-developers/</link><description>Recent content in For Developers on NeuroDesk</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://neurodesk.github.io/docs/for-developers/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Neurodesk Architecture</title><link>https://neurodesk.github.io/docs/for-developers/neurodesk-architecture/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/for-developers/neurodesk-architecture/</guid><description>
 &lt;h1 id="layers">Layers&lt;/h1>
-&lt;p>Neurodesktop: &lt;a href="https://github.com/NeuroDesk/Neurodesktop">https://github.com/NeuroDesk/Neurodesktop&lt;/a>&lt;/p>
+&lt;p>Neurodesktop: &lt;a href="https://github.com/NeuroDesk/neurodesktop">https://github.com/NeuroDesk/neurodesktop&lt;/a>&lt;/p>
 &lt;ul>
 &lt;li>docker container with interface modifications&lt;/li>
 &lt;li>contains tools necessary to manage containers: vscode, git, niype&lt;/li>
 &lt;li>CI: builds docker image and tests if it runs&lt;/li>
 &lt;/ul>
-&lt;p>Neurocommand: &lt;a href="https://github.com/NeuroDesk/Neurocommand">https://github.com/NeuroDesk/Neurocommand&lt;/a>&lt;/p>
+&lt;p>Neurocommand: &lt;a href="https://github.com/NeuroDesk/neurocommand">https://github.com/NeuroDesk/neurocommand&lt;/a>&lt;/p>
 &lt;ul>
 &lt;li>script to install and manage multiple containers using transparent singularity on any linux system&lt;/li>
 &lt;li>this repo would also handle the creation of menu entries in a general form applicable to different desktop environments&lt;/li>
@@ -19,7 +19,7 @@
 &lt;li>this repo could provide a simple way of using our containers on HPCs for large scale processing of the pipelines build in VNM&lt;/li>
 &lt;li>CI: test if exposing of binaries work&lt;/li>
 &lt;/ul>
-&lt;p>Neurocontainers: &lt;a href="https://github.com/NeuroDesk/Neurocontainers">https://github.com/NeuroDesk/Neurocontainers&lt;/a>&lt;/p>
+&lt;p>Neurocontainers: &lt;a href="https://github.com/NeuroDesk/neurocontainers">https://github.com/NeuroDesk/neurocontainers&lt;/a>&lt;/p>
 &lt;ul>
 &lt;li>build scripts for neuro-sub-containers&lt;/li>
 &lt;li>CI: building, pushing and testing of containers&lt;/li>
