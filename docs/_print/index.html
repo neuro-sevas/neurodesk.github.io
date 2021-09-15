@@ -380,24 +380,6 @@ newgrp docker
 <div class=td-content style=page-break-before:always>
 <h1 id=pg-2cb39ae1fe927afd991445cce7b9f813>2.1.5 - Cloud</h1>
 <div class=lead>Run neurodesktop using Oracle or Azure cloud computing</div>
-<table>
-<thead>
-<tr>
-<th>Cloud provider</th>
-<th>link</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Oracle</td>
-<td><a href=https://mri.sbollmann.net/index.php/2020/12/08/run-neurodesk-on-oracle-cloud-free-tier/>https://mri.sbollmann.net/index.php/2020/12/08/run-neurodesk-on-oracle-cloud-free-tier/</a></td>
-</tr>
-<tr>
-<td>Azure</td>
-<td><a href=https://henryjburg.medium.com/neurodesk-running-on-azure-3e38c590a152>https://henryjburg.medium.com/neurodesk-running-on-azure-3e38c590a152</a></td>
-</tr>
-</tbody>
-</table>
 <h2 id=minimum-system-requirements>Minimum System Requirements</h2>
 <ol>
 <li>At least 3GB free space for neuromachine base image</li>
@@ -405,9 +387,25 @@ newgrp docker
 </ol>
 <h2 id=quickstart>Quickstart</h2>
 <ol>
-<li>
-<p>Install Docker from here: <a href=https://docs.docker.com/get-docker/>https://docs.docker.com/get-docker/</a></p>
-</li>
+<li>Open an SSH connection to your cloud instance with port forwarding</li>
+</ol>
+<pre tabindex=0><code>ssh -L 8080:127.0.0.1:8080 opc@133.71.33.71
+</code></pre><ol start=2>
+<li>Install Docker from here: <a href=https://docs.docker.com/get-docker/>https://docs.docker.com/get-docker/</a></li>
+</ol>
+<p>one example to install docker in a yum-based distribution could look like this:</p>
+<pre tabindex=0><code>sudo dnf install -y yum-utils 
+sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+sudo dnf install docker-ce docker-ce-cli containerd.io
+sudo systemctl enable docker
+sudo systemctl start docker
+sudo docker version
+sudo docker info
+sudo groupadd docker
+sudo usermod -aG docker $USER
+sudo chown root:docker /var/run/docker.sock
+newgrp docker
+</code></pre><ol start=3>
 <li>
 <p>Create a local folder where the downloaded applications will be stored, e.g. ~/neurodesktop</p>
 </li>
@@ -417,12 +415,12 @@ newgrp docker
 </ol>
 <pre tabindex=0><code>sudo docker run --shm-size=1gb -it --privileged --name neuromachine -v ~/neurodesktop:/neurodesktop -e USER=user -p 8080:8080 vnmd/neuromachine:latest
 </code></pre><p>(notice: if you get errors in neurodesktop then check if the ~/neurodesktop directory is writable to all users, otherwise run <code>chmod a+rwx ~/neurodesktop</code>)</p>
-<ol start=4>
+<ol start=5>
 <li>Once neurodesktop is downloaded i.e. <code>guacd[77]: INFO: Listening on host 127.0.0.1, port 4822</code> is displayed in terminal, open a browser and go to:</li>
 </ol>
 <pre tabindex=0><code>http://localhost:8080/#/?username=user&amp;password=password
 </code></pre><p>or open a VNC Client and connect to port 5901 (for this -p 5901:5901 has to be added to the docker call)</p>
-<ol start=5>
+<ol start=6>
 <li>neurodesktop is ready to use!</li>
 </ol>
 <ul>
@@ -447,7 +445,25 @@ newgrp docker
 <li>Type:</li>
 </ol>
 <pre tabindex=0><code>docker rm neuromachine
-</code></pre>
+</code></pre><h2 id=cloud-provider-specific-tutorials>Cloud-provider specific Tutorials</h2>
+<table>
+<thead>
+<tr>
+<th>Cloud provider</th>
+<th>link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Oracle</td>
+<td><a href=https://mri.sbollmann.net/index.php/2020/12/08/run-neurodesk-on-oracle-cloud-free-tier/>https://mri.sbollmann.net/index.php/2020/12/08/run-neurodesk-on-oracle-cloud-free-tier/</a></td>
+</tr>
+<tr>
+<td>Azure</td>
+<td><a href=https://henryjburg.medium.com/neurodesk-running-on-azure-3e38c590a152>https://henryjburg.medium.com/neurodesk-running-on-azure-3e38c590a152</a></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class=td-content style=page-break-before:always>
 <h1 id=pg-784674433df25a8a2fea1ab0994fd949>2.1.6 - Demo</h1>

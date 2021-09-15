@@ -163,24 +163,6 @@ newgrp docker
 &lt;pre tabindex="0">&lt;code>docker rm neuromachine
 &lt;/code>&lt;/pre></description></item><item><title>Docs: HPC</title><link>https://neurodesk.github.io/docs/neurodesktop/getting-started/hpc/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/getting-started/hpc/</guid><description>
 &lt;p>One way of running this project on HPCs is via &lt;a href="https://neurodesk.github.io/docs/neurocommand/getting-started/linux/">https://neurodesk.github.io/docs/neurocommand/getting-started/linux/&lt;/a>&lt;/p></description></item><item><title>Docs: Cloud</title><link>https://neurodesk.github.io/docs/neurodesktop/getting-started/cloud/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/getting-started/cloud/</guid><description>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Cloud provider&lt;/th>
-&lt;th>link&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>Oracle&lt;/td>
-&lt;td>&lt;a href="https://mri.sbollmann.net/index.php/2020/12/08/run-neurodesk-on-oracle-cloud-free-tier/">https://mri.sbollmann.net/index.php/2020/12/08/run-neurodesk-on-oracle-cloud-free-tier/&lt;/a>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Azure&lt;/td>
-&lt;td>&lt;a href="https://henryjburg.medium.com/neurodesk-running-on-azure-3e38c590a152">https://henryjburg.medium.com/neurodesk-running-on-azure-3e38c590a152&lt;/a>&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
 &lt;h2 id="minimum-system-requirements">Minimum System Requirements&lt;/h2>
 &lt;ol>
 &lt;li>At least 3GB free space for neuromachine base image&lt;/li>
@@ -188,9 +170,25 @@ newgrp docker
 &lt;/ol>
 &lt;h2 id="quickstart">Quickstart&lt;/h2>
 &lt;ol>
-&lt;li>
-&lt;p>Install Docker from here: &lt;a href="https://docs.docker.com/get-docker/">https://docs.docker.com/get-docker/&lt;/a>&lt;/p>
-&lt;/li>
+&lt;li>Open an SSH connection to your cloud instance with port forwarding&lt;/li>
+&lt;/ol>
+&lt;pre tabindex="0">&lt;code>ssh -L 8080:127.0.0.1:8080 opc@133.71.33.71
+&lt;/code>&lt;/pre>&lt;ol start="2">
+&lt;li>Install Docker from here: &lt;a href="https://docs.docker.com/get-docker/">https://docs.docker.com/get-docker/&lt;/a>&lt;/li>
+&lt;/ol>
+&lt;p>one example to install docker in a yum-based distribution could look like this:&lt;/p>
+&lt;pre tabindex="0">&lt;code>sudo dnf install -y yum-utils
+sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+sudo dnf install docker-ce docker-ce-cli containerd.io
+sudo systemctl enable docker
+sudo systemctl start docker
+sudo docker version
+sudo docker info
+sudo groupadd docker
+sudo usermod -aG docker $USER
+sudo chown root:docker /var/run/docker.sock
+newgrp docker
+&lt;/code>&lt;/pre>&lt;ol start="3">
 &lt;li>
 &lt;p>Create a local folder where the downloaded applications will be stored, e.g. ~/neurodesktop&lt;/p>
 &lt;/li>
@@ -200,12 +198,12 @@ newgrp docker
 &lt;/ol>
 &lt;pre tabindex="0">&lt;code>sudo docker run --shm-size=1gb -it --privileged --name neuromachine -v ~/neurodesktop:/neurodesktop -e USER=user -p 8080:8080 vnmd/neuromachine:latest
 &lt;/code>&lt;/pre>&lt;p>(notice: if you get errors in neurodesktop then check if the ~/neurodesktop directory is writable to all users, otherwise run &lt;code>chmod a+rwx ~/neurodesktop&lt;/code>)&lt;/p>
-&lt;ol start="4">
+&lt;ol start="5">
 &lt;li>Once neurodesktop is downloaded i.e. &lt;code>guacd[77]: INFO: Listening on host 127.0.0.1, port 4822&lt;/code> is displayed in terminal, open a browser and go to:&lt;/li>
 &lt;/ol>
 &lt;pre tabindex="0">&lt;code>http://localhost:8080/#/?username=user&amp;amp;password=password
 &lt;/code>&lt;/pre>&lt;p>or open a VNC Client and connect to port 5901 (for this -p 5901:5901 has to be added to the docker call)&lt;/p>
-&lt;ol start="5">
+&lt;ol start="6">
 &lt;li>neurodesktop is ready to use!&lt;/li>
 &lt;/ol>
 &lt;ul>
@@ -230,7 +228,25 @@ newgrp docker
 &lt;li>Type:&lt;/li>
 &lt;/ol>
 &lt;pre tabindex="0">&lt;code>docker rm neuromachine
-&lt;/code>&lt;/pre></description></item><item><title>Docs: Demo</title><link>https://neurodesk.github.io/docs/neurodesktop/getting-started/demo/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/getting-started/demo/</guid><description>
+&lt;/code>&lt;/pre>&lt;h2 id="cloud-provider-specific-tutorials">Cloud-provider specific Tutorials&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Cloud provider&lt;/th>
+&lt;th>link&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Oracle&lt;/td>
+&lt;td>&lt;a href="https://mri.sbollmann.net/index.php/2020/12/08/run-neurodesk-on-oracle-cloud-free-tier/">https://mri.sbollmann.net/index.php/2020/12/08/run-neurodesk-on-oracle-cloud-free-tier/&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Azure&lt;/td>
+&lt;td>&lt;a href="https://henryjburg.medium.com/neurodesk-running-on-azure-3e38c590a152">https://henryjburg.medium.com/neurodesk-running-on-azure-3e38c590a152&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table></description></item><item><title>Docs: Demo</title><link>https://neurodesk.github.io/docs/neurodesktop/getting-started/demo/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/getting-started/demo/</guid><description>
 &lt;div class="pageinfo pageinfo-primary">
 &lt;p>This page needs to link to MyBinder demo&lt;/p>
 &lt;/div></description></item></channel></rss>
