@@ -328,7 +328,7 @@ Change &lt;code>port=3389&lt;/code> to &lt;code>port=3390&lt;/code> and save&lt;
 &lt;li>Type:&lt;/li>
 &lt;/ol>
 &lt;pre tabindex="0">&lt;code>docker rm neurodesktop
-&lt;/code>&lt;/pre></description></item><item><title>Docs: Add tool</title><link>https://neurodesk.github.io/docs/advanced/add_tool/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/advanced/add_tool/</guid><description>
+&lt;/code>&lt;/pre></description></item><item><title>Docs: Add tools</title><link>https://neurodesk.github.io/docs/for-developers/add_tool/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/for-developers/add_tool/</guid><description>
 &lt;p>The goal of &lt;em>neurodesktop&lt;/em> is to provide users with a large choice of tools to use in their pipelines.
 Use the guide below to add a tool to &lt;em>neurodesktop&lt;/em>.&lt;/p>
 &lt;h2 id="guiding-principles">Guiding principles&lt;/h2>
@@ -562,99 +562,7 @@ Here are two examples for FreeSurfer and FreeView. This first one only installs 
 &lt;pre tabindex="0">&lt;code>sshfs -o allow_root USER@TARGET_HOST:TARGET_PATH SOURCE_PATH
 &lt;/code>&lt;/pre>&lt;p>Another option is to utilize scp and copy data from an SSH endpoint:&lt;/p>
 &lt;pre tabindex="0">&lt;code>scp /neurodesk/myfile user@remoteserver:/data/
-&lt;/code>&lt;/pre></description></item><item><title>Docs: System Testing</title><link>https://neurodesk.github.io/docs/advanced/tested/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/advanced/tested/</guid><description>
-&lt;h2 id="please-test-and-add-if-working-">Please test and add if working :)&lt;/h2>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>&lt;/th>
-&lt;th>hypervisor&lt;/th>
-&lt;th>container engine&lt;/th>
-&lt;th>build&lt;/th>
-&lt;th>client&lt;/th>
-&lt;th>who&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>windows 10 Enterprise, build 18363&lt;/td>
-&lt;td>wsl2, hyperv&lt;/td>
-&lt;td>docker&lt;/td>
-&lt;td>yes&lt;/td>
-&lt;td>vnc, edge&lt;/td>
-&lt;td>Steffen&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>windows 10 Pro&lt;/td>
-&lt;td>wsl2, hyperv&lt;/td>
-&lt;td>docker&lt;/td>
-&lt;td>yes&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>Tom&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>windows 10 Home, build 19041&lt;/td>
-&lt;td>wsl2, hyperv&lt;/td>
-&lt;td>docker&lt;/td>
-&lt;td>yes&lt;/td>
-&lt;td>chrome&lt;/td>
-&lt;td>Geeta&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>windows 10 Home, Docker toolbox&lt;/td>
-&lt;td>virtualbox&lt;/td>
-&lt;td>docker&lt;/td>
-&lt;td>yes&lt;/td>
-&lt;td>chrome&lt;/td>
-&lt;td>Geeta&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Debian Bullseye&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>docker&lt;/td>
-&lt;td>yes&lt;/td>
-&lt;td>firefox&lt;/td>
-&lt;td>Jakub&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Ubuntu 20.04&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>docker&lt;/td>
-&lt;td>yes&lt;/td>
-&lt;td>firefox&lt;/td>
-&lt;td>Martin&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>macOS Catalina (10.15.5)&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>docker&lt;/td>
-&lt;td>yes&lt;/td>
-&lt;td>firefox, safari, chrome&lt;/td>
-&lt;td>Jakub&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>HPC Centos 6&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>singularity&lt;/td>
-&lt;td>no&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>Steffen&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Ubuntu 18.04 on OpenStack (NECTAR)&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>docker&lt;/td>
-&lt;td>yes&lt;/td>
-&lt;td>firefox&lt;/td>
-&lt;td>Oren&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h2 id="run-neurodesk-vnm-for-free-on-cloud-providers">Run Neurodesk VNM for free on cloud providers&lt;/h2>
-&lt;ul>
-&lt;li>&lt;a href="https://mri.sbollmann.net/index.php/2020/12/08/run-neurodesk-on-oracle-cloud-free-tier">Oracle OCI&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://henryjburg.medium.com/neurodesk-running-on-azure-3e38c590a152">Microsoft Azure&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Docs: Troubleshooting</title><link>https://neurodesk.github.io/docs/neurodesktop/troubleshooting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/troubleshooting/</guid><description>
+&lt;/code>&lt;/pre></description></item><item><title>Docs: Troubleshooting</title><link>https://neurodesk.github.io/docs/neurodesktop/troubleshooting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/troubleshooting/</guid><description>
 &lt;p>Neurodesk is an open-source project that is always evolving. If you are experiencing an issue not listed here, please open a &lt;a href="https://github.com/NeuroDesk/neurodesk.github.io/issues">new issue&lt;/a>, so that we can aim to solve it and update our help documentation.&lt;/p>
 &lt;p>To ask questions or suggest new features, &lt;a href="https://github.com/NeuroDesk/neurodesk.github.io/discussions">join the discussion&lt;/a> on github.&lt;/p>
 &lt;h2 id="windows-users-wsl-not-installed-properly">Windows users: WSL not installed properly&lt;/h2>

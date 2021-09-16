@@ -2,9 +2,7 @@
 <head>
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
-<meta name=generator content="Hugo 0.88.1"><link rel=canonical type=text/html href=https://neurodesk.github.io/docs/advanced/>
-<link rel=alternate type=application/rss+xml href=https://neurodesk.github.io/docs/advanced/index.xml>
-<meta name=ROBOTS content="NOINDEX, NOFOLLOW">
+<meta name=generator content="Hugo 0.88.1"><meta name=ROBOTS content="INDEX, FOLLOW">
 <link rel="shortcut icon" href=/favicons/favicon.ico>
 <link rel=apple-touch-icon href=/favicons/apple-touch-icon-180x180.png sizes=180x180>
 <link rel=icon type=image/png href=/favicons/favicon-16x16.png sizes=16x16>
@@ -15,19 +13,23 @@
 <link rel=icon type=image/png href=/favicons/android-96x96.png sizes=96x96>
 <link rel=icon type=image/png href=/favicons/android-144x144.png sizes=144x144>
 <link rel=icon type=image/png href=/favicons/android-192x192.png sizes=192x192>
-<title>Advanced | NeuroDesk</title>
-<meta name=description content="Advanced usage
+<title>Add tools | NeuroDesk</title>
+<meta name=description content="Add a tool to neurodesktop
 ">
-<meta property="og:title" content="Advanced">
-<meta property="og:description" content="Advanced usage
+<meta property="og:title" content="Add tools">
+<meta property="og:description" content="Add a tool to neurodesktop
 ">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://neurodesk.github.io/docs/advanced/"><meta property="og:site_name" content="NeuroDesk">
-<meta itemprop=name content="Advanced">
-<meta itemprop=description content="Advanced usage
-"><meta name=twitter:card content="summary">
-<meta name=twitter:title content="Advanced">
-<meta name=twitter:description content="Advanced usage
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://neurodesk.github.io/docs/for-developers/add_tool/"><meta property="article:section" content="docs">
+<meta property="article:modified_time" content="2021-09-16T18:03:58+10:00"><meta property="og:site_name" content="NeuroDesk">
+<meta itemprop=name content="Add tools">
+<meta itemprop=description content="Add a tool to neurodesktop
+">
+<meta itemprop=dateModified content="2021-09-16T18:03:58+10:00">
+<meta itemprop=wordCount content="672">
+<meta itemprop=keywords content><meta name=twitter:card content="summary">
+<meta name=twitter:title content="Add tools">
+<meta name=twitter:description content="Add a tool to neurodesktop
 ">
 <link rel=preload href=/scss/main.min.54a6b13de98a6b564f59b9d4cda427d6ae62ab54c015b5b9f5ed167c2da7fdd5.css as=style>
 <link href=/scss/main.min.54a6b13de98a6b564f59b9d4cda427d6ae62ab54c015b5b9f5ed167c2da7fdd5.css rel=stylesheet integrity>
@@ -35,7 +37,7 @@
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-00000000-0','auto'),ga('send','pageview'))</script>
 <script async src=https://www.google-analytics.com/analytics.js></script>
 </head>
-<body class=td-section>
+<body class=td-page>
 <header>
 <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
 <a class=navbar-brand href=/>
@@ -59,32 +61,109 @@
 <div class="container-fluid td-outer">
 <div class=td-main>
 <div class="row flex-xl-nowrap">
-<div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+<aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+<div id=td-sidebar-menu class=td-sidebar__inner>
+<form class="td-sidebar__search d-flex align-items-center">
+<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off>
+<button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type=button data-toggle=collapse data-target=#td-section-nav aria-controls=td-docs-nav aria-expanded=false aria-label="Toggle section navigation">
+</button>
+</form>
+<nav class="collapse td-sidebar-nav" id=td-section-nav>
+<ul class="td-sidebar-nav__section pr-md-3 ul-0">
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id=m-docs-li>
+<a href=/docs/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section tree-root" id=m-docs><span>Documentation</span></a>
+<ul class=ul-1>
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsoverview-li>
+<a href=/docs/overview/ title="Neurodesk Overview" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsoverview><span>Overview</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-docsneurodesktop-li>
+<a href=/docs/neurodesktop/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsneurodesktop><span>Neurodesktop</span></a>
+<ul class="ul-2 foldable">
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-docsneurodesktopgetting-started-li>
+<a href=/docs/neurodesktop/getting-started/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsneurodesktopgetting-started><span>Getting Started</span></a>
+<ul class="ul-3 foldable">
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsneurodesktopgetting-startedlinux-li>
+<a href=/docs/neurodesktop/getting-started/linux/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsneurodesktopgetting-startedlinux><span>Linux</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsneurodesktopgetting-startedmac-li>
+<a href=/docs/neurodesktop/getting-started/mac/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsneurodesktopgetting-startedmac><span>MacOS</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsneurodesktopgetting-startedwindows-li>
+<a href=/docs/neurodesktop/getting-started/windows/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsneurodesktopgetting-startedwindows><span>Windows</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsneurodesktopgetting-startedhpc-li>
+<a href=/docs/neurodesktop/getting-started/hpc/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsneurodesktopgetting-startedhpc><span>HPC</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsneurodesktopgetting-startedcloud-li>
+<a href=/docs/neurodesktop/getting-started/cloud/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsneurodesktopgetting-startedcloud><span>Cloud</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsneurodesktopgetting-starteddemo-li>
+<a href=/docs/neurodesktop/getting-started/demo/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsneurodesktopgetting-starteddemo><span>Demo</span></a>
+</li>
+</ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsneurodesktopwhats-next-li>
+<a href=/docs/neurodesktop/whats-next/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsneurodesktopwhats-next><span>What's next?</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsneurodesktopwhatsinthebox-li>
+<a href=/docs/neurodesktop/whatsinthebox/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsneurodesktopwhatsinthebox><span>What's in the box?</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsneurodesktopstorage-li>
+<a href=/docs/neurodesktop/storage/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsneurodesktopstorage><span>Storage</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsneurodesktoptroubleshooting-li>
+<a href=/docs/neurodesktop/troubleshooting/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsneurodesktoptroubleshooting><span>Troubleshooting</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsneurodesktoprelease-history-li>
+<a href=/docs/neurodesktop/release-history/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsneurodesktoprelease-history><span>Release History</span></a>
+</li>
+</ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-docsneurocommand-li>
+<a href=/docs/neurocommand/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsneurocommand><span>Neurocommand</span></a>
+<ul class="ul-2 foldable">
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-docsneurocommandgetting-started-li>
+<a href=/docs/neurocommand/getting-started/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsneurocommandgetting-started><span>Getting Started</span></a>
+<ul class="ul-3 foldable">
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsneurocommandgetting-startedlinux-li>
+<a href=/docs/neurocommand/getting-started/linux/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsneurocommandgetting-startedlinux><span>Linux</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsneurocommandgetting-startedwindows-li>
+<a href=/docs/neurocommand/getting-started/windows/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsneurocommandgetting-startedwindows><span>Windows</span></a>
+</li>
+</ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsneurocommandtroubleshooting-li>
+<a href=/docs/neurocommand/troubleshooting/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsneurocommandtroubleshooting><span>Troubleshooting</span></a>
+</li>
+</ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsneurocontainers-li>
+<a href=/docs/neurocontainers/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsneurocontainers><span>Neurocontainers</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id=m-docsfor-developers-li>
+<a href=/docs/for-developers/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsfor-developers><span>For Developers</span></a>
+<ul class="ul-2 foldable">
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsfor-developersneurodesk-architecture-li>
+<a href=/docs/for-developers/neurodesk-architecture/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsfor-developersneurodesk-architecture><span>Neurodesk Architecture</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id=m-docsfor-developersadd_tool-li>
+<a href=/docs/for-developers/add_tool/ class="align-left pl-0 active td-sidebar-link td-sidebar-link__page" id=m-docsfor-developersadd_tool><span class=td-sidebar-nav-active-item>Add tools</span></a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
 </div>
-<div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+</aside>
+<aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
+<div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+<a href=https://github.com/NeuroDesk/neurodesk.github.io/edit/hugo-docsy/content/en/docs/For%20Developers/add_tool.md target=_blank><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+<a href="https://github.com/NeuroDesk/neurodesk.github.io/new/hugo-docsy/content/en/docs/For%20Developers/add_tool.md?filename=change-me.md&value=---%0Atitle%3A+%22Long+Page+Title%22%0AlinkTitle%3A+%22Short+Nav+Title%22%0Aweight%3A+100%0Adescription%3A+%3E-%0A+++++Page+description+for+heading+and+indexes.%0A---%0A%0A%23%23+Heading%0A%0AEdit+this+template+to+create+your+new+page.%0A%0A%2A+Give+it+a+good+name%2C+ending+in+%60.md%60+-+e.g.+%60getting-started.md%60%0A%2A+Edit+the+%22front+matter%22+section+at+the+top+of+the+page+%28weight+controls+how+its+ordered+amongst+other+pages+in+the+same+directory%3B+lowest+number+first%29.%0A%2A+Add+a+good+commit+message+at+the+bottom+of+the+page+%28%3C80+characters%3B+use+the+extended+description+field+for+more+detail%29.%0A%2A+Create+a+new+branch+so+you+can+preview+your+new+file+and+request+a+review+via+Pull+Request.%0A" target=_blank><i class="fa fa-edit fa-fw"></i> Create child page</a>
+<a href="https://github.com/NeuroDesk/neurodesk.github.io/issues/new?title=Add%20tools" target=_blank><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+<a href=https://github.com/NeuroDesk/neurodesk.github.io/issues/new target=_blank><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
+<a id=print href=https://neurodesk.github.io/docs/for-developers/_print/><i class="fa fa-print fa-fw"></i> Print entire section</a>
 </div>
+<div class=td-toc><nav id=TableOfContents>
+<ul>
+<li><a href=#guiding-principles>Guiding principles</a></li>
+<li><a href=#build-container>Build container</a></li>
+<li><a href=#menu-entry>Menu entry</a></li>
+<li><a href=#create-the-application>Create the application</a></li>
+</ul>
+</nav></div>
+</aside>
 <main class="col-12 col-md-9 col-xl-8 pl-md-5" role=main>
 <div class=td-content>
-<div class="pageinfo pageinfo-primary d-print-none">
-<p>
-This the multi-page printable view of this section.
-<a href=# onclick="return print(),!1">Click here to print</a>.
-</p><p>
-<a href=/docs/advanced/>Return to the regular view of this page</a>.
-</p>
-</div>
-<h1 class=title>Advanced</h1>
-<div class=lead>Advanced usage</div>
-<ul>
-<li>1: <a href=#pg-c0a88d2c479512f10e638c4638d51092>Add tool</a></li>
-<li>2: <a href=#pg-9a7c227f489e066f7d748ce204b03813>System Testing</a></li>
-</ul>
-<div class=content>
-</div>
-</div>
-<div class=td-content>
-<h1 id=pg-c0a88d2c479512f10e638c4638d51092>1 - Add tool</h1>
+<h1>Add tools</h1>
 <div class=lead>Add a tool to neurodesktop</div>
+<header class=article-meta>
+</header>
 <p>The goal of <em>neurodesktop</em> is to provide users with a large choice of tools to use in their pipelines.
 Use the guide below to add a tool to <em>neurodesktop</em>.</p>
 <h2 id=guiding-principles>Guiding principles</h2>
@@ -284,102 +363,11 @@ Here are two examples for FreeSurfer and FreeView. This first one only installs 
 <span style=color:#c4a000>Categories</span><span style=color:#ce5c00;font-weight:700>=</span><span style=color:#4e9a06>FreeSurfer</span>
 <span style=color:#c4a000>Terminal</span><span style=color:#ce5c00;font-weight:700>=</span><span style=color:#4e9a06>true</span>
 </code></pre></div>
+<div class="text-muted mt-5 pt-3 border-top">
+Last modified
+September 16, 2021
+: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/30cb2c190d736e39ee9a2098b8683c7b953b5acf>cleanup (30cb2c1)</a>
 </div>
-<div class=td-content style=page-break-before:always>
-<h1 id=pg-9a7c227f489e066f7d748ce204b03813>2 - System Testing</h1>
-<div class=lead>Tested and working Neurodesk setups</div>
-<h2 id=please-test-and-add-if-working->Please test and add if working :)</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>hypervisor</th>
-<th>container engine</th>
-<th>build</th>
-<th>client</th>
-<th>who</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>windows 10 Enterprise, build 18363</td>
-<td>wsl2, hyperv</td>
-<td>docker</td>
-<td>yes</td>
-<td>vnc, edge</td>
-<td>Steffen</td>
-</tr>
-<tr>
-<td>windows 10 Pro</td>
-<td>wsl2, hyperv</td>
-<td>docker</td>
-<td>yes</td>
-<td></td>
-<td>Tom</td>
-</tr>
-<tr>
-<td>windows 10 Home, build 19041</td>
-<td>wsl2, hyperv</td>
-<td>docker</td>
-<td>yes</td>
-<td>chrome</td>
-<td>Geeta</td>
-</tr>
-<tr>
-<td>windows 10 Home, Docker toolbox</td>
-<td>virtualbox</td>
-<td>docker</td>
-<td>yes</td>
-<td>chrome</td>
-<td>Geeta</td>
-</tr>
-<tr>
-<td>Debian Bullseye</td>
-<td></td>
-<td>docker</td>
-<td>yes</td>
-<td>firefox</td>
-<td>Jakub</td>
-</tr>
-<tr>
-<td>Ubuntu 20.04</td>
-<td></td>
-<td>docker</td>
-<td>yes</td>
-<td>firefox</td>
-<td>Martin</td>
-</tr>
-<tr>
-<td>macOS Catalina (10.15.5)</td>
-<td></td>
-<td>docker</td>
-<td>yes</td>
-<td>firefox, safari, chrome</td>
-<td>Jakub</td>
-</tr>
-<tr>
-<td>HPC Centos 6</td>
-<td></td>
-<td>singularity</td>
-<td>no</td>
-<td></td>
-<td>Steffen</td>
-</tr>
-<tr>
-<td>Ubuntu 18.04 on OpenStack (NECTAR)</td>
-<td></td>
-<td>docker</td>
-<td>yes</td>
-<td>firefox</td>
-<td>Oren</td>
-</tr>
-</tbody>
-</table>
-<h2 id=run-neurodesk-vnm-for-free-on-cloud-providers>Run Neurodesk VNM for free on cloud providers</h2>
-<ul>
-<li><a href=https://mri.sbollmann.net/index.php/2020/12/08/run-neurodesk-on-oracle-cloud-free-tier>Oracle OCI</a></li>
-<li><a href=https://henryjburg.medium.com/neurodesk-running-on-azure-3e38c590a152>Microsoft Azure</a></li>
-</ul>
 </div>
 </main>
 </div>

@@ -108,14 +108,10 @@ This the multi-page printable view of this section.
 <li>4: <a href=#pg-88405e8e9824a3a23cd8fda56d2e5574>Neurocontainers</a></li>
 <ul>
 </ul>
-<li>5: <a href=#pg-6c4dd4bbdf2d2146d79c0c0f18f4c96a>Advanced</a></li>
+<li>5: <a href=#pg-f614fb095a0a23c57b6f9d4a9abcbb11>For Developers</a></li>
 <ul>
-<li>5.1: <a href=#pg-c0a88d2c479512f10e638c4638d51092>Add tool</a></li>
-<li>5.2: <a href=#pg-9a7c227f489e066f7d748ce204b03813>System Testing</a></li>
-</ul>
-<li>6: <a href=#pg-f614fb095a0a23c57b6f9d4a9abcbb11>For Developers</a></li>
-<ul>
-<li>6.1: <a href=#pg-08a90f4738abd9b7c845a70e79c1eba4>Neurodesk Architecture</a></li>
+<li>5.1: <a href=#pg-08a90f4738abd9b7c845a70e79c1eba4>Neurodesk Architecture</a></li>
+<li>5.2: <a href=#pg-a6fa0f76f9d717497da6601a0718a27a>Add tools</a></li>
 </ul>
 </ul>
 <div class=content>
@@ -730,11 +726,61 @@ docker</p>
 </ol>
 </div>
 <div class=td-content style=page-break-before:always>
-<h1 id=pg-6c4dd4bbdf2d2146d79c0c0f18f4c96a>5 - Advanced</h1>
-<div class=lead>Advanced usage</div>
+<h1 id=pg-f614fb095a0a23c57b6f9d4a9abcbb11>5 - For Developers</h1>
+<div class=lead>Developer guide</div>
+<h2 id=developing-neurodeskgithubio>Developing neurodesk.github.io</h2>
+<h3 id=clone-repository>Clone repository</h3>
+<p>Using SSH</p>
+<p><code>git clone --recurse-submodules git@github.com:NeuroDesk/neurodesk.github.io.git</code></p>
+<p>or Https:</p>
+<p><code>git clone --recurse-submodules https://github.com/NeuroDesk/neurodesk.github.io.git</code></p>
+<h3 id=download-hugo-binary>Download Hugo binary</h3>
+<p>Hugo releases are on <a href=https://github.com/gohugoio/hugo/releases>https://github.com/gohugoio/hugo/releases</a></p>
+<p>Download latest version of hugo extended</p>
+<p>e.g. for windows: <a href=https://github.com/gohugoio/hugo/releases/download/v0.88.1/hugo_extended_0.88.1_Windows-64bit.zip>https://github.com/gohugoio/hugo/releases/download/v0.88.1/hugo_extended_0.88.1_Windows-64bit.zip</a></p>
+<h3 id=start-local-hugo-server>Start local hugo server</h3>
+<p>Extract hugo binary (hugo.exe) to your neurodesk.github.io dir</p>
+<p>Run server for windows: <code>.\hugo.exe server --disableFastRender</code></p>
+<p>Once started, dev website will be accessible via http://localhost:1313</p>
 </div>
-<div class=td-content>
-<h1 id=pg-c0a88d2c479512f10e638c4638d51092>5.1 - Add tool</h1>
+<div class=td-content style=page-break-before:always>
+<h1 id=pg-08a90f4738abd9b7c845a70e79c1eba4>5.1 - Neurodesk Architecture</h1>
+<div class=lead>The architecture of the Neurodesk ecosystem</div>
+<h1 id=layers>Layers</h1>
+<p>Neurodesktop: <a href=https://github.com/NeuroDesk/neurodesktop>https://github.com/NeuroDesk/neurodesktop</a></p>
+<ul>
+<li>docker container with interface modifications</li>
+<li>contains tools necessary to manage containers: vscode, git, niype</li>
+<li>CI: builds docker image and tests if it runs</li>
+</ul>
+<p>Neurocommand: <a href=https://github.com/NeuroDesk/neurocommand>https://github.com/NeuroDesk/neurocommand</a></p>
+<ul>
+<li>script to install and manage multiple containers using transparent singularity on any linux system</li>
+<li>this repo would also handle the creation of menu entries in a general form applicable to different desktop environments</li>
+<li>this repo can be re-used in other projects like CVL and the imaging workstations</li>
+<li>CI: tests if containers can be installed</li>
+</ul>
+<p>transparent-singularity: <a href=https://github.com/NeuroDesk/transparent-singularity>https://github.com/NeuroDesk/transparent-singularity</a></p>
+<ul>
+<li>script to install neuro-sub-containers, installers are called by neurodesk script</li>
+<li>this repo could provide a simple way of using our containers on HPCs for large scale processing of the pipelines build in VNM</li>
+<li>CI: test if exposing of binaries work</li>
+</ul>
+<p>Neurocontainers: <a href=https://github.com/NeuroDesk/neurocontainers>https://github.com/NeuroDesk/neurocontainers</a></p>
+<ul>
+<li>build scripts for neuro-sub-containers</li>
+<li>CI: building, pushing and testing of containers</li>
+</ul>
+<p>Neurodocker: <a href=https://github.com/NeuroDesk/neurodocker>https://github.com/NeuroDesk/neurodocker</a></p>
+<ul>
+<li>fork of neurodocker project</li>
+<li>provides recipes for our containers built</li>
+<li>we are providing pull requests back of recipes</li>
+<li>CI: handled by <a href=https://github.com/ReproNim/neurodocker>neurodocker</a> - testing of generating container recipes</li>
+</ul>
+</div>
+<div class=td-content style=page-break-before:always>
+<h1 id=pg-a6fa0f76f9d717497da6601a0718a27a>5.2 - Add tools</h1>
 <div class=lead>Add a tool to neurodesktop</div>
 <p>The goal of <em>neurodesktop</em> is to provide users with a large choice of tools to use in their pipelines.
 Use the guide below to add a tool to <em>neurodesktop</em>.</p>
@@ -935,156 +981,6 @@ Here are two examples for FreeSurfer and FreeView. This first one only installs 
 <span style=color:#c4a000>Categories</span><span style=color:#ce5c00;font-weight:700>=</span><span style=color:#4e9a06>FreeSurfer</span>
 <span style=color:#c4a000>Terminal</span><span style=color:#ce5c00;font-weight:700>=</span><span style=color:#4e9a06>true</span>
 </code></pre></div>
-</div>
-<div class=td-content style=page-break-before:always>
-<h1 id=pg-9a7c227f489e066f7d748ce204b03813>5.2 - System Testing</h1>
-<div class=lead>Tested and working Neurodesk setups</div>
-<h2 id=please-test-and-add-if-working->Please test and add if working :)</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>hypervisor</th>
-<th>container engine</th>
-<th>build</th>
-<th>client</th>
-<th>who</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>windows 10 Enterprise, build 18363</td>
-<td>wsl2, hyperv</td>
-<td>docker</td>
-<td>yes</td>
-<td>vnc, edge</td>
-<td>Steffen</td>
-</tr>
-<tr>
-<td>windows 10 Pro</td>
-<td>wsl2, hyperv</td>
-<td>docker</td>
-<td>yes</td>
-<td></td>
-<td>Tom</td>
-</tr>
-<tr>
-<td>windows 10 Home, build 19041</td>
-<td>wsl2, hyperv</td>
-<td>docker</td>
-<td>yes</td>
-<td>chrome</td>
-<td>Geeta</td>
-</tr>
-<tr>
-<td>windows 10 Home, Docker toolbox</td>
-<td>virtualbox</td>
-<td>docker</td>
-<td>yes</td>
-<td>chrome</td>
-<td>Geeta</td>
-</tr>
-<tr>
-<td>Debian Bullseye</td>
-<td></td>
-<td>docker</td>
-<td>yes</td>
-<td>firefox</td>
-<td>Jakub</td>
-</tr>
-<tr>
-<td>Ubuntu 20.04</td>
-<td></td>
-<td>docker</td>
-<td>yes</td>
-<td>firefox</td>
-<td>Martin</td>
-</tr>
-<tr>
-<td>macOS Catalina (10.15.5)</td>
-<td></td>
-<td>docker</td>
-<td>yes</td>
-<td>firefox, safari, chrome</td>
-<td>Jakub</td>
-</tr>
-<tr>
-<td>HPC Centos 6</td>
-<td></td>
-<td>singularity</td>
-<td>no</td>
-<td></td>
-<td>Steffen</td>
-</tr>
-<tr>
-<td>Ubuntu 18.04 on OpenStack (NECTAR)</td>
-<td></td>
-<td>docker</td>
-<td>yes</td>
-<td>firefox</td>
-<td>Oren</td>
-</tr>
-</tbody>
-</table>
-<h2 id=run-neurodesk-vnm-for-free-on-cloud-providers>Run Neurodesk VNM for free on cloud providers</h2>
-<ul>
-<li><a href=https://mri.sbollmann.net/index.php/2020/12/08/run-neurodesk-on-oracle-cloud-free-tier>Oracle OCI</a></li>
-<li><a href=https://henryjburg.medium.com/neurodesk-running-on-azure-3e38c590a152>Microsoft Azure</a></li>
-</ul>
-</div>
-<div class=td-content style=page-break-before:always>
-<h1 id=pg-f614fb095a0a23c57b6f9d4a9abcbb11>6 - For Developers</h1>
-<div class=lead>Developer guide</div>
-<h2 id=developing-neurodeskgithubio>Developing neurodesk.github.io</h2>
-<h3 id=clone-repository>Clone repository</h3>
-<p>Using SSH</p>
-<p><code>git clone --recurse-submodules git@github.com:NeuroDesk/neurodesk.github.io.git</code></p>
-<p>or Https:</p>
-<p><code>git clone --recurse-submodules https://github.com/NeuroDesk/neurodesk.github.io.git</code></p>
-<h3 id=download-hugo-binary>Download Hugo binary</h3>
-<p>Hugo releases are on <a href=https://github.com/gohugoio/hugo/releases>https://github.com/gohugoio/hugo/releases</a></p>
-<p>Download latest version of hugo extended</p>
-<p>e.g. for windows: <a href=https://github.com/gohugoio/hugo/releases/download/v0.88.1/hugo_extended_0.88.1_Windows-64bit.zip>https://github.com/gohugoio/hugo/releases/download/v0.88.1/hugo_extended_0.88.1_Windows-64bit.zip</a></p>
-<h3 id=start-local-hugo-server>Start local hugo server</h3>
-<p>Extract hugo binary (hugo.exe) to your neurodesk.github.io dir</p>
-<p>Run server for windows: <code>.\hugo.exe server --disableFastRender</code></p>
-<p>Once started, dev website will be accessible via http://localhost:1313</p>
-</div>
-<div class=td-content style=page-break-before:always>
-<h1 id=pg-08a90f4738abd9b7c845a70e79c1eba4>6.1 - Neurodesk Architecture</h1>
-<div class=lead>The architecture of the Neurodesk ecosystem</div>
-<h1 id=layers>Layers</h1>
-<p>Neurodesktop: <a href=https://github.com/NeuroDesk/neurodesktop>https://github.com/NeuroDesk/neurodesktop</a></p>
-<ul>
-<li>docker container with interface modifications</li>
-<li>contains tools necessary to manage containers: vscode, git, niype</li>
-<li>CI: builds docker image and tests if it runs</li>
-</ul>
-<p>Neurocommand: <a href=https://github.com/NeuroDesk/neurocommand>https://github.com/NeuroDesk/neurocommand</a></p>
-<ul>
-<li>script to install and manage multiple containers using transparent singularity on any linux system</li>
-<li>this repo would also handle the creation of menu entries in a general form applicable to different desktop environments</li>
-<li>this repo can be re-used in other projects like CVL and the imaging workstations</li>
-<li>CI: tests if containers can be installed</li>
-</ul>
-<p>transparent-singularity: <a href=https://github.com/NeuroDesk/transparent-singularity>https://github.com/NeuroDesk/transparent-singularity</a></p>
-<ul>
-<li>script to install neuro-sub-containers, installers are called by neurodesk script</li>
-<li>this repo could provide a simple way of using our containers on HPCs for large scale processing of the pipelines build in VNM</li>
-<li>CI: test if exposing of binaries work</li>
-</ul>
-<p>Neurocontainers: <a href=https://github.com/NeuroDesk/neurocontainers>https://github.com/NeuroDesk/neurocontainers</a></p>
-<ul>
-<li>build scripts for neuro-sub-containers</li>
-<li>CI: building, pushing and testing of containers</li>
-</ul>
-<p>Neurodocker: <a href=https://github.com/NeuroDesk/neurodocker>https://github.com/NeuroDesk/neurodocker</a></p>
-<ul>
-<li>fork of neurodocker project</li>
-<li>provides recipes for our containers built</li>
-<li>we are providing pull requests back of recipes</li>
-<li>CI: handled by <a href=https://github.com/ReproNim/neurodocker>neurodocker</a> - testing of generating container recipes</li>
-</ul>
 </div>
 </main>
 </div>
