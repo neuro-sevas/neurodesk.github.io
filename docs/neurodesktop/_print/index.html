@@ -394,25 +394,50 @@ newgrp docker
 <div class=lead>The software available in neurodesktop</div>
 <p>Neurodesktop comes with the essential software required for neuroimaging data analysis pre-installed. Each release is built with the most recent version of these packages available at the build date. Some example packages include:</p>
 <ul>
+<li>Editors and Programming:
+<ul>
 <li>Visual Studio Code</li>
 <li>Emacs</li>
 <li>Gedit</li>
 <li>Vim</li>
 <li>Python</li>
-<li>Lua</li>
 <li>Git</li>
-<li>Lmod</li>
-<li>Nipype</li>
+</ul>
+</li>
+<li>Workflow systems:
+<ul>
+<li>Nipype (including GraphVis)</li>
+</ul>
+</li>
+<li>Data Syncronisation tools:
+<ul>
 <li>Rsync</li>
-<li>Singularity</li>
-<li>GraphVis</li>
-<li>Imagemagic</li>
-<li>Htop</li>
-<li>Firefox</li>
+<li>Rclone <a href=https://rclone.org/>https://rclone.org/</a></li>
 <li>Nextcloud client</li>
+<li>Owncloud client</li>
+<li>Globus personal connect <a href=https://docs.globus.org/how-to/globus-connect-personal-linux/>https://docs.globus.org/how-to/globus-connect-personal-linux/</a>
+<ul>
+<li>installed in /opt/globusconnectpersonal/</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>System Management:
+<ul>
+<li>Lmod (inlcuding Lua)</li>
+<li>Singularity</li>
+<li>Htop</li>
+</ul>
+</li>
+<li>Misc
+<ul>
+<li>Imagemagic</li>
+<li>Firefox</li>
 <li>OpenSSH client</li>
 </ul>
-<p>The neurodesktop environment is built to be light and fast to download and start-up. A number of additional programs are therefore available to use in the container, and will be downloaded when they are first used. A list of these additional packages can be found <a href=https://github.com/NeuroDesk/neurodesk/blob/master/cvmfs/log.txt>here</a></p>
+</li>
+</ul>
+<p>The neurodesktop environment is built to be light and fast to download and start-up. Most additional programs are therefore downloaded when they are first used. A list of these additional packages can be found <a href=https://github.com/NeuroDesk/neurodesk/blob/master/cvmfs/log.txt>here</a></p>
 </div>
 <div class=td-content style=page-break-before:always>
 <h1 id=pg-71c9f282478b9d11471d083fb454cfd4>4 - Troubleshooting</h1>

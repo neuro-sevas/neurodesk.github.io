@@ -230,25 +230,50 @@ Change &lt;code>port=3389&lt;/code> to &lt;code>port=3390&lt;/code> and save&lt;
 &lt;/ol></description></item><item><title>Docs: What's in the box?</title><link>https://neurodesk.github.io/docs/neurodesktop/whatsinthebox/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/whatsinthebox/</guid><description>
 &lt;p>Neurodesktop comes with the essential software required for neuroimaging data analysis pre-installed. Each release is built with the most recent version of these packages available at the build date. Some example packages include:&lt;/p>
 &lt;ul>
+&lt;li>Editors and Programming:
+&lt;ul>
 &lt;li>Visual Studio Code&lt;/li>
 &lt;li>Emacs&lt;/li>
 &lt;li>Gedit&lt;/li>
 &lt;li>Vim&lt;/li>
 &lt;li>Python&lt;/li>
-&lt;li>Lua&lt;/li>
 &lt;li>Git&lt;/li>
-&lt;li>Lmod&lt;/li>
-&lt;li>Nipype&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Workflow systems:
+&lt;ul>
+&lt;li>Nipype (including GraphVis)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Data Syncronisation tools:
+&lt;ul>
 &lt;li>Rsync&lt;/li>
-&lt;li>Singularity&lt;/li>
-&lt;li>GraphVis&lt;/li>
-&lt;li>Imagemagic&lt;/li>
-&lt;li>Htop&lt;/li>
-&lt;li>Firefox&lt;/li>
+&lt;li>Rclone &lt;a href="https://rclone.org/">https://rclone.org/&lt;/a>&lt;/li>
 &lt;li>Nextcloud client&lt;/li>
+&lt;li>Owncloud client&lt;/li>
+&lt;li>Globus personal connect &lt;a href="https://docs.globus.org/how-to/globus-connect-personal-linux/">https://docs.globus.org/how-to/globus-connect-personal-linux/&lt;/a>
+&lt;ul>
+&lt;li>installed in /opt/globusconnectpersonal/&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>System Management:
+&lt;ul>
+&lt;li>Lmod (inlcuding Lua)&lt;/li>
+&lt;li>Singularity&lt;/li>
+&lt;li>Htop&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Misc
+&lt;ul>
+&lt;li>Imagemagic&lt;/li>
+&lt;li>Firefox&lt;/li>
 &lt;li>OpenSSH client&lt;/li>
 &lt;/ul>
-&lt;p>The neurodesktop environment is built to be light and fast to download and start-up. A number of additional programs are therefore available to use in the container, and will be downloaded when they are first used. A list of these additional packages can be found &lt;a href="https://github.com/NeuroDesk/neurodesk/blob/master/cvmfs/log.txt">here&lt;/a>&lt;/p></description></item><item><title>Docs: Windows</title><link>https://neurodesk.github.io/docs/neurodesktop/getting-started/windows/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/getting-started/windows/</guid><description>
+&lt;/li>
+&lt;/ul>
+&lt;p>The neurodesktop environment is built to be light and fast to download and start-up. Most additional programs are therefore downloaded when they are first used. A list of these additional packages can be found &lt;a href="https://github.com/NeuroDesk/neurodesk/blob/master/cvmfs/log.txt">here&lt;/a>&lt;/p></description></item><item><title>Docs: Windows</title><link>https://neurodesk.github.io/docs/neurodesktop/getting-started/windows/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/getting-started/windows/</guid><description>
 &lt;h2 id="minimum-system-requirements">Minimum System Requirements&lt;/h2>
 &lt;ol>
 &lt;li>At least 3GB free space for neuromachine base image&lt;/li>
