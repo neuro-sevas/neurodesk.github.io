@@ -10,8 +10,13 @@
 &lt;p>Click &lt;a href="https://www.youtube.com/watch?v=JLv_5fycugw">here&lt;/a> to watch a 2 minute tutorial video from OHBM 2021&lt;/p>
 &lt;h2 id="how-to-access-files-from-your-host-computer">How to access files from your Host computer&lt;/h2>
 &lt;p>There are various ways of connecting your data to to Neurodesktop. For more information see our Storage section: &lt;a href="https://neurodesk.github.io/docs/neurodesktop/storage">Storage&lt;/a>&lt;/p>
-&lt;h2 id="how-to-launchdownload-applications">How to launch/download applications&lt;/h2>
-&lt;p>Click on the Launcher icon in bottom-left corner and navigate to the &amp;ldquo;Neurodesk&amp;rdquo; menu, then select the application and version you wish to launch. If it is the first time you launch the application, it will be downloaded to your desktop environment. The application is ready to use when the &amp;ldquo;Singularity&amp;gt;&amp;rdquo; prompt appears in the terminal window that opens. If you chose in the menu the GUI of the application (e.g., fsleyesGUI 6.0.3), it will open automatically. If you chose that application itself (e.g., fsl 6.0.3), a terminal window will open, and you can use it to run any of the utilities packaged with the application, including the graphical utilities (e.g., typing &amp;ldquo;fsl&amp;rdquo; to run FSL&amp;rsquo;s main menu).&lt;/p></description></item><item><title>Docs: What's in the box?</title><link>https://neurodesk.github.io/docs/neurodesktop/whatsinthebox/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/whatsinthebox/</guid><description>
+&lt;h2 id="how-to-launch-applications">How to launch applications&lt;/h2>
+&lt;p>Click on the Launcher icon in bottom-left corner and navigate to the &amp;ldquo;Neurodesk&amp;rdquo; menu, then select the application and version you wish to launch. If it is the first time you launch the application, it will be downloaded to your desktop environment. The application is ready to use when the &amp;ldquo;Singularity&amp;gt;&amp;rdquo; prompt appears in the terminal window that opens. If you chose in the menu the GUI of the application (e.g., fsleyesGUI 6.0.3), it will open automatically. If you chose that application itself (e.g., fsl 6.0.3), a terminal window will open, and you can use it to run any of the utilities packaged with the application, including the graphical utilities (e.g., typing &amp;ldquo;fsl&amp;rdquo; to run FSL&amp;rsquo;s main menu).&lt;/p>
+&lt;h2 id="how-to-force-a-complete-container-download-to-your-system">How to force a complete container download to your system&lt;/h2>
+&lt;p>To increase speed and reliability of Neurodesktop we mount the application containers from a CVMFS mount and download only the files required to run your current task. Although we aim to keep everything on there reproducible, there might be a reason that you want to fully download the containers to your system. You can force this behaviour by adding another parameter to the docker call: &lt;code>-e CVMFS_DISABLE=true&lt;/code>&lt;/p>
+&lt;p>For windows an example would look like this:&lt;/p>
+&lt;pre tabindex="0">&lt;code>docker run --shm-size=1gb -it --privileged --name neurodesktop -v C:/neurodesktop:/neurodesktop -e USER=user -e CVMFS_DISABLE=true -p 8080:8080 neurodesktop:20210915
+&lt;/code>&lt;/pre></description></item><item><title>Docs: What's in the box?</title><link>https://neurodesk.github.io/docs/neurodesktop/whatsinthebox/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/whatsinthebox/</guid><description>
 &lt;p>Neurodesktop comes with the essential software required for neuroimaging data analysis pre-installed. Each release is built with the most recent version of these packages available at the build date. Some example packages include:&lt;/p>
 &lt;ul>
 &lt;li>Editors and Programming:
@@ -107,6 +112,8 @@ We recommend the &lt;em>manual&lt;/em> install instructions, as the simplified i
 &lt;p>If this is the case, follow the manual install instructions to install &lt;a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">WSL 2&lt;/a> (including installation of Ubuntu through Microsoft Store).&lt;/p>
 &lt;h2 id="not-enough-free-space-on-the-partition-in-windows-and-wsl2">Not enough free space on the partition in Windows and WSL2&lt;/h2>
 &lt;p>This could help: &lt;a href="https://yjmantilla.github.io/tutorials/wsl2-move-vhdx.html">https://yjmantilla.github.io/tutorials/wsl2-move-vhdx.html&lt;/a>&lt;/p></description></item><item><title>Docs: Release History</title><link>https://neurodesk.github.io/docs/neurodesktop/release-history/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/release-history/</guid><description>
-&lt;div class="pageinfo pageinfo-primary">
-&lt;p>Coming Soon&lt;/p>
-&lt;/div></description></item></channel></rss>
+&lt;h2 id="20210915">20210915&lt;/h2>
+&lt;ul>
+&lt;li>This is the first version of the newly renamed and rebuild neurodesktop (previously vnm and neuromachine)&lt;/li>
+&lt;li>containers are mounted by default from CVMFS, but this can be deactivated by adding &lt;code>-e CVMFS_DISABLE=true&lt;/code> to the docker call&lt;/li>
+&lt;/ul></description></item></channel></rss>

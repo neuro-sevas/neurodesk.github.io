@@ -19,11 +19,11 @@
 <meta property="og:description" content="Congratulations! You've installed Neurodesktop. What happens next?">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://neurodesk.github.io/docs/neurodesktop/whats-next/"><meta property="article:section" content="docs">
-<meta property="article:modified_time" content="2021-09-16T16:21:08+10:00"><meta property="og:site_name" content="NeuroDesk">
+<meta property="article:modified_time" content="2021-09-16T17:00:34+10:00"><meta property="og:site_name" content="NeuroDesk">
 <meta itemprop=name content="What's next?">
 <meta itemprop=description content="Congratulations! You've installed Neurodesktop. What happens next?">
-<meta itemprop=dateModified content="2021-09-16T16:21:08+10:00">
-<meta itemprop=wordCount content="359">
+<meta itemprop=dateModified content="2021-09-16T17:00:34+10:00">
+<meta itemprop=wordCount content="460">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="What's next?">
 <meta name=twitter:description content="Congratulations! You've installed Neurodesktop. What happens next?">
@@ -157,7 +157,8 @@
 <li><a href=#release>Release</a></li>
 <li><a href=#video-tutorial>Video tutorial</a></li>
 <li><a href=#how-to-access-files-from-your-host-computer>How to access files from your Host computer</a></li>
-<li><a href=#how-to-launchdownload-applications>How to launch/download applications</a></li>
+<li><a href=#how-to-launch-applications>How to launch applications</a></li>
+<li><a href=#how-to-force-a-complete-container-download-to-your-system>How to force a complete container download to your system</a></li>
 </ul>
 </nav></div>
 </aside>
@@ -178,12 +179,17 @@
 <p>Click <a href="https://www.youtube.com/watch?v=JLv_5fycugw">here</a> to watch a 2 minute tutorial video from OHBM 2021</p>
 <h2 id=how-to-access-files-from-your-host-computer>How to access files from your Host computer</h2>
 <p>There are various ways of connecting your data to to Neurodesktop. For more information see our Storage section: <a href=/docs/neurodesktop/storage>Storage</a></p>
-<h2 id=how-to-launchdownload-applications>How to launch/download applications</h2>
+<h2 id=how-to-launch-applications>How to launch applications</h2>
 <p>Click on the Launcher icon in bottom-left corner and navigate to the &ldquo;Neurodesk&rdquo; menu, then select the application and version you wish to launch. If it is the first time you launch the application, it will be downloaded to your desktop environment. The application is ready to use when the &ldquo;Singularity>&rdquo; prompt appears in the terminal window that opens. If you chose in the menu the GUI of the application (e.g., fsleyesGUI 6.0.3), it will open automatically. If you chose that application itself (e.g., fsl 6.0.3), a terminal window will open, and you can use it to run any of the utilities packaged with the application, including the graphical utilities (e.g., typing &ldquo;fsl&rdquo; to run FSL&rsquo;s main menu).</p>
+<h2 id=how-to-force-a-complete-container-download-to-your-system>How to force a complete container download to your system</h2>
+<p>To increase speed and reliability of Neurodesktop we mount the application containers from a CVMFS mount and download only the files required to run your current task. Although we aim to keep everything on there reproducible, there might be a reason that you want to fully download the containers to your system. You can force this behaviour by adding another parameter to the docker call: <code>-e CVMFS_DISABLE=true</code></p>
+<p>For windows an example would look like this:</p>
+<pre tabindex=0><code>docker run --shm-size=1gb -it --privileged --name neurodesktop -v C:/neurodesktop:/neurodesktop -e USER=user -e CVMFS_DISABLE=true -p 8080:8080 neurodesktop:20210915
+</code></pre>
 <div class="text-muted mt-5 pt-3 border-top">
 Last modified
 September 16, 2021
-: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/29d419ddea0be9f372d9909dc0d7dacd43f68150>fixed storage links (29d419d)</a>
+: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/37289892b36c56fac15970918fba0aaec736ce87>added release 20210915 and documented CVMFS_DISABLE flag (3728989)</a>
 </div>
 </div>
 </main>

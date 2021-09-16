@@ -21,11 +21,11 @@
 ">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://neurodesk.github.io/docs/neurodesktop/getting-started/windows/"><meta property="article:section" content="docs">
-<meta property="article:modified_time" content="2021-09-15T11:44:15+10:00"><meta property="og:site_name" content="NeuroDesk">
+<meta property="article:modified_time" content="2021-09-16T17:00:34+10:00"><meta property="og:site_name" content="NeuroDesk">
 <meta itemprop=name content="Windows">
 <meta itemprop=description content="Install neurodesktop on Windows
 ">
-<meta itemprop=dateModified content="2021-09-15T11:44:15+10:00">
+<meta itemprop=dateModified content="2021-09-16T17:00:34+10:00">
 <meta itemprop=wordCount content="194">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="Windows">
@@ -172,7 +172,7 @@
 </header>
 <h2 id=minimum-system-requirements>Minimum System Requirements</h2>
 <ol>
-<li>At least 3GB free space for neuromachine base image</li>
+<li>At least 3GB free space for neurodesktop base image</li>
 <li>Docker requirements. Details found under <a href=https://docs.docker.com/get-docker/>https://docs.docker.com/get-docker/</a></li>
 <li>If installing docker using WSL, atleast 20GB space recommended for WSL with Ubuntu</li>
 </ol>
@@ -188,9 +188,9 @@
 <p>Open a terminal, and type the folowing command to automatically download the neurodesktop container and run it</p>
 </li>
 </ol>
-<pre tabindex=0><code>docker run --shm-size=1gb -it --privileged --name neuromachine -v C:/neurodesktop:/neurodesktop -e USER=user -p 8080:8080 vnmd/neuromachine:20210708
+<pre tabindex=0><code>docker run --shm-size=1gb -it --privileged --name neurodesktop -v C:/neurodesktop:/neurodesktop -e USER=user -p 8080:8080 vnmd/neurodesktop:20210915
 </code></pre><ol start=4>
-<li>Once neuromachine is downloaded i.e. <code>guacd[77]: INFO: Listening on host 127.0.0.1, port 4822</code> is displayed in terminal, open a browser and go to:</li>
+<li>Once neurodesktop is downloaded i.e. <code>guacd[77]: INFO: Listening on host 127.0.0.1, port 4822</code> is displayed in terminal, open a browser and go to:</li>
 </ol>
 <pre tabindex=0><code>http://localhost:8080/#/?username=user&amp;password=password
 </code></pre><p>or open a VNC Client and connect to port 5901 (for this -p 5901:5901 has to be added to the docker call)</p>
@@ -214,16 +214,16 @@
 <p>Type:</p>
 </li>
 </ol>
-<pre tabindex=0><code>docker stop neuromachine
+<pre tabindex=0><code>docker stop neurodesktop
 </code></pre><ol start=4>
 <li>Type:</li>
 </ol>
-<pre tabindex=0><code>docker rm neuromachine
+<pre tabindex=0><code>docker rm neurodesktop
 </code></pre>
 <div class="text-muted mt-5 pt-3 border-top">
 Last modified
-September 15, 2021
-: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/37bd69479efa17f1bbc97b444731d47a67fcc014>Update to neurodesktop nomenclature (37bd694)</a>
+September 16, 2021
+: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/37289892b36c56fac15970918fba0aaec736ce87>added release 20210915 and documented CVMFS_DISABLE flag (3728989)</a>
 </div>
 </div>
 </main>
