@@ -21,12 +21,12 @@
 ">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://neurodesk.github.io/docs/neurodesktop/storage/"><meta property="article:section" content="docs">
-<meta property="article:modified_time" content="2021-09-17T08:37:45+10:00"><meta property="og:site_name" content="NeuroDesk">
+<meta property="article:modified_time" content="2021-09-17T09:00:49+10:00"><meta property="og:site_name" content="NeuroDesk">
 <meta itemprop=name content="Storage">
 <meta itemprop=description content="Add storage to Neurodesktop
 ">
-<meta itemprop=dateModified content="2021-09-17T08:37:45+10:00">
-<meta itemprop=wordCount content="436">
+<meta itemprop=dateModified content="2021-09-17T09:00:49+10:00">
+<meta itemprop=wordCount content="456">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="Storage">
 <meta name=twitter:description content="Add storage to Neurodesktop
@@ -188,9 +188,10 @@
 <li>or upload data to CloudStor: <code>rclone copy --progress --transfers 8 . CloudStor:/data-processed</code></li>
 </ul>
 <h2 id=globus>Globus</h2>
-<p>We also provide the globus client, so you can transfer large amounts of data between globus endpoints and Neurodesk. You can configure it by running:</p>
+<p>We also provide the globus client, so you can transfer large amounts of data between globus endpoints and Neurodesktop. You can configure it by running:</p>
 <pre tabindex=0><code>/opt/globusconnectpersonal/globusconnectpersonal-*/globusconnectpersonal
-</code></pre><h1 id=mounting-network-storage-on-your-host-computer>Mounting network storage on your host-computer</h1>
+</code></pre><p>Once authenticated you can go to the globus file-manager <a href=https://app.globus.org/file-manager>https://app.globus.org/file-manager</a> and your neurodesktop instance will be an endpoint for globus.</p>
+<h1 id=mounting-network-storage-on-your-host-computer>Mounting network storage on your host-computer</h1>
 <p>The -v C:/neurodesk:/neurodesk part of the docker command links the directory “neurodesk” on the “C drive” of your Windows computer to the directory /neurodesk inside the Desktop environment. Everything you store in there will be available inside neurodesk and on the host computer. You can also mount additional directories by adding another -v parameter set (e.g. -v D:/moredata:/data) - this will mount the directory moredata from your D drive to /data inside neurodesktop. If you have network storage mounted in a similar way you can also pass this into the Neurodesktop tool.</p>
 <h1 id=mount-volume-using-sshfs>Mount volume using SSHFS</h1>
 <p>It is theoretically possible to mount an SSH target inside Neurodesktop, but it&rsquo;s not a very reliable way of mounting storage:</p>
@@ -201,7 +202,7 @@
 <div class="text-muted mt-5 pt-3 border-top">
 Last modified
 September 17, 2021
-: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/319f875309e576e4da431ea6941ed901dd59c2fd>added davfs mounting description (319f875)</a>
+: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/7fd90e72c7f516e5cbe7bb496328e8f8854fa75e>add more information to globus (7fd90e7)</a>
 </div>
 </div>
 </main>
