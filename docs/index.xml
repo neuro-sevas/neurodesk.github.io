@@ -202,7 +202,7 @@ newgrp docker
 &lt;h2 id="video-tutorial">Video tutorial&lt;/h2>
 &lt;p>Click &lt;a href="https://www.youtube.com/watch?v=JLv_5fycugw">here&lt;/a> to watch a 2 minute tutorial video from OHBM 2021&lt;/p>
 &lt;h2 id="how-to-access-files-from-your-host-computer">How to access files from your Host computer&lt;/h2>
-&lt;p>There are various ways of connecting your data to to Neurodesktop. For more information see our Storage section: &lt;a href="https://neurodesk.github.io/docs/neurodesktop/storage.md">Storage&lt;/a>&lt;/p>
+&lt;p>There are various ways of connecting your data to to Neurodesktop. For more information see our Storage section: &lt;a href="https://neurodesk.github.io/docs/neurodesktop/storage">Storage&lt;/a>&lt;/p>
 &lt;h2 id="how-to-launchdownload-applications">How to launch/download applications&lt;/h2>
 &lt;p>Click on the Launcher icon in bottom-left corner and navigate to the &amp;ldquo;Neurodesk&amp;rdquo; menu, then select the application and version you wish to launch. If it is the first time you launch the application, it will be downloaded to your desktop environment. The application is ready to use when the &amp;ldquo;Singularity&amp;gt;&amp;rdquo; prompt appears in the terminal window that opens. If you chose in the menu the GUI of the application (e.g., fsleyesGUI 6.0.3), it will open automatically. If you chose that application itself (e.g., fsl 6.0.3), a terminal window will open, and you can use it to run any of the utilities packaged with the application, including the graphical utilities (e.g., typing &amp;ldquo;fsl&amp;rdquo; to run FSL&amp;rsquo;s main menu).&lt;/p></description></item><item><title>Docs: Windows</title><link>https://neurodesk.github.io/docs/neurocommand/getting-started/windows/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurocommand/getting-started/windows/</guid><description>
 &lt;h2 id="wsl-w-ubuntu--lxde">WSL (w/ Ubuntu + LXDE)&lt;/h2>
@@ -245,7 +245,7 @@ Change &lt;code>port=3389&lt;/code> to &lt;code>port=3390&lt;/code> and save&lt;
 &lt;li>Nipype (including GraphVis)&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;li>Data Syncronisation tools: (See our Storage section for more information: )
+&lt;li>Data Syncronisation tools: (See our Storage section for more information: &lt;a href="https://neurodesk.github.io/docs/neurodesktop/storage">Storage&lt;/a>)
 &lt;ul>
 &lt;li>Rsync&lt;/li>
 &lt;li>Rclone &lt;a href="https://rclone.org/">https://rclone.org/&lt;/a>&lt;/li>
