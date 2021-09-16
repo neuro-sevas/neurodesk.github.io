@@ -76,8 +76,7 @@ This the multi-page printable view of this section.
 <h1 class=title>For Developers</h1>
 <div class=lead>Developer guide</div>
 <ul>
-<li>1: <a href=#pg-08a90f4738abd9b7c845a70e79c1eba4>Neurodesk Architecture</a></li>
-<li>2: <a href=#pg-a6fa0f76f9d717497da6601a0718a27a>Add tools</a></li>
+<li>1: <a href=#pg-a6fa0f76f9d717497da6601a0718a27a>Add tools</a></li>
 </ul>
 <div class=content>
 <h2 id=developing-neurodeskgithubio>Developing neurodesk.github.io</h2>
@@ -97,43 +96,7 @@ This the multi-page printable view of this section.
 </div>
 </div>
 <div class=td-content style=page-break-before:always>
-<h1 id=pg-08a90f4738abd9b7c845a70e79c1eba4>1 - Neurodesk Architecture</h1>
-<div class=lead>The architecture of the Neurodesk ecosystem</div>
-<h1 id=layers>Layers</h1>
-<p>Neurodesktop: <a href=https://github.com/NeuroDesk/neurodesktop>https://github.com/NeuroDesk/neurodesktop</a></p>
-<ul>
-<li>docker container with interface modifications</li>
-<li>contains tools necessary to manage containers: vscode, git, niype</li>
-<li>CI: builds docker image and tests if it runs</li>
-</ul>
-<p>Neurocommand: <a href=https://github.com/NeuroDesk/neurocommand>https://github.com/NeuroDesk/neurocommand</a></p>
-<ul>
-<li>script to install and manage multiple containers using transparent singularity on any linux system</li>
-<li>this repo would also handle the creation of menu entries in a general form applicable to different desktop environments</li>
-<li>this repo can be re-used in other projects like CVL and the imaging workstations</li>
-<li>CI: tests if containers can be installed</li>
-</ul>
-<p>transparent-singularity: <a href=https://github.com/NeuroDesk/transparent-singularity>https://github.com/NeuroDesk/transparent-singularity</a></p>
-<ul>
-<li>script to install neuro-sub-containers, installers are called by neurodesk script</li>
-<li>this repo could provide a simple way of using our containers on HPCs for large scale processing of the pipelines build in VNM</li>
-<li>CI: test if exposing of binaries work</li>
-</ul>
-<p>Neurocontainers: <a href=https://github.com/NeuroDesk/neurocontainers>https://github.com/NeuroDesk/neurocontainers</a></p>
-<ul>
-<li>build scripts for neuro-sub-containers</li>
-<li>CI: building, pushing and testing of containers</li>
-</ul>
-<p>Neurodocker: <a href=https://github.com/NeuroDesk/neurodocker>https://github.com/NeuroDesk/neurodocker</a></p>
-<ul>
-<li>fork of neurodocker project</li>
-<li>provides recipes for our containers built</li>
-<li>we are providing pull requests back of recipes</li>
-<li>CI: handled by <a href=https://github.com/ReproNim/neurodocker>neurodocker</a> - testing of generating container recipes</li>
-</ul>
-</div>
-<div class=td-content style=page-break-before:always>
-<h1 id=pg-a6fa0f76f9d717497da6601a0718a27a>2 - Add tools</h1>
+<h1 id=pg-a6fa0f76f9d717497da6601a0718a27a>1 - Add tools</h1>
 <div class=lead>Add a tool to neurodesktop</div>
 <p>The goal of <em>neurodesktop</em> is to provide users with a large choice of tools to use in their pipelines.
 Use the guide below to add a tool to <em>neurodesktop</em>.</p>

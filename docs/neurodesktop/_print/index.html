@@ -448,11 +448,15 @@ newgrp docker
 <div class=td-content style=page-break-before:always>
 <h1 id=pg-33caca0878e307c0e84289213e7d7ee2>4 - Storage</h1>
 <div class=lead>Add storage to Neurodesktop</div>
-<h2 id=cloud-storage>Cloud-storage</h2>
-<p>The easiest way to get your data into Neurodesktop is to use a cloud storage provider like CloudStor, Dropbox, OneDrive and their sync tools like OwnCloud, Nextcloud or very flexible tools like rclone. Another good option could be to utilize Globus for large amounts of data.</p>
-<h3 id=nextcloud-and-owncloud-desktop-clients>Nextcloud and Owncloud desktop clients</h3>
+<h1 id=cloud-storage>Cloud-storage</h1>
+<p>The easiest way to get your data into Neurodesktop is to use a cloud storage provider like CloudStor, Dropbox, OneDrive and their sync tools like OwnCloud, Nextcloud or very flexible tools like rclone or davfs2. Another good option could be to utilize Globus for large amounts of data.</p>
+<h2 id=nextcloud-and-owncloud-desktop-clients>Nextcloud and Owncloud desktop clients</h2>
 <p>Under the menu item &ldquo;Accessories&rdquo; you can find &ldquo;Nextcloud&rdquo; and &ldquo;ownCloud&rdquo; desktop sync clients that you can configure with your cloud service accounts.</p>
-<h3 id=rclone>Rclone</h3>
+<h2 id=mounting-webdav-storage-using-davfs2>Mounting webdav storage using davfs2</h2>
+<p>Another option is to directly mount webdav storage. Here is an example how to mount CloudStor into Neurodesktop:</p>
+<pre tabindex=0><code>sudo mount -t davfs https://cloudstor.aarnet.edu.au/plus/remote.php/webdav/ /data/
+</code></pre><p>It then asks you for a username and password, which you can generate here: <a href="https://cloudstor.aarnet.edu.au/plus/settings/personal?sectionid=security">https://cloudstor.aarnet.edu.au/plus/settings/personal?sectionid=security</a></p>
+<h2 id=rclone>Rclone</h2>
 <p>Rclone is a command line tool that enables the interaction with various cloud services. Here is an example how to setup rclone with CloudStor Aarnet:</p>
 <ul>
 <li>start the configuration in a terminal window <code>rclone config</code></li>
@@ -471,12 +475,12 @@ newgrp docker
 <li>Now we can download data to the HPC easily: <code>rclone copy --progress --transfers 8 CloudStor:/raw-data-for-science-paper .</code></li>
 <li>or upload data to CloudStor: <code>rclone copy --progress --transfers 8 . CloudStor:/data-processed</code></li>
 </ul>
-<h3 id=globus>Globus</h3>
+<h2 id=globus>Globus</h2>
 <p>We also provide the globus client, so you can transfer large amounts of data between globus endpoints and Neurodesk. You can configure it by running:</p>
 <pre tabindex=0><code>/opt/globusconnectpersonal/globusconnectpersonal-*/globusconnectpersonal
-</code></pre><h2 id=mounting-network-storage-on-your-host-computer>Mounting network storage on your host-computer</h2>
+</code></pre><h1 id=mounting-network-storage-on-your-host-computer>Mounting network storage on your host-computer</h1>
 <p>The -v C:/neurodesk:/neurodesk part of the docker command links the directory “neurodesk” on the “C drive” of your Windows computer to the directory /neurodesk inside the Desktop environment. Everything you store in there will be available inside neurodesk and on the host computer. You can also mount additional directories by adding another -v parameter set (e.g. -v D:/moredata:/data) - this will mount the directory moredata from your D drive to /data inside neurodesktop. If you have network storage mounted in a similar way you can also pass this into the Neurodesktop tool.</p>
-<h2 id=mount-volume-using-sshfs>Mount volume using SSHFS</h2>
+<h1 id=mount-volume-using-sshfs>Mount volume using SSHFS</h1>
 <p>It is theoretically possible to mount an SSH target inside Neurodesktop, but it&rsquo;s not a very reliable way of mounting storage:</p>
 <pre tabindex=0><code>sshfs -o allow_root USER@TARGET_HOST:TARGET_PATH SOURCE_PATH
 </code></pre><p>Another option is to utilize scp and copy data from an SSH endpoint:</p>

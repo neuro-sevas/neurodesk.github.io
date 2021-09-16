@@ -103,15 +103,13 @@ This the multi-page printable view of this section.
 <li>3.1.1: <a href=#pg-b25aa0b6f8dfd4ff32d8bffbdca60e3b>Linux</a></li>
 <li>3.1.2: <a href=#pg-180aa3bd9988d06cd8c909d2dd3a6340>Windows</a></li>
 </ul>
-<li>3.2: <a href=#pg-13b67b32e7c5f0ca31dc1aad2d3c567c>Troubleshooting</a></li>
 </ul>
 <li>4: <a href=#pg-88405e8e9824a3a23cd8fda56d2e5574>Neurocontainers</a></li>
 <ul>
 </ul>
 <li>5: <a href=#pg-f614fb095a0a23c57b6f9d4a9abcbb11>For Developers</a></li>
 <ul>
-<li>5.1: <a href=#pg-08a90f4738abd9b7c845a70e79c1eba4>Neurodesk Architecture</a></li>
-<li>5.2: <a href=#pg-a6fa0f76f9d717497da6601a0718a27a>Add tools</a></li>
+<li>5.1: <a href=#pg-a6fa0f76f9d717497da6601a0718a27a>Add tools</a></li>
 </ul>
 </ul>
 <div class=content>
@@ -546,11 +544,15 @@ newgrp docker
 <div class=td-content style=page-break-before:always>
 <h1 id=pg-33caca0878e307c0e84289213e7d7ee2>2.4 - Storage</h1>
 <div class=lead>Add storage to Neurodesktop</div>
-<h2 id=cloud-storage>Cloud-storage</h2>
-<p>The easiest way to get your data into Neurodesktop is to use a cloud storage provider like CloudStor, Dropbox, OneDrive and their sync tools like OwnCloud, Nextcloud or very flexible tools like rclone. Another good option could be to utilize Globus for large amounts of data.</p>
-<h3 id=nextcloud-and-owncloud-desktop-clients>Nextcloud and Owncloud desktop clients</h3>
+<h1 id=cloud-storage>Cloud-storage</h1>
+<p>The easiest way to get your data into Neurodesktop is to use a cloud storage provider like CloudStor, Dropbox, OneDrive and their sync tools like OwnCloud, Nextcloud or very flexible tools like rclone or davfs2. Another good option could be to utilize Globus for large amounts of data.</p>
+<h2 id=nextcloud-and-owncloud-desktop-clients>Nextcloud and Owncloud desktop clients</h2>
 <p>Under the menu item &ldquo;Accessories&rdquo; you can find &ldquo;Nextcloud&rdquo; and &ldquo;ownCloud&rdquo; desktop sync clients that you can configure with your cloud service accounts.</p>
-<h3 id=rclone>Rclone</h3>
+<h2 id=mounting-webdav-storage-using-davfs2>Mounting webdav storage using davfs2</h2>
+<p>Another option is to directly mount webdav storage. Here is an example how to mount CloudStor into Neurodesktop:</p>
+<pre tabindex=0><code>sudo mount -t davfs https://cloudstor.aarnet.edu.au/plus/remote.php/webdav/ /data/
+</code></pre><p>It then asks you for a username and password, which you can generate here: <a href="https://cloudstor.aarnet.edu.au/plus/settings/personal?sectionid=security">https://cloudstor.aarnet.edu.au/plus/settings/personal?sectionid=security</a></p>
+<h2 id=rclone>Rclone</h2>
 <p>Rclone is a command line tool that enables the interaction with various cloud services. Here is an example how to setup rclone with CloudStor Aarnet:</p>
 <ul>
 <li>start the configuration in a terminal window <code>rclone config</code></li>
@@ -569,12 +571,12 @@ newgrp docker
 <li>Now we can download data to the HPC easily: <code>rclone copy --progress --transfers 8 CloudStor:/raw-data-for-science-paper .</code></li>
 <li>or upload data to CloudStor: <code>rclone copy --progress --transfers 8 . CloudStor:/data-processed</code></li>
 </ul>
-<h3 id=globus>Globus</h3>
+<h2 id=globus>Globus</h2>
 <p>We also provide the globus client, so you can transfer large amounts of data between globus endpoints and Neurodesk. You can configure it by running:</p>
 <pre tabindex=0><code>/opt/globusconnectpersonal/globusconnectpersonal-*/globusconnectpersonal
-</code></pre><h2 id=mounting-network-storage-on-your-host-computer>Mounting network storage on your host-computer</h2>
+</code></pre><h1 id=mounting-network-storage-on-your-host-computer>Mounting network storage on your host-computer</h1>
 <p>The -v C:/neurodesk:/neurodesk part of the docker command links the directory “neurodesk” on the “C drive” of your Windows computer to the directory /neurodesk inside the Desktop environment. Everything you store in there will be available inside neurodesk and on the host computer. You can also mount additional directories by adding another -v parameter set (e.g. -v D:/moredata:/data) - this will mount the directory moredata from your D drive to /data inside neurodesktop. If you have network storage mounted in a similar way you can also pass this into the Neurodesktop tool.</p>
-<h2 id=mount-volume-using-sshfs>Mount volume using SSHFS</h2>
+<h1 id=mount-volume-using-sshfs>Mount volume using SSHFS</h1>
 <p>It is theoretically possible to mount an SSH target inside Neurodesktop, but it&rsquo;s not a very reliable way of mounting storage:</p>
 <pre tabindex=0><code>sshfs -o allow_root USER@TARGET_HOST:TARGET_PATH SOURCE_PATH
 </code></pre><p>Another option is to utilize scp and copy data from an SSH endpoint:</p>
@@ -696,12 +698,6 @@ Change <code>port=3389</code> to <code>port=3390</code> and save</li>
 </ol>
 </div>
 <div class=td-content style=page-break-before:always>
-<h1 id=pg-13b67b32e7c5f0ca31dc1aad2d3c567c>3.2 - Troubleshooting</h1>
-<div class=lead>Are you experiencing issues with neurocommand?</div>
-<p>Neurodesk is an open-source project that is always evolving. If you are experiencing an issue not listed here, please open a <a href=https://github.com/NeuroDesk/neurodesk.github.io/issues>new issue</a>, so that we can aim to solve it and update our help documentation.</p>
-<p>To ask questions or suggest new features, <a href=https://github.com/NeuroDesk/neurodesk.github.io/discussions>join the discussion</a> on github.</p>
-</div>
-<div class=td-content style=page-break-before:always>
 <h1 id=pg-88405e8e9824a3a23cd8fda56d2e5574>4 - Neurocontainers</h1>
 <div class=lead>What neurocontainers are about</div>
 <h2 id=automatic-container-building-and-testing>Automatic container building and testing</h2>
@@ -744,43 +740,7 @@ docker</p>
 <p>Once started, dev website will be accessible via http://localhost:1313</p>
 </div>
 <div class=td-content style=page-break-before:always>
-<h1 id=pg-08a90f4738abd9b7c845a70e79c1eba4>5.1 - Neurodesk Architecture</h1>
-<div class=lead>The architecture of the Neurodesk ecosystem</div>
-<h1 id=layers>Layers</h1>
-<p>Neurodesktop: <a href=https://github.com/NeuroDesk/neurodesktop>https://github.com/NeuroDesk/neurodesktop</a></p>
-<ul>
-<li>docker container with interface modifications</li>
-<li>contains tools necessary to manage containers: vscode, git, niype</li>
-<li>CI: builds docker image and tests if it runs</li>
-</ul>
-<p>Neurocommand: <a href=https://github.com/NeuroDesk/neurocommand>https://github.com/NeuroDesk/neurocommand</a></p>
-<ul>
-<li>script to install and manage multiple containers using transparent singularity on any linux system</li>
-<li>this repo would also handle the creation of menu entries in a general form applicable to different desktop environments</li>
-<li>this repo can be re-used in other projects like CVL and the imaging workstations</li>
-<li>CI: tests if containers can be installed</li>
-</ul>
-<p>transparent-singularity: <a href=https://github.com/NeuroDesk/transparent-singularity>https://github.com/NeuroDesk/transparent-singularity</a></p>
-<ul>
-<li>script to install neuro-sub-containers, installers are called by neurodesk script</li>
-<li>this repo could provide a simple way of using our containers on HPCs for large scale processing of the pipelines build in VNM</li>
-<li>CI: test if exposing of binaries work</li>
-</ul>
-<p>Neurocontainers: <a href=https://github.com/NeuroDesk/neurocontainers>https://github.com/NeuroDesk/neurocontainers</a></p>
-<ul>
-<li>build scripts for neuro-sub-containers</li>
-<li>CI: building, pushing and testing of containers</li>
-</ul>
-<p>Neurodocker: <a href=https://github.com/NeuroDesk/neurodocker>https://github.com/NeuroDesk/neurodocker</a></p>
-<ul>
-<li>fork of neurodocker project</li>
-<li>provides recipes for our containers built</li>
-<li>we are providing pull requests back of recipes</li>
-<li>CI: handled by <a href=https://github.com/ReproNim/neurodocker>neurodocker</a> - testing of generating container recipes</li>
-</ul>
-</div>
-<div class=td-content style=page-break-before:always>
-<h1 id=pg-a6fa0f76f9d717497da6601a0718a27a>5.2 - Add tools</h1>
+<h1 id=pg-a6fa0f76f9d717497da6601a0718a27a>5.1 - Add tools</h1>
 <div class=lead>Add a tool to neurodesktop</div>
 <p>The goal of <em>neurodesktop</em> is to provide users with a large choice of tools to use in their pipelines.
 Use the guide below to add a tool to <em>neurodesktop</em>.</p>

@@ -106,39 +106,7 @@ newgrp docker
 &lt;li>Type:&lt;/li>
 &lt;/ol>
 &lt;pre tabindex="0">&lt;code>docker rm neurodesktop
-&lt;/code>&lt;/pre></description></item><item><title>Docs: Neurodesk Architecture</title><link>https://neurodesk.github.io/docs/for-developers/neurodesk-architecture/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/for-developers/neurodesk-architecture/</guid><description>
-&lt;h1 id="layers">Layers&lt;/h1>
-&lt;p>Neurodesktop: &lt;a href="https://github.com/NeuroDesk/neurodesktop">https://github.com/NeuroDesk/neurodesktop&lt;/a>&lt;/p>
-&lt;ul>
-&lt;li>docker container with interface modifications&lt;/li>
-&lt;li>contains tools necessary to manage containers: vscode, git, niype&lt;/li>
-&lt;li>CI: builds docker image and tests if it runs&lt;/li>
-&lt;/ul>
-&lt;p>Neurocommand: &lt;a href="https://github.com/NeuroDesk/neurocommand">https://github.com/NeuroDesk/neurocommand&lt;/a>&lt;/p>
-&lt;ul>
-&lt;li>script to install and manage multiple containers using transparent singularity on any linux system&lt;/li>
-&lt;li>this repo would also handle the creation of menu entries in a general form applicable to different desktop environments&lt;/li>
-&lt;li>this repo can be re-used in other projects like CVL and the imaging workstations&lt;/li>
-&lt;li>CI: tests if containers can be installed&lt;/li>
-&lt;/ul>
-&lt;p>transparent-singularity: &lt;a href="https://github.com/NeuroDesk/transparent-singularity">https://github.com/NeuroDesk/transparent-singularity&lt;/a>&lt;/p>
-&lt;ul>
-&lt;li>script to install neuro-sub-containers, installers are called by neurodesk script&lt;/li>
-&lt;li>this repo could provide a simple way of using our containers on HPCs for large scale processing of the pipelines build in VNM&lt;/li>
-&lt;li>CI: test if exposing of binaries work&lt;/li>
-&lt;/ul>
-&lt;p>Neurocontainers: &lt;a href="https://github.com/NeuroDesk/neurocontainers">https://github.com/NeuroDesk/neurocontainers&lt;/a>&lt;/p>
-&lt;ul>
-&lt;li>build scripts for neuro-sub-containers&lt;/li>
-&lt;li>CI: building, pushing and testing of containers&lt;/li>
-&lt;/ul>
-&lt;p>Neurodocker: &lt;a href="https://github.com/NeuroDesk/neurodocker">https://github.com/NeuroDesk/neurodocker&lt;/a>&lt;/p>
-&lt;ul>
-&lt;li>fork of neurodocker project&lt;/li>
-&lt;li>provides recipes for our containers built&lt;/li>
-&lt;li>we are providing pull requests back of recipes&lt;/li>
-&lt;li>CI: handled by &lt;a href="https://github.com/ReproNim/neurodocker">neurodocker&lt;/a> - testing of generating container recipes&lt;/li>
-&lt;/ul></description></item><item><title>Docs: MacOS</title><link>https://neurodesk.github.io/docs/neurodesktop/getting-started/mac/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/getting-started/mac/</guid><description>
+&lt;/code>&lt;/pre></description></item><item><title>Docs: MacOS</title><link>https://neurodesk.github.io/docs/neurodesktop/getting-started/mac/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/getting-started/mac/</guid><description>
 &lt;h2 id="minimum-system-requirements">Minimum System Requirements&lt;/h2>
 &lt;ol>
 &lt;li>At least 3GB free space for neurodesktop base image&lt;/li>
@@ -189,9 +157,7 @@ newgrp docker
 &lt;li>Type:&lt;/li>
 &lt;/ol>
 &lt;pre tabindex="0">&lt;code>docker rm neurodesktop
-&lt;/code>&lt;/pre></description></item><item><title>Docs: Troubleshooting</title><link>https://neurodesk.github.io/docs/neurocommand/troubleshooting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurocommand/troubleshooting/</guid><description>
-&lt;p>Neurodesk is an open-source project that is always evolving. If you are experiencing an issue not listed here, please open a &lt;a href="https://github.com/NeuroDesk/neurodesk.github.io/issues">new issue&lt;/a>, so that we can aim to solve it and update our help documentation.&lt;/p>
-&lt;p>To ask questions or suggest new features, &lt;a href="https://github.com/NeuroDesk/neurodesk.github.io/discussions">join the discussion&lt;/a> on github.&lt;/p></description></item><item><title>Docs: What's next?</title><link>https://neurodesk.github.io/docs/neurodesktop/whats-next/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/whats-next/</guid><description>
+&lt;/code>&lt;/pre></description></item><item><title>Docs: What's next?</title><link>https://neurodesk.github.io/docs/neurodesktop/whats-next/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/whats-next/</guid><description>
 &lt;p>Now that you’ve installed and launched neurodesktop, you should see a virtual desktop environment in your browser, which might look something like this:&lt;/p>
 &lt;p>&lt;img src="https://neurodesk.github.io/Desktop.png" alt="desktop" title="desktop">&lt;/p>
 &lt;p>In this linux desktop environment, you can access the menu, launch programs, write analysis code, use version control software (i.e. git) and develop analysis pipelines as though you were on your own computer.&lt;/p>
@@ -529,11 +495,15 @@ Here are two examples for FreeSurfer and FreeView. This first one only installs 
 &lt;span style="color:#c4a000">Terminal&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">true&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: HPC</title><link>https://neurodesk.github.io/docs/neurodesktop/getting-started/hpc/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/getting-started/hpc/</guid><description>
 &lt;p>One way of running this project on HPCs is via &lt;a href="https://neurodesk.github.io/docs/neurocommand/getting-started/linux/">https://neurodesk.github.io/docs/neurocommand/getting-started/linux/&lt;/a>&lt;/p></description></item><item><title>Docs: Storage</title><link>https://neurodesk.github.io/docs/neurodesktop/storage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/storage/</guid><description>
-&lt;h2 id="cloud-storage">Cloud-storage&lt;/h2>
-&lt;p>The easiest way to get your data into Neurodesktop is to use a cloud storage provider like CloudStor, Dropbox, OneDrive and their sync tools like OwnCloud, Nextcloud or very flexible tools like rclone. Another good option could be to utilize Globus for large amounts of data.&lt;/p>
-&lt;h3 id="nextcloud-and-owncloud-desktop-clients">Nextcloud and Owncloud desktop clients&lt;/h3>
+&lt;h1 id="cloud-storage">Cloud-storage&lt;/h1>
+&lt;p>The easiest way to get your data into Neurodesktop is to use a cloud storage provider like CloudStor, Dropbox, OneDrive and their sync tools like OwnCloud, Nextcloud or very flexible tools like rclone or davfs2. Another good option could be to utilize Globus for large amounts of data.&lt;/p>
+&lt;h2 id="nextcloud-and-owncloud-desktop-clients">Nextcloud and Owncloud desktop clients&lt;/h2>
 &lt;p>Under the menu item &amp;ldquo;Accessories&amp;rdquo; you can find &amp;ldquo;Nextcloud&amp;rdquo; and &amp;ldquo;ownCloud&amp;rdquo; desktop sync clients that you can configure with your cloud service accounts.&lt;/p>
-&lt;h3 id="rclone">Rclone&lt;/h3>
+&lt;h2 id="mounting-webdav-storage-using-davfs2">Mounting webdav storage using davfs2&lt;/h2>
+&lt;p>Another option is to directly mount webdav storage. Here is an example how to mount CloudStor into Neurodesktop:&lt;/p>
+&lt;pre tabindex="0">&lt;code>sudo mount -t davfs https://cloudstor.aarnet.edu.au/plus/remote.php/webdav/ /data/
+&lt;/code>&lt;/pre>&lt;p>It then asks you for a username and password, which you can generate here: &lt;a href="https://cloudstor.aarnet.edu.au/plus/settings/personal?sectionid=security">https://cloudstor.aarnet.edu.au/plus/settings/personal?sectionid=security&lt;/a>&lt;/p>
+&lt;h2 id="rclone">Rclone&lt;/h2>
 &lt;p>Rclone is a command line tool that enables the interaction with various cloud services. Here is an example how to setup rclone with CloudStor Aarnet:&lt;/p>
 &lt;ul>
 &lt;li>start the configuration in a terminal window &lt;code>rclone config&lt;/code>&lt;/li>
@@ -552,12 +522,12 @@ Here are two examples for FreeSurfer and FreeView. This first one only installs 
 &lt;li>Now we can download data to the HPC easily: &lt;code>rclone copy --progress --transfers 8 CloudStor:/raw-data-for-science-paper .&lt;/code>&lt;/li>
 &lt;li>or upload data to CloudStor: &lt;code>rclone copy --progress --transfers 8 . CloudStor:/data-processed&lt;/code>&lt;/li>
 &lt;/ul>
-&lt;h3 id="globus">Globus&lt;/h3>
+&lt;h2 id="globus">Globus&lt;/h2>
 &lt;p>We also provide the globus client, so you can transfer large amounts of data between globus endpoints and Neurodesk. You can configure it by running:&lt;/p>
 &lt;pre tabindex="0">&lt;code>/opt/globusconnectpersonal/globusconnectpersonal-*/globusconnectpersonal
-&lt;/code>&lt;/pre>&lt;h2 id="mounting-network-storage-on-your-host-computer">Mounting network storage on your host-computer&lt;/h2>
+&lt;/code>&lt;/pre>&lt;h1 id="mounting-network-storage-on-your-host-computer">Mounting network storage on your host-computer&lt;/h1>
 &lt;p>The -v C:/neurodesk:/neurodesk part of the docker command links the directory “neurodesk” on the “C drive” of your Windows computer to the directory /neurodesk inside the Desktop environment. Everything you store in there will be available inside neurodesk and on the host computer. You can also mount additional directories by adding another -v parameter set (e.g. -v D:/moredata:/data) - this will mount the directory moredata from your D drive to /data inside neurodesktop. If you have network storage mounted in a similar way you can also pass this into the Neurodesktop tool.&lt;/p>
-&lt;h2 id="mount-volume-using-sshfs">Mount volume using SSHFS&lt;/h2>
+&lt;h1 id="mount-volume-using-sshfs">Mount volume using SSHFS&lt;/h1>
 &lt;p>It is theoretically possible to mount an SSH target inside Neurodesktop, but it&amp;rsquo;s not a very reliable way of mounting storage:&lt;/p>
 &lt;pre tabindex="0">&lt;code>sshfs -o allow_root USER@TARGET_HOST:TARGET_PATH SOURCE_PATH
 &lt;/code>&lt;/pre>&lt;p>Another option is to utilize scp and copy data from an SSH endpoint:&lt;/p>
