@@ -77,8 +77,7 @@ This the multi-page printable view of this section.
 <div class=lead>Advanced usage</div>
 <ul>
 <li>1: <a href=#pg-c0a88d2c479512f10e638c4638d51092>Add tool</a></li>
-<li>2: <a href=#pg-b9cd3c04d25cdb41d3043cfa7acab883>Storage</a></li>
-<li>3: <a href=#pg-9a7c227f489e066f7d748ce204b03813>System Testing</a></li>
+<li>2: <a href=#pg-9a7c227f489e066f7d748ce204b03813>System Testing</a></li>
 </ul>
 <div class=content>
 </div>
@@ -287,18 +286,7 @@ Here are two examples for FreeSurfer and FreeView. This first one only installs 
 </code></pre></div>
 </div>
 <div class=td-content style=page-break-before:always>
-<h1 id=pg-b9cd3c04d25cdb41d3043cfa7acab883>2 - Storage</h1>
-<div class=lead>Add storage to Neurodesktop</div>
-<h2 id=cloud-storage>Cloud-storage</h2>
-<p>The easiest way to get your data into Neurodesktop is to use a cloud storage provider like CloudStor, Dropbox, OneDrive and their sync tools like OwnCloud, Nextcloud or very flexible tools like rclone. Another good option could be to utilize Globus for large amounts of data.</p>
-<h2 id=mounting-network-storage-on-your-host-computer>Mounting network storage on your host-computer</h2>
-<p>The -v C:/neurodesk:/neurodesk part of the docker command links the directory “neurodesk” on the “C drive” of your Windows computer to the directory /neurodesk inside the Desktop environment. Everything you store in there will be available inside neurodesk and on the host computer. You can also mount additional directories by adding another -v parameter set (e.g. -v D:/moredata:/data) - this will mount the directory moredata from your D drive to /data inside neurodesktop. If you have network storage mounted in a similar way you can also pass this into the Neurodesktop tool.</p>
-<h2 id=mount-volume-using-sshfs>Mount volume using SSHFS</h2>
-<p>It is theoretically possible to mount an SSH target inside Neurodesktop, but it&rsquo;s not a very reliable way of mounting storage:
-<code>sshfs -o allow_root USER@TARGET_HOST:TARGET_PATH SOURCE_PATH</code></p>
-</div>
-<div class=td-content style=page-break-before:always>
-<h1 id=pg-9a7c227f489e066f7d748ce204b03813>3 - System Testing</h1>
+<h1 id=pg-9a7c227f489e066f7d748ce204b03813>2 - System Testing</h1>
 <div class=lead>Tested and working Neurodesk setups</div>
 <h2 id=please-test-and-add-if-working->Please test and add if working :)</h2>
 <table>

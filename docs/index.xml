@@ -202,7 +202,7 @@ newgrp docker
 &lt;h2 id="video-tutorial">Video tutorial&lt;/h2>
 &lt;p>Click &lt;a href="https://www.youtube.com/watch?v=JLv_5fycugw">here&lt;/a> to watch a 2 minute tutorial video from OHBM 2021&lt;/p>
 &lt;h2 id="how-to-access-files-from-your-host-computer">How to access files from your Host computer&lt;/h2>
-&lt;p>The &lt;code>-v C:/neurodesk:/neurodesk&lt;/code> part of the docker command links the directory &amp;ldquo;neurodesk&amp;rdquo; on the &amp;ldquo;C drive&amp;rdquo; of your Windows computer to the directory &lt;code>/neurodesk&lt;/code> inside the Desktop environment. Everything you store in there will be available inside neurodesk and on the host computer. You can also mount additional directories by adding another -v parameter set (e.g. &lt;code>-v D:/moredata:/data&lt;/code>) - this will mount the directory moredata from your D drive to &lt;code>/data&lt;/code> inside neurodesktop.&lt;/p>
+&lt;p>There are various ways of connecting your data to to Neurodesktop. For more information see our Storage section: &lt;a href="https://neurodesk.github.io/docs/neurodesktop/storage.md">Storage&lt;/a>&lt;/p>
 &lt;h2 id="how-to-launchdownload-applications">How to launch/download applications&lt;/h2>
 &lt;p>Click on the Launcher icon in bottom-left corner and navigate to the &amp;ldquo;Neurodesk&amp;rdquo; menu, then select the application and version you wish to launch. If it is the first time you launch the application, it will be downloaded to your desktop environment. The application is ready to use when the &amp;ldquo;Singularity&amp;gt;&amp;rdquo; prompt appears in the terminal window that opens. If you chose in the menu the GUI of the application (e.g., fsleyesGUI 6.0.3), it will open automatically. If you chose that application itself (e.g., fsl 6.0.3), a terminal window will open, and you can use it to run any of the utilities packaged with the application, including the graphical utilities (e.g., typing &amp;ldquo;fsl&amp;rdquo; to run FSL&amp;rsquo;s main menu).&lt;/p></description></item><item><title>Docs: Windows</title><link>https://neurodesk.github.io/docs/neurocommand/getting-started/windows/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurocommand/getting-started/windows/</guid><description>
 &lt;h2 id="wsl-w-ubuntu--lxde">WSL (w/ Ubuntu + LXDE)&lt;/h2>
@@ -245,7 +245,7 @@ Change &lt;code>port=3389&lt;/code> to &lt;code>port=3390&lt;/code> and save&lt;
 &lt;li>Nipype (including GraphVis)&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;li>Data Syncronisation tools:
+&lt;li>Data Syncronisation tools: (See our Storage section for more information: )
 &lt;ul>
 &lt;li>Rsync&lt;/li>
 &lt;li>Rclone &lt;a href="https://rclone.org/">https://rclone.org/&lt;/a>&lt;/li>
@@ -523,7 +523,7 @@ Here are two examples for FreeSurfer and FreeView. This first one only installs 
 &lt;span style="color:#c4a000">Categories&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">FreeSurfer&lt;/span>
 &lt;span style="color:#c4a000">Terminal&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">true&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: HPC</title><link>https://neurodesk.github.io/docs/neurodesktop/getting-started/hpc/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/getting-started/hpc/</guid><description>
-&lt;p>One way of running this project on HPCs is via &lt;a href="https://neurodesk.github.io/docs/neurocommand/getting-started/linux/">https://neurodesk.github.io/docs/neurocommand/getting-started/linux/&lt;/a>&lt;/p></description></item><item><title>Docs: Storage</title><link>https://neurodesk.github.io/docs/advanced/storage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/advanced/storage/</guid><description>
+&lt;p>One way of running this project on HPCs is via &lt;a href="https://neurodesk.github.io/docs/neurocommand/getting-started/linux/">https://neurodesk.github.io/docs/neurocommand/getting-started/linux/&lt;/a>&lt;/p></description></item><item><title>Docs: Storage</title><link>https://neurodesk.github.io/docs/neurodesktop/storage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/storage/</guid><description>
 &lt;h2 id="cloud-storage">Cloud-storage&lt;/h2>
 &lt;p>The easiest way to get your data into Neurodesktop is to use a cloud storage provider like CloudStor, Dropbox, OneDrive and their sync tools like OwnCloud, Nextcloud or very flexible tools like rclone. Another good option could be to utilize Globus for large amounts of data.&lt;/p>
 &lt;h2 id="mounting-network-storage-on-your-host-computer">Mounting network storage on your host-computer&lt;/h2>
