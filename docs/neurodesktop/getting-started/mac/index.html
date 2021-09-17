@@ -21,11 +21,11 @@
 ">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://neurodesk.github.io/docs/neurodesktop/getting-started/mac/"><meta property="article:section" content="docs">
-<meta property="article:modified_time" content="2021-09-17T11:11:02+10:00"><meta property="og:site_name" content="NeuroDesk">
+<meta property="article:modified_time" content="2021-09-17T11:25:05+10:00"><meta property="og:site_name" content="NeuroDesk">
 <meta itemprop=name content="MacOS">
 <meta itemprop=description content="Install neurodesktop on MacOS
 ">
-<meta itemprop=dateModified content="2021-09-17T11:11:02+10:00">
+<meta itemprop=dateModified content="2021-09-17T11:25:05+10:00">
 <meta itemprop=wordCount content="238">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="MacOS">
@@ -176,7 +176,7 @@
 <p>Open a terminal, and type the folowing command to automatically download the neurodesktop container and run it</p>
 </li>
 </ol>
-<pre tabindex=0><code>docker run --shm-size=1gb -it --privileged --name neurodesktop -v ~/neurodesktop:/neurodesktop -p 8080:8080 vnmd/neurodesktop:20210916
+<pre tabindex=0><code>docker run --shm-size=1gb -it --privileged --name neurodesktop -v ~/neurodesktop:/neurodesktop -p 8080:8080 vnmd/neurodesktop:20210917
 </code></pre><p>(notice: There is a bug in docker 3.3.0 for Mac that makes this command not run correctly and there will be no application menu when you start the desktop. Update your docker version when you see this!)</p>
 <p>if you get errors in neurodesktop then check if the ~/neurodesktop directory is writable to all users, otherwise run <code>chmod a+rwx ~/neurodesktop</code></p>
 <ol start=4>
@@ -213,7 +213,7 @@
 <div class="text-muted mt-5 pt-3 border-top">
 Last modified
 September 17, 2021
-: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/11e9bb06391c1f8066c99eafb76abbf211afbe57>removed user parameter and added gid for linux (11e9bb0)</a>
+: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/d75154b90c6fbe76a6050812124db3de174b77b1>updated to new version (d75154b)</a>
 </div>
 </div>
 </main>
