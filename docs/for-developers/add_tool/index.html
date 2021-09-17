@@ -21,12 +21,12 @@
 ">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://neurodesk.github.io/docs/for-developers/add_tool/"><meta property="article:section" content="docs">
-<meta property="article:modified_time" content="2021-09-16T18:03:58+10:00"><meta property="og:site_name" content="NeuroDesk">
+<meta property="article:modified_time" content="2021-09-17T16:35:33+10:00"><meta property="og:site_name" content="NeuroDesk">
 <meta itemprop=name content="Add tools">
 <meta itemprop=description content="Add a tool to neurodesktop
 ">
-<meta itemprop=dateModified content="2021-09-16T18:03:58+10:00">
-<meta itemprop=wordCount content="672">
+<meta itemprop=dateModified content="2021-09-17T16:35:33+10:00">
+<meta itemprop=wordCount content="671">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="Add tools">
 <meta name=twitter:description content="Add a tool to neurodesktop
@@ -149,8 +149,12 @@
 <ul>
 <li><a href=#guiding-principles>Guiding principles</a></li>
 <li><a href=#build-container>Build container</a></li>
+<li><a href=#advanced-section>Advanced section</a>
+<ul>
 <li><a href=#menu-entry>Menu entry</a></li>
 <li><a href=#create-the-application>Create the application</a></li>
+</ul>
+</li>
 </ul>
 </nav></div>
 </aside>
@@ -160,14 +164,14 @@
 <div class=lead>Add a tool to neurodesktop</div>
 <header class=article-meta>
 </header>
-<p>The goal of <em>neurodesktop</em> is to provide users with a large choice of tools to use in their pipelines.
-Use the guide below to add a tool to <em>neurodesktop</em>.</p>
+<p>The goal of <em>neurodesk</em> is to provide users with a large choice of tools to use in their pipelines.
+Use the guide below to add a tool to <em>neurodesktop</em> or <em>neurocontainers</em>.</p>
 <h2 id=guiding-principles>Guiding principles</h2>
-<p>To decide if a tool should be packaged in a singularity container or be installed in the main neurodesktop container we are currently following these guiding principles:</p>
+<p>To decide if a tool should be packaged in a singularity container in <em>neurocontainers</em> or be installed in the <em>neurodesktop</em> container we are currently following these guiding principles:</p>
 <ol>
-<li>Neurodesktop is not a package manager. This means we are not distributing tools in containers that can easily be installed via a standard package manager</li>
-<li>Neurodesktop allows users to have multiple versions of tools in parallel via <a href=https://lmod.readthedocs.io/en/latest/>lmod</a>, this means that if different versions of tool can&rsquo;t be installed in parallel we package the tool inside a container.</li>
-<li>Neurodesktop aims to provide simple tooling to link tools from different containers. This means that if a tool is required to coordinate container-tools, it should be in the main image.</li>
+<li><em>neurodesk</em> is not a package manager. This means we are not distributing tools in containers that can easily be installed via a standard package manager</li>
+<li><em>neurodesk</em> allows users to have multiple versions of tools in parallel via <a href=https://lmod.readthedocs.io/en/latest/>lmod</a>, this means that if different versions of a tool can&rsquo;t be installed in parallel we package the tool inside a container.</li>
+<li><em>neurodesk</em> aims to provide tooling to link tools from different containers (such as workflow managers like nipype or nextflow). This means that if a tool is required to coordinate various container-tools, it should be in the <em>neurodesktop</em> container.</li>
 </ol>
 <p>Examples:</p>
 <table>
@@ -190,7 +194,7 @@ Use the guide below to add a tool to <em>neurodesktop</em>.</p>
 <td>yes</td>
 <td>yes</td>
 <td>yes</td>
-<td>base</td>
+<td>neurodesktop</td>
 </tr>
 <tr>
 <td>lmod</td>
@@ -199,7 +203,7 @@ Use the guide below to add a tool to <em>neurodesktop</em>.</p>
 <td>yes</td>
 <td>yes</td>
 <td>yes</td>
-<td>base</td>
+<td>neurodesktop</td>
 </tr>
 <tr>
 <td>nipype</td>
@@ -208,7 +212,7 @@ Use the guide below to add a tool to <em>neurodesktop</em>.</p>
 <td>yes</td>
 <td>yes</td>
 <td>yes</td>
-<td>base</td>
+<td>neurodesktop</td>
 </tr>
 <tr>
 <td>vscode</td>
@@ -217,7 +221,7 @@ Use the guide below to add a tool to <em>neurodesktop</em>.</p>
 <td>yes</td>
 <td>yes</td>
 <td>yes</td>
-<td>base</td>
+<td>neurodesktop</td>
 </tr>
 <tr>
 <td>itksnap</td>
@@ -226,16 +230,7 @@ Use the guide below to add a tool to <em>neurodesktop</em>.</p>
 <td>yes</td>
 <td>yes</td>
 <td>yes</td>
-<td>container -> could be in base?</td>
-</tr>
-<tr>
-<td>matlab</td>
-<td>yes</td>
-<td>yes</td>
-<td>no</td>
-<td>no</td>
-<td>no</td>
-<td>container due to size?</td>
+<td>container?</td>
 </tr>
 <tr>
 <td>convert3D</td>
@@ -279,10 +274,11 @@ Use the guide below to add a tool to <em>neurodesktop</em>.</p>
 <p>To build a container:</p>
 <ol>
 <li>Add recipe to neurodocker if relevant (<a href=https://github.com/NeuroDesk/neurodocker>https://github.com/NeuroDesk/neurodocker</a>) and create a pull request to neurodocker</li>
-<li>Build the container <a href=https://github.com/NeuroDesk/caid>here</a></li>
-<li>Test the container, and if successful add the container to the Readme table <a href=https://github.com/NeuroDesk/neurodesk>here</a></li>
+<li>Build the container <a href=https://github.com/NeuroDesk/neurocontainers>https://github.com/NeuroDesk/neurocontainers</a></li>
+<li>Test the container, and if successful add the container to the apps.json file: <a href=https://github.com/NeuroDesk/neurocommand/blob/main/neurodesk/apps.json>https://github.com/NeuroDesk/neurocommand/blob/main/neurodesk/apps.json</a></li>
 </ol>
-<h2 id=menu-entry>Menu entry</h2>
+<h2 id=advanced-section>Advanced section</h2>
+<h3 id=menu-entry>Menu entry</h3>
 <p>As we want to propose several versions of the tools, each piece of software should have its own submenu under <code>VNM Neuroimaging</code>.
 To do so, you first have to add a submenu to <code>menus/vnm-applications.menu</code> by adding:</p>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=color:#8f5902;font-style:italic>&lt;!-- [[Tool Name]] submenu --&gt;</span>
@@ -329,7 +325,7 @@ To do so, you first have to add a submenu to <code>menus/vnm-applications.menu</
 <span style=color:#c4a000>Icon</span><span style=color:#ce5c00;font-weight:700>=</span><span style=color:#4e9a06>/home/neuro/.config/lxpanel/LXDE/icons/[[icon-name]].png</span>
 <span style=color:#c4a000>Type</span><span style=color:#ce5c00;font-weight:700>=</span><span style=color:#4e9a06>Directory</span>
 </code></pre></div><p>If a specific icon is available in the <code>menus/icons</code> directory, replace <code>[[icon-name]]</code> by its name. Otherwise, use <code>vnm</code>.</p>
-<h2 id=create-the-application>Create the application</h2>
+<h3 id=create-the-application>Create the application</h3>
 <p>Finally, we have to create the actual application by creating the file <code>menus/applications/vnm-[[tool-name]]-[[0.0.0]].desktop</code>. The name of this file must contain the version of the tool (once again to allow multiple versions to live inside the same directory). Add the following description to this file:</p>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-ini data-lang=ini><span style=color:#204a87;font-weight:700>[Desktop Entry]</span>
 <span style=color:#c4a000>Name</span><span style=color:#ce5c00;font-weight:700>=</span><span style=color:#4e9a06>[[Tool Name]] [[0.0.0]] [[(Install only)]]</span>
@@ -361,8 +357,8 @@ Here are two examples for FreeSurfer and FreeView. This first one only installs 
 </code></pre></div>
 <div class="text-muted mt-5 pt-3 border-top">
 Last modified
-September 16, 2021
-: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/30cb2c190d736e39ee9a2098b8683c7b953b5acf>cleanup (30cb2c1)</a>
+September 17, 2021
+: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/e221fe28514e5212e801cc384263f2c100688386>cleanup (e221fe2)</a>
 </div>
 </div>
 </main>
