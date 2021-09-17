@@ -21,12 +21,12 @@
 ">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://neurodesk.github.io/docs/neurodesktop/getting-started/mac/"><meta property="article:section" content="docs">
-<meta property="article:modified_time" content="2021-09-17T15:53:52+10:00"><meta property="og:site_name" content="NeuroDesk">
+<meta property="article:modified_time" content="2021-09-17T17:10:31+10:00"><meta property="og:site_name" content="NeuroDesk">
 <meta itemprop=name content="MacOS">
 <meta itemprop=description content="Install neurodesktop on MacOS
 ">
-<meta itemprop=dateModified content="2021-09-17T15:53:52+10:00">
-<meta itemprop=wordCount content="238">
+<meta itemprop=dateModified content="2021-09-17T17:10:31+10:00">
+<meta itemprop=wordCount content="240">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="MacOS">
 <meta name=twitter:description content="Install neurodesktop on MacOS
@@ -176,7 +176,7 @@
 <p>Open a terminal, and type the folowing command to automatically download the neurodesktop container and run it</p>
 </li>
 </ol>
-<pre tabindex=0><code>docker run --shm-size=1gb -it --privileged --name neurodesktop -v ~/neurodesktop-storage:/neurodesktop-storage -p 8080:8080 vnmd/neurodesktop:20210917
+<pre tabindex=0><code>docker run --shm-size=1gb -it --privileged --name neurodesktop -v ~/neurodesktop-storage:/neurodesktop-storage -p 8080:8080 -h neurodesktop-20210917 vnmd/neurodesktop:20210917
 </code></pre>
 <p>(notice: There is a bug in docker 3.3.0 for Mac that makes this command not run correctly and there will be no application menu when you start the desktop. Update your docker version when you see this!)</p>
 <p>if you get errors in neurodesktop then check if the ~/neurodesktop-storage directory is writable to all users, otherwise run <code>chmod a+rwx ~/neurodesktop-storage</code></p>
@@ -214,7 +214,7 @@
 <div class="text-muted mt-5 pt-3 border-top">
 Last modified
 September 17, 2021
-: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/9b4c0ca569a1e55d6cc8c5b162ce064945b9ae98>Add comment instructions for the neurodesktop ver (9b4c0ca)</a>
+: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/934499720af96b70e090e990a18016eeef1572c2>Change hostname to neurodesktop version (9344997)</a>
 </div>
 </div>
 </main>

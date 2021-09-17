@@ -21,12 +21,12 @@
 ">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://neurodesk.github.io/docs/neurodesktop/getting-started/linux/"><meta property="article:section" content="docs">
-<meta property="article:modified_time" content="2021-09-17T15:53:52+10:00"><meta property="og:site_name" content="NeuroDesk">
+<meta property="article:modified_time" content="2021-09-17T17:10:31+10:00"><meta property="og:site_name" content="NeuroDesk">
 <meta itemprop=name content="Linux">
 <meta itemprop=description content="Install neurodesktop on Linux
 ">
-<meta itemprop=dateModified content="2021-09-17T15:53:52+10:00">
-<meta itemprop=wordCount content="275">
+<meta itemprop=dateModified content="2021-09-17T17:10:31+10:00">
+<meta itemprop=wordCount content="278">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="Linux">
 <meta name=twitter:description content="Install neurodesktop on Linux
@@ -192,7 +192,8 @@ newgrp docker
   --shm-size=1gb -it --privileged --name neurodesktop \
   -v ~/neurodesktop-storage:/neurodesktop-storage \
   -e HOST_UID=&quot;$(id -u)&quot; -e HOST_GID=&quot;$(id -g)&quot; \
-  -p 8080:8080 vnmd/neurodesktop:20210917
+  -p 8080:8080 -h neurodesktop-20210917 \
+  vnmd/neurodesktop:20210917
 </code></pre>
 <p>(notice: if you get errors in neurodesktop then check if the ~/neurodesktop-storage directory is writable to all users, otherwise run <code>chmod a+rwx ~/neurodesktop-storage</code>)</p>
 <ol start=4>
@@ -229,7 +230,7 @@ newgrp docker
 <div class="text-muted mt-5 pt-3 border-top">
 Last modified
 September 17, 2021
-: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/9b4c0ca569a1e55d6cc8c5b162ce064945b9ae98>Add comment instructions for the neurodesktop ver (9b4c0ca)</a>
+: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/934499720af96b70e090e990a18016eeef1572c2>Change hostname to neurodesktop version (9344997)</a>
 </div>
 </div>
 </main>

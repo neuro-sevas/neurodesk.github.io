@@ -134,7 +134,8 @@ newgrp docker
   --shm-size=1gb -it --privileged --name neurodesktop \
   -v ~/neurodesktop-storage:/neurodesktop-storage \
   -e HOST_UID=&quot;$(id -u)&quot; -e HOST_GID=&quot;$(id -g)&quot; \
-  -p 8080:8080 vnmd/neurodesktop:20210917
+  -p 8080:8080 -h neurodesktop-20210917 \
+  vnmd/neurodesktop:20210917
 </code></pre>
 <p>(notice: if you get errors in neurodesktop then check if the ~/neurodesktop-storage directory is writable to all users, otherwise run <code>chmod a+rwx ~/neurodesktop-storage</code>)</p>
 <ol start=4>
@@ -189,7 +190,7 @@ newgrp docker
 <p>Open a terminal, and type the folowing command to automatically download the neurodesktop container and run it</p>
 </li>
 </ol>
-<pre tabindex=0><code>docker run --shm-size=1gb -it --privileged --name neurodesktop -v ~/neurodesktop-storage:/neurodesktop-storage -p 8080:8080 vnmd/neurodesktop:20210917
+<pre tabindex=0><code>docker run --shm-size=1gb -it --privileged --name neurodesktop -v ~/neurodesktop-storage:/neurodesktop-storage -p 8080:8080 -h neurodesktop-20210917 vnmd/neurodesktop:20210917
 </code></pre>
 <p>(notice: There is a bug in docker 3.3.0 for Mac that makes this command not run correctly and there will be no application menu when you start the desktop. Update your docker version when you see this!)</p>
 <p>if you get errors in neurodesktop then check if the ~/neurodesktop-storage directory is writable to all users, otherwise run <code>chmod a+rwx ~/neurodesktop-storage</code></p>
@@ -246,7 +247,7 @@ newgrp docker
 <p>Open a terminal, and type the folowing command to automatically download the neurodesktop container and run it</p>
 </li>
 </ol>
-<pre tabindex=0><code>docker run --shm-size=1gb -it --privileged --name neurodesktop -v C:/neurodesktop-storage:/neurodesktop-storage -p 8080:8080 vnmd/neurodesktop:20210917
+<pre tabindex=0><code>docker run --shm-size=1gb -it --privileged --name neurodesktop -v C:/neurodesktop-storage:/neurodesktop-storage -p 8080:8080 -h neurodesktop-20210917 vnmd/neurodesktop:20210917
 </code></pre>
 <ol start=4>
 <li>Once neurodesktop is downloaded i.e. <code>guacd[77]: INFO: Listening on host 127.0.0.1, port 4822</code> is displayed in terminal, open a browser and go to:</li>
@@ -325,7 +326,8 @@ newgrp docker
   --shm-size=1gb -it --privileged --name neurodesktop \
   -v ~/neurodesktop-storage:/neurodesktop-storage \
   -e HOST_UID=&quot;$(id -u)&quot; -e HOST_GID=&quot;$(id -g)&quot; \
-  -p 8080:8080 vnmd/neurodesktop:20210917
+  -p 8080:8080 -h neurodesktop-20210917 \
+  vnmd/neurodesktop:20210917
 </code></pre>
 <p>(notice: if you get errors in neurodesktop then check if the ~/neurodesktop-storage directory is writable to all users, otherwise run <code>chmod a+rwx ~/neurodesktop-storage</code>)</p>
 <ol start=5>
