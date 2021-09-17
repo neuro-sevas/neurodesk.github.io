@@ -68,14 +68,14 @@ sudo chown root:docker /var/run/docker.sock
 newgrp docker
 &lt;/code>&lt;/pre>&lt;ol start="2">
 &lt;li>
-&lt;p>Create a local folder where the downloaded applications will be stored, e.g. ~/neurodesktop&lt;/p>
+&lt;p>Create a local folder where the downloaded applications will be stored, e.g. ~/neurodesktop-storage&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Open a terminal, and type the folowing command to automatically download the neurodesktop container and run it (Mac, Windows, Linux commands listed below)&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;pre tabindex="0">&lt;code>sudo docker run --shm-size=1gb -it --privileged --name neurodesktop -v ~/neurodesktop:/neurodesktop -e HOST_UID=&amp;quot;$(id -u)&amp;quot; -e HOST_GID=&amp;quot;$(id -g)&amp;quot; -p 8080:8080 vnmd/neurodesktop:20210917
-&lt;/code>&lt;/pre>&lt;p>(notice: if you get errors in neurodesktop then check if the ~/neurodesktop directory is writable to all users, otherwise run &lt;code>chmod a+rwx ~/neurodesktop&lt;/code>)&lt;/p>
+&lt;pre tabindex="0">&lt;code>sudo docker run --shm-size=1gb -it --privileged --name neurodesktop -v ~/neurodesktop-storage:/neurodesktop-storage -e HOST_UID=&amp;quot;$(id -u)&amp;quot; -e HOST_GID=&amp;quot;$(id -g)&amp;quot; -p 8080:8080 vnmd/neurodesktop:20210917
+&lt;/code>&lt;/pre>&lt;p>(notice: if you get errors in neurodesktop then check if the ~/neurodesktop-storage directory is writable to all users, otherwise run &lt;code>chmod a+rwx ~/neurodesktop-storage&lt;/code>)&lt;/p>
 &lt;ol start="4">
 &lt;li>Once neurodesktop is downloaded i.e. &lt;code>guacd[77]: INFO: Listening on host 127.0.0.1, port 4822&lt;/code> is displayed in terminal, open a browser and go to:&lt;/li>
 &lt;/ol>
@@ -118,15 +118,15 @@ newgrp docker
 &lt;p>Install Docker from here: &lt;a href="https://docs.docker.com/get-docker/">https://docs.docker.com/get-docker/&lt;/a>&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>Create a local folder where the downloaded applications will be stored, e.g. ~/neurodesktop&lt;/p>
+&lt;p>Create a local folder where the downloaded applications will be stored, e.g. ~/neurodesktop-storage&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Open a terminal, and type the folowing command to automatically download the neurodesktop container and run it&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;pre tabindex="0">&lt;code>docker run --shm-size=1gb -it --privileged --name neurodesktop -v ~/neurodesktop:/neurodesktop -p 8080:8080 vnmd/neurodesktop:20210917
+&lt;pre tabindex="0">&lt;code>docker run --shm-size=1gb -it --privileged --name neurodesktop -v ~/neurodesktop-storage:/neurodesktop-storage -p 8080:8080 vnmd/neurodesktop:20210917
 &lt;/code>&lt;/pre>&lt;p>(notice: There is a bug in docker 3.3.0 for Mac that makes this command not run correctly and there will be no application menu when you start the desktop. Update your docker version when you see this!)&lt;/p>
-&lt;p>if you get errors in neurodesktop then check if the ~/neurodesktop directory is writable to all users, otherwise run &lt;code>chmod a+rwx ~/neurodesktop&lt;/code>&lt;/p>
+&lt;p>if you get errors in neurodesktop then check if the ~/neurodesktop-storage directory is writable to all users, otherwise run &lt;code>chmod a+rwx ~/neurodesktop-storage&lt;/code>&lt;/p>
 &lt;ol start="4">
 &lt;li>Once neurodesktop is downloaded i.e. &lt;code>guacd[77]: INFO: Listening on host 127.0.0.1, port 4822&lt;/code> is displayed in terminal, open a browser and go to:&lt;/li>
 &lt;/ol>
@@ -174,7 +174,7 @@ newgrp docker
 &lt;h2 id="how-to-force-a-complete-container-download-to-your-system">How to force a complete container download to your system&lt;/h2>
 &lt;p>To increase speed and reliability of Neurodesktop we mount the application containers from a CVMFS mount and download only the files required to run your current task. Although we aim to keep everything on there reproducible, there might be a reason that you want to fully download the containers to your system. You can force this behaviour by adding another parameter to the docker call: &lt;code>-e CVMFS_DISABLE=true&lt;/code>&lt;/p>
 &lt;p>For windows an example would look like this:&lt;/p>
-&lt;pre tabindex="0">&lt;code>docker run --shm-size=1gb -it --privileged --name neurodesktop -v C:/neurodesktop:/neurodesktop -e CVMFS_DISABLE=true -p 8080:8080 neurodesktop:20210917
+&lt;pre tabindex="0">&lt;code>docker run --shm-size=1gb -it --privileged --name neurodesktop -v C:/neurodesktop-storage:/neurodesktop-storage -e CVMFS_DISABLE=true -p 8080:8080 neurodesktop:20210917
 &lt;/code>&lt;/pre></description></item><item><title>Docs: Windows</title><link>https://neurodesk.github.io/docs/neurocommand/getting-started/windows/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurocommand/getting-started/windows/</guid><description>
 &lt;h2 id="wsl-w-ubuntu--lxde">WSL (w/ Ubuntu + LXDE)&lt;/h2>
 &lt;p>For more information on WSL: &lt;a href="https://docs.microsoft.com/en-us/windows/wsl">https://docs.microsoft.com/en-us/windows/wsl&lt;/a>&lt;/p>
@@ -263,7 +263,7 @@ Change &lt;code>port=3389&lt;/code> to &lt;code>port=3390&lt;/code> and save&lt;
 &lt;p>Open a terminal, and type the folowing command to automatically download the neurodesktop container and run it&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;pre tabindex="0">&lt;code>docker run --shm-size=1gb -it --privileged --name neurodesktop -v C:/neurodesktop:/neurodesktop -p 8080:8080 vnmd/neurodesktop:20210917
+&lt;pre tabindex="0">&lt;code>docker run --shm-size=1gb -it --privileged --name neurodesktop -v C:/neurodesktop-storage:/neurodesktop-storage -p 8080:8080 vnmd/neurodesktop:20210917
 &lt;/code>&lt;/pre>&lt;ol start="4">
 &lt;li>Once neurodesktop is downloaded i.e. &lt;code>guacd[77]: INFO: Listening on host 127.0.0.1, port 4822&lt;/code> is displayed in terminal, open a browser and go to:&lt;/li>
 &lt;/ol>
@@ -576,14 +576,14 @@ sudo chown root:docker /var/run/docker.sock
 newgrp docker
 &lt;/code>&lt;/pre>&lt;ol start="3">
 &lt;li>
-&lt;p>Create a local folder where the downloaded applications will be stored, e.g. ~/neurodesktop&lt;/p>
+&lt;p>Create a local folder where the downloaded applications will be stored, e.g. ~/neurodesktop-storage&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Open a terminal, and type the folowing command to automatically download the neurodesktop container and run it (Mac, Windows, Linux commands listed below)&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;pre tabindex="0">&lt;code>sudo docker run --shm-size=1gb -it --privileged --name neurodesktop -v ~/neurodesktop:/neurodesktop -e HOST_UID=&amp;quot;$(id -u)&amp;quot; -e HOST_GID=&amp;quot;$(id -g)&amp;quot; -p 8080:8080 vnmd/neurodesktop:20210917
-&lt;/code>&lt;/pre>&lt;p>(notice: if you get errors in neurodesktop then check if the ~/neurodesktop directory is writable to all users, otherwise run &lt;code>chmod a+rwx ~/neurodesktop&lt;/code>)&lt;/p>
+&lt;pre tabindex="0">&lt;code>sudo docker run --shm-size=1gb -it --privileged --name neurodesktop -v ~/neurodesktop-storage:/neurodesktop-storage -e HOST_UID=&amp;quot;$(id -u)&amp;quot; -e HOST_GID=&amp;quot;$(id -g)&amp;quot; -p 8080:8080 vnmd/neurodesktop:20210917
+&lt;/code>&lt;/pre>&lt;p>(notice: if you get errors in neurodesktop then check if the ~/neurodesktop-storage directory is writable to all users, otherwise run &lt;code>chmod a+rwx ~/neurodesktop-storage&lt;/code>)&lt;/p>
 &lt;ol start="5">
 &lt;li>Once neurodesktop is downloaded i.e. &lt;code>guacd[77]: INFO: Listening on host 127.0.0.1, port 4822&lt;/code> is displayed in terminal, open a browser and go to:&lt;/li>
 &lt;/ol>
