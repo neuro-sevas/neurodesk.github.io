@@ -131,7 +131,7 @@ vnmd/neurodesktop:20210917
 &lt;p>Install Docker from here: &lt;a href="https://docs.docker.com/get-docker/">https://docs.docker.com/get-docker/&lt;/a>&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>Create a local folder where the downloaded applications will be stored, e.g. C:\neurodesktop&lt;/p>
+&lt;p>Create a local folder where the downloaded applications will be stored, e.g. C:\neurodesktop-storage&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Open a terminal, and type the folowing command to automatically download the neurodesktop container and run it&lt;/p>
