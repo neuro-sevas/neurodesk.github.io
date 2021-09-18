@@ -192,8 +192,8 @@ newgrp docker
   --shm-size=1gb -it --privileged --name neurodesktop \
   -v ~/neurodesktop-storage:/neurodesktop-storage \
   -e HOST_UID=&quot;$(id -u)&quot; -e HOST_GID=&quot;$(id -g)&quot; \
-  -p 8080:8080 -h neurodesktop-20210917 \
-  vnmd/neurodesktop:20210917
+  -p 8080:8080 -h neurodesktop-20210918 \
+  vnmd/neurodesktop:20210918
 </code></pre>
 <p>(notice: if you get errors in neurodesktop then check if the ~/neurodesktop-storage directory is writable to all users, otherwise run <code>chmod a+rwx ~/neurodesktop-storage</code>)</p>
 <ol start=4>
