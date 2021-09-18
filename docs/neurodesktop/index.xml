@@ -117,6 +117,10 @@ We recommend the &lt;em>manual&lt;/em> install instructions, as the simplified i
 &lt;p>If this is the case, follow the manual install instructions to install &lt;a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">WSL 2&lt;/a> (including installation of Ubuntu through Microsoft Store).&lt;/p>
 &lt;h2 id="not-enough-free-space-on-the-partition-in-windows-and-wsl2">Not enough free space on the partition in Windows and WSL2&lt;/h2>
 &lt;p>This could help: &lt;a href="https://yjmantilla.github.io/tutorials/wsl2-move-vhdx.html">https://yjmantilla.github.io/tutorials/wsl2-move-vhdx.html&lt;/a>&lt;/p></description></item><item><title>Docs: Release History</title><link>https://neurodesk.github.io/docs/neurodesktop/release-history/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/release-history/</guid><description>
+&lt;h2 id="20210918">20210918&lt;/h2>
+&lt;ul>
+&lt;li>added mriqc 0.16.1 and mrtrix 3.0.3&lt;/li>
+&lt;/ul>
 &lt;h2 id="20210917">20210917&lt;/h2>
 &lt;ul>
 &lt;li>included more tools for connecting to cloud storage services (rclone, owncloud, nextcloud, davfs2, globus). For more info: &lt;a href="https://neurodesk.github.io/docs/neurodesktop/storage">Storage&lt;/a>&lt;/li>
