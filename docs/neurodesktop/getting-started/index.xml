@@ -131,20 +131,17 @@ vnmd/neurodesktop:20210917
 &lt;p>Install Docker from here: &lt;a href="https://docs.docker.com/get-docker/">https://docs.docker.com/get-docker/&lt;/a>&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>Create a local folder where the downloaded applications will be stored, e.g. C:\neurodesktop-storage&lt;/p>
-&lt;/li>
-&lt;li>
 &lt;p>Open a terminal, and type the folowing command to automatically download the neurodesktop container and run it&lt;/p>
 &lt;/li>
 &lt;/ol>
 &lt;pre tabindex="0">&lt;code>docker run --shm-size=1gb -it --privileged --name neurodesktop -v C:/neurodesktop-storage:/neurodesktop-storage -p 8080:8080 -h neurodesktop-20210917 vnmd/neurodesktop:20210917
 &lt;/code>&lt;/pre>&lt;!-- neurodesktop version found in neurodesk.github.io/data/neurodesktop.toml -->
-&lt;ol start="4">
+&lt;ol start="3">
 &lt;li>Once neurodesktop is downloaded i.e. &lt;code>guacd[77]: INFO: Listening on host 127.0.0.1, port 4822&lt;/code> is displayed in terminal, open a browser and go to:&lt;/li>
 &lt;/ol>
 &lt;pre tabindex="0">&lt;code>http://localhost:8080/#/?username=user&amp;amp;password=password
 &lt;/code>&lt;/pre>&lt;p>or open a VNC Client and connect to port 5901 (for this -p 5901:5901 has to be added to the docker call)&lt;/p>
-&lt;ol start="5">
+&lt;ol start="4">
 &lt;li>neurodesktop is ready to use!&lt;/li>
 &lt;/ol>
 &lt;ul>
