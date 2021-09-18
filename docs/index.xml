@@ -528,7 +528,7 @@ Here are two examples for FreeSurfer and FreeView. This first one only installs 
 &lt;h1 id="mount-volume-using-sshfs">Mount volume using SSHFS&lt;/h1>
 &lt;p>It is theoretically possible to mount an SSH target inside Neurodesktop, but it&amp;rsquo;s not a very reliable way of mounting storage:&lt;/p>
 &lt;pre tabindex="0">&lt;code>sshfs -o allow_root USER@TARGET_HOST:TARGET_PATH SOURCE_PATH
-&lt;/code>&lt;/pre>&lt;p>Another option is to utilize scp and copy data from an SSH endpoint:&lt;/p>
+&lt;/code>&lt;/pre>&lt;p>A better option is to use &lt;code>scp&lt;/code> and copy data from an SSH endpoint:&lt;/p>
 &lt;pre tabindex="0">&lt;code>scp /neurodesk/myfile user@remoteserver:/data/
 &lt;/code>&lt;/pre></description></item><item><title>Docs: Troubleshooting</title><link>https://neurodesk.github.io/docs/neurodesktop/troubleshooting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/troubleshooting/</guid><description>
 &lt;p>Neurodesk is an open-source project that is always evolving. If you are experiencing an issue not listed here, please open a &lt;a href="https://github.com/NeuroDesk/neurodesk.github.io/issues">new issue&lt;/a>, so that we can aim to solve it and update our help documentation.&lt;/p>

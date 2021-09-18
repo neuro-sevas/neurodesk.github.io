@@ -21,12 +21,12 @@
 ">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://neurodesk.github.io/docs/neurodesktop/storage/"><meta property="article:section" content="docs">
-<meta property="article:modified_time" content="2021-09-17T14:21:38+10:00"><meta property="og:site_name" content="NeuroDesk">
+<meta property="article:modified_time" content="2021-09-18T22:51:44+10:00"><meta property="og:site_name" content="NeuroDesk">
 <meta itemprop=name content="Storage">
 <meta itemprop=description content="Add storage to Neurodesktop
 ">
-<meta itemprop=dateModified content="2021-09-17T14:21:38+10:00">
-<meta itemprop=wordCount content="457">
+<meta itemprop=dateModified content="2021-09-18T22:51:44+10:00">
+<meta itemprop=wordCount content="458">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="Storage">
 <meta name=twitter:description content="Add storage to Neurodesktop
@@ -196,13 +196,13 @@
 <h1 id=mount-volume-using-sshfs>Mount volume using SSHFS</h1>
 <p>It is theoretically possible to mount an SSH target inside Neurodesktop, but it&rsquo;s not a very reliable way of mounting storage:</p>
 <pre tabindex=0><code>sshfs -o allow_root USER@TARGET_HOST:TARGET_PATH SOURCE_PATH
-</code></pre><p>Another option is to utilize scp and copy data from an SSH endpoint:</p>
+</code></pre><p>A better option is to use <code>scp</code> and copy data from an SSH endpoint:</p>
 <pre tabindex=0><code>scp /neurodesk/myfile user@remoteserver:/data/
 </code></pre>
 <div class="text-muted mt-5 pt-3 border-top">
 Last modified
-September 17, 2021
-: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/735febbf7dd0c7fd338224c10839239b27510136>changed to neurodesktop-storage (735febb)</a>
+September 18, 2021
+: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/44461ac945283d7ea8215e9cb66d3494fd9b502e>updated scp explanation (44461ac)</a>
 </div>
 </div>
 </main>

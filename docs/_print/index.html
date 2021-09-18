@@ -591,7 +591,7 @@ newgrp docker
 <h1 id=mount-volume-using-sshfs>Mount volume using SSHFS</h1>
 <p>It is theoretically possible to mount an SSH target inside Neurodesktop, but it&rsquo;s not a very reliable way of mounting storage:</p>
 <pre tabindex=0><code>sshfs -o allow_root USER@TARGET_HOST:TARGET_PATH SOURCE_PATH
-</code></pre><p>Another option is to utilize scp and copy data from an SSH endpoint:</p>
+</code></pre><p>A better option is to use <code>scp</code> and copy data from an SSH endpoint:</p>
 <pre tabindex=0><code>scp /neurodesk/myfile user@remoteserver:/data/
 </code></pre>
 </div>
