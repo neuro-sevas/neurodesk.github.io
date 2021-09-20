@@ -1,0 +1,16 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>NeuroDesk – New Releases</title><link>https://neurodesk.github.io/blog/releases/</link><description>Recent content in New Releases on NeuroDesk</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://neurodesk.github.io/blog/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>Blog: Sept 2021</title><link>https://neurodesk.github.io/blog/2021/09/20/sept-2021/</link><pubDate>Mon, 20 Sep 2021 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/blog/2021/09/20/sept-2021/</guid><description>
+&lt;h2 id="20210918">20210918&lt;/h2>
+&lt;ul>
+&lt;li>added mriqc 0.16.1 and mrtrix 3.0.3&lt;/li>
+&lt;/ul>
+&lt;h2 id="20210917">20210917&lt;/h2>
+&lt;ul>
+&lt;li>included more tools for connecting to cloud storage services (rclone, owncloud, nextcloud, davfs2, globus). For more info: &lt;a href="https://neurodesk.github.io/docs/neurodesktop/storage">Storage&lt;/a>&lt;/li>
+&lt;li>styling of desktop interface, including background wallpaper and colour scheme in terminal window&lt;/li>
+&lt;li>new categories in menu system (visualization) and added more categories to tools&lt;/li>
+&lt;/ul>
+&lt;h2 id="20210916">20210916&lt;/h2>
+&lt;ul>
+&lt;li>This is the first version of the newly renamed and rebuild neurodesktop (previously vnm and neuromachine)&lt;/li>
+&lt;li>containers are mounted by default from CVMFS, but this can be deactivated by adding &lt;code>-e CVMFS_DISABLE=true&lt;/code> to the docker call&lt;/li>
+&lt;/ul></description></item></channel></rss>
