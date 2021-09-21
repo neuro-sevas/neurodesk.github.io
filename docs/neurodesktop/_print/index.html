@@ -466,6 +466,8 @@ newgrp docker
 <p>The easiest way to get your data into Neurodesktop is to use a cloud storage provider like CloudStor, Dropbox, OneDrive and their sync tools like OwnCloud, Nextcloud or very flexible tools like rclone or davfs2. Another good option could be to utilize Globus for large amounts of data.</p>
 <h2 id=nextcloud-and-owncloud-desktop-clients>Nextcloud and Owncloud desktop clients</h2>
 <p>Under the menu item &ldquo;Accessories&rdquo; you can find &ldquo;Nextcloud&rdquo; and &ldquo;ownCloud&rdquo; desktop sync clients that you can configure with your cloud service accounts.</p>
+<p>To connect for example to your AARNET cloudstor account you can start the ownCloud client and enter the Server Address: <code>https://cloudstor.aarnet.edu.au/plus/</code></p>
+<p>Then generate an app-password here: <a href="https://cloudstor.aarnet.edu.au/plus/settings/personal?sectionid=security">https://cloudstor.aarnet.edu.au/plus/settings/personal?sectionid=security</a></p>
 <h2 id=mounting-webdav-storage-using-davfs2>Mounting webdav storage using davfs2</h2>
 <p>Another option is to directly mount webdav storage. Here is an example how to mount CloudStor into Neurodesktop:</p>
 <pre tabindex=0><code>sudo mount -t davfs https://cloudstor.aarnet.edu.au/plus/remote.php/webdav/ /data/
