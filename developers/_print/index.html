@@ -62,11 +62,315 @@
 </div>
 </nav>
 </header>
-<div class="container-fluid td-default td-outer">
-<main role=main class=td-main>
+<div class="container-fluid td-outer">
+<div class=td-main>
+<div class="row flex-xl-nowrap">
+<div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+</div>
+<div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+</div>
+<main class="col-12 col-md-9 col-xl-8 pl-md-5" role=main>
+<div class=td-content>
+<div class="pageinfo pageinfo-primary d-print-none">
+<p>
+This the multi-page printable view of this section.
+<a href=# onclick="return print(),!1">Click here to print</a>.
+</p><p>
+<a href=/developers/>Return to the regular view of this page</a>.
+</p>
+</div>
+<h1 class=title>Developers</h1>
+<div class=lead>Documentation for Developers</div>
+<ul>
+<li>1: <a href=#pg-9dfb256e35d7dd91e05a33ec675f72e4>Neurodesk CVMFS</a></li>
+<ul>
+<li>1.1: <a href=#pg-dc7170a19b6b3c70bb32fcaf49c693ba>Host a Stratum 1 server</a></li>
+</ul>
+<li>2: <a href=#pg-fd28a1b5010f2ff02bb480802674fb39>How to add new tools</a></li>
+<ul>
+<li>2.1: <a href=#pg-e24a02244ddbf4a83fcf0095e3003590>Add tools</a></li>
+<li>2.2: <a href=#pg-59bac5d14e5bc87231546825353a0899>Neurodesk Architecture</a></li>
+</ul>
+<li>3: <a href=#pg-f89498a0fd2d201e1dc7e27d7be9f337>Transparent Singularity</a></li>
+<ul>
+<li>3.1: <a href=#pg-1aeb0eca05cfedc27d063e428d152eec>Use transparent singularity</a></li>
+</ul>
+</ul>
+<div class=content>
 <h2 id=overview>Overview</h2>
 <p>For an overview of the Neurodesk platform, go to: <a href=/docs/overview/>Overview</a></p>
+</div>
+</div>
+<div class=td-content>
+<h1 id=pg-9dfb256e35d7dd91e05a33ec675f72e4>1 - Neurodesk CVMFS</h1>
+<div class=lead>How to interact with our CVMFS service.</div>
+</div>
+<div class=td-content>
+<h1 id=pg-dc7170a19b6b3c70bb32fcaf49c693ba>1.1 - Host a Stratum 1 server</h1>
+<div class=lead>Host a Stratum 1 server</div>
+<p>or a proxy &mldr;</p>
+</div>
+<div class=td-content style=page-break-before:always>
+<h1 id=pg-fd28a1b5010f2ff02bb480802674fb39>2 - How to add new tools</h1>
+<div class=lead>Developer guide</div>
+<h2 id=developing-neurodeskgithubio>Developing neurodesk.github.io</h2>
+<h3 id=clone-repository>Clone repository</h3>
+<p>Using SSH</p>
+<p><code>git clone --recurse-submodules git@github.com:NeuroDesk/neurodesk.github.io.git</code></p>
+<p>or Https:</p>
+<p><code>git clone --recurse-submodules https://github.com/NeuroDesk/neurodesk.github.io.git</code></p>
+<h3 id=download-hugo-binary>Download Hugo binary</h3>
+<p>Hugo releases are on <a href=https://github.com/gohugoio/hugo/releases>https://github.com/gohugoio/hugo/releases</a></p>
+<p>Download latest version of hugo extended</p>
+<p>e.g. for windows: <a href=https://github.com/gohugoio/hugo/releases/download/v0.88.1/hugo_extended_0.88.1_Windows-64bit.zip>https://github.com/gohugoio/hugo/releases/download/v0.88.1/hugo_extended_0.88.1_Windows-64bit.zip</a></p>
+<h3 id=start-local-hugo-server>Start local hugo server</h3>
+<p>Extract hugo binary (hugo.exe) to your neurodesk.github.io dir</p>
+<p>Run server for windows: <code>.\hugo.exe server --disableFastRender</code></p>
+<p>Once started, dev website will be accessible via http://localhost:1313</p>
+</div>
+<div class=td-content style=page-break-before:always>
+<h1 id=pg-e24a02244ddbf4a83fcf0095e3003590>2.1 - Add tools</h1>
+<div class=lead>Add a tool to neurodesktop</div>
+<p>The goal of <em>neurodesk</em> is to provide users with a large choice of tools to use in their pipelines.
+Use the guide below to add a tool to <em>neurodesktop</em> or <em>neurocontainers</em>.</p>
+<h2 id=guiding-principles>Guiding principles</h2>
+<p>To decide if a tool should be packaged in a singularity container in <em>neurocontainers</em> or be installed in the <em>neurodesktop</em> container we are currently following these guiding principles:</p>
+<ol>
+<li><em>neurodesk</em> is not a package manager. This means we are not distributing tools in containers that can easily be installed via a standard package manager</li>
+<li><em>neurodesk</em> allows users to have multiple versions of tools in parallel via <a href=https://lmod.readthedocs.io/en/latest/>lmod</a>, this means that if different versions of a tool can&rsquo;t be installed in parallel we package the tool inside a container.</li>
+<li><em>neurodesk</em> aims to provide tooling to link tools from different containers (such as workflow managers like nipype or nextflow). This means that if a tool is required to coordinate various container-tools, it should be in the <em>neurodesktop</em> container.</li>
+</ol>
+<p>Examples:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>easy install</th>
+<th>coordinates containers</th>
+<th>small in size</th>
+<th>latest version is ok</th>
+<th>useful more most users</th>
+<th>Conclusion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>git</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+<td>neurodesktop</td>
+</tr>
+<tr>
+<td>lmod</td>
+<td>no</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+<td>neurodesktop</td>
+</tr>
+<tr>
+<td>nipype</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+<td>neurodesktop</td>
+</tr>
+<tr>
+<td>vscode</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+<td>neurodesktop</td>
+</tr>
+<tr>
+<td>itksnap</td>
+<td>yes</td>
+<td>no</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+<td>container?</td>
+</tr>
+<tr>
+<td>convert3D</td>
+<td>yes</td>
+<td>no</td>
+<td>yes</td>
+<td>no</td>
+<td>no</td>
+<td>container</td>
+</tr>
+<tr>
+<td>fsl</td>
+<td>no</td>
+<td>no</td>
+<td>no</td>
+<td>no</td>
+<td>no</td>
+<td>container</td>
+</tr>
+<tr>
+<td>mrtrix</td>
+<td>no</td>
+<td>no</td>
+<td>no</td>
+<td>no</td>
+<td>no</td>
+<td>container</td>
+</tr>
+<tr>
+<td>freesurfer</td>
+<td>no</td>
+<td>no</td>
+<td>no</td>
+<td>no</td>
+<td>no</td>
+<td>container</td>
+</tr>
+</tbody>
+</table>
+<h2 id=build-container>Build container</h2>
+<p>To build a container:</p>
+<ol>
+<li>Add recipe to neurodocker if relevant (<a href=https://github.com/NeuroDesk/neurodocker>https://github.com/NeuroDesk/neurodocker</a>) and create a pull request to neurodocker</li>
+<li>Build the container <a href=https://github.com/NeuroDesk/neurocontainers>https://github.com/NeuroDesk/neurocontainers</a></li>
+<li>Test the container, and if successful add the container to the apps.json file: <a href=https://github.com/NeuroDesk/neurocommand/blob/main/neurodesk/apps.json>https://github.com/NeuroDesk/neurocommand/blob/main/neurodesk/apps.json</a></li>
+</ol>
+<h2 id=advanced-section>Advanced section</h2>
+<h3 id=menu-entry>Menu entry</h3>
+<p>As we want to propose several versions of the tools, each piece of software should have its own submenu under <code>VNM Neuroimaging</code>.
+To do so, you first have to add a submenu to <code>menus/vnm-applications.menu</code> by adding:</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=color:#8f5902;font-style:italic>&lt;!-- [[Tool Name]] submenu --&gt;</span>
+<span style=color:#204a87;font-weight:700>&lt;Menu&gt;</span>
+    <span style=color:#204a87;font-weight:700>&lt;Name&gt;</span>[[Tool Name]]<span style=color:#204a87;font-weight:700>&lt;/Name&gt;</span>
+    <span style=color:#204a87;font-weight:700>&lt;Directory&gt;</span>vnm-[[tool-name]].directory<span style=color:#204a87;font-weight:700>&lt;/Directory&gt;</span>
+    <span style=color:#204a87;font-weight:700>&lt;Include&gt;</span>
+        <span style=color:#204a87;font-weight:700>&lt;And&gt;</span>
+            <span style=color:#204a87;font-weight:700>&lt;Category&gt;</span>[[Tool-Name]]<span style=color:#204a87;font-weight:700>&lt;/Category&gt;</span>
+        <span style=color:#204a87;font-weight:700>&lt;/And&gt;</span>
+    <span style=color:#204a87;font-weight:700>&lt;/Include&gt;</span>
+<span style=color:#204a87;font-weight:700>&lt;/Menu&gt;</span> <span style=color:#8f5902;font-style:italic>&lt;!-- End [[Tool Name]] --&gt;</span>
+</code></pre></div><p>The following table shows the formatting rules to follow:</p>
+<table>
+<thead>
+<tr>
+<th>Placeholder</th>
+<th>Rule</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>[[Tool name]]</code></td>
+<td>Capitalized, spaces</td>
+<td><code>ITK snap</code></td>
+</tr>
+<tr>
+<td><code>[[tool-name]]</code></td>
+<td>Lower case, no spaces (use <code>-</code> instead)</td>
+<td><code>itk-snap</code> or <code>itksnap</code></td>
+</tr>
+<tr>
+<td><code>[[Tool-name]]</code></td>
+<td>Capitalized, no spaces (use <code>-</code> instead)</td>
+<td><code>ITK-snap</code></td>
+</tr>
+</tbody>
+</table>
+<p>Next, we have to create the submenu itself as we referenced it by <code>vnm-[[tool-name]].directory</code>. To do so, create the file <code>menus/submenus/vnm-[[tool-name]].directory</code> and add the following information inside:</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-ini data-lang=ini><span style=color:#204a87;font-weight:700>[Desktop Entry]</span>
+<span style=color:#c4a000>Name</span><span style=color:#ce5c00;font-weight:700>=</span><span style=color:#4e9a06>[[Tool Name]]</span>
+<span style=color:#c4a000>Comment</span><span style=color:#ce5c00;font-weight:700>=</span><span style=color:#4e9a06>[[Tool Name]]</span>
+<span style=color:#c4a000>Icon</span><span style=color:#ce5c00;font-weight:700>=</span><span style=color:#4e9a06>/home/neuro/.config/lxpanel/LXDE/icons/[[icon-name]].png</span>
+<span style=color:#c4a000>Type</span><span style=color:#ce5c00;font-weight:700>=</span><span style=color:#4e9a06>Directory</span>
+</code></pre></div><p>If a specific icon is available in the <code>menus/icons</code> directory, replace <code>[[icon-name]]</code> by its name. Otherwise, use <code>vnm</code>.</p>
+<h3 id=create-the-application>Create the application</h3>
+<p>Finally, we have to create the actual application by creating the file <code>menus/applications/vnm-[[tool-name]]-[[0.0.0]].desktop</code>. The name of this file must contain the version of the tool (once again to allow multiple versions to live inside the same directory). Add the following description to this file:</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-ini data-lang=ini><span style=color:#204a87;font-weight:700>[Desktop Entry]</span>
+<span style=color:#c4a000>Name</span><span style=color:#ce5c00;font-weight:700>=</span><span style=color:#4e9a06>[[Tool Name]] [[0.0.0]] [[(Install only)]]</span>
+<span style=color:#c4a000>GenericName</span><span style=color:#ce5c00;font-weight:700>=</span><span style=color:#4e9a06>[[Tool Name]] [[0.0.0]]</span>
+<span style=color:#c4a000>Comment</span><span style=color:#ce5c00;font-weight:700>=</span><span style=color:#4e9a06>The description of what clicking on this application does. # This will be the tooltip of the application.</span>
+<span style=color:#c4a000>Exec</span><span style=color:#ce5c00;font-weight:700>=</span><span style=color:#4e9a06>The command used to run the application.</span>
+<span style=color:#c4a000>Icon</span><span style=color:#ce5c00;font-weight:700>=</span><span style=color:#4e9a06>/home/neuro/.config/lxpanel/LXDE/icons/[[icon-name]].png</span>
+<span style=color:#c4a000>Type</span><span style=color:#ce5c00;font-weight:700>=</span><span style=color:#4e9a06>Application</span>
+<span style=color:#c4a000>Categories</span><span style=color:#ce5c00;font-weight:700>=</span><span style=color:#4e9a06>[[Tool-name]]</span>
+<span style=color:#c4a000>Terminal</span><span style=color:#ce5c00;font-weight:700>=</span><span style=color:#4e9a06>true # or false</span>
+</code></pre></div><p>The important part here is the value of <code>Exec</code>. If the tool is in the form of a singularity image, you should run the following command:</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>bash /usr/share/fetch_and_run.sh <span style=color:#ce5c00;font-weight:700>[[</span>tool-name<span style=color:#ce5c00;font-weight:700>]]</span> <span style=color:#ce5c00;font-weight:700>[[</span>0.0.0<span style=color:#ce5c00;font-weight:700>]]</span> <span style=color:#ce5c00;font-weight:700>[[</span>YYYYMMDD<span style=color:#ce5c00;font-weight:700>]]</span> <span style=color:#ce5c00;font-weight:700>[[</span>cmd<span style=color:#ce5c00;font-weight:700>]]</span> <span style=color:#ce5c00;font-weight:700>[[</span>args<span style=color:#ce5c00;font-weight:700>]]</span>
+</code></pre></div><p>What <code>fetch_and_run.sh</code> does is check if the image is already installed as a module. If not, it checks whether it can be installed or not (return <code>1</code> if not possible). After that, it installs the image as a module.
+If <code>[[cmd]]</code> is specified, once the image is installed, it runs the command by giving the arguments from <code>[[args]]</code>.
+Here are two examples for FreeSurfer and FreeView. This first one only installs the image as a module:</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>bash /usr/share/fetch_and_run.sh freesurfer 6.0.1 <span style=color:#0000cf;font-weight:700>20200506</span>
+</code></pre></div><p>And this does the same but runs FreeView afterward:</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>bash /usr/share/fetch_and_run.sh freesurfer 6.0.1 <span style=color:#0000cf;font-weight:700>20200506</span> freeview
+</code></pre></div><p>The resulting <code>.desktop</code> file corresponding to FreeView contains:</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-ini data-lang=ini><span style=color:#204a87;font-weight:700>[Desktop Entry]</span>
+<span style=color:#c4a000>Name</span><span style=color:#ce5c00;font-weight:700>=</span><span style=color:#4e9a06>FreeView 6.0.1</span>
+<span style=color:#c4a000>GenericName</span><span style=color:#ce5c00;font-weight:700>=</span><span style=color:#4e9a06>FreeView 6.0.1</span>
+<span style=color:#c4a000>Comment</span><span style=color:#ce5c00;font-weight:700>=</span><span style=color:#4e9a06>Start FreeView 6.0.1</span>
+<span style=color:#c4a000>Exec</span><span style=color:#ce5c00;font-weight:700>=</span><span style=color:#4e9a06>bash /usr/share/fetch_and_run.sh freesurfer 6.0.1 20200506 freeview</span>
+<span style=color:#c4a000>Icon</span><span style=color:#ce5c00;font-weight:700>=</span><span style=color:#4e9a06>/home/neuro/.config/lxpanel/LXDE/icons/run.png</span>
+<span style=color:#c4a000>Type</span><span style=color:#ce5c00;font-weight:700>=</span><span style=color:#4e9a06>Application</span>
+<span style=color:#c4a000>Categories</span><span style=color:#ce5c00;font-weight:700>=</span><span style=color:#4e9a06>FreeSurfer</span>
+<span style=color:#c4a000>Terminal</span><span style=color:#ce5c00;font-weight:700>=</span><span style=color:#4e9a06>true</span>
+</code></pre></div>
+</div>
+<div class=td-content style=page-break-before:always>
+<h1 id=pg-59bac5d14e5bc87231546825353a0899>2.2 - Neurodesk Architecture</h1>
+<div class=lead>The architecture of the Neurodesk ecosystem</div>
+<h1 id=layers>Layers</h1>
+<p>Neurodesktop: <a href=https://github.com/NeuroDesk/neurodesktop>https://github.com/NeuroDesk/neurodesktop</a></p>
+<ul>
+<li>docker container with interface modifications</li>
+<li>contains tools necessary to manage containers: vscode, git, niype</li>
+<li>CI: builds docker image and tests if it runs</li>
+</ul>
+<p>Neurocommand: <a href=https://github.com/NeuroDesk/neurocommand>https://github.com/NeuroDesk/neurocommand</a></p>
+<ul>
+<li>script to install and manage multiple containers using transparent singularity on any linux system</li>
+<li>this repo would also handle the creation of menu entries in a general form applicable to different desktop environments</li>
+<li>this repo can be re-used in other projects like CVL and the imaging workstations</li>
+<li>CI: tests if containers can be installed</li>
+</ul>
+<p>transparent-singularity: <a href=https://github.com/NeuroDesk/transparent-singularity>https://github.com/NeuroDesk/transparent-singularity</a></p>
+<ul>
+<li>script to install neuro-sub-containers, installers are called by neurodesk script</li>
+<li>this repo could provide a simple way of using our containers on HPCs for large scale processing of the pipelines build in VNM</li>
+<li>CI: test if exposing of binaries work</li>
+</ul>
+<p>Neurocontainers: <a href=https://github.com/NeuroDesk/neurocontainers>https://github.com/NeuroDesk/neurocontainers</a></p>
+<ul>
+<li>build scripts for neuro-sub-containers</li>
+<li>CI: building, pushing and testing of containers</li>
+</ul>
+<p>Neurodocker: <a href=https://github.com/NeuroDesk/neurodocker>https://github.com/NeuroDesk/neurodocker</a></p>
+<ul>
+<li>fork of neurodocker project</li>
+<li>provides recipes for our containers built</li>
+<li>we are providing pull requests back of recipes</li>
+<li>CI: handled by <a href=https://github.com/ReproNim/neurodocker>neurodocker</a> - testing of generating container recipes</li>
+</ul>
+</div>
+<div class=td-content style=page-break-before:always>
+<h1 id=pg-f89498a0fd2d201e1dc7e27d7be9f337>3 - Transparent Singularity</h1>
+<div class=lead>For more advanced users who to use Transparent Singularity directly</div>
+</div>
+<div class=td-content>
+<h1 id=pg-1aeb0eca05cfedc27d063e428d152eec>3.1 - Use transparent singularity</h1>
+<div class=lead>use transparent singularity</div>
+<p>move documentation from here: <a href=https://github.com/NeuroDesk/transparent-singularity/>https://github.com/NeuroDesk/transparent-singularity/</a></p>
+</div>
 </main>
+</div>
+</div>
 <footer class="bg-dark py-5 row d-print-none">
 <div class="container-fluid mx-sm-5">
 <div class=row>
