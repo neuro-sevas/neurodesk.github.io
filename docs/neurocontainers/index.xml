@@ -1,14 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>NeuroDesk – Neurocontainers</title><link>https://neurodesk.github.io/docs/neurocontainers/</link><description>Recent content in Neurocontainers on NeuroDesk</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://neurodesk.github.io/docs/neurocontainers/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Docker</title><link>https://neurodesk.github.io/docs/neurocontainers/docker/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurocontainers/docker/</guid><description>
-&lt;p>Our containers are automatically built in &lt;a href="https://github.com/NeuroDesk/neurocontainers/">https://github.com/NeuroDesk/neurocontainers/&lt;/a> and hosted on &lt;a href="https://hub.docker.com/orgs/vnmd/repositories">dockerhub&lt;/a> or on &lt;a href="https://github.com/NeuroDesk/neurocontainers/packages">github&lt;/a>&lt;/p>
-&lt;h2 id="pull-docker-containers">Pull Docker containers&lt;/h2>
-&lt;p>e.g. for a julia container
-docker&lt;/p>
-&lt;pre tabindex="0">&lt;code>docker pull vnmd/julia_1.6.1
-&lt;/code>&lt;/pre>&lt;p>build singularity image from dockerhub&lt;/p>
-&lt;pre tabindex="0">&lt;code>singularity build julia_1.6.1.simg docker://vnmd/julia_1.6.1
-&lt;/code>&lt;/pre>&lt;p>Replace &lt;code>julia_1.6.1&lt;/code> with your selected application&lt;/p>
-&lt;h2 id="transparent-singularity">Transparent Singularity&lt;/h2>
-&lt;p>The containers can be used in combination with our &lt;a href="https://github.com/NeuroDesk/transparent-singularity/">transparent singularity&lt;/a> tool, that wrap the executables inside a container to make them easily available for pipelines.&lt;/p></description></item><item><title>Docs: Neurocontainers</title><link>https://neurodesk.github.io/docs/neurocontainers/cvmfs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurocontainers/cvmfs/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>NeuroDesk – Neurocontainers</title><link>https://neurodesk.github.io/docs/neurocontainers/</link><description>Recent content in Neurocontainers on NeuroDesk</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://neurodesk.github.io/docs/neurocontainers/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: CVMFS</title><link>https://neurodesk.github.io/docs/neurocontainers/cvmfs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurocontainers/cvmfs/</guid><description>
 &lt;h1 id="install-cvmfs-on-windows-subsystem-for-linux">Install CVMFS on Windows subsystem for linux&lt;/h1>
 &lt;pre tabindex="0">&lt;code>sudo apt-get install lsb-release
 wget https://ecsft.cern.ch/dist/cvmfs/cvmfs-release/cvmfs-release-latest_all.deb
@@ -41,7 +31,17 @@ cvmfs_config stat -v neurodesk.ardc.edu.au
 &lt;/code>&lt;/pre>&lt;h1 id="use-of-neurodesk-cvmfs-containers">use of Neurodesk CVMFS containers&lt;/h1>
 &lt;p>The containers are now available in /cvmfs/neurodesk.ardc.edu.au/containers/ and can be started with:&lt;/p>
 &lt;pre tabindex="0">&lt;code>singularity shell --no-home /cvmfs/neurodesk.ardc.edu.au/containers/itksnap_3.8.0_20201208/itksnap_3.8.0_20201208.simg
-&lt;/code>&lt;/pre></description></item><item><title>Docs: Singularity</title><link>https://neurodesk.github.io/docs/neurocontainers/singularity/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurocontainers/singularity/</guid><description>
+&lt;/code>&lt;/pre></description></item><item><title>Docs: Docker</title><link>https://neurodesk.github.io/docs/neurocontainers/docker/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurocontainers/docker/</guid><description>
+&lt;p>Our containers are automatically built in &lt;a href="https://github.com/NeuroDesk/neurocontainers/">https://github.com/NeuroDesk/neurocontainers/&lt;/a> and hosted on &lt;a href="https://hub.docker.com/orgs/vnmd/repositories">dockerhub&lt;/a> or on &lt;a href="https://github.com/NeuroDesk/neurocontainers/packages">github&lt;/a>&lt;/p>
+&lt;h2 id="pull-docker-containers">Pull Docker containers&lt;/h2>
+&lt;p>e.g. for a julia container
+docker&lt;/p>
+&lt;pre tabindex="0">&lt;code>docker pull vnmd/julia_1.6.1
+&lt;/code>&lt;/pre>&lt;p>build singularity image from dockerhub&lt;/p>
+&lt;pre tabindex="0">&lt;code>singularity build julia_1.6.1.simg docker://vnmd/julia_1.6.1
+&lt;/code>&lt;/pre>&lt;p>Replace &lt;code>julia_1.6.1&lt;/code> with your selected application&lt;/p>
+&lt;h2 id="transparent-singularity">Transparent Singularity&lt;/h2>
+&lt;p>The containers can be used in combination with our &lt;a href="https://github.com/NeuroDesk/transparent-singularity/">transparent singularity&lt;/a> tool, that wrap the executables inside a container to make them easily available for pipelines.&lt;/p></description></item><item><title>Docs: Singularity</title><link>https://neurodesk.github.io/docs/neurocontainers/singularity/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurocontainers/singularity/</guid><description>
 &lt;p>Our docker containers are converted to singularity containers and stored on Object storage.&lt;/p>
 &lt;h2 id="download-singularity-containers">Download Singularity Containers&lt;/h2>
 &lt;p>First get an overview which containers are available as Singularity containers:

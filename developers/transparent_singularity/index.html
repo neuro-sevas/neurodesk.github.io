@@ -81,7 +81,7 @@
 <a href=/developers/cvmfs/ title="Neurodesk CVMFS" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-developerscvmfs><span>CVMFS</span></a>
 <ul class="ul-2 foldable">
 <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-developerscvmfsproxy-li>
-<a href=/developers/cvmfs/proxy/ title="Setup Stratum 1 server" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-developerscvmfsproxy><span>Stratum 1</span></a>
+<a href=/developers/cvmfs/proxy/ title="Setup CVMFS Proxy" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-developerscvmfsproxy><span>Proxy</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-developerscvmfsstratum1-li>
 <a href=/developers/cvmfs/stratum1/ title="Setup Stratum 1 server" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-developerscvmfsstratum1><span>Stratum 1</span></a>
 </li>
@@ -92,7 +92,7 @@
 <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-developersnew_toolsadd_tool-li>
 <a href=/developers/new_tools/add_tool/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-developersnew_toolsadd_tool><span>Add tools</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-developersnew_toolsmenu_entries-li>
-<a href=/developers/new_tools/menu_entries/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-developersnew_toolsmenu_entries><span>Add tools</span></a>
+<a href=/developers/new_tools/menu_entries/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-developersnew_toolsmenu_entries><span>Menu entries</span></a>
 </li>
 </ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-developersarchitecture-li>
@@ -104,13 +104,8 @@
 <a href=/developers/architecture/neurodesk-compoents/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-developersarchitectureneurodesk-compoents><span>Neurodesk Architecture</span></a>
 </li>
 </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id=m-developerstransparent_singularity-li>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id=m-developerstransparent_singularity-li>
 <a href=/developers/transparent_singularity/ class="align-left pl-0 active td-sidebar-link td-sidebar-link__section" id=m-developerstransparent_singularity><span class=td-sidebar-nav-active-item>Transparent Singularity</span></a>
-<ul class="ul-2 foldable">
-<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-developerstransparent_singularityuse_transparent_singularity-li>
-<a href=/developers/transparent_singularity/use_transparent_singularity/ title="Use transparent singularity" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-developerstransparent_singularityuse_transparent_singularity><span>transparent singularity</span></a>
-</li>
-</ul>
 </li>
 </ul>
 </li>
@@ -126,6 +121,19 @@
 <a href=https://github.com/NeuroDesk/neurodesk.github.io/issues/new target=_blank><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
 <a id=print href=https://neurodesk.github.io/developers/transparent_singularity/_print/><i class="fa fa-print fa-fw"></i> Print entire section</a>
 </div>
+<div class=td-toc><nav id=TableOfContents>
+<ul>
+<li><a href=#important-add-bind-points-to-bashrc-before-executing-this-script>Important: add bind points to .bashrc before executing this script</a></li>
+<li><a href=#this-gives-you-a-list-of-all-tested-images-available-in-neurodesk>This gives you a list of all tested images available in neurodesk:</a></li>
+<li><a href=#clone-repo-into-a-folder-with-the-intented-image-name>Clone repo into a folder with the intented image name</a></li>
+<li><a href=#install>Install</a></li>
+</ul>
+<ul>
+<li><a href=#activate>Activate</a></li>
+<li><a href=#deactivate>Deactivate</a></li>
+<li><a href=#uninstall-container-and-cleanup>Uninstall container and cleanup</a></li>
+</ul>
+</nav></div>
 </aside>
 <main class="col-12 col-md-9 col-xl-8 pl-md-5" role=main>
 <div class=td-content>
@@ -133,19 +141,36 @@
 <div class=lead>For more advanced users who to use Transparent Singularity directly</div>
 <header class=article-meta>
 </header>
+<p>Transparent singularity is here <a href=https://github.com/NeuroDesk/transparent-singularity/>https://github.com/NeuroDesk/transparent-singularity/</a></p>
+<p>This project allows to use singularity containers transparently on HPCs, so that an application inside the container can be used without adjusting any scripts or pipelines (e.g. nipype).</p>
+<h2 id=important-add-bind-points-to-bashrc-before-executing-this-script>Important: add bind points to .bashrc before executing this script</h2>
+<p>This script expects that you have adjusted the Singularity Bindpoints in your .bashrc, e.g.:</p>
+<pre tabindex=0><code>export SINGULARITY_BINDPATH=&quot;/gpfs1/,/QRISdata,/data&quot;
+</code></pre><h2 id=this-gives-you-a-list-of-all-tested-images-available-in-neurodesk>This gives you a list of all tested images available in neurodesk:</h2>
+<p><a href=https://github.com/NeuroDesk/neurodesk/blob/master/cvmfs/log.txt>https://github.com/NeuroDesk/neurodesk/blob/master/cvmfs/log.txt</a></p>
+<pre tabindex=0><code>curl -s https://raw.githubusercontent.com/NeuroDesk/neurodesk/master/cvmfs/log.txt
+</code></pre><h2 id=clone-repo-into-a-folder-with-the-intented-image-name>Clone repo into a folder with the intented image name</h2>
+<pre tabindex=0><code>git clone https://github.com/NeuroDesk/transparent-singularity convert3d_1.0.0_20210104
+</code></pre><h2 id=install>Install</h2>
+<p>This will create scripts for every binary in the container located in the $DEPLOY_PATH inside the container. It will also create activate and deactivate scripts and module files for lmod (<a href=https://lmod.readthedocs.io/en/latest/>https://lmod.readthedocs.io/en/latest/</a>)</p>
+<pre tabindex=0><code>cd convert3d_1.0.0_20210104
+./run_transparent_singularity.sh convert3d_1.0.0_20210104
+</code></pre><h1 id=use-in-module-system-lmod>Use in module system LMOD</h1>
+<p>Add the module folder path to $MODULEPATH</p>
+<h1 id=manual-activation-and-deactivation-in-case-module-system-is-not-available-this-will-add-the-paths-to-the-bashrc>Manual activation and deactivation (in case module system is not available). This will add the paths to the .bashrc</h1>
+<h2 id=activate>Activate</h2>
+<pre tabindex=0><code>source activate_convert3d_1.0.0_20210104.sh
+</code></pre><h2 id=deactivate>Deactivate</h2>
+<pre tabindex=0><code>source deactivate_convert3d_1.0.0_20210104.sif.sh
+</code></pre><h2 id=uninstall-container-and-cleanup>Uninstall container and cleanup</h2>
+<pre tabindex=0><code>./ts_uninstall.sh
+</code></pre>
 <div class=section-index>
-<hr class=panel-line>
-<div class=entry>
-<h5>
-<a href=/developers/transparent_singularity/use_transparent_singularity/>Use transparent singularity</a>
-</h5>
-<p>use transparent singularity</p>
-</div>
 </div>
 <div class="text-muted mt-5 pt-3 border-top">
 Last modified
 September 22, 2021
-: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/ad28f9017e9fab1787d8ee7045f3e2f5491ddd21>menu not yet appearing? (ad28f90)</a>
+: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/a8ea892703b0486d234d3d6321f2626ac798c0c8>titles updated (a8ea892)</a>
 </div>
 </div>
 </main>
