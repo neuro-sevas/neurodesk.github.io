@@ -21,12 +21,12 @@
 ">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://neurodesk.github.io/developers/transparent_singularity/use_transparent_singularity/"><meta property="article:section" content="developers">
-<meta property="article:modified_time" content="2021-09-22T10:33:33+10:00"><meta property="og:site_name" content="NeuroDesk">
+<meta property="article:modified_time" content="2021-09-22T21:24:04+10:00"><meta property="og:site_name" content="NeuroDesk">
 <meta itemprop=name content="Use transparent singularity">
 <meta itemprop=description content="use transparent singularity
 ">
-<meta itemprop=dateModified content="2021-09-22T10:33:33+10:00">
-<meta itemprop=wordCount content="5">
+<meta itemprop=dateModified content="2021-09-22T21:24:04+10:00">
+<meta itemprop=wordCount content="167">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="Use transparent singularity">
 <meta name=twitter:description content="use transparent singularity
@@ -82,8 +82,10 @@
 <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-developerscvmfs-li>
 <a href=/developers/cvmfs/ title="Neurodesk CVMFS" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-developerscvmfs><span>CVMFS</span></a>
 <ul class="ul-2 foldable">
-<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-developerscvmfsadd_cvmfs_server-li>
-<a href=/developers/cvmfs/add_cvmfs_server/ title="Host a Stratum 1 server" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-developerscvmfsadd_cvmfs_server><span>Stratum 1</span></a>
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-developerscvmfsproxy-li>
+<a href=/developers/cvmfs/proxy/ title="Setup Stratum 1 server" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-developerscvmfsproxy><span>Stratum 1</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-developerscvmfsstratum1-li>
+<a href=/developers/cvmfs/stratum1/ title="Setup Stratum 1 server" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-developerscvmfsstratum1><span>Stratum 1</span></a>
 </li>
 </ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-developersnew_tools-li>
@@ -91,8 +93,17 @@
 <ul class="ul-2 foldable">
 <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-developersnew_toolsadd_tool-li>
 <a href=/developers/new_tools/add_tool/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-developersnew_toolsadd_tool><span>Add tools</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-developersnew_toolsneurodesk-architecture-li>
-<a href=/developers/new_tools/neurodesk-architecture/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-developersnew_toolsneurodesk-architecture><span>Neurodesk Architecture</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-developersnew_toolsmenu_entries-li>
+<a href=/developers/new_tools/menu_entries/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-developersnew_toolsmenu_entries><span>Add tools</span></a>
+</li>
+</ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-developersarchitecture-li>
+<a href=/developers/architecture/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-developersarchitecture><span>Neurodesk Architecture</span></a>
+<ul class="ul-2 foldable">
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-developersarchitecturecvmfs_setup-li>
+<a href=/developers/architecture/cvmfs_setup/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-developersarchitecturecvmfs_setup><span>CVMFS architecture</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-developersarchitectureneurodesk-compoents-li>
+<a href=/developers/architecture/neurodesk-compoents/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-developersarchitectureneurodesk-compoents><span>Neurodesk Architecture</span></a>
 </li>
 </ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id=m-developerstransparent_singularity-li>
@@ -117,6 +128,19 @@
 <a href=https://github.com/NeuroDesk/neurodesk.github.io/issues/new target=_blank><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
 <a id=print href=https://neurodesk.github.io/developers/transparent_singularity/_print/><i class="fa fa-print fa-fw"></i> Print entire section</a>
 </div>
+<div class=td-toc><nav id=TableOfContents>
+<ul>
+<li><a href=#important-add-bind-points-to-bashrc-before-executing-this-script>Important: add bind points to .bashrc before executing this script</a></li>
+<li><a href=#this-gives-you-a-list-of-all-tested-images-available-in-neurodesk>This gives you a list of all tested images available in neurodesk:</a></li>
+<li><a href=#clone-repo-into-a-folder-with-the-intented-image-name>Clone repo into a folder with the intented image name</a></li>
+<li><a href=#install>Install</a></li>
+</ul>
+<ul>
+<li><a href=#activate>Activate</a></li>
+<li><a href=#deactivate>Deactivate</a></li>
+<li><a href=#uninstall-container-and-cleanup>Uninstall container and cleanup</a></li>
+</ul>
+</nav></div>
 </aside>
 <main class="col-12 col-md-9 col-xl-8 pl-md-5" role=main>
 <div class=td-content>
@@ -124,11 +148,34 @@
 <div class=lead>use transparent singularity</div>
 <header class=article-meta>
 </header>
-<p>move documentation from here: <a href=https://github.com/NeuroDesk/transparent-singularity/>https://github.com/NeuroDesk/transparent-singularity/</a></p>
+<p>Transparent singularity is here <a href=https://github.com/NeuroDesk/transparent-singularity/>https://github.com/NeuroDesk/transparent-singularity/</a></p>
+<p>This project allows to use singularity containers transparently on HPCs, so that an application inside the container can be used without adjusting any scripts or pipelines (e.g. nipype).</p>
+<h2 id=important-add-bind-points-to-bashrc-before-executing-this-script>Important: add bind points to .bashrc before executing this script</h2>
+<p>This script expects that you have adjusted the Singularity Bindpoints in your .bashrc, e.g.:</p>
+<pre tabindex=0><code>export SINGULARITY_BINDPATH=&quot;/gpfs1/,/QRISdata,/data&quot;
+</code></pre><h2 id=this-gives-you-a-list-of-all-tested-images-available-in-neurodesk>This gives you a list of all tested images available in neurodesk:</h2>
+<p><a href=https://github.com/NeuroDesk/neurodesk/blob/master/cvmfs/log.txt>https://github.com/NeuroDesk/neurodesk/blob/master/cvmfs/log.txt</a></p>
+<pre tabindex=0><code>curl -s https://raw.githubusercontent.com/NeuroDesk/neurodesk/master/cvmfs/log.txt
+</code></pre><h2 id=clone-repo-into-a-folder-with-the-intented-image-name>Clone repo into a folder with the intented image name</h2>
+<pre tabindex=0><code>git clone https://github.com/NeuroDesk/transparent-singularity convert3d_1.0.0_20210104
+</code></pre><h2 id=install>Install</h2>
+<p>This will create scripts for every binary in the container located in the $DEPLOY_PATH inside the container. It will also create activate and deactivate scripts and module files for lmod (<a href=https://lmod.readthedocs.io/en/latest/>https://lmod.readthedocs.io/en/latest/</a>)</p>
+<pre tabindex=0><code>cd convert3d_1.0.0_20210104
+./run_transparent_singularity.sh convert3d_1.0.0_20210104
+</code></pre><h1 id=use-in-module-system-lmod>Use in module system LMOD</h1>
+<p>Add the module folder path to $MODULEPATH</p>
+<h1 id=manual-activation-and-deactivation-in-case-module-system-is-not-available-this-will-add-the-paths-to-the-bashrc>Manual activation and deactivation (in case module system is not available). This will add the paths to the .bashrc</h1>
+<h2 id=activate>Activate</h2>
+<pre tabindex=0><code>source activate_convert3d_1.0.0_20210104.sh
+</code></pre><h2 id=deactivate>Deactivate</h2>
+<pre tabindex=0><code>source deactivate_convert3d_1.0.0_20210104.sif.sh
+</code></pre><h2 id=uninstall-container-and-cleanup>Uninstall container and cleanup</h2>
+<pre tabindex=0><code>./ts_uninstall.sh
+</code></pre>
 <div class="text-muted mt-5 pt-3 border-top">
 Last modified
 September 22, 2021
-: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/00dcdaa45585702378e7947d9608f3b2f2891e98>chagned weights (00dcdaa)</a>
+: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/508e00ad93bdbf2dc541af51d2547e480fda4777>more developer documentation (508e00a)</a>
 </div>
 </div>
 </main>

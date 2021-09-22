@@ -112,6 +112,9 @@ This the multi-page printable view of this section.
 </ul>
 <li>4: <a href=#pg-88405e8e9824a3a23cd8fda56d2e5574>Neurocontainers</a></li>
 <ul>
+<li>4.1: <a href=#pg-f18a87ac25493d50d810709d157e5b03>Docker</a></li>
+<li>4.2: <a href=#pg-895ed1135b9cdc0df128fddec565e375>Neurocontainers</a></li>
+<li>4.3: <a href=#pg-dde076c9513b160da47a52346f74d655>Singularity</a></li>
 </ul>
 </ul>
 <div class=content>
@@ -504,7 +507,7 @@ newgrp docker
 <h2 id=how-to-force-a-complete-container-download-to-your-system>How to force a complete container download to your system</h2>
 <p>To increase speed and reliability of Neurodesktop we mount the application containers from a CVMFS mount and download only the files required to run your current task. Although we aim to keep everything on there reproducible, there might be a reason that you want to fully download the containers to your system. You can force this behaviour by adding another parameter to the docker call: <code>-e CVMFS_DISABLE=true</code></p>
 <p>For windows an example would look like this:</p>
-<pre tabindex=0><code>docker run --shm-size=1gb -it --privileged --name neurodesktop -v C:/neurodesktop-storage:/neurodesktop-storage -e CVMFS_DISABLE=true -p 8080:8080 neurodesktop:20210917
+<pre tabindex=0><code>docker run --shm-size=1gb -it --privileged --name neurodesktop -v C:/neurodesktop-storage:/neurodesktop-storage -e CVMFS_DISABLE=true -p 8080:8080 -h neurodesktop-20210918 vnmd/neurodesktop:20210918
 </code></pre>
 </div>
 <div class=td-content style=page-break-before:always>
@@ -729,26 +732,98 @@ Change <code>port=3389</code> to <code>port=3390</code> and save</li>
 <div class=td-content style=page-break-before:always>
 <h1 id=pg-88405e8e9824a3a23cd8fda56d2e5574>4 - Neurocontainers</h1>
 <div class=lead>What neurocontainers are about</div>
-<h2 id=automatic-container-building-and-testing>Automatic container building and testing</h2>
-<p>The containers can be used in combination with our <a href=https://github.com/NeuroDesk/transparent-singularity/>transparent singularity</a> or <a href=https://github.com/NeuroDesk/neurocommand/>neurocommand</a> tool, that wrap the executables inside a container to make them easily available for pipelines:</p>
-<p>The containers are hosted on <a href=https://hub.docker.com/orgs/vnmd/repositories>dockerhub</a> or on <a href=https://github.com/NeuroDesk/neurocontainers/packages>github</a></p>
-<h2 id=pull-containers>Pull containers</h2>
+</div>
+<div class=td-content>
+<h1 id=pg-f18a87ac25493d50d810709d157e5b03>4.1 - Docker</h1>
+<div class=lead>Docker containers</div>
+<p>Our containers are automatically built in <a href=https://github.com/NeuroDesk/neurocontainers/>https://github.com/NeuroDesk/neurocontainers/</a> and hosted on <a href=https://hub.docker.com/orgs/vnmd/repositories>dockerhub</a> or on <a href=https://github.com/NeuroDesk/neurocontainers/packages>github</a></p>
+<h2 id=pull-docker-containers>Pull Docker containers</h2>
 <p>e.g. for a julia container
 docker</p>
 <pre tabindex=0><code>docker pull vnmd/julia_1.6.1
 </code></pre><p>build singularity image from dockerhub</p>
 <pre tabindex=0><code>singularity build julia_1.6.1.simg docker://vnmd/julia_1.6.1
 </code></pre><p>Replace <code>julia_1.6.1</code> with your selected application</p>
-<h2 id=adding-new-recipes>Adding new recipes</h2>
-<p>Refer to <a href=https://github.com/NeuroDesk/neurodocker>neurodocker</a> for more information on neurodocker recipes</p>
-<p>To add an application (e.g. <em>newapp</em>), follow these steps.</p>
-<ol>
-<li>Clone the repository</li>
-<li>Copy the directory template and rename to <em>newapp</em> in <code>caid/recipes</code></li>
-<li>Modify <code>build.sh</code> in <code>caid/recipes/newapp</code> to build your application and update README.md</li>
-<li>Run update-builders.sh from caid. This will auto-create the CI workflow for the application (or duplicate the template file and rename all occurances of template to <em>newapp</em>)</li>
-<li>git commit and push</li>
-</ol>
+<h2 id=transparent-singularity>Transparent Singularity</h2>
+<p>The containers can be used in combination with our <a href=https://github.com/NeuroDesk/transparent-singularity/>transparent singularity</a> tool, that wrap the executables inside a container to make them easily available for pipelines.</p>
+</div>
+<div class=td-content style=page-break-before:always>
+<h1 id=pg-895ed1135b9cdc0df128fddec565e375>4.2 - Neurocontainers</h1>
+<div class=lead>Singularity Containers on CVMFS</div>
+<h1 id=install-cvmfs-on-windows-subsystem-for-linux>Install CVMFS on Windows subsystem for linux</h1>
+<pre tabindex=0><code>sudo apt-get install lsb-release
+wget https://ecsft.cern.ch/dist/cvmfs/cvmfs-release/cvmfs-release-latest_all.deb
+sudo dpkg -i cvmfs-release-latest_all.deb
+rm -f cvmfs-release-latest_all.deb
+sudo apt-get update
+sudo apt-get install cvmfs
+
+sudo mkdir -p /etc/cvmfs/keys/ardc.edu.au/
+
+
+echo &quot;-----BEGIN PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwUPEmxDp217SAtZxaBep
+Bi2TQcLoh5AJ//HSIz68ypjOGFjwExGlHb95Frhu1SpcH5OASbV+jJ60oEBLi3sD
+qA6rGYt9kVi90lWvEjQnhBkPb0uWcp1gNqQAUocybCzHvoiG3fUzAe259CrK09qR
+pX8sZhgK3eHlfx4ycyMiIQeg66AHlgVCJ2fKa6fl1vnh6adJEPULmn6vZnevvUke
+I6U1VcYTKm5dPMrOlY/fGimKlyWvivzVv1laa5TAR2Dt4CfdQncOz+rkXmWjLjkD
+87WMiTgtKybsmMLb2yCGSgLSArlSWhbMA0MaZSzAwE9PJKCCMvTANo5644zc8jBe
+NQIDAQAB
+-----END PUBLIC KEY-----&quot; | sudo tee /etc/cvmfs/keys/ardc.edu.au/neurodesk.ardc.edu.au.pub
+
+
+echo &quot;CVMFS_USE_GEOAPI=yes&quot; | sudo tee /etc/cvmfs/config.d/neurodesk.ardc.edu.au.conf
+
+echo 'CVMFS_SERVER_URL=&quot;http://203.101.231.144/cvmfs/@fqrn@;http://150.136.239.221/cvmfs/@fqrn@;http://132.145.96.34/cvmfs/@fqrn@;http://140.238.170.185/cvmfs/@fqrn@;http://130.61.74.69/cvmfs/@fqrn@;http://152.67.114.42/cvmfs/@fqrn@&quot;' | sudo tee -a /etc/cvmfs/config.d/neurodesk.ardc.edu.au.conf \
+
+
+echo 'CVMFS_KEYS_DIR=&quot;/etc/cvmfs/keys/ardc.edu.au/&quot;' | sudo tee -a /etc/cvmfs/config.d/neurodesk.ardc.edu.au.conf
+
+
+
+echo &quot;CVMFS_HTTP_PROXY=DIRECT&quot; | sudo tee  /etc/cvmfs/default.local
+echo &quot;CVMFS_QUOTA_LIMIT=5000&quot; | sudo tee -a  /etc/cvmfs/default.local
+
+sudo cvmfs_config setup
+sudo cvmfs_config wsl2_start
+sudo cvmfs_config chksetup
+
+ls /cvmfs/neurodesk.ardc.edu.au
+
+sudo cvmfs_talk -i neurodesk.ardc.edu.au host probe
+sudo cvmfs_talk -i neurodesk.ardc.edu.au host info
+
+cvmfs_config stat -v neurodesk.ardc.edu.au
+</code></pre><h1 id=use-of-neurodesk-cvmfs-containers>use of Neurodesk CVMFS containers</h1>
+<p>The containers are now available in /cvmfs/neurodesk.ardc.edu.au/containers/ and can be started with:</p>
+<pre tabindex=0><code>singularity shell --no-home /cvmfs/neurodesk.ardc.edu.au/containers/itksnap_3.8.0_20201208/itksnap_3.8.0_20201208.simg
+</code></pre>
+</div>
+<div class=td-content style=page-break-before:always>
+<h1 id=pg-dde076c9513b160da47a52346f74d655>4.3 - Singularity</h1>
+<div class=lead>Singularity Containers</div>
+<p>Our docker containers are converted to singularity containers and stored on Object storage.</p>
+<h2 id=download-singularity-containers>Download Singularity Containers</h2>
+<p>First get an overview which containers are available as Singularity containers:
+<a href=https://github.com/NeuroDesk/neurodesk/blob/master/cvmfs/log.txt>https://github.com/NeuroDesk/neurodesk/blob/master/cvmfs/log.txt</a></p>
+<pre tabindex=0><code>curl -s https://raw.githubusercontent.com/NeuroDesk/neurodesk/master/cvmfs/log.txt
+</code></pre><p>assign the container name to a variable:</p>
+<pre tabindex=0><code>export container=itksnap_3.8.0_20201208
+</code></pre><p>Then download the containers. An easy way is to use CURL (e.g. downloading from the US location):</p>
+<pre tabindex=0><code>curl -X GET https://objectstorage.us-ashburn-1.oraclecloud.com/n/sd63xuke79z3/b/neurodesk/o/${container}.simg -O
+</code></pre><p>or from australia</p>
+<pre tabindex=0><code>curl -X GET https://objectstorage.ap-sydney-1.oraclecloud.com/n/sd63xuke79z3/b/neurodesk/o/${container}.simg -O
+</code></pre><p>A faster way is pulling from multiple storage locations at once using aria2:</p>
+<pre tabindex=0><code>aria2c https://objectstorage.us-ashburn-1.oraclecloud.com/n/sd63xuke79z3/b/neurodesk/o/${container}.simg https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/sd63xuke79z3/b/neurodesk/o/${container}.simg https://objectstorage.ap-sydney-1.oraclecloud.com/n/sd63xuke79z3/b/neurodesk/o/${container}.simg https://swift.rc.nectar.org.au/v1/AUTH_dead991e1fa847e3afcca2d3a7041f5d/neurodesk/${container}.simg
+</code></pre><h2 id=transparent-singularity>Transparent Singularity</h2>
+<p>The singularity containers can be also be used in combination with our <a href=/developers/transparent_singularity//>Transparent Singularity Tool</a> tool, that wraps the executables inside a container to make them easily available for pipelines. More information can be found here:</p>
+<p>one example to do this is:</p>
+<pre tabindex=0><code>curl -s https://raw.githubusercontent.com/NeuroDesk/neurodesk/master/cvmfs/log.txt
+export container=itksnap_3.8.0_20201208
+git clone https://github.com/NeuroDesk/transparent-singularity ${container}
+cd ${container}
+./run_transparent_singularity.sh ${container}
+</code></pre>
 </div>
 </main>
 </div>

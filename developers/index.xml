@@ -105,15 +105,23 @@ Use the guide below to add a tool to &lt;em>neurodesktop&lt;/em> or &lt;em>neuro
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
+&lt;h2 id="adding-new-recipes">Adding new recipes&lt;/h2>
+&lt;p>Refer to &lt;a href="https://github.com/NeuroDesk/neurodocker">neurodocker&lt;/a> for more information on neurodocker recipes&lt;/p>
 &lt;h2 id="build-container">Build container&lt;/h2>
 &lt;p>To build a container:&lt;/p>
 &lt;ol>
-&lt;li>Add recipe to neurodocker if relevant (&lt;a href="https://github.com/NeuroDesk/neurodocker">https://github.com/NeuroDesk/neurodocker&lt;/a>) and create a pull request to neurodocker&lt;/li>
-&lt;li>Build the container &lt;a href="https://github.com/NeuroDesk/neurocontainers">https://github.com/NeuroDesk/neurocontainers&lt;/a>&lt;/li>
-&lt;li>Test the container, and if successful add the container to the apps.json file: &lt;a href="https://github.com/NeuroDesk/neurocommand/blob/main/neurodesk/apps.json">https://github.com/NeuroDesk/neurocommand/blob/main/neurodesk/apps.json&lt;/a>&lt;/li>
-&lt;/ol>
-&lt;h2 id="advanced-section">Advanced section&lt;/h2>
-&lt;h3 id="menu-entry">Menu entry&lt;/h3>
+&lt;li>Add recipe to neurodocker if relevant (&lt;a href="https://github.com/NeuroDesk/neurodocker">https://github.com/NeuroDesk/neurodocker&lt;/a>) and create a pull request to neurodocker
+To add an application (e.g. &lt;em>newapp&lt;/em>), follow these steps.&lt;/li>
+&lt;li>Clone the repository &lt;a href="https://github.com/NeuroDesk/neurocontainers">https://github.com/NeuroDesk/neurocontainers&lt;/a>&lt;/li>
+&lt;li>Copy the directory template and rename to &lt;em>newapp&lt;/em> in &lt;code>neurocontainers/recipes&lt;/code>&lt;/li>
+&lt;li>Modify &lt;code>build.sh&lt;/code> in &lt;code>neurocontainers/recipes/newapp&lt;/code> to build your application and update README.md (make sure the version is correct in the README!)&lt;/li>
+&lt;li>Run update-builders.sh - This will auto-create the CI workflow for the application (or manually duplicate the template file and rename all occurances of template to &lt;em>newapp&lt;/em>)&lt;/li>
+&lt;li>Build the container locally (e.g. running the build script with the &amp;ndash;debug flag: &lt;a href="https://github.com/NeuroDesk/neurocontainers/blob/master/recipes/lcmodel/build.sh">https://github.com/NeuroDesk/neurocontainers/blob/master/recipes/lcmodel/build.sh&lt;/a>)&lt;/li>
+&lt;li>Test the container, and if successful push repo to trigger the automatic build on GitHub&lt;/li>
+&lt;li>send a pull request to add the container to the apps.json file: &lt;a href="https://github.com/NeuroDesk/neurocommand/blob/main/neurodesk/apps.json">https://github.com/NeuroDesk/neurocommand/blob/main/neurodesk/apps.json&lt;/a>&lt;/li>
+&lt;li>(once accepted this will trigger an action to build the singularity container, distribute it in all object storage locations and on CVMFS, and it will update the menus in the desktop image on the next daily build)&lt;/li>
+&lt;/ol></description></item><item><title>Developers: Add tools</title><link>https://neurodesk.github.io/developers/new_tools/menu_entries/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/developers/new_tools/menu_entries/</guid><description>
+&lt;h2 id="menu-entry">Menu entry&lt;/h2>
 &lt;p>As we want to propose several versions of the tools, each piece of software should have its own submenu under &lt;code>VNM Neuroimaging&lt;/code>.
 To do so, you first have to add a submenu to &lt;code>menus/vnm-applications.menu&lt;/code> by adding:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-xml" data-lang="xml">&lt;span style="color:#8f5902;font-style:italic">&amp;lt;!-- [[Tool Name]] submenu --&amp;gt;&lt;/span>
@@ -160,7 +168,7 @@ To do so, you first have to add a submenu to &lt;code>menus/vnm-applications.men
 &lt;span style="color:#c4a000">Icon&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">/home/neuro/.config/lxpanel/LXDE/icons/[[icon-name]].png&lt;/span>
 &lt;span style="color:#c4a000">Type&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">Directory&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>If a specific icon is available in the &lt;code>menus/icons&lt;/code> directory, replace &lt;code>[[icon-name]]&lt;/code> by its name. Otherwise, use &lt;code>vnm&lt;/code>.&lt;/p>
-&lt;h3 id="create-the-application">Create the application&lt;/h3>
+&lt;h2 id="create-the-application">Create the application&lt;/h2>
 &lt;p>Finally, we have to create the actual application by creating the file &lt;code>menus/applications/vnm-[[tool-name]]-[[0.0.0]].desktop&lt;/code>. The name of this file must contain the version of the tool (once again to allow multiple versions to live inside the same directory). Add the following description to this file:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-ini" data-lang="ini">&lt;span style="color:#204a87;font-weight:bold">[Desktop Entry]&lt;/span>
 &lt;span style="color:#c4a000">Name&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">[[Tool Name]] [[0.0.0]] [[(Install only)]]&lt;/span>
@@ -189,9 +197,119 @@ Here are two examples for FreeSurfer and FreeView. This first one only installs 
 &lt;span style="color:#c4a000">Type&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">Application&lt;/span>
 &lt;span style="color:#c4a000">Categories&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">FreeSurfer&lt;/span>
 &lt;span style="color:#c4a000">Terminal&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">true&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Developers: Host a Stratum 1 server</title><link>https://neurodesk.github.io/developers/cvmfs/add_cvmfs_server/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/developers/cvmfs/add_cvmfs_server/</guid><description>
-&lt;p>or a proxy &amp;hellip;&lt;/p></description></item><item><title>Developers: Use transparent singularity</title><link>https://neurodesk.github.io/developers/transparent_singularity/use_transparent_singularity/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/developers/transparent_singularity/use_transparent_singularity/</guid><description>
-&lt;p>move documentation from here: &lt;a href="https://github.com/NeuroDesk/transparent-singularity/">https://github.com/NeuroDesk/transparent-singularity/&lt;/a>&lt;/p></description></item><item><title>Developers: Neurodesk Architecture</title><link>https://neurodesk.github.io/developers/new_tools/neurodesk-architecture/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/developers/new_tools/neurodesk-architecture/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Developers: CVMFS architecture</title><link>https://neurodesk.github.io/developers/architecture/cvmfs_setup/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/developers/architecture/cvmfs_setup/</guid><description>
+&lt;p>We store our singuarlity containers unpacked on CVMFS. We tried the DUCC tool in the beginning, but it was causing too many issues with dockerhub and we were rate limited. The script to unpack our singularity containers is here: &lt;a href="https://github.com/NeuroDesk/neurocommand/blob/main/cvmfs/sync_containers_to_cvmfs.sh">https://github.com/NeuroDesk/neurocommand/blob/main/cvmfs/sync_containers_to_cvmfs.sh&lt;/a>&lt;/p>
+&lt;p>It gets called by a cronjob on the CVMFS Stratum 0 server and relies on the log.txt file being updated via an action in the neurocommand repository (&lt;a href="https://github.com/NeuroDesk/neurocommand/blob/main/.github/workflows/upload_containers_simg.sh">https://github.com/NeuroDesk/neurocommand/blob/main/.github/workflows/upload_containers_simg.sh&lt;/a>)&lt;/p>
+&lt;p>The Stratum 1 servers then pull this repo from Stratum 0 and our desktops mount these repos (configured here: &lt;a href="https://github.com/NeuroDesk/neurodesktop/blob/main/Dockerfile">https://github.com/NeuroDesk/neurodesktop/blob/main/Dockerfile&lt;/a>)&lt;/p>
+&lt;p>The startup script (&lt;a href="https://github.com/NeuroDesk/neurodesktop/blob/main/config/startup.sh">https://github.com/NeuroDesk/neurodesktop/blob/main/config/startup.sh&lt;/a>) sets up CVMFS and tests which server is fastest during the container startup.&lt;/p></description></item><item><title>Developers: Setup Stratum 1 server</title><link>https://neurodesk.github.io/developers/cvmfs/proxy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/developers/cvmfs/proxy/</guid><description>
+&lt;p>If you want more speed in a region one way could be to setup another Stratum 1 server or a proxy. We currently don&amp;rsquo;t run any proxy servers but it would be important for using it on a cluster.&lt;/p>
+&lt;h1 id="setup-a-cvmfs-proxy-server">Setup a CVMFS proxy server&lt;/h1>
+&lt;pre tabindex="0">&lt;code>sudo yum install -y squid
+sudo vi /etc/squid/squid.conf
+# List of local IP addresses (separate IPs and/or CIDR notation) allowed to access your local proxy
+#acl local_nodes src YOUR_CLIENT_IPS
+# Destination domains that are allowed
+#acl stratum_ones dstdomain .YOURDOMAIN.ORG
+#acl stratum_ones dstdom_regex YOUR_REGEX
+acl stratum_ones dst 140.238.211.92
+# Squid port
+http_port 3128
+# Deny access to anything which is not part of our stratum_ones ACL.
+http_access deny !stratum_ones
+# Only allow access from our local machines
+#http_access allow local_nodes
+http_access allow localhost
+# Finally, deny all other access to this proxy
+http_access deny all
+minimum_expiry_time 0
+maximum_object_size 1024 MB
+cache_mem 128 MB
+maximum_object_size_in_memory 128 KB
+# 5 GB disk cache
+cache_dir ufs /var/spool/squid 5000 16 256
+sudo squid -k parse
+sudo systemctl start squid
+sudo systemctl enable squid
+sudo systemctl status squid
+sudo systemctl restart squid
+&lt;/code>&lt;/pre></description></item><item><title>Developers: Setup Stratum 1 server</title><link>https://neurodesk.github.io/developers/cvmfs/stratum1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/developers/cvmfs/stratum1/</guid><description>
+&lt;p>The stratum 1 servers for the desktop are configured here: &lt;a href="https://github.com/NeuroDesk/neurodesktop/blob/main/Dockerfile">https://github.com/NeuroDesk/neurodesktop/blob/main/Dockerfile&lt;/a>&lt;/p>
+&lt;p>If you want more speed in a region one way could be to setup another Stratum 1 server or a proxy.&lt;/p>
+&lt;h1 id="setup-a-stratum-1-server">Setup a Stratum 1 server:&lt;/h1>
+&lt;pre tabindex="0">&lt;code>sudo yum install -y https://ecsft.cern.ch/dist/cvmfs/cvmfs-release/cvmfs-release-latest.noarch.rpm
+sudo yum install -y cvmfs-server squid
+sudo yum install -y python3-mod_wsgi
+sudo sed -i 's/Listen 80/Listen 127.0.0.1:8080/' /etc/httpd/conf/httpd.conf
+set +H
+echo &amp;quot;http_port 80 accel&amp;quot; | sudo tee /etc/squid/squid.conf
+echo &amp;quot;http_port 8000 accel&amp;quot; | sudo tee -a /etc/squid/squid.conf
+echo &amp;quot;http_access allow all&amp;quot; | sudo tee -a /etc/squid/squid.conf
+echo &amp;quot;cache_peer 127.0.0.1 parent 8080 0 no-query originserver&amp;quot; | sudo tee -a /etc/squid/squid.conf
+echo &amp;quot;acl CVMFSAPI urlpath_regex ^/cvmfs/[^/]*/api/&amp;quot; | sudo tee -a /etc/squid/squid.conf
+echo &amp;quot;cache deny !CVMFSAPI&amp;quot; | sudo tee -a /etc/squid/squid.conf
+echo &amp;quot;cache_mem 128 MB&amp;quot; | sudo tee -a /etc/squid/squid.conf
+sudo systemctl start httpd
+sudo systemctl start squid
+sudo systemctl enable httpd
+sudo systemctl enable squid
+echo 'CVMFS_GEO_LICENSE_KEY=kGepdzqbAP4fjf5X' | sudo tee -a /etc/cvmfs/server.local
+sudo chmod 600 /etc/cvmfs/server.local
+sudo mkdir -p /etc/cvmfs/keys/ardc.edu.au/
+echo &amp;quot;-----BEGIN PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwUPEmxDp217SAtZxaBep
+Bi2TQcLoh5AJ//HSIz68ypjOGFjwExGlHb95Frhu1SpcH5OASbV+jJ60oEBLi3sD
+qA6rGYt9kVi90lWvEjQnhBkPb0uWcp1gNqQAUocybCzHvoiG3fUzAe259CrK09qR
+pX8sZhgK3eHlfx4ycyMiIQeg66AHlgVCJ2fKa6fl1vnh6adJEPULmn6vZnevvUke
+I6U1VcYTKm5dPMrOlY/fGimKlyWvivzVv1laa5TAR2Dt4CfdQncOz+rkXmWjLjkD
+87WMiTgtKybsmMLb2yCGSgLSArlSWhbMA0MaZSzAwE9PJKCCMvTANo5644zc8jBe
+NQIDAQAB
+-----END PUBLIC KEY-----&amp;quot; | sudo tee /etc/cvmfs/keys/ardc.edu.au/neurodesk.ardc.edu.au.pub
+sudo cvmfs_server add-replica -o $USER http://203.101.226.164/cvmfs/neurodesk.ardc.edu.au /etc/cvmfs/keys/ardc.edu.au
+# CVMFS will store everything in /srv/cvmfs so make sure there is enough space or create a symlink to a bigger storage volume
+# e.g.:
+&amp;lt;!-- cd /storage
+sudo mkdir -p cvmfs-storage/srv/
+cd /srv/
+sudo mv cvmfs/ /storage/cvmfs-storage/srv/
+sudo ln -s /storage/cvmfs-storage/srv/cvmfs/ --&amp;gt;
+sudo cvmfs_server snapshot neurodesk.ardc.edu.au
+echo &amp;quot;/var/log/cvmfs/*.log {
+weekly
+missingok
+notifempty
+}&amp;quot; | sudo tee /etc/logrotate.d/cvmfs
+echo '*/5 * * * * root output=$(/usr/bin/cvmfs_server snapshot -a -i 2&amp;gt;&amp;amp;1) || echo &amp;quot;$output&amp;quot; ' | sudo tee /etc/cron.d/cvmfs_stratum1_snapshot
+sudo yum install iptables
+sudo iptables -t nat -A PREROUTING -p tcp -m tcp --dport 80 -j REDIRECT --to-ports 8000
+sudo systemctl disable firewalld
+sudo systemctl stop firewalld
+# make sure that port 80 is open in the real firewall
+sudo cvmfs_server update-geodb
+&lt;/code>&lt;/pre></description></item><item><title>Developers: Use transparent singularity</title><link>https://neurodesk.github.io/developers/transparent_singularity/use_transparent_singularity/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/developers/transparent_singularity/use_transparent_singularity/</guid><description>
+&lt;p>Transparent singularity is here &lt;a href="https://github.com/NeuroDesk/transparent-singularity/">https://github.com/NeuroDesk/transparent-singularity/&lt;/a>&lt;/p>
+&lt;p>This project allows to use singularity containers transparently on HPCs, so that an application inside the container can be used without adjusting any scripts or pipelines (e.g. nipype).&lt;/p>
+&lt;h2 id="important-add-bind-points-to-bashrc-before-executing-this-script">Important: add bind points to .bashrc before executing this script&lt;/h2>
+&lt;p>This script expects that you have adjusted the Singularity Bindpoints in your .bashrc, e.g.:&lt;/p>
+&lt;pre tabindex="0">&lt;code>export SINGULARITY_BINDPATH=&amp;quot;/gpfs1/,/QRISdata,/data&amp;quot;
+&lt;/code>&lt;/pre>&lt;h2 id="this-gives-you-a-list-of-all-tested-images-available-in-neurodesk">This gives you a list of all tested images available in neurodesk:&lt;/h2>
+&lt;p>&lt;a href="https://github.com/NeuroDesk/neurodesk/blob/master/cvmfs/log.txt">https://github.com/NeuroDesk/neurodesk/blob/master/cvmfs/log.txt&lt;/a>&lt;/p>
+&lt;pre tabindex="0">&lt;code>curl -s https://raw.githubusercontent.com/NeuroDesk/neurodesk/master/cvmfs/log.txt
+&lt;/code>&lt;/pre>&lt;h2 id="clone-repo-into-a-folder-with-the-intented-image-name">Clone repo into a folder with the intented image name&lt;/h2>
+&lt;pre tabindex="0">&lt;code>git clone https://github.com/NeuroDesk/transparent-singularity convert3d_1.0.0_20210104
+&lt;/code>&lt;/pre>&lt;h2 id="install">Install&lt;/h2>
+&lt;p>This will create scripts for every binary in the container located in the $DEPLOY_PATH inside the container. It will also create activate and deactivate scripts and module files for lmod (&lt;a href="https://lmod.readthedocs.io/en/latest/">https://lmod.readthedocs.io/en/latest/&lt;/a>)&lt;/p>
+&lt;pre tabindex="0">&lt;code>cd convert3d_1.0.0_20210104
+./run_transparent_singularity.sh convert3d_1.0.0_20210104
+&lt;/code>&lt;/pre>&lt;h1 id="use-in-module-system-lmod">Use in module system LMOD&lt;/h1>
+&lt;p>Add the module folder path to $MODULEPATH&lt;/p>
+&lt;h1 id="manual-activation-and-deactivation-in-case-module-system-is-not-available-this-will-add-the-paths-to-the-bashrc">Manual activation and deactivation (in case module system is not available). This will add the paths to the .bashrc&lt;/h1>
+&lt;h2 id="activate">Activate&lt;/h2>
+&lt;pre tabindex="0">&lt;code>source activate_convert3d_1.0.0_20210104.sh
+&lt;/code>&lt;/pre>&lt;h2 id="deactivate">Deactivate&lt;/h2>
+&lt;pre tabindex="0">&lt;code>source deactivate_convert3d_1.0.0_20210104.sif.sh
+&lt;/code>&lt;/pre>&lt;h2 id="uninstall-container-and-cleanup">Uninstall container and cleanup&lt;/h2>
+&lt;pre tabindex="0">&lt;code>./ts_uninstall.sh
+&lt;/code>&lt;/pre></description></item><item><title>Developers: Neurodesk Architecture</title><link>https://neurodesk.github.io/developers/architecture/neurodesk-compoents/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/developers/architecture/neurodesk-compoents/</guid><description>
 &lt;h1 id="layers">Layers&lt;/h1>
 &lt;p>Neurodesktop: &lt;a href="https://github.com/NeuroDesk/neurodesktop">https://github.com/NeuroDesk/neurodesktop&lt;/a>&lt;/p>
 &lt;ul>

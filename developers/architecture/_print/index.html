@@ -2,8 +2,8 @@
 <head>
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
-<meta name=generator content="Hugo 0.88.1"><link rel=canonical type=text/html href=https://neurodesk.github.io/developers/transparent_singularity/>
-<link rel=alternate type=application/rss+xml href=https://neurodesk.github.io/developers/transparent_singularity/index.xml>
+<meta name=generator content="Hugo 0.88.1"><link rel=canonical type=text/html href=https://neurodesk.github.io/developers/architecture/>
+<link rel=alternate type=application/rss+xml href=https://neurodesk.github.io/developers/architecture/index.xml>
 <meta name=ROBOTS content="NOINDEX, NOFOLLOW">
 <link rel="shortcut icon" href=/favicons/favicon.ico>
 <link rel=apple-touch-icon href=/favicons/apple-touch-icon-180x180.png sizes=180x180>
@@ -15,19 +15,19 @@
 <link rel=icon type=image/png href=/favicons/android-96x96.png sizes=96x96>
 <link rel=icon type=image/png href=/favicons/android-144x144.png sizes=144x144>
 <link rel=icon type=image/png href=/favicons/android-192x192.png sizes=192x192>
-<title>Transparent Singularity | NeuroDesk</title>
-<meta name=description content="For more advanced users who to use Transparent Singularity directly
+<title>Neurodesk Architecture | NeuroDesk</title>
+<meta name=description content="The architecture of the Neurodesk ecosystem
 ">
-<meta property="og:title" content="Transparent Singularity">
-<meta property="og:description" content="For more advanced users who to use Transparent Singularity directly
+<meta property="og:title" content="Neurodesk Architecture">
+<meta property="og:description" content="The architecture of the Neurodesk ecosystem
 ">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://neurodesk.github.io/developers/transparent_singularity/"><meta property="og:site_name" content="NeuroDesk">
-<meta itemprop=name content="Transparent Singularity">
-<meta itemprop=description content="For more advanced users who to use Transparent Singularity directly
+<meta property="og:url" content="https://neurodesk.github.io/developers/architecture/"><meta property="og:site_name" content="NeuroDesk">
+<meta itemprop=name content="Neurodesk Architecture">
+<meta itemprop=description content="The architecture of the Neurodesk ecosystem
 "><meta name=twitter:card content="summary">
-<meta name=twitter:title content="Transparent Singularity">
-<meta name=twitter:description content="For more advanced users who to use Transparent Singularity directly
+<meta name=twitter:title content="Neurodesk Architecture">
+<meta name=twitter:description content="The architecture of the Neurodesk ecosystem
 ">
 <link rel=preload href=/scss/main.min.54a6b13de98a6b564f59b9d4cda427d6ae62ab54c015b5b9f5ed167c2da7fdd5.css as=style>
 <link href=/scss/main.min.54a6b13de98a6b564f59b9d4cda427d6ae62ab54c015b5b9f5ed167c2da7fdd5.css rel=stylesheet integrity>
@@ -76,44 +76,61 @@
 This the multi-page printable view of this section.
 <a href=# onclick="return print(),!1">Click here to print</a>.
 </p><p>
-<a href=/developers/transparent_singularity/>Return to the regular view of this page</a>.
+<a href=/developers/architecture/>Return to the regular view of this page</a>.
 </p>
 </div>
-<h1 class=title>Transparent Singularity</h1>
-<div class=lead>For more advanced users who to use Transparent Singularity directly</div>
+<h1 class=title>Neurodesk Architecture</h1>
+<div class=lead>The architecture of the Neurodesk ecosystem</div>
 <ul>
-<li>1: <a href=#pg-1aeb0eca05cfedc27d063e428d152eec>Use transparent singularity</a></li>
+<li>1: <a href=#pg-7fb26fe1d8d5b2d4ce62381ae2bcf701>CVMFS architecture</a></li>
+<li>2: <a href=#pg-563591a7e975c9f90c317bf391d61e75>Neurodesk Architecture</a></li>
 </ul>
 <div class=content>
 </div>
 </div>
 <div class=td-content>
-<h1 id=pg-1aeb0eca05cfedc27d063e428d152eec>1 - Use transparent singularity</h1>
-<div class=lead>use transparent singularity</div>
-<p>Transparent singularity is here <a href=https://github.com/NeuroDesk/transparent-singularity/>https://github.com/NeuroDesk/transparent-singularity/</a></p>
-<p>This project allows to use singularity containers transparently on HPCs, so that an application inside the container can be used without adjusting any scripts or pipelines (e.g. nipype).</p>
-<h2 id=important-add-bind-points-to-bashrc-before-executing-this-script>Important: add bind points to .bashrc before executing this script</h2>
-<p>This script expects that you have adjusted the Singularity Bindpoints in your .bashrc, e.g.:</p>
-<pre tabindex=0><code>export SINGULARITY_BINDPATH=&quot;/gpfs1/,/QRISdata,/data&quot;
-</code></pre><h2 id=this-gives-you-a-list-of-all-tested-images-available-in-neurodesk>This gives you a list of all tested images available in neurodesk:</h2>
-<p><a href=https://github.com/NeuroDesk/neurodesk/blob/master/cvmfs/log.txt>https://github.com/NeuroDesk/neurodesk/blob/master/cvmfs/log.txt</a></p>
-<pre tabindex=0><code>curl -s https://raw.githubusercontent.com/NeuroDesk/neurodesk/master/cvmfs/log.txt
-</code></pre><h2 id=clone-repo-into-a-folder-with-the-intented-image-name>Clone repo into a folder with the intented image name</h2>
-<pre tabindex=0><code>git clone https://github.com/NeuroDesk/transparent-singularity convert3d_1.0.0_20210104
-</code></pre><h2 id=install>Install</h2>
-<p>This will create scripts for every binary in the container located in the $DEPLOY_PATH inside the container. It will also create activate and deactivate scripts and module files for lmod (<a href=https://lmod.readthedocs.io/en/latest/>https://lmod.readthedocs.io/en/latest/</a>)</p>
-<pre tabindex=0><code>cd convert3d_1.0.0_20210104
-./run_transparent_singularity.sh convert3d_1.0.0_20210104
-</code></pre><h1 id=use-in-module-system-lmod>Use in module system LMOD</h1>
-<p>Add the module folder path to $MODULEPATH</p>
-<h1 id=manual-activation-and-deactivation-in-case-module-system-is-not-available-this-will-add-the-paths-to-the-bashrc>Manual activation and deactivation (in case module system is not available). This will add the paths to the .bashrc</h1>
-<h2 id=activate>Activate</h2>
-<pre tabindex=0><code>source activate_convert3d_1.0.0_20210104.sh
-</code></pre><h2 id=deactivate>Deactivate</h2>
-<pre tabindex=0><code>source deactivate_convert3d_1.0.0_20210104.sif.sh
-</code></pre><h2 id=uninstall-container-and-cleanup>Uninstall container and cleanup</h2>
-<pre tabindex=0><code>./ts_uninstall.sh
-</code></pre>
+<h1 id=pg-7fb26fe1d8d5b2d4ce62381ae2bcf701>1 - CVMFS architecture</h1>
+<div class=lead>CVMFS architecture</div>
+<p>We store our singuarlity containers unpacked on CVMFS. We tried the DUCC tool in the beginning, but it was causing too many issues with dockerhub and we were rate limited. The script to unpack our singularity containers is here: <a href=https://github.com/NeuroDesk/neurocommand/blob/main/cvmfs/sync_containers_to_cvmfs.sh>https://github.com/NeuroDesk/neurocommand/blob/main/cvmfs/sync_containers_to_cvmfs.sh</a></p>
+<p>It gets called by a cronjob on the CVMFS Stratum 0 server and relies on the log.txt file being updated via an action in the neurocommand repository (<a href=https://github.com/NeuroDesk/neurocommand/blob/main/.github/workflows/upload_containers_simg.sh>https://github.com/NeuroDesk/neurocommand/blob/main/.github/workflows/upload_containers_simg.sh</a>)</p>
+<p>The Stratum 1 servers then pull this repo from Stratum 0 and our desktops mount these repos (configured here: <a href=https://github.com/NeuroDesk/neurodesktop/blob/main/Dockerfile>https://github.com/NeuroDesk/neurodesktop/blob/main/Dockerfile</a>)</p>
+<p>The startup script (<a href=https://github.com/NeuroDesk/neurodesktop/blob/main/config/startup.sh>https://github.com/NeuroDesk/neurodesktop/blob/main/config/startup.sh</a>) sets up CVMFS and tests which server is fastest during the container startup.</p>
+</div>
+<div class=td-content style=page-break-before:always>
+<h1 id=pg-563591a7e975c9f90c317bf391d61e75>2 - Neurodesk Architecture</h1>
+<div class=lead>The architecture of the Neurodesk ecosystem</div>
+<h1 id=layers>Layers</h1>
+<p>Neurodesktop: <a href=https://github.com/NeuroDesk/neurodesktop>https://github.com/NeuroDesk/neurodesktop</a></p>
+<ul>
+<li>docker container with interface modifications</li>
+<li>contains tools necessary to manage containers: vscode, git, niype</li>
+<li>CI: builds docker image and tests if it runs</li>
+</ul>
+<p>Neurocommand: <a href=https://github.com/NeuroDesk/neurocommand>https://github.com/NeuroDesk/neurocommand</a></p>
+<ul>
+<li>script to install and manage multiple containers using transparent singularity on any linux system</li>
+<li>this repo would also handle the creation of menu entries in a general form applicable to different desktop environments</li>
+<li>this repo can be re-used in other projects like CVL and the imaging workstations</li>
+<li>CI: tests if containers can be installed</li>
+</ul>
+<p>transparent-singularity: <a href=https://github.com/NeuroDesk/transparent-singularity>https://github.com/NeuroDesk/transparent-singularity</a></p>
+<ul>
+<li>script to install neuro-sub-containers, installers are called by neurodesk script</li>
+<li>this repo could provide a simple way of using our containers on HPCs for large scale processing of the pipelines build in VNM</li>
+<li>CI: test if exposing of binaries work</li>
+</ul>
+<p>Neurocontainers: <a href=https://github.com/NeuroDesk/neurocontainers>https://github.com/NeuroDesk/neurocontainers</a></p>
+<ul>
+<li>build scripts for neuro-sub-containers</li>
+<li>CI: building, pushing and testing of containers</li>
+</ul>
+<p>Neurodocker: <a href=https://github.com/NeuroDesk/neurodocker>https://github.com/NeuroDesk/neurodocker</a></p>
+<ul>
+<li>fork of neurodocker project</li>
+<li>provides recipes for our containers built</li>
+<li>we are providing pull requests back of recipes</li>
+<li>CI: handled by <a href=https://github.com/ReproNim/neurodocker>neurodocker</a> - testing of generating container recipes</li>
+</ul>
 </div>
 </main>
 </div>

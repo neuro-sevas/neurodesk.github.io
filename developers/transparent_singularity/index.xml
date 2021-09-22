@@ -1,2 +1,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>NeuroDesk – Transparent Singularity</title><link>https://neurodesk.github.io/developers/transparent_singularity/</link><description>Recent content in Transparent Singularity on NeuroDesk</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://neurodesk.github.io/developers/transparent_singularity/index.xml" rel="self" type="application/rss+xml"/><item><title>Developers: Use transparent singularity</title><link>https://neurodesk.github.io/developers/transparent_singularity/use_transparent_singularity/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/developers/transparent_singularity/use_transparent_singularity/</guid><description>
-&lt;p>move documentation from here: &lt;a href="https://github.com/NeuroDesk/transparent-singularity/">https://github.com/NeuroDesk/transparent-singularity/&lt;/a>&lt;/p></description></item></channel></rss>
+&lt;p>Transparent singularity is here &lt;a href="https://github.com/NeuroDesk/transparent-singularity/">https://github.com/NeuroDesk/transparent-singularity/&lt;/a>&lt;/p>
+&lt;p>This project allows to use singularity containers transparently on HPCs, so that an application inside the container can be used without adjusting any scripts or pipelines (e.g. nipype).&lt;/p>
+&lt;h2 id="important-add-bind-points-to-bashrc-before-executing-this-script">Important: add bind points to .bashrc before executing this script&lt;/h2>
+&lt;p>This script expects that you have adjusted the Singularity Bindpoints in your .bashrc, e.g.:&lt;/p>
+&lt;pre tabindex="0">&lt;code>export SINGULARITY_BINDPATH=&amp;quot;/gpfs1/,/QRISdata,/data&amp;quot;
+&lt;/code>&lt;/pre>&lt;h2 id="this-gives-you-a-list-of-all-tested-images-available-in-neurodesk">This gives you a list of all tested images available in neurodesk:&lt;/h2>
+&lt;p>&lt;a href="https://github.com/NeuroDesk/neurodesk/blob/master/cvmfs/log.txt">https://github.com/NeuroDesk/neurodesk/blob/master/cvmfs/log.txt&lt;/a>&lt;/p>
+&lt;pre tabindex="0">&lt;code>curl -s https://raw.githubusercontent.com/NeuroDesk/neurodesk/master/cvmfs/log.txt
+&lt;/code>&lt;/pre>&lt;h2 id="clone-repo-into-a-folder-with-the-intented-image-name">Clone repo into a folder with the intented image name&lt;/h2>
+&lt;pre tabindex="0">&lt;code>git clone https://github.com/NeuroDesk/transparent-singularity convert3d_1.0.0_20210104
+&lt;/code>&lt;/pre>&lt;h2 id="install">Install&lt;/h2>
+&lt;p>This will create scripts for every binary in the container located in the $DEPLOY_PATH inside the container. It will also create activate and deactivate scripts and module files for lmod (&lt;a href="https://lmod.readthedocs.io/en/latest/">https://lmod.readthedocs.io/en/latest/&lt;/a>)&lt;/p>
+&lt;pre tabindex="0">&lt;code>cd convert3d_1.0.0_20210104
+./run_transparent_singularity.sh convert3d_1.0.0_20210104
+&lt;/code>&lt;/pre>&lt;h1 id="use-in-module-system-lmod">Use in module system LMOD&lt;/h1>
+&lt;p>Add the module folder path to $MODULEPATH&lt;/p>
+&lt;h1 id="manual-activation-and-deactivation-in-case-module-system-is-not-available-this-will-add-the-paths-to-the-bashrc">Manual activation and deactivation (in case module system is not available). This will add the paths to the .bashrc&lt;/h1>
+&lt;h2 id="activate">Activate&lt;/h2>
+&lt;pre tabindex="0">&lt;code>source activate_convert3d_1.0.0_20210104.sh
+&lt;/code>&lt;/pre>&lt;h2 id="deactivate">Deactivate&lt;/h2>
+&lt;pre tabindex="0">&lt;code>source deactivate_convert3d_1.0.0_20210104.sif.sh
+&lt;/code>&lt;/pre>&lt;h2 id="uninstall-container-and-cleanup">Uninstall container and cleanup&lt;/h2>
+&lt;pre tabindex="0">&lt;code>./ts_uninstall.sh
+&lt;/code>&lt;/pre></description></item></channel></rss>

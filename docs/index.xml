@@ -184,7 +184,7 @@ vnmd/neurodesktop:20210918
 &lt;h2 id="how-to-force-a-complete-container-download-to-your-system">How to force a complete container download to your system&lt;/h2>
 &lt;p>To increase speed and reliability of Neurodesktop we mount the application containers from a CVMFS mount and download only the files required to run your current task. Although we aim to keep everything on there reproducible, there might be a reason that you want to fully download the containers to your system. You can force this behaviour by adding another parameter to the docker call: &lt;code>-e CVMFS_DISABLE=true&lt;/code>&lt;/p>
 &lt;p>For windows an example would look like this:&lt;/p>
-&lt;pre tabindex="0">&lt;code>docker run --shm-size=1gb -it --privileged --name neurodesktop -v C:/neurodesktop-storage:/neurodesktop-storage -e CVMFS_DISABLE=true -p 8080:8080 neurodesktop:20210917
+&lt;pre tabindex="0">&lt;code>docker run --shm-size=1gb -it --privileged --name neurodesktop -v C:/neurodesktop-storage:/neurodesktop-storage -e CVMFS_DISABLE=true -p 8080:8080 -h neurodesktop-20210918 vnmd/neurodesktop:20210918
 &lt;/code>&lt;/pre></description></item><item><title>Docs: Windows</title><link>https://neurodesk.github.io/docs/neurocommand/getting-started/windows/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurocommand/getting-started/windows/</guid><description>
 &lt;h2 id="wsl-w-ubuntu--lxde">WSL (w/ Ubuntu + LXDE)&lt;/h2>
 &lt;p>For more information on WSL: &lt;a href="https://docs.microsoft.com/en-us/windows/wsl">https://docs.microsoft.com/en-us/windows/wsl&lt;/a>&lt;/p>
@@ -302,8 +302,73 @@ Change &lt;code>port=3389&lt;/code> to &lt;code>port=3390&lt;/code> and save&lt;
 &lt;li>Type:&lt;/li>
 &lt;/ol>
 &lt;pre tabindex="0">&lt;code>docker rm neurodesktop
-&lt;/code>&lt;/pre></description></item><item><title>Docs: HPC</title><link>https://neurodesk.github.io/docs/neurodesktop/getting-started/hpc/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/getting-started/hpc/</guid><description>
-&lt;p>One way of running this project on HPCs is via &lt;a href="https://neurodesk.github.io/docs/neurocommand/getting-started/linux/">https://neurodesk.github.io/docs/neurocommand/getting-started/linux/&lt;/a>&lt;/p></description></item><item><title>Docs: Storage</title><link>https://neurodesk.github.io/docs/neurodesktop/storage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/storage/</guid><description>
+&lt;/code>&lt;/pre></description></item><item><title>Docs: Docker</title><link>https://neurodesk.github.io/docs/neurocontainers/docker/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurocontainers/docker/</guid><description>
+&lt;p>Our containers are automatically built in &lt;a href="https://github.com/NeuroDesk/neurocontainers/">https://github.com/NeuroDesk/neurocontainers/&lt;/a> and hosted on &lt;a href="https://hub.docker.com/orgs/vnmd/repositories">dockerhub&lt;/a> or on &lt;a href="https://github.com/NeuroDesk/neurocontainers/packages">github&lt;/a>&lt;/p>
+&lt;h2 id="pull-docker-containers">Pull Docker containers&lt;/h2>
+&lt;p>e.g. for a julia container
+docker&lt;/p>
+&lt;pre tabindex="0">&lt;code>docker pull vnmd/julia_1.6.1
+&lt;/code>&lt;/pre>&lt;p>build singularity image from dockerhub&lt;/p>
+&lt;pre tabindex="0">&lt;code>singularity build julia_1.6.1.simg docker://vnmd/julia_1.6.1
+&lt;/code>&lt;/pre>&lt;p>Replace &lt;code>julia_1.6.1&lt;/code> with your selected application&lt;/p>
+&lt;h2 id="transparent-singularity">Transparent Singularity&lt;/h2>
+&lt;p>The containers can be used in combination with our &lt;a href="https://github.com/NeuroDesk/transparent-singularity/">transparent singularity&lt;/a> tool, that wrap the executables inside a container to make them easily available for pipelines.&lt;/p></description></item><item><title>Docs: HPC</title><link>https://neurodesk.github.io/docs/neurodesktop/getting-started/hpc/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/getting-started/hpc/</guid><description>
+&lt;p>One way of running this project on HPCs is via &lt;a href="https://neurodesk.github.io/docs/neurocommand/getting-started/linux/">https://neurodesk.github.io/docs/neurocommand/getting-started/linux/&lt;/a>&lt;/p></description></item><item><title>Docs: Neurocontainers</title><link>https://neurodesk.github.io/docs/neurocontainers/cvmfs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurocontainers/cvmfs/</guid><description>
+&lt;h1 id="install-cvmfs-on-windows-subsystem-for-linux">Install CVMFS on Windows subsystem for linux&lt;/h1>
+&lt;pre tabindex="0">&lt;code>sudo apt-get install lsb-release
+wget https://ecsft.cern.ch/dist/cvmfs/cvmfs-release/cvmfs-release-latest_all.deb
+sudo dpkg -i cvmfs-release-latest_all.deb
+rm -f cvmfs-release-latest_all.deb
+sudo apt-get update
+sudo apt-get install cvmfs
+sudo mkdir -p /etc/cvmfs/keys/ardc.edu.au/
+echo &amp;quot;-----BEGIN PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwUPEmxDp217SAtZxaBep
+Bi2TQcLoh5AJ//HSIz68ypjOGFjwExGlHb95Frhu1SpcH5OASbV+jJ60oEBLi3sD
+qA6rGYt9kVi90lWvEjQnhBkPb0uWcp1gNqQAUocybCzHvoiG3fUzAe259CrK09qR
+pX8sZhgK3eHlfx4ycyMiIQeg66AHlgVCJ2fKa6fl1vnh6adJEPULmn6vZnevvUke
+I6U1VcYTKm5dPMrOlY/fGimKlyWvivzVv1laa5TAR2Dt4CfdQncOz+rkXmWjLjkD
+87WMiTgtKybsmMLb2yCGSgLSArlSWhbMA0MaZSzAwE9PJKCCMvTANo5644zc8jBe
+NQIDAQAB
+-----END PUBLIC KEY-----&amp;quot; | sudo tee /etc/cvmfs/keys/ardc.edu.au/neurodesk.ardc.edu.au.pub
+echo &amp;quot;CVMFS_USE_GEOAPI=yes&amp;quot; | sudo tee /etc/cvmfs/config.d/neurodesk.ardc.edu.au.conf
+echo 'CVMFS_SERVER_URL=&amp;quot;http://203.101.231.144/cvmfs/@fqrn@;http://150.136.239.221/cvmfs/@fqrn@;http://132.145.96.34/cvmfs/@fqrn@;http://140.238.170.185/cvmfs/@fqrn@;http://130.61.74.69/cvmfs/@fqrn@;http://152.67.114.42/cvmfs/@fqrn@&amp;quot;' | sudo tee -a /etc/cvmfs/config.d/neurodesk.ardc.edu.au.conf \
+echo 'CVMFS_KEYS_DIR=&amp;quot;/etc/cvmfs/keys/ardc.edu.au/&amp;quot;' | sudo tee -a /etc/cvmfs/config.d/neurodesk.ardc.edu.au.conf
+echo &amp;quot;CVMFS_HTTP_PROXY=DIRECT&amp;quot; | sudo tee /etc/cvmfs/default.local
+echo &amp;quot;CVMFS_QUOTA_LIMIT=5000&amp;quot; | sudo tee -a /etc/cvmfs/default.local
+sudo cvmfs_config setup
+sudo cvmfs_config wsl2_start
+sudo cvmfs_config chksetup
+ls /cvmfs/neurodesk.ardc.edu.au
+sudo cvmfs_talk -i neurodesk.ardc.edu.au host probe
+sudo cvmfs_talk -i neurodesk.ardc.edu.au host info
+cvmfs_config stat -v neurodesk.ardc.edu.au
+&lt;/code>&lt;/pre>&lt;h1 id="use-of-neurodesk-cvmfs-containers">use of Neurodesk CVMFS containers&lt;/h1>
+&lt;p>The containers are now available in /cvmfs/neurodesk.ardc.edu.au/containers/ and can be started with:&lt;/p>
+&lt;pre tabindex="0">&lt;code>singularity shell --no-home /cvmfs/neurodesk.ardc.edu.au/containers/itksnap_3.8.0_20201208/itksnap_3.8.0_20201208.simg
+&lt;/code>&lt;/pre></description></item><item><title>Docs: Singularity</title><link>https://neurodesk.github.io/docs/neurocontainers/singularity/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurocontainers/singularity/</guid><description>
+&lt;p>Our docker containers are converted to singularity containers and stored on Object storage.&lt;/p>
+&lt;h2 id="download-singularity-containers">Download Singularity Containers&lt;/h2>
+&lt;p>First get an overview which containers are available as Singularity containers:
+&lt;a href="https://github.com/NeuroDesk/neurodesk/blob/master/cvmfs/log.txt">https://github.com/NeuroDesk/neurodesk/blob/master/cvmfs/log.txt&lt;/a>&lt;/p>
+&lt;pre tabindex="0">&lt;code>curl -s https://raw.githubusercontent.com/NeuroDesk/neurodesk/master/cvmfs/log.txt
+&lt;/code>&lt;/pre>&lt;p>assign the container name to a variable:&lt;/p>
+&lt;pre tabindex="0">&lt;code>export container=itksnap_3.8.0_20201208
+&lt;/code>&lt;/pre>&lt;p>Then download the containers. An easy way is to use CURL (e.g. downloading from the US location):&lt;/p>
+&lt;pre tabindex="0">&lt;code>curl -X GET https://objectstorage.us-ashburn-1.oraclecloud.com/n/sd63xuke79z3/b/neurodesk/o/${container}.simg -O
+&lt;/code>&lt;/pre>&lt;p>or from australia&lt;/p>
+&lt;pre tabindex="0">&lt;code>curl -X GET https://objectstorage.ap-sydney-1.oraclecloud.com/n/sd63xuke79z3/b/neurodesk/o/${container}.simg -O
+&lt;/code>&lt;/pre>&lt;p>A faster way is pulling from multiple storage locations at once using aria2:&lt;/p>
+&lt;pre tabindex="0">&lt;code>aria2c https://objectstorage.us-ashburn-1.oraclecloud.com/n/sd63xuke79z3/b/neurodesk/o/${container}.simg https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/sd63xuke79z3/b/neurodesk/o/${container}.simg https://objectstorage.ap-sydney-1.oraclecloud.com/n/sd63xuke79z3/b/neurodesk/o/${container}.simg https://swift.rc.nectar.org.au/v1/AUTH_dead991e1fa847e3afcca2d3a7041f5d/neurodesk/${container}.simg
+&lt;/code>&lt;/pre>&lt;h2 id="transparent-singularity">Transparent Singularity&lt;/h2>
+&lt;p>The singularity containers can be also be used in combination with our &lt;a href="https://neurodesk.github.io/developers/transparent_singularity//">Transparent Singularity Tool&lt;/a> tool, that wraps the executables inside a container to make them easily available for pipelines. More information can be found here:&lt;/p>
+&lt;p>one example to do this is:&lt;/p>
+&lt;pre tabindex="0">&lt;code>curl -s https://raw.githubusercontent.com/NeuroDesk/neurodesk/master/cvmfs/log.txt
+export container=itksnap_3.8.0_20201208
+git clone https://github.com/NeuroDesk/transparent-singularity ${container}
+cd ${container}
+./run_transparent_singularity.sh ${container}
+&lt;/code>&lt;/pre></description></item><item><title>Docs: Storage</title><link>https://neurodesk.github.io/docs/neurodesktop/storage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/storage/</guid><description>
 &lt;h1 id="cloud-storage">Cloud-storage&lt;/h1>
 &lt;p>The easiest way to get your data into Neurodesktop is to use a cloud storage provider like CloudStor, Dropbox, OneDrive and their sync tools like OwnCloud, Nextcloud or very flexible tools like rclone or davfs2. Another good option could be to utilize Globus for large amounts of data.&lt;/p>
 &lt;h2 id="nextcloud-and-owncloud-desktop-clients">Nextcloud and Owncloud desktop clients&lt;/h2>

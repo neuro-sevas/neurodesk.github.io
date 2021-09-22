@@ -1,0 +1,37 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>NeuroDesk – Neurodesk Architecture</title><link>https://neurodesk.github.io/developers/architecture/</link><description>Recent content in Neurodesk Architecture on NeuroDesk</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://neurodesk.github.io/developers/architecture/index.xml" rel="self" type="application/rss+xml"/><item><title>Developers: CVMFS architecture</title><link>https://neurodesk.github.io/developers/architecture/cvmfs_setup/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/developers/architecture/cvmfs_setup/</guid><description>
+&lt;p>We store our singuarlity containers unpacked on CVMFS. We tried the DUCC tool in the beginning, but it was causing too many issues with dockerhub and we were rate limited. The script to unpack our singularity containers is here: &lt;a href="https://github.com/NeuroDesk/neurocommand/blob/main/cvmfs/sync_containers_to_cvmfs.sh">https://github.com/NeuroDesk/neurocommand/blob/main/cvmfs/sync_containers_to_cvmfs.sh&lt;/a>&lt;/p>
+&lt;p>It gets called by a cronjob on the CVMFS Stratum 0 server and relies on the log.txt file being updated via an action in the neurocommand repository (&lt;a href="https://github.com/NeuroDesk/neurocommand/blob/main/.github/workflows/upload_containers_simg.sh">https://github.com/NeuroDesk/neurocommand/blob/main/.github/workflows/upload_containers_simg.sh&lt;/a>)&lt;/p>
+&lt;p>The Stratum 1 servers then pull this repo from Stratum 0 and our desktops mount these repos (configured here: &lt;a href="https://github.com/NeuroDesk/neurodesktop/blob/main/Dockerfile">https://github.com/NeuroDesk/neurodesktop/blob/main/Dockerfile&lt;/a>)&lt;/p>
+&lt;p>The startup script (&lt;a href="https://github.com/NeuroDesk/neurodesktop/blob/main/config/startup.sh">https://github.com/NeuroDesk/neurodesktop/blob/main/config/startup.sh&lt;/a>) sets up CVMFS and tests which server is fastest during the container startup.&lt;/p></description></item><item><title>Developers: Neurodesk Architecture</title><link>https://neurodesk.github.io/developers/architecture/neurodesk-compoents/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/developers/architecture/neurodesk-compoents/</guid><description>
+&lt;h1 id="layers">Layers&lt;/h1>
+&lt;p>Neurodesktop: &lt;a href="https://github.com/NeuroDesk/neurodesktop">https://github.com/NeuroDesk/neurodesktop&lt;/a>&lt;/p>
+&lt;ul>
+&lt;li>docker container with interface modifications&lt;/li>
+&lt;li>contains tools necessary to manage containers: vscode, git, niype&lt;/li>
+&lt;li>CI: builds docker image and tests if it runs&lt;/li>
+&lt;/ul>
+&lt;p>Neurocommand: &lt;a href="https://github.com/NeuroDesk/neurocommand">https://github.com/NeuroDesk/neurocommand&lt;/a>&lt;/p>
+&lt;ul>
+&lt;li>script to install and manage multiple containers using transparent singularity on any linux system&lt;/li>
+&lt;li>this repo would also handle the creation of menu entries in a general form applicable to different desktop environments&lt;/li>
+&lt;li>this repo can be re-used in other projects like CVL and the imaging workstations&lt;/li>
+&lt;li>CI: tests if containers can be installed&lt;/li>
+&lt;/ul>
+&lt;p>transparent-singularity: &lt;a href="https://github.com/NeuroDesk/transparent-singularity">https://github.com/NeuroDesk/transparent-singularity&lt;/a>&lt;/p>
+&lt;ul>
+&lt;li>script to install neuro-sub-containers, installers are called by neurodesk script&lt;/li>
+&lt;li>this repo could provide a simple way of using our containers on HPCs for large scale processing of the pipelines build in VNM&lt;/li>
+&lt;li>CI: test if exposing of binaries work&lt;/li>
+&lt;/ul>
+&lt;p>Neurocontainers: &lt;a href="https://github.com/NeuroDesk/neurocontainers">https://github.com/NeuroDesk/neurocontainers&lt;/a>&lt;/p>
+&lt;ul>
+&lt;li>build scripts for neuro-sub-containers&lt;/li>
+&lt;li>CI: building, pushing and testing of containers&lt;/li>
+&lt;/ul>
+&lt;p>Neurodocker: &lt;a href="https://github.com/NeuroDesk/neurodocker">https://github.com/NeuroDesk/neurodocker&lt;/a>&lt;/p>
+&lt;ul>
+&lt;li>fork of neurodocker project&lt;/li>
+&lt;li>provides recipes for our containers built&lt;/li>
+&lt;li>we are providing pull requests back of recipes&lt;/li>
+&lt;li>CI: handled by &lt;a href="https://github.com/ReproNim/neurodocker">neurodocker&lt;/a> - testing of generating container recipes&lt;/li>
+&lt;/ul></description></item></channel></rss>
