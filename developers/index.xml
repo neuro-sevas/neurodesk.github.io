@@ -1,36 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>NeuroDesk – Developers</title><link>https://neurodesk.github.io/developers/</link><description>Recent content in Developers on NeuroDesk</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://neurodesk.github.io/developers/index.xml" rel="self" type="application/rss+xml"/><item><title>Developers: Neurodesk Architecture</title><link>https://neurodesk.github.io/developers/new_tools/neurodesk-architecture/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/developers/new_tools/neurodesk-architecture/</guid><description>
-&lt;h1 id="layers">Layers&lt;/h1>
-&lt;p>Neurodesktop: &lt;a href="https://github.com/NeuroDesk/neurodesktop">https://github.com/NeuroDesk/neurodesktop&lt;/a>&lt;/p>
-&lt;ul>
-&lt;li>docker container with interface modifications&lt;/li>
-&lt;li>contains tools necessary to manage containers: vscode, git, niype&lt;/li>
-&lt;li>CI: builds docker image and tests if it runs&lt;/li>
-&lt;/ul>
-&lt;p>Neurocommand: &lt;a href="https://github.com/NeuroDesk/neurocommand">https://github.com/NeuroDesk/neurocommand&lt;/a>&lt;/p>
-&lt;ul>
-&lt;li>script to install and manage multiple containers using transparent singularity on any linux system&lt;/li>
-&lt;li>this repo would also handle the creation of menu entries in a general form applicable to different desktop environments&lt;/li>
-&lt;li>this repo can be re-used in other projects like CVL and the imaging workstations&lt;/li>
-&lt;li>CI: tests if containers can be installed&lt;/li>
-&lt;/ul>
-&lt;p>transparent-singularity: &lt;a href="https://github.com/NeuroDesk/transparent-singularity">https://github.com/NeuroDesk/transparent-singularity&lt;/a>&lt;/p>
-&lt;ul>
-&lt;li>script to install neuro-sub-containers, installers are called by neurodesk script&lt;/li>
-&lt;li>this repo could provide a simple way of using our containers on HPCs for large scale processing of the pipelines build in VNM&lt;/li>
-&lt;li>CI: test if exposing of binaries work&lt;/li>
-&lt;/ul>
-&lt;p>Neurocontainers: &lt;a href="https://github.com/NeuroDesk/neurocontainers">https://github.com/NeuroDesk/neurocontainers&lt;/a>&lt;/p>
-&lt;ul>
-&lt;li>build scripts for neuro-sub-containers&lt;/li>
-&lt;li>CI: building, pushing and testing of containers&lt;/li>
-&lt;/ul>
-&lt;p>Neurodocker: &lt;a href="https://github.com/NeuroDesk/neurodocker">https://github.com/NeuroDesk/neurodocker&lt;/a>&lt;/p>
-&lt;ul>
-&lt;li>fork of neurodocker project&lt;/li>
-&lt;li>provides recipes for our containers built&lt;/li>
-&lt;li>we are providing pull requests back of recipes&lt;/li>
-&lt;li>CI: handled by &lt;a href="https://github.com/ReproNim/neurodocker">neurodocker&lt;/a> - testing of generating container recipes&lt;/li>
-&lt;/ul></description></item><item><title>Developers: Add tools</title><link>https://neurodesk.github.io/developers/new_tools/add_tool/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/developers/new_tools/add_tool/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>NeuroDesk – Developers</title><link>https://neurodesk.github.io/developers/</link><description>Recent content in Developers on NeuroDesk</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://neurodesk.github.io/developers/index.xml" rel="self" type="application/rss+xml"/><item><title>Developers: Add tools</title><link>https://neurodesk.github.io/developers/new_tools/add_tool/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/developers/new_tools/add_tool/</guid><description>
 &lt;p>The goal of &lt;em>neurodesk&lt;/em> is to provide users with a large choice of tools to use in their pipelines.
 Use the guide below to add a tool to &lt;em>neurodesktop&lt;/em> or &lt;em>neurocontainers&lt;/em>.&lt;/p>
 &lt;h2 id="guiding-principles">Guiding principles&lt;/h2>
@@ -223,4 +191,36 @@ Here are two examples for FreeSurfer and FreeView. This first one only installs 
 &lt;span style="color:#c4a000">Terminal&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">true&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Developers: Host a Stratum 1 server</title><link>https://neurodesk.github.io/developers/cvmfs/add_cvmfs_server/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/developers/cvmfs/add_cvmfs_server/</guid><description>
 &lt;p>or a proxy &amp;hellip;&lt;/p></description></item><item><title>Developers: Use transparent singularity</title><link>https://neurodesk.github.io/developers/transparent_singularity/use_transparent_singularity/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/developers/transparent_singularity/use_transparent_singularity/</guid><description>
-&lt;p>move documentation from here: &lt;a href="https://github.com/NeuroDesk/transparent-singularity/">https://github.com/NeuroDesk/transparent-singularity/&lt;/a>&lt;/p></description></item></channel></rss>
+&lt;p>move documentation from here: &lt;a href="https://github.com/NeuroDesk/transparent-singularity/">https://github.com/NeuroDesk/transparent-singularity/&lt;/a>&lt;/p></description></item><item><title>Developers: Neurodesk Architecture</title><link>https://neurodesk.github.io/developers/new_tools/neurodesk-architecture/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/developers/new_tools/neurodesk-architecture/</guid><description>
+&lt;h1 id="layers">Layers&lt;/h1>
+&lt;p>Neurodesktop: &lt;a href="https://github.com/NeuroDesk/neurodesktop">https://github.com/NeuroDesk/neurodesktop&lt;/a>&lt;/p>
+&lt;ul>
+&lt;li>docker container with interface modifications&lt;/li>
+&lt;li>contains tools necessary to manage containers: vscode, git, niype&lt;/li>
+&lt;li>CI: builds docker image and tests if it runs&lt;/li>
+&lt;/ul>
+&lt;p>Neurocommand: &lt;a href="https://github.com/NeuroDesk/neurocommand">https://github.com/NeuroDesk/neurocommand&lt;/a>&lt;/p>
+&lt;ul>
+&lt;li>script to install and manage multiple containers using transparent singularity on any linux system&lt;/li>
+&lt;li>this repo would also handle the creation of menu entries in a general form applicable to different desktop environments&lt;/li>
+&lt;li>this repo can be re-used in other projects like CVL and the imaging workstations&lt;/li>
+&lt;li>CI: tests if containers can be installed&lt;/li>
+&lt;/ul>
+&lt;p>transparent-singularity: &lt;a href="https://github.com/NeuroDesk/transparent-singularity">https://github.com/NeuroDesk/transparent-singularity&lt;/a>&lt;/p>
+&lt;ul>
+&lt;li>script to install neuro-sub-containers, installers are called by neurodesk script&lt;/li>
+&lt;li>this repo could provide a simple way of using our containers on HPCs for large scale processing of the pipelines build in VNM&lt;/li>
+&lt;li>CI: test if exposing of binaries work&lt;/li>
+&lt;/ul>
+&lt;p>Neurocontainers: &lt;a href="https://github.com/NeuroDesk/neurocontainers">https://github.com/NeuroDesk/neurocontainers&lt;/a>&lt;/p>
+&lt;ul>
+&lt;li>build scripts for neuro-sub-containers&lt;/li>
+&lt;li>CI: building, pushing and testing of containers&lt;/li>
+&lt;/ul>
+&lt;p>Neurodocker: &lt;a href="https://github.com/NeuroDesk/neurodocker">https://github.com/NeuroDesk/neurodocker&lt;/a>&lt;/p>
+&lt;ul>
+&lt;li>fork of neurodocker project&lt;/li>
+&lt;li>provides recipes for our containers built&lt;/li>
+&lt;li>we are providing pull requests back of recipes&lt;/li>
+&lt;li>CI: handled by &lt;a href="https://github.com/ReproNim/neurodocker">neurodocker&lt;/a> - testing of generating container recipes&lt;/li>
+&lt;/ul></description></item></channel></rss>
