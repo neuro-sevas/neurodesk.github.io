@@ -739,13 +739,13 @@ Change <code>port=3389</code> to <code>port=3390</code> and save</li>
 <h1 id=install-cvmfs>Install CVMFS</h1>
 <p>First you need to install CVMFS. Follow the official instructions here: <a href=https://cvmfs.readthedocs.io/en/stable/cpt-quickstart.html#getting-the-software>https://cvmfs.readthedocs.io/en/stable/cpt-quickstart.html#getting-the-software</a></p>
 <p>one example for Windows Subsystem for Linux (WSL) could look like this:</p>
-<pre tabindex=0><code>sudo apt-get install lsb-release
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>sudo apt-get install lsb-release
 wget https://ecsft.cern.ch/dist/cvmfs/cvmfs-release/cvmfs-release-latest_all.deb
 sudo dpkg -i cvmfs-release-latest_all.deb
 rm -f cvmfs-release-latest_all.deb
 sudo apt-get update
 sudo apt-get install cvmfs
-</code></pre><h1 id=configure-cvmfs>Configure CVMFS</h1>
+</code></pre></div><h1 id=configure-cvmfs>Configure CVMFS</h1>
 <p>Once installed create the keys and configure the servers used:</p>
 <div class=highlight><div style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
 <table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>

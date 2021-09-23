@@ -306,13 +306,13 @@ Change &lt;code>port=3389&lt;/code> to &lt;code>port=3390&lt;/code> and save&lt;
 &lt;h1 id="install-cvmfs">Install CVMFS&lt;/h1>
 &lt;p>First you need to install CVMFS. Follow the official instructions here: &lt;a href="https://cvmfs.readthedocs.io/en/stable/cpt-quickstart.html#getting-the-software">https://cvmfs.readthedocs.io/en/stable/cpt-quickstart.html#getting-the-software&lt;/a>&lt;/p>
 &lt;p>one example for Windows Subsystem for Linux (WSL) could look like this:&lt;/p>
-&lt;pre tabindex="0">&lt;code>sudo apt-get install lsb-release
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">sudo apt-get install lsb-release
 wget https://ecsft.cern.ch/dist/cvmfs/cvmfs-release/cvmfs-release-latest_all.deb
 sudo dpkg -i cvmfs-release-latest_all.deb
 rm -f cvmfs-release-latest_all.deb
 sudo apt-get update
 sudo apt-get install cvmfs
-&lt;/code>&lt;/pre>&lt;h1 id="configure-cvmfs">Configure CVMFS&lt;/h1>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="configure-cvmfs">Configure CVMFS&lt;/h1>
 &lt;p>Once installed create the keys and configure the servers used:&lt;/p>
 &lt;div class="highlight">&lt;div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
