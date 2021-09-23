@@ -1,6 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>NeuroDesk – News</title><link>https://neurodesk.github.io/blog/</link><description>Recent content in News on NeuroDesk</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://neurodesk.github.io/blog/index.xml" rel="self" type="application/rss+xml"/><item><title>Blog: December 2021</title><link>https://neurodesk.github.io/blog/2021/09/22/december-2021/</link><pubDate>Wed, 22 Sep 2021 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/blog/2021/09/22/december-2021/</guid><description>
 &lt;p>We are invited to present NeuroDesk at the ESMRMB endorsed Open MRI workshop on the 15th of December 2021. Stay tuned for updates on this event.&lt;/p></description></item><item><title>Blog: October 2021</title><link>https://neurodesk.github.io/blog/2021/09/21/october-2021/</link><pubDate>Tue, 21 Sep 2021 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/blog/2021/09/21/october-2021/</guid><description>
 &lt;p>We are invited to present Neurodesk at the eResearch Australasisa conference 2021 on the 14th of October: Make sure to sign up here &lt;a href="https://conference.eresearch.edu.au/">https://conference.eresearch.edu.au/&lt;/a>&lt;/p></description></item><item><title>Blog: Sept 2021</title><link>https://neurodesk.github.io/blog/2021/09/20/sept-2021/</link><pubDate>Mon, 20 Sep 2021 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/blog/2021/09/20/sept-2021/</guid><description>
+&lt;h2 id="20210923">20210923&lt;/h2>
+&lt;ul>
+&lt;li>removed faulty mriqc 0.15.2 container&lt;/li>
+&lt;li>neurodesk.github.io is now starting page in firefox browser&lt;/li>
+&lt;/ul>
 &lt;h2 id="20210918">20210918&lt;/h2>
 &lt;ul>
 &lt;li>added mriqc 0.16.1 and mrtrix 3.0.3&lt;/li>

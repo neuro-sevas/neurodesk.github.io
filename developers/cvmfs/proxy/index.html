@@ -21,12 +21,12 @@
 ">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://neurodesk.github.io/developers/cvmfs/proxy/"><meta property="article:section" content="developers">
-<meta property="article:modified_time" content="2021-09-22T21:37:02+10:00"><meta property="og:site_name" content="NeuroDesk">
+<meta property="article:modified_time" content="2021-09-23T19:01:05+10:00"><meta property="og:site_name" content="NeuroDesk">
 <meta itemprop=name content="Setup CVMFS Proxy">
 <meta itemprop=description content="Setup CVMFS Proxy server
 ">
-<meta itemprop=dateModified content="2021-09-22T21:37:02+10:00">
-<meta itemprop=wordCount content="180">
+<meta itemprop=dateModified content="2021-09-23T19:01:05+10:00">
+<meta itemprop=wordCount content="221">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="Setup CVMFS Proxy">
 <meta name=twitter:description content="Setup CVMFS Proxy server
@@ -132,52 +132,99 @@
 </header>
 <p>If you want more speed in a region one way could be to setup another Stratum 1 server or a proxy. We currently don&rsquo;t run any proxy servers but it would be important for using it on a cluster.</p>
 <h1 id=setup-a-cvmfs-proxy-server>Setup a CVMFS proxy server</h1>
-<pre tabindex=0><code>sudo yum install -y squid
+<div class=highlight><div style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">12
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">13
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">14
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">15
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">16
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">17
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">18
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">19
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">20
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">21
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">22
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">23
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">24
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">25
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">26
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">27
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">28
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">29
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">30
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">31
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">32
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">33
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">34
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">35
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">36
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">37
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">38
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">39
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">40
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">41
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>sudo yum install -y squid
 
 sudo vi /etc/squid/squid.conf
 
-# List of local IP addresses (separate IPs and/or CIDR notation) allowed to access your local proxy
-#acl local_nodes src YOUR_CLIENT_IPS
+<span style=color:#8f5902;font-style:italic># List of local IP addresses (separate IPs and/or CIDR notation) allowed to access your local proxy</span>
+<span style=color:#8f5902;font-style:italic>#acl local_nodes src YOUR_CLIENT_IPS</span>
 
-# Destination domains that are allowed
-#acl stratum_ones dstdomain .YOURDOMAIN.ORG
-#acl stratum_ones dstdom_regex YOUR_REGEX
+<span style=color:#8f5902;font-style:italic># Destination domains that are allowed</span>
+<span style=color:#8f5902;font-style:italic>#acl stratum_ones dstdomain .YOURDOMAIN.ORG</span>
+<span style=color:#8f5902;font-style:italic>#acl stratum_ones dstdom_regex YOUR_REGEX</span>
 acl stratum_ones dst 140.238.211.92
 
-# Squid port
-http_port 3128
+<span style=color:#8f5902;font-style:italic># Squid port</span>
+http_port <span style=color:#0000cf;font-weight:700>3128</span>
 
-# Deny access to anything which is not part of our stratum_ones ACL.
+<span style=color:#8f5902;font-style:italic># Deny access to anything which is not part of our stratum_ones ACL.</span>
 http_access deny !stratum_ones
 
-# Only allow access from our local machines
-#http_access allow local_nodes
+<span style=color:#8f5902;font-style:italic># Only allow access from our local machines</span>
+<span style=color:#8f5902;font-style:italic>#http_access allow local_nodes</span>
 http_access allow localhost
 
-# Finally, deny all other access to this proxy
+<span style=color:#8f5902;font-style:italic># Finally, deny all other access to this proxy</span>
 http_access deny all
 
-minimum_expiry_time 0
-maximum_object_size 1024 MB
+minimum_expiry_time <span style=color:#0000cf;font-weight:700>0</span>
+maximum_object_size <span style=color:#0000cf;font-weight:700>1024</span> MB
 
-cache_mem 128 MB
-maximum_object_size_in_memory 128 KB
-# 5 GB disk cache
-cache_dir ufs /var/spool/squid 5000 16 256
+cache_mem <span style=color:#0000cf;font-weight:700>128</span> MB
+maximum_object_size_in_memory <span style=color:#0000cf;font-weight:700>128</span> KB
+<span style=color:#8f5902;font-style:italic># 5 GB disk cache</span>
+cache_dir ufs /var/spool/squid <span style=color:#0000cf;font-weight:700>5000</span> <span style=color:#0000cf;font-weight:700>16</span> <span style=color:#0000cf;font-weight:700>256</span>
 
 
 
 sudo squid -k parse
 
 sudo systemctl start squid
-sudo systemctl enable squid
+sudo systemctl <span style=color:#204a87>enable</span> squid
 sudo systemctl status squid
 sudo systemctl restart squid
-</code></pre>
+</code></pre></td></tr></table>
+</div>
+</div>
 <div class="text-muted mt-5 pt-3 border-top">
 Last modified
-September 22, 2021
-: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/a8ea892703b0486d234d3d6321f2626ac798c0c8>titles updated (a8ea892)</a>
+September 23, 2021
+: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/86d464dbdf974387d279f5f10497f3e2dea49cf5>more code annotations and new release (86d464d)</a>
 </div>
 </div>
 </main>

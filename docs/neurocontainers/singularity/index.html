@@ -21,11 +21,11 @@
 ">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://neurodesk.github.io/docs/neurocontainers/singularity/"><meta property="article:section" content="docs">
-<meta property="article:modified_time" content="2021-09-22T21:38:23+10:00"><meta property="og:site_name" content="NeuroDesk">
+<meta property="article:modified_time" content="2021-09-23T19:01:05+10:00"><meta property="og:site_name" content="NeuroDesk">
 <meta itemprop=name content="Singularity">
 <meta itemprop=description content="Neurodesk Singularity Containers
 ">
-<meta itemprop=dateModified content="2021-09-22T21:38:23+10:00">
+<meta itemprop=dateModified content="2021-09-23T19:01:05+10:00">
 <meta itemprop=wordCount content="145">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="Singularity">
@@ -170,28 +170,28 @@
 <h2 id=download-singularity-containers>Download Singularity Containers</h2>
 <p>First get an overview which containers are available as Singularity containers:
 <a href=https://github.com/NeuroDesk/neurodesk/blob/master/cvmfs/log.txt>https://github.com/NeuroDesk/neurodesk/blob/master/cvmfs/log.txt</a></p>
-<pre tabindex=0><code>curl -s https://raw.githubusercontent.com/NeuroDesk/neurodesk/master/cvmfs/log.txt
-</code></pre><p>assign the container name to a variable:</p>
-<pre tabindex=0><code>export container=itksnap_3.8.0_20201208
-</code></pre><p>Then download the containers. An easy way is to use CURL (e.g. downloading from the US location):</p>
-<pre tabindex=0><code>curl -X GET https://objectstorage.us-ashburn-1.oraclecloud.com/n/sd63xuke79z3/b/neurodesk/o/${container}.simg -O
-</code></pre><p>or from australia</p>
-<pre tabindex=0><code>curl -X GET https://objectstorage.ap-sydney-1.oraclecloud.com/n/sd63xuke79z3/b/neurodesk/o/${container}.simg -O
-</code></pre><p>A faster way is pulling from multiple storage locations at once using aria2:</p>
-<pre tabindex=0><code>aria2c https://objectstorage.us-ashburn-1.oraclecloud.com/n/sd63xuke79z3/b/neurodesk/o/${container}.simg https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/sd63xuke79z3/b/neurodesk/o/${container}.simg https://objectstorage.ap-sydney-1.oraclecloud.com/n/sd63xuke79z3/b/neurodesk/o/${container}.simg https://swift.rc.nectar.org.au/v1/AUTH_dead991e1fa847e3afcca2d3a7041f5d/neurodesk/${container}.simg
-</code></pre><h2 id=transparent-singularity>Transparent Singularity</h2>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>curl -s https://raw.githubusercontent.com/NeuroDesk/neurodesk/master/cvmfs/log.txt
+</code></pre></div><p>assign the container name to a variable:</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=color:#204a87>export</span> <span style=color:#000>container</span><span style=color:#ce5c00;font-weight:700>=</span>itksnap_3.8.0_20201208
+</code></pre></div><p>Then download the containers. An easy way is to use CURL (e.g. downloading from the US location):</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>curl -X GET https://objectstorage.us-ashburn-1.oraclecloud.com/n/sd63xuke79z3/b/neurodesk/o/<span style=color:#4e9a06>${</span><span style=color:#000>container</span><span style=color:#4e9a06>}</span>.simg -O
+</code></pre></div><p>or from australia</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>curl -X GET https://objectstorage.ap-sydney-1.oraclecloud.com/n/sd63xuke79z3/b/neurodesk/o/<span style=color:#4e9a06>${</span><span style=color:#000>container</span><span style=color:#4e9a06>}</span>.simg -O
+</code></pre></div><p>A faster way is pulling from multiple storage locations at once using aria2:</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>aria2c https://objectstorage.us-ashburn-1.oraclecloud.com/n/sd63xuke79z3/b/neurodesk/o/<span style=color:#4e9a06>${</span><span style=color:#000>container</span><span style=color:#4e9a06>}</span>.simg https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/sd63xuke79z3/b/neurodesk/o/<span style=color:#4e9a06>${</span><span style=color:#000>container</span><span style=color:#4e9a06>}</span>.simg https://objectstorage.ap-sydney-1.oraclecloud.com/n/sd63xuke79z3/b/neurodesk/o/<span style=color:#4e9a06>${</span><span style=color:#000>container</span><span style=color:#4e9a06>}</span>.simg https://swift.rc.nectar.org.au/v1/AUTH_dead991e1fa847e3afcca2d3a7041f5d/neurodesk/<span style=color:#4e9a06>${</span><span style=color:#000>container</span><span style=color:#4e9a06>}</span>.simg
+</code></pre></div><h2 id=transparent-singularity>Transparent Singularity</h2>
 <p>The singularity containers can be also be used in combination with our <a href=/developers/transparent_singularity//>Transparent Singularity Tool</a> tool, that wraps the executables inside a container to make them easily available for pipelines. More information can be found here:</p>
 <p>one example to do this is:</p>
-<pre tabindex=0><code>curl -s https://raw.githubusercontent.com/NeuroDesk/neurodesk/master/cvmfs/log.txt
-export container=itksnap_3.8.0_20201208
-git clone https://github.com/NeuroDesk/transparent-singularity ${container}
-cd ${container}
-./run_transparent_singularity.sh ${container}
-</code></pre>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>curl -s https://raw.githubusercontent.com/NeuroDesk/neurodesk/master/cvmfs/log.txt
+<span style=color:#204a87>export</span> <span style=color:#000>container</span><span style=color:#ce5c00;font-weight:700>=</span>itksnap_3.8.0_20201208
+git clone https://github.com/NeuroDesk/transparent-singularity <span style=color:#4e9a06>${</span><span style=color:#000>container</span><span style=color:#4e9a06>}</span>
+<span style=color:#204a87>cd</span> <span style=color:#4e9a06>${</span><span style=color:#000>container</span><span style=color:#4e9a06>}</span>
+./run_transparent_singularity.sh <span style=color:#4e9a06>${</span><span style=color:#000>container</span><span style=color:#4e9a06>}</span>
+</code></pre></div>
 <div class="text-muted mt-5 pt-3 border-top">
 Last modified
-September 22, 2021
-: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/6c9f63ef79f39d8959a4bf2b2cafadc38fb7ac01>updated descriptions (6c9f63e)</a>
+September 23, 2021
+: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/86d464dbdf974387d279f5f10497f3e2dea49cf5>more code annotations and new release (86d464d)</a>
 </div>
 </div>
 </main>

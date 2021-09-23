@@ -21,12 +21,12 @@
 ">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://neurodesk.github.io/docs/neurodesktop/getting-started/cloud/"><meta property="article:section" content="docs">
-<meta property="article:modified_time" content="2021-09-17T17:10:31+10:00"><meta property="og:site_name" content="NeuroDesk">
+<meta property="article:modified_time" content="2021-09-23T19:01:05+10:00"><meta property="og:site_name" content="NeuroDesk">
 <meta itemprop=name content="Cloud">
 <meta itemprop=description content="Run neurodesktop using Oracle or Azure cloud computing
 ">
-<meta itemprop=dateModified content="2021-09-17T17:10:31+10:00">
-<meta itemprop=wordCount content="305">
+<meta itemprop=dateModified content="2021-09-23T19:01:05+10:00">
+<meta itemprop=wordCount content="318">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="Cloud">
 <meta name=twitter:description content="Run neurodesktop using Oracle or Azure cloud computing
@@ -158,7 +158,6 @@
 <li><a href=#minimum-system-requirements>Minimum System Requirements</a></li>
 <li><a href=#quickstart>Quickstart</a></li>
 <li><a href=#stopping-neurodesktop>Stopping neurodesktop:</a></li>
-<li><a href=#cloud-provider-specific-tutorials>Cloud-provider specific Tutorials</a></li>
 </ul>
 </nav></div>
 </aside>
@@ -177,23 +176,23 @@
 <ol>
 <li>Open an SSH connection to your cloud instance with port forwarding</li>
 </ol>
-<pre tabindex=0><code>ssh -L 8080:127.0.0.1:8080 opc@133.71.33.71
-</code></pre><ol start=2>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>ssh -L 8080:127.0.0.1:8080 opc@133.71.33.71
+</code></pre></div><ol start=2>
 <li>Install Docker from here: <a href=https://docs.docker.com/get-docker/>https://docs.docker.com/get-docker/</a></li>
 </ol>
 <p>one example to install docker in a yum-based distribution could look like this:</p>
-<pre tabindex=0><code>sudo dnf install -y yum-utils 
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>sudo dnf install -y yum-utils 
 sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 sudo dnf install docker-ce docker-ce-cli containerd.io
-sudo systemctl enable docker
+sudo systemctl <span style=color:#204a87>enable</span> docker
 sudo systemctl start docker
 sudo docker version
 sudo docker info
 sudo groupadd docker
-sudo usermod -aG docker $USER
+sudo usermod -aG docker <span style=color:#000>$USER</span>
 sudo chown root:docker /var/run/docker.sock
 newgrp docker
-</code></pre><ol start=3>
+</code></pre></div><ol start=3>
 <li>
 <p>Create a local folder where the downloaded applications will be stored, e.g. ~/neurodesktop-storage</p>
 </li>
@@ -201,13 +200,13 @@ newgrp docker
 <p>Open a terminal, and type the folowing command to automatically download the neurodesktop container and run it (Mac, Windows, Linux commands listed below)</p>
 </li>
 </ol>
-<pre tabindex=0><code>sudo docker run \
-  --shm-size=1gb -it --privileged --name neurodesktop \
-  -v ~/neurodesktop-storage:/neurodesktop-storage \
-  -e HOST_UID=&quot;$(id -u)&quot; -e HOST_GID=&quot;$(id -g)&quot; \
-  -p 8080:8080 -h neurodesktop-20210918 \
-  vnmd/neurodesktop:20210918
-</code></pre>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>sudo docker run <span style=color:#4e9a06>\
+</span><span style=color:#4e9a06></span>  --shm-size<span style=color:#ce5c00;font-weight:700>=</span>1gb -it --privileged --name neurodesktop <span style=color:#4e9a06>\
+</span><span style=color:#4e9a06></span>  -v ~/neurodesktop-storage:/neurodesktop-storage <span style=color:#4e9a06>\
+</span><span style=color:#4e9a06></span>  -e <span style=color:#000>HOST_UID</span><span style=color:#ce5c00;font-weight:700>=</span><span style=color:#4e9a06>&#34;</span><span style=color:#204a87;font-weight:700>$(</span>id -u<span style=color:#204a87;font-weight:700>)</span><span style=color:#4e9a06>&#34;</span> -e <span style=color:#000>HOST_GID</span><span style=color:#ce5c00;font-weight:700>=</span><span style=color:#4e9a06>&#34;</span><span style=color:#204a87;font-weight:700>$(</span>id -g<span style=color:#204a87;font-weight:700>)</span><span style=color:#4e9a06>&#34;</span> <span style=color:#4e9a06>\
+</span><span style=color:#4e9a06></span>  -p 8080:8080 -h neurodesktop-20210923 <span style=color:#4e9a06>\
+</span><span style=color:#4e9a06></span>  vnmd/neurodesktop:20210923
+</code></pre></div>
 <p>(notice: if you get errors in neurodesktop then check if the ~/neurodesktop-storage directory is writable to all users, otherwise run <code>chmod a+rwx ~/neurodesktop-storage</code>)</p>
 <ol start=5>
 <li>Once neurodesktop is downloaded i.e. <code>guacd[77]: INFO: Listening on host 127.0.0.1, port 4822</code> is displayed in terminal, open a browser and go to:</li>
@@ -234,34 +233,22 @@ newgrp docker
 <p>Type:</p>
 </li>
 </ol>
-<pre tabindex=0><code>sudo docker stop neurodesktop
-</code></pre><ol start=4>
-<li>Type:</li>
-</ol>
-<pre tabindex=0><code>sudo docker rm neurodesktop
-</code></pre><h2 id=cloud-provider-specific-tutorials>Cloud-provider specific Tutorials</h2>
-<table>
-<thead>
-<tr>
-<th>Cloud provider</th>
-<th>link</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Oracle</td>
-<td><a href=https://mri.sbollmann.net/index.php/2020/12/08/run-neurodesk-on-oracle-cloud-free-tier/>https://mri.sbollmann.net/index.php/2020/12/08/run-neurodesk-on-oracle-cloud-free-tier/</a></td>
-</tr>
-<tr>
-<td>Azure</td>
-<td><a href=https://henryjburg.medium.com/neurodesk-running-on-azure-3e38c590a152>https://henryjburg.medium.com/neurodesk-running-on-azure-3e38c590a152</a></td>
-</tr>
-</tbody>
-</table>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>sudo docker stop neurodesktop
+<span style=color:#4e9a06>```</span>shell
+4. Type:
+</code></pre></div><p>sudo docker rm neurodesktop</p>
+<pre tabindex=0><code>
+
+## Cloud-provider specific Tutorials 
+| Cloud provider | link                                                                                    |
+|----------------|-----------------------------------------------------------------------------------------|
+| Oracle         | https://mri.sbollmann.net/index.php/2020/12/08/run-neurodesk-on-oracle-cloud-free-tier/ |
+| Azure          | https://henryjburg.medium.com/neurodesk-running-on-azure-3e38c590a152                   |
+</code></pre>
 <div class="text-muted mt-5 pt-3 border-top">
 Last modified
-September 17, 2021
-: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/934499720af96b70e090e990a18016eeef1572c2>Change hostname to neurodesktop version (9344997)</a>
+September 23, 2021
+: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/86d464dbdf974387d279f5f10497f3e2dea49cf5>more code annotations and new release (86d464d)</a>
 </div>
 </div>
 </main>

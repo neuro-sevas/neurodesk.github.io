@@ -21,11 +21,11 @@
 ">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://neurodesk.github.io/docs/neurodesktop/storage/"><meta property="article:section" content="docs">
-<meta property="article:modified_time" content="2021-09-20T20:03:55+10:00"><meta property="og:site_name" content="NeuroDesk">
+<meta property="article:modified_time" content="2021-09-23T19:01:05+10:00"><meta property="og:site_name" content="NeuroDesk">
 <meta itemprop=name content="Storage">
 <meta itemprop=description content="Add storage to Neurodesktop
 ">
-<meta itemprop=dateModified content="2021-09-20T20:03:55+10:00">
+<meta itemprop=dateModified content="2021-09-23T19:01:05+10:00">
 <meta itemprop=wordCount content="485">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="Storage">
@@ -176,8 +176,8 @@
 <p>Then generate an app-password here: <a href="https://cloudstor.aarnet.edu.au/plus/settings/personal?sectionid=security">https://cloudstor.aarnet.edu.au/plus/settings/personal?sectionid=security</a></p>
 <h2 id=mounting-webdav-storage-using-davfs2>Mounting webdav storage using davfs2</h2>
 <p>Another option is to directly mount webdav storage. Here is an example how to mount CloudStor into Neurodesktop:</p>
-<pre tabindex=0><code>sudo mount -t davfs https://cloudstor.aarnet.edu.au/plus/remote.php/webdav/ /data/
-</code></pre><p>It then asks you for a username and password, which you can generate here: <a href="https://cloudstor.aarnet.edu.au/plus/settings/personal?sectionid=security">https://cloudstor.aarnet.edu.au/plus/settings/personal?sectionid=security</a></p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>sudo mount -t davfs https://cloudstor.aarnet.edu.au/plus/remote.php/webdav/ /data/
+</code></pre></div><p>It then asks you for a username and password, which you can generate here: <a href="https://cloudstor.aarnet.edu.au/plus/settings/personal?sectionid=security">https://cloudstor.aarnet.edu.au/plus/settings/personal?sectionid=security</a></p>
 <h2 id=rclone>Rclone</h2>
 <p>Rclone is a command line tool that enables the interaction with various cloud services. Here is an example how to setup rclone with CloudStor Aarnet:</p>
 <ul>
@@ -199,20 +199,20 @@
 </ul>
 <h2 id=globus>Globus</h2>
 <p>We also provide the globus client, so you can transfer large amounts of data between globus endpoints and Neurodesktop. You can configure it by running:</p>
-<pre tabindex=0><code>/opt/globusconnectpersonal/globusconnectpersonal-*/globusconnectpersonal
-</code></pre><p>Once authenticated you can go to the globus file-manager <a href=https://app.globus.org/file-manager>https://app.globus.org/file-manager</a> and your neurodesktop instance will be an endpoint for globus.</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>/opt/globusconnectpersonal/globusconnectpersonal-*/globusconnectpersonal
+</code></pre></div><p>Once authenticated you can go to the globus file-manager <a href=https://app.globus.org/file-manager>https://app.globus.org/file-manager</a> and your neurodesktop instance will be an endpoint for globus.</p>
 <h1 id=mounting-network-storage-on-your-host-computer>Mounting network storage on your host-computer</h1>
 <p>The -v C:/neurodesktop-storage:/neurodesktop-storage part of the docker command links the directory &ldquo;neurodesktop-storage&rdquo; on the “C drive” of your Windows computer to the directory /neurodesktop-storage inside the Desktop environment. Everything you store in there will be available inside the desktop and on the host computer. You can also mount additional directories by adding another -v parameter set (e.g. -v D:/moredata:/data) - this will mount the directory moredata from your D drive to /data inside neurodesktop. If you have network storage mounted in a similar way you can also pass this into the Neurodesktop tool.</p>
 <h1 id=mount-volume-using-sshfs>Mount volume using SSHFS</h1>
 <p>It is theoretically possible to mount an SSH target inside Neurodesktop, but it&rsquo;s not a very reliable way of mounting storage:</p>
-<pre tabindex=0><code>sshfs -o allow_root USER@TARGET_HOST:TARGET_PATH SOURCE_PATH
-</code></pre><p>A better option is to use <code>scp</code> and copy data from an SSH endpoint:</p>
-<pre tabindex=0><code>scp /neurodesk/myfile user@remoteserver:/data/
-</code></pre>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>sshfs -o allow_root USER@TARGET_HOST:TARGET_PATH SOURCE_PATH
+</code></pre></div><p>A better option is to use <code>scp</code> and copy data from an SSH endpoint:</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>scp /neurodesk/myfile user@remoteserver:/data/
+</code></pre></div>
 <div class="text-muted mt-5 pt-3 border-top">
 Last modified
-September 20, 2021
-: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/49544af8aae2242c102f017b9597ea9e55030c1a>add description for cloudstor owncloud connection (49544af)</a>
+September 23, 2021
+: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/86d464dbdf974387d279f5f10497f3e2dea49cf5>more code annotations and new release (86d464d)</a>
 </div>
 </div>
 </main>

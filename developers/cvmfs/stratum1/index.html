@@ -21,12 +21,12 @@
 ">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://neurodesk.github.io/developers/cvmfs/stratum1/"><meta property="article:section" content="developers">
-<meta property="article:modified_time" content="2021-09-22T21:24:04+10:00"><meta property="og:site_name" content="NeuroDesk">
+<meta property="article:modified_time" content="2021-09-23T19:01:05+10:00"><meta property="og:site_name" content="NeuroDesk">
 <meta itemprop=name content="Setup Stratum 1 server">
 <meta itemprop=description content="Host a Stratum 1 server
 ">
-<meta itemprop=dateModified content="2021-09-22T21:24:04+10:00">
-<meta itemprop=wordCount content="306">
+<meta itemprop=dateModified content="2021-09-23T19:01:05+10:00">
+<meta itemprop=wordCount content="373">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="Setup Stratum 1 server">
 <meta name=twitter:description content="Host a Stratum 1 server
@@ -133,49 +133,120 @@
 <p>The stratum 1 servers for the desktop are configured here: <a href=https://github.com/NeuroDesk/neurodesktop/blob/main/Dockerfile>https://github.com/NeuroDesk/neurodesktop/blob/main/Dockerfile</a></p>
 <p>If you want more speed in a region one way could be to setup another Stratum 1 server or a proxy.</p>
 <h1 id=setup-a-stratum-1-server>Setup a Stratum 1 server:</h1>
-<pre tabindex=0><code>sudo yum install -y https://ecsft.cern.ch/dist/cvmfs/cvmfs-release/cvmfs-release-latest.noarch.rpm
+<div class=highlight><div style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">12
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">13
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">14
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">15
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">16
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">17
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">18
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">19
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">20
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">21
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">22
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">23
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">24
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">25
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">26
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">27
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">28
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">29
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">30
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">31
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">32
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">33
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">34
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">35
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">36
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">37
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">38
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">39
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">40
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">41
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">42
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">43
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">44
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">45
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">46
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">47
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">48
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">49
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">50
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">51
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">52
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">53
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">54
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">55
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">56
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">57
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">58
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">59
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">60
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">61
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">62
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">63
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">64
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">65
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">66
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">67
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>sudo yum install -y https://ecsft.cern.ch/dist/cvmfs/cvmfs-release/cvmfs-release-latest.noarch.rpm
 sudo yum install -y cvmfs-server squid
 sudo yum install -y python3-mod_wsgi 
 
-sudo sed -i 's/Listen 80/Listen 127.0.0.1:8080/' /etc/httpd/conf/httpd.conf
+sudo sed -i <span style=color:#4e9a06>&#39;s/Listen 80/Listen 127.0.0.1:8080/&#39;</span> /etc/httpd/conf/httpd.conf
 
-set +H
-echo &quot;http_port 80 accel&quot; | sudo tee /etc/squid/squid.conf
-echo &quot;http_port 8000 accel&quot; | sudo tee -a /etc/squid/squid.conf
-echo &quot;http_access allow all&quot; | sudo tee -a /etc/squid/squid.conf
-echo &quot;cache_peer 127.0.0.1 parent 8080 0 no-query originserver&quot; | sudo tee -a /etc/squid/squid.conf
-echo &quot;acl CVMFSAPI urlpath_regex ^/cvmfs/[^/]*/api/&quot; | sudo tee -a /etc/squid/squid.conf
-echo &quot;cache deny !CVMFSAPI&quot; | sudo tee -a /etc/squid/squid.conf
-echo &quot;cache_mem 128 MB&quot; | sudo tee -a /etc/squid/squid.conf
+<span style=color:#204a87>set</span> +H
+<span style=color:#204a87>echo</span> <span style=color:#4e9a06>&#34;http_port 80 accel&#34;</span> <span style=color:#000;font-weight:700>|</span> sudo tee /etc/squid/squid.conf
+<span style=color:#204a87>echo</span> <span style=color:#4e9a06>&#34;http_port 8000 accel&#34;</span> <span style=color:#000;font-weight:700>|</span> sudo tee -a /etc/squid/squid.conf
+<span style=color:#204a87>echo</span> <span style=color:#4e9a06>&#34;http_access allow all&#34;</span> <span style=color:#000;font-weight:700>|</span> sudo tee -a /etc/squid/squid.conf
+<span style=color:#204a87>echo</span> <span style=color:#4e9a06>&#34;cache_peer 127.0.0.1 parent 8080 0 no-query originserver&#34;</span> <span style=color:#000;font-weight:700>|</span> sudo tee -a /etc/squid/squid.conf
+<span style=color:#204a87>echo</span> <span style=color:#4e9a06>&#34;acl CVMFSAPI urlpath_regex ^/cvmfs/[^/]*/api/&#34;</span> <span style=color:#000;font-weight:700>|</span> sudo tee -a /etc/squid/squid.conf
+<span style=color:#204a87>echo</span> <span style=color:#4e9a06>&#34;cache deny !CVMFSAPI&#34;</span> <span style=color:#000;font-weight:700>|</span> sudo tee -a /etc/squid/squid.conf
+<span style=color:#204a87>echo</span> <span style=color:#4e9a06>&#34;cache_mem 128 MB&#34;</span> <span style=color:#000;font-weight:700>|</span> sudo tee -a /etc/squid/squid.conf
 
 sudo systemctl start httpd
 sudo systemctl start squid
-sudo systemctl enable httpd
-sudo systemctl enable squid
+sudo systemctl <span style=color:#204a87>enable</span> httpd
+sudo systemctl <span style=color:#204a87>enable</span> squid
 
-echo 'CVMFS_GEO_LICENSE_KEY=kGepdzqbAP4fjf5X' | sudo tee -a /etc/cvmfs/server.local
-sudo chmod 600 /etc/cvmfs/server.local
+<span style=color:#204a87>echo</span> <span style=color:#4e9a06>&#39;CVMFS_GEO_LICENSE_KEY=kGepdzqbAP4fjf5X&#39;</span> <span style=color:#000;font-weight:700>|</span> sudo tee -a /etc/cvmfs/server.local
+sudo chmod <span style=color:#0000cf;font-weight:700>600</span> /etc/cvmfs/server.local
 
 sudo mkdir -p /etc/cvmfs/keys/ardc.edu.au/
 
-echo &quot;-----BEGIN PUBLIC KEY-----
-MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwUPEmxDp217SAtZxaBep
-Bi2TQcLoh5AJ//HSIz68ypjOGFjwExGlHb95Frhu1SpcH5OASbV+jJ60oEBLi3sD
-qA6rGYt9kVi90lWvEjQnhBkPb0uWcp1gNqQAUocybCzHvoiG3fUzAe259CrK09qR
-pX8sZhgK3eHlfx4ycyMiIQeg66AHlgVCJ2fKa6fl1vnh6adJEPULmn6vZnevvUke
-I6U1VcYTKm5dPMrOlY/fGimKlyWvivzVv1laa5TAR2Dt4CfdQncOz+rkXmWjLjkD
-87WMiTgtKybsmMLb2yCGSgLSArlSWhbMA0MaZSzAwE9PJKCCMvTANo5644zc8jBe
-NQIDAQAB
------END PUBLIC KEY-----&quot; | sudo tee /etc/cvmfs/keys/ardc.edu.au/neurodesk.ardc.edu.au.pub
+<span style=color:#204a87>echo</span> <span style=color:#4e9a06>&#34;-----BEGIN PUBLIC KEY-----
+</span><span style=color:#4e9a06>MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwUPEmxDp217SAtZxaBep
+</span><span style=color:#4e9a06>Bi2TQcLoh5AJ//HSIz68ypjOGFjwExGlHb95Frhu1SpcH5OASbV+jJ60oEBLi3sD
+</span><span style=color:#4e9a06>qA6rGYt9kVi90lWvEjQnhBkPb0uWcp1gNqQAUocybCzHvoiG3fUzAe259CrK09qR
+</span><span style=color:#4e9a06>pX8sZhgK3eHlfx4ycyMiIQeg66AHlgVCJ2fKa6fl1vnh6adJEPULmn6vZnevvUke
+</span><span style=color:#4e9a06>I6U1VcYTKm5dPMrOlY/fGimKlyWvivzVv1laa5TAR2Dt4CfdQncOz+rkXmWjLjkD
+</span><span style=color:#4e9a06>87WMiTgtKybsmMLb2yCGSgLSArlSWhbMA0MaZSzAwE9PJKCCMvTANo5644zc8jBe
+</span><span style=color:#4e9a06>NQIDAQAB
+</span><span style=color:#4e9a06>-----END PUBLIC KEY-----&#34;</span> <span style=color:#000;font-weight:700>|</span> sudo tee /etc/cvmfs/keys/ardc.edu.au/neurodesk.ardc.edu.au.pub
 
 
-sudo cvmfs_server add-replica -o $USER http://203.101.226.164/cvmfs/neurodesk.ardc.edu.au /etc/cvmfs/keys/ardc.edu.au
+sudo cvmfs_server add-replica -o <span style=color:#000>$USER</span> http://203.101.226.164/cvmfs/neurodesk.ardc.edu.au /etc/cvmfs/keys/ardc.edu.au
 
-# CVMFS will store everything in /srv/cvmfs so make sure there is enough space or create a symlink to a bigger storage volume
-# e.g.:
-&lt;!-- cd /storage
+<span style=color:#8f5902;font-style:italic># CVMFS will store everything in /srv/cvmfs so make sure there is enough space or create a symlink to a bigger storage volume</span>
+<span style=color:#8f5902;font-style:italic># e.g.:</span>
+&lt;!-- <span style=color:#204a87>cd</span> /storage
 sudo mkdir -p cvmfs-storage/srv/
-cd /srv/
+<span style=color:#204a87>cd</span> /srv/
 sudo mv cvmfs/ /storage/cvmfs-storage/srv/
 sudo ln -s /storage/cvmfs-storage/srv/cvmfs/ --&gt;
 
@@ -183,28 +254,30 @@ sudo ln -s /storage/cvmfs-storage/srv/cvmfs/ --&gt;
 sudo cvmfs_server snapshot neurodesk.ardc.edu.au
 
 
-echo &quot;/var/log/cvmfs/*.log {
-    weekly
-    missingok
-    notifempty
-}&quot; | sudo tee /etc/logrotate.d/cvmfs
+<span style=color:#204a87>echo</span> <span style=color:#4e9a06>&#34;/var/log/cvmfs/*.log {
+</span><span style=color:#4e9a06>    weekly
+</span><span style=color:#4e9a06>    missingok
+</span><span style=color:#4e9a06>    notifempty
+</span><span style=color:#4e9a06>}&#34;</span> <span style=color:#000;font-weight:700>|</span> sudo tee /etc/logrotate.d/cvmfs
 
 
-echo '*/5 * * * * root output=$(/usr/bin/cvmfs_server snapshot -a -i 2&gt;&amp;1) || echo &quot;$output&quot; ' | sudo tee /etc/cron.d/cvmfs_stratum1_snapshot
+<span style=color:#204a87>echo</span> <span style=color:#4e9a06>&#39;*/5 * * * * root output=$(/usr/bin/cvmfs_server snapshot -a -i 2&gt;&amp;1) || echo &#34;$output&#34; &#39;</span> <span style=color:#000;font-weight:700>|</span> sudo tee /etc/cron.d/cvmfs_stratum1_snapshot
 
 sudo yum install iptables
-sudo iptables -t nat -A PREROUTING -p tcp -m tcp --dport 80 -j REDIRECT --to-ports 8000
+sudo iptables -t nat -A PREROUTING -p tcp -m tcp --dport <span style=color:#0000cf;font-weight:700>80</span> -j REDIRECT --to-ports <span style=color:#0000cf;font-weight:700>8000</span>
 
 sudo systemctl disable firewalld 
 sudo systemctl stop firewalld 
-# make sure that port 80 is open in the real firewall
+<span style=color:#8f5902;font-style:italic># make sure that port 80 is open in the real firewall</span>
 
 sudo cvmfs_server update-geodb
-</code></pre>
+</code></pre></td></tr></table>
+</div>
+</div>
 <div class="text-muted mt-5 pt-3 border-top">
 Last modified
-September 22, 2021
-: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/508e00ad93bdbf2dc541af51d2547e480fda4777>more developer documentation (508e00a)</a>
+September 23, 2021
+: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/86d464dbdf974387d279f5f10497f3e2dea49cf5>more code annotations and new release (86d464d)</a>
 </div>
 </div>
 </main>

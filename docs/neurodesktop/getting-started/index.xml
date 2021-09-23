@@ -9,18 +9,18 @@
 &lt;li>Install Docker from here: &lt;a href="https://docs.docker.com/get-docker/">https://docs.docker.com/get-docker/&lt;/a>&lt;/li>
 &lt;/ol>
 &lt;p>one example to install docker in a yum-based distribution could look like this:&lt;/p>
-&lt;pre tabindex="0">&lt;code>sudo dnf install -y yum-utils
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">sudo dnf install -y yum-utils
 sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 sudo dnf install docker-ce docker-ce-cli containerd.io
-sudo systemctl enable docker
+sudo systemctl &lt;span style="color:#204a87">enable&lt;/span> docker
 sudo systemctl start docker
 sudo docker version
 sudo docker info
 sudo groupadd docker
-sudo usermod -aG docker $USER
+sudo usermod -aG docker &lt;span style="color:#000">$USER&lt;/span>
 sudo chown root:docker /var/run/docker.sock
 newgrp docker
-&lt;/code>&lt;/pre>&lt;ol start="2">
+&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="2">
 &lt;li>
 &lt;p>Create a local folder where the downloaded applications will be stored, e.g. ~/neurodesktop-storage&lt;/p>
 &lt;/li>
@@ -28,13 +28,13 @@ newgrp docker
 &lt;p>Open a terminal, and type the folowing command to automatically download the neurodesktop container and run it (Mac, Windows, Linux commands listed below)&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;pre tabindex="0">&lt;code>sudo docker run \
---shm-size=1gb -it --privileged --name neurodesktop \
--v ~/neurodesktop-storage:/neurodesktop-storage \
--e HOST_UID=&amp;quot;$(id -u)&amp;quot; -e HOST_GID=&amp;quot;$(id -g)&amp;quot; \
--p 8080:8080 -h neurodesktop-20210918 \
-vnmd/neurodesktop:20210918
-&lt;/code>&lt;/pre>&lt;!-- neurodesktop version found in neurodesk.github.io/data/neurodesktop.toml -->
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">sudo docker run &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --shm-size&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>1gb -it --privileged --name neurodesktop &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -v ~/neurodesktop-storage:/neurodesktop-storage &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -e &lt;span style="color:#000">HOST_UID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>id -u&lt;span style="color:#204a87;font-weight:bold">)&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> -e &lt;span style="color:#000">HOST_GID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>id -g&lt;span style="color:#204a87;font-weight:bold">)&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -p 8080:8080 -h neurodesktop-20210923 &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> vnmd/neurodesktop:20210923
+&lt;/code>&lt;/pre>&lt;/div>&lt;!-- neurodesktop version found in neurodesk.github.io/data/neurodesktop.toml -->
 &lt;p>(notice: if you get errors in neurodesktop then check if the ~/neurodesktop-storage directory is writable to all users, otherwise run &lt;code>chmod a+rwx ~/neurodesktop-storage&lt;/code>)&lt;/p>
 &lt;ol start="4">
 &lt;li>Once neurodesktop is downloaded i.e. &lt;code>guacd[77]: INFO: Listening on host 127.0.0.1, port 4822&lt;/code> is displayed in terminal, open a browser and go to:&lt;/li>
@@ -84,8 +84,8 @@ vnmd/neurodesktop:20210918
 &lt;p>Open a terminal, and type the folowing command to automatically download the neurodesktop container and run it&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;pre tabindex="0">&lt;code>docker run --shm-size=1gb -it --privileged --name neurodesktop -v ~/neurodesktop-storage:/neurodesktop-storage -p 8080:8080 -h neurodesktop-20210918 vnmd/neurodesktop:20210918
-&lt;/code>&lt;/pre>&lt;!-- neurodesktop version found in neurodesk.github.io/data/neurodesktop.toml -->
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">docker run --shm-size&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>1gb -it --privileged --name neurodesktop -v ~/neurodesktop-storage:/neurodesktop-storage -p 8080:8080 -h neurodesktop-20210923 vnmd/neurodesktop:20210923
+&lt;/code>&lt;/pre>&lt;/div>&lt;!-- neurodesktop version found in neurodesk.github.io/data/neurodesktop.toml -->
 &lt;p>(notice: There is a bug in docker 3.3.0 for Mac that makes this command not run correctly and there will be no application menu when you start the desktop. Update your docker version when you see this!)&lt;/p>
 &lt;p>if you get errors in neurodesktop then check if the ~/neurodesktop-storage directory is writable to all users, otherwise run &lt;code>chmod a+rwx ~/neurodesktop-storage&lt;/code>&lt;/p>
 &lt;ol start="4">
@@ -134,8 +134,8 @@ vnmd/neurodesktop:20210918
 &lt;p>Open a terminal, and type the folowing command to automatically download the neurodesktop container and run it&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;pre tabindex="0">&lt;code>docker run --shm-size=1gb -it --privileged --name neurodesktop -v C:/neurodesktop-storage:/neurodesktop-storage -p 8080:8080 -h neurodesktop-20210918 vnmd/neurodesktop:20210918
-&lt;/code>&lt;/pre>&lt;!-- neurodesktop version found in neurodesk.github.io/data/neurodesktop.toml -->
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">docker run --shm-size&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>1gb -it --privileged --name neurodesktop -v C:/neurodesktop-storage:/neurodesktop-storage -p 8080:8080 -h neurodesktop-20210923 vnmd/neurodesktop:20210923
+&lt;/code>&lt;/pre>&lt;/div>&lt;!-- neurodesktop version found in neurodesk.github.io/data/neurodesktop.toml -->
 &lt;ol start="3">
 &lt;li>Once neurodesktop is downloaded i.e. &lt;code>guacd[77]: INFO: Listening on host 127.0.0.1, port 4822&lt;/code> is displayed in terminal, open a browser and go to:&lt;/li>
 &lt;/ol>
@@ -177,23 +177,23 @@ vnmd/neurodesktop:20210918
 &lt;ol>
 &lt;li>Open an SSH connection to your cloud instance with port forwarding&lt;/li>
 &lt;/ol>
-&lt;pre tabindex="0">&lt;code>ssh -L 8080:127.0.0.1:8080 opc@133.71.33.71
-&lt;/code>&lt;/pre>&lt;ol start="2">
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">ssh -L 8080:127.0.0.1:8080 opc@133.71.33.71
+&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="2">
 &lt;li>Install Docker from here: &lt;a href="https://docs.docker.com/get-docker/">https://docs.docker.com/get-docker/&lt;/a>&lt;/li>
 &lt;/ol>
 &lt;p>one example to install docker in a yum-based distribution could look like this:&lt;/p>
-&lt;pre tabindex="0">&lt;code>sudo dnf install -y yum-utils
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">sudo dnf install -y yum-utils
 sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 sudo dnf install docker-ce docker-ce-cli containerd.io
-sudo systemctl enable docker
+sudo systemctl &lt;span style="color:#204a87">enable&lt;/span> docker
 sudo systemctl start docker
 sudo docker version
 sudo docker info
 sudo groupadd docker
-sudo usermod -aG docker $USER
+sudo usermod -aG docker &lt;span style="color:#000">$USER&lt;/span>
 sudo chown root:docker /var/run/docker.sock
 newgrp docker
-&lt;/code>&lt;/pre>&lt;ol start="3">
+&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="3">
 &lt;li>
 &lt;p>Create a local folder where the downloaded applications will be stored, e.g. ~/neurodesktop-storage&lt;/p>
 &lt;/li>
@@ -201,13 +201,13 @@ newgrp docker
 &lt;p>Open a terminal, and type the folowing command to automatically download the neurodesktop container and run it (Mac, Windows, Linux commands listed below)&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;pre tabindex="0">&lt;code>sudo docker run \
---shm-size=1gb -it --privileged --name neurodesktop \
--v ~/neurodesktop-storage:/neurodesktop-storage \
--e HOST_UID=&amp;quot;$(id -u)&amp;quot; -e HOST_GID=&amp;quot;$(id -g)&amp;quot; \
--p 8080:8080 -h neurodesktop-20210918 \
-vnmd/neurodesktop:20210918
-&lt;/code>&lt;/pre>&lt;!-- neurodesktop version found in neurodesk.github.io/data/neurodesktop.toml -->
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">sudo docker run &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --shm-size&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>1gb -it --privileged --name neurodesktop &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -v ~/neurodesktop-storage:/neurodesktop-storage &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -e &lt;span style="color:#000">HOST_UID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>id -u&lt;span style="color:#204a87;font-weight:bold">)&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> -e &lt;span style="color:#000">HOST_GID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>id -g&lt;span style="color:#204a87;font-weight:bold">)&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -p 8080:8080 -h neurodesktop-20210923 &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> vnmd/neurodesktop:20210923
+&lt;/code>&lt;/pre>&lt;/div>&lt;!-- neurodesktop version found in neurodesk.github.io/data/neurodesktop.toml -->
 &lt;p>(notice: if you get errors in neurodesktop then check if the ~/neurodesktop-storage directory is writable to all users, otherwise run &lt;code>chmod a+rwx ~/neurodesktop-storage&lt;/code>)&lt;/p>
 &lt;ol start="5">
 &lt;li>Once neurodesktop is downloaded i.e. &lt;code>guacd[77]: INFO: Listening on host 127.0.0.1, port 4822&lt;/code> is displayed in terminal, open a browser and go to:&lt;/li>
@@ -234,30 +234,17 @@ vnmd/neurodesktop:20210918
 &lt;p>Type:&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;pre tabindex="0">&lt;code>sudo docker stop neurodesktop
-&lt;/code>&lt;/pre>&lt;ol start="4">
-&lt;li>Type:&lt;/li>
-&lt;/ol>
-&lt;pre tabindex="0">&lt;code>sudo docker rm neurodesktop
-&lt;/code>&lt;/pre>&lt;h2 id="cloud-provider-specific-tutorials">Cloud-provider specific Tutorials&lt;/h2>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Cloud provider&lt;/th>
-&lt;th>link&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>Oracle&lt;/td>
-&lt;td>&lt;a href="https://mri.sbollmann.net/index.php/2020/12/08/run-neurodesk-on-oracle-cloud-free-tier/">https://mri.sbollmann.net/index.php/2020/12/08/run-neurodesk-on-oracle-cloud-free-tier/&lt;/a>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Azure&lt;/td>
-&lt;td>&lt;a href="https://henryjburg.medium.com/neurodesk-running-on-azure-3e38c590a152">https://henryjburg.medium.com/neurodesk-running-on-azure-3e38c590a152&lt;/a>&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table></description></item><item><title>Docs: Demo</title><link>https://neurodesk.github.io/docs/neurodesktop/getting-started/demo/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/getting-started/demo/</guid><description>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">sudo docker stop neurodesktop
+&lt;span style="color:#4e9a06">```&lt;/span>shell
+4. Type:
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>sudo docker rm neurodesktop&lt;/p>
+&lt;pre tabindex="0">&lt;code>
+## Cloud-provider specific Tutorials
+| Cloud provider | link |
+|----------------|-----------------------------------------------------------------------------------------|
+| Oracle | https://mri.sbollmann.net/index.php/2020/12/08/run-neurodesk-on-oracle-cloud-free-tier/ |
+| Azure | https://henryjburg.medium.com/neurodesk-running-on-azure-3e38c590a152 |
+&lt;/code>&lt;/pre></description></item><item><title>Docs: Demo</title><link>https://neurodesk.github.io/docs/neurodesktop/getting-started/demo/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/getting-started/demo/</guid><description>
 &lt;div class="pageinfo pageinfo-primary">
 &lt;p>We are working on a demo that directly runs in your browser without the need to install anything. But it&amp;rsquo;s not quite ready yet &amp;hellip;&lt;/p>
 &lt;/div></description></item></channel></rss>
