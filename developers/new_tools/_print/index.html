@@ -202,16 +202,62 @@ Use the guide below to add a tool to <em>neurodesktop</em> or <em>neurocontainer
 <h2 id=build-container>Build container</h2>
 <p>To build a container:</p>
 <ol>
-<li>Add recipe to neurodocker if relevant (<a href=https://github.com/NeuroDesk/neurodocker>https://github.com/NeuroDesk/neurodocker</a>) and create a pull request to neurodocker
-To add an application (e.g. <em>newapp</em>), follow these steps.</li>
-<li>Clone the repository <a href=https://github.com/NeuroDesk/neurocontainers>https://github.com/NeuroDesk/neurocontainers</a></li>
+<li>Pull-in latest changes from Neurodocker upstream into our fork: <a href=https://github.com/NeuroDesk/neurodocker>https://github.com/NeuroDesk/neurodocker</a> - add recipe to neurodocker if relevant for their project (<a href=https://github.com/NeuroDesk/neurodocker>https://github.com/NeuroDesk/neurodocker</a>) and create a pull request to neurodocker (add new tool in a branch!)</li>
+<li>Clone the neurocontainers repository <a href=https://github.com/NeuroDesk/neurocontainers>https://github.com/NeuroDesk/neurocontainers</a></li>
+</ol>
+<pre tabindex=0><code>git clone https://github.com/NeuroDesk/neurocontainers/
+</code></pre><ol start=3>
 <li>Copy the directory template and rename to <em>newapp</em> in <code>neurocontainers/recipes</code></li>
+</ol>
+<pre tabindex=0><code>cd neurocontainers/recipes
+cp -R template newapp
+</code></pre><ol start=4>
 <li>Modify <code>build.sh</code> in <code>neurocontainers/recipes/newapp</code> to build your application and update README.md (make sure the version is correct in the README!)</li>
+</ol>
+<pre tabindex=0><code>cd newapp
+(edit build.sh as required)
+(edit README.md as required)
+</code></pre><ol start=5>
 <li>Run update-builders.sh - This will auto-create the CI workflow for the application (or manually duplicate the template file and rename all occurances of template to <em>newapp</em>)</li>
+</ol>
+<pre tabindex=0><code>cd ../..
+sh update-builders.sh
+</code></pre><ol start=6>
 <li>Build the container locally (e.g. running the build script with the &ndash;debug flag: <a href=https://github.com/NeuroDesk/neurocontainers/blob/master/recipes/lcmodel/build.sh>https://github.com/NeuroDesk/neurocontainers/blob/master/recipes/lcmodel/build.sh</a>)</li>
-<li>Test the container, and if successful push repo to trigger the automatic build on GitHub</li>
+<li>updated changes in local git repository</li>
+</ol>
+<pre tabindex=0><code>git add recipes/newapp/build.sh recipes/newapp/README.md .github/workflows/newapp.yml
+git config user.email &quot;the email that you use for github&quot;
+git config user.name &quot;your name&quot;
+git commit
+</code></pre><ol start=8>
+<li>Generate git personal access token (if you don’t have one already)</li>
+</ol>
+<pre tabindex=0><code>Browse to https://github.com/NeuroDesk/neurocontainers/
+Press on your picture in upper right corner --&gt; Setting --&gt; Developer Settings --&gt; Personal Access Token
+Press on “generate personal access token”
+Write something in “Notes” (doesn’t matter what, it’s for your own use)
+Check “repo”
+Check “Workflow”
+Press “Generate Token” at the bottom
+Copy the token displayed on the screen into a file, so you’ll have it later
+</code></pre><ol start=9>
+<li>Test the container locally, and if successful push repo to trigger the automatic build on GitHub</li>
+</ol>
+<pre tabindex=0><code>git pull
+git push
+</code></pre><ol start=10>
+<li>Go to neurocontainers/actions. Check that the most recent workflow run in the list terminated successfully (green). Otherwise, click on it, click on “build docker”, and the line that caused the error will be highlighted</li>
+<li>Check that the package shows up in repository
+Go to <a href="https://github.com/orgs/NeuroDesk/packages?repo_name=neurocontainers">https://github.com/orgs/NeuroDesk/packages?repo_name=neurocontainers</a> and check that the new package is listed</li>
+<li>Try to manually download the package to your Machine or VNM</li>
+</ol>
+<pre tabindex=0><code>bash /neurodesk/local/fetch_and_run.sh newapp newappversion builddate
+ml newapp/newappversion
+</code></pre><ol start=13>
+<li>Test the new container. Run some commands, to see all is good</li>
 <li>send a pull request to add the container to the apps.json file: <a href=https://github.com/NeuroDesk/neurocommand/blob/main/neurodesk/apps.json>https://github.com/NeuroDesk/neurocommand/blob/main/neurodesk/apps.json</a></li>
-<li>(once accepted this will trigger an action to build the singularity container, distribute it in all object storage locations and on CVMFS, and it will update the menus in the desktop image on the next daily build)</li>
+<li>(once pull request is merged this will trigger an action to build the singularity container, distribute it in all object storage locations and on CVMFS, and it will update the menus in the desktop image on the next daily build)</li>
 </ol>
 </div>
 <div class=td-content style=page-break-before:always>
