@@ -127,6 +127,7 @@
 <li><a href=#this-gives-you-a-list-of-all-tested-images-available-in-neurodesk>This gives you a list of all tested images available in neurodesk:</a></li>
 <li><a href=#clone-repo-into-a-folder-with-the-intented-image-name>Clone repo into a folder with the intented image name</a></li>
 <li><a href=#install>Install</a></li>
+<li><a href=#options-for-transparent-singularity>Options for Transparent singularity:</a></li>
 </ul>
 <ul>
 <li><a href=#activate>Activate</a></li>
@@ -155,7 +156,14 @@
 <p>This will create scripts for every binary in the container located in the $DEPLOY_PATH inside the container. It will also create activate and deactivate scripts and module files for lmod (<a href=https://lmod.readthedocs.io/en/latest/>https://lmod.readthedocs.io/en/latest/</a>)</p>
 <pre tabindex=0><code>cd convert3d_1.0.0_20210104
 ./run_transparent_singularity.sh convert3d_1.0.0_20210104
-</code></pre><h1 id=use-in-module-system-lmod>Use in module system LMOD</h1>
+</code></pre><h2 id=options-for-transparent-singularity>Options for Transparent singularity:</h2>
+<ul>
+<li><code>--storage</code> - this</li>
+<li><code>--container</code> - this option can be used to explicitly define the container name to be downloaded</li>
+<li><code>--unpack</code> - this will unpack the singularity container so it can be used on systems that do not allow to open simg / sif files for security reasons, e.g.: <code>--unpack true</code></li>
+<li><code>--singularity-opts</code> - this will be passed on to the singularity call, e.g.: <code>--singularity-opts '--bind /cvmfs'</code></li>
+</ul>
+<h1 id=use-in-module-system-lmod>Use in module system LMOD</h1>
 <p>Add the module folder path to $MODULEPATH</p>
 <h1 id=manual-activation-and-deactivation-in-case-module-system-is-not-available-this-will-add-the-paths-to-the-bashrc>Manual activation and deactivation (in case module system is not available). This will add the paths to the .bashrc</h1>
 <h2 id=activate>Activate</h2>
@@ -169,8 +177,8 @@
 </div>
 <div class="text-muted mt-5 pt-3 border-top">
 Last modified
-September 22, 2021
-: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/a8ea892703b0486d234d3d6321f2626ac798c0c8>titles updated (a8ea892)</a>
+September 23, 2021
+: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/7f8f11c330c5ed25fe2dd637e5aa0e968e89e2f7>added unpack documentation (7f8f11c)</a>
 </div>
 </div>
 </main>
