@@ -21,12 +21,12 @@
 ">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://neurodesk.github.io/docs/neurodesktop/getting-started/cloud/"><meta property="article:section" content="docs">
-<meta property="article:modified_time" content="2021-09-23T19:01:05+10:00"><meta property="og:site_name" content="NeuroDesk">
+<meta property="article:modified_time" content="2021-09-23T20:29:15+10:00"><meta property="og:site_name" content="NeuroDesk">
 <meta itemprop=name content="Cloud">
 <meta itemprop=description content="Run neurodesktop using Oracle or Azure cloud computing
 ">
-<meta itemprop=dateModified content="2021-09-23T19:01:05+10:00">
-<meta itemprop=wordCount content="318">
+<meta itemprop=dateModified content="2021-09-23T20:29:15+10:00">
+<meta itemprop=wordCount content="358">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="Cloud">
 <meta name=twitter:description content="Run neurodesktop using Oracle or Azure cloud computing
@@ -159,6 +159,8 @@
 <li><a href=#minimum-system-requirements>Minimum System Requirements</a></li>
 <li><a href=#quickstart>Quickstart</a></li>
 <li><a href=#stopping-neurodesktop>Stopping neurodesktop:</a></li>
+<li><a href=#portforwarding-to-an-ios-ipad>Portforwarding to an iOS ipad</a></li>
+<li><a href=#cloud-provider-specific-tutorials>Cloud-provider specific Tutorials</a></li>
 </ul>
 </nav></div>
 </aside>
@@ -234,22 +236,32 @@ newgrp docker
 <p>Type:</p>
 </li>
 </ol>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>sudo docker stop neurodesktop
-<span style=color:#4e9a06>```</span>shell
-4. Type:
-</code></pre></div><p>sudo docker rm neurodesktop</p>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>
-
-## Cloud-provider specific Tutorials 
-| Cloud provider | link                                                                                    |
-|----------------|-----------------------------------------------------------------------------------------|
-| Oracle         | https://mri.sbollmann.net/index.php/2020/12/08/run-neurodesk-on-oracle-cloud-free-tier/ |
-| Azure          | https://henryjburg.medium.com/neurodesk-running-on-azure-3e38c590a152                   |
-</code></pre></div>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>sudo docker stop neurodesktop &amp;&amp; sudo docker rm neurodesktop
+</code></pre></div><h2 id=portforwarding-to-an-ios-ipad>Portforwarding to an iOS ipad</h2>
+<p>You can also connect to this cloud instance from your iOS device :) For this install <a href=https://webssh.net/documentation/help/networking/port-forwarding/>https://webssh.net/documentation/help/networking/port-forwarding/</a> and create a tunnel (the tool is free for one connection). Start the docker container in a screen session and then connect to it from your ios device in the browser.</p>
+<h2 id=cloud-provider-specific-tutorials>Cloud-provider specific Tutorials</h2>
+<table>
+<thead>
+<tr>
+<th>Cloud provider</th>
+<th>link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Oracle</td>
+<td><a href=https://mri.sbollmann.net/index.php/2020/12/08/run-neurodesk-on-oracle-cloud-free-tier/>https://mri.sbollmann.net/index.php/2020/12/08/run-neurodesk-on-oracle-cloud-free-tier/</a></td>
+</tr>
+<tr>
+<td>Azure</td>
+<td><a href=https://henryjburg.medium.com/neurodesk-running-on-azure-3e38c590a152>https://henryjburg.medium.com/neurodesk-running-on-azure-3e38c590a152</a></td>
+</tr>
+</tbody>
+</table>
 <div class="text-muted mt-5 pt-3 border-top">
 Last modified
 September 23, 2021
-: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/86d464dbdf974387d279f5f10497f3e2dea49cf5>more code annotations and new release (86d464d)</a>
+: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/8f14fc5d5f99c57828bf1e7e0c840c8d23bffc8a>added ios documentation (8f14fc5)</a>
 </div>
 </div>
 </main>

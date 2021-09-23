@@ -359,18 +359,28 @@ newgrp docker
 <p>Type:</p>
 </li>
 </ol>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>sudo docker stop neurodesktop
-<span style=color:#4e9a06>```</span>shell
-4. Type:
-</code></pre></div><p>sudo docker rm neurodesktop</p>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>
-
-## Cloud-provider specific Tutorials 
-| Cloud provider | link                                                                                    |
-|----------------|-----------------------------------------------------------------------------------------|
-| Oracle         | https://mri.sbollmann.net/index.php/2020/12/08/run-neurodesk-on-oracle-cloud-free-tier/ |
-| Azure          | https://henryjburg.medium.com/neurodesk-running-on-azure-3e38c590a152                   |
-</code></pre></div>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>sudo docker stop neurodesktop &amp;&amp; sudo docker rm neurodesktop
+</code></pre></div><h2 id=portforwarding-to-an-ios-ipad>Portforwarding to an iOS ipad</h2>
+<p>You can also connect to this cloud instance from your iOS device :) For this install <a href=https://webssh.net/documentation/help/networking/port-forwarding/>https://webssh.net/documentation/help/networking/port-forwarding/</a> and create a tunnel (the tool is free for one connection). Start the docker container in a screen session and then connect to it from your ios device in the browser.</p>
+<h2 id=cloud-provider-specific-tutorials>Cloud-provider specific Tutorials</h2>
+<table>
+<thead>
+<tr>
+<th>Cloud provider</th>
+<th>link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Oracle</td>
+<td><a href=https://mri.sbollmann.net/index.php/2020/12/08/run-neurodesk-on-oracle-cloud-free-tier/>https://mri.sbollmann.net/index.php/2020/12/08/run-neurodesk-on-oracle-cloud-free-tier/</a></td>
+</tr>
+<tr>
+<td>Azure</td>
+<td><a href=https://henryjburg.medium.com/neurodesk-running-on-azure-3e38c590a152>https://henryjburg.medium.com/neurodesk-running-on-azure-3e38c590a152</a></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class=td-content style=page-break-before:always>
 <h1 id=pg-784674433df25a8a2fea1ab0994fd949>1.6 - Demo</h1>

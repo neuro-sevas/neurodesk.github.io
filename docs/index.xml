@@ -559,17 +559,28 @@ newgrp docker
 &lt;p>Type:&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">sudo docker stop neurodesktop
-&lt;span style="color:#4e9a06">```&lt;/span>shell
-4. Type:
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>sudo docker rm neurodesktop&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">
-## Cloud-provider specific Tutorials
-| Cloud provider | link |
-|----------------|-----------------------------------------------------------------------------------------|
-| Oracle | https://mri.sbollmann.net/index.php/2020/12/08/run-neurodesk-on-oracle-cloud-free-tier/ |
-| Azure | https://henryjburg.medium.com/neurodesk-running-on-azure-3e38c590a152 |
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Release History</title><link>https://neurodesk.github.io/docs/neurodesktop/release-history/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/release-history/</guid><description>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">sudo docker stop neurodesktop &amp;amp;&amp;amp; sudo docker rm neurodesktop
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="portforwarding-to-an-ios-ipad">Portforwarding to an iOS ipad&lt;/h2>
+&lt;p>You can also connect to this cloud instance from your iOS device :) For this install &lt;a href="https://webssh.net/documentation/help/networking/port-forwarding/">https://webssh.net/documentation/help/networking/port-forwarding/&lt;/a> and create a tunnel (the tool is free for one connection). Start the docker container in a screen session and then connect to it from your ios device in the browser.&lt;/p>
+&lt;h2 id="cloud-provider-specific-tutorials">Cloud-provider specific Tutorials&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Cloud provider&lt;/th>
+&lt;th>link&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Oracle&lt;/td>
+&lt;td>&lt;a href="https://mri.sbollmann.net/index.php/2020/12/08/run-neurodesk-on-oracle-cloud-free-tier/">https://mri.sbollmann.net/index.php/2020/12/08/run-neurodesk-on-oracle-cloud-free-tier/&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Azure&lt;/td>
+&lt;td>&lt;a href="https://henryjburg.medium.com/neurodesk-running-on-azure-3e38c590a152">https://henryjburg.medium.com/neurodesk-running-on-azure-3e38c590a152&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table></description></item><item><title>Docs: Release History</title><link>https://neurodesk.github.io/docs/neurodesktop/release-history/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/release-history/</guid><description>
 &lt;h2 id="20210923">20210923&lt;/h2>
 &lt;ul>
 &lt;li>removed faulty mriqc 0.15.2 container&lt;/li>
