@@ -88,17 +88,17 @@ This the multi-page printable view of this section.
 <p>This project allows to use singularity containers transparently on HPCs, so that an application inside the container can be used without adjusting any scripts or pipelines (e.g. nipype).</p>
 <h2 id=important-add-bind-points-to-bashrc-before-executing-this-script>Important: add bind points to .bashrc before executing this script</h2>
 <p>This script expects that you have adjusted the Singularity Bindpoints in your .bashrc, e.g.:</p>
-<pre tabindex=0><code>export SINGULARITY_BINDPATH=&quot;/gpfs1/,/QRISdata,/data&quot;
-</code></pre><h2 id=this-gives-you-a-list-of-all-tested-images-available-in-neurodesk>This gives you a list of all tested images available in neurodesk:</h2>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>export SINGULARITY_BINDPATH=&#34;/gpfs1/,/QRISdata,/data&#34;
+</code></pre></div><h2 id=this-gives-you-a-list-of-all-tested-images-available-in-neurodesk>This gives you a list of all tested images available in neurodesk:</h2>
 <p><a href=https://github.com/NeuroDesk/neurodesk/blob/master/cvmfs/log.txt>https://github.com/NeuroDesk/neurodesk/blob/master/cvmfs/log.txt</a></p>
-<pre tabindex=0><code>curl -s https://raw.githubusercontent.com/NeuroDesk/neurodesk/master/cvmfs/log.txt
-</code></pre><h2 id=clone-repo-into-a-folder-with-the-intented-image-name>Clone repo into a folder with the intented image name</h2>
-<pre tabindex=0><code>git clone https://github.com/NeuroDesk/transparent-singularity convert3d_1.0.0_20210104
-</code></pre><h2 id=install>Install</h2>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>curl -s https://raw.githubusercontent.com/NeuroDesk/neurodesk/master/cvmfs/log.txt
+</code></pre></div><h2 id=clone-repo-into-a-folder-with-the-intented-image-name>Clone repo into a folder with the intented image name</h2>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>git clone https://github.com/NeuroDesk/transparent-singularity convert3d_1.0.0_20210104
+</code></pre></div><h2 id=install>Install</h2>
 <p>This will create scripts for every binary in the container located in the $DEPLOY_PATH inside the container. It will also create activate and deactivate scripts and module files for lmod (<a href=https://lmod.readthedocs.io/en/latest/>https://lmod.readthedocs.io/en/latest/</a>)</p>
-<pre tabindex=0><code>cd convert3d_1.0.0_20210104
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>cd convert3d_1.0.0_20210104
 ./run_transparent_singularity.sh convert3d_1.0.0_20210104
-</code></pre><h2 id=options-for-transparent-singularity>Options for Transparent singularity:</h2>
+</code></pre></div><h2 id=options-for-transparent-singularity>Options for Transparent singularity:</h2>
 <ul>
 <li><code>--storage</code> - this</li>
 <li><code>--container</code> - this option can be used to explicitly define the container name to be downloaded</li>
@@ -109,12 +109,12 @@ This the multi-page printable view of this section.
 <p>Add the module folder path to $MODULEPATH</p>
 <h1 id=manual-activation-and-deactivation-in-case-module-system-is-not-available-this-will-add-the-paths-to-the-bashrc>Manual activation and deactivation (in case module system is not available). This will add the paths to the .bashrc</h1>
 <h2 id=activate>Activate</h2>
-<pre tabindex=0><code>source activate_convert3d_1.0.0_20210104.sh
-</code></pre><h2 id=deactivate>Deactivate</h2>
-<pre tabindex=0><code>source deactivate_convert3d_1.0.0_20210104.sif.sh
-</code></pre><h2 id=uninstall-container-and-cleanup>Uninstall container and cleanup</h2>
-<pre tabindex=0><code>./ts_uninstall.sh
-</code></pre>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>source activate_convert3d_1.0.0_20210104.sh
+</code></pre></div><h2 id=deactivate>Deactivate</h2>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>source deactivate_convert3d_1.0.0_20210104.sif.sh
+</code></pre></div><h2 id=uninstall-container-and-cleanup>Uninstall container and cleanup</h2>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>./ts_uninstall.sh
+</code></pre></div>
 </div>
 </div>
 </main>
