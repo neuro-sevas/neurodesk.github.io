@@ -102,70 +102,67 @@ rm -f cvmfs-release-latest_all.deb
 sudo apt-get update
 sudo apt-get install cvmfs
 </code></pre><h1 id=configure-cvmfs>Configure CVMFS</h1>
-<p>Once installed create the keys and configure the servers used:
+<p>Once installed create the keys and configure the servers used:</p>
 <div class=highlight><div style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
 <table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
-<pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">199
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">200
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">201
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">202
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">203
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">204
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">205
-</span><span style=display:block;width:100%;background-color:#dfdfdf><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">206
-</span></span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">207
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">208
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">209
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">210
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">211
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">212
-</span><span style=display:block;width:100%;background-color:#dfdfdf><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">213
-</span></span><span style=display:block;width:100%;background-color:#dfdfdf><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">214
-</span></span><span style=display:block;width:100%;background-color:#dfdfdf><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">215
-</span></span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">216
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">217
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">218
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">219
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">220
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">221
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">222
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">223
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">224
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">225
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">226
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">227
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">228
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">229
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">230
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">231
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">232
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">233
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">234
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">235
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">236
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">237
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">238
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">239
+<pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">12
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">13
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">14
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">15
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">16
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">17
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">18
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">19
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">20
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">21
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">22
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">23
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">24
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">25
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">26
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">27
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">28
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">29
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">30
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">31
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">32
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">33
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">34
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">35
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">36
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">37
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">38
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">39
 </span></code></pre></td>
 <td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
-<pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#4e9a06>```</span>
-sudo mkdir -p /etc/cvmfs/keys/ardc.edu.au/
+<pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>sudo mkdir -p /etc/cvmfs/keys/ardc.edu.au/
 
 
 <span style=color:#204a87>echo</span> <span style=color:#4e9a06>&#34;-----BEGIN PUBLIC KEY-----
 </span><span style=color:#4e9a06>MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwUPEmxDp217SAtZxaBep
 </span><span style=color:#4e9a06>Bi2TQcLoh5AJ//HSIz68ypjOGFjwExGlHb95Frhu1SpcH5OASbV+jJ60oEBLi3sD
-</span><span style=display:block;width:100%;background-color:#dfdfdf><span style=color:#4e9a06>qA6rGYt9kVi90lWvEjQnhBkPb0uWcp1gNqQAUocybCzHvoiG3fUzAe259CrK09qR
-</span></span><span style=color:#4e9a06>pX8sZhgK3eHlfx4ycyMiIQeg66AHlgVCJ2fKa6fl1vnh6adJEPULmn6vZnevvUke
+</span><span style=color:#4e9a06>qA6rGYt9kVi90lWvEjQnhBkPb0uWcp1gNqQAUocybCzHvoiG3fUzAe259CrK09qR
+</span><span style=color:#4e9a06>pX8sZhgK3eHlfx4ycyMiIQeg66AHlgVCJ2fKa6fl1vnh6adJEPULmn6vZnevvUke
 </span><span style=color:#4e9a06>I6U1VcYTKm5dPMrOlY/fGimKlyWvivzVv1laa5TAR2Dt4CfdQncOz+rkXmWjLjkD
 </span><span style=color:#4e9a06>87WMiTgtKybsmMLb2yCGSgLSArlSWhbMA0MaZSzAwE9PJKCCMvTANo5644zc8jBe
 </span><span style=color:#4e9a06>NQIDAQAB
 </span><span style=color:#4e9a06>-----END PUBLIC KEY-----&#34;</span> <span style=color:#000;font-weight:700>|</span> sudo tee /etc/cvmfs/keys/ardc.edu.au/neurodesk.ardc.edu.au.pub
 
-<span style=display:block;width:100%;background-color:#dfdfdf>
-</span><span style=display:block;width:100%;background-color:#dfdfdf><span style=color:#204a87>echo</span> <span style=color:#4e9a06>&#34;CVMFS_USE_GEOAPI=yes&#34;</span> <span style=color:#000;font-weight:700>|</span> sudo tee /etc/cvmfs/config.d/neurodesk.ardc.edu.au.conf
-</span><span style=display:block;width:100%;background-color:#dfdfdf>
-</span><span style=color:#204a87>echo</span> <span style=color:#4e9a06>&#39;CVMFS_SERVER_URL=&#34;http://203.101.231.144/cvmfs/@fqrn@;http://150.136.239.221/cvmfs/@fqrn@;http://132.145.96.34/cvmfs/@fqrn@;http://140.238.170.185/cvmfs/@fqrn@;http://130.61.74.69/cvmfs/@fqrn@;http://152.67.114.42/cvmfs/@fqrn@&#34;&#39;</span> <span style=color:#000;font-weight:700>|</span> sudo tee -a /etc/cvmfs/config.d/neurodesk.ardc.edu.au.conf <span style=color:#4e9a06>\
+
+<span style=color:#204a87>echo</span> <span style=color:#4e9a06>&#34;CVMFS_USE_GEOAPI=yes&#34;</span> <span style=color:#000;font-weight:700>|</span> sudo tee /etc/cvmfs/config.d/neurodesk.ardc.edu.au.conf
+
+<span style=color:#204a87>echo</span> <span style=color:#4e9a06>&#39;CVMFS_SERVER_URL=&#34;http://203.101.231.144/cvmfs/@fqrn@;http://150.136.239.221/cvmfs/@fqrn@;http://132.145.96.34/cvmfs/@fqrn@;http://140.238.170.185/cvmfs/@fqrn@;http://130.61.74.69/cvmfs/@fqrn@;http://152.67.114.42/cvmfs/@fqrn@&#34;&#39;</span> <span style=color:#000;font-weight:700>|</span> sudo tee -a /etc/cvmfs/config.d/neurodesk.ardc.edu.au.conf <span style=color:#4e9a06>\
 </span><span style=color:#4e9a06></span>
 
 <span style=color:#204a87>echo</span> <span style=color:#4e9a06>&#39;CVMFS_KEYS_DIR=&#34;/etc/cvmfs/keys/ardc.edu.au/&#34;&#39;</span> <span style=color:#000;font-weight:700>|</span> sudo tee -a /etc/cvmfs/config.d/neurodesk.ardc.edu.au.conf
@@ -188,10 +185,9 @@ sudo cvmfs_talk -i neurodesk.ardc.edu.au host probe
 sudo cvmfs_talk -i neurodesk.ardc.edu.au host info
 
 cvmfs_config stat -v neurodesk.ardc.edu.au
-<span style=color:#4e9a06>```</span></code></pre></td></tr></table>
+</code></pre></td></tr></table>
 </div>
-</div></p>
-<h1 id=use-of-neurodesk-cvmfs-containers>use of Neurodesk CVMFS containers</h1>
+</div><h1 id=use-of-neurodesk-cvmfs-containers>use of Neurodesk CVMFS containers</h1>
 <p>The containers are now available in /cvmfs/neurodesk.ardc.edu.au/containers/ and can be started with:</p>
 <pre tabindex=0><code>singularity shell --no-home /cvmfs/neurodesk.ardc.edu.au/containers/itksnap_3.8.0_20201208/itksnap_3.8.0_20201208.simg
 </code></pre>
