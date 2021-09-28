@@ -86,15 +86,56 @@ This the multi-page printable view of this section.
 <h1 class=title>Tutorials</h1>
 <div class=lead>Tutorials</div>
 <ul>
-<li>1: <a href=#pg-12e7f5d8fc2ce7918eef3bbc793e64c0>Example</a></li>
+<li>1: <a href=#pg-47dce3cc3ec48699840e49a44f1653b1>Quantitative Susceptibility Mapping</a></li>
 </ul>
 <div class=content>
 </div>
 </div>
 <div class=td-content>
-<h1 id=pg-12e7f5d8fc2ce7918eef3bbc793e64c0>1 - Example</h1>
-<div class=lead>Example</div>
-<h1 id=example>Example</h1>
+<h1 id=pg-47dce3cc3ec48699840e49a44f1653b1>1 - Quantitative Susceptibility Mapping</h1>
+<div class=lead>Example workflow for Quantitative Susceptibility Mapping</div>
+<h1 id=quantitative-susceptibility-mapping>Quantitative Susceptibility Mapping</h1>
+<p>Neurodesk includes QSMxT, a complete and end-to-end QSM processing and analysis framework that excels at automatically reconstructing and processing QSM for large groups of participants.</p>
+<p>QSMxT provides pipelines implemented in Python that:</p>
+<ol>
+<li>Automatically convert DICOM data to the Brain Imaging Data Structure (BIDS)</li>
+<li>Automatically reconstruct QSM, including steps for:
+<ol>
+<li>Robust masking without anatomical priors</li>
+<li>Phase unwrapping (Laplacian based)</li>
+<li>Background field removal + dipole inversion (<code>tgv_qsm</code>)</li>
+<li>Multi-echo combination</li>
+</ol>
+</li>
+<li>Automatically generate a common group space for the whole study, as well as average magnitude and QSM images that facilitate group-level analyses.</li>
+<li>Automatically segment T1w data and register them to the QSM space to extract quantitative values in anatomical regions of interest.</li>
+<li>Export quantitative data to CSV for all subjects using the automated segmentations, or a custom segmentation in the group space (we recommend ITK snap).</li>
+</ol>
+<p>If you use QSMxT for a study, please cite <a href=https://doi.org/10.1101/2021.05.05.442850>https://doi.org/10.1101/2021.05.05.442850</a>.</p>
+<h2 id=download-demo-data>Download demo data</h2>
+<p>Open a terminal and run:</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>pip install osfclient
+cd /neurodesktop-storage/
+osf -p ru43c clone /neurodesktop-storage/qsmxt-demo
+unzip /neurodesktop-storage/qsmxt-demo/osfstorage/GRE_2subj_1mm_TE20ms/sub1/GR_M_5_QSM_p2_1mmIso_TE20.zip -d /neurodesktop-storage/qsmxt-demo/dicoms
+unzip /neurodesktop-storage/qsmxt-demo/osfstorage/GRE_2subj_1mm_TE20ms/sub1/GR_P_6_QSM_p2_1mmIso_TE20.zip -d /neurodesktop-storage/qsmxt-demo/dicoms
+unzip /neurodesktop-storage/qsmxt-demo/osfstorage/GRE_2subj_1mm_TE20ms/sub2/GR_M_5_QSM_p2_1mmIso_TE20.zip -d /neurodesktop-storage/qsmxt-demo/dicoms
+unzip /neurodesktop-storage/qsmxt-demo/osfstorage/GRE_2subj_1mm_TE20ms/sub2/GR_P_6_QSM_p2_1mmIso_TE20.zip -d /neurodesktop-storage/qsmxt-demo/dicoms
+</code></pre></div><h2 id=qsmxt-usage>QSMxT Usage</h2>
+<p>Start QSMxT (in this demo we used 1.1.6) from the applications menu in the desktop (<em>Neurodesk</em> > <em>Quantitative Imaging</em> > <em>qsmxt</em>)</p>
+<ol>
+<li>Convert DICOM data to BIDS:
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#204a87>cd</span> /neurodesktop-storage/qsmxt-demo
+python3 /opt/QSMxT/run_0_dicomSort.py /neurodesktop-storage/qsmxt-demo/dicoms 00_dicom
+python3 /opt/QSMxT/run_1_dicomToBids.py 00_dicom 01_bids
+</code></pre></div></li>
+</ol>
+<p>After this step check if the data were correctly recognized and converted to BIDS. Otherwise make a copy of /opt/QSMxT/bidsmap.yaml - adjust based on provenance example in 01_bids/code/bidscoin/bidsmap.yaml (see for example what it detected under extra_files) - and run again with the parameter <code>--heuristic bidsmap.yaml</code>. If the data were acquired on a GE scanner the complex data needs to be corrected by applying an FFT shift, this can be done with <code>python /opt/QSMxT/run_1_fixGEphaseFFTshift.py 01_bids/sub*/ses*/anat/*_run-1_*.nii.gz</code> .</p>
+<ol start=2>
+<li>Run QSM pipeline:
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>python3 /opt/QSMxT/run_2_qsm.py 01_bids 02_qsm_output
+</code></pre></div></li>
+</ol>
 </div>
 </main>
 </div>

@@ -21,11 +21,11 @@
 ">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://neurodesk.github.io/docs/neurodesktop/storage/"><meta property="article:section" content="docs">
-<meta property="article:modified_time" content="2021-09-23T19:01:05+10:00"><meta property="og:site_name" content="NeuroDesk">
+<meta property="article:modified_time" content="2021-09-28T21:28:51+10:00"><meta property="og:site_name" content="NeuroDesk">
 <meta itemprop=name content="Storage">
 <meta itemprop=description content="Add storage to Neurodesktop
 ">
-<meta itemprop=dateModified content="2021-09-23T19:01:05+10:00">
+<meta itemprop=dateModified content="2021-09-28T21:28:51+10:00">
 <meta itemprop=wordCount content="485">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="Storage">
@@ -176,8 +176,9 @@
 <p>The easiest way to get your data into Neurodesktop is to use a cloud storage provider like CloudStor, Dropbox, OneDrive and their sync tools like OwnCloud, Nextcloud or very flexible tools like rclone or davfs2. Another good option could be to utilize Globus for large amounts of data.</p>
 <h2 id=nextcloud-and-owncloud-desktop-clients>Nextcloud and Owncloud desktop clients</h2>
 <p>Under the menu item &ldquo;Accessories&rdquo; you can find &ldquo;Nextcloud&rdquo; and &ldquo;ownCloud&rdquo; desktop sync clients that you can configure with your cloud service accounts.</p>
-<p>To connect for example to your AARNET cloudstor account you can start the ownCloud client and enter the Server Address: <code>https://cloudstor.aarnet.edu.au/plus/</code></p>
-<p>Then generate an app-password here: <a href="https://cloudstor.aarnet.edu.au/plus/settings/personal?sectionid=security">https://cloudstor.aarnet.edu.au/plus/settings/personal?sectionid=security</a></p>
+<p>To connect for example to your AARNET cloudstor account you can start the ownCloud client and enter the Server Address:</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>https://cloudstor.aarnet.edu.au/plus/
+</code></pre></div><p>Then generate an app-password here: <a href="https://cloudstor.aarnet.edu.au/plus/settings/personal?sectionid=security">https://cloudstor.aarnet.edu.au/plus/settings/personal?sectionid=security</a></p>
 <h2 id=mounting-webdav-storage-using-davfs2>Mounting webdav storage using davfs2</h2>
 <p>Another option is to directly mount webdav storage. Here is an example how to mount CloudStor into Neurodesktop:</p>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>sudo mount -t davfs https://cloudstor.aarnet.edu.au/plus/remote.php/webdav/ /data/
@@ -215,8 +216,8 @@
 </code></pre></div>
 <div class="text-muted mt-5 pt-3 border-top">
 Last modified
-September 23, 2021
-: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/86d464dbdf974387d279f5f10497f3e2dea49cf5>more code annotations and new release (86d464d)</a>
+September 28, 2021
+: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/79775f3b37b8a68651a8e002f3c3a64041b9922b>added qsm example (79775f3)</a>
 </div>
 </div>
 </main>
