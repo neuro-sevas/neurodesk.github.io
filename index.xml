@@ -1,6 +1,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>NeuroDesk – Neurodesk</title><link>https://neurodesk.github.io/</link><description>Recent content in Neurodesk on NeuroDesk</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://neurodesk.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Blog: December 2021</title><link>https://neurodesk.github.io/blog/2021/09/22/december-2021/</link><pubDate>Wed, 22 Sep 2021 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/blog/2021/09/22/december-2021/</guid><description>
 &lt;p>We are invited to present NeuroDesk at the ESMRMB endorsed Open MRI workshop on the 15th of December 2021. Stay tuned for updates on this event.&lt;/p></description></item><item><title>Blog: October 2021</title><link>https://neurodesk.github.io/blog/2021/09/21/october-2021/</link><pubDate>Tue, 21 Sep 2021 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/blog/2021/09/21/october-2021/</guid><description>
 &lt;p>We are invited to present Neurodesk at the eResearch Australasisa conference 2021 on the 14th of October: Make sure to sign up here &lt;a href="https://conference.eresearch.edu.au/">https://conference.eresearch.edu.au/&lt;/a>&lt;/p></description></item><item><title>Blog: Sept 2021</title><link>https://neurodesk.github.io/blog/2021/09/20/sept-2021/</link><pubDate>Mon, 20 Sep 2021 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/blog/2021/09/20/sept-2021/</guid><description>
+&lt;h2 id="20210929">20210929&lt;/h2>
+&lt;ul>
+&lt;li>fixed naming of aidmri to aidamri and added new category &amp;ldquo;Rodent Imaging&amp;rdquo;&lt;/li>
+&lt;li>updated all tool icons and updated neurodesk icon including background image&lt;/li>
+&lt;li>VScode now stores settings in persistent storage /neurodesktop-storage and with this keeps extensions and settings across different neurodesktop versions&lt;/li>
+&lt;li>docker layers are now cached, so updating the desktop to the next version is very fast and consumes less disk space locally&lt;/li>
+&lt;li>default theme of terminal changed from Solarized to Tango as the old theme was hiding information in tools like htop (same font colour on same background&amp;hellip;)&lt;/li>
+&lt;/ul>
 &lt;h2 id="20210923">20210923&lt;/h2>
 &lt;ul>
 &lt;li>removed faulty mriqc 0.15.2 container&lt;/li>

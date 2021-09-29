@@ -210,8 +210,8 @@ newgrp docker
 </span><span style=color:#4e9a06></span>  --shm-size<span style=color:#ce5c00;font-weight:700>=</span>1gb -it --privileged --name neurodesktop <span style=color:#4e9a06>\
 </span><span style=color:#4e9a06></span>  -v ~/neurodesktop-storage:/neurodesktop-storage <span style=color:#4e9a06>\
 </span><span style=color:#4e9a06></span>  -e <span style=color:#000>HOST_UID</span><span style=color:#ce5c00;font-weight:700>=</span><span style=color:#4e9a06>&#34;</span><span style=color:#204a87;font-weight:700>$(</span>id -u<span style=color:#204a87;font-weight:700>)</span><span style=color:#4e9a06>&#34;</span> -e <span style=color:#000>HOST_GID</span><span style=color:#ce5c00;font-weight:700>=</span><span style=color:#4e9a06>&#34;</span><span style=color:#204a87;font-weight:700>$(</span>id -g<span style=color:#204a87;font-weight:700>)</span><span style=color:#4e9a06>&#34;</span> <span style=color:#4e9a06>\
-</span><span style=color:#4e9a06></span>  -p 8080:8080 -h neurodesktop-20210923 <span style=color:#4e9a06>\
-</span><span style=color:#4e9a06></span>  vnmd/neurodesktop:20210923
+</span><span style=color:#4e9a06></span>  -p 8080:8080 -h neurodesktop-20210929 <span style=color:#4e9a06>\
+</span><span style=color:#4e9a06></span>  vnmd/neurodesktop:20210929
 </code></pre></div>
 <p>(notice: if you get errors in neurodesktop then check if the ~/neurodesktop-storage directory is writable to all users, otherwise run <code>chmod a+rwx ~/neurodesktop-storage</code>)</p>
 <ol start=5>
