@@ -10,19 +10,17 @@
 &lt;ul>
 &lt;li>lmod &lt;a href="https://sylabs.io/guides/3.5/user-guide/quick_start.html">https://lmod.readthedocs.io/en/latest/&lt;/a>&lt;/li>
 &lt;/ul>
-&lt;h3 id="command-line-mode---for-non-desktop-experience-eg-running-on-an-hpc">command line mode - For non-desktop experience (e.g. running on an HPC)&lt;/h3>
-&lt;p>If running on cli only &amp;hellip;&lt;/p>
+&lt;h3 id="command-line-mode-eg-running-on-an-hpc-or-cvl">command line mode (e.g. running on an HPC or CVL)&lt;/h3>
 &lt;ul>
 &lt;li>Load singularity and for best performance it should be 3.x e.g. &lt;code>module load singularity/3.5.0&lt;/code>&lt;/li>
 &lt;li>Load or install aria2 to optimize the download performance of our containers e.g. &lt;code>module load aria2c&lt;/code>&lt;/li>
-&lt;li>make sure the current directory is not a symlink (singularity bug): &lt;code>pwd -P&lt;/code> and then cd there&lt;/li>
 &lt;li>Run &lt;code>git clone https://github.com/NeuroDesk/neurocommand.git&lt;/code> to clone the repository - make sure to clone this to a directory with enough storage, write permissions and NOT a symbolic link (to be sure run cd `pwd -P`)!&lt;/li>
 &lt;li>Run &lt;code>cd neurocommand&lt;/code> to change into the directory&lt;/li>
 &lt;li>Run &lt;code>pip3 install -r neurodesk/requirements.txt --user&lt;/code> to install pre-requisite python packages&lt;/li>
 &lt;li>Run &lt;code>bash build.sh --cli&lt;/code> to install in cli mode&lt;/li>
 &lt;li>Run &lt;code>bash containers.sh&lt;/code> for installing indiviual containers or &lt;code>bash containers.sh --all&lt;/code> for installing all containers&lt;/li>
 &lt;li>Run &lt;code>module use $PWD/local/containers/modules/&lt;/code> to add the containers to your module search path. Add this to your .bashrc if working.&lt;/li>
-&lt;li>Run &lt;code>ml avail&lt;/code> to see the installed containers at the top of the list (neurodesk containers will take preference over system modules with the same name). If a container is not yet there run &lt;code>ml --ignore_cache avail&lt;/code>&lt;/li>
+&lt;li>Run &lt;code>ml avail&lt;/code> to see the installed containers at the top of the list (neurodesk containers will take preference over system modules with the same name). - If a container is not yet there run &lt;code>ml --ignore_cache avail&lt;/code>&lt;/li>
 &lt;/ul>
 &lt;h3 id="for-lxde-desktops">For Lxde desktops&lt;/h3>
 &lt;p>If running on an lxde desktop&amp;hellip;
