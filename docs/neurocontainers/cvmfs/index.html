@@ -21,12 +21,12 @@
 ">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://neurodesk.github.io/docs/neurocontainers/cvmfs/"><meta property="article:section" content="docs">
-<meta property="article:modified_time" content="2021-09-23T19:01:05+10:00"><meta property="og:site_name" content="NeuroDesk">
+<meta property="article:modified_time" content="2021-10-01T09:16:46+10:00"><meta property="og:site_name" content="NeuroDesk">
 <meta itemprop=name content="CVMFS">
 <meta itemprop=description content="Neurodesk Singularity Containers on CVMFS
 ">
-<meta itemprop=dateModified content="2021-09-23T19:01:05+10:00">
-<meta itemprop=wordCount content="215">
+<meta itemprop=dateModified content="2021-10-01T09:16:46+10:00">
+<meta itemprop=wordCount content="266">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="CVMFS">
 <meta name=twitter:description content="Neurodesk Singularity Containers on CVMFS
@@ -275,19 +275,25 @@ cvmfs_config stat -v neurodesk.ardc.edu.au
 </div>
 </div><h1 id=use-of-neurodesk-cvmfs-containers>use of Neurodesk CVMFS containers</h1>
 <p>The containers are now available in /cvmfs/neurodesk.ardc.edu.au/containers/ and can be started with:</p>
-<div class=highlight><div style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
-<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
-<pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
-<pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>singularity shell --no-home /cvmfs/neurodesk.ardc.edu.au/containers/itksnap_3.8.0_20201208/itksnap_3.8.0_20201208.simg
-</code></pre></td></tr></table>
-</div>
-</div>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>singularity shell /cvmfs/neurodesk.ardc.edu.au/containers/itksnap_3.8.0_20201208/itksnap_3.8.0_20201208.simg
+</code></pre></div><p>make sure that SINGULARITY_BINDPATH include the directories you want to work with:</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#204a87>export</span> <span style=color:#000>SINGULARITY_BINDPATH</span><span style=color:#ce5c00;font-weight:700>=</span><span style=color:#4e9a06>&#39;/cvmfs,/mnt,/home&#39;</span>
+</code></pre></div><h1 id=wsl-doesnt-support-homedirectory---so-dont-mount-this>WSL doesn&rsquo;t support homedirectory - so don&rsquo;t mount this</h1>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>singularity shell --no-home /cvmfs/neurodesk.ardc.edu.au/containers/itksnap_3.8.0_20201208/itksnap_3.8.0_20201208.simg
+</code></pre></div><p>or configure permanently:</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>sudo vi /etc/singularity/singularity.conf
+</code></pre></div><p>set</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>mount home = no
+</code></pre></div><h1 id=use-of-containers-in-the-module-system>use of containers in the module system:</h1>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>export SINGULARITY_BINDPATH=&#39;/cvmfs,/mnt,/home&#39;
+module use /cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/*
+ml fsl
+fslmaths
+</code></pre></div>
 <div class="text-muted mt-5 pt-3 border-top">
 Last modified
-September 23, 2021
-: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/86d464dbdf974387d279f5f10497f3e2dea49cf5>more code annotations and new release (86d464d)</a>
+October 1, 2021
+: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/c111de54c3e5386b16a91f762814d6786dbc1d36>added more description of CVMFS containers for WSL (c111de5)</a>
 </div>
 </div>
 </main>
