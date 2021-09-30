@@ -180,11 +180,18 @@ sudo docker run \
 <p>Then inside the desktop container:</p>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>sudo apt update
 sudo apt install libcudart10.1
-</code></pre></div><p>Test:</p>
+</code></pre></div><p>Test in desktop image:</p>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>python 
 import tensorflow as tf
 print(&#34;Num GPUs Available: &#34;, len(tf.config.list_physical_devices(&#39;GPU&#39;)))
 </code></pre></div><p><img src=https://user-images.githubusercontent.com/4021595/135446560-d135f6ce-b699-4e46-8534-b72b4d9f2d41.png alt=image></p>
+<p>Test in singularity container running inside desktop container:</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>singularity pull docker://tensorflow/tensorflow:latest-gpu
+singularity run --nv tensorflow_latest-gpu.sif
+python 
+import tensorflow as tf
+print(&#34;Num GPUs Available: &#34;, len(tf.config.list_physical_devices(&#39;GPU&#39;)))
+</code></pre></div>
 </div>
 <div class=td-content style=page-break-before:always>
 <h1 id=pg-b38c91c080a0eb8d1b287cce61a2913d>2 - MacOS</h1>

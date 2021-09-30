@@ -123,11 +123,18 @@ vnmd/neurodesktop:20210929
 &lt;p>Then inside the desktop container:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">sudo apt update
 sudo apt install libcudart10.1
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Test:&lt;/p>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Test in desktop image:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">python
 import tensorflow as tf
 print(&amp;#34;Num GPUs Available: &amp;#34;, len(tf.config.list_physical_devices(&amp;#39;GPU&amp;#39;)))
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/135446560-d135f6ce-b699-4e46-8534-b72b4d9f2d41.png" alt="image">&lt;/p></description></item><item><title>Docs: MacOS</title><link>https://neurodesk.github.io/docs/neurodesktop/getting-started/mac/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/getting-started/mac/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/135446560-d135f6ce-b699-4e46-8534-b72b4d9f2d41.png" alt="image">&lt;/p>
+&lt;p>Test in singularity container running inside desktop container:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">singularity pull docker://tensorflow/tensorflow:latest-gpu
+singularity run --nv tensorflow_latest-gpu.sif
+python
+import tensorflow as tf
+print(&amp;#34;Num GPUs Available: &amp;#34;, len(tf.config.list_physical_devices(&amp;#39;GPU&amp;#39;)))
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: MacOS</title><link>https://neurodesk.github.io/docs/neurodesktop/getting-started/mac/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/getting-started/mac/</guid><description>
 &lt;h2 id="minimum-system-requirements">Minimum System Requirements&lt;/h2>
 &lt;ol>
 &lt;li>At least 3GB free space for neurodesktop base image&lt;/li>
