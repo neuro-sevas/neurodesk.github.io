@@ -178,7 +178,25 @@ newgrp docker
 <li>Type:</li>
 </ol>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>docker rm neurodesktop
+</code></pre></div><h2 id=gpu-support>GPU support</h2>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>sudo yum install nvidia-container-toolkit -y
+
+sudo docker run \
+  --shm-size=1gb -it --privileged --name neurodesktop \
+  -v ~/neurodesktop-storage:/neurodesktop-storage \
+  -e HOST_UID=&#34;$(id -u)&#34; -e HOST_GID=&#34;$(id -g)&#34; \
+  -e NVIDIA_VISIBLE_DEVICES=all \
+  -p 8080:8080 -h neurodesktop-20210929 \
+  vnmd/neurodesktop:20210929
 </code></pre></div>
+<p>Then inside the desktop container:</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>sudo apt update
+sudo apt install libcudart10.1
+</code></pre></div><p>Test:</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>python 
+import tensorflow as tf
+print(&#34;Num GPUs Available: &#34;, len(tf.config.list_physical_devices(&#39;GPU&#39;)))
+</code></pre></div><p><img src=https://user-images.githubusercontent.com/4021595/135446560-d135f6ce-b699-4e46-8534-b72b4d9f2d41.png alt=image></p>
 </div>
 <div class=td-content style=page-break-before:always>
 <h1 id=pg-b38c91c080a0eb8d1b287cce61a2913d>1.2 - MacOS</h1>

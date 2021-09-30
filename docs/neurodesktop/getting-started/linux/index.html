@@ -21,12 +21,12 @@
 ">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://neurodesk.github.io/docs/neurodesktop/getting-started/linux/"><meta property="article:section" content="docs">
-<meta property="article:modified_time" content="2021-09-23T19:01:05+10:00"><meta property="og:site_name" content="NeuroDesk">
+<meta property="article:modified_time" content="2021-09-30T21:25:22+10:00"><meta property="og:site_name" content="NeuroDesk">
 <meta itemprop=name content="Linux">
 <meta itemprop=description content="Install neurodesktop on Linux
 ">
-<meta itemprop=dateModified content="2021-09-23T19:01:05+10:00">
-<meta itemprop=wordCount content="278">
+<meta itemprop=dateModified content="2021-09-30T21:25:22+10:00">
+<meta itemprop=wordCount content="337">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="Linux">
 <meta name=twitter:description content="Install neurodesktop on Linux
@@ -162,6 +162,7 @@
 <li><a href=#minimum-system-requirements>Minimum System Requirements</a></li>
 <li><a href=#quickstart>Quickstart</a></li>
 <li><a href=#stopping-neurodesktop>Stopping neurodesktop:</a></li>
+<li><a href=#gpu-support>GPU support</a></li>
 </ul>
 </nav></div>
 </aside>
@@ -238,11 +239,29 @@ newgrp docker
 <li>Type:</li>
 </ol>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>docker rm neurodesktop
+</code></pre></div><h2 id=gpu-support>GPU support</h2>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>sudo yum install nvidia-container-toolkit -y
+
+sudo docker run \
+  --shm-size=1gb -it --privileged --name neurodesktop \
+  -v ~/neurodesktop-storage:/neurodesktop-storage \
+  -e HOST_UID=&#34;$(id -u)&#34; -e HOST_GID=&#34;$(id -g)&#34; \
+  -e NVIDIA_VISIBLE_DEVICES=all \
+  -p 8080:8080 -h neurodesktop-20210929 \
+  vnmd/neurodesktop:20210929
 </code></pre></div>
+<p>Then inside the desktop container:</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>sudo apt update
+sudo apt install libcudart10.1
+</code></pre></div><p>Test:</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>python 
+import tensorflow as tf
+print(&#34;Num GPUs Available: &#34;, len(tf.config.list_physical_devices(&#39;GPU&#39;)))
+</code></pre></div><p><img src=https://user-images.githubusercontent.com/4021595/135446560-d135f6ce-b699-4e46-8534-b72b4d9f2d41.png alt=image></p>
 <div class="text-muted mt-5 pt-3 border-top">
 Last modified
-September 23, 2021
-: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/86d464dbdf974387d279f5f10497f3e2dea49cf5>more code annotations and new release (86d464d)</a>
+September 30, 2021
+: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/3628fc1f1baa00ba49de4230b79325d1af80ae03>Added poc for GPU (3628fc1)</a>
 </div>
 </div>
 </main>
