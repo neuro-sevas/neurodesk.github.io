@@ -107,7 +107,33 @@
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">sshfs -o allow_root USER@TARGET_HOST:TARGET_PATH SOURCE_PATH
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>A better option is to use &lt;code>scp&lt;/code> and copy data from an SSH endpoint:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">scp /neurodesk/myfile user@remoteserver:/data/
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Troubleshooting</title><link>https://neurodesk.github.io/docs/neurodesktop/troubleshooting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/troubleshooting/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Visual Studio Code</title><link>https://neurodesk.github.io/docs/neurodesktop/visual-studio-code/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/visual-studio-code/</guid><description>
+&lt;p>Following guide is for connecting to a Neurodesktop using a VS Code installation running on your host machine.&lt;/p>
+&lt;blockquote>
+&lt;p>Additional instructions if your Neurodesktop is running remotely (i.e. Cloud, HPC, VM)&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="pre-requisites">Pre-requisites&lt;/h2>
+&lt;p>&lt;a href="https://code.visualstudio.com">Visual Studio Code&lt;/a> installed on your host. Standalone version should work fine&lt;/p>
+&lt;h3 id="full-installation">Full installation&lt;/h3>
+&lt;p>Install the following VS Code extensions:&lt;/p>
+&lt;ol>
+&lt;li>&lt;a href="https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker">Docker&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack">Remote Development&lt;/a>.&lt;/li>
+&lt;/ol>
+&lt;p>The Remote Development bundle includes the Remote SSH, Containers and WSL extensions.&lt;/p>
+&lt;h3 id="minimal-installation">Minimal installation&lt;/h3>
+&lt;p>Install the following VS Code extensions:&lt;/p>
+&lt;ol>
+&lt;li>&lt;a href="https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker">Docker&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers">Remote - Containers&lt;/a>&lt;/li>
+&lt;li>For remote Neurodesktops, also install &lt;a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh">Remote - SSH&lt;/a>&lt;/li>
+&lt;/ol>
+&lt;h2 id="connecting-to-neurodesktop">Connecting to Neurodesktop&lt;/h2>
+&lt;p>Click the green &amp;lsquo;Open Remote Window&amp;rsquo; icon on the bottom right.&lt;/p>
+&lt;p>&lt;img src="https://neurodesk.github.io/vscode/open-remote.png" alt="open-remote" title="open-remote">&lt;/p>
+&lt;p>Select &amp;lsquo;Attach to Running Container&amp;rsquo; from the dropdown panel&lt;/p>
+&lt;p>Start typing in &amp;lsquo;neurodesktop&amp;rsquo;. Select the neurodesktop container from the list&lt;/p>
+&lt;p>This should open a VS Code Window connected to the neurodesktop container&lt;/p></description></item><item><title>Docs: Troubleshooting</title><link>https://neurodesk.github.io/docs/neurodesktop/troubleshooting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/troubleshooting/</guid><description>
 &lt;p>Neurodesk is an open-source project that is always evolving. If you are experiencing an issue not listed here, please open a &lt;a href="https://github.com/NeuroDesk/neurodesk.github.io/issues">new issue&lt;/a>, so that we can aim to solve it and update our help documentation.&lt;/p>
 &lt;p>To ask questions or suggest new features, &lt;a href="https://github.com/NeuroDesk/neurodesk.github.io/discussions">join the discussion&lt;/a> on github.&lt;/p>
 &lt;h2 id="windows-users-wsl-not-installed-properly">Windows users: WSL not installed properly&lt;/h2>

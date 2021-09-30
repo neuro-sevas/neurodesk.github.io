@@ -98,8 +98,9 @@ This the multi-page printable view of this section.
 <li>2: <a href=#pg-a1abf9b90f3887a0021426829e383df4>What's next?</a></li>
 <li>3: <a href=#pg-3aab88ee1e48cad88e2180be3e99a33b>What's in the box?</a></li>
 <li>4: <a href=#pg-33caca0878e307c0e84289213e7d7ee2>Storage</a></li>
-<li>5: <a href=#pg-71c9f282478b9d11471d083fb454cfd4>Troubleshooting</a></li>
-<li>6: <a href=#pg-6fcc3ae2c99b700109cf4d44a0a17071>Release History</a></li>
+<li>5: <a href=#pg-9251bdd5a558690fa1254b3dde1489e7>Visual Studio Code</a></li>
+<li>6: <a href=#pg-71c9f282478b9d11471d083fb454cfd4>Troubleshooting</a></li>
+<li>7: <a href=#pg-6fcc3ae2c99b700109cf4d44a0a17071>Release History</a></li>
 </ul>
 <div class=content>
 </div>
@@ -539,7 +540,37 @@ newgrp docker
 </code></pre></div>
 </div>
 <div class=td-content style=page-break-before:always>
-<h1 id=pg-71c9f282478b9d11471d083fb454cfd4>5 - Troubleshooting</h1>
+<h1 id=pg-9251bdd5a558690fa1254b3dde1489e7>5 - Visual Studio Code</h1>
+<div class=lead>Guide connecting your VS Code environment to Neurodesktop</div>
+<p>Following guide is for connecting to a Neurodesktop using a VS Code installation running on your host machine.</p>
+<blockquote>
+<p>Additional instructions if your Neurodesktop is running remotely (i.e. Cloud, HPC, VM)</p>
+</blockquote>
+<h2 id=pre-requisites>Pre-requisites</h2>
+<p><a href=https://code.visualstudio.com>Visual Studio Code</a> installed on your host. Standalone version should work fine</p>
+<h3 id=full-installation>Full installation</h3>
+<p>Install the following VS Code extensions:</p>
+<ol>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker">Docker</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack">Remote Development</a>.</li>
+</ol>
+<p>The Remote Development bundle includes the Remote SSH, Containers and WSL extensions.</p>
+<h3 id=minimal-installation>Minimal installation</h3>
+<p>Install the following VS Code extensions:</p>
+<ol>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker">Docker</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers">Remote - Containers</a></li>
+<li>For remote Neurodesktops, also install <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh">Remote - SSH</a></li>
+</ol>
+<h2 id=connecting-to-neurodesktop>Connecting to Neurodesktop</h2>
+<p>Click the green &lsquo;Open Remote Window&rsquo; icon on the bottom right.</p>
+<p><img src=/vscode/open-remote.png alt=open-remote title=open-remote></p>
+<p>Select &lsquo;Attach to Running Container&rsquo; from the dropdown panel</p>
+<p>Start typing in &lsquo;neurodesktop&rsquo;. Select the neurodesktop container from the list</p>
+<p>This should open a VS Code Window connected to the neurodesktop container</p>
+</div>
+<div class=td-content style=page-break-before:always>
+<h1 id=pg-71c9f282478b9d11471d083fb454cfd4>6 - Troubleshooting</h1>
 <div class=lead>Are you experiencing issues with neurodesktop?</div>
 <p>Neurodesk is an open-source project that is always evolving. If you are experiencing an issue not listed here, please open a <a href=https://github.com/NeuroDesk/neurodesk.github.io/issues>new issue</a>, so that we can aim to solve it and update our help documentation.</p>
 <p>To ask questions or suggest new features, <a href=https://github.com/NeuroDesk/neurodesk.github.io/discussions>join the discussion</a> on github.</p>
@@ -558,7 +589,7 @@ We recommend the <em>manual</em> install instructions, as the simplified install
 <p>This could help: <a href=https://yjmantilla.github.io/tutorials/wsl2-move-vhdx.html>https://yjmantilla.github.io/tutorials/wsl2-move-vhdx.html</a></p>
 </div>
 <div class=td-content style=page-break-before:always>
-<h1 id=pg-6fcc3ae2c99b700109cf4d44a0a17071>6 - Release History</h1>
+<h1 id=pg-6fcc3ae2c99b700109cf4d44a0a17071>7 - Release History</h1>
 <div class=lead>Previous releases of neurodesktop</div>
 <h2 id=20210929>20210929</h2>
 <ul>
