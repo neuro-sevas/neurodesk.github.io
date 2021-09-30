@@ -90,7 +90,7 @@ singularity run --nv tensorflow_latest-gpu.sif
 python
 import tensorflow as tf
 print(&amp;#34;Num GPUs Available: &amp;#34;, len(tf.config.list_physical_devices(&amp;#39;GPU&amp;#39;)))
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: MacOS</title><link>https://neurodesk.github.io/docs/neurodesktop/getting-started/mac/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/getting-started/mac/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/135449288-6c3e9bbd-fe5f-4f43-aa4a-8a798ba629e6.png" alt="image">&lt;/p></description></item><item><title>Docs: MacOS</title><link>https://neurodesk.github.io/docs/neurodesktop/getting-started/mac/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/getting-started/mac/</guid><description>
 &lt;h2 id="minimum-system-requirements">Minimum System Requirements&lt;/h2>
 &lt;ol>
 &lt;li>At least 3GB free space for neurodesktop base image&lt;/li>
