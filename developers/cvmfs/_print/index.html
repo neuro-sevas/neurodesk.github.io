@@ -86,8 +86,8 @@ This the multi-page printable view of this section.
 <h1 class=title>Neurodesk CVMFS</h1>
 <div class=lead>How to interact with our CVMFS service.</div>
 <ul>
-<li>1: <a href=#pg-d12eca793afb912a040cd1c047606b56>CVMFS architecture</a></li>
-<li>2: <a href=#pg-7d2cf5c0520f7ea412450bf2c795e035>Setup CVMFS Proxy</a></li>
+<li>1: <a href=#pg-7d2cf5c0520f7ea412450bf2c795e035>Setup CVMFS Proxy</a></li>
+<li>2: <a href=#pg-d12eca793afb912a040cd1c047606b56>CVMFS architecture</a></li>
 <li>3: <a href=#pg-9110e9d9e3591f58026d3d52fc7e72cb>Setup Stratum 0 server</a></li>
 <li>4: <a href=#pg-c25efc2b343b28af52b4173ce3a803a3>Setup Stratum 1 server</a></li>
 </ul>
@@ -95,20 +95,7 @@ This the multi-page printable view of this section.
 </div>
 </div>
 <div class=td-content>
-<h1 id=pg-d12eca793afb912a040cd1c047606b56>1 - CVMFS architecture</h1>
-<div class=lead>CVMFS architecture</div>
-<p>We store our singuarlity containers unpacked on CVMFS. We tried the DUCC tool in the beginning, but it was causing too many issues with dockerhub and we were rate limited. The script to unpack our singularity containers is here: <a href=https://github.com/NeuroDesk/neurocommand/blob/main/cvmfs/sync_containers_to_cvmfs.sh>https://github.com/NeuroDesk/neurocommand/blob/main/cvmfs/sync_containers_to_cvmfs.sh</a></p>
-<p>It gets called by a cronjob on the CVMFS Stratum 0 server and relies on the log.txt file being updated via an action in the neurocommand repository (<a href=https://github.com/NeuroDesk/neurocommand/blob/main/.github/workflows/upload_containers_simg.sh>https://github.com/NeuroDesk/neurocommand/blob/main/.github/workflows/upload_containers_simg.sh</a>)</p>
-<p>The Stratum 1 servers then pull this repo from Stratum 0 and our desktops mount these repos (configured here: <a href=https://github.com/NeuroDesk/neurodesktop/blob/main/Dockerfile>https://github.com/NeuroDesk/neurodesktop/blob/main/Dockerfile</a>)</p>
-<p>The startup script (<a href=https://github.com/NeuroDesk/neurodesktop/blob/main/config/startup.sh>https://github.com/NeuroDesk/neurodesktop/blob/main/config/startup.sh</a>) sets up CVMFS and tests which server is fastest during the container startup.</p>
-<p>This can also be done manually:</p>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>sudo cvmfs_talk -i neurodesk.ardc.edu.au host info
-sudo cvmfs_talk -i neurodesk.ardc.edu.au host probe
-cvmfs_config stat -v neurodesk.ardc.edu.au
-</code></pre></div>
-</div>
-<div class=td-content style=page-break-before:always>
-<h1 id=pg-7d2cf5c0520f7ea412450bf2c795e035>2 - Setup CVMFS Proxy</h1>
+<h1 id=pg-7d2cf5c0520f7ea412450bf2c795e035>1 - Setup CVMFS Proxy</h1>
 <div class=lead>Setup CVMFS Proxy server</div>
 <p>If you want more speed in a region one way could be to setup another Stratum 1 server or a proxy. We currently don&rsquo;t run any proxy servers but it would be important for using it on a cluster.</p>
 <h1 id=setup-a-cvmfs-proxy-server>Setup a CVMFS proxy server</h1>
@@ -156,10 +143,24 @@ sudo systemctl restart squid
 </code></pre></div>
 </div>
 <div class=td-content style=page-break-before:always>
+<h1 id=pg-d12eca793afb912a040cd1c047606b56>2 - CVMFS architecture</h1>
+<div class=lead>CVMFS architecture</div>
+<p>We store our singuarlity containers unpacked on CVMFS. We tried the DUCC tool in the beginning, but it was causing too many issues with dockerhub and we were rate limited. The script to unpack our singularity containers is here: <a href=https://github.com/NeuroDesk/neurocommand/blob/main/cvmfs/sync_containers_to_cvmfs.sh>https://github.com/NeuroDesk/neurocommand/blob/main/cvmfs/sync_containers_to_cvmfs.sh</a></p>
+<p>It gets called by a cronjob on the CVMFS Stratum 0 server and relies on the log.txt file being updated via an action in the neurocommand repository (<a href=https://github.com/NeuroDesk/neurocommand/blob/main/.github/workflows/upload_containers_simg.sh>https://github.com/NeuroDesk/neurocommand/blob/main/.github/workflows/upload_containers_simg.sh</a>)</p>
+<p>The Stratum 1 servers then pull this repo from Stratum 0 and our desktops mount these repos (configured here: <a href=https://github.com/NeuroDesk/neurodesktop/blob/main/Dockerfile>https://github.com/NeuroDesk/neurodesktop/blob/main/Dockerfile</a>)</p>
+<p>The startup script (<a href=https://github.com/NeuroDesk/neurodesktop/blob/main/config/startup.sh>https://github.com/NeuroDesk/neurodesktop/blob/main/config/startup.sh</a>) sets up CVMFS and tests which server is fastest during the container startup.</p>
+<p>This can also be done manually:</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>sudo cvmfs_talk -i neurodesk.ardc.edu.au host info
+sudo cvmfs_talk -i neurodesk.ardc.edu.au host probe
+cvmfs_config stat -v neurodesk.ardc.edu.au
+</code></pre></div>
+</div>
+<div class=td-content style=page-break-before:always>
 <h1 id=pg-9110e9d9e3591f58026d3d52fc7e72cb>3 - Setup Stratum 0 server</h1>
 <div class=lead>Host a Stratum 0 server</div>
 <h2 id=setup-a-stratum-0-server>Setup a Stratum 0 server:</h2>
-<h3 id=setup-storage-would-object-storage-bet-better---see-comment-below>Setup Storage (would object storage bet better -> see comment below)</h3>
+<h3 id=setup-storage>Setup Storage</h3>
+<p>(would object storage bet better -> see comment below)</p>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>lsblk -l
 sudo mkfs.ext4 /dev/vdb
 sudo mkdir /storage
