@@ -301,7 +301,7 @@ cvmfs_config stat -v neurodesk.ardc.edu.au
 &lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Developers: Setup Stratum 0 server</title><link>https://neurodesk.github.io/developers/cvmfs/stratum0/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/developers/cvmfs/stratum0/</guid><description>
 &lt;h2 id="setup-a-stratum-0-server">Setup a Stratum 0 server:&lt;/h2>
 &lt;h3 id="setup-storage">Setup Storage&lt;/h3>
-&lt;p>(would object storage bet better -&amp;gt; see comment below)&lt;/p>
+&lt;p>(would object storage be better? -&amp;gt; see comment below under next iteration ideas)&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">lsblk -l
 sudo mkfs.ext4 /dev/vdb
 sudo mkdir /storage

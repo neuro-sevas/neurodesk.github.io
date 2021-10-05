@@ -86,14 +86,39 @@ This the multi-page printable view of this section.
 <h1 class=title>Tutorials</h1>
 <div class=lead>Tutorials</div>
 <ul>
-<li>1: <a href=#pg-8947fbae52f877a79d7345c97564b0df>FreeSurfer</a></li>
-<li>2: <a href=#pg-47dce3cc3ec48699840e49a44f1653b1>Quantitative Susceptibility Mapping</a></li>
+<li>1: <a href=#pg-569e8bdd89e547a0427926862dbf31dc>fMRI BIDS Conversion</a></li>
+<li>2: <a href=#pg-ae2a2ec740717f76d14ab8bffe4ad3b9>fMRIPrep</a></li>
+<li>3: <a href=#pg-8947fbae52f877a79d7345c97564b0df>FreeSurfer</a></li>
+<li>4: <a href=#pg-3cfcdf017be34e1d0b7a9f31368f3204>MRIQC</a></li>
+<li>5: <a href=#pg-47dce3cc3ec48699840e49a44f1653b1>Quantitative Susceptibility Mapping</a></li>
 </ul>
 <div class=content>
 </div>
 </div>
 <div class=td-content>
-<h1 id=pg-8947fbae52f877a79d7345c97564b0df>1 - FreeSurfer</h1>
+<h1 id=pg-569e8bdd89e547a0427926862dbf31dc>1 - fMRI BIDS Conversion</h1>
+<div class=lead>Example workflow for fMRI BIDS</div>
+<h2 id=download-demo-data>Download demo data</h2>
+<p>Here we would also like to show how to combine tools from different containers using the module system. Open a terminal and run:</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>ml datalad/0.13.3 
+cd /neurodesktop-storage/
+datalad create bids-conversion
+cd bids-conversion/
+datalad clone --dataset . https://github.com/datalad/example-dicom-functional.git inputs/rawdata
+</code></pre></div>
+</div>
+<div class=td-content style=page-break-before:always>
+<h1 id=pg-ae2a2ec740717f76d14ab8bffe4ad3b9>2 - fMRIPrep</h1>
+<div class=lead>Example workflow for fMRIPrep</div>
+<p>fMRIPrep is a functional magnetic resonance imaging (fMRI) data preprocessing pipeline that is designed to provide an easily accessible, state-of-the-art interface that is robust to variations in scan acquisition protocols and that requires minimal user input, while providing easily interpretable and comprehensive error and output reporting. It performs basic processing steps (coregistration, normalization, unwarping, noise component extraction, segmentation, skullstripping etc.) providing outputs that can be easily submitted to a variety of group level analyses, including task-based or resting-state fMRI, graph theory measures, surface or volume-based statistics, etc.</p>
+<h2 id=download-demo-data>Download demo data</h2>
+<p>We base this example on this blog-post: <a href=https://reproducibility.stanford.edu/fmriprep-tutorial-running-the-docker-image/>https://reproducibility.stanford.edu/fmriprep-tutorial-running-the-docker-image/</a> and will also use the same data.</p>
+<p>Open a terminal and run:</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>
+</code></pre></div>
+</div>
+<div class=td-content style=page-break-before:always>
+<h1 id=pg-8947fbae52f877a79d7345c97564b0df>3 - FreeSurfer</h1>
 <div class=lead>Example workflow for FreeSurfer</div>
 <h2 id=download-demo-data>Download demo data</h2>
 <p>Open a terminal and run:</p>
@@ -119,7 +144,15 @@ export SUBJECTS_DIR=/neurodesktop-storage/freesurfer-output
 </code></pre></div>
 </div>
 <div class=td-content style=page-break-before:always>
-<h1 id=pg-47dce3cc3ec48699840e49a44f1653b1>2 - Quantitative Susceptibility Mapping</h1>
+<h1 id=pg-3cfcdf017be34e1d0b7a9f31368f3204>4 - MRIQC</h1>
+<div class=lead>Example workflow for MRIQC</div>
+<h2 id=download-demo-data>Download demo data</h2>
+<p>Open a terminal and run:</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>
+</code></pre></div>
+</div>
+<div class=td-content style=page-break-before:always>
+<h1 id=pg-47dce3cc3ec48699840e49a44f1653b1>5 - Quantitative Susceptibility Mapping</h1>
 <div class=lead>Example workflow for Quantitative Susceptibility Mapping</div>
 <h2 id=quantitative-susceptibility-mapping-in-qsmxt>Quantitative Susceptibility Mapping in QSMxT</h2>
 <p>Neurodesk includes QSMxT, a complete and end-to-end QSM processing and analysis framework that excels at automatically reconstructing and processing QSM for large groups of participants.</p>
