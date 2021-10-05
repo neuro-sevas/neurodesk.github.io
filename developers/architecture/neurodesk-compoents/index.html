@@ -21,12 +21,12 @@
 ">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://neurodesk.github.io/developers/architecture/neurodesk-compoents/"><meta property="article:section" content="developers">
-<meta property="article:modified_time" content="2021-09-22T21:24:04+10:00"><meta property="og:site_name" content="NeuroDesk">
+<meta property="article:modified_time" content="2021-10-05T20:35:04+10:00"><meta property="og:site_name" content="NeuroDesk">
 <meta itemprop=name content="Neurodesk Architecture">
 <meta itemprop=description content="The architecture of the Neurodesk ecosystem
 ">
-<meta itemprop=dateModified content="2021-09-22T21:24:04+10:00">
-<meta itemprop=wordCount content="167">
+<meta itemprop=dateModified content="2021-10-05T20:35:04+10:00">
+<meta itemprop=wordCount content="232">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="Neurodesk Architecture">
 <meta name=twitter:description content="The architecture of the Neurodesk ecosystem
@@ -86,8 +86,12 @@
 <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-developerscvmfs-li>
 <a href=/developers/cvmfs/ title="Neurodesk CVMFS" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-developerscvmfs><span>CVMFS</span></a>
 <ul class="ul-2 foldable">
-<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-developerscvmfsproxy-li>
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-developerscvmfscvmfs_setup-li>
+<a href=/developers/cvmfs/cvmfs_setup/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-developerscvmfscvmfs_setup><span>CVMFS architecture</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-developerscvmfsproxy-li>
 <a href=/developers/cvmfs/proxy/ title="Setup CVMFS Proxy" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-developerscvmfsproxy><span>Proxy</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-developerscvmfsstratum0-li>
+<a href=/developers/cvmfs/stratum0/ title="Setup Stratum 0 server" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-developerscvmfsstratum0><span>Stratum 0</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-developerscvmfsstratum1-li>
 <a href=/developers/cvmfs/stratum1/ title="Setup Stratum 1 server" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-developerscvmfsstratum1><span>Stratum 1</span></a>
 </li>
@@ -95,9 +99,7 @@
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id=m-developersarchitecture-li>
 <a href=/developers/architecture/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-developersarchitecture><span>Architecture</span></a>
 <ul class="ul-2 foldable">
-<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-developersarchitecturecvmfs_setup-li>
-<a href=/developers/architecture/cvmfs_setup/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-developersarchitecturecvmfs_setup><span>CVMFS architecture</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-developersarchitecturerelease_process-li>
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-developersarchitecturerelease_process-li>
 <a href=/developers/architecture/release_process/ title="Neurodestkop Release Process" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-developersarchitecturerelease_process><span>Release Process</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id=m-developersarchitectureneurodesk-compoents-li>
 <a href=/developers/architecture/neurodesk-compoents/ class="align-left pl-0 active td-sidebar-link td-sidebar-link__page" id=m-developersarchitectureneurodesk-compoents><span class=td-sidebar-nav-active-item>Neurodesk Architecture</span></a>
@@ -140,26 +142,29 @@
 <p>Neurodesktop: <a href=https://github.com/NeuroDesk/neurodesktop>https://github.com/NeuroDesk/neurodesktop</a></p>
 <ul>
 <li>docker container with interface modifications</li>
-<li>contains tools necessary to manage containers: vscode, git, niype</li>
-<li>CI: builds docker image and tests if it runs</li>
+<li>contains tools necessary to manage workflows in sub-containers: vscode, git</li>
+<li>CI: builds docker image and tests if it runs; tests if CVMFS servers are OK before deployment</li>
+<li>CD: pushes images to github & docker registry</li>
 </ul>
 <p>Neurocommand: <a href=https://github.com/NeuroDesk/neurocommand>https://github.com/NeuroDesk/neurocommand</a></p>
 <ul>
 <li>script to install and manage multiple containers using transparent singularity on any linux system</li>
-<li>this repo would also handle the creation of menu entries in a general form applicable to different desktop environments</li>
-<li>this repo can be re-used in other projects like CVL and the imaging workstations</li>
+<li>this repo also handles the creation of menu entries in a general form applicable to different desktop environments</li>
+<li>this repo can be re-used in other projects like CVL and when installing it on a bare-metal workstations</li>
 <li>CI: tests if containers can be installed</li>
+<li>CD: this repo checks if containers requested in apps.json file are availabe on object storage and if not converts the singularity containers based on the docker containers and uploads them to object storage</li>
 </ul>
 <p>transparent-singularity: <a href=https://github.com/NeuroDesk/transparent-singularity>https://github.com/NeuroDesk/transparent-singularity</a></p>
 <ul>
-<li>script to install neuro-sub-containers, installers are called by neurodesk script</li>
-<li>this repo could provide a simple way of using our containers on HPCs for large scale processing of the pipelines build in VNM</li>
-<li>CI: test if exposing of binaries work</li>
+<li>script to install neuro-sub-containers, installers are called by neurocommand</li>
+<li>this repo provides a way of using our containers on HPCs for large scale processing of the pipelines (including the support of SLURM and other job schedulers)</li>
+<li>CI: test if exposing of binaries from container works</li>
 </ul>
 <p>Neurocontainers: <a href=https://github.com/NeuroDesk/neurocontainers>https://github.com/NeuroDesk/neurocontainers</a></p>
 <ul>
 <li>build scripts for neuro-sub-containers</li>
-<li>CI: building, pushing and testing of containers</li>
+<li>CI: building and testing of containers</li>
+<li>CD: pushing containers to github and dockerhub registry</li>
 </ul>
 <p>Neurodocker: <a href=https://github.com/NeuroDesk/neurodocker>https://github.com/NeuroDesk/neurodocker</a></p>
 <ul>
@@ -170,8 +175,8 @@
 </ul>
 <div class="text-muted mt-5 pt-3 border-top">
 Last modified
-September 22, 2021
-: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/508e00ad93bdbf2dc541af51d2547e480fda4777>more developer documentation (508e00a)</a>
+October 5, 2021
+: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/53c7dc36a6fc85fff9c093c4041e75167d44efb6>made neurodesk components clearer (53c7dc3)</a>
 </div>
 </div>
 </main>

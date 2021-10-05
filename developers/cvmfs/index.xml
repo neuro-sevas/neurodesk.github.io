@@ -1,4 +1,13 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>NeuroDesk – Neurodesk CVMFS</title><link>https://neurodesk.github.io/developers/cvmfs/</link><description>Recent content in Neurodesk CVMFS on NeuroDesk</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://neurodesk.github.io/developers/cvmfs/index.xml" rel="self" type="application/rss+xml"/><item><title>Developers: Setup CVMFS Proxy</title><link>https://neurodesk.github.io/developers/cvmfs/proxy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/developers/cvmfs/proxy/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>NeuroDesk – Neurodesk CVMFS</title><link>https://neurodesk.github.io/developers/cvmfs/</link><description>Recent content in Neurodesk CVMFS on NeuroDesk</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://neurodesk.github.io/developers/cvmfs/index.xml" rel="self" type="application/rss+xml"/><item><title>Developers: CVMFS architecture</title><link>https://neurodesk.github.io/developers/cvmfs/cvmfs_setup/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/developers/cvmfs/cvmfs_setup/</guid><description>
+&lt;p>We store our singuarlity containers unpacked on CVMFS. We tried the DUCC tool in the beginning, but it was causing too many issues with dockerhub and we were rate limited. The script to unpack our singularity containers is here: &lt;a href="https://github.com/NeuroDesk/neurocommand/blob/main/cvmfs/sync_containers_to_cvmfs.sh">https://github.com/NeuroDesk/neurocommand/blob/main/cvmfs/sync_containers_to_cvmfs.sh&lt;/a>&lt;/p>
+&lt;p>It gets called by a cronjob on the CVMFS Stratum 0 server and relies on the log.txt file being updated via an action in the neurocommand repository (&lt;a href="https://github.com/NeuroDesk/neurocommand/blob/main/.github/workflows/upload_containers_simg.sh">https://github.com/NeuroDesk/neurocommand/blob/main/.github/workflows/upload_containers_simg.sh&lt;/a>)&lt;/p>
+&lt;p>The Stratum 1 servers then pull this repo from Stratum 0 and our desktops mount these repos (configured here: &lt;a href="https://github.com/NeuroDesk/neurodesktop/blob/main/Dockerfile">https://github.com/NeuroDesk/neurodesktop/blob/main/Dockerfile&lt;/a>)&lt;/p>
+&lt;p>The startup script (&lt;a href="https://github.com/NeuroDesk/neurodesktop/blob/main/config/startup.sh">https://github.com/NeuroDesk/neurodesktop/blob/main/config/startup.sh&lt;/a>) sets up CVMFS and tests which server is fastest during the container startup.&lt;/p>
+&lt;p>This can also be done manually:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">sudo cvmfs_talk -i neurodesk.ardc.edu.au host info
+sudo cvmfs_talk -i neurodesk.ardc.edu.au host probe
+cvmfs_config stat -v neurodesk.ardc.edu.au
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Developers: Setup CVMFS Proxy</title><link>https://neurodesk.github.io/developers/cvmfs/proxy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/developers/cvmfs/proxy/</guid><description>
 &lt;p>If you want more speed in a region one way could be to setup another Stratum 1 server or a proxy. We currently don&amp;rsquo;t run any proxy servers but it would be important for using it on a cluster.&lt;/p>
 &lt;h1 id="setup-a-cvmfs-proxy-server">Setup a CVMFS proxy server&lt;/h1>
 &lt;div class="highlight">&lt;div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
@@ -76,7 +85,183 @@ sudo systemctl status squid
 sudo systemctl restart squid
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div></description></item><item><title>Developers: Setup Stratum 1 server</title><link>https://neurodesk.github.io/developers/cvmfs/stratum1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/developers/cvmfs/stratum1/</guid><description>
+&lt;/div></description></item><item><title>Developers: Setup Stratum 0 server</title><link>https://neurodesk.github.io/developers/cvmfs/stratum0/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/developers/cvmfs/stratum0/</guid><description>
+&lt;h2 id="setup-a-stratum-0-server">Setup a Stratum 0 server:&lt;/h2>
+&lt;h3 id="setup-storage-would-object-storage-bet-better---see-comment-below">Setup Storage (would object storage bet better -&amp;gt; see comment below)&lt;/h3>
+&lt;div class="highlight">&lt;div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">lsblk -l
+sudo mkfs.ext4 /dev/vdb
+sudo mkdir /storage
+sudo mount /dev/vdb /storage/ -t auto
+sudo chown ec2-user /storage/
+sudo chmod a+rwx /storage/
+sudo vi /etc/fstab
+/dev/vdb /storage auto defaults,nofail &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">2&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="setup-server">Setup server&lt;/h3>
+&lt;div class="highlight">&lt;div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">sudo yum install vim htop gcc git screen
+sudo timedatectl set-timezone Australia/Brisbane
+sudo yum install -y https://ecsft.cern.ch/dist/cvmfs/cvmfs-release/cvmfs-release-latest.noarch.rpm
+sudo yum install -y cvmfs cvmfs-server
+sudo systemctl &lt;span style="color:#204a87">enable&lt;/span> httpd
+sudo systemctl restart httpd
+&lt;span style="color:#8f5902;font-style:italic"># sudo systemctl stop firewalld &lt;/span>
+&lt;span style="color:#8f5902;font-style:italic"># restore keys:&lt;/span>
+sudo mkdir /etc/cvmfs/keys/incoming
+sudo chmod a+rwx /etc/cvmfs/keys/incoming
+&lt;span style="color:#204a87">cd&lt;/span> connections/cvmfs_keys/
+scp neuro* ec2-user@203.101.226.164:/etc/cvmfs/keys/incoming
+sudo mv /etc/cvmfs/keys/incoming/* /etc/cvmfs/keys/
+&lt;span style="color:#8f5902;font-style:italic">#backup keys: &lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">#mkdir cvmfs_keys&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">#scp opc@158.101.127.61:/etc/cvmfs/keys/neuro* .&lt;/span>
+sudo cvmfs_server mkfs -o &lt;span style="color:#000">$USER&lt;/span> neurodesk.ardc.edu.au
+&lt;span style="color:#204a87">cd&lt;/span> /storage
+sudo mkdir -p cvmfs-storage/srv/
+&lt;span style="color:#204a87">cd&lt;/span> /srv/
+sudo mv cvmfs/ /storage/cvmfs-storage/srv/
+sudo ln -s /storage/cvmfs-storage/srv/cvmfs/
+&lt;span style="color:#204a87">cd&lt;/span> /var/spool
+sudo mkdir /storage/spool
+sudo mv cvmfs/ /storage/spool/
+sudo ln -s /storage/spool/cvmfs .
+cvmfs_server transaction neurodesk.ardc.edu.au
+cvmfs_server publish neurodesk.ardc.edu.au
+sudo vi /etc/cron.d/cvmfs_resign
+&lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">11&lt;/span> * * &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span> root /usr/bin/cvmfs_server resign neurodesk.ardc.edu.au
+cat /etc/cvmfs/keys/neurodesk.ardc.edu.au.pub
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuV9JBs9uXBR83qUs7AiE
+nSQfvh6VCdNigVzOfRMol5cXsYq3cFy/Vn1Nt+7SGpDTQArQieZo4eWC9ww2oLq0
+vY1pWyAms3Y4i+IUmMbwNifDU4GQ1KN9u4zl9Peun2YQCLE7mjC0ZLQtLM7Q0Z8h
+NwP8jRJTN+u8mRKzkyxfSMLscVMKhm2pAwnT1zB9i3bzVV+FSnidXq8rnnzNHMgv
+tfqx1h0gVyTeodToeFeGG5vq69wGZlwEwBJWVRGzzr+a8dWNBFMJ1HxamrBEBW4P
+AxOKGHmQHTGbo+tdV/K6ZxZ2Ry+PVedNmbON/EPaGlI8Vd0fascACfByqqeUEhAB
+dQIDAQAB
+-----END PUBLIC KEY-----
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="next-iteration-of-this">Next iteration of this:&lt;/h2>
+&lt;h3 id="use-object-storage">use object storage?&lt;/h3>
+&lt;ul>
+&lt;li>current implementation uses block storage, but this makes increasing the volume size a bit more work&lt;/li>
+&lt;li>we coulddn&amp;rsquo;t get object storage to work on Oracle as it assumes AWS S3&lt;/li>
+&lt;/ul>
+&lt;h3 id="optimize-settings-for-repositories-for-container-images">Optimize settings for repositories for Container Images&lt;/h3>
+&lt;p>from the CVMFS documentation:
+Repositories containing Linux container image contents (that is: container root file systems) should use overlayfs as a union file system and have the following configuration:&lt;/p>
+&lt;pre>&lt;code>CVMFS_INCLUDE_XATTRS=true
+CVMFS_VIRTUAL_DIR=true
+&lt;/code>&lt;/pre>
+&lt;p>Extended attributes of files, such as file capabilities and SElinux attributes, are recorded. And previous file system revisions can be accessed from the clients.&lt;/p>
+&lt;h2 id="currently-not-used">Currently not used&lt;/h2>
+&lt;p>We tested the DUCC tool in the beginning, but it was leading to too many docker pulls and we therefore replaced it with our own script: &lt;a href="https://github.com/NeuroDesk/neurocommand/blob/main/cvmfs/sync_containers_to_cvmfs.sh">https://github.com/NeuroDesk/neurocommand/blob/main/cvmfs/sync_containers_to_cvmfs.sh&lt;/a>&lt;/p>
+&lt;p>This is the old DUCC setup&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">sudo yum install cvmfs-ducc.x86_64
+sudo -i
+dnf install -y yum-utils
+yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+dnf install docker-ce docker-ce-cli containerd.io
+systemctl &lt;span style="color:#204a87">enable&lt;/span> docker
+systemctl start docker
+docker version
+docker info
+&lt;span style="color:#8f5902;font-style:italic"># leave root mode&lt;/span>
+sudo groupadd docker
+sudo usermod -aG docker &lt;span style="color:#000">$USER&lt;/span>
+sudo chown root:docker /var/run/docker.sock
+newgrp docker
+vi convert_appsjson_to_wishlist.sh
+&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">DUCC_DOCKER_REGISTRY_PASS&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>configure_secret_password_here_and_dont_push_to_github
+&lt;span style="color:#204a87">cd&lt;/span> neurodesk
+git pull
+./gen_cvmfs_wishlist.sh
+cvmfs_ducc convert recipe_neurodesk_auto.yaml
+&lt;span style="color:#204a87">cd&lt;/span> ..
+chmod +x convert_appsjson_to_wishlist.sh
+git clone https://github.com/NeuroDesk/neurodesk/
+&lt;span style="color:#8f5902;font-style:italic"># setup cron job&lt;/span>
+sudo vi /etc/cron.d/cvmfs_dockerpull
+*/5 * * * * opc &lt;span style="color:#204a87">cd&lt;/span> ~ &lt;span style="color:#ce5c00;font-weight:bold">&amp;amp;&amp;amp;&lt;/span> bash /home/opc/convert_appsjson_to_wishlist.sh
+&lt;span style="color:#8f5902;font-style:italic">#vi recipe.yaml&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">##version: 1&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">#user: vnmd&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">#cvmfs_repo: neurodesk.ardc.edu.au&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">#output_format: &amp;#39;$(scheme)://$(registry)/vnmd/thin_$(image)&amp;#39;&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">#input:&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">#- &amp;#39;https://registry.hub.docker.com/vnmd/tgvqsm_1.0.0:20210119&amp;#39;&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">#- &amp;#39;https://registry.hub.docker.com/vnmd/itksnap_3.8.0:20201208&amp;#39;&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">#cvmfs_ducc convert recipe_neurodesk.yaml&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">#cvmfs_ducc convert recipe_unpacked.yaml&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Developers: Setup Stratum 1 server</title><link>https://neurodesk.github.io/developers/cvmfs/stratum1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/developers/cvmfs/stratum1/</guid><description>
 &lt;p>The stratum 1 servers for the desktop are configured here: &lt;a href="https://github.com/NeuroDesk/neurodesktop/blob/main/Dockerfile">https://github.com/NeuroDesk/neurodesktop/blob/main/Dockerfile&lt;/a>&lt;/p>
 &lt;p>If you want more speed in a region one way could be to setup another Stratum 1 server or a proxy.&lt;/p>
 &lt;h1 id="setup-a-stratum-1-server">Setup a Stratum 1 server:&lt;/h1>
