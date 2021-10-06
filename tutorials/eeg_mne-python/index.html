@@ -21,12 +21,12 @@
 ">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://neurodesk.github.io/tutorials/eeg_mne-python/"><meta property="article:section" content="tutorials">
-<meta property="article:modified_time" content="2021-10-06T15:41:50+10:00"><meta property="og:site_name" content="NeuroDesk">
+<meta property="article:modified_time" content="2021-10-06T15:55:46+10:00"><meta property="og:site_name" content="NeuroDesk">
 <meta itemprop=name content="Analysing EEG Data with MNE">
 <meta itemprop=description content="Use mne-python to load, pre-process, and plot example EEG data in a jupyter notebook through vscode. 
 ">
-<meta itemprop=dateModified content="2021-10-06T15:41:50+10:00">
-<meta itemprop=wordCount content="819">
+<meta itemprop=dateModified content="2021-10-06T15:55:46+10:00">
+<meta itemprop=wordCount content="810">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="Analysing EEG Data with MNE">
 <meta name=twitter:description content="Use mne-python to load, pre-process, and plot example EEG data in a jupyter notebook through vscode. 
@@ -114,7 +114,7 @@
 <ul>
 <li><a href=#getting-started>Getting started</a></li>
 <li><a href=#set-up-an-environment>Set up an environment</a></li>
-<li><a href=#download-sample-data>Download Sample Data</a></li>
+<li><a href=#download-sample-data>Download sample data</a></li>
 <li><a href=#plotting-settings>Plotting settings</a></li>
 <li><a href=#loading-and-processing-data>Loading and processing data</a></li>
 </ul>
@@ -142,10 +142,10 @@
 conda activate mne
 </code></pre></div><p>Once your new environment is activated, in the top right corner of your empty jupyter notebook, click “Select Kernel”:</p>
 <p><img src=/EEG_Tutorial/EEGtut4.png alt=EEGtut4 title=EEGtut4></p>
-<p>Then, select the instance of Python associated with the environment you have just selected (“mne”):</p>
+<p>Then, select the instance of Python associated with the environment you have just created (“mne”):</p>
 <p><img src=/EEG_Tutorial/EEGtut5.png alt=EEGtut5 title=EEGtut5></p>
 <p>At this point you may also be prompted to install the vscode packages for python. Once you have installed these, you’re ready to rumble!</p>
-<h2 id=download-sample-data>Download Sample Data</h2>
+<h2 id=download-sample-data>Download sample data</h2>
 <p>In the terminal, input the following code to download some BIDS formatted sample EEG data:</p>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>pip install osfclient
 osf -p C689U fetch Data_sample.zip /neurodesktop-storage/EEGDEMO/Data_sample.zip
@@ -180,16 +180,16 @@ print(raw.info)
 </code></pre></div><p>This data file did not include a montage. Lets create one using standard values for the electrodes we have:</p>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback># Create montage
 montage = {&#39;Iz&#39;:  [0, -110, -40],
-               &#39;Oz&#39;: [0, -105, -15],
-               &#39;POz&#39;: [0,   -100, 15],
-               &#39;O1&#39;: [-40, -106, -15],
-               &#39;O2&#39;:  [40, -106, -15],
+            &#39;Oz&#39;: [0, -105, -15],
+            &#39;POz&#39;: [0,   -100, 15],
+            &#39;O1&#39;: [-40, -106, -15],
+            &#39;O2&#39;:  [40, -106, -15],
  }
 
 montageuse = mne.channels.make_dig_montage(ch_pos=montage, lpa=[-82.5, -19.2, -46], nasion=[0, 83.2, -38.3], rpa=[82.2, -19.2, -46]) # based on mne help file on setting 10-20 montage
 </code></pre></div><p>Next, lets visualise the data.</p>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>raw.plot()
-</code></pre></div><p>This should open an interactive window in which you can scroll through the data. There are many ways to customise this function to preopen your data with scalings and colourings that fit your usecase. See the MNE documentation for more help.</p>
+</code></pre></div><p>This should open an interactive window in which you can scroll through the data. See the MNE documentation for help on how to customise this plot.</p>
 <p><img src=/EEG_Tutorial/EEGtut6.png alt=EEGtut6 title=EEGtut6></p>
 <p>If, upon visual inspection, you decide to exclude one of the channels, you can specify this in raw.info[‘bads’] now. For example:</p>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>raw.info[&#39;bads&#39;] = [&#39;POz&#39;]
@@ -224,21 +224,21 @@ eeg_data_interp.plot(events=events, duration=10.0, scalings=dict(eeg=0.00005), c
 </code></pre></div><p><img src=/EEG_Tutorial/EEGtut8.png alt=EEGtut8 title=EEGtut8></p>
 <p>That’s looking good! We can even see hints of the frequency tagging. It’s about time to epoch our data.</p>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback># Epoch to events of interest
-event_id = {&#39;attend 6Hz K&#39;: 23, &#39;attend 7.5Hz K&#39;:  27}  # will be different triggers for training days
+event_id = {&#39;attend 6Hz K&#39;: 23, &#39;attend 7.5Hz K&#39;:  27}  
 
-# Extract 15 s epochs relative to events, baseline correct, linear detrend, and reject epochs where eeg amplitude is &gt; 400
+# Extract 15 s epochs relative to events, baseline correct, linear detrend, and reject 
+# epochs where eeg amplitude is &gt; 400
 epochs = mne.Epochs(eeg_data_interp, events, event_id=event_id, tmin=0,
-                    tmax=15,
-                    baseline=(0, 0), # picks=np.arange(settings.num_electrodes),
-                    reject=dict(eeg=0.000400), detrend=1)  #
+                    tmax=15, baseline=(0, 0), reject=dict(eeg=0.000400), detrend=1)  
 
 # Drop bad trials
 epochs.drop_bad()
-</code></pre></div><p>And visualise our ERPs:</p>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>attend6 = epochs[&#39;attend 6Hz K&#39;].average()
+</code></pre></div><p>We can average these epochs to form Event Related Potentials (ERPs):</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback># Average erpochs to form ERPs
+attend6 = epochs[&#39;attend 6Hz K&#39;].average()
 attend75 = epochs[&#39;attend 7.5Hz K&#39;].average()
 
-
+# Plot ERPs
 evokeds = dict(attend6=list(epochs[&#39;attend 6Hz K&#39;].iter_evoked()),
                attend75=list(epochs[&#39;attend 7.5Hz K&#39;].iter_evoked()))
 mne.viz.plot_compare_evokeds(evokeds, combine=&#39;mean&#39;)
@@ -248,7 +248,7 @@ mne.viz.plot_compare_evokeds(evokeds, combine=&#39;mean&#39;)
 <div class="text-muted mt-5 pt-3 border-top">
 Last modified
 October 6, 2021
-: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/cf9b061f3bb87af79c98b133599cc191c63d8598>Adding MNE-Python tutorial (cf9b061)</a>
+: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/b92e1d87a1ffe8b63905e08bb0371691a8199c90>Fix typos (b92e1d8)</a>
 </div>
 </div>
 </main>

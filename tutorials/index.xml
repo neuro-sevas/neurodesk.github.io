@@ -50,10 +50,10 @@ export SUBJECTS_DIR=/neurodesktop-storage/freesurfer-output
 conda activate mne
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Once your new environment is activated, in the top right corner of your empty jupyter notebook, click “Select Kernel”:&lt;/p>
 &lt;p>&lt;img src="https://neurodesk.github.io/EEG_Tutorial/EEGtut4.png" alt="EEGtut4" title="EEGtut4">&lt;/p>
-&lt;p>Then, select the instance of Python associated with the environment you have just selected (“mne”):&lt;/p>
+&lt;p>Then, select the instance of Python associated with the environment you have just created (“mne”):&lt;/p>
 &lt;p>&lt;img src="https://neurodesk.github.io/EEG_Tutorial/EEGtut5.png" alt="EEGtut5" title="EEGtut5">&lt;/p>
 &lt;p>At this point you may also be prompted to install the vscode packages for python. Once you have installed these, you’re ready to rumble!&lt;/p>
-&lt;h2 id="download-sample-data">Download Sample Data&lt;/h2>
+&lt;h2 id="download-sample-data">Download sample data&lt;/h2>
 &lt;p>In the terminal, input the following code to download some BIDS formatted sample EEG data:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">pip install osfclient
 osf -p C689U fetch Data_sample.zip /neurodesktop-storage/EEGDEMO/Data_sample.zip
@@ -94,7 +94,7 @@ montage = {&amp;#39;Iz&amp;#39;: [0, -110, -40],
 montageuse = mne.channels.make_dig_montage(ch_pos=montage, lpa=[-82.5, -19.2, -46], nasion=[0, 83.2, -38.3], rpa=[82.2, -19.2, -46]) # based on mne help file on setting 10-20 montage
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Next, lets visualise the data.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">raw.plot()
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>This should open an interactive window in which you can scroll through the data. There are many ways to customise this function to preopen your data with scalings and colourings that fit your usecase. See the MNE documentation for more help.&lt;/p>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>This should open an interactive window in which you can scroll through the data. See the MNE documentation for help on how to customise this plot.&lt;/p>
 &lt;p>&lt;img src="https://neurodesk.github.io/EEG_Tutorial/EEGtut6.png" alt="EEGtut6" title="EEGtut6">&lt;/p>
 &lt;p>If, upon visual inspection, you decide to exclude one of the channels, you can specify this in raw.info[‘bads’] now. For example:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">raw.info[&amp;#39;bads&amp;#39;] = [&amp;#39;POz&amp;#39;]
@@ -124,17 +124,18 @@ eeg_data_interp.plot(events=events, duration=10.0, scalings=dict(eeg=0.00005), c
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://neurodesk.github.io/EEG_Tutorial/EEGtut8.png" alt="EEGtut8" title="EEGtut8">&lt;/p>
 &lt;p>That’s looking good! We can even see hints of the frequency tagging. It’s about time to epoch our data.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback"># Epoch to events of interest
-event_id = {&amp;#39;attend 6Hz K&amp;#39;: 23, &amp;#39;attend 7.5Hz K&amp;#39;: 27} # will be different triggers for training days
-# Extract 15 s epochs relative to events, baseline correct, linear detrend, and reject epochs where eeg amplitude is &amp;gt; 400
+event_id = {&amp;#39;attend 6Hz K&amp;#39;: 23, &amp;#39;attend 7.5Hz K&amp;#39;: 27}
+# Extract 15 s epochs relative to events, baseline correct, linear detrend, and reject
+# epochs where eeg amplitude is &amp;gt; 400
 epochs = mne.Epochs(eeg_data_interp, events, event_id=event_id, tmin=0,
-tmax=15,
-baseline=(0, 0), # picks=np.arange(settings.num_electrodes),
-reject=dict(eeg=0.000400), detrend=1) #
+tmax=15, baseline=(0, 0), reject=dict(eeg=0.000400), detrend=1)
 # Drop bad trials
 epochs.drop_bad()
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>And visualise our ERPs:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">attend6 = epochs[&amp;#39;attend 6Hz K&amp;#39;].average()
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>We can average these epochs to form Event Related Potentials (ERPs):&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback"># Average erpochs to form ERPs
+attend6 = epochs[&amp;#39;attend 6Hz K&amp;#39;].average()
 attend75 = epochs[&amp;#39;attend 7.5Hz K&amp;#39;].average()
+# Plot ERPs
 evokeds = dict(attend6=list(epochs[&amp;#39;attend 6Hz K&amp;#39;].iter_evoked()),
 attend75=list(epochs[&amp;#39;attend 7.5Hz K&amp;#39;].iter_evoked()))
 mne.viz.plot_compare_evokeds(evokeds, combine=&amp;#39;mean&amp;#39;)
