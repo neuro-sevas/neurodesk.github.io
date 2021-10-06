@@ -88,7 +88,7 @@ vnmd/neurodesktop:20210929&lt;/code>
 vnmd/neurodesktop:20210929&lt;/code>
 &lt;/pre>
 &lt;blockquote>
-&lt;p>True the following if there issues with the previous command&lt;/p>
+&lt;p>Try the following if there are issues with the previous command&lt;/p>
 &lt;/blockquote>
 &lt;pre class="language-shell command-line" data-prompt="$" data-output="2-9">
 &lt;code>sudo docker run \
