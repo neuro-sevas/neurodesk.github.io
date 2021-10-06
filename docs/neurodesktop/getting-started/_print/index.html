@@ -296,7 +296,8 @@ print("Num GPUs Available: ", len(tf.config.list_physical_devices('GPU')))</code
 <p>Open a terminal, and type the folowing command to automatically download the neurodesktop container and run it</p>
 </li>
 </ol>
-<pre class="language-shell command-line" data-prompt=$>
+<pre class=command-line data-prompt=">"><code class=language->docker run --shm-size=1gb -it --privileged --name neurodesktop -v C:/neurodesktop-storage:/neurodesktop-storage -p 8080:8080 -h neurodesktop-20210929 vnmd/neurodesktop:20210929</code></pre>
+<pre class="language-batch command-line" data-prompt=$>
 <code>docker run --shm-size=1gb -it --privileged --name neurodesktop -v C:/neurodesktop-storage:/neurodesktop-storage -p 8080:8080 -h neurodesktop-20210929 vnmd/neurodesktop:20210929</code>
 </pre>
 <ol start=3>

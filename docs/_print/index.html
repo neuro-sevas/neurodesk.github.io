@@ -404,7 +404,8 @@ print("Num GPUs Available: ", len(tf.config.list_physical_devices('GPU')))</code
 <p>Open a terminal, and type the folowing command to automatically download the neurodesktop container and run it</p>
 </li>
 </ol>
-<pre class="language-shell command-line" data-prompt=$>
+<pre class=command-line data-prompt=">"><code class=language->docker run --shm-size=1gb -it --privileged --name neurodesktop -v C:/neurodesktop-storage:/neurodesktop-storage -p 8080:8080 -h neurodesktop-20210929 vnmd/neurodesktop:20210929</code></pre>
+<pre class="language-batch command-line" data-prompt=$>
 <code>docker run --shm-size=1gb -it --privileged --name neurodesktop -v C:/neurodesktop-storage:/neurodesktop-storage -p 8080:8080 -h neurodesktop-20210929 vnmd/neurodesktop:20210929</code>
 </pre>
 <ol start=3>
@@ -672,27 +673,54 @@ newgrp docker
 <p>Additional instructions if your Neurodesktop is running remotely (i.e. Cloud, HPC, VM)</p>
 </blockquote>
 <h2 id=pre-requisites>Pre-requisites</h2>
-<p><a href=https://code.visualstudio.com>Visual Studio Code</a> installed on your host. Standalone version should work fine</p>
-<h3 id=full-installation>Full installation</h3>
+<p>Visual Studio Code <em>(<a href=https://code.visualstudio.com>https://code.visualstudio.com</a>)</em> installed on your host. Standalone version should work fine</p>
 <p>Install the following VS Code extensions:</p>
-<ol>
-<li><a href="https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker">Docker</a></li>
-<li><a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack">Remote Development</a>.</li>
-</ol>
-<p>The Remote Development bundle includes the Remote SSH, Containers and WSL extensions.</p>
-<h3 id=minimal-installation>Minimal installation</h3>
-<p>Install the following VS Code extensions:</p>
-<ol>
-<li><a href="https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker">Docker</a></li>
-<li><a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers">Remote - Containers</a></li>
-<li>For remote Neurodesktops, also install <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh">Remote - SSH</a></li>
-</ol>
+<ul>
+<li><input checked disabled type=checkbox> <a href="https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker">Docker extension</a> (Required)</li>
+<li><input disabled type=checkbox> <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack">Remote development extension pack</a>. Includes the following extensions
+<ul>
+<li><input checked disabled type=checkbox> <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers">Remote - Containers</a> (Required)</li>
+<li><input disabled type=checkbox> <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh">Remote - SSH</a> (For remote servers)</li>
+<li><input disabled type=checkbox> <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl">Remote - WSL</a> (For windows hosts)</li>
+</ul>
+</li>
+</ul>
+<h2 id=for-remote-servers>For Remote servers</h2>
+<p>Open VS Code</p>
+<p>Open the Command Palette (Ctrl+Shift+P)</p>
+<p>Find <code>Remote-SSH: Connect to Host...</code> and select your remote host</p>
+<blockquote>
+<p>More information on remote hosts available at <a href=https://code.visualstudio.com/docs/remote/ssh>https://code.visualstudio.com/docs/remote/ssh</a></p>
+</blockquote>
+<p>This will open a new VS Code instance connected to the remote host via SSH. You may close the previous VS Code instance.</p>
+<p>Follow the steps in the next section using the new VS Code instance</p>
 <h2 id=connecting-to-neurodesktop>Connecting to Neurodesktop</h2>
-<p>Click the green &lsquo;Open Remote Window&rsquo; icon on the bottom right.</p>
-<p><img src=/vscode/open-remote.png alt=open-remote title=open-remote></p>
-<p>Select &lsquo;Attach to Running Container&rsquo; from the dropdown panel</p>
-<p>Start typing in &lsquo;neurodesktop&rsquo;. Select the neurodesktop container from the list</p>
-<p>This should open a VS Code Window connected to the neurodesktop container</p>
+<p>Open VS Code and open a Folder (File > Open Folder)</p>
+<blockquote>
+<p>This can be any folder (e.g. home or project folder). VS Code runs into errors if no folder is opened.</p>
+</blockquote>
+<p>Open the Command Palette (Ctrl+Shift+P).</p>
+<p>Select <code>Remote-Containers: Attach to Running Container</code> from the dropdown panel</p>
+<p>Start typing in &lsquo;neurodesktop. Select <code>/neurodesktop</code> from the list</p>
+<p>This should open a VS Code Window connected to the neurodesktop as a Dev Container.</p>
+<blockquote>
+<p>First time connection will take about a minute, as VS code has to install the VS Code server onto the container. Repeat connections should be faster</p>
+</blockquote>
+<h3 id=first-time-connection>First time connection</h3>
+<blockquote>
+<p>First time connection will default to using neurodesktop root user. We want to default connection to be as the normal user to avoid permission issues.
+To check which user is being use, open the terminal in the neurodesktop VS Code and check if the user is <code>user</code> or <code>root</code></p>
+</blockquote>
+<p>Follow the following steps to configure your VS Code to connect to neurodesktop as normal user by default</p>
+<p>Open the Command Palette (Ctrl+Shift+P).</p>
+<p>Select <code>Remote-Containers: Open Container Configuration File</code> from the dropdown panel</p>
+<p>This will open a <code>neurodesktop%3alatest.json</code> file. Overwrite the file with the following contents</p>
+<pre><code class=language->{
+	&#34;workspaceFolder&#34;: &#34;/home/user&#34;,
+	&#34;remoteUser&#34;: &#34;user&#34;
+}
+</code></pre>
+<p>Close this VS Code window. Use steps in <a href=https://neurodesk.github.io/docs/neurodesktop/visual-studio-code/#connecting-to-neurodesktop>previous section</a> to connect normally</p>
 </div>
 <div class=td-content style=page-break-before:always>
 <h1 id=pg-71c9f282478b9d11471d083fb454cfd4>2.6 - Troubleshooting</h1>

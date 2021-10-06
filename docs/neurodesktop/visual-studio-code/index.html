@@ -19,11 +19,11 @@
 <meta property="og:description" content="Guide connecting your VS Code environment to Neurodesktop">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://neurodesk.github.io/docs/neurodesktop/visual-studio-code/"><meta property="article:section" content="docs">
-<meta property="article:modified_time" content="2021-10-01T01:42:40+10:00"><meta property="og:site_name" content="NeuroDesk">
+<meta property="article:modified_time" content="2021-10-07T01:18:17+10:00"><meta property="og:site_name" content="NeuroDesk">
 <meta itemprop=name content="Visual Studio Code">
 <meta itemprop=description content="Guide connecting your VS Code environment to Neurodesktop">
-<meta itemprop=dateModified content="2021-10-01T01:42:40+10:00">
-<meta itemprop=wordCount content="132">
+<meta itemprop=dateModified content="2021-10-07T01:18:17+10:00">
+<meta itemprop=wordCount content="358">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="Visual Studio Code">
 <meta name=twitter:description content="Guide connecting your VS Code environment to Neurodesktop">
@@ -157,13 +157,13 @@
 </div>
 <div class=td-toc><nav id=TableOfContents>
 <ul>
-<li><a href=#pre-requisites>Pre-requisites</a>
+<li><a href=#pre-requisites>Pre-requisites</a></li>
+<li><a href=#for-remote-servers>For Remote servers</a></li>
+<li><a href=#connecting-to-neurodesktop>Connecting to Neurodesktop</a>
 <ul>
-<li><a href=#full-installation>Full installation</a></li>
-<li><a href=#minimal-installation>Minimal installation</a></li>
+<li><a href=#first-time-connection>First time connection</a></li>
 </ul>
 </li>
-<li><a href=#connecting-to-neurodesktop>Connecting to Neurodesktop</a></li>
 </ul>
 </nav></div>
 </aside>
@@ -178,31 +178,58 @@
 <p>Additional instructions if your Neurodesktop is running remotely (i.e. Cloud, HPC, VM)</p>
 </blockquote>
 <h2 id=pre-requisites>Pre-requisites</h2>
-<p><a href=https://code.visualstudio.com>Visual Studio Code</a> installed on your host. Standalone version should work fine</p>
-<h3 id=full-installation>Full installation</h3>
+<p>Visual Studio Code <em>(<a href=https://code.visualstudio.com>https://code.visualstudio.com</a>)</em> installed on your host. Standalone version should work fine</p>
 <p>Install the following VS Code extensions:</p>
-<ol>
-<li><a href="https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker">Docker</a></li>
-<li><a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack">Remote Development</a>.</li>
-</ol>
-<p>The Remote Development bundle includes the Remote SSH, Containers and WSL extensions.</p>
-<h3 id=minimal-installation>Minimal installation</h3>
-<p>Install the following VS Code extensions:</p>
-<ol>
-<li><a href="https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker">Docker</a></li>
-<li><a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers">Remote - Containers</a></li>
-<li>For remote Neurodesktops, also install <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh">Remote - SSH</a></li>
-</ol>
+<ul>
+<li><input checked disabled type=checkbox> <a href="https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker">Docker extension</a> (Required)</li>
+<li><input disabled type=checkbox> <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack">Remote development extension pack</a>. Includes the following extensions
+<ul>
+<li><input checked disabled type=checkbox> <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers">Remote - Containers</a> (Required)</li>
+<li><input disabled type=checkbox> <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh">Remote - SSH</a> (For remote servers)</li>
+<li><input disabled type=checkbox> <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl">Remote - WSL</a> (For windows hosts)</li>
+</ul>
+</li>
+</ul>
+<h2 id=for-remote-servers>For Remote servers</h2>
+<p>Open VS Code</p>
+<p>Open the Command Palette (Ctrl+Shift+P)</p>
+<p>Find <code>Remote-SSH: Connect to Host...</code> and select your remote host</p>
+<blockquote>
+<p>More information on remote hosts available at <a href=https://code.visualstudio.com/docs/remote/ssh>https://code.visualstudio.com/docs/remote/ssh</a></p>
+</blockquote>
+<p>This will open a new VS Code instance connected to the remote host via SSH. You may close the previous VS Code instance.</p>
+<p>Follow the steps in the next section using the new VS Code instance</p>
 <h2 id=connecting-to-neurodesktop>Connecting to Neurodesktop</h2>
-<p>Click the green &lsquo;Open Remote Window&rsquo; icon on the bottom right.</p>
-<p><img src=/vscode/open-remote.png alt=open-remote title=open-remote></p>
-<p>Select &lsquo;Attach to Running Container&rsquo; from the dropdown panel</p>
-<p>Start typing in &lsquo;neurodesktop&rsquo;. Select the neurodesktop container from the list</p>
-<p>This should open a VS Code Window connected to the neurodesktop container</p>
+<p>Open VS Code and open a Folder (File > Open Folder)</p>
+<blockquote>
+<p>This can be any folder (e.g. home or project folder). VS Code runs into errors if no folder is opened.</p>
+</blockquote>
+<p>Open the Command Palette (Ctrl+Shift+P).</p>
+<p>Select <code>Remote-Containers: Attach to Running Container</code> from the dropdown panel</p>
+<p>Start typing in &lsquo;neurodesktop. Select <code>/neurodesktop</code> from the list</p>
+<p>This should open a VS Code Window connected to the neurodesktop as a Dev Container.</p>
+<blockquote>
+<p>First time connection will take about a minute, as VS code has to install the VS Code server onto the container. Repeat connections should be faster</p>
+</blockquote>
+<h3 id=first-time-connection>First time connection</h3>
+<blockquote>
+<p>First time connection will default to using neurodesktop root user. We want to default connection to be as the normal user to avoid permission issues.
+To check which user is being use, open the terminal in the neurodesktop VS Code and check if the user is <code>user</code> or <code>root</code></p>
+</blockquote>
+<p>Follow the following steps to configure your VS Code to connect to neurodesktop as normal user by default</p>
+<p>Open the Command Palette (Ctrl+Shift+P).</p>
+<p>Select <code>Remote-Containers: Open Container Configuration File</code> from the dropdown panel</p>
+<p>This will open a <code>neurodesktop%3alatest.json</code> file. Overwrite the file with the following contents</p>
+<pre><code class=language->{
+	&#34;workspaceFolder&#34;: &#34;/home/user&#34;,
+	&#34;remoteUser&#34;: &#34;user&#34;
+}
+</code></pre>
+<p>Close this VS Code window. Use steps in <a href=https://neurodesk.github.io/docs/neurodesktop/visual-studio-code/#connecting-to-neurodesktop>previous section</a> to connect normally</p>
 <div class="text-muted mt-5 pt-3 border-top">
 Last modified
-October 1, 2021
-: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/e324ca3bc282c2a51e7730e6728169a1ebeedcc4>Add native vs code connection instructions For local windows host (e324ca3)</a>
+October 7, 2021
+: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/cae60bf07672a4bb7b1ad46fd60aa369339145f6>Add instructions for native VS code remote server (cae60bf)</a>
 </div>
 </div>
 </main>
