@@ -21,12 +21,12 @@
 ">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://neurodesk.github.io/docs/neurodesktop/getting-started/windows/"><meta property="article:section" content="docs">
-<meta property="article:modified_time" content="2021-10-01T01:05:13+10:00"><meta property="og:site_name" content="NeuroDesk">
+<meta property="article:modified_time" content="2021-10-06T18:54:35+10:00"><meta property="og:site_name" content="NeuroDesk">
 <meta itemprop=name content="Windows">
 <meta itemprop=description content="Install neurodesktop on Windows
 ">
-<meta itemprop=dateModified content="2021-10-01T01:05:13+10:00">
-<meta itemprop=wordCount content="220">
+<meta itemprop=dateModified content="2021-10-06T18:54:35+10:00">
+<meta itemprop=wordCount content="217">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="Windows">
 <meta name=twitter:description content="Install neurodesktop on Windows
@@ -188,21 +188,9 @@
 <p>Open a terminal, and type the folowing command to automatically download the neurodesktop container and run it</p>
 </li>
 </ol>
-<p>Windows powershell
-<pre class="language-powershell command-line" data-prompt=">>" data-output=2-4><code class=language-powershell>docker run --shm-size=1gb -it --privileged --name neurodesktop `
--v C:/neurodesktop-storage:/neurodesktop-storage -p 8080:8080 `
--h neurodesktop-20210929 `
-vnmd/neurodesktop:20210929</code></pre>
-</p>
-<p>Command line
-<pre class="language-batch command-line" data-prompt=">" data-output=2-4><code class=language-batch>docker run --shm-size=1gb -it --privileged --name neurodesktop ^
--v C:/neurodesktop-storage:/neurodesktop-storage -p 8080:8080 ^
--h neurodesktop-20210929 ^
-vnmd/neurodesktop:20210929</code></pre>
-</p>
-<p>Single-line</p>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-batch data-lang=batch>docker run --shm-size=1gb -it --privileged --name neurodesktop `-v C:/neurodesktop-storage:/neurodesktop-storage -p 8080:8080 -h neurodesktop-20210929 vnmd/neurodesktop:20210929
-</code></pre></div>
+<pre class="language-shell command-line" data-prompt=$>
+<code>docker run --shm-size=1gb -it --privileged --name neurodesktop -v C:/neurodesktop-storage:/neurodesktop-storage -p 8080:8080 -h neurodesktop-20210929 vnmd/neurodesktop:20210929</code>
+</pre>
 <ol start=3>
 <li>Once neurodesktop is downloaded i.e. <code>guacd[77]: INFO: Listening on host 127.0.0.1, port 4822</code> is displayed in terminal, open a browser and go to:</li>
 </ol>
@@ -236,8 +224,8 @@ vnmd/neurodesktop:20210929</code></pre>
 </code></pre></div>
 <div class="text-muted mt-5 pt-3 border-top">
 Last modified
-October 1, 2021
-: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/aef38d588abc2b61dd8fbc6db135732eb37ad57b>Add custom prismjs (aef38d5)</a>
+October 6, 2021
+: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/ac14f654be1cf389b4f908f0a807582204331120>Remove extra commands (ac14f65)</a>
 </div>
 </div>
 </main>

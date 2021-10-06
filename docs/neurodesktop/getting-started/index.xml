@@ -190,25 +190,26 @@ print("Num GPUs Available: ", len(tf.config.list_physical_devices('GPU')))&lt;/c
 &lt;p>Open a terminal, and type the folowing command to automatically download the neurodesktop container and run it&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;p>Windows powershell
+&lt;!-- Windows powershell
 &lt;pre class="language-powershell command-line" data-prompt="&amp;gt;&amp;gt;" data-output="2-4"
 >&lt;code class="language-powershell"
 >docker run --shm-size=1gb -it --privileged --name neurodesktop `
 -v C:/neurodesktop-storage:/neurodesktop-storage -p 8080:8080 `
 -h neurodesktop-20210929 `
 vnmd/neurodesktop:20210929&lt;/code>&lt;/pre>
-&lt;/p>
-&lt;p>Command line
+-->
+&lt;!-- Command line
 &lt;pre class="language-batch command-line" data-prompt="&amp;gt;" data-output="2-4"
 >&lt;code class="language-batch"
 >docker run --shm-size=1gb -it --privileged --name neurodesktop ^
 -v C:/neurodesktop-storage:/neurodesktop-storage -p 8080:8080 ^
 -h neurodesktop-20210929 ^
 vnmd/neurodesktop:20210929&lt;/code>&lt;/pre>
-&lt;/p>
-&lt;p>Single-line&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-batch" data-lang="batch">docker run --shm-size=1gb -it --privileged --name neurodesktop `-v C:/neurodesktop-storage:/neurodesktop-storage -p 8080:8080 -h neurodesktop-20210929 vnmd/neurodesktop:20210929
-&lt;/code>&lt;/pre>&lt;/div>&lt;!-- neurodesktop version found in neurodesk.github.io/data/neurodesktop.toml -->
+-->
+&lt;pre class="language-shell command-line" data-prompt="$">
+&lt;code>docker run --shm-size=1gb -it --privileged --name neurodesktop -v C:/neurodesktop-storage:/neurodesktop-storage -p 8080:8080 -h neurodesktop-20210929 vnmd/neurodesktop:20210929&lt;/code>
+&lt;/pre>
+&lt;!-- neurodesktop version found in neurodesk.github.io/data/neurodesktop.toml -->
 &lt;ol start="3">
 &lt;li>Once neurodesktop is downloaded i.e. &lt;code>guacd[77]: INFO: Listening on host 127.0.0.1, port 4822&lt;/code> is displayed in terminal, open a browser and go to:&lt;/li>
 &lt;/ol>

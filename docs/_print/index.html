@@ -404,21 +404,9 @@ print("Num GPUs Available: ", len(tf.config.list_physical_devices('GPU')))</code
 <p>Open a terminal, and type the folowing command to automatically download the neurodesktop container and run it</p>
 </li>
 </ol>
-<p>Windows powershell
-<pre class="language-powershell command-line" data-prompt=">>" data-output=2-4><code class=language-powershell>docker run --shm-size=1gb -it --privileged --name neurodesktop `
--v C:/neurodesktop-storage:/neurodesktop-storage -p 8080:8080 `
--h neurodesktop-20210929 `
-vnmd/neurodesktop:20210929</code></pre>
-</p>
-<p>Command line
-<pre class="language-batch command-line" data-prompt=">" data-output=2-4><code class=language-batch>docker run --shm-size=1gb -it --privileged --name neurodesktop ^
--v C:/neurodesktop-storage:/neurodesktop-storage -p 8080:8080 ^
--h neurodesktop-20210929 ^
-vnmd/neurodesktop:20210929</code></pre>
-</p>
-<p>Single-line</p>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-batch data-lang=batch>docker run --shm-size=1gb -it --privileged --name neurodesktop `-v C:/neurodesktop-storage:/neurodesktop-storage -p 8080:8080 -h neurodesktop-20210929 vnmd/neurodesktop:20210929
-</code></pre></div>
+<pre class="language-shell command-line" data-prompt=$>
+<code>docker run --shm-size=1gb -it --privileged --name neurodesktop -v C:/neurodesktop-storage:/neurodesktop-storage -p 8080:8080 -h neurodesktop-20210929 vnmd/neurodesktop:20210929</code>
+</pre>
 <ol start=3>
 <li>Once neurodesktop is downloaded i.e. <code>guacd[77]: INFO: Listening on host 127.0.0.1, port 4822</code> is displayed in terminal, open a browser and go to:</li>
 </ol>
