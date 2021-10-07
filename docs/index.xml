@@ -605,23 +605,27 @@ To check which user is being use, open the terminal in the neurodesktop VS Code 
 &lt;ol>
 &lt;li>Open an SSH connection to your cloud instance with port forwarding&lt;/li>
 &lt;/ol>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">ssh -L 8080:127.0.0.1:8080 opc@133.71.33.71
-&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="2">
+&lt;pre class="language-shell command-line" data-prompt="$">
+&lt;code>ssh -L 8080:127.0.0.1:8080 opc@133.71.33.71&lt;/code>
+&lt;/pre>
+&lt;ol start="2">
 &lt;li>Install Docker from here: &lt;a href="https://docs.docker.com/get-docker/">https://docs.docker.com/get-docker/&lt;/a>&lt;/li>
 &lt;/ol>
 &lt;p>one example to install docker in a yum-based distribution could look like this:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">sudo dnf install -y yum-utils
+&lt;pre class="language-shell command-line" data-prompt="$">
+&lt;code>sudo dnf install -y yum-utils
 sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 sudo dnf install docker-ce docker-ce-cli containerd.io
-sudo systemctl &lt;span style="color:#204a87">enable&lt;/span> docker
+sudo systemctl enable docker
 sudo systemctl start docker
 sudo docker version
 sudo docker info
 sudo groupadd docker
-sudo usermod -aG docker &lt;span style="color:#000">$USER&lt;/span>
+sudo usermod -aG docker $USER
 sudo chown root:docker /var/run/docker.sock
-newgrp docker
-&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="3">
+newgrp docker&lt;/code>
+&lt;/pre>
+&lt;ol start="3">
 &lt;li>
 &lt;p>Create a local folder where the downloaded applications will be stored, e.g. ~/neurodesktop-storage&lt;/p>
 &lt;/li>
@@ -629,13 +633,15 @@ newgrp docker
 &lt;p>Open a terminal, and type the folowing command to automatically download the neurodesktop container and run it (Mac, Windows, Linux commands listed below)&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">sudo docker run &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --shm-size&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>1gb -it --privileged --name neurodesktop &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -v ~/neurodesktop-storage:/neurodesktop-storage &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -e &lt;span style="color:#000">HOST_UID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>id -u&lt;span style="color:#204a87;font-weight:bold">)&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> -e &lt;span style="color:#000">HOST_GID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>id -g&lt;span style="color:#204a87;font-weight:bold">)&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -p 8080:8080 -h neurodesktop-20210929 &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> vnmd/neurodesktop:20210929
-&lt;/code>&lt;/pre>&lt;/div>&lt;!-- neurodesktop version found in neurodesk.github.io/data/neurodesktop.toml -->
+&lt;pre class="language-shell command-line" data-prompt="$" data-output="2-9">
+&lt;code>sudo docker run \
+--shm-size=1gb -it --privileged --name neurodesktop \
+-v ~/neurodesktop-storage:/neurodesktop-storage \
+-e HOST_UID="$(id -u)" -e HOST_GID="$(id -g)" \
+-p 8080:8080 -h neurodesktop-20210929 \
+vnmd/neurodesktop:20210929&lt;/code>
+&lt;/pre>
+&lt;!-- neurodesktop version found in neurodesk.github.io/data/neurodesktop.toml -->
 &lt;p>(notice: if you get errors in neurodesktop then check if the ~/neurodesktop-storage directory is writable to all users, otherwise run &lt;code>chmod a+rwx ~/neurodesktop-storage&lt;/code>)&lt;/p>
 &lt;ol start="5">
 &lt;li>Once neurodesktop is downloaded i.e. &lt;code>guacd[77]: INFO: Listening on host 127.0.0.1, port 4822&lt;/code> is displayed in terminal, open a browser and go to:&lt;/li>
@@ -662,8 +668,10 @@ newgrp docker
 &lt;p>Type:&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">sudo docker stop neurodesktop &amp;amp;&amp;amp; sudo docker rm neurodesktop
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="portforwarding-to-an-ios-ipad">Portforwarding to an iOS ipad&lt;/h2>
+&lt;pre class="language-shell command-line" data-prompt="$">
+&lt;code>sudo docker stop neurodesktop &amp;&amp; sudo docker rm neurodesktop&lt;/code>
+&lt;/pre>
+&lt;h2 id="portforwarding-to-an-ios-ipad">Portforwarding to an iOS ipad&lt;/h2>
 &lt;p>You can also connect to this cloud instance from your iOS device :) For this install &lt;a href="https://webssh.net/documentation/help/networking/port-forwarding/">https://webssh.net/documentation/help/networking/port-forwarding/&lt;/a> and create a tunnel (the tool is free for one connection). Start the docker container in a screen session and then connect to it from your ios device in the browser.&lt;/p>
 &lt;h2 id="cloud-provider-specific-tutorials">Cloud-provider specific Tutorials&lt;/h2>
 &lt;table>
