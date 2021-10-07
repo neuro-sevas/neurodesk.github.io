@@ -156,7 +156,7 @@ To check which user is being use, open the terminal in the neurodesktop VS Code 
 &lt;p>Select &lt;code>Remote-Containers: Open Container Configuration File&lt;/code> from the dropdown panel&lt;/p>
 &lt;p>This will open a &lt;code>neurodesktop%3alatest.json&lt;/code> file. Overwrite the file with the following contents&lt;/p>
 &lt;pre class=""
->&lt;code class="language-"
+>&lt;code
 >{
 &amp;#34;workspaceFolder&amp;#34;: &amp;#34;/home/user&amp;#34;,
 &amp;#34;remoteUser&amp;#34;: &amp;#34;user&amp;#34;

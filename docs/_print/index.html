@@ -216,8 +216,9 @@ To get started, see: <a href=/docs/neurodesktop/>Neurodesktop</a></p>
 <ol>
 <li>Install Docker from here: <a href=https://docs.docker.com/get-docker/>https://docs.docker.com/get-docker/</a></li>
 </ol>
-<p>one example to install docker in a yum-based distribution could look like this:
-<pre class=command-line data-prompt=$><code class=language->sudo dnf install -y yum-utils 
+<p>one example to install docker in a yum-based distribution could look like this:</p>
+<pre class="language-shell command-line" data-prompt=$ data-output=2-6>
+<code>sudo dnf install -y yum-utils 
 sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 sudo dnf install docker-ce docker-ce-cli containerd.io
 sudo systemctl enable docker
@@ -227,8 +228,8 @@ sudo docker info
 sudo groupadd docker
 sudo usermod -aG docker $USER
 sudo chown root:docker /var/run/docker.sock
-newgrp docker</code></pre>
-</p>
+newgrp docker</code>
+</pre>
 <ol start=2>
 <li>
 <p>Create a local folder where the downloaded applications will be stored, e.g. ~/neurodesktop-storage</p>
@@ -237,12 +238,14 @@ newgrp docker</code></pre>
 <p>Open a terminal, and type the folowing command to automatically download the neurodesktop container and run it (Mac, Windows, Linux commands listed below)</p>
 </li>
 </ol>
-<pre class=command-line data-prompt=$ data-output=2-6><code class=language->sudo docker run \
+<pre class="language-shell command-line" data-prompt=$ data-output=2-6>
+<code>sudo docker run \
   --shm-size=1gb -it --privileged --name neurodesktop \
   -v ~/neurodesktop-storage:/neurodesktop-storage \
-  -e HOST_UID=&#34;$(id -u)&#34; -e HOST_GID=&#34;$(id -g)&#34; \
+  -e HOST_UID="$(id -u)" -e HOST_GID="$(id -g)" \
   -p 8080:8080 -h neurodesktop-20210929 \
-  vnmd/neurodesktop:20210929</code></pre>
+  vnmd/neurodesktop:20210929</code>
+</pre>
 <p>(notice: if you get errors in neurodesktop then check if the ~/neurodesktop-storage directory is writable to all users, otherwise run <code>chmod a+rwx ~/neurodesktop-storage</code>)</p>
 <ol start=4>
 <li>Once neurodesktop is downloaded i.e. <code>guacd[77]: INFO: Listening on host 127.0.0.1, port 4822</code> is displayed in terminal, open a browser and go to:</li>
@@ -266,56 +269,65 @@ newgrp docker</code></pre>
 <p>Press control-C</p>
 </li>
 <li>
-<p>Type:
-<pre class=command-line data-prompt=$><code class=language->docker stop neurodesktop</code></pre>
-</p>
-</li>
-<li>
-<p>Type:
-<pre class=command-line data-prompt=$><code class=language->docker rm neurodesktop</code></pre>
-</p>
+<p>Type:</p>
 </li>
 </ol>
+<pre class="language-shell command-line" data-prompt=$>
+<code>docker stop neurodesktop</code>
+</pre>
+<ol start=4>
+<li>Type:</li>
+</ol>
+<pre class="language-shell command-line" data-prompt=$>
+<code>docker rm neurodesktop</code>
+</pre>
 <h2 id=gpu-support>GPU support</h2>
-<pre class=command-line data-prompt=$ data-output=4-9><code class=language->sudo yum install nvidia-container-toolkit -y</code></pre>
-<pre class=command-line data-prompt=$ data-output=2-9><code class=language->sudo docker run \
+<pre class="language-shell command-line" data-prompt=$ data-output=4-9>
+<code>sudo yum install nvidia-container-toolkit -y</code>
+</pre>
+<pre class="language-shell command-line" data-prompt=$ data-output=2-9>
+<code>sudo docker run \
   --shm-size=1gb -it --privileged --name neurodesktop \
   -v ~/neurodesktop-storage:/neurodesktop-storage \
-  -e HOST_UID=&#34;$(id -u)&#34; -e HOST_GID=&#34;$(id -g)&#34; \
+  -e HOST_UID="$(id -u)" -e HOST_GID="$(id -g)" \
   -e NVIDIA_VISIBLE_DEVICES=all \
   -p 8080:8080 -h neurodesktop-20210929 \
-  vnmd/neurodesktop:20210929</code></pre>
+  vnmd/neurodesktop:20210929</code>
+</pre>
 <blockquote>
-<p>Try the following if there are issues with the previous command
-E
-<pre class=command-line data-prompt=$ data-output=2-9><code class=language->sudo docker run \
+<p>Try the following if there are issues with the previous command</p>
+</blockquote>
+<pre class="language-shell command-line" data-prompt=$ data-output=2-9>
+<code>sudo docker run \
   --shm-size=1gb -it --privileged --name neurodesktop \
   -v ~/neurodesktop-storage:/neurodesktop-storage \
-  -e HOST_UID=&#34;$(id -u)&#34; -e HOST_GID=&#34;$(id -g)&#34; \
+  -e HOST_UID="$(id -u)" -e HOST_GID="$(id -g)" \
   -e NVIDIA_VISIBLE_DEVICES=all \
   -e NVIDIA_DISABLE_REQUIRE=1 \
   --gpus all \
   -p 8080:8080 -h neurodesktop-20210929 \
-  vnmd/neurodesktop:20210929</code></pre>
-</p>
-</blockquote>
-<p>Then inside the desktop container:
-<pre class=command-line data-prompt=$><code class=language->sudo apt update
-sudo apt install libcudart10.1</code></pre>
-</p>
-<p>Test in desktop image:
-<pre class=command-line data-prompt=$><code class=language->python 
+  vnmd/neurodesktop:20210929</code>
+</pre>
+<p>Then inside the desktop container:</p>
+<pre class="language-shell command-line" data-prompt=$>
+<code>sudo apt update
+sudo apt install libcudart10.1</code>
+</pre>
+<p>Test in desktop image:</p>
+<pre class="language-shell command-line" data-prompt=$>
+<code>python 
 import tensorflow as tf
-print(&#34;Num GPUs Available: &#34;, len(tf.config.list_physical_devices(&#39;GPU&#39;)))</code></pre>
-</p>
+print("Num GPUs Available: ", len(tf.config.list_physical_devices('GPU')))</code>
+</pre>
 <p><img src=https://user-images.githubusercontent.com/4021595/135446560-d135f6ce-b699-4e46-8534-b72b4d9f2d41.png alt=image></p>
-<p>Test in singularity container running inside desktop container:
-<pre class=command-line data-prompt=$><code class=language->singularity pull docker://tensorflow/tensorflow:latest-gpu
+<p>Test in singularity container running inside desktop container:</p>
+<pre class="language-shell command-line" data-prompt=$>
+<code>singularity pull docker://tensorflow/tensorflow:latest-gpu
 singularity run --nv tensorflow_latest-gpu.sif
 python 
 import tensorflow as tf
-print(&#34;Num GPUs Available: &#34;, len(tf.config.list_physical_devices(&#39;GPU&#39;)))</code></pre>
-</p>
+print("Num GPUs Available: ", len(tf.config.list_physical_devices('GPU')))</code>
+</pre>
 <p><img src=https://user-images.githubusercontent.com/4021595/135449288-6c3e9bbd-fe5f-4f43-aa4a-8a798ba629e6.png alt=image></p>
 </div>
 <div class=td-content style=page-break-before:always>
@@ -392,7 +404,9 @@ print(&#34;Num GPUs Available: &#34;, len(tf.config.list_physical_devices(&#39;G
 <p>Open a terminal, and type the folowing command to automatically download the neurodesktop container and run it</p>
 </li>
 </ol>
-<pre class=command-line data-prompt=">"><code class=language->docker run --shm-size=1gb -it --privileged --name neurodesktop -v C:/neurodesktop-storage:/neurodesktop-storage -p 8080:8080 -h neurodesktop-20210929 vnmd/neurodesktop:20210929</code></pre>
+<pre class="language-batch command-line" data-prompt=">">
+<code>docker run --shm-size=1gb -it --privileged --name neurodesktop -v C:/neurodesktop-storage:/neurodesktop-storage -p 8080:8080 -h neurodesktop-20210929 vnmd/neurodesktop:20210929</code>
+</pre>
 <ol start=3>
 <li>Once neurodesktop is downloaded i.e. <code>guacd[77]: INFO: Listening on host 127.0.0.1, port 4822</code> is displayed in terminal, open a browser and go to:</li>
 </ol>
@@ -700,7 +714,7 @@ To check which user is being use, open the terminal in the neurodesktop VS Code 
 <p>Open the Command Palette (Ctrl+Shift+P).</p>
 <p>Select <code>Remote-Containers: Open Container Configuration File</code> from the dropdown panel</p>
 <p>This will open a <code>neurodesktop%3alatest.json</code> file. Overwrite the file with the following contents</p>
-<pre><code class=language->{
+<pre><code>{
 	&#34;workspaceFolder&#34;: &#34;/home/user&#34;,
 	&#34;remoteUser&#34;: &#34;user&#34;
 }
