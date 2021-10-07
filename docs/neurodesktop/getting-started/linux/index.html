@@ -21,12 +21,12 @@
 ">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://neurodesk.github.io/docs/neurodesktop/getting-started/linux/"><meta property="article:section" content="docs">
-<meta property="article:modified_time" content="2021-10-07T12:34:39+10:00"><meta property="og:site_name" content="NeuroDesk">
+<meta property="article:modified_time" content="2021-10-07T23:51:25+10:00"><meta property="og:site_name" content="NeuroDesk">
 <meta itemprop=name content="Linux">
 <meta itemprop=description content="Install neurodesktop on Linux
 ">
-<meta itemprop=dateModified content="2021-10-07T12:34:39+10:00">
-<meta itemprop=wordCount content="411">
+<meta itemprop=dateModified content="2021-10-07T23:51:25+10:00">
+<meta itemprop=wordCount content="454">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="Linux">
 <meta name=twitter:description content="Install neurodesktop on Linux
@@ -162,9 +162,19 @@
 <div class=td-toc><nav id=TableOfContents>
 <ul>
 <li><a href=#minimum-system-requirements>Minimum System Requirements</a></li>
-<li><a href=#quickstart>Quickstart</a></li>
+<li><a href=#quickstart>Quickstart</a>
+<ul>
+<li><a href=#rhelcentos-yum-based>RHEL/CentOS (yum-based)</a></li>
+<li><a href=#ubuntudebian-apt-based>Ubuntu/Debian (apt-based)</a></li>
+</ul>
+</li>
 <li><a href=#stopping-neurodesktop>Stopping neurodesktop:</a></li>
-<li><a href=#gpu-support>GPU support</a></li>
+<li><a href=#gpu-support>GPU support</a>
+<ul>
+<li><a href=#rhelcentos-yum-based-1>RHEL/CentOS (yum-based)</a></li>
+<li><a href=#running-neurodesktop-container-with-gpu>Running neurodesktop container with GPU</a></li>
+</ul>
+</li>
 </ul>
 </nav></div>
 </aside>
@@ -183,7 +193,9 @@
 <ol>
 <li>Install Docker from here: <a href=https://docs.docker.com/get-docker/>https://docs.docker.com/get-docker/</a></li>
 </ol>
-<p>one example to install docker in a yum-based distribution could look like this:</p>
+<h3 id=rhelcentos-yum-based>RHEL/CentOS (yum-based)</h3>
+<p>Refer to <a href=https://docs.docker.com/engine/install/centos/>https://docs.docker.com/engine/install/centos/</a></p>
+<p>One example to install docker in a yum-based distribution could look like this:</p>
 <pre class="language-shell command-line" data-prompt=$>
 <code>sudo dnf install -y yum-utils 
 sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
@@ -197,9 +209,21 @@ sudo usermod -aG docker $USER
 sudo chown root:docker /var/run/docker.sock
 newgrp docker</code>
 </pre>
+<h3 id=ubuntudebian-apt-based>Ubuntu/Debian (apt-based)</h3>
+<p>Refer to <a href=https://docs.docker.com/engine/install/ubuntu/>https://docs.docker.com/engine/install/ubuntu/</a></p>
+<p>One example to install docker in a apt-based distribution could look like this:</p>
+<pre class="language-shell command-line" data-prompt=$ data-output=5>
+<code>sudo apt-get update
+sudo apt-get install apt-transport-https ca-certificates curl gnupg lsb-release
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update
+sudo apt-get install docker-ce docker-ce-cli containerd.io</code>
+</pre>
 <ol start=2>
 <li>
-<p>Create a local folder where the downloaded applications will be stored, e.g. ~/neurodesktop-storage</p>
+<p>Create a local folder where the downloaded applications will be stored, e.g. <code>~/neurodesktop-storage</code></p>
 </li>
 <li>
 <p>Open a terminal, and type the folowing command to automatically download the neurodesktop container and run it (Mac, Windows, Linux commands listed below)</p>
@@ -233,37 +257,27 @@ newgrp docker</code>
 <p>Click on the terminal from which you ran neurodesktop</p>
 </li>
 <li>
-<p>Press control-C</p>
+<p>Press <code>Ctrl-C</code></p>
 </li>
 <li>
-<p>Type:</p>
+<p>Run:</p>
 </li>
 </ol>
 <pre class="language-shell command-line" data-prompt=$>
 <code>docker stop neurodesktop</code>
 </pre>
 <ol start=4>
-<li>Type:</li>
+<li>Run:</li>
 </ol>
 <pre class="language-shell command-line" data-prompt=$>
 <code>docker rm neurodesktop</code>
 </pre>
 <h2 id=gpu-support>GPU support</h2>
+<h3 id=rhelcentos-yum-based-1>RHEL/CentOS (yum-based)</h3>
 <pre class="language-shell command-line" data-prompt=$ data-output=4-9>
 <code>sudo yum install nvidia-container-toolkit -y</code>
 </pre>
-<pre class="language-shell command-line" data-prompt=$ data-output=2-9>
-<code>sudo docker run \
-  --shm-size=1gb -it --privileged --name neurodesktop \
-  -v ~/neurodesktop-storage:/neurodesktop-storage \
-  -e HOST_UID="$(id -u)" -e HOST_GID="$(id -g)" \
-  -e NVIDIA_VISIBLE_DEVICES=all \
-  -p 8080:8080 -h neurodesktop-20210929 \
-  vnmd/neurodesktop:20210929</code>
-</pre>
-<blockquote>
-<p>Try the following if there are issues with the previous command</p>
-</blockquote>
+<h3 id=running-neurodesktop-container-with-gpu>Running neurodesktop container with GPU</h3>
 <pre class="language-shell command-line" data-prompt=$ data-output=2-9>
 <code>sudo docker run \
   --shm-size=1gb -it --privileged --name neurodesktop \
@@ -271,33 +285,39 @@ newgrp docker</code>
   -e HOST_UID="$(id -u)" -e HOST_GID="$(id -g)" \
   -e NVIDIA_VISIBLE_DEVICES=all \
   -e NVIDIA_DISABLE_REQUIRE=1 \
-  --gpus all \
   -p 8080:8080 -h neurodesktop-20210929 \
   vnmd/neurodesktop:20210929</code>
 </pre>
-<p>Then inside the desktop container:</p>
+<p>Then inside the neurodesktop container run:</p>
 <pre class="language-shell command-line" data-prompt=$>
 <code>sudo apt update
 sudo apt install libcudart10.1</code>
 </pre>
-<p>Test in desktop image:</p>
+<h4 id=running-tensorflow-w-gpu>Running tensorflow (w/ GPU)</h4>
+<h5 id=using-tensorflow-python>Using tensorflow (python)</h5>
 <pre class="language-shell command-line" data-prompt=$>
-<code>python 
-import tensorflow as tf
+<code>pip install tensorflow-gpu
+# OR conda install tensorflow-gpu
+python</code>
+</pre>
+<pre class="language-python command-line" data-prompt=">>>">
+<code>import tensorflow as tf
 print("Num GPUs Available: ", len(tf.config.list_physical_devices('GPU')))</code>
 </pre>
 <p><img src=https://user-images.githubusercontent.com/4021595/135446560-d135f6ce-b699-4e46-8534-b72b4d9f2d41.png alt=image></p>
-<p>Test in singularity container running inside desktop container:</p>
+<h5 id=using-tensorflow-singularity-container-in-neurodesktop>Using tensorflow (singularity container in neurodesktop)</h5>
 <pre class="language-shell command-line" data-prompt=$>
 <code>singularity pull docker://tensorflow/tensorflow:latest-gpu
 singularity run --nv tensorflow_latest-gpu.sif
-python 
-import tensorflow as tf
+python</code>
+</pre>
+<pre class="language-python command-line" data-prompt=">>>">
+<code>import tensorflow as tf
 print("Num GPUs Available: ", len(tf.config.list_physical_devices('GPU')))</code>
 </pre>
 <p><img src=https://user-images.githubusercontent.com/4021595/135449288-6c3e9bbd-fe5f-4f43-aa4a-8a798ba629e6.png alt=image></p>
 <div class="text-muted mt-5 pt-3 border-top">
-Last modified October 7, 2021: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/df432fdfd9b9e1b1f82ccd6217be3c80ea21fec2>Update linux.md (df432fd)</a>
+Last modified October 7, 2021: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/c7920a2cc4ff4e76e3cf7c64149fe89956e3f189>Update linux with ubuntu instructions (c7920a2)</a>
 </div>
 </div>
 </main>

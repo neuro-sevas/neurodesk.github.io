@@ -52,7 +52,9 @@ Run &lt;code>bash build.sh&lt;/code>&lt;br>
 &lt;ol>
 &lt;li>Install Docker from here: &lt;a href="https://docs.docker.com/get-docker/">https://docs.docker.com/get-docker/&lt;/a>&lt;/li>
 &lt;/ol>
-&lt;p>one example to install docker in a yum-based distribution could look like this:&lt;/p>
+&lt;h3 id="rhelcentos-yum-based">RHEL/CentOS (yum-based)&lt;/h3>
+&lt;p>Refer to &lt;a href="https://docs.docker.com/engine/install/centos/">https://docs.docker.com/engine/install/centos/&lt;/a>&lt;/p>
+&lt;p>One example to install docker in a yum-based distribution could look like this:&lt;/p>
 &lt;pre class="language-shell command-line" data-prompt="$">
 &lt;code>sudo dnf install -y yum-utils
 sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
@@ -66,9 +68,21 @@ sudo usermod -aG docker $USER
 sudo chown root:docker /var/run/docker.sock
 newgrp docker&lt;/code>
 &lt;/pre>
+&lt;h3 id="ubuntudebian-apt-based">Ubuntu/Debian (apt-based)&lt;/h3>
+&lt;p>Refer to &lt;a href="https://docs.docker.com/engine/install/ubuntu/">https://docs.docker.com/engine/install/ubuntu/&lt;/a>&lt;/p>
+&lt;p>One example to install docker in a apt-based distribution could look like this:&lt;/p>
+&lt;pre class="language-shell command-line" data-prompt="$" data-output="5">
+&lt;code>sudo apt-get update
+sudo apt-get install apt-transport-https ca-certificates curl gnupg lsb-release
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+$(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update
+sudo apt-get install docker-ce docker-ce-cli containerd.io&lt;/code>
+&lt;/pre>
 &lt;ol start="2">
 &lt;li>
-&lt;p>Create a local folder where the downloaded applications will be stored, e.g. ~/neurodesktop-storage&lt;/p>
+&lt;p>Create a local folder where the downloaded applications will be stored, e.g. &lt;code>~/neurodesktop-storage&lt;/code>&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Open a terminal, and type the folowing command to automatically download the neurodesktop container and run it (Mac, Windows, Linux commands listed below)&lt;/p>
@@ -103,37 +117,27 @@ vnmd/neurodesktop:20210929&lt;/code>
 &lt;p>Click on the terminal from which you ran neurodesktop&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>Press control-C&lt;/p>
+&lt;p>Press &lt;code>Ctrl-C&lt;/code>&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>Type:&lt;/p>
+&lt;p>Run:&lt;/p>
 &lt;/li>
 &lt;/ol>
 &lt;pre class="language-shell command-line" data-prompt="$">
 &lt;code>docker stop neurodesktop&lt;/code>
 &lt;/pre>
 &lt;ol start="4">
-&lt;li>Type:&lt;/li>
+&lt;li>Run:&lt;/li>
 &lt;/ol>
 &lt;pre class="language-shell command-line" data-prompt="$">
 &lt;code>docker rm neurodesktop&lt;/code>
 &lt;/pre>
 &lt;h2 id="gpu-support">GPU support&lt;/h2>
+&lt;h3 id="rhelcentos-yum-based-1">RHEL/CentOS (yum-based)&lt;/h3>
 &lt;pre class="language-shell command-line" data-prompt="$" data-output="4-9">
 &lt;code>sudo yum install nvidia-container-toolkit -y&lt;/code>
 &lt;/pre>
-&lt;pre class="language-shell command-line" data-prompt="$" data-output="2-9">
-&lt;code>sudo docker run \
---shm-size=1gb -it --privileged --name neurodesktop \
--v ~/neurodesktop-storage:/neurodesktop-storage \
--e HOST_UID="$(id -u)" -e HOST_GID="$(id -g)" \
--e NVIDIA_VISIBLE_DEVICES=all \
--p 8080:8080 -h neurodesktop-20210929 \
-vnmd/neurodesktop:20210929&lt;/code>
-&lt;/pre>
-&lt;blockquote>
-&lt;p>Try the following if there are issues with the previous command&lt;/p>
-&lt;/blockquote>
+&lt;h3 id="running-neurodesktop-container-with-gpu">Running neurodesktop container with GPU&lt;/h3>
 &lt;pre class="language-shell command-line" data-prompt="$" data-output="2-9">
 &lt;code>sudo docker run \
 --shm-size=1gb -it --privileged --name neurodesktop \
@@ -141,29 +145,35 @@ vnmd/neurodesktop:20210929&lt;/code>
 -e HOST_UID="$(id -u)" -e HOST_GID="$(id -g)" \
 -e NVIDIA_VISIBLE_DEVICES=all \
 -e NVIDIA_DISABLE_REQUIRE=1 \
---gpus all \
 -p 8080:8080 -h neurodesktop-20210929 \
 vnmd/neurodesktop:20210929&lt;/code>
 &lt;/pre>
 &lt;!-- neurodesktop version found in neurodesk.github.io/data/neurodesktop.toml -->
-&lt;p>Then inside the desktop container:&lt;/p>
+&lt;p>Then inside the neurodesktop container run:&lt;/p>
 &lt;pre class="language-shell command-line" data-prompt="$">
 &lt;code>sudo apt update
 sudo apt install libcudart10.1&lt;/code>
 &lt;/pre>
-&lt;p>Test in desktop image:&lt;/p>
+&lt;h4 id="running-tensorflow-w-gpu">Running tensorflow (w/ GPU)&lt;/h4>
+&lt;h5 id="using-tensorflow-python">Using tensorflow (python)&lt;/h5>
 &lt;pre class="language-shell command-line" data-prompt="$">
-&lt;code>python
-import tensorflow as tf
+&lt;code>pip install tensorflow-gpu
+# OR conda install tensorflow-gpu
+python&lt;/code>
+&lt;/pre>
+&lt;pre class="language-python command-line" data-prompt=">>>">
+&lt;code>import tensorflow as tf
 print("Num GPUs Available: ", len(tf.config.list_physical_devices('GPU')))&lt;/code>
 &lt;/pre>
 &lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/135446560-d135f6ce-b699-4e46-8534-b72b4d9f2d41.png" alt="image">&lt;/p>
-&lt;p>Test in singularity container running inside desktop container:&lt;/p>
+&lt;h5 id="using-tensorflow-singularity-container-in-neurodesktop">Using tensorflow (singularity container in neurodesktop)&lt;/h5>
 &lt;pre class="language-shell command-line" data-prompt="$">
 &lt;code>singularity pull docker://tensorflow/tensorflow:latest-gpu
 singularity run --nv tensorflow_latest-gpu.sif
-python
-import tensorflow as tf
+python&lt;/code>
+&lt;/pre>
+&lt;pre class="language-python command-line" data-prompt=">>>">
+&lt;code>import tensorflow as tf
 print("Num GPUs Available: ", len(tf.config.list_physical_devices('GPU')))&lt;/code>
 &lt;/pre>
 &lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/135449288-6c3e9bbd-fe5f-4f43-aa4a-8a798ba629e6.png" alt="image">&lt;/p></description></item><item><title>Docs: MacOS</title><link>https://neurodesk.github.io/docs/neurodesktop/getting-started/mac/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/getting-started/mac/</guid><description>
@@ -611,7 +621,9 @@ To check which user is being use, open the terminal in the neurodesktop VS Code 
 &lt;ol start="2">
 &lt;li>Install Docker from here: &lt;a href="https://docs.docker.com/get-docker/">https://docs.docker.com/get-docker/&lt;/a>&lt;/li>
 &lt;/ol>
-&lt;p>one example to install docker in a yum-based distribution could look like this:&lt;/p>
+&lt;h3 id="rhelcentos-yum-based">RHEL/CentOS (yum-based)&lt;/h3>
+&lt;p>Refer to &lt;a href="https://docs.docker.com/engine/install/centos/">https://docs.docker.com/engine/install/centos/&lt;/a>&lt;/p>
+&lt;p>One example to install docker in a yum-based distribution could look like this:&lt;/p>
 &lt;pre class="language-shell command-line" data-prompt="$">
 &lt;code>sudo dnf install -y yum-utils
 sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
@@ -624,6 +636,18 @@ sudo groupadd docker
 sudo usermod -aG docker $USER
 sudo chown root:docker /var/run/docker.sock
 newgrp docker&lt;/code>
+&lt;/pre>
+&lt;h3 id="ubuntudebian-apt-based">Ubuntu/Debian (apt-based)&lt;/h3>
+&lt;p>Refer to &lt;a href="https://docs.docker.com/engine/install/ubuntu/">https://docs.docker.com/engine/install/ubuntu/&lt;/a>&lt;/p>
+&lt;p>One example to install docker in a apt-based distribution could look like this:&lt;/p>
+&lt;pre class="language-shell command-line" data-prompt="$" data-output="5">
+&lt;code>sudo apt-get update
+sudo apt-get install apt-transport-https ca-certificates curl gnupg lsb-release
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+$(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update
+sudo apt-get install docker-ce docker-ce-cli containerd.io&lt;/code>
 &lt;/pre>
 &lt;ol start="3">
 &lt;li>
@@ -662,10 +686,10 @@ vnmd/neurodesktop:20210929&lt;/code>
 &lt;p>Click on the terminal from which you ran neurodesktop&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>Press control-C&lt;/p>
+&lt;p>Press Ctrl-C&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>Type:&lt;/p>
+&lt;p>Run:&lt;/p>
 &lt;/li>
 &lt;/ol>
 &lt;pre class="language-shell command-line" data-prompt="$">
