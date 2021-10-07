@@ -52,9 +52,10 @@ Run &lt;code>bash build.sh&lt;/code>&lt;br>
 &lt;ol>
 &lt;li>Install Docker from here: &lt;a href="https://docs.docker.com/get-docker/">https://docs.docker.com/get-docker/&lt;/a>&lt;/li>
 &lt;/ol>
-&lt;p>one example to install docker in a yum-based distribution could look like this:&lt;/p>
-&lt;pre class="language-shell command-line" data-prompt="$">
-&lt;code>sudo dnf install -y yum-utils
+&lt;p>one example to install docker in a yum-based distribution could look like this:
+&lt;pre class=" command-line" data-prompt="$"
+>&lt;code class="language-"
+>sudo dnf install -y yum-utils
 sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 sudo dnf install docker-ce docker-ce-cli containerd.io
 sudo systemctl enable docker
@@ -64,8 +65,8 @@ sudo docker info
 sudo groupadd docker
 sudo usermod -aG docker $USER
 sudo chown root:docker /var/run/docker.sock
-newgrp docker&lt;/code>
-&lt;/pre>
+newgrp docker&lt;/code>&lt;/pre>
+&lt;/p>
 &lt;ol start="2">
 &lt;li>
 &lt;p>Create a local folder where the downloaded applications will be stored, e.g. ~/neurodesktop-storage&lt;/p>
@@ -74,14 +75,14 @@ newgrp docker&lt;/code>
 &lt;p>Open a terminal, and type the folowing command to automatically download the neurodesktop container and run it (Mac, Windows, Linux commands listed below)&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;pre class="language-shell command-line" data-prompt="$" data-output="2-6">
-&lt;code>sudo docker run \
+&lt;pre class=" command-line" data-prompt="$" data-output="2-6"
+>&lt;code class="language-"
+>sudo docker run \
 --shm-size=1gb -it --privileged --name neurodesktop \
 -v ~/neurodesktop-storage:/neurodesktop-storage \
--e HOST_UID="$(id -u)" -e HOST_GID="$(id -g)" \
+-e HOST_UID=&amp;#34;$(id -u)&amp;#34; -e HOST_GID=&amp;#34;$(id -g)&amp;#34; \
 -p 8080:8080 -h neurodesktop-20210929 \
-vnmd/neurodesktop:20210929&lt;/code>
-&lt;/pre>
+vnmd/neurodesktop:20210929&lt;/code>&lt;/pre>
 &lt;!-- neurodesktop version found in neurodesk.github.io/data/neurodesktop.toml -->
 &lt;p>(notice: if you get errors in neurodesktop then check if the ~/neurodesktop-storage directory is writable to all users, otherwise run &lt;code>chmod a+rwx ~/neurodesktop-storage&lt;/code>)&lt;/p>
 &lt;ol start="4">
@@ -106,66 +107,73 @@ vnmd/neurodesktop:20210929&lt;/code>
 &lt;p>Press control-C&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>Type:&lt;/p>
+&lt;p>Type:
+&lt;pre class=" command-line" data-prompt="$"
+>&lt;code class="language-"
+>docker stop neurodesktop&lt;/code>&lt;/pre>
+&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Type:
+&lt;pre class=" command-line" data-prompt="$"
+>&lt;code class="language-"
+>docker rm neurodesktop&lt;/code>&lt;/pre>
+&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;pre class="language-shell command-line" data-prompt="$">
-&lt;code>docker stop neurodesktop&lt;/code>
-&lt;/pre>
-&lt;ol start="4">
-&lt;li>Type:&lt;/li>
-&lt;/ol>
-&lt;pre class="language-shell command-line" data-prompt="$">
-&lt;code>docker rm neurodesktop&lt;/code>
-&lt;/pre>
 &lt;h2 id="gpu-support">GPU support&lt;/h2>
-&lt;pre class="language-shell command-line" data-prompt="$" data-output="4-9">
-&lt;code>sudo yum install nvidia-container-toolkit -y&lt;/code>
-&lt;/pre>
-&lt;pre class="language-shell command-line" data-prompt="$" data-output="2-9">
-&lt;code>sudo docker run \
+&lt;pre class=" command-line" data-prompt="$" data-output="4-9"
+>&lt;code class="language-"
+>sudo yum install nvidia-container-toolkit -y&lt;/code>&lt;/pre>
+&lt;pre class=" command-line" data-prompt="$" data-output="2-9"
+>&lt;code class="language-"
+>sudo docker run \
 --shm-size=1gb -it --privileged --name neurodesktop \
 -v ~/neurodesktop-storage:/neurodesktop-storage \
--e HOST_UID="$(id -u)" -e HOST_GID="$(id -g)" \
+-e HOST_UID=&amp;#34;$(id -u)&amp;#34; -e HOST_GID=&amp;#34;$(id -g)&amp;#34; \
 -e NVIDIA_VISIBLE_DEVICES=all \
 -p 8080:8080 -h neurodesktop-20210929 \
-vnmd/neurodesktop:20210929&lt;/code>
-&lt;/pre>
+vnmd/neurodesktop:20210929&lt;/code>&lt;/pre>
 &lt;blockquote>
-&lt;p>Try the following if there are issues with the previous command&lt;/p>
-&lt;/blockquote>
-&lt;pre class="language-shell command-line" data-prompt="$" data-output="2-9">
-&lt;code>sudo docker run \
+&lt;p>Try the following if there are issues with the previous command
+E
+&lt;pre class=" command-line" data-prompt="$" data-output="2-9"
+>&lt;code class="language-"
+>sudo docker run \
 --shm-size=1gb -it --privileged --name neurodesktop \
 -v ~/neurodesktop-storage:/neurodesktop-storage \
--e HOST_UID="$(id -u)" -e HOST_GID="$(id -g)" \
+-e HOST_UID=&amp;#34;$(id -u)&amp;#34; -e HOST_GID=&amp;#34;$(id -g)&amp;#34; \
 -e NVIDIA_VISIBLE_DEVICES=all \
 -e NVIDIA_DISABLE_REQUIRE=1 \
 --gpus all \
 -p 8080:8080 -h neurodesktop-20210929 \
-vnmd/neurodesktop:20210929&lt;/code>
-&lt;/pre>
+vnmd/neurodesktop:20210929&lt;/code>&lt;/pre>
+&lt;/p>
+&lt;/blockquote>
 &lt;!-- neurodesktop version found in neurodesk.github.io/data/neurodesktop.toml -->
-&lt;p>Then inside the desktop container:&lt;/p>
-&lt;pre class="language-shell command-line" data-prompt="$">
-&lt;code>sudo apt update
-sudo apt install libcudart10.1&lt;/code>
-&lt;/pre>
-&lt;p>Test in desktop image:&lt;/p>
-&lt;pre class="language-shell command-line" data-prompt="$">
-&lt;code>python
+&lt;p>Then inside the desktop container:
+&lt;pre class=" command-line" data-prompt="$"
+>&lt;code class="language-"
+>sudo apt update
+sudo apt install libcudart10.1&lt;/code>&lt;/pre>
+&lt;/p>
+&lt;p>Test in desktop image:
+&lt;pre class=" command-line" data-prompt="$"
+>&lt;code class="language-"
+>python
 import tensorflow as tf
-print("Num GPUs Available: ", len(tf.config.list_physical_devices('GPU')))&lt;/code>
-&lt;/pre>
+print(&amp;#34;Num GPUs Available: &amp;#34;, len(tf.config.list_physical_devices(&amp;#39;GPU&amp;#39;)))&lt;/code>&lt;/pre>
+&lt;/p>
 &lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/135446560-d135f6ce-b699-4e46-8534-b72b4d9f2d41.png" alt="image">&lt;/p>
-&lt;p>Test in singularity container running inside desktop container:&lt;/p>
-&lt;pre class="language-shell command-line" data-prompt="$">
-&lt;code>singularity pull docker://tensorflow/tensorflow:latest-gpu
+&lt;p>Test in singularity container running inside desktop container:
+&lt;pre class=" command-line" data-prompt="$"
+>&lt;code class="language-"
+>singularity pull docker://tensorflow/tensorflow:latest-gpu
 singularity run --nv tensorflow_latest-gpu.sif
 python
 import tensorflow as tf
-print("Num GPUs Available: ", len(tf.config.list_physical_devices('GPU')))&lt;/code>
-&lt;/pre>
+print(&amp;#34;Num GPUs Available: &amp;#34;, len(tf.config.list_physical_devices(&amp;#39;GPU&amp;#39;)))&lt;/code>&lt;/pre>
+&lt;/p>
 &lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/135449288-6c3e9bbd-fe5f-4f43-aa4a-8a798ba629e6.png" alt="image">&lt;/p></description></item><item><title>Docs: MacOS</title><link>https://neurodesk.github.io/docs/neurodesktop/getting-started/mac/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/getting-started/mac/</guid><description>
 &lt;h2 id="minimum-system-requirements">Minimum System Requirements&lt;/h2>
 &lt;ol>
