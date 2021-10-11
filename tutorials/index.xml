@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>NeuroDesk – Tutorials</title><link>https://neurodesk.github.io/tutorials/</link><description>Recent content in Tutorials on NeuroDesk</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://neurodesk.github.io/tutorials/index.xml" rel="self" type="application/rss+xml"/><item><title>Tutorials: fMRI BIDS Conversion</title><link>https://neurodesk.github.io/tutorials/fmribids/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/tutorials/fmribids/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>NeuroDesk – Tutorials</title><link>https://neurodesk.github.io/tutorials/</link><description>Recent content in Tutorials on NeuroDesk</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://neurodesk.github.io/tutorials/index.xml" rel="self" type="application/rss+xml"/><item><title>Tutorials: fMRI BIDS Conversion</title><link/><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid/><description>
 &lt;h2 id="download-demo-data">Download demo data&lt;/h2>
 &lt;p>Here we would also like to show how to combine tools from different containers using the module system. Open a terminal and run:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">ml datalad/0.13.3
@@ -6,7 +6,8 @@ cd /neurodesktop-storage/
 datalad create bids-conversion
 cd bids-conversion/
 datalad clone --dataset . https://github.com/datalad/example-dicom-functional.git inputs/rawdata
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Tutorials: fMRIPrep</title><link>https://neurodesk.github.io/tutorials/fmriprep/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/tutorials/fmriprep/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Use this data set?:
+&lt;a href="https://www.fil.ion.ucl.ac.uk/spm/data/mmfaces/">https://www.fil.ion.ucl.ac.uk/spm/data/mmfaces/&lt;/a>&lt;/p></description></item><item><title>Tutorials: fMRIPrep</title><link/><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid/><description>
 &lt;p>fMRIPrep is a functional magnetic resonance imaging (fMRI) data preprocessing pipeline that is designed to provide an easily accessible, state-of-the-art interface that is robust to variations in scan acquisition protocols and that requires minimal user input, while providing easily interpretable and comprehensive error and output reporting. It performs basic processing steps (coregistration, normalization, unwarping, noise component extraction, segmentation, skullstripping etc.) providing outputs that can be easily submitted to a variety of group level analyses, including task-based or resting-state fMRI, graph theory measures, surface or volume-based statistics, etc.&lt;/p>
 &lt;h2 id="download-demo-data">Download demo data&lt;/h2>
 &lt;p>We base this example on this blog-post: &lt;a href="https://reproducibility.stanford.edu/fmriprep-tutorial-running-the-docker-image/">https://reproducibility.stanford.edu/fmriprep-tutorial-running-the-docker-image/&lt;/a> and will also use the same data.&lt;/p>
@@ -141,7 +142,7 @@ attend75=list(epochs[&amp;#39;attend 7.5Hz K&amp;#39;].iter_evoked()))
 mne.viz.plot_compare_evokeds(evokeds, combine=&amp;#39;mean&amp;#39;)
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://neurodesk.github.io/EEG_Tutorial/EEGtut9.png" alt="EEGtut9" title="EEGtut9">&lt;/p>
 &lt;p>From this point, we can export our data to numpy arrays or keep it in the MNE data format for any further analyses we would like to run.&lt;/p>
-&lt;p>Congratulations! You’ve run your first analysis of EEG data in neurodesktop.&lt;/p></description></item><item><title>Tutorials: MRIQC</title><link>https://neurodesk.github.io/tutorials/mriqc/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/tutorials/mriqc/</guid><description>
+&lt;p>Congratulations! You’ve run your first analysis of EEG data in neurodesktop.&lt;/p></description></item><item><title>Tutorials: MRIQC</title><link/><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid/><description>
 &lt;h2 id="download-demo-data">Download demo data&lt;/h2>
 &lt;p>Open a terminal and run:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">
