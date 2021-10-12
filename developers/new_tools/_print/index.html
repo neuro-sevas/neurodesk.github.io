@@ -262,7 +262,10 @@ ml newapp/newappversion</code></pre>
 <li>Test the new container. Run some commands, to see all is good</li>
 <li>send a pull request to add the container to the apps.json file: <a href=https://github.com/NeuroDesk/neurocommand/blob/main/neurodesk/apps.json>https://github.com/NeuroDesk/neurocommand/blob/main/neurodesk/apps.json</a></li>
 <li>(once pull request is merged this will trigger an action to build the singularity container, distribute it in all object storage locations and on CVMFS, and it will update the menus in the desktop image on the next daily build)</li>
+<li>Check in the dev build if everything is ok before releasing a new version of Neurodesktop:</li>
 </ol>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>sudo docker pull vnmd/neurodesktop-dev:latest &amp;&amp; sudo docker run   --shm-size=1gb -it --privileged --name neurodesktop   -v ~/neurodesktop-storage:/neurodesktop-storage   -e HOST_UID=&#34;$(id -u)&#34; -e HOST_GID=&#34;$(id -g)&#34;   -p 8080:8080 -h neurodesktop-dev   vnmd/neurodesktop-dev:latest
+</code></pre></div>
 </div>
 <div class=td-content style=page-break-before:always>
 <h1 id=pg-f706aedba5bc93ee895c966642b91365>2 - Menu entries</h1>
