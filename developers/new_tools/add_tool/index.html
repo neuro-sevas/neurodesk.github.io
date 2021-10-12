@@ -21,11 +21,11 @@
 ">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://neurodesk.github.io/developers/new_tools/add_tool/"><meta property="article:section" content="developers">
-<meta property="article:modified_time" content="2021-10-13T09:28:53+10:00"><meta property="og:site_name" content="NeuroDesk">
+<meta property="article:modified_time" content="2021-10-13T09:43:33+10:00"><meta property="og:site_name" content="NeuroDesk">
 <meta itemprop=name content="Add tools">
 <meta itemprop=description content="Add a tool to neurodesktop
 ">
-<meta itemprop=dateModified content="2021-10-13T09:28:53+10:00">
+<meta itemprop=dateModified content="2021-10-13T09:43:33+10:00">
 <meta itemprop=wordCount content="688">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="Add tools">
@@ -304,9 +304,9 @@ git push</code></pre>
 <li>Go to neurocontainers/actions. Check that the most recent workflow run in the list terminated successfully (green). Otherwise, click on it, click on “build docker”, and the line that caused the error will be highlighted</li>
 <li>Check that the package shows up in repository
 Go to <a href="https://github.com/orgs/NeuroDesk/packages?repo_name=neurocontainers">https://github.com/orgs/NeuroDesk/packages?repo_name=neurocontainers</a> and check that the new package is listed</li>
-<li>Try to manually download the package to your Machine or VNM</li>
+<li>Try to manually download the package to your Machine or Neurodesktop</li>
 </ol>
-<pre class="language-shell command-line" data-prompt=$><code>bash /neurodesk/local/fetch_and_run.sh newapp newappversion builddate
+<pre class="language-shell command-line" data-prompt=$><code>bash /neurocommand/local/fetch_and_run.sh newapp newappversion builddate
 ml newapp/newappversion</code></pre>
 <ol start=13>
 <li>Test the new container. Run some commands, to see all is good</li>
@@ -314,10 +314,11 @@ ml newapp/newappversion</code></pre>
 <li>(once pull request is merged this will trigger an action to build the singularity container, distribute it in all object storage locations and on CVMFS, and it will update the menus in the desktop image on the next daily build)</li>
 <li>Check in the dev build if everything is ok before releasing a new version of Neurodesktop:</li>
 </ol>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>sudo docker pull vnmd/neurodesktop-dev:latest &amp;&amp; sudo docker run   --shm-size=1gb -it --privileged --name neurodesktop   -v ~/neurodesktop-storage:/neurodesktop-storage   -e HOST_UID=&#34;$(id -u)&#34; -e HOST_GID=&#34;$(id -g)&#34;   -p 8080:8080 -h neurodesktop-dev   vnmd/neurodesktop-dev:latest
-</code></pre></div>
+<pre class="language-shell command-line" data-prompt=$><code>
+sudo docker pull vnmd/neurodesktop-dev:latest && sudo docker run   --shm-size=1gb -it --privileged --name neurodesktop   -v ~/neurodesktop-storage:/neurodesktop-storage   -e HOST_UID="$(id -u)" -e HOST_GID="$(id -g)"   -p 8080:8080 -h neurodesktop-dev   vnmd/neurodesktop-dev:latest
+</code></pre>
 <div class="text-muted mt-5 pt-3 border-top">
-Last modified October 13, 2021: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/ea4b6a02902745fcaf646290a6a275580b160cb4>added instruction for testing in dev build (ea4b6a0)</a>
+Last modified October 13, 2021: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/95184cb75b431dd34ec5d1a4d3cbe5cd662fa434>updated container build and test instructions (95184cb)</a>
 </div>
 </div>
 </main>
