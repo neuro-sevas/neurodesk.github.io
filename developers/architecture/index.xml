@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>NeuroDesk – Architecture</title><link>https://neurodesk.github.io/developers/architecture/</link><description>Recent content in Architecture on NeuroDesk</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://neurodesk.github.io/developers/architecture/index.xml" rel="self" type="application/rss+xml"/><item><title>Developers: Neurodestkop Release Process</title><link>https://neurodesk.github.io/developers/architecture/release_process/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/developers/architecture/release_process/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>NeuroDesk – Architecture</title><link>https://neurodesk.github.io/developers/architecture/</link><description>Recent content in Architecture on NeuroDesk</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://neurodesk.github.io/developers/architecture/index.xml" rel="self" type="application/rss+xml"/><item><title>Developers: Neurodesktop Release Process</title><link>https://neurodesk.github.io/developers/architecture/release_process/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/developers/architecture/release_process/</guid><description>
 &lt;ol>
 &lt;li>Check if the last automated build ran OK: &lt;a href="https://github.com/NeuroDesk/neurodesktop/actions">https://github.com/NeuroDesk/neurodesktop/actions&lt;/a>&lt;/li>
 &lt;li>Run this build date and test if everything is ok and no regression happened&lt;/li>
@@ -48,4 +48,26 @@
 &lt;li>provides recipes for our containers built&lt;/li>
 &lt;li>we are providing pull requests back of recipes&lt;/li>
 &lt;li>CI: handled by &lt;a href="https://github.com/ReproNim/neurodocker">neurodocker&lt;/a> - testing of generating container recipes&lt;/li>
-&lt;/ul></description></item></channel></rss>
+&lt;/ul></description></item><item><title>Developers: Neurodesktop Dev</title><link>https://neurodesk.github.io/developers/architecture/neurodesk-dev/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/developers/architecture/neurodesk-dev/</guid><description>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Warning&lt;/h4>
+For development and testing only. Not recommended for production use
+&lt;/div>
+&lt;h2 id="building-neurodesktop-dev">Building neurodesktop-dev&lt;/h2>
+&lt;p>Dev builds can be triggered by Neurodesk admins from &lt;a href="https://github.com/NeuroDesk/neurodesktop/actions/workflows/build-neurodesktop-dev.yml">https://github.com/NeuroDesk/neurodesktop/actions/workflows/build-neurodesktop-dev.yml&lt;/a>&lt;/p>
+&lt;h2 id="running-latest-neurodesktop-dev">Running latest neurodesktop-dev&lt;/h2>
+&lt;h3 id="linux">Linux&lt;/h3>
+&lt;pre class="language-shell command-line" data-prompt="$" data-output="3-7">
+&lt;code>docker pull ghcr.io/neurodesk/neurodesktop/neurodesktop-dev:latest
+sudo docker run \
+--shm-size=1gb -it --privileged --name neurodesktop-dev \
+-v ~/neurodesktop-storage:/neurodesktop-storage \
+-e HOST_UID="$(id -u)" -e HOST_GID="$(id -g)" \
+-p 8080:8080 -h neurodesktop-dev \
+ghcr.io/neurodesk/neurodesktop/neurodesktop-dev:latest&lt;/code>
+&lt;/pre>
+&lt;h3 id="windows">Windows&lt;/h3>
+&lt;pre class="language-batch command-line" data-prompt=">">
+&lt;code>docker pull ghcr.io/neurodesk/neurodesktop/neurodesktop-dev:latest
+docker run --shm-size=1gb -it --privileged --name neurodesktop -v C:/neurodesktop-storage:/neurodesktop-storage -p 8080:8080 -h neurodesktop-dev ghcr.io/neurodesk/neurodesktop/neurodesktop-dev:latest&lt;/code>
+&lt;/pre></description></item></channel></rss>

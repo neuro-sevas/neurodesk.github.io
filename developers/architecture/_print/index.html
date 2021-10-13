@@ -86,14 +86,15 @@ This the multi-page printable view of this section.
 <h1 class=title>Architecture</h1>
 <div class=lead>The architecture of the Neurodesk ecosystem</div>
 <ul>
-<li>1: <a href=#pg-d2ee0d937ef9e23352513cee17667503>Neurodestkop Release Process</a></li>
+<li>1: <a href=#pg-d2ee0d937ef9e23352513cee17667503>Neurodesktop Release Process</a></li>
 <li>2: <a href=#pg-563591a7e975c9f90c317bf391d61e75>Neurodesk Architecture</a></li>
+<li>3: <a href=#pg-4e0ebcb307acf80f9f0f9d5fcf769e45>Neurodesktop Dev</a></li>
 </ul>
 <div class=content>
 </div>
 </div>
 <div class=td-content>
-<h1 id=pg-d2ee0d937ef9e23352513cee17667503>1 - Neurodestkop Release Process</h1>
+<h1 id=pg-d2ee0d937ef9e23352513cee17667503>1 - Neurodesktop Release Process</h1>
 <div class=lead>A description of what to do to create new release of our Neurodesktop</div>
 <ol>
 <li>Check if the last automated build ran OK: <a href=https://github.com/NeuroDesk/neurodesktop/actions>https://github.com/NeuroDesk/neurodesktop/actions</a></li>
@@ -149,6 +150,32 @@ This the multi-page printable view of this section.
 <li>we are providing pull requests back of recipes</li>
 <li>CI: handled by <a href=https://github.com/ReproNim/neurodocker>neurodocker</a> - testing of generating container recipes</li>
 </ul>
+</div>
+<div class=td-content style=page-break-before:always>
+<h1 id=pg-4e0ebcb307acf80f9f0f9d5fcf769e45>3 - Neurodesktop Dev</h1>
+<div class=lead>Testing the latest dev version of Neurodesktop</div>
+<div class="alert alert-warning" role=alert>
+<h4 class=alert-heading>Warning</h4>
+For development and testing only. Not recommended for production use
+</div>
+<h2 id=building-neurodesktop-dev>Building neurodesktop-dev</h2>
+<p>Dev builds can be triggered by Neurodesk admins from <a href=https://github.com/NeuroDesk/neurodesktop/actions/workflows/build-neurodesktop-dev.yml>https://github.com/NeuroDesk/neurodesktop/actions/workflows/build-neurodesktop-dev.yml</a></p>
+<h2 id=running-latest-neurodesktop-dev>Running latest neurodesktop-dev</h2>
+<h3 id=linux>Linux</h3>
+<pre class="language-shell command-line" data-prompt=$ data-output=3-7>
+<code>docker pull ghcr.io/neurodesk/neurodesktop/neurodesktop-dev:latest
+sudo docker run \
+  --shm-size=1gb -it --privileged --name neurodesktop-dev \
+  -v ~/neurodesktop-storage:/neurodesktop-storage \
+  -e HOST_UID="$(id -u)" -e HOST_GID="$(id -g)" \
+  -p 8080:8080 -h neurodesktop-dev \
+  ghcr.io/neurodesk/neurodesktop/neurodesktop-dev:latest</code>
+</pre>
+<h3 id=windows>Windows</h3>
+<pre class="language-batch command-line" data-prompt=">">
+<code>docker pull ghcr.io/neurodesk/neurodesktop/neurodesktop-dev:latest
+docker run --shm-size=1gb -it --privileged --name neurodesktop -v C:/neurodesktop-storage:/neurodesktop-storage -p 8080:8080 -h neurodesktop-dev ghcr.io/neurodesk/neurodesktop/neurodesktop-dev:latest</code>
+</pre>
 </div>
 </main>
 </div>
