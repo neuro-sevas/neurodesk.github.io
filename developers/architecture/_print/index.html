@@ -163,18 +163,18 @@ For development and testing only. Not recommended for production use
 <h2 id=running-latest-neurodesktop-dev>Running latest neurodesktop-dev</h2>
 <h3 id=linux>Linux</h3>
 <pre class="language-shell command-line" data-prompt=$ data-output=3-7>
-<code>docker pull ghcr.io/neurodesk/neurodesktop/neurodesktop-dev:latest
+<code>docker pull vnmd/neurodesktop-dev:latest
 sudo docker run \
   --shm-size=1gb -it --privileged --name neurodesktop-dev \
   -v ~/neurodesktop-storage:/neurodesktop-storage \
   -e HOST_UID="$(id -u)" -e HOST_GID="$(id -g)" \
   -p 8080:8080 -h neurodesktop-dev \
-  ghcr.io/neurodesk/neurodesktop/neurodesktop-dev:latest</code>
+  vnmd/neurodesktop-dev:latest</code>
 </pre>
 <h3 id=windows>Windows</h3>
 <pre class="language-batch command-line" data-prompt=">">
-<code>docker pull ghcr.io/neurodesk/neurodesktop/neurodesktop-dev:latest
-docker run --shm-size=1gb -it --privileged --name neurodesktop -v C:/neurodesktop-storage:/neurodesktop-storage -p 8080:8080 -h neurodesktop-dev ghcr.io/neurodesk/neurodesktop/neurodesktop-dev:latest</code>
+<code>docker pull vnmd/neurodesktop-dev:latest
+docker run --shm-size=1gb -it --privileged --name neurodesktop -v C:/neurodesktop-storage:/neurodesktop-storage -p 8080:8080 -h neurodesktop-dev vnmd/neurodesktop-dev:latest</code>
 </pre>
 </div>
 </main>
