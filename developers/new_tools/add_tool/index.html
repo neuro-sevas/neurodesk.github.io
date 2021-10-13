@@ -21,12 +21,12 @@
 ">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://neurodesk.github.io/developers/new_tools/add_tool/"><meta property="article:section" content="developers">
-<meta property="article:modified_time" content="2021-10-13T09:43:33+10:00"><meta property="og:site_name" content="NeuroDesk">
+<meta property="article:modified_time" content="2021-10-13T13:28:28+10:00"><meta property="og:site_name" content="NeuroDesk">
 <meta itemprop=name content="Add tools">
 <meta itemprop=description content="Add a tool to neurodesktop
 ">
-<meta itemprop=dateModified content="2021-10-13T09:43:33+10:00">
-<meta itemprop=wordCount content="688">
+<meta itemprop=dateModified content="2021-10-13T13:28:28+10:00">
+<meta itemprop=wordCount content="700">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="Add tools">
 <meta name=twitter:description content="Add a tool to neurodesktop
@@ -304,7 +304,7 @@ git push</code></pre>
 <li>Go to neurocontainers/actions. Check that the most recent workflow run in the list terminated successfully (green). Otherwise, click on it, click on “build docker”, and the line that caused the error will be highlighted</li>
 <li>Check that the package shows up in repository
 Go to <a href="https://github.com/orgs/NeuroDesk/packages?repo_name=neurocontainers">https://github.com/orgs/NeuroDesk/packages?repo_name=neurocontainers</a> and check that the new package is listed</li>
-<li>Try to manually download the package to your Machine or Neurodesktop</li>
+<li>Try to manually download the package to Neurodesktop (the version and date can be found in the github action under &ldquo;Set image varibables&rdquo;)</li>
 </ol>
 <pre class="language-shell command-line" data-prompt=$><code>bash /neurocommand/local/fetch_and_run.sh newapp newappversion builddate
 ml newapp/newappversion</code></pre>
@@ -318,7 +318,7 @@ ml newapp/newappversion</code></pre>
 sudo docker pull vnmd/neurodesktop-dev:latest && sudo docker run   --shm-size=1gb -it --privileged --name neurodesktop   -v ~/neurodesktop-storage:/neurodesktop-storage   -e HOST_UID="$(id -u)" -e HOST_GID="$(id -g)"   -p 8080:8080 -h neurodesktop-dev   vnmd/neurodesktop-dev:latest
 </code></pre>
 <div class="text-muted mt-5 pt-3 border-top">
-Last modified October 13, 2021: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/95184cb75b431dd34ec5d1a4d3cbe5cd662fa434>updated container build and test instructions (95184cb)</a>
+Last modified October 13, 2021: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/2bcf9682b45bf93769a773a2120b5ed37b9987d4>added where to find containe information (2bcf968)</a>
 </div>
 </div>
 </main>
