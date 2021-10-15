@@ -88,7 +88,11 @@ This the multi-page printable view of this section.
 <ul>
 <li>1: <a href=#pg-8947fbae52f877a79d7345c97564b0df>FreeSurfer</a></li>
 <li>2: <a href=#pg-dff3f0718f09082db0b6b10022115747>Analysing EEG Data with MNE</a></li>
-<li>3: <a href=#pg-47dce3cc3ec48699840e49a44f1653b1>Quantitative Susceptibility Mapping</a></li>
+<li>3: <a href=#pg-692ee0c0d1d645ba985513777e1a945e>MRI phase Processing</a></li>
+<ul>
+<li>3.1: <a href=#pg-ed3153aa84e753252b1a096df3880cc5>Quantitative Susceptibility Mapping</a></li>
+<li>3.2: <a href=#pg-3174433b4a44ad886176920795e9074f>SWI</a></li>
+</ul>
 </ul>
 <div class=content>
 </div>
@@ -243,7 +247,11 @@ mne.viz.plot_compare_evokeds(evokeds, combine=&#39;mean&#39;)
 <p>Congratulations! You’ve run your first analysis of EEG data in neurodesktop.</p>
 </div>
 <div class=td-content style=page-break-before:always>
-<h1 id=pg-47dce3cc3ec48699840e49a44f1653b1>3 - Quantitative Susceptibility Mapping</h1>
+<h1 id=pg-692ee0c0d1d645ba985513777e1a945e>3 - MRI phase Processing</h1>
+<div class=lead>Tutorials about processing MRI phase</div>
+</div>
+<div class=td-content>
+<h1 id=pg-ed3153aa84e753252b1a096df3880cc5>3.1 - Quantitative Susceptibility Mapping</h1>
 <div class=lead>Example workflow for Quantitative Susceptibility Mapping</div>
 <h2 id=quantitative-susceptibility-mapping-in-qsmxt>Quantitative Susceptibility Mapping in QSMxT</h2>
 <p>Neurodesk includes QSMxT, a complete and end-to-end QSM processing and analysis framework that excels at automatically reconstructing and processing QSM for large groups of participants.</p>
@@ -287,6 +295,37 @@ python3 /opt/QSMxT/run_1_dicomToBids.py 00_dicom 01_bids
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>python3 /opt/QSMxT/run_2_qsm.py 01_bids 02_qsm_output
 </code></pre></div></li>
 </ol>
+</div>
+<div class=td-content style=page-break-before:always>
+<h1 id=pg-3174433b4a44ad886176920795e9074f>3.2 - SWI</h1>
+<div class=lead>Example workflow for SWI processing</div>
+<h2 id=download-demo-data>Download demo data</h2>
+<p>Open a terminal and run:</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>pip install osfclient
+cd /neurodesktop-storage/
+osf -p ru43c fetch 01_bids.zip /neurodesktop-storage/swi-demo/01_bids.zip
+
+unzip /neurodesktop-storage/swi-demo/01_bids.zip -d /neurodesktop-storage/swi-demo/
+</code></pre></div><p>Open the CLEARSWI tool from the application menu:</p>
+<p>paste this julia script and execute</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>using CLEARSWI
+
+TEs = [20] 
+nifti_folder = &#34;/neurodesktop-storage/swi-demo/01_bids/sub-170705134431std1312211075243167001/ses-1/anat&#34;
+magfile = joinpath(nifti_folder, &#34;sub-170705134431std1312211075243167001_ses-1_acq-qsm_run-1_magnitude.nii.gz&#34;)
+phasefile = joinpath(nifti_folder, &#34;sub-170705134431std1312211075243167001_ses-1_acq-qsmPH00_run-1_phase.nii.gz&#34;) 
+
+mag = readmag(magfile);
+phase = readphase(phasefile);
+data = Data(mag, phase, mag.header, TEs);
+
+swi = calculateSWI(data);
+# mip = createIntensityProjection(swi, minimum); # minimum intensity projection, other Julia functions can be used instead of minimum
+mip = createMIP(swi); # shorthand for createIntensityProjection(swi, minimum)
+
+savenii(swi, &#34;/neurodesktop-storage/swi-demo/swi.nii&#34;; header=mag.header) 
+savenii(mip, &#34;/neurodesktop-storage/swi-demo/mip.nii&#34;; header=mag.header)
+</code></pre></div>
 </div>
 </main>
 </div>

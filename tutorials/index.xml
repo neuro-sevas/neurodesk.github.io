@@ -127,7 +127,7 @@ attend75=list(epochs[&amp;#39;attend 7.5Hz K&amp;#39;].iter_evoked()))
 mne.viz.plot_compare_evokeds(evokeds, combine=&amp;#39;mean&amp;#39;)
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://neurodesk.github.io/EEG_Tutorial/EEGtut9.png" alt="EEGtut9" title="EEGtut9">&lt;/p>
 &lt;p>From this point, we can export our data to numpy arrays or keep it in the MNE data format for any further analyses we would like to run.&lt;/p>
-&lt;p>Congratulations! You’ve run your first analysis of EEG data in neurodesktop.&lt;/p></description></item><item><title>Tutorials: Quantitative Susceptibility Mapping</title><link>https://neurodesk.github.io/tutorials/qsm/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/tutorials/qsm/</guid><description>
+&lt;p>Congratulations! You’ve run your first analysis of EEG data in neurodesktop.&lt;/p></description></item><item><title>Tutorials: Quantitative Susceptibility Mapping</title><link>https://neurodesk.github.io/tutorials/phase_processing/qsm/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/tutorials/phase_processing/qsm/</guid><description>
 &lt;h2 id="quantitative-susceptibility-mapping-in-qsmxt">Quantitative Susceptibility Mapping in QSMxT&lt;/h2>
 &lt;p>Neurodesk includes QSMxT, a complete and end-to-end QSM processing and analysis framework that excels at automatically reconstructing and processing QSM for large groups of participants.&lt;/p>
 &lt;p>QSMxT provides pipelines implemented in Python that:&lt;/p>
@@ -169,4 +169,26 @@ python3 /opt/QSMxT/run_1_dicomToBids.py 00_dicom 01_bids
 &lt;li>Run QSM pipeline:
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">python3 /opt/QSMxT/run_2_qsm.py 01_bids 02_qsm_output
 &lt;/code>&lt;/pre>&lt;/div>&lt;/li>
-&lt;/ol></description></item></channel></rss>
+&lt;/ol></description></item><item><title>Tutorials: SWI</title><link>https://neurodesk.github.io/tutorials/phase_processing/swi/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/tutorials/phase_processing/swi/</guid><description>
+&lt;h2 id="download-demo-data">Download demo data&lt;/h2>
+&lt;p>Open a terminal and run:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">pip install osfclient
+cd /neurodesktop-storage/
+osf -p ru43c fetch 01_bids.zip /neurodesktop-storage/swi-demo/01_bids.zip
+unzip /neurodesktop-storage/swi-demo/01_bids.zip -d /neurodesktop-storage/swi-demo/
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Open the CLEARSWI tool from the application menu:&lt;/p>
+&lt;p>paste this julia script and execute&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">using CLEARSWI
+TEs = [20]
+nifti_folder = &amp;#34;/neurodesktop-storage/swi-demo/01_bids/sub-170705134431std1312211075243167001/ses-1/anat&amp;#34;
+magfile = joinpath(nifti_folder, &amp;#34;sub-170705134431std1312211075243167001_ses-1_acq-qsm_run-1_magnitude.nii.gz&amp;#34;)
+phasefile = joinpath(nifti_folder, &amp;#34;sub-170705134431std1312211075243167001_ses-1_acq-qsmPH00_run-1_phase.nii.gz&amp;#34;)
+mag = readmag(magfile);
+phase = readphase(phasefile);
+data = Data(mag, phase, mag.header, TEs);
+swi = calculateSWI(data);
+# mip = createIntensityProjection(swi, minimum); # minimum intensity projection, other Julia functions can be used instead of minimum
+mip = createMIP(swi); # shorthand for createIntensityProjection(swi, minimum)
+savenii(swi, &amp;#34;/neurodesktop-storage/swi-demo/swi.nii&amp;#34;; header=mag.header)
+savenii(mip, &amp;#34;/neurodesktop-storage/swi-demo/mip.nii&amp;#34;; header=mag.header)
+&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>
