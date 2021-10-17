@@ -21,12 +21,12 @@
 ">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://neurodesk.github.io/docs/neurodesktop/getting-started/linux/"><meta property="article:section" content="docs">
-<meta property="article:modified_time" content="2021-10-07T23:51:25+10:00"><meta property="og:site_name" content="NeuroDesk">
+<meta property="article:modified_time" content="2021-10-17T20:32:16+10:00"><meta property="og:site_name" content="NeuroDesk">
 <meta itemprop=name content="Linux">
 <meta itemprop=description content="Install neurodesktop on Linux
 ">
-<meta itemprop=dateModified content="2021-10-07T23:51:25+10:00">
-<meta itemprop=wordCount content="454">
+<meta itemprop=dateModified content="2021-10-17T20:32:16+10:00">
+<meta itemprop=wordCount content="449">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="Linux">
 <meta name=twitter:description content="Install neurodesktop on Linux
@@ -296,8 +296,8 @@ sudo apt install libcudart10.1</code>
 <h4 id=running-tensorflow-w-gpu>Running tensorflow (w/ GPU)</h4>
 <h5 id=using-tensorflow-python>Using tensorflow (python)</h5>
 <pre class="language-shell command-line" data-prompt=$>
-<code>pip install tensorflow-gpu
-# OR conda install tensorflow-gpu
+<code>
+conda install tensorflow-gpu
 python</code>
 </pre>
 <pre class="language-python command-line" data-prompt=">>>">
@@ -317,7 +317,7 @@ print("Num GPUs Available: ", len(tf.config.list_physical_devices('GPU')))</code
 </pre>
 <p><img src=https://user-images.githubusercontent.com/4021595/135449288-6c3e9bbd-fe5f-4f43-aa4a-8a798ba629e6.png alt=image></p>
 <div class="text-muted mt-5 pt-3 border-top">
-Last modified October 7, 2021: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/c7920a2cc4ff4e76e3cf7c64149fe89956e3f189>Update linux with ubuntu instructions (c7920a2)</a>
+Last modified October 17, 2021: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/ade38c8f7f781686d73e3c04c526d2adaecfaa3e>pip install of tensorflow doens't work - has to be conda (ade38c8)</a>
 </div>
 </div>
 </main>
