@@ -48,8 +48,10 @@ cd /neurodesktop-storage/
 osf -p ru43c fetch 01_bids.zip /neurodesktop-storage/swi-demo/01_bids.zip
 unzip /neurodesktop-storage/swi-demo/01_bids.zip -d /neurodesktop-storage/swi-demo/
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Open the CLEARSWI tool from the application menu:&lt;/p>
-&lt;p>paste this julia script and execute&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">using CLEARSWI
+&lt;p>paste this julia script in a julia file and execute:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">cd /neurodesktop-storage/
+vi clearswi.jl
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">using CLEARSWI
 TEs = [20]
 nifti_folder = &amp;#34;/neurodesktop-storage/swi-demo/01_bids/sub-170705134431std1312211075243167001/ses-1/anat&amp;#34;
 magfile = joinpath(nifti_folder, &amp;#34;sub-170705134431std1312211075243167001_ses-1_acq-qsm_run-1_magnitude.nii.gz&amp;#34;)
@@ -62,4 +64,20 @@ swi = calculateSWI(data);
 mip = createMIP(swi); # shorthand for createIntensityProjection(swi, minimum)
 savenii(swi, &amp;#34;/neurodesktop-storage/swi-demo/swi.nii&amp;#34;; header=mag.header)
 savenii(mip, &amp;#34;/neurodesktop-storage/swi-demo/mip.nii&amp;#34;; header=mag.header)
-&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">julia clearswi.jl
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Tutorials: Unwrapping</title><link>https://neurodesk.github.io/tutorials/phase_processing/unwrapping/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/tutorials/phase_processing/unwrapping/</guid><description>
+&lt;h2 id="download-demo-data">Download demo data&lt;/h2>
+&lt;p>Open a terminal and run:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">pip install osfclient
+cd /neurodesktop-storage/
+osf -p ru43c fetch 01_bids.zip /neurodesktop-storage/swi-demo/01_bids.zip
+unzip /neurodesktop-storage/swi-demo/01_bids.zip -d /neurodesktop-storage/swi-demo/
+mkdir /neurodesktop-storage/romeo-demo/
+cp /neurodesktop-storage/swi-demo/01_bids/sub-170705134431std1312211075243167001/ses-1/anat/sub-170705134431std1312211075243167001_ses-1_acq-qsmPH00_run-1_phase.nii.gz /neurodesktop-storage/romeo-demo/phase.nii.gz
+cp /neurodesktop-storage/swi-demo/01_bids/sub-170705134431std1312211075243167001/ses-1/anat/sub-170705134431std1312211075243167001_ses-1_acq-qsm_run-1_magnitude.nii.gz /neurodesktop-storage/romeo-demo/mag.nii.gz
+gunzip /neurodesktop-storage/romeo-demo/mag.nii.gz
+gunzip /neurodesktop-storage/romeo-demo/phase.nii.gz
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="using-romeo-for-phase-unwrapping">Using ROMEO for phase unwrapping&lt;/h3>
+&lt;p>Open the ROMEO tool from the application menu and run:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">romeo -p /neurodesktop-storage/romeo-demo/phase.nii -m /neurodesktop-storage/romeo-demo/mag.nii -k nomask -o /neurodesktop-storage/romeo-demo/
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://neurodesk.github.io/MRIPhase_Tutorial/romeo.PNG" alt="Romeo" title="Romeo">&lt;/p></description></item></channel></rss>

@@ -21,12 +21,12 @@
 ">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://neurodesk.github.io/tutorials/phase_processing/swi/"><meta property="article:section" content="tutorials">
-<meta property="article:modified_time" content="2021-10-15T14:14:54+10:00"><meta property="og:site_name" content="NeuroDesk">
+<meta property="article:modified_time" content="2021-10-18T15:32:20+10:00"><meta property="og:site_name" content="NeuroDesk">
 <meta itemprop=name content="SWI">
 <meta itemprop=description content="Example workflow for SWI processing
 ">
-<meta itemprop=dateModified content="2021-10-15T14:14:54+10:00">
-<meta itemprop=wordCount content="100">
+<meta itemprop=dateModified content="2021-10-18T15:32:20+10:00">
+<meta itemprop=wordCount content="110">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="SWI">
 <meta name=twitter:description content="Example workflow for SWI processing
@@ -94,6 +94,8 @@
 <a href=/tutorials/phase_processing/qsm/ title="Quantitative Susceptibility Mapping" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-tutorialsphase_processingqsm><span>QSM</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id=m-tutorialsphase_processingswi-li>
 <a href=/tutorials/phase_processing/swi/ class="align-left pl-0 active td-sidebar-link td-sidebar-link__page" id=m-tutorialsphase_processingswi><span class=td-sidebar-nav-active-item>SWI</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-tutorialsphase_processingunwrapping-li>
+<a href=/tutorials/phase_processing/unwrapping/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-tutorialsphase_processingunwrapping><span>Unwrapping</span></a>
 </li>
 </ul>
 </li>
@@ -126,8 +128,10 @@ osf -p ru43c fetch 01_bids.zip /neurodesktop-storage/swi-demo/01_bids.zip
 
 unzip /neurodesktop-storage/swi-demo/01_bids.zip -d /neurodesktop-storage/swi-demo/
 </code></pre></div><p>Open the CLEARSWI tool from the application menu:</p>
-<p>paste this julia script and execute</p>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>using CLEARSWI
+<p>paste this julia script in a julia file and execute:</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>cd /neurodesktop-storage/
+vi clearswi.jl
+</code></pre></div><div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>using CLEARSWI
 
 TEs = [20] 
 nifti_folder = &#34;/neurodesktop-storage/swi-demo/01_bids/sub-170705134431std1312211075243167001/ses-1/anat&#34;
@@ -144,9 +148,10 @@ mip = createMIP(swi); # shorthand for createIntensityProjection(swi, minimum)
 
 savenii(swi, &#34;/neurodesktop-storage/swi-demo/swi.nii&#34;; header=mag.header) 
 savenii(mip, &#34;/neurodesktop-storage/swi-demo/mip.nii&#34;; header=mag.header)
+</code></pre></div><div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>julia clearswi.jl
 </code></pre></div>
 <div class="text-muted mt-5 pt-3 border-top">
-Last modified October 15, 2021: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/b7b8bcf2555f9737836c233112e47ada384ebb6b>added SWI and created subfolder (b7b8bcf)</a>
+Last modified October 18, 2021: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/376ae84f9a33d57321847c7b12ad193e94b426ea>update swi tutorial and added phase unwrapping (376ae84)</a>
 </div>
 </div>
 </main>
