@@ -21,12 +21,12 @@
 ">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://neurodesk.github.io/tutorials/phase_processing/swi/"><meta property="article:section" content="tutorials">
-<meta property="article:modified_time" content="2021-10-18T15:32:20+10:00"><meta property="og:site_name" content="NeuroDesk">
+<meta property="article:modified_time" content="2021-10-18T19:52:29+10:00"><meta property="og:site_name" content="NeuroDesk">
 <meta itemprop=name content="SWI">
 <meta itemprop=description content="Example workflow for SWI processing
 ">
-<meta itemprop=dateModified content="2021-10-18T15:32:20+10:00">
-<meta itemprop=wordCount content="110">
+<meta itemprop=dateModified content="2021-10-18T19:52:29+10:00">
+<meta itemprop=wordCount content="141">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="SWI">
 <meta name=twitter:description content="Example workflow for SWI processing
@@ -141,7 +141,8 @@ unzip /neurodesktop-storage/swi-demo/01_bids.zip -d /neurodesktop-storage/swi-de
 <p>paste this julia script in a julia file and execute:</p>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>cd /neurodesktop-storage/
 vi clearswi.jl
-</code></pre></div><div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>using CLEARSWI
+</code></pre></div><p>hit a or i and then paste this:</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>using CLEARSWI
 
 TEs = [20] 
 nifti_folder = &#34;/neurodesktop-storage/swi-demo/01_bids/sub-170705134431std1312211075243167001/ses-1/anat&#34;
@@ -158,10 +159,12 @@ mip = createMIP(swi); # shorthand for createIntensityProjection(swi, minimum)
 
 savenii(swi, &#34;/neurodesktop-storage/swi-demo/swi.nii&#34;; header=mag.header) 
 savenii(mip, &#34;/neurodesktop-storage/swi-demo/mip.nii&#34;; header=mag.header)
-</code></pre></div><div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>julia clearswi.jl
-</code></pre></div>
+</code></pre></div><p>hit SHIFT-Z-Z and run:</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>julia clearswi.jl
+</code></pre></div><p>Open ITK snap from the Visualization Application&rsquo;s menu and inspect the results (the outputs are in swi-demo/swi.nii and mip.nii)
+<img src=https://user-images.githubusercontent.com/4021595/137708852-6b7dd2c7-3e6f-42fd-88e6-06afe87a72a9.png alt=image></p>
 <div class="text-muted mt-5 pt-3 border-top">
-Last modified October 18, 2021: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/376ae84f9a33d57321847c7b12ad193e94b426ea>update swi tutorial and added phase unwrapping (376ae84)</a>
+Last modified October 18, 2021: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/cd7d3d0d8fc10d2a229648947440e3bca5acab7a>added screenshot (cd7d3d0)</a>
 </div>
 </div>
 </main>

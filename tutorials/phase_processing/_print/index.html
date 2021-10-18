@@ -153,7 +153,8 @@ unzip /neurodesktop-storage/swi-demo/01_bids.zip -d /neurodesktop-storage/swi-de
 <p>paste this julia script in a julia file and execute:</p>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>cd /neurodesktop-storage/
 vi clearswi.jl
-</code></pre></div><div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>using CLEARSWI
+</code></pre></div><p>hit a or i and then paste this:</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>using CLEARSWI
 
 TEs = [20] 
 nifti_folder = &#34;/neurodesktop-storage/swi-demo/01_bids/sub-170705134431std1312211075243167001/ses-1/anat&#34;
@@ -170,8 +171,10 @@ mip = createMIP(swi); # shorthand for createIntensityProjection(swi, minimum)
 
 savenii(swi, &#34;/neurodesktop-storage/swi-demo/swi.nii&#34;; header=mag.header) 
 savenii(mip, &#34;/neurodesktop-storage/swi-demo/mip.nii&#34;; header=mag.header)
-</code></pre></div><div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>julia clearswi.jl
-</code></pre></div>
+</code></pre></div><p>hit SHIFT-Z-Z and run:</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>julia clearswi.jl
+</code></pre></div><p>Open ITK snap from the Visualization Application&rsquo;s menu and inspect the results (the outputs are in swi-demo/swi.nii and mip.nii)
+<img src=https://user-images.githubusercontent.com/4021595/137708852-6b7dd2c7-3e6f-42fd-88e6-06afe87a72a9.png alt=image></p>
 </div>
 <div class=td-content style=page-break-before:always>
 <h1 id=pg-359022268721811f542c4065f38891ed>3 - Unwrapping</h1>
