@@ -19,11 +19,11 @@
 <meta property="og:description" content="Previous releases of neurodesktop">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://neurodesk.github.io/docs/neurodesktop/release-history/"><meta property="article:section" content="docs">
-<meta property="article:modified_time" content="2021-10-01T01:42:40+10:00"><meta property="og:site_name" content="NeuroDesk">
+<meta property="article:modified_time" content="2021-10-18T20:03:07+10:00"><meta property="og:site_name" content="NeuroDesk">
 <meta itemprop=name content="Release History">
 <meta itemprop=description content="Previous releases of neurodesktop">
-<meta itemprop=dateModified content="2021-10-01T01:42:40+10:00">
-<meta itemprop=wordCount content="193">
+<meta itemprop=dateModified content="2021-10-18T20:03:07+10:00">
+<meta itemprop=wordCount content="270">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="Release History">
 <meta name=twitter:description content="Previous releases of neurodesktop">
@@ -157,6 +157,7 @@
 </div>
 <div class=td-toc><nav id=TableOfContents>
 <ul>
+<li><a href=#20211018>20211018</a></li>
 <li><a href=#20210929>20210929</a></li>
 <li><a href=#20210923>20210923</a></li>
 <li><a href=#20210918>20210918</a></li>
@@ -171,6 +172,14 @@
 <div class=lead>Previous releases of neurodesktop</div>
 <header class=article-meta>
 </header>
+<h2 id=20211018>20211018</h2>
+<ul>
+<li>added Rstudio, R and multiple R packages (plotly, car, tidyverse, &mldr;)</li>
+<li>added ClearSWI and ROMEO for MRI phase processing (including new Tutorials: <a href=https://neurodesk.github.io/tutorials/phase_processing/>https://neurodesk.github.io/tutorials/phase_processing/</a>)</li>
+<li>added more categories in applications menu (Body, Electrophysiology, Hippocampus, Phase Processing, Rodent Imaging, Shape Analysis, Spine, Statistics)</li>
+<li>bugfix: improved startup time of the desktop container (miniconda in homedirectory was causing chmod slowdown)</li>
+<li>bugfix: ssh, vnc and rdp servers are now restarted in case the container was stopped and started again (e.g. on Standby)</li>
+</ul>
 <h2 id=20210929>20210929</h2>
 <ul>
 <li>fixed naming of aidmri to aidamri and added new category &ldquo;Rodent Imaging&rdquo;</li>
@@ -200,7 +209,7 @@
 <li>containers are mounted by default from CVMFS, but this can be deactivated by adding <code>-e CVMFS_DISABLE=true</code> to the docker call</li>
 </ul>
 <div class="text-muted mt-5 pt-3 border-top">
-Last modified October 1, 2021: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/e324ca3bc282c2a51e7730e6728169a1ebeedcc4>Add native vs code connection instructions For local windows host (e324ca3)</a>
+Last modified October 18, 2021: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/ef143300bd3a8c9ad23f45a9ca5ad63abb7e0b8b>released new version (ef14330)</a>
 </div>
 </div>
 </main>

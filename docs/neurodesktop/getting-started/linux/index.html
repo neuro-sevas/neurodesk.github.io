@@ -234,8 +234,8 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io</code>
   --shm-size=1gb -it --privileged --name neurodesktop \
   -v ~/neurodesktop-storage:/neurodesktop-storage \
   -e HOST_UID="$(id -u)" -e HOST_GID="$(id -g)" \
-  -p 8080:8080 -h neurodesktop-20210929 \
-  vnmd/neurodesktop:20210929</code>
+  -p 8080:8080 -h neurodesktop-20211018 \
+  vnmd/neurodesktop:20211018</code>
 </pre>
 <p>(notice: if you get errors in neurodesktop then check if the ~/neurodesktop-storage directory is writable to all users, otherwise run <code>chmod a+rwx ~/neurodesktop-storage</code>)</p>
 <ol start=4>
@@ -285,8 +285,8 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io</code>
   -e HOST_UID="$(id -u)" -e HOST_GID="$(id -g)" \
   -e NVIDIA_VISIBLE_DEVICES=all \
   -e NVIDIA_DISABLE_REQUIRE=1 \
-  -p 8080:8080 -h neurodesktop-20210929 \
-  vnmd/neurodesktop:20210929</code>
+  -p 8080:8080 -h neurodesktop-20211018 \
+  vnmd/neurodesktop:20211018</code>
 </pre>
 <p>Then inside the neurodesktop container run:</p>
 <pre class="language-shell command-line" data-prompt=$>

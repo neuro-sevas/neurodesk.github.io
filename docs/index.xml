@@ -93,8 +93,8 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io&lt;/code>
 --shm-size=1gb -it --privileged --name neurodesktop \
 -v ~/neurodesktop-storage:/neurodesktop-storage \
 -e HOST_UID="$(id -u)" -e HOST_GID="$(id -g)" \
--p 8080:8080 -h neurodesktop-20210929 \
-vnmd/neurodesktop:20210929&lt;/code>
+-p 8080:8080 -h neurodesktop-20211018 \
+vnmd/neurodesktop:20211018&lt;/code>
 &lt;/pre>
 &lt;!-- neurodesktop version found in neurodesk.github.io/data/neurodesktop.toml -->
 &lt;p>(notice: if you get errors in neurodesktop then check if the ~/neurodesktop-storage directory is writable to all users, otherwise run &lt;code>chmod a+rwx ~/neurodesktop-storage&lt;/code>)&lt;/p>
@@ -145,8 +145,8 @@ vnmd/neurodesktop:20210929&lt;/code>
 -e HOST_UID="$(id -u)" -e HOST_GID="$(id -g)" \
 -e NVIDIA_VISIBLE_DEVICES=all \
 -e NVIDIA_DISABLE_REQUIRE=1 \
--p 8080:8080 -h neurodesktop-20210929 \
-vnmd/neurodesktop:20210929&lt;/code>
+-p 8080:8080 -h neurodesktop-20211018 \
+vnmd/neurodesktop:20211018&lt;/code>
 &lt;/pre>
 &lt;!-- neurodesktop version found in neurodesk.github.io/data/neurodesktop.toml -->
 &lt;p>Then inside the neurodesktop container run:&lt;/p>
@@ -194,7 +194,7 @@ print("Num GPUs Available: ", len(tf.config.list_physical_devices('GPU')))&lt;/c
 &lt;p>Open a terminal, and type the folowing command to automatically download the neurodesktop container and run it&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">docker run --shm-size&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>1gb -it --privileged --name neurodesktop -v ~/neurodesktop-storage:/neurodesktop-storage -p 8080:8080 -h neurodesktop-20210929 vnmd/neurodesktop:20210929
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">docker run --shm-size&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>1gb -it --privileged --name neurodesktop -v ~/neurodesktop-storage:/neurodesktop-storage -p 8080:8080 -h neurodesktop-20211018 vnmd/neurodesktop:20211018
 &lt;/code>&lt;/pre>&lt;/div>&lt;!-- neurodesktop version found in neurodesk.github.io/data/neurodesktop.toml -->
 &lt;p>(notice: There is a bug in docker 3.3.0 for Mac that makes this command not run correctly and there will be no application menu when you start the desktop. Update your docker version when you see this!)&lt;/p>
 &lt;p>if you get errors in neurodesktop then check if the ~/neurodesktop-storage directory is writable to all users, otherwise run &lt;code>chmod a+rwx ~/neurodesktop-storage&lt;/code>&lt;/p>
@@ -248,7 +248,7 @@ print("Num GPUs Available: ", len(tf.config.list_physical_devices('GPU')))&lt;/c
 &lt;h2 id="how-to-force-a-complete-container-download-to-your-system">How to force a complete container download to your system&lt;/h2>
 &lt;p>To increase speed and reliability of Neurodesktop we mount the application containers from a CVMFS mount and download only the files required to run your current task. Although we aim to keep everything on there reproducible, there might be a reason that you want to fully download the containers to your system. You can force this behaviour by adding another parameter to the docker call: &lt;code>-e CVMFS_DISABLE=true&lt;/code>&lt;/p>
 &lt;p>For windows an example would look like this:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">docker run --shm-size&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>1gb -it --privileged --name neurodesktop -v C:/neurodesktop-storage:/neurodesktop-storage -e &lt;span style="color:#000">CVMFS_DISABLE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#204a87">true&lt;/span> -p 8080:8080 -h neurodesktop-20210929 vnmd/neurodesktop:20210929
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">docker run --shm-size&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>1gb -it --privileged --name neurodesktop -v C:/neurodesktop-storage:/neurodesktop-storage -e &lt;span style="color:#000">CVMFS_DISABLE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#204a87">true&lt;/span> -p 8080:8080 -h neurodesktop-20211018 vnmd/neurodesktop:20211018
 &lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Windows</title><link>https://neurodesk.github.io/docs/neurocommand/getting-started/windows/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurocommand/getting-started/windows/</guid><description>
 &lt;h2 id="wsl-w-ubuntu--lxde">WSL (w/ Ubuntu + LXDE)&lt;/h2>
 &lt;p>For more information on WSL: &lt;a href="https://docs.microsoft.com/en-us/windows/wsl">https://docs.microsoft.com/en-us/windows/wsl&lt;/a>&lt;/p>
@@ -335,7 +335,7 @@ Change &lt;code>port=3389&lt;/code> to &lt;code>port=3390&lt;/code> and save&lt;
 &lt;/li>
 &lt;/ol>
 &lt;pre class="language-batch command-line" data-prompt=">">
-&lt;code>docker run --shm-size=1gb -it --privileged --name neurodesktop -v C:/neurodesktop-storage:/neurodesktop-storage -p 8080:8080 -h neurodesktop-20210929 vnmd/neurodesktop:20210929&lt;/code>
+&lt;code>docker run --shm-size=1gb -it --privileged --name neurodesktop -v C:/neurodesktop-storage:/neurodesktop-storage -p 8080:8080 -h neurodesktop-20211018 vnmd/neurodesktop:20211018&lt;/code>
 &lt;/pre>
 &lt;!-- neurodesktop version found in neurodesk.github.io/data/neurodesktop.toml -->
 &lt;ol start="3">
@@ -661,8 +661,8 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io&lt;/code>
 --shm-size=1gb -it --privileged --name neurodesktop \
 -v ~/neurodesktop-storage:/neurodesktop-storage \
 -e HOST_UID="$(id -u)" -e HOST_GID="$(id -g)" \
--p 8080:8080 -h neurodesktop-20210929 \
-vnmd/neurodesktop:20210929&lt;/code>
+-p 8080:8080 -h neurodesktop-20211018 \
+vnmd/neurodesktop:20211018&lt;/code>
 &lt;/pre>
 &lt;!-- neurodesktop version found in neurodesk.github.io/data/neurodesktop.toml -->
 &lt;p>(notice: if you get errors in neurodesktop then check if the ~/neurodesktop-storage directory is writable to all users, otherwise run &lt;code>chmod a+rwx ~/neurodesktop-storage&lt;/code>)&lt;/p>
@@ -730,6 +730,14 @@ We recommend the &lt;em>manual&lt;/em> install instructions, as the simplified i
 &lt;p>If this is the case, follow the manual install instructions to install &lt;a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">WSL 2&lt;/a> (including installation of Ubuntu through Microsoft Store).&lt;/p>
 &lt;h2 id="not-enough-free-space-on-the-partition-in-windows-and-wsl2">Not enough free space on the partition in Windows and WSL2&lt;/h2>
 &lt;p>This could help: &lt;a href="https://yjmantilla.github.io/tutorials/wsl2-move-vhdx.html">https://yjmantilla.github.io/tutorials/wsl2-move-vhdx.html&lt;/a>&lt;/p></description></item><item><title>Docs: Release History</title><link>https://neurodesk.github.io/docs/neurodesktop/release-history/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/release-history/</guid><description>
+&lt;h2 id="20211018">20211018&lt;/h2>
+&lt;ul>
+&lt;li>added Rstudio, R and multiple R packages (plotly, car, tidyverse, &amp;hellip;)&lt;/li>
+&lt;li>added ClearSWI and ROMEO for MRI phase processing (including new Tutorials: &lt;a href="https://neurodesk.github.io/tutorials/phase_processing/">https://neurodesk.github.io/tutorials/phase_processing/&lt;/a>)&lt;/li>
+&lt;li>added more categories in applications menu (Body, Electrophysiology, Hippocampus, Phase Processing, Rodent Imaging, Shape Analysis, Spine, Statistics)&lt;/li>
+&lt;li>bugfix: improved startup time of the desktop container (miniconda in homedirectory was causing chmod slowdown)&lt;/li>
+&lt;li>bugfix: ssh, vnc and rdp servers are now restarted in case the container was stopped and started again (e.g. on Standby)&lt;/li>
+&lt;/ul>
 &lt;h2 id="20210929">20210929&lt;/h2>
 &lt;ul>
 &lt;li>fixed naming of aidmri to aidamri and added new category &amp;ldquo;Rodent Imaging&amp;rdquo;&lt;/li>
