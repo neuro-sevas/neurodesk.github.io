@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>NeuroDesk – Tutorials</title><link>https://neurodesk.github.io/tutorials/</link><description>Recent content in Tutorials on NeuroDesk</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://neurodesk.github.io/tutorials/index.xml" rel="self" type="application/rss+xml"/><item><title>Tutorials: FreeSurfer</title><link>https://neurodesk.github.io/tutorials/freesurfer/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/tutorials/freesurfer/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>NeuroDesk – Tutorials</title><link>https://neurodesk.github.io/tutorials/</link><description>Recent content in Tutorials on NeuroDesk</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://neurodesk.github.io/tutorials/index.xml" rel="self" type="application/rss+xml"/><item><title>Tutorials: FreeSurfer</title><link>https://neurodesk.github.io/tutorials/structural_imaging/freesurfer/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/tutorials/structural_imaging/freesurfer/</guid><description>
 &lt;h2 id="download-demo-data">Download demo data&lt;/h2>
 &lt;p>Open a terminal and run:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">pip install osfclient
@@ -19,7 +19,7 @@ source /opt/freesurfer-7.1.1/SetUpFreeSurfer.sh
 export SUBJECTS_DIR=/neurodesktop-storage/freesurfer-output
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Run Recon all pipeline:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">recon-all -subject test-subject -i /neurodesktop-storage/sub-01_ses-01_7T_T1w_defaced.nii.gz -all
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Tutorials: Analysing EEG Data with MNE</title><link>https://neurodesk.github.io/tutorials/eeg_mne-python/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/tutorials/eeg_mne-python/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Tutorials: Analysing EEG Data with MNE</title><link>https://neurodesk.github.io/tutorials/electrophysiology/eeg_mne-python/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/tutorials/electrophysiology/eeg_mne-python/</guid><description>
 &lt;h2 id="getting-started">Getting started&lt;/h2>
 &lt;p>Open Visual Studio Code:&lt;/p>
 &lt;p>&lt;img src="https://neurodesk.github.io/EEG_Tutorial/EEGtut1.png" alt="EEGtut1" title="EEGtut1">&lt;/p>

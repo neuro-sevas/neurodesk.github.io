@@ -2,8 +2,8 @@
 <head>
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
-<meta name=generator content="Hugo 0.88.1"><link rel=canonical type=text/html href=https://neurodesk.github.io/tutorials/>
-<link rel=alternate type=application/rss+xml href=https://neurodesk.github.io/tutorials/index.xml>
+<meta name=generator content="Hugo 0.88.1"><link rel=canonical type=text/html href=https://neurodesk.github.io/tutorials/electrophysiology/>
+<link rel=alternate type=application/rss+xml href=https://neurodesk.github.io/tutorials/electrophysiology/index.xml>
 <meta name=ROBOTS content="NOINDEX, NOFOLLOW">
 <link rel="shortcut icon" href=/favicons/favicon.ico>
 <link rel=apple-touch-icon href=/favicons/apple-touch-icon-180x180.png sizes=180x180>
@@ -15,19 +15,19 @@
 <link rel=icon type=image/png href=/favicons/android-96x96.png sizes=96x96>
 <link rel=icon type=image/png href=/favicons/android-144x144.png sizes=144x144>
 <link rel=icon type=image/png href=/favicons/android-192x192.png sizes=192x192>
-<title>Tutorials | NeuroDesk</title>
-<meta name=description content="Tutorials
+<title>Electrophysiology | NeuroDesk</title>
+<meta name=description content="Tutorials about processing of EEG/MEG/ECoG data
 ">
-<meta property="og:title" content="Tutorials">
-<meta property="og:description" content="Tutorials
+<meta property="og:title" content="Electrophysiology">
+<meta property="og:description" content="Tutorials about processing of EEG/MEG/ECoG data
 ">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://neurodesk.github.io/tutorials/"><meta property="og:site_name" content="NeuroDesk">
-<meta itemprop=name content="Tutorials">
-<meta itemprop=description content="Tutorials
+<meta property="og:url" content="https://neurodesk.github.io/tutorials/electrophysiology/"><meta property="og:site_name" content="NeuroDesk">
+<meta itemprop=name content="Electrophysiology">
+<meta itemprop=description content="Tutorials about processing of EEG/MEG/ECoG data
 "><meta name=twitter:card content="summary">
-<meta name=twitter:title content="Tutorials">
-<meta name=twitter:description content="Tutorials
+<meta name=twitter:title content="Electrophysiology">
+<meta name=twitter:description content="Tutorials about processing of EEG/MEG/ECoG data
 ">
 <link rel=preload href=/scss/main.min.07088c7cdf0ef572c4320691d48af4ae3ff0098f2abcc47cee83589c7933226a.css as=style>
 <link href=/scss/main.min.07088c7cdf0ef572c4320691d48af4ae3ff0098f2abcc47cee83589c7933226a.css rel=stylesheet integrity>
@@ -80,36 +80,19 @@
 This the multi-page printable view of this section.
 <a href=# onclick="return print(),!1">Click here to print</a>.
 </p><p>
-<a href=/tutorials/>Return to the regular view of this page</a>.
+<a href=/tutorials/electrophysiology/>Return to the regular view of this page</a>.
 </p>
 </div>
-<h1 class=title>Tutorials</h1>
-<div class=lead>Tutorials</div>
+<h1 class=title>Electrophysiology</h1>
+<div class=lead>Tutorials about processing of EEG/MEG/ECoG data</div>
 <ul>
-<li>1: <a href=#pg-49ca1e3e5876541479c39ca4c2df0968>Electrophysiology</a></li>
-<ul>
-<li>1.1: <a href=#pg-7212f82ad48dcf25da7a87aef4dbbdaf>Analysing EEG Data with MNE</a></li>
-</ul>
-<li>2: <a href=#pg-692ee0c0d1d645ba985513777e1a945e>MRI phase Processing</a></li>
-<ul>
-<li>2.1: <a href=#pg-ed3153aa84e753252b1a096df3880cc5>Quantitative Susceptibility Mapping</a></li>
-<li>2.2: <a href=#pg-3174433b4a44ad886176920795e9074f>SWI</a></li>
-<li>2.3: <a href=#pg-359022268721811f542c4065f38891ed>Unwrapping</a></li>
-</ul>
-<li>3: <a href=#pg-15c972db4ef066d5b196709a32931050>Structural Imaging</a></li>
-<ul>
-<li>3.1: <a href=#pg-0fe48d9b685f097a75026e660a1fae15>FreeSurfer</a></li>
-</ul>
+<li>1: <a href=#pg-7212f82ad48dcf25da7a87aef4dbbdaf>Analysing EEG Data with MNE</a></li>
 </ul>
 <div class=content>
 </div>
 </div>
 <div class=td-content>
-<h1 id=pg-49ca1e3e5876541479c39ca4c2df0968>1 - Electrophysiology</h1>
-<div class=lead>Tutorials about processing of EEG/MEG/ECoG data</div>
-</div>
-<div class=td-content>
-<h1 id=pg-7212f82ad48dcf25da7a87aef4dbbdaf>1.1 - Analysing EEG Data with MNE</h1>
+<h1 id=pg-7212f82ad48dcf25da7a87aef4dbbdaf>1 - Analysing EEG Data with MNE</h1>
 <div class=lead>Use mne-python to load, pre-process, and plot example EEG data in a jupyter notebook through vscode.</div>
 <h2 id=getting-started>Getting started</h2>
 <p>Open Visual Studio Code:</p>
@@ -230,145 +213,6 @@ mne.viz.plot_compare_evokeds(evokeds, combine=&#39;mean&#39;)
 </code></pre></div><p><img src=/EEG_Tutorial/EEGtut9.png alt=EEGtut9 title=EEGtut9></p>
 <p>From this point, we can export our data to numpy arrays or keep it in the MNE data format for any further analyses we would like to run.</p>
 <p>Congratulations! You’ve run your first analysis of EEG data in neurodesktop.</p>
-</div>
-<div class=td-content style=page-break-before:always>
-<h1 id=pg-692ee0c0d1d645ba985513777e1a945e>2 - MRI phase Processing</h1>
-<div class=lead>Tutorials about processing MRI phase</div>
-</div>
-<div class=td-content>
-<h1 id=pg-ed3153aa84e753252b1a096df3880cc5>2.1 - Quantitative Susceptibility Mapping</h1>
-<div class=lead>Example workflow for Quantitative Susceptibility Mapping</div>
-<h2 id=quantitative-susceptibility-mapping-in-qsmxt>Quantitative Susceptibility Mapping in QSMxT</h2>
-<p>Neurodesk includes QSMxT, a complete and end-to-end QSM processing and analysis framework that excels at automatically reconstructing and processing QSM for large groups of participants.</p>
-<p>QSMxT provides pipelines implemented in Python that:</p>
-<ol>
-<li>Automatically convert DICOM data to the Brain Imaging Data Structure (BIDS)</li>
-<li>Automatically reconstruct QSM, including steps for:
-<ol>
-<li>Robust masking without anatomical priors</li>
-<li>Phase unwrapping (Laplacian based)</li>
-<li>Background field removal + dipole inversion (<code>tgv_qsm</code>)</li>
-<li>Multi-echo combination</li>
-</ol>
-</li>
-<li>Automatically generate a common group space for the whole study, as well as average magnitude and QSM images that facilitate group-level analyses.</li>
-<li>Automatically segment T1w data and register them to the QSM space to extract quantitative values in anatomical regions of interest.</li>
-<li>Export quantitative data to CSV for all subjects using the automated segmentations, or a custom segmentation in the group space (we recommend ITK snap).</li>
-</ol>
-<p>If you use QSMxT for a study, please cite <a href=https://doi.org/10.1101/2021.05.05.442850>https://doi.org/10.1101/2021.05.05.442850</a>.</p>
-<h2 id=download-demo-data>Download demo data</h2>
-<p>Open a terminal and run:</p>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>pip install osfclient
-cd /neurodesktop-storage/
-osf -p ru43c clone /neurodesktop-storage/qsmxt-demo
-unzip /neurodesktop-storage/qsmxt-demo/osfstorage/GRE_2subj_1mm_TE20ms/sub1/GR_M_5_QSM_p2_1mmIso_TE20.zip -d /neurodesktop-storage/qsmxt-demo/dicoms
-unzip /neurodesktop-storage/qsmxt-demo/osfstorage/GRE_2subj_1mm_TE20ms/sub1/GR_P_6_QSM_p2_1mmIso_TE20.zip -d /neurodesktop-storage/qsmxt-demo/dicoms
-unzip /neurodesktop-storage/qsmxt-demo/osfstorage/GRE_2subj_1mm_TE20ms/sub2/GR_M_5_QSM_p2_1mmIso_TE20.zip -d /neurodesktop-storage/qsmxt-demo/dicoms
-unzip /neurodesktop-storage/qsmxt-demo/osfstorage/GRE_2subj_1mm_TE20ms/sub2/GR_P_6_QSM_p2_1mmIso_TE20.zip -d /neurodesktop-storage/qsmxt-demo/dicoms
-</code></pre></div><h2 id=qsmxt-usage>QSMxT Usage</h2>
-<p>Start QSMxT (in this demo we used 1.1.6) from the applications menu in the desktop (<em>Neurodesk</em> > <em>Quantitative Imaging</em> > <em>qsmxt</em>)</p>
-<ol>
-<li>Convert DICOM data to BIDS:
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#204a87>cd</span> /neurodesktop-storage/qsmxt-demo
-python3 /opt/QSMxT/run_0_dicomSort.py /neurodesktop-storage/qsmxt-demo/dicoms 00_dicom
-python3 /opt/QSMxT/run_1_dicomToBids.py 00_dicom 01_bids
-</code></pre></div></li>
-</ol>
-<p>After this step check if the data were correctly recognized and converted to BIDS. Otherwise make a copy of /opt/QSMxT/bidsmap.yaml - adjust based on provenance example in 01_bids/code/bidscoin/bidsmap.yaml (see for example what it detected under extra_files) - and run again with the parameter <code>--heuristic bidsmap.yaml</code>. If the data were acquired on a GE scanner the complex data needs to be corrected by applying an FFT shift, this can be done with <code>python /opt/QSMxT/run_1_fixGEphaseFFTshift.py 01_bids/sub*/ses*/anat/*_run-1_*.nii.gz</code> .</p>
-<ol start=2>
-<li>Run QSM pipeline:
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>python3 /opt/QSMxT/run_2_qsm.py 01_bids 02_qsm_output
-</code></pre></div></li>
-</ol>
-</div>
-<div class=td-content style=page-break-before:always>
-<h1 id=pg-3174433b4a44ad886176920795e9074f>2.2 - SWI</h1>
-<div class=lead>Example workflow for SWI processing</div>
-<h2 id=download-demo-data>Download demo data</h2>
-<p>Open a terminal and run:</p>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>pip install osfclient
-cd /neurodesktop-storage/
-osf -p ru43c fetch 01_bids.zip /neurodesktop-storage/swi-demo/01_bids.zip
-
-unzip /neurodesktop-storage/swi-demo/01_bids.zip -d /neurodesktop-storage/swi-demo/
-</code></pre></div><p>Open the CLEARSWI tool from the application menu:</p>
-<p>paste this julia script in a julia file and execute:</p>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>cd /neurodesktop-storage/
-vi clearswi.jl
-</code></pre></div><div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>using CLEARSWI
-
-TEs = [20] 
-nifti_folder = &#34;/neurodesktop-storage/swi-demo/01_bids/sub-170705134431std1312211075243167001/ses-1/anat&#34;
-magfile = joinpath(nifti_folder, &#34;sub-170705134431std1312211075243167001_ses-1_acq-qsm_run-1_magnitude.nii.gz&#34;)
-phasefile = joinpath(nifti_folder, &#34;sub-170705134431std1312211075243167001_ses-1_acq-qsmPH00_run-1_phase.nii.gz&#34;) 
-
-mag = readmag(magfile);
-phase = readphase(phasefile);
-data = Data(mag, phase, mag.header, TEs);
-
-swi = calculateSWI(data);
-# mip = createIntensityProjection(swi, minimum); # minimum intensity projection, other Julia functions can be used instead of minimum
-mip = createMIP(swi); # shorthand for createIntensityProjection(swi, minimum)
-
-savenii(swi, &#34;/neurodesktop-storage/swi-demo/swi.nii&#34;; header=mag.header) 
-savenii(mip, &#34;/neurodesktop-storage/swi-demo/mip.nii&#34;; header=mag.header)
-</code></pre></div><div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>julia clearswi.jl
-</code></pre></div>
-</div>
-<div class=td-content style=page-break-before:always>
-<h1 id=pg-359022268721811f542c4065f38891ed>2.3 - Unwrapping</h1>
-<div class=lead>MRI Phase Unwrapping</div>
-<h2 id=download-demo-data>Download demo data</h2>
-<p>Open a terminal and run:</p>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>pip install osfclient
-cd /neurodesktop-storage/
-osf -p ru43c fetch 01_bids.zip /neurodesktop-storage/swi-demo/01_bids.zip
-
-unzip /neurodesktop-storage/swi-demo/01_bids.zip -d /neurodesktop-storage/swi-demo/
-
-
-mkdir /neurodesktop-storage/romeo-demo/
-
-cp /neurodesktop-storage/swi-demo/01_bids/sub-170705134431std1312211075243167001/ses-1/anat/sub-170705134431std1312211075243167001_ses-1_acq-qsmPH00_run-1_phase.nii.gz /neurodesktop-storage/romeo-demo/phase.nii.gz
-
-cp /neurodesktop-storage/swi-demo/01_bids/sub-170705134431std1312211075243167001/ses-1/anat/sub-170705134431std1312211075243167001_ses-1_acq-qsm_run-1_magnitude.nii.gz /neurodesktop-storage/romeo-demo/mag.nii.gz
-
-gunzip /neurodesktop-storage/romeo-demo/mag.nii.gz
-gunzip /neurodesktop-storage/romeo-demo/phase.nii.gz
-</code></pre></div><h3 id=using-romeo-for-phase-unwrapping>Using ROMEO for phase unwrapping</h3>
-<p>Open the ROMEO tool from the application menu and run:</p>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>romeo -p /neurodesktop-storage/romeo-demo/phase.nii -m /neurodesktop-storage/romeo-demo/mag.nii -k nomask -o /neurodesktop-storage/romeo-demo/
-</code></pre></div><p><img src=/MRIPhase_Tutorial/romeo.PNG alt=Romeo title=Romeo></p>
-</div>
-<div class=td-content style=page-break-before:always>
-<h1 id=pg-15c972db4ef066d5b196709a32931050>3 - Structural Imaging</h1>
-<div class=lead>Tutorials about processing structural MRI data</div>
-</div>
-<div class=td-content>
-<h1 id=pg-0fe48d9b685f097a75026e660a1fae15>3.1 - FreeSurfer</h1>
-<div class=lead>Example workflow for FreeSurfer</div>
-<h2 id=download-demo-data>Download demo data</h2>
-<p>Open a terminal and run:</p>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>pip install osfclient
-osf -p bt4ez fetch TOMCAT_DIB/sub-01/ses-01_7T/anat/sub-01_ses-01_7T_T1w_defaced.nii.gz /neurodesktop-storage/sub-01_ses-01_7T_T1w_defaced.nii.gz
-</code></pre></div><h2 id=freesurfer-license-file>FreeSurfer License file:</h2>
-<p>Before using Freesurfer you need to request a license here (<a href=https://surfer.nmr.mgh.harvard.edu/registration.html>https://surfer.nmr.mgh.harvard.edu/registration.html</a>) and store it in your homedirectory as ~/.license</p>
-<h2 id=freesurfer-example>FreeSurfer Example</h2>
-<p>Open FreeSurfer (Neurodesk -> Image Segmentation -> Freesurfer -> Freesurfer 7.1.1)</p>
-<p>Setup FreeSurfer license (for example - replace with your license):</p>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>echo &#34;Steffen.Bollmann@cai.uq.edu.au
-&gt; 21029
-&gt;  *Cqyn12sqTCxo
-&gt;  FSxgcvGkNR59Y&#34; &gt;&gt; ~/.license
-
-export FS_LICENSE=~/.license 
-</code></pre></div><p>Setup FreeSurfer:</p>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>mkdir /neurodesktop-storage/freesurfer-output
-source /opt/freesurfer-7.1.1/SetUpFreeSurfer.sh
-export SUBJECTS_DIR=/neurodesktop-storage/freesurfer-output
-</code></pre></div><p>Run Recon all pipeline:</p>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>recon-all -subject test-subject -i /neurodesktop-storage/sub-01_ses-01_7T_T1w_defaced.nii.gz -all
-</code></pre></div>
 </div>
 </main>
 </div>
