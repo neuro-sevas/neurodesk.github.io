@@ -36,7 +36,7 @@ export SUBJECTS_DIR=/neurodesktop-storage/freesurfer-output
 conda activate mne
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Once your new environment is activated, in the top right corner of your empty jupyter notebook, click “Select Kernel”:&lt;/p>
 &lt;p>&lt;img src="https://neurodesk.github.io/EEG_Tutorial/EEGtut4.png" alt="EEGtut4" title="EEGtut4">&lt;/p>
-&lt;p>Then, select the instance of Python associated with the environment you have just created (“mne”):&lt;/p>
+&lt;p>Then, select the instance of Python associated with the environment you have just created (“mne”). If your new environment does not appear in the list, you may need to restart vscode:&lt;/p>
 &lt;p>&lt;img src="https://neurodesk.github.io/EEG_Tutorial/EEGtut5.png" alt="EEGtut5" title="EEGtut5">&lt;/p>
 &lt;p>At this point you may also be prompted to install the vscode packages for python. Once you have installed these, you’re ready to rumble!&lt;/p>
 &lt;h2 id="download-sample-data">Download sample data&lt;/h2>
