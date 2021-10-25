@@ -21,12 +21,12 @@
 ">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://neurodesk.github.io/developers/new_tools/add_tool/"><meta property="article:section" content="developers">
-<meta property="article:modified_time" content="2021-10-25T18:27:37+10:00"><meta property="og:site_name" content="NeuroDesk">
+<meta property="article:modified_time" content="2021-10-25T23:41:14+11:00"><meta property="og:site_name" content="NeuroDesk">
 <meta itemprop=name content="Add tools">
 <meta itemprop=description content="Add a tool to neurodesktop
 ">
-<meta itemprop=dateModified content="2021-10-25T18:27:37+10:00">
-<meta itemprop=wordCount content="761">
+<meta itemprop=dateModified content="2021-10-25T23:41:14+11:00">
+<meta itemprop=wordCount content="814">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="Add tools">
 <meta name=twitter:description content="Add a tool to neurodesktop
@@ -303,52 +303,57 @@ Copy the token displayed on the screen into a file, so you’ll have it later
 <pre class="language-shell command-line" data-prompt=$><code>git pull
 git push</code></pre>
 <ol start=10>
-<li>Go to neurocontainers/actions. Check that the most recent workflow run in the list terminated successfully (green). Otherwise, click on it, click on “build docker”, and the line that caused the error will be highlighted</li>
-<li>Find your new package under <a href="https://github.com/orgs/NeuroDesk/packages?repo_name=neurocontainers">https://github.com/orgs/NeuroDesk/packages?repo_name=neurocontainers</a></li>
-<li>For testing the new package in neurodesktop, you need to know the</li>
+<li>
+<p>Go to neurocontainers/actions. Check that the most recent workflow run in the list terminated successfully (green). Otherwise, click on it, click on “build docker”, and the line that caused the error will be highlighted</p>
+</li>
+<li>
+<p>Find your new package under <a href="https://github.com/orgs/NeuroDesk/packages?repo_name=neurocontainers">https://github.com/orgs/NeuroDesk/packages?repo_name=neurocontainers</a></p>
+<p>Enter the name of the package in the search box, and verify that the full package name shows up in the format <em>toolName_toolVersion</em></p>
+</li>
+<li>
+<p>Obtain <em>buildDate</em> by clicking on the full package name that came up in the search. The build date will be the newest date shown under <strong>Recent tagged image versions</strong></p>
+</li>
+<li>
+<p>Use <em>toolName</em>, <em>toolVersion</em> and <em>buildDate</em> from the previous two steps to manually download the package by typing the following in a terminal open in Neurodesktop</p>
+</li>
 </ol>
-<ul>
-<li>toolName</li>
-<li>toolVersion</li>
-<li>buildDate</li>
-</ul>
-<p>These can be found on the package listing in under the package listing in the previous step.
-The standard format is shown below</p>
-<pre class="language-shell command-line" data-prompt=$><code>docker pull ghcr.io/neurodesk/caid/toolName_toolVersion:builddate</code></pre>
-<p>For example (using itksnap)</p>
-<pre class="language-shell command-line" data-prompt=$><code>docker pull ghcr.io/neurodesk/caid/itksnap_3.8.0:20210322</code></pre>
-<p>gives you</p>
-<ul>
-<li>toolName = itksnap</li>
-<li>toolVersion = 3.8.0</li>
-<li>buildDate = 20210322</li>
-</ul>
-<p>Try to manually download the package onto Neurodesktop using</p>
 <pre class="language-shell command-line" data-prompt=$><code>bash /neurocommand/local/fetch_and_run.sh toolName toolVersion buildDate
-ml newapp/newappversion</code></pre>
-<p>
+ml toolName/toolVersion</code></pre>
+<p>For example:
+If the full package name that comes up in the step 11 is itksnap_3.8.0, and the newest date under <strong>Recent tagged image versions</strong> is 20210322</p>
+<p>The command to use in a terminal open in Neurodesktop is:</p>
+<pre class="language-shell command-line" data-prompt=$><code>bash /neurodesk/local/fetch_and_run.sh itksnap 3.8.0 20210322
+ml toolName/toolVersion</code></pre>
 <div class="alert alert-warning" role=alert>
 <h4 class=alert-heading>Depreciation notice</h4>
 <p>For VNM users use:</p>
 <pre class="language-shell command-line" data-prompt=$><code>bash /neurodesk/local/fetch_and_run.sh toolName toolVersion buildDate
-ml newapp/newappversion</code></pre>
+ml toolName/toolVersion</code></pre>
 </div>
-13) Test the new container. Run some commands, to see all is good</p>
 <ol start=14>
-<li>send a pull request to add the container to the apps.json file: <a href=https://github.com/NeuroDesk/neurocommand/blob/main/neurodesk/apps.json>https://github.com/NeuroDesk/neurocommand/blob/main/neurodesk/apps.json</a> and include an icon file: <a href=https://github.com/NeuroDesk/neurocommand/tree/main/neurodesk/icons>https://github.com/NeuroDesk/neurocommand/tree/main/neurodesk/icons</a></li>
-<li>(once pull request is merged this will trigger an action to build the singularity container, distribute it in all object storage locations and on CVMFS, and it will update the menus in the desktop image on the next daily build)</li>
-<li>Check in the dev build if everything is ok before releasing a new version of Neurodesktop:</li>
+<li>
+<p>Test the new container. Run some commands, to see all is good</p>
+</li>
+<li>
+<p>send a pull request to add the container to the apps.json file: <a href=https://github.com/NeuroDesk/neurocommand/blob/main/neurodesk/apps.json>https://github.com/NeuroDesk/neurocommand/blob/main/neurodesk/apps.json</a> and include an icon file: <a href=https://github.com/NeuroDesk/neurocommand/tree/main/neurodesk/icons>https://github.com/NeuroDesk/neurocommand/tree/main/neurodesk/icons</a></p>
+</li>
+<li>
+<p>(once pull request is merged this will trigger an action to build the singularity container, distribute it in all object storage locations and on CVMFS, and it will update the menus in the desktop image on the next daily build)</p>
+</li>
+<li>
+<p>Check in the dev build if everything is ok before releasing a new version of Neurodesktop:</p>
+</li>
 </ol>
 <pre class="language-shell command-line" data-prompt=$><code>
 sudo docker pull vnmd/neurodesktop-dev:latest && sudo docker run   --shm-size=1gb -it --privileged --name neurodesktop   -v ~/neurodesktop-storage:/neurodesktop-storage   -e HOST_UID="$(id -u)" -e HOST_GID="$(id -g)"   -p 8080:8080 -h neurodesktop-dev   vnmd/neurodesktop-dev:latest
 </code></pre>
-<ol start=17>
+<ol start=18>
 <li>Consider contributing a tutorial about the new tool: <a href=https://github.com/NeuroDesk/neurodesk.github.io/tree/hugo-docsy/content/en/tutorials>https://github.com/NeuroDesk/neurodesk.github.io/tree/hugo-docsy/content/en/tutorials</a></li>
 </ol>
 <div class="text-muted mt-5 pt-3 border-top">
 Last modified
 October 25, 2021
-: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/3075c544ebb4273d081c49fb36a1b3ca0da32659>Extra (3075c54)</a>
+: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/fc99c06773968328090460ac6d61978ce3f073ee>Update add_tool.md (fc99c06)</a>
 </div>
 </div>
 </main>
