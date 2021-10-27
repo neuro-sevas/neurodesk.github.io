@@ -50,37 +50,9 @@ Run &lt;code>bash build.sh&lt;/code>&lt;br>
 &lt;/ol>
 &lt;h2 id="quickstart">Quickstart&lt;/h2>
 &lt;ol>
-&lt;li>Install Docker from here: &lt;a href="https://docs.docker.com/get-docker/">https://docs.docker.com/get-docker/&lt;/a>&lt;/li>
-&lt;/ol>
-&lt;h3 id="rhelcentos-yum-based">RHEL/CentOS (yum-based)&lt;/h3>
-&lt;p>Refer to &lt;a href="https://docs.docker.com/engine/install/centos/">https://docs.docker.com/engine/install/centos/&lt;/a>&lt;/p>
-&lt;p>One example to install docker in a yum-based distribution could look like this:&lt;/p>
-&lt;pre class="language-shell command-line" data-prompt="$">
-&lt;code>sudo dnf install -y yum-utils
-sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
-sudo dnf install docker-ce docker-ce-cli containerd.io
-sudo systemctl enable docker
-sudo systemctl start docker
-sudo docker version
-sudo docker info
-sudo groupadd docker
-sudo usermod -aG docker $USER
-sudo chown root:docker /var/run/docker.sock
-newgrp docker&lt;/code>
-&lt;/pre>
-&lt;h3 id="ubuntudebian-apt-based">Ubuntu/Debian (apt-based)&lt;/h3>
-&lt;p>Refer to &lt;a href="https://docs.docker.com/engine/install/ubuntu/">https://docs.docker.com/engine/install/ubuntu/&lt;/a>&lt;/p>
-&lt;p>One example to install docker in a apt-based distribution could look like this:&lt;/p>
-&lt;pre class="language-shell command-line" data-prompt="$" data-output="5">
-&lt;code>sudo apt-get update
-sudo apt-get install apt-transport-https ca-certificates curl gnupg lsb-release
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
-echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
-$(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-sudo apt-get update
-sudo apt-get install docker-ce docker-ce-cli containerd.io&lt;/code>
-&lt;/pre>
-&lt;ol start="2">
+&lt;li>
+&lt;p>Install Docker from here: &lt;a href="https://docs.docker.com/get-docker/">https://docs.docker.com/get-docker/&lt;/a>. Additional information available &lt;a href="#installing-docker">below&lt;/a>&lt;/p>
+&lt;/li>
 &lt;li>
 &lt;p>Create a local folder where the downloaded applications will be stored, e.g. &lt;code>~/neurodesktop-storage&lt;/code>&lt;/p>
 &lt;/li>
@@ -131,6 +103,36 @@ vnmd/neurodesktop:20211018&lt;/code>
 &lt;/ol>
 &lt;pre class="language-shell command-line" data-prompt="$">
 &lt;code>docker rm neurodesktop&lt;/code>
+&lt;/pre>
+&lt;h2 id="installing-docker">Installing Docker&lt;/h2>
+&lt;p>For general installation instructions, refer to &lt;a href="https://docs.docker.com/get-docker/">https://docs.docker.com/get-docker/&lt;/a>&lt;/p>
+&lt;h3 id="rhelcentos-yum-based">RHEL/CentOS (yum-based)&lt;/h3>
+&lt;p>Refer to &lt;a href="https://docs.docker.com/engine/install/centos/">https://docs.docker.com/engine/install/centos/&lt;/a>&lt;/p>
+&lt;p>One example to install docker in a yum-based distribution could look like this:&lt;/p>
+&lt;pre class="language-shell command-line" data-prompt="$">
+&lt;code>sudo dnf install -y yum-utils
+sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+sudo dnf install docker-ce docker-ce-cli containerd.io
+sudo systemctl enable docker
+sudo systemctl start docker
+sudo docker version
+sudo docker info
+sudo groupadd docker
+sudo usermod -aG docker $USER
+sudo chown root:docker /var/run/docker.sock
+newgrp docker&lt;/code>
+&lt;/pre>
+&lt;h3 id="ubuntudebian-apt-based">Ubuntu/Debian (apt-based)&lt;/h3>
+&lt;p>Refer to &lt;a href="https://docs.docker.com/engine/install/ubuntu/">https://docs.docker.com/engine/install/ubuntu/&lt;/a>&lt;/p>
+&lt;p>One example to install docker in a apt-based distribution could look like this:&lt;/p>
+&lt;pre class="language-shell command-line" data-prompt="$" data-output="5">
+&lt;code>sudo apt-get update
+sudo apt-get install apt-transport-https ca-certificates curl gnupg lsb-release
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+$(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update
+sudo apt-get install docker-ce docker-ce-cli containerd.io&lt;/code>
 &lt;/pre>
 &lt;h2 id="gpu-support">GPU support&lt;/h2>
 &lt;h3 id="rhelcentos-yum-based-1">RHEL/CentOS (yum-based)&lt;/h3>

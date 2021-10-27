@@ -214,37 +214,9 @@ To get started, see: <a href=/docs/neurodesktop/>Neurodesktop</a></p>
 </ol>
 <h2 id=quickstart>Quickstart</h2>
 <ol>
-<li>Install Docker from here: <a href=https://docs.docker.com/get-docker/>https://docs.docker.com/get-docker/</a></li>
-</ol>
-<h3 id=rhelcentos-yum-based>RHEL/CentOS (yum-based)</h3>
-<p>Refer to <a href=https://docs.docker.com/engine/install/centos/>https://docs.docker.com/engine/install/centos/</a></p>
-<p>One example to install docker in a yum-based distribution could look like this:</p>
-<pre class="language-shell command-line" data-prompt=$>
-<code>sudo dnf install -y yum-utils 
-sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
-sudo dnf install docker-ce docker-ce-cli containerd.io
-sudo systemctl enable docker
-sudo systemctl start docker
-sudo docker version
-sudo docker info
-sudo groupadd docker
-sudo usermod -aG docker $USER
-sudo chown root:docker /var/run/docker.sock
-newgrp docker</code>
-</pre>
-<h3 id=ubuntudebian-apt-based>Ubuntu/Debian (apt-based)</h3>
-<p>Refer to <a href=https://docs.docker.com/engine/install/ubuntu/>https://docs.docker.com/engine/install/ubuntu/</a></p>
-<p>One example to install docker in a apt-based distribution could look like this:</p>
-<pre class="language-shell command-line" data-prompt=$ data-output=5>
-<code>sudo apt-get update
-sudo apt-get install apt-transport-https ca-certificates curl gnupg lsb-release
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
-echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
-  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-sudo apt-get update
-sudo apt-get install docker-ce docker-ce-cli containerd.io</code>
-</pre>
-<ol start=2>
+<li>
+<p>Install Docker from here: <a href=https://docs.docker.com/get-docker/>https://docs.docker.com/get-docker/</a>. Additional information available <a href=#installing-docker>below</a></p>
+</li>
 <li>
 <p>Create a local folder where the downloaded applications will be stored, e.g. <code>~/neurodesktop-storage</code></p>
 </li>
@@ -294,6 +266,36 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io</code>
 </ol>
 <pre class="language-shell command-line" data-prompt=$>
 <code>docker rm neurodesktop</code>
+</pre>
+<h2 id=installing-docker>Installing Docker</h2>
+<p>For general installation instructions, refer to <a href=https://docs.docker.com/get-docker/>https://docs.docker.com/get-docker/</a></p>
+<h3 id=rhelcentos-yum-based>RHEL/CentOS (yum-based)</h3>
+<p>Refer to <a href=https://docs.docker.com/engine/install/centos/>https://docs.docker.com/engine/install/centos/</a></p>
+<p>One example to install docker in a yum-based distribution could look like this:</p>
+<pre class="language-shell command-line" data-prompt=$>
+<code>sudo dnf install -y yum-utils 
+sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+sudo dnf install docker-ce docker-ce-cli containerd.io
+sudo systemctl enable docker
+sudo systemctl start docker
+sudo docker version
+sudo docker info
+sudo groupadd docker
+sudo usermod -aG docker $USER
+sudo chown root:docker /var/run/docker.sock
+newgrp docker</code>
+</pre>
+<h3 id=ubuntudebian-apt-based>Ubuntu/Debian (apt-based)</h3>
+<p>Refer to <a href=https://docs.docker.com/engine/install/ubuntu/>https://docs.docker.com/engine/install/ubuntu/</a></p>
+<p>One example to install docker in a apt-based distribution could look like this:</p>
+<pre class="language-shell command-line" data-prompt=$ data-output=5>
+<code>sudo apt-get update
+sudo apt-get install apt-transport-https ca-certificates curl gnupg lsb-release
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update
+sudo apt-get install docker-ce docker-ce-cli containerd.io</code>
 </pre>
 <h2 id=gpu-support>GPU support</h2>
 <h3 id=rhelcentos-yum-based-1>RHEL/CentOS (yum-based)</h3>
