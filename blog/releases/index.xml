@@ -1,4 +1,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>NeuroDesk – New Releases</title><link>https://neurodesk.github.io/blog/releases/</link><description>Recent content in New Releases on NeuroDesk</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://neurodesk.github.io/blog/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>Blog: Oct 2021</title><link>https://neurodesk.github.io/blog/2021/10/18/oct-2021/</link><pubDate>Mon, 18 Oct 2021 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/blog/2021/10/18/oct-2021/</guid><description>
+&lt;!-- don't forget to copy addition to docs/Neurodesktop/Release History -->
+&lt;h2 id="20211028">20211028&lt;/h2>
+&lt;ul>
+&lt;li>added EEGLAB&lt;/li>
+&lt;/ul>
 &lt;h2 id="20211018">20211018&lt;/h2>
 &lt;ul>
 &lt;li>added Rstudio, R and multiple R packages (plotly, car, tidyverse, &amp;hellip;)&lt;/li>

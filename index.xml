@@ -1,4 +1,11 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>NeuroDesk – Neurodesk</title><link>https://neurodesk.github.io/</link><description>Recent content in Neurodesk on NeuroDesk</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://neurodesk.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Blog: Oct 2021</title><link>https://neurodesk.github.io/blog/2021/10/18/oct-2021/</link><pubDate>Mon, 18 Oct 2021 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/blog/2021/10/18/oct-2021/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>NeuroDesk – Neurodesk</title><link>https://neurodesk.github.io/</link><description>Recent content in Neurodesk on NeuroDesk</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://neurodesk.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Blog: November 2021</title><link>https://neurodesk.github.io/blog/2021/10/28/november-2021/</link><pubDate>Thu, 28 Oct 2021 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/blog/2021/10/28/november-2021/</guid><description>
+&lt;p>We will present the technology behind NeuroDesk at the Australian Research Container Orchestration Services (ARCOS) Symposium on the 10th November at 12-4pm AEST: If you are interested in how we build docker and singularity containers in a community driven fashion using github actions, make these on-demand availabe via CVMFS inside a docker container running a full Linux desktop then this session is for you :p We will show what we learned in the last year and what we are planning in terms of security, multi-arch builds, GPUs, Kubernetes &amp;hellip;&lt;/p>
+&lt;p>sign up here: &lt;a href="https://www.eventbrite.com.au/e/arcos-symposium-tickets-195702370057">https://www.eventbrite.com.au/e/arcos-symposium-tickets-195702370057&lt;/a>&lt;/p></description></item><item><title>Blog: Oct 2021</title><link>https://neurodesk.github.io/blog/2021/10/18/oct-2021/</link><pubDate>Mon, 18 Oct 2021 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/blog/2021/10/18/oct-2021/</guid><description>
+&lt;!-- don't forget to copy addition to docs/Neurodesktop/Release History -->
+&lt;h2 id="20211028">20211028&lt;/h2>
+&lt;ul>
+&lt;li>added EEGLAB&lt;/li>
+&lt;/ul>
 &lt;h2 id="20211018">20211018&lt;/h2>
 &lt;ul>
 &lt;li>added Rstudio, R and multiple R packages (plotly, car, tidyverse, &amp;hellip;)&lt;/li>

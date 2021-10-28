@@ -191,7 +191,7 @@
 <h2 id=how-to-force-a-complete-container-download-to-your-system>How to force a complete container download to your system</h2>
 <p>To increase speed and reliability of Neurodesktop we mount the application containers from a CVMFS mount and download only the files required to run your current task. Although we aim to keep everything on there reproducible, there might be a reason that you want to fully download the containers to your system. You can force this behaviour by adding another parameter to the docker call: <code>-e CVMFS_DISABLE=true</code></p>
 <p>For windows an example would look like this:</p>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>docker run --shm-size<span style=color:#ce5c00;font-weight:700>=</span>1gb -it --privileged --name neurodesktop -v C:/neurodesktop-storage:/neurodesktop-storage -e <span style=color:#000>CVMFS_DISABLE</span><span style=color:#ce5c00;font-weight:700>=</span><span style=color:#204a87>true</span> -p 8080:8080 -h neurodesktop-20211018 vnmd/neurodesktop:20211018
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>docker run --shm-size<span style=color:#ce5c00;font-weight:700>=</span>1gb -it --privileged --name neurodesktop -v C:/neurodesktop-storage:/neurodesktop-storage -e <span style=color:#000>CVMFS_DISABLE</span><span style=color:#ce5c00;font-weight:700>=</span><span style=color:#204a87>true</span> -p 8080:8080 -h neurodesktop-20211028 vnmd/neurodesktop:20211028
 </code></pre></div>
 <div class="text-muted mt-5 pt-3 border-top">
 Last modified
