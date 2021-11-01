@@ -21,12 +21,12 @@
 ">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://neurodesk.github.io/tutorials/electrophysiology/eeg_mne-python/"><meta property="article:section" content="tutorials">
-<meta property="article:modified_time" content="2021-10-21T15:37:50+10:00"><meta property="og:site_name" content="NeuroDesk">
+<meta property="article:modified_time" content="2021-11-01T16:15:55+10:00"><meta property="og:site_name" content="NeuroDesk">
 <meta itemprop=name content="Analysing EEG Data with MNE">
 <meta itemprop=description content="Use mne-python to load, pre-process, and plot example EEG data in a jupyter notebook through vscode. 
 ">
-<meta itemprop=dateModified content="2021-10-21T15:37:50+10:00">
-<meta itemprop=wordCount content="826">
+<meta itemprop=dateModified content="2021-11-01T16:15:55+10:00">
+<meta itemprop=wordCount content="1062">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="Analysing EEG Data with MNE">
 <meta name=twitter:description content="Use mne-python to load, pre-process, and plot example EEG data in a jupyter notebook through vscode. 
@@ -256,12 +256,44 @@ evokeds = dict(attend6=list(epochs[&#39;attend 6Hz K&#39;].iter_evoked()),
                attend75=list(epochs[&#39;attend 7.5Hz K&#39;].iter_evoked()))
 mne.viz.plot_compare_evokeds(evokeds, combine=&#39;mean&#39;)
 </code></pre></div><p><img src=/EEG_Tutorial/EEGtut9.png alt=EEGtut9 title=EEGtut9></p>
-<p>From this point, we can export our data to numpy arrays or keep it in the MNE data format for any further analyses we would like to run.</p>
+<p>In the ERP plot, we can see that the data are frequency tagged. The participant was performing an attention task in which a two visual stimuli were flickering at 6 Hz and 7.5 Hz respectively. On each trial the participant was cued to monitor one of these two stimuli for brief bursts of motion. From previous research, we expect that the steady-state visual evoked potential (SSVEP) should be larger at the attended frequency than the unattended frequency. Lets check if this is true.</p>
+<p>We&rsquo;ll begin by eporting our epoched EEG data to a numpy array</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback># Preallocate
+n_samples = attend6.data.shape[1]
+sampling_freq = 1200 # sampling frequency
+epochs_np = np.empty((n_samples, 2) )
+
+# Get data - averaging across EEG channels
+epochs_np[:,0] = attend6.data.mean(axis=0)
+epochs_np[:,1] = attend75.data.mean(axis=0)
+
+</code></pre></div><p>Next, we can use a Fast Fourier Transform (FFT) to transform the data from the time domain to the frequency domain. For this, we&rsquo;ll need to import the FFT packages from scipy:</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>from scipy.fft import fft, fftfreq, fftshift
+
+# Get FFT
+fftdat = np.abs(fft(epochs_np, axis=0)) / n_samples
+freq = fftfreq(n_samples, d=1 / sampling_freq)  # get frequency bins
+
+</code></pre></div><p>Now that we have our frequency transformed data, we can plot our two conditions to assess whether attention altered the SSVEP amplitudes:</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>import matplotlib.pyplot as plt
+
+fig,ax = plt.subplots(1, 1)
+
+ax.plot(freq, fftdat[:,0], &#39;-&#39;, label=&#39;attend 6Hz&#39;, color=[78 / 255, 185 / 255, 159 / 255])  
+ax.plot(freq, fftdat[:,1], &#39;-&#39;, label=&#39;attend 7.5Hz&#39;, color=[236 / 255, 85 / 255, 58 / 255])  
+ax.set_xlim(4, 17)
+ax.set_ylim(0, 1e-6)
+ax.set_title(&#39;Frequency Spectrum&#39;)
+ax.legend()
+
+
+</code></pre></div><p>This plot shows that the SSVEPs were indeed modulated by attention in the direction we would expect!</p>
+<p><img src=/EEG_Tutorial/EEGtut9.png alt=EEGtut10 title=EEGtut10></p>
 <p>Congratulations! You’ve run your first analysis of EEG data in neurodesktop.</p>
 <div class="text-muted mt-5 pt-3 border-top">
 Last modified
-October 21, 2021
-: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/78bac240acbeb305a2a56e7d3f45bbadc2216f20>Update eeg tutorial (78bac24)</a>
+November 1, 2021
+: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/e0b402e626fb903dd4d50750ae8d351cdb462ad6>Updating EEG tutorial (e0b402e)</a>
 </div>
 </div>
 </main>
