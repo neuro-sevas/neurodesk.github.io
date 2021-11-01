@@ -228,8 +228,8 @@ evokeds = dict(attend6=list(epochs[&#39;attend 6Hz K&#39;].iter_evoked()),
                attend75=list(epochs[&#39;attend 7.5Hz K&#39;].iter_evoked()))
 mne.viz.plot_compare_evokeds(evokeds, combine=&#39;mean&#39;)
 </code></pre></div><p><img src=/EEG_Tutorial/EEGtut9.png alt=EEGtut9 title=EEGtut9></p>
-<p>In the ERP plot, we can see that the data are frequency tagged. The participant was performing an attention task in which a two visual stimuli were flickering at 6 Hz and 7.5 Hz respectively. On each trial the participant was cued to monitor one of these two stimuli for brief bursts of motion. From previous research, we expect that the steady-state visual evoked potential (SSVEP) should be larger at the attended frequency than the unattended frequency. Lets check if this is true.</p>
-<p>We&rsquo;ll begin by eporting our epoched EEG data to a numpy array</p>
+<p>In this plot, we can see that the data are frequency tagged. While these data were collected, the participant was performing an attention task in which two visual stimuli were flickering at 6 Hz and 7.5 Hz respectively. On each trial the participant was cued to monitor one of these two stimuli for brief bursts of motion. From previous research, we expect that the steady-state visual evoked potential (SSVEP) should be larger at the attended frequency than the unattended frequency. Lets check if this is true.</p>
+<p>We&rsquo;ll begin by exporting our epoched EEG data to a numpy array</p>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback># Preallocate
 n_samples = attend6.data.shape[1]
 sampling_freq = 1200 # sampling frequency
@@ -259,9 +259,8 @@ ax.set_title(&#39;Frequency Spectrum&#39;)
 ax.legend()
 
 
-</code></pre></div><p>This plot shows that the SSVEPs were indeed modulated by attention in the direction we would expect!</p>
-<p><img src=/EEG_Tutorial/EEGtut9.png alt=EEGtut10 title=EEGtut10></p>
-<p>Congratulations! You’ve run your first analysis of EEG data in neurodesktop.</p>
+</code></pre></div><p><img src=/EEG_Tutorial/EEGtut10.png alt=EEGtut10 title=EEGtut10></p>
+<p>This plot shows that the SSVEPs were indeed modulated by attention in the direction we would expect! Congratulations! You’ve run your first analysis of EEG data in neurodesktop.</p>
 </div>
 <div class=td-content style=page-break-before:always>
 <h1 id=pg-692ee0c0d1d645ba985513777e1a945e>2 - MRI phase Processing</h1>

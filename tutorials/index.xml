@@ -126,8 +126,8 @@ evokeds = dict(attend6=list(epochs[&amp;#39;attend 6Hz K&amp;#39;].iter_evoked()
 attend75=list(epochs[&amp;#39;attend 7.5Hz K&amp;#39;].iter_evoked()))
 mne.viz.plot_compare_evokeds(evokeds, combine=&amp;#39;mean&amp;#39;)
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://neurodesk.github.io/EEG_Tutorial/EEGtut9.png" alt="EEGtut9" title="EEGtut9">&lt;/p>
-&lt;p>In the ERP plot, we can see that the data are frequency tagged. The participant was performing an attention task in which a two visual stimuli were flickering at 6 Hz and 7.5 Hz respectively. On each trial the participant was cued to monitor one of these two stimuli for brief bursts of motion. From previous research, we expect that the steady-state visual evoked potential (SSVEP) should be larger at the attended frequency than the unattended frequency. Lets check if this is true.&lt;/p>
-&lt;p>We&amp;rsquo;ll begin by eporting our epoched EEG data to a numpy array&lt;/p>
+&lt;p>In this plot, we can see that the data are frequency tagged. While these data were collected, the participant was performing an attention task in which two visual stimuli were flickering at 6 Hz and 7.5 Hz respectively. On each trial the participant was cued to monitor one of these two stimuli for brief bursts of motion. From previous research, we expect that the steady-state visual evoked potential (SSVEP) should be larger at the attended frequency than the unattended frequency. Lets check if this is true.&lt;/p>
+&lt;p>We&amp;rsquo;ll begin by exporting our epoched EEG data to a numpy array&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback"># Preallocate
 n_samples = attend6.data.shape[1]
 sampling_freq = 1200 # sampling frequency
@@ -149,9 +149,8 @@ ax.set_xlim(4, 17)
 ax.set_ylim(0, 1e-6)
 ax.set_title(&amp;#39;Frequency Spectrum&amp;#39;)
 ax.legend()
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>This plot shows that the SSVEPs were indeed modulated by attention in the direction we would expect!&lt;/p>
-&lt;p>&lt;img src="https://neurodesk.github.io/EEG_Tutorial/EEGtut9.png" alt="EEGtut10" title="EEGtut10">&lt;/p>
-&lt;p>Congratulations! You’ve run your first analysis of EEG data in neurodesktop.&lt;/p></description></item><item><title>Tutorials: Quantitative Susceptibility Mapping</title><link>https://neurodesk.github.io/tutorials/phase_processing/qsm/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/tutorials/phase_processing/qsm/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://neurodesk.github.io/EEG_Tutorial/EEGtut10.png" alt="EEGtut10" title="EEGtut10">&lt;/p>
+&lt;p>This plot shows that the SSVEPs were indeed modulated by attention in the direction we would expect! Congratulations! You’ve run your first analysis of EEG data in neurodesktop.&lt;/p></description></item><item><title>Tutorials: Quantitative Susceptibility Mapping</title><link>https://neurodesk.github.io/tutorials/phase_processing/qsm/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/tutorials/phase_processing/qsm/</guid><description>
 &lt;h2 id="quantitative-susceptibility-mapping-in-qsmxt">Quantitative Susceptibility Mapping in QSMxT&lt;/h2>
 &lt;p>Neurodesk includes QSMxT, a complete and end-to-end QSM processing and analysis framework that excels at automatically reconstructing and processing QSM for large groups of participants.&lt;/p>
 &lt;p>QSMxT provides pipelines implemented in Python that:&lt;/p>
