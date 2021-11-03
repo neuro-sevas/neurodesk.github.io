@@ -2,7 +2,7 @@
 <head>
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
-<meta name=generator content="Hugo 0.88.1"><link rel=canonical type=text/html href=https://neurodesk.github.io/docs/>
+<meta name=generator content="Hugo 0.89.0"><link rel=canonical type=text/html href=https://neurodesk.github.io/docs/>
 <link rel=alternate type=application/rss+xml href=https://neurodesk.github.io/docs/index.xml>
 <meta name=ROBOTS content="NOINDEX, NOFOLLOW">
 <link rel="shortcut icon" href=/favicons/favicon.ico>
@@ -766,12 +766,22 @@ To check which user is being use, open the terminal in the neurodesktop VS Code 
 We recommend the <em>manual</em> install instructions, as the simplified install requires an upgrade to a preview build of Windows that may be unstable.
 </div>
 <p>If WSL is properly installed, the <em>Resources</em> tab of the Docker settings should look something like this:</p>
-<p><img src=/Docker_WSL_correct.png alt=Docker_WSL_correct title=Docker_WSL_correct></p>
+<p><img src=/Troubleshooting/Docker_WSL_correct.png alt=Docker_WSL_correct title=Docker_WSL_correct></p>
 <p>However, if WSL is missing or incorrectly configured, the <em>Resources</em> tab of the Docker settings may look something like this:</p>
-<p><img src=/Docker_WSL_incorrect.png alt=Docker_WSL_incorrect title=Docker_WSL_incorrect></p>
+<p><img src=/Troubleshooting/Docker_WSL_incorrect.png alt=Docker_WSL_incorrect title=Docker_WSL_incorrect></p>
 <p>If this is the case, follow the manual install instructions to install <a href=https://docs.microsoft.com/en-us/windows/wsl/install-win10>WSL 2</a> (including installation of Ubuntu through Microsoft Store).</p>
 <h2 id=not-enough-free-space-on-the-partition-in-windows-and-wsl2>Not enough free space on the partition in Windows and WSL2</h2>
 <p>This could help: <a href=https://yjmantilla.github.io/tutorials/wsl2-move-vhdx.html>https://yjmantilla.github.io/tutorials/wsl2-move-vhdx.html</a></p>
+<h2 id=trouble-installing-neurodesk-images>Trouble installing neurodesk images</h2>
+<p>This may be a memory issue. First, ensure that there is enough free space on the disk. If there is, try resetting docker settings and data. To do this:</p>
+<ol>
+<li>Open the docker engine</li>
+<li>Navigate to &ldquo;Troubleshooting&rdquo; (the bug icon in the top right).</li>
+<li>Click &ldquo;Reset to factory defaults&rdquo;</li>
+</ol>
+<p><img src=/Troubleshooting/Docker_troubleshooting.png alt=Docker_troubleshooting title=Docker_troubleshooting></p>
+<p>If you are still experiencing issues after this, you may need to update docker to the latest version. This can be achieved through &ldquo;settings&rdquo; in the docker engine, or (on windows) by right clicking on the docker tray icon:</p>
+<p><img src=/Troubleshooting/Docker_update.png alt=Docker_update title=Docker_update></p>
 </div>
 <div class=td-content style=page-break-before:always>
 <h1 id=pg-6fcc3ae2c99b700109cf4d44a0a17071>2.7 - Release History</h1>
