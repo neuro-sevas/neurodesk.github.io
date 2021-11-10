@@ -416,18 +416,18 @@ export SUBJECTS_DIR=/neurodesktop-storage/freesurfer-output
 <h1 id=pg-b0590b6e45cbf130ebe8a6b8b8677519>4.1 - Template for workflow creation</h1>
 <div class=lead>Follow this template to contribute your own workflow to the Neurodesk documentation.</div>
 <blockquote>
-<p><em>This tutorial was created by Name X. Nameson.</em>
-<em>Email: n.nameson@institution.edu.au</em>
-<em>Github: @Namehandle</em>
-<em>Twitter: @Namehandle</em></p>
+<p><em>This tutorial was created by Name X. Nameson.</em></p>
+<p><em>Email: n.nameson@institution.edu.au</em></p>
+<p><em>Github: @Namehandle</em></p>
+<p><em>Twitter: @Namehandle</em></p>
 </blockquote>
 <p>Welcome to the workflow template, which you can use to contribute your own neurodesk workflow to our documentation. We aim to collect a wide variety of workflows representing the spectrum of tools available under the neurodesk architechture and the diversity in how researchers might apply them. Please add plently of descriptive detail and make sure that all steps of the workflow work before submitting the tutorial.</p>
 <p>You can embelish your text in this tutorial using markdown conventions; text can be <strong>bold</strong>, <em>italic</em>, or <del>strikethrough</del>. You can also add <a href=https://neurodesk.github.io/>Links</a>.</p>
-<h2 id=headings>Headings</h2>
+<h2 id=level-2-heading>Level 2 heading</h2>
 <p>You can organise your tutorial with headers, starting at level 2 (the page title is a level 1 header). You can also include progressively smaller subheadings:</p>
-<h3 id=subheading-1>Subheading 1</h3>
+<h3 id=level-3-heading>Level 3 heading</h3>
 <p>Some more detailed information.</p>
-<h4 id=subheading-2>Subheading 2</h4>
+<h4 id=level-4-heading>Level 4 heading</h4>
 <p>Even more detailed information.</p>
 <h2 id=code-blocks>Code blocks</h2>
 <p>You can add codeblocks to your tutorial as follows:</p>
@@ -442,14 +442,16 @@ print(a+b)
 <span style=color:#000>a</span> <span style=color:#000;font-weight:700>=</span> <span style=color:#000>np</span><span style=color:#000;font-weight:700>.</span><span style=color:#000>array</span><span style=color:#000;font-weight:700>([</span><span style=color:#0000cf;font-weight:700>1</span><span style=color:#000;font-weight:700>,</span> <span style=color:#0000cf;font-weight:700>2</span><span style=color:#000;font-weight:700>])</span>
 <span style=color:#000>b</span> <span style=color:#000;font-weight:700>=</span> <span style=color:#000>np</span><span style=color:#000;font-weight:700>.</span><span style=color:#000>array</span><span style=color:#000;font-weight:700>([</span><span style=color:#0000cf;font-weight:700>3</span><span style=color:#000;font-weight:700>,</span> <span style=color:#0000cf;font-weight:700>4</span><span style=color:#000;font-weight:700>])</span>
 <span style=color:#204a87>print</span><span style=color:#000;font-weight:700>(</span><span style=color:#000>a</span><span style=color:#ce5c00;font-weight:700>+</span><span style=color:#000>b</span><span style=color:#000;font-weight:700>)</span>
-</code></pre></div><p>You can also ass code snippets like <code>var foo = "bar";</code> to be shown inline.</p>
+</code></pre></div><p>You can also add code snippets, e.g. <code>var foo = "bar";</code>, which will be shown inline.</p>
 <h2 id=images>Images</h2>
 <p>To add screenshots to your tutorial, create a subfolder in <code>neurodesk.github.io/static</code> with the same link name as your tutorial. Add your screenshot to this folder, keeping in mind that you may want to adjust your screenshot to a reasonable size before uploading. You can then embed these images in your tutorial using the following convention:</p>
 <p><img src=/EEG_Tutorial/EEGtut1.png alt=EEGtut1 title=EEGtut1> </p>
 <h2 id=alets-and-warnings>Alets and warnings</h2>
 <p>You can grab reader&rsquo;s attention to particularly important information with quoteblocks, alerts and titles:</p>
 <blockquote>
-<p>This is a quoteblock
+<p>This is a quoteblock</p>
+</blockquote>
+<p>
 <div class="alert alert-primary" role=alert>
 This is an alert.
 </div>
@@ -465,7 +467,6 @@ This is a warning.
 This is a warning with a title.
 </div>
 </p>
-</blockquote>
 <p>You can also segment information as follows:</p>
 <hr>
 <p>There&rsquo;s a horizontal rule above and below this.</p>
@@ -481,8 +482,8 @@ This is a warning with a title.
 <thead>
 <tr>
 <th>Neuroscientist</th>
-<th>Notable for</th>
-<th>lifetime</th>
+<th>Notable work</th>
+<th>Lifetime</th>
 </tr>
 </thead>
 <tbody>
@@ -531,8 +532,7 @@ This is a warning with a title.
 </ul>
 <p>And a nested list:</p>
 <ul>
-<li>
-<p>EEG file extensions</p>
+<li>EEG file extensions
 <ul>
 <li>.eeg, .vhdr, .vmrk</li>
 <li>.edf</li>
@@ -541,8 +541,7 @@ This is a warning with a title.
 <li>.smr</li>
 </ul>
 </li>
-<li>
-<p>MEG file extensions</p>
+<li>MEG file extensions
 <ul>
 <li>.ds</li>
 <li>.fif</li>
@@ -550,10 +549,10 @@ This is a warning with a title.
 <li>.raw</li>
 <li>.kdf</li>
 </ul>
-<h2 id=thanks>Thanks</h2>
-<p>Thanks so much for taking the time to contribute your workflow to the Neurodesk community! If you have any feedback on the process, please let us know on <a href=https://github.com/NeuroDesk/neurodesk.github.io/discussions>github discussions</a>.</p>
 </li>
 </ul>
+<h2 id=thanks>Thanks</h2>
+<p>Thanks so much for taking the time to contribute your workflow to the Neurodesk community! If you have any feedback on the process, please let us know on <a href=https://github.com/NeuroDesk/neurodesk.github.io/discussions>github discussions</a>.</p>
 </div>
 </main>
 </div>
