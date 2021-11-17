@@ -273,7 +273,16 @@ print(a+b)
 &lt;span style="color:#000">a&lt;/span> &lt;span style="color:#000;font-weight:bold">=&lt;/span> &lt;span style="color:#000">np&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">array&lt;/span>&lt;span style="color:#000;font-weight:bold">([&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">2&lt;/span>&lt;span style="color:#000;font-weight:bold">])&lt;/span>
 &lt;span style="color:#000">b&lt;/span> &lt;span style="color:#000;font-weight:bold">=&lt;/span> &lt;span style="color:#000">np&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">array&lt;/span>&lt;span style="color:#000;font-weight:bold">([&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">3&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">4&lt;/span>&lt;span style="color:#000;font-weight:bold">])&lt;/span>
 &lt;span style="color:#204a87">print&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">a&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">+&lt;/span>&lt;span style="color:#000">b&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>You can also add code snippets, e.g. &lt;code>var foo = &amp;quot;bar&amp;quot;;&lt;/code>, which will be shown inline.&lt;/p>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Advanced code or command line formatting using this html snippet:&lt;/p>
+&lt;pre class="language-shell command-line" data-prompt=">>>" data-output="6">
+&lt;code># Some example code
+import numpy as np
+a = np.array([1, 2])
+b = np.array([3, 4])
+print(a+b)
+[4 6]&lt;/code>
+&lt;/pre>
+&lt;p>You can also add code snippets, e.g. &lt;code>var foo = &amp;quot;bar&amp;quot;;&lt;/code>, which will be shown inline.&lt;/p>
 &lt;h2 id="images">Images&lt;/h2>
 &lt;p>To add screenshots to your tutorial, create a subfolder in &lt;code>neurodesk.github.io/static&lt;/code> with the same link name as your tutorial. Add your screenshot to this folder, keeping in mind that you may want to adjust your screenshot to a reasonable size before uploading. You can then embed these images in your tutorial using the following convention:&lt;/p>
 &lt;p>&lt;img src="https://neurodesk.github.io/EEG_Tutorial/EEGtut1.png" alt="EEGtut1" title="EEGtut1"> &lt;!-- ![filename without extension](/subfolder_name/filename.png '[filename without extension') -->&lt;/p>
