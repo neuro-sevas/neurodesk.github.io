@@ -2,7 +2,7 @@
 <head>
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
-<meta name=generator content="Hugo 0.89.3"><meta name=ROBOTS content="INDEX, FOLLOW">
+<meta name=generator content="Hugo 0.89.4"><meta name=ROBOTS content="INDEX, FOLLOW">
 <link rel="shortcut icon" href=/favicons/favicon.ico>
 <link rel=apple-touch-icon href=/favicons/apple-touch-icon-180x180.png sizes=180x180>
 <link rel=icon type=image/png href=/favicons/favicon-16x16.png sizes=16x16>
@@ -21,12 +21,12 @@
 ">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://neurodesk.github.io/docs/neurodesktop/storage/"><meta property="article:section" content="docs">
-<meta property="article:modified_time" content="2021-09-28T21:28:51+10:00"><meta property="og:site_name" content="NeuroDesk">
+<meta property="article:modified_time" content="2021-11-25T12:40:39+10:00"><meta property="og:site_name" content="NeuroDesk">
 <meta itemprop=name content="Storage">
 <meta itemprop=description content="Add storage to Neurodesktop
 ">
-<meta itemprop=dateModified content="2021-09-28T21:28:51+10:00">
-<meta itemprop=wordCount content="485">
+<meta itemprop=dateModified content="2021-11-25T12:40:39+10:00">
+<meta itemprop=wordCount content="495">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="Storage">
 <meta name=twitter:description content="Add storage to Neurodesktop
@@ -209,7 +209,7 @@
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>/opt/globusconnectpersonal/globusconnectpersonal-*/globusconnectpersonal
 </code></pre></div><p>Once authenticated you can go to the globus file-manager <a href=https://app.globus.org/file-manager>https://app.globus.org/file-manager</a> and your neurodesktop instance will be an endpoint for globus.</p>
 <h1 id=mounting-network-storage-on-your-host-computer>Mounting network storage on your host-computer</h1>
-<p>The -v C:/neurodesktop-storage:/neurodesktop-storage part of the docker command links the directory &ldquo;neurodesktop-storage&rdquo; on the “C drive” of your Windows computer to the directory /neurodesktop-storage inside the Desktop environment. Everything you store in there will be available inside the desktop and on the host computer. You can also mount additional directories by adding another -v parameter set (e.g. -v D:/moredata:/data) - this will mount the directory moredata from your D drive to /data inside neurodesktop. If you have network storage mounted in a similar way you can also pass this into the Neurodesktop tool.</p>
+<p>The -v C:/neurodesktop-storage:/neurodesktop-storage part of the docker command links the directory &ldquo;neurodesktop-storage&rdquo; on the “C drive” of your Windows computer to the directory /neurodesktop-storage inside the Desktop environment. Everything you store in there will be available inside the desktop and on the host computer. You can also mount additional directories by adding another -v parameter set (e.g. -v D:/moredata:/data) - this will mount the directory moredata from your D drive to /data inside neurodesktop. Improtant: the mountpoint inside neurodesktop should be named /data (or anything from this list: <a href=https://github.com/NeuroDesk/neurocontainers/blob/master/recipes/globalMountPointList.txt>https://github.com/NeuroDesk/neurocontainers/blob/master/recipes/globalMountPointList.txt</a>) - otherwise most of the tools will not be able to access the data.</p>
 <h1 id=mount-volume-using-sshfs>Mount volume using SSHFS</h1>
 <p>It is theoretically possible to mount an SSH target inside Neurodesktop, but it&rsquo;s not a very reliable way of mounting storage:</p>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>sshfs -o allow_root USER@TARGET_HOST:TARGET_PATH SOURCE_PATH
@@ -218,8 +218,8 @@
 </code></pre></div>
 <div class="text-muted mt-5 pt-3 border-top">
 Last modified
-September 28, 2021
-: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/79775f3b37b8a68651a8e002f3c3a64041b9922b>added qsm example (79775f3)</a>
+November 25, 2021
+: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/f0826df126f404889d73e87b1a3d44d00d8878e6>Update storage.md (f0826df)</a>
 </div>
 </div>
 </main>
