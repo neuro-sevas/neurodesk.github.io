@@ -193,13 +193,17 @@ print("Num GPUs Available: ", len(tf.config.list_physical_devices('GPU')))&lt;/c
 &lt;li>Docker requirements. Details found under &lt;a href="https://docs.docker.com/get-docker/">https://docs.docker.com/get-docker/&lt;/a>&lt;/li>
 &lt;li>If installing docker using WSL, atleast 20GB space recommended for WSL with Ubuntu&lt;/li>
 &lt;/ol>
+&lt;div class="alert alert-primary" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+The docker installation will reboot your computer a few times and there might be warnings regardings WSL2 and this also might require a few more installation steps that unfortunatley differ for every system. Please get in touch if you are stuck and have a look at our troubleshoot page.
+&lt;/div>
 &lt;h2 id="quickstart">Quickstart&lt;/h2>
 &lt;ol>
 &lt;li>
 &lt;p>Install Docker from here: &lt;a href="https://docs.docker.com/get-docker/">https://docs.docker.com/get-docker/&lt;/a>&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>Open a terminal, and type the folowing command to automatically download the neurodesktop container and run it&lt;/p>
+&lt;p>Open a terminal (e.g. Powershell), and type the folowing command to automatically download the neurodesktop container and run it&lt;/p>
 &lt;/li>
 &lt;/ol>
 &lt;pre class="language-batch command-line" data-prompt=">">
