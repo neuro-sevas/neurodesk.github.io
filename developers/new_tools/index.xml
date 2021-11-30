@@ -130,6 +130,11 @@ cp -R template newapp&lt;/code>&lt;/pre>
 &lt;/ol>
 &lt;pre class="language-shell command-line" data-prompt="$">&lt;code>cd ../..
 sh update-builders.sh&lt;/code>&lt;/pre>
+&lt;blockquote>
+&lt;p>if the CI build runs out of space, add the application to the following txt to add additional space.
+&lt;a href="https://github.com/NeuroDesk/neurocontainers/blob/master/.github/workflows/free-up-space-list.txt">https://github.com/NeuroDesk/neurocontainers/blob/master/.github/workflows/free-up-space-list.txt&lt;/a>.
+Note this, significantly increases CI run time, only use in cases of space errors.&lt;/p>
+&lt;/blockquote>
 &lt;ol start="6">
 &lt;li>Build the container locally (e.g. running the build script with the &amp;ndash;debug flag: &lt;a href="https://github.com/NeuroDesk/neurocontainers/blob/master/recipes/lcmodel/build.sh">https://github.com/NeuroDesk/neurocontainers/blob/master/recipes/lcmodel/build.sh&lt;/a>)&lt;/li>
 &lt;li>updated changes in local git repository&lt;/li>

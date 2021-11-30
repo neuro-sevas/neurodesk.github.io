@@ -21,12 +21,12 @@
 ">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://neurodesk.github.io/developers/new_tools/add_tool/"><meta property="article:section" content="developers">
-<meta property="article:modified_time" content="2021-10-26T15:24:28+11:00"><meta property="og:site_name" content="NeuroDesk">
+<meta property="article:modified_time" content="2021-12-01T09:19:04+10:00"><meta property="og:site_name" content="NeuroDesk">
 <meta itemprop=name content="Add tools">
 <meta itemprop=description content="Add a tool to neurodesktop
 ">
-<meta itemprop=dateModified content="2021-10-26T15:24:28+11:00">
-<meta itemprop=wordCount content="876">
+<meta itemprop=dateModified content="2021-12-01T09:19:04+10:00">
+<meta itemprop=wordCount content="910">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="Add tools">
 <meta name=twitter:description content="Add a tool to neurodesktop
@@ -285,6 +285,11 @@ cp -R template newapp</code></pre>
 </ol>
 <pre class="language-shell command-line" data-prompt=$><code>cd ../..
 sh update-builders.sh</code></pre>
+<blockquote>
+<p>if the CI build runs out of space, add the application to the following txt to add additional space.
+<a href=https://github.com/NeuroDesk/neurocontainers/blob/master/.github/workflows/free-up-space-list.txt>https://github.com/NeuroDesk/neurocontainers/blob/master/.github/workflows/free-up-space-list.txt</a>.
+Note this, significantly increases CI run time, only use in cases of space errors.</p>
+</blockquote>
 <ol start=6>
 <li>Build the container locally (e.g. running the build script with the &ndash;debug flag: <a href=https://github.com/NeuroDesk/neurocontainers/blob/master/recipes/lcmodel/build.sh>https://github.com/NeuroDesk/neurocontainers/blob/master/recipes/lcmodel/build.sh</a>)</li>
 <li>updated changes in local git repository</li>
@@ -368,8 +373,8 @@ sudo docker pull vnmd/neurodesktop-dev:latest && sudo docker run   --shm-size=1g
 </ol>
 <div class="text-muted mt-5 pt-3 border-top">
 Last modified
-October 26, 2021
-: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/74f4d611ab99c5e9467e8387a989119994036de1>Update add_tool.md (74f4d61)</a>
+December 1, 2021
+: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/1416fc1731beca67b70f2c3196bfbe51b60d2064>add instructions for freeing up space on CI (1416fc1)</a>
 </div>
 </div>
 </main>
