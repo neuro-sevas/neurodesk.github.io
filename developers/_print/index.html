@@ -86,18 +86,15 @@ This the multi-page printable view of this section.
 <h1 class=title>Developers</h1>
 <div class=lead>Documentation for Developers</div>
 <ul>
-<li>1: <a href=#pg-9dfb256e35d7dd91e05a33ec675f72e4>Neurodesk CVMFS</a></li>
+<li>1: <a href=#pg-95ed7c5681d2faa66b764be030124e59>Architecture</a></li>
 <ul>
-<li>1.1: <a href=#pg-7d2cf5c0520f7ea412450bf2c795e035>Setup CVMFS Proxy</a></li>
-<li>1.2: <a href=#pg-d12eca793afb912a040cd1c047606b56>CVMFS architecture</a></li>
-<li>1.3: <a href=#pg-9110e9d9e3591f58026d3d52fc7e72cb>Setup Stratum 0 server</a></li>
-<li>1.4: <a href=#pg-c25efc2b343b28af52b4173ce3a803a3>Setup Stratum 1 server</a></li>
+<li>1.1: <a href=#pg-d2ee0d937ef9e23352513cee17667503>Neurodesktop Release Process</a></li>
+<li>1.2: <a href=#pg-563591a7e975c9f90c317bf391d61e75>Neurodesk Architecture</a></li>
+<li>1.3: <a href=#pg-4e0ebcb307acf80f9f0f9d5fcf769e45>Neurodesktop Dev</a></li>
 </ul>
-<li>2: <a href=#pg-95ed7c5681d2faa66b764be030124e59>Architecture</a></li>
+<li>2: <a href=#pg-f347e8a68ab88feb2dbd40d7268e3b66>Documentation</a></li>
 <ul>
-<li>2.1: <a href=#pg-d2ee0d937ef9e23352513cee17667503>Neurodesktop Release Process</a></li>
-<li>2.2: <a href=#pg-563591a7e975c9f90c317bf391d61e75>Neurodesk Architecture</a></li>
-<li>2.3: <a href=#pg-4e0ebcb307acf80f9f0f9d5fcf769e45>Neurodesktop Dev</a></li>
+<li>2.1: <a href=#pg-43caa4b2a10189e2fa053496d5d16e07>Local Hugo Docsy</a></li>
 </ul>
 <li>3: <a href=#pg-fd28a1b5010f2ff02bb480802674fb39>How to add new tools</a></li>
 <ul>
@@ -107,311 +104,23 @@ This the multi-page printable view of this section.
 <li>4: <a href=#pg-f89498a0fd2d201e1dc7e27d7be9f337>Transparent Singularity</a></li>
 <ul>
 </ul>
+<li>5: <a href=#pg-9dfb256e35d7dd91e05a33ec675f72e4>Neurodesk CVMFS</a></li>
+<ul>
+<li>5.1: <a href=#pg-7d2cf5c0520f7ea412450bf2c795e035>Setup CVMFS Proxy</a></li>
+<li>5.2: <a href=#pg-d12eca793afb912a040cd1c047606b56>CVMFS architecture</a></li>
+<li>5.3: <a href=#pg-9110e9d9e3591f58026d3d52fc7e72cb>Setup Stratum 0 server</a></li>
+<li>5.4: <a href=#pg-c25efc2b343b28af52b4173ce3a803a3>Setup Stratum 1 server</a></li>
+</ul>
 </ul>
 <div class=content>
 </div>
 </div>
 <div class=td-content>
-<h1 id=pg-9dfb256e35d7dd91e05a33ec675f72e4>1 - Neurodesk CVMFS</h1>
-<div class=lead>How to interact with our CVMFS service.</div>
-</div>
-<div class=td-content>
-<h1 id=pg-7d2cf5c0520f7ea412450bf2c795e035>1.1 - Setup CVMFS Proxy</h1>
-<div class=lead>Setup CVMFS Proxy server</div>
-<p>If you want more speed in a region one way could be to setup another Stratum 1 server or a proxy. We currently don&rsquo;t run any proxy servers but it would be important for using it on a cluster.</p>
-<pre class="language-batch command-line" data-prompt=">" data-output=2-4>
-<code>docker run --shm-size=1gb -it --privileged --name neurodesktop `
--v C:/neurodesktop-storage:/neurodesktop-storage -p 8080:8080 `
--h neurodesktop-20211028 `
-vnmd/neurodesktop:20211028</code>
-</pre>
-<h1 id=setup-a-cvmfs-proxy-server>Setup a CVMFS proxy server</h1>
-<pre class="language-shell command-line" data-prompt=$>
-<code>sudo yum install -y squid</code>
-</pre>
-<p>Open the <code>squid.conf</code>and use the following configuration</p>
-<pre class="language-shell command-line" data-prompt=$>
-<code>sudo vi /etc/squid/squid.conf</code>
-</pre>
-<pre class=language-shell>
-<code># List of local IP addresses (separate IPs and/or CIDR notation) allowed to access your local proxy
-#acl local_nodes src YOUR_CLIENT_IPS
-
-# Destination domains that are allowed
-#acl stratum_ones dstdomain .YOURDOMAIN.ORG
-#acl stratum_ones dstdom_regex YOUR_REGEX
-acl stratum_ones dst 140.238.211.92
-
-# Squid port
-http_port 3128
-
-# Deny access to anything which is not part of our stratum_ones ACL.
-http_access deny !stratum_ones
-
-# Only allow access from our local machines
-#http_access allow local_nodes
-http_access allow localhost
-
-# Finally, deny all other access to this proxy
-http_access deny all
-
-minimum_expiry_time 0
-maximum_object_size 1024 MB
-
-cache_mem 128 MB
-maximum_object_size_in_memory 128 KB
-# 5 GB disk cache
-cache_dir ufs /var/spool/squid 5000 16 256
-</code>
-</pre>
-<pre class="language-shell command-line" data-prompt=$>
-<code>sudo squid -k parse
-sudo systemctl start squid
-sudo systemctl enable squid
-sudo systemctl status squid
-sudo systemctl restart squid</code>
-</pre>
-</div>
-<div class=td-content style=page-break-before:always>
-<h1 id=pg-d12eca793afb912a040cd1c047606b56>1.2 - CVMFS architecture</h1>
-<div class=lead>CVMFS architecture</div>
-<p>We store our singuarlity containers unpacked on CVMFS. We tried the DUCC tool in the beginning, but it was causing too many issues with dockerhub and we were rate limited. The script to unpack our singularity containers is here: <a href=https://github.com/NeuroDesk/neurocommand/blob/main/cvmfs/sync_containers_to_cvmfs.sh>https://github.com/NeuroDesk/neurocommand/blob/main/cvmfs/sync_containers_to_cvmfs.sh</a></p>
-<p>It gets called by a cronjob on the CVMFS Stratum 0 server and relies on the log.txt file being updated via an action in the neurocommand repository (<a href=https://github.com/NeuroDesk/neurocommand/blob/main/.github/workflows/upload_containers_simg.sh>https://github.com/NeuroDesk/neurocommand/blob/main/.github/workflows/upload_containers_simg.sh</a>)</p>
-<p>The Stratum 1 servers then pull this repo from Stratum 0 and our desktops mount these repos (configured here: <a href=https://github.com/NeuroDesk/neurodesktop/blob/main/Dockerfile>https://github.com/NeuroDesk/neurodesktop/blob/main/Dockerfile</a>)</p>
-<p>The startup script (<a href=https://github.com/NeuroDesk/neurodesktop/blob/main/config/startup.sh>https://github.com/NeuroDesk/neurodesktop/blob/main/config/startup.sh</a>) sets up CVMFS and tests which server is fastest during the container startup.</p>
-<p>This can also be done manually:</p>
-<pre class="language-shell command-line" data-prompt=$><code>sudo cvmfs_talk -i neurodesk.ardc.edu.au host info
-sudo cvmfs_talk -i neurodesk.ardc.edu.au host probe
-cvmfs_config stat -v neurodesk.ardc.edu.au</code></pre><blockquote>
-</blockquote>
-</div>
-<div class=td-content style=page-break-before:always>
-<h1 id=pg-9110e9d9e3591f58026d3d52fc7e72cb>1.3 - Setup Stratum 0 server</h1>
-<div class=lead>Host a Stratum 0 server</div>
-<h2 id=setup-a-stratum-0-server>Setup a Stratum 0 server:</h2>
-<h3 id=setup-storage>Setup Storage</h3>
-<p>(would object storage be better? -> see comment below under next iteration ideas)</p>
-<pre class="language-shell command-line" data-prompt=$>
-<code>lsblk -l
-sudo mkfs.ext4 /dev/vdb
-sudo mkdir /storage
-sudo mount /dev/vdb /storage/ -t auto
-sudo chown ec2-user /storage/
-sudo chmod a+rwx /storage/</code>
-</pre>
-<pre class="language-shell command-line" data-prompt=$ data-output=2>
-<code>sudo vi /etc/fstab
-/dev/vdb  /storage    auto    defaults,nofail   0  2</code>
-</pre>
-<h3 id=setup-server>Setup server</h3>
-<pre class="language-shell command-line" data-prompt=$ data-output="41, 44-52">
-<code>sudo yum install vim htop gcc git screen
-sudo timedatectl set-timezone Australia/Brisbane
-
-sudo yum install -y https://ecsft.cern.ch/dist/cvmfs/cvmfs-release/cvmfs-release-latest.noarch.rpm
-sudo yum install -y cvmfs cvmfs-server
-
-sudo systemctl enable httpd
-sudo systemctl restart httpd
-
-# sudo systemctl stop firewalld 
-
-# restore keys:
-sudo mkdir /etc/cvmfs/keys/incoming
-sudo chmod a+rwx /etc/cvmfs/keys/incoming
-cd connections/cvmfs_keys/
-scp neuro* ec2-user@203.101.226.164:/etc/cvmfs/keys/incoming
-sudo mv /etc/cvmfs/keys/incoming/* /etc/cvmfs/keys/
-
-#backup keys: 
-#mkdir cvmfs_keys
-#scp opc@158.101.127.61:/etc/cvmfs/keys/neuro* .
-
-sudo cvmfs_server mkfs -o $USER neurodesk.ardc.edu.au
-
-cd /storage
-sudo mkdir -p cvmfs-storage/srv/
-cd /srv/
-sudo mv cvmfs/ /storage/cvmfs-storage/srv/
-sudo ln -s /storage/cvmfs-storage/srv/cvmfs/
-
-cd /var/spool
-sudo mkdir /storage/spool
-sudo mv cvmfs/ /storage/spool/
-sudo ln -s  /storage/spool/cvmfs .
-
-cvmfs_server transaction neurodesk.ardc.edu.au
-
-cvmfs_server publish neurodesk.ardc.edu.au</code>
-</pre>
-<pre class="language-shell command-line" data-prompt=$ data-ouput=2>
-<code>sudo vi /etc/cron.d/cvmfs_resign</code>
-</pre>
-<pre class=language-shell>
-<code>0 11 * * 1 root /usr/bin/cvmfs_server resign neurodesk.ardc.edu.au</code>
-</pre>
-<pre class="language-shell command-line" data-prompt=$ data-ouput=2>
-<code>cat /etc/cvmfs/keys/neurodesk.ardc.edu.au.pub</code>
-</pre>
-<pre class=language-shell>
-<code>MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuV9JBs9uXBR83qUs7AiE
-nSQfvh6VCdNigVzOfRMol5cXsYq3cFy/Vn1Nt+7SGpDTQArQieZo4eWC9ww2oLq0
-vY1pWyAms3Y4i+IUmMbwNifDU4GQ1KN9u4zl9Peun2YQCLE7mjC0ZLQtLM7Q0Z8h
-NwP8jRJTN+u8mRKzkyxfSMLscVMKhm2pAwnT1zB9i3bzVV+FSnidXq8rnnzNHMgv
-tfqx1h0gVyTeodToeFeGG5vq69wGZlwEwBJWVRGzzr+a8dWNBFMJ1HxamrBEBW4P
-AxOKGHmQHTGbo+tdV/K6ZxZ2Ry+PVedNmbON/EPaGlI8Vd0fascACfByqqeUEhAB
-dQIDAQAB
------END PUBLIC KEY-----</code>
-</pre>
-<h2 id=next-iteration-of-this>Next iteration of this:</h2>
-<h3 id=use-object-storage>use object storage?</h3>
-<ul>
-<li>current implementation uses block storage, but this makes increasing the volume size a bit more work</li>
-<li>we coulddn&rsquo;t get object storage to work on Oracle as it assumes AWS S3</li>
-</ul>
-<h3 id=optimize-settings-for-repositories-for-container-images>Optimize settings for repositories for Container Images</h3>
-<p>from the CVMFS documentation:
-Repositories containing Linux container image contents (that is: container root file systems) should use overlayfs as a union file system and have the following configuration:</p>
-<pre><code>CVMFS_INCLUDE_XATTRS=true
-CVMFS_VIRTUAL_DIR=true
-</code></pre>
-<p>Extended attributes of files, such as file capabilities and SElinux attributes, are recorded. And previous file system revisions can be accessed from the clients.</p>
-<h2 id=currently-not-used>Currently not used</h2>
-<p>We tested the DUCC tool in the beginning, but it was leading to too many docker pulls and we therefore replaced it with our own script: <a href=https://github.com/NeuroDesk/neurocommand/blob/main/cvmfs/sync_containers_to_cvmfs.sh>https://github.com/NeuroDesk/neurocommand/blob/main/cvmfs/sync_containers_to_cvmfs.sh</a></p>
-<p>This is the old DUCC setup</p>
-<pre class="language-shell command-line" data-prompt=$>
-<code>sudo yum install cvmfs-ducc.x86_64
-sudo -i
-dnf install -y yum-utils 
-yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
-dnf install docker-ce docker-ce-cli containerd.io
-systemctl enable docker
-systemctl start docker
-docker version
-docker info
-
-# leave root mode
-
-sudo groupadd docker
-sudo usermod -aG docker $USER
-sudo chown root:docker /var/run/docker.sock
-newgrp docker
-
-
-vi convert_appsjson_to_wishlist.sh
-export DUCC_DOCKER_REGISTRY_PASS=configure_secret_password_here_and_dont_push_to_github
-cd neurodesk
-git pull
-./gen_cvmfs_wishlist.sh
-cvmfs_ducc convert recipe_neurodesk_auto.yaml
-cd ..
-
-
-chmod +x convert_appsjson_to_wishlist.sh
-
-git clone https://github.com/NeuroDesk/neurodesk/
-
-# setup cron job
-sudo vi /etc/cron.d/cvmfs_dockerpull
-*/5 * * * * opc cd ~ && bash /home/opc/convert_appsjson_to_wishlist.sh
-
-
-
-#vi recipe.yaml
-
-##version: 1
-#user: vnmd
-#cvmfs_repo: neurodesk.ardc.edu.au
-#output_format: '$(scheme)://$(registry)/vnmd/thin_$(image)'
-#input:
-#- 'https://registry.hub.docker.com/vnmd/tgvqsm_1.0.0:20210119'
-#- 'https://registry.hub.docker.com/vnmd/itksnap_3.8.0:20201208'
-
-
-#cvmfs_ducc convert recipe_neurodesk.yaml
-#cvmfs_ducc convert recipe_unpacked.yaml</code>
-</pre><blockquote>
-</blockquote>
-</div>
-<div class=td-content style=page-break-before:always>
-<h1 id=pg-c25efc2b343b28af52b4173ce3a803a3>1.4 - Setup Stratum 1 server</h1>
-<div class=lead>Host a Stratum 1 server</div>
-<p>The stratum 1 servers for the desktop are configured here: <a href=https://github.com/NeuroDesk/neurodesktop/blob/main/Dockerfile>https://github.com/NeuroDesk/neurodesktop/blob/main/Dockerfile</a></p>
-<p>If you want more speed in a region one way could be to setup another Stratum 1 server or a proxy.</p>
-<h1 id=setup-a-stratum-1-server>Setup a Stratum 1 server:</h1>
-<pre class="language-shell command-line" data-prompt=$>
-<code>sudo yum install -y https://ecsft.cern.ch/dist/cvmfs/cvmfs-release/cvmfs-release-latest.noarch.rpm
-sudo yum install -y cvmfs-server squid
-sudo yum install -y python3-mod_wsgi 
-
-sudo sed -i 's/Listen 80/Listen 127.0.0.1:8080/' /etc/httpd/conf/httpd.conf
-
-set +H
-echo "http_port 80 accel" | sudo tee /etc/squid/squid.conf
-echo "http_port 8000 accel" | sudo tee -a /etc/squid/squid.conf
-echo "http_access allow all" | sudo tee -a /etc/squid/squid.conf
-echo "cache_peer 127.0.0.1 parent 8080 0 no-query originserver" | sudo tee -a /etc/squid/squid.conf
-echo "acl CVMFSAPI urlpath_regex ^/cvmfs/[^/]*/api/" | sudo tee -a /etc/squid/squid.conf
-echo "cache deny !CVMFSAPI" | sudo tee -a /etc/squid/squid.conf
-echo "cache_mem 128 MB" | sudo tee -a /etc/squid/squid.conf
-
-sudo systemctl start httpd
-sudo systemctl start squid
-sudo systemctl enable httpd
-sudo systemctl enable squid
-
-echo 'CVMFS_GEO_LICENSE_KEY=kGepdzqbAP4fjf5X' | sudo tee -a /etc/cvmfs/server.local
-sudo chmod 600 /etc/cvmfs/server.local
-
-sudo mkdir -p /etc/cvmfs/keys/ardc.edu.au/
-
-echo "-----BEGIN PUBLIC KEY-----
-MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwUPEmxDp217SAtZxaBep
-Bi2TQcLoh5AJ//HSIz68ypjOGFjwExGlHb95Frhu1SpcH5OASbV+jJ60oEBLi3sD
-qA6rGYt9kVi90lWvEjQnhBkPb0uWcp1gNqQAUocybCzHvoiG3fUzAe259CrK09qR
-pX8sZhgK3eHlfx4ycyMiIQeg66AHlgVCJ2fKa6fl1vnh6adJEPULmn6vZnevvUke
-I6U1VcYTKm5dPMrOlY/fGimKlyWvivzVv1laa5TAR2Dt4CfdQncOz+rkXmWjLjkD
-87WMiTgtKybsmMLb2yCGSgLSArlSWhbMA0MaZSzAwE9PJKCCMvTANo5644zc8jBe
-NQIDAQAB
------END PUBLIC KEY-----" | sudo tee /etc/cvmfs/keys/ardc.edu.au/neurodesk.ardc.edu.au.pub
-
-
-sudo cvmfs_server add-replica -o $USER http://203.101.226.164/cvmfs/neurodesk.ardc.edu.au /etc/cvmfs/keys/ardc.edu.au
-
-# CVMFS will store everything in /srv/cvmfs so make sure there is enough space or create a symlink to a bigger storage volume
-# e.g.:
-
-
-
-sudo cvmfs_server snapshot neurodesk.ardc.edu.au
-
-
-echo "/var/log/cvmfs/*.log {
-    weekly
-    missingok
-    notifempty
-}" | sudo tee /etc/logrotate.d/cvmfs
-
-
-echo '*/5 * * * * root output=$(/usr/bin/cvmfs_server snapshot -a -i 2>&1) || echo "$output" ' | sudo tee /etc/cron.d/cvmfs_stratum1_snapshot
-
-sudo yum install iptables
-sudo iptables -t nat -A PREROUTING -p tcp -m tcp --dport 80 -j REDIRECT --to-ports 8000
-
-sudo systemctl disable firewalld 
-sudo systemctl stop firewalld 
-# make sure that port 80 is open in the real firewall
-
-sudo cvmfs_server update-geodb</code>
-</pre><blockquote>
-</blockquote>
-</div>
-<div class=td-content style=page-break-before:always>
-<h1 id=pg-95ed7c5681d2faa66b764be030124e59>2 - Architecture</h1>
+<h1 id=pg-95ed7c5681d2faa66b764be030124e59>1 - Architecture</h1>
 <div class=lead>The architecture of the Neurodesk ecosystem</div>
 </div>
 <div class=td-content>
-<h1 id=pg-d2ee0d937ef9e23352513cee17667503>2.1 - Neurodesktop Release Process</h1>
+<h1 id=pg-d2ee0d937ef9e23352513cee17667503>1.1 - Neurodesktop Release Process</h1>
 <div class=lead>A description of what to do to create new release of our Neurodesktop</div>
 <ol>
 <li>Check if the last automated build ran OK: <a href=https://github.com/NeuroDesk/neurodesktop/actions>https://github.com/NeuroDesk/neurodesktop/actions</a></li>
@@ -430,7 +139,7 @@ sudo cvmfs_server update-geodb</code>
 </ol>
 </div>
 <div class=td-content style=page-break-before:always>
-<h1 id=pg-563591a7e975c9f90c317bf391d61e75>2.2 - Neurodesk Architecture</h1>
+<h1 id=pg-563591a7e975c9f90c317bf391d61e75>1.2 - Neurodesk Architecture</h1>
 <div class=lead>The architecture of the Neurodesk ecosystem</div>
 <h1 id=layers>Layers</h1>
 <p>Neurodesktop: <a href=https://github.com/NeuroDesk/neurodesktop>https://github.com/NeuroDesk/neurodesktop</a></p>
@@ -469,7 +178,7 @@ sudo cvmfs_server update-geodb</code>
 </ul>
 </div>
 <div class=td-content style=page-break-before:always>
-<h1 id=pg-4e0ebcb307acf80f9f0f9d5fcf769e45>2.3 - Neurodesktop Dev</h1>
+<h1 id=pg-4e0ebcb307acf80f9f0f9d5fcf769e45>1.3 - Neurodesktop Dev</h1>
 <div class=lead>Testing the latest dev version of Neurodesktop</div>
 <div class="alert alert-warning" role=alert>
 <h4 class=alert-heading>Warning</h4>
@@ -493,6 +202,31 @@ sudo docker run \
 <code>docker pull vnmd/neurodesktop-dev:latest
 docker run --shm-size=1gb -it --privileged --name neurodesktop -v C:/neurodesktop-storage:/neurodesktop-storage -p 8080:8080 -h neurodesktop-dev vnmd/neurodesktop-dev:latest</code>
 </pre>
+</div>
+<div class=td-content style=page-break-before:always>
+<h1 id=pg-f347e8a68ab88feb2dbd40d7268e3b66>2 - Documentation</h1>
+<div class=lead>How to edit the documentation</div>
+</div>
+<div class=td-content>
+<h1 id=pg-43caa4b2a10189e2fa053496d5d16e07>2.1 - Local Hugo Docsy</h1>
+<div class=lead>How to edit the documentation</div>
+<h2 id=local-hugo-docsy>Local Hugo Docsy</h2>
+<h3 id=clone-repository>Clone repository</h3>
+<p>Using SSH</p>
+<p><code>git clone --recurse-submodules git@github.com:NeuroDesk/neurodesk.github.io.git</code></p>
+<p>or Https:</p>
+<p><code>git clone --recurse-submodules https://github.com/NeuroDesk/neurodesk.github.io.git</code></p>
+<h3 id=if-you-cloned-without---recurse-submodules>If you cloned without &ndash;recurse-submodules</h3>
+<p>Run the following command to pull submodules</p>
+<p><code>git submodule update --init --recursive --remote</code></p>
+<h3 id=download-hugo-binary>Download Hugo binary</h3>
+<p>Hugo releases are on <a href=https://github.com/gohugoio/hugo/releases>https://github.com/gohugoio/hugo/releases</a></p>
+<p>Download latest version of hugo extended</p>
+<p>e.g. for windows: <a href=https://github.com/gohugoio/hugo/releases/download/v0.88.1/hugo_extended_0.88.1_Windows-64bit.zip>https://github.com/gohugoio/hugo/releases/download/v0.88.1/hugo_extended_0.88.1_Windows-64bit.zip</a></p>
+<h3 id=start-local-hugo-server>Start local hugo server</h3>
+<p>Extract hugo binary (hugo.exe) to your neurodesk.github.io dir</p>
+<p>Run server for windows: <code>.\hugo.exe server --disableFastRender</code></p>
+<p>Once started, dev website will be accessible via http://localhost:1313</p>
 </div>
 <div class=td-content style=page-break-before:always>
 <h1 id=pg-fd28a1b5010f2ff02bb480802674fb39>3 - How to add new tools</h1>
@@ -829,6 +563,301 @@ Here are two examples for FreeSurfer and FreeView. This first one only installs 
 </code></pre></div><h2 id=uninstall-container-and-cleanup>Uninstall container and cleanup</h2>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>./ts_uninstall.sh
 </code></pre></div>
+</div>
+<div class=td-content style=page-break-before:always>
+<h1 id=pg-9dfb256e35d7dd91e05a33ec675f72e4>5 - Neurodesk CVMFS</h1>
+<div class=lead>How to interact with our CVMFS service.</div>
+</div>
+<div class=td-content>
+<h1 id=pg-7d2cf5c0520f7ea412450bf2c795e035>5.1 - Setup CVMFS Proxy</h1>
+<div class=lead>Setup CVMFS Proxy server</div>
+<p>If you want more speed in a region one way could be to setup another Stratum 1 server or a proxy. We currently don&rsquo;t run any proxy servers but it would be important for using it on a cluster.</p>
+<pre class="language-batch command-line" data-prompt=">" data-output=2-4>
+<code>docker run --shm-size=1gb -it --privileged --name neurodesktop `
+-v C:/neurodesktop-storage:/neurodesktop-storage -p 8080:8080 `
+-h neurodesktop-20211028 `
+vnmd/neurodesktop:20211028</code>
+</pre>
+<h1 id=setup-a-cvmfs-proxy-server>Setup a CVMFS proxy server</h1>
+<pre class="language-shell command-line" data-prompt=$>
+<code>sudo yum install -y squid</code>
+</pre>
+<p>Open the <code>squid.conf</code>and use the following configuration</p>
+<pre class="language-shell command-line" data-prompt=$>
+<code>sudo vi /etc/squid/squid.conf</code>
+</pre>
+<pre class=language-shell>
+<code># List of local IP addresses (separate IPs and/or CIDR notation) allowed to access your local proxy
+#acl local_nodes src YOUR_CLIENT_IPS
+
+# Destination domains that are allowed
+#acl stratum_ones dstdomain .YOURDOMAIN.ORG
+#acl stratum_ones dstdom_regex YOUR_REGEX
+acl stratum_ones dst 140.238.211.92
+
+# Squid port
+http_port 3128
+
+# Deny access to anything which is not part of our stratum_ones ACL.
+http_access deny !stratum_ones
+
+# Only allow access from our local machines
+#http_access allow local_nodes
+http_access allow localhost
+
+# Finally, deny all other access to this proxy
+http_access deny all
+
+minimum_expiry_time 0
+maximum_object_size 1024 MB
+
+cache_mem 128 MB
+maximum_object_size_in_memory 128 KB
+# 5 GB disk cache
+cache_dir ufs /var/spool/squid 5000 16 256
+</code>
+</pre>
+<pre class="language-shell command-line" data-prompt=$>
+<code>sudo squid -k parse
+sudo systemctl start squid
+sudo systemctl enable squid
+sudo systemctl status squid
+sudo systemctl restart squid</code>
+</pre>
+</div>
+<div class=td-content style=page-break-before:always>
+<h1 id=pg-d12eca793afb912a040cd1c047606b56>5.2 - CVMFS architecture</h1>
+<div class=lead>CVMFS architecture</div>
+<p>We store our singuarlity containers unpacked on CVMFS. We tried the DUCC tool in the beginning, but it was causing too many issues with dockerhub and we were rate limited. The script to unpack our singularity containers is here: <a href=https://github.com/NeuroDesk/neurocommand/blob/main/cvmfs/sync_containers_to_cvmfs.sh>https://github.com/NeuroDesk/neurocommand/blob/main/cvmfs/sync_containers_to_cvmfs.sh</a></p>
+<p>It gets called by a cronjob on the CVMFS Stratum 0 server and relies on the log.txt file being updated via an action in the neurocommand repository (<a href=https://github.com/NeuroDesk/neurocommand/blob/main/.github/workflows/upload_containers_simg.sh>https://github.com/NeuroDesk/neurocommand/blob/main/.github/workflows/upload_containers_simg.sh</a>)</p>
+<p>The Stratum 1 servers then pull this repo from Stratum 0 and our desktops mount these repos (configured here: <a href=https://github.com/NeuroDesk/neurodesktop/blob/main/Dockerfile>https://github.com/NeuroDesk/neurodesktop/blob/main/Dockerfile</a>)</p>
+<p>The startup script (<a href=https://github.com/NeuroDesk/neurodesktop/blob/main/config/startup.sh>https://github.com/NeuroDesk/neurodesktop/blob/main/config/startup.sh</a>) sets up CVMFS and tests which server is fastest during the container startup.</p>
+<p>This can also be done manually:</p>
+<pre class="language-shell command-line" data-prompt=$><code>sudo cvmfs_talk -i neurodesk.ardc.edu.au host info
+sudo cvmfs_talk -i neurodesk.ardc.edu.au host probe
+cvmfs_config stat -v neurodesk.ardc.edu.au</code></pre><blockquote>
+</blockquote>
+</div>
+<div class=td-content style=page-break-before:always>
+<h1 id=pg-9110e9d9e3591f58026d3d52fc7e72cb>5.3 - Setup Stratum 0 server</h1>
+<div class=lead>Host a Stratum 0 server</div>
+<h2 id=setup-a-stratum-0-server>Setup a Stratum 0 server:</h2>
+<h3 id=setup-storage>Setup Storage</h3>
+<p>(would object storage be better? -> see comment below under next iteration ideas)</p>
+<pre class="language-shell command-line" data-prompt=$>
+<code>lsblk -l
+sudo mkfs.ext4 /dev/vdb
+sudo mkdir /storage
+sudo mount /dev/vdb /storage/ -t auto
+sudo chown ec2-user /storage/
+sudo chmod a+rwx /storage/</code>
+</pre>
+<pre class="language-shell command-line" data-prompt=$ data-output=2>
+<code>sudo vi /etc/fstab
+/dev/vdb  /storage    auto    defaults,nofail   0  2</code>
+</pre>
+<h3 id=setup-server>Setup server</h3>
+<pre class="language-shell command-line" data-prompt=$ data-output="41, 44-52">
+<code>sudo yum install vim htop gcc git screen
+sudo timedatectl set-timezone Australia/Brisbane
+
+sudo yum install -y https://ecsft.cern.ch/dist/cvmfs/cvmfs-release/cvmfs-release-latest.noarch.rpm
+sudo yum install -y cvmfs cvmfs-server
+
+sudo systemctl enable httpd
+sudo systemctl restart httpd
+
+# sudo systemctl stop firewalld 
+
+# restore keys:
+sudo mkdir /etc/cvmfs/keys/incoming
+sudo chmod a+rwx /etc/cvmfs/keys/incoming
+cd connections/cvmfs_keys/
+scp neuro* ec2-user@203.101.226.164:/etc/cvmfs/keys/incoming
+sudo mv /etc/cvmfs/keys/incoming/* /etc/cvmfs/keys/
+
+#backup keys: 
+#mkdir cvmfs_keys
+#scp opc@158.101.127.61:/etc/cvmfs/keys/neuro* .
+
+sudo cvmfs_server mkfs -o $USER neurodesk.ardc.edu.au
+
+cd /storage
+sudo mkdir -p cvmfs-storage/srv/
+cd /srv/
+sudo mv cvmfs/ /storage/cvmfs-storage/srv/
+sudo ln -s /storage/cvmfs-storage/srv/cvmfs/
+
+cd /var/spool
+sudo mkdir /storage/spool
+sudo mv cvmfs/ /storage/spool/
+sudo ln -s  /storage/spool/cvmfs .
+
+cvmfs_server transaction neurodesk.ardc.edu.au
+
+cvmfs_server publish neurodesk.ardc.edu.au</code>
+</pre>
+<pre class="language-shell command-line" data-prompt=$ data-ouput=2>
+<code>sudo vi /etc/cron.d/cvmfs_resign</code>
+</pre>
+<pre class=language-shell>
+<code>0 11 * * 1 root /usr/bin/cvmfs_server resign neurodesk.ardc.edu.au</code>
+</pre>
+<pre class="language-shell command-line" data-prompt=$ data-ouput=2>
+<code>cat /etc/cvmfs/keys/neurodesk.ardc.edu.au.pub</code>
+</pre>
+<pre class=language-shell>
+<code>MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuV9JBs9uXBR83qUs7AiE
+nSQfvh6VCdNigVzOfRMol5cXsYq3cFy/Vn1Nt+7SGpDTQArQieZo4eWC9ww2oLq0
+vY1pWyAms3Y4i+IUmMbwNifDU4GQ1KN9u4zl9Peun2YQCLE7mjC0ZLQtLM7Q0Z8h
+NwP8jRJTN+u8mRKzkyxfSMLscVMKhm2pAwnT1zB9i3bzVV+FSnidXq8rnnzNHMgv
+tfqx1h0gVyTeodToeFeGG5vq69wGZlwEwBJWVRGzzr+a8dWNBFMJ1HxamrBEBW4P
+AxOKGHmQHTGbo+tdV/K6ZxZ2Ry+PVedNmbON/EPaGlI8Vd0fascACfByqqeUEhAB
+dQIDAQAB
+-----END PUBLIC KEY-----</code>
+</pre>
+<h2 id=next-iteration-of-this>Next iteration of this:</h2>
+<h3 id=use-object-storage>use object storage?</h3>
+<ul>
+<li>current implementation uses block storage, but this makes increasing the volume size a bit more work</li>
+<li>we coulddn&rsquo;t get object storage to work on Oracle as it assumes AWS S3</li>
+</ul>
+<h3 id=optimize-settings-for-repositories-for-container-images>Optimize settings for repositories for Container Images</h3>
+<p>from the CVMFS documentation:
+Repositories containing Linux container image contents (that is: container root file systems) should use overlayfs as a union file system and have the following configuration:</p>
+<pre><code>CVMFS_INCLUDE_XATTRS=true
+CVMFS_VIRTUAL_DIR=true
+</code></pre>
+<p>Extended attributes of files, such as file capabilities and SElinux attributes, are recorded. And previous file system revisions can be accessed from the clients.</p>
+<h2 id=currently-not-used>Currently not used</h2>
+<p>We tested the DUCC tool in the beginning, but it was leading to too many docker pulls and we therefore replaced it with our own script: <a href=https://github.com/NeuroDesk/neurocommand/blob/main/cvmfs/sync_containers_to_cvmfs.sh>https://github.com/NeuroDesk/neurocommand/blob/main/cvmfs/sync_containers_to_cvmfs.sh</a></p>
+<p>This is the old DUCC setup</p>
+<pre class="language-shell command-line" data-prompt=$>
+<code>sudo yum install cvmfs-ducc.x86_64
+sudo -i
+dnf install -y yum-utils 
+yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+dnf install docker-ce docker-ce-cli containerd.io
+systemctl enable docker
+systemctl start docker
+docker version
+docker info
+
+# leave root mode
+
+sudo groupadd docker
+sudo usermod -aG docker $USER
+sudo chown root:docker /var/run/docker.sock
+newgrp docker
+
+
+vi convert_appsjson_to_wishlist.sh
+export DUCC_DOCKER_REGISTRY_PASS=configure_secret_password_here_and_dont_push_to_github
+cd neurodesk
+git pull
+./gen_cvmfs_wishlist.sh
+cvmfs_ducc convert recipe_neurodesk_auto.yaml
+cd ..
+
+
+chmod +x convert_appsjson_to_wishlist.sh
+
+git clone https://github.com/NeuroDesk/neurodesk/
+
+# setup cron job
+sudo vi /etc/cron.d/cvmfs_dockerpull
+*/5 * * * * opc cd ~ && bash /home/opc/convert_appsjson_to_wishlist.sh
+
+
+
+#vi recipe.yaml
+
+##version: 1
+#user: vnmd
+#cvmfs_repo: neurodesk.ardc.edu.au
+#output_format: '$(scheme)://$(registry)/vnmd/thin_$(image)'
+#input:
+#- 'https://registry.hub.docker.com/vnmd/tgvqsm_1.0.0:20210119'
+#- 'https://registry.hub.docker.com/vnmd/itksnap_3.8.0:20201208'
+
+
+#cvmfs_ducc convert recipe_neurodesk.yaml
+#cvmfs_ducc convert recipe_unpacked.yaml</code>
+</pre><blockquote>
+</blockquote>
+</div>
+<div class=td-content style=page-break-before:always>
+<h1 id=pg-c25efc2b343b28af52b4173ce3a803a3>5.4 - Setup Stratum 1 server</h1>
+<div class=lead>Host a Stratum 1 server</div>
+<p>The stratum 1 servers for the desktop are configured here: <a href=https://github.com/NeuroDesk/neurodesktop/blob/main/Dockerfile>https://github.com/NeuroDesk/neurodesktop/blob/main/Dockerfile</a></p>
+<p>If you want more speed in a region one way could be to setup another Stratum 1 server or a proxy.</p>
+<h1 id=setup-a-stratum-1-server>Setup a Stratum 1 server:</h1>
+<pre class="language-shell command-line" data-prompt=$>
+<code>sudo yum install -y https://ecsft.cern.ch/dist/cvmfs/cvmfs-release/cvmfs-release-latest.noarch.rpm
+sudo yum install -y cvmfs-server squid
+sudo yum install -y python3-mod_wsgi 
+
+sudo sed -i 's/Listen 80/Listen 127.0.0.1:8080/' /etc/httpd/conf/httpd.conf
+
+set +H
+echo "http_port 80 accel" | sudo tee /etc/squid/squid.conf
+echo "http_port 8000 accel" | sudo tee -a /etc/squid/squid.conf
+echo "http_access allow all" | sudo tee -a /etc/squid/squid.conf
+echo "cache_peer 127.0.0.1 parent 8080 0 no-query originserver" | sudo tee -a /etc/squid/squid.conf
+echo "acl CVMFSAPI urlpath_regex ^/cvmfs/[^/]*/api/" | sudo tee -a /etc/squid/squid.conf
+echo "cache deny !CVMFSAPI" | sudo tee -a /etc/squid/squid.conf
+echo "cache_mem 128 MB" | sudo tee -a /etc/squid/squid.conf
+
+sudo systemctl start httpd
+sudo systemctl start squid
+sudo systemctl enable httpd
+sudo systemctl enable squid
+
+echo 'CVMFS_GEO_LICENSE_KEY=kGepdzqbAP4fjf5X' | sudo tee -a /etc/cvmfs/server.local
+sudo chmod 600 /etc/cvmfs/server.local
+
+sudo mkdir -p /etc/cvmfs/keys/ardc.edu.au/
+
+echo "-----BEGIN PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwUPEmxDp217SAtZxaBep
+Bi2TQcLoh5AJ//HSIz68ypjOGFjwExGlHb95Frhu1SpcH5OASbV+jJ60oEBLi3sD
+qA6rGYt9kVi90lWvEjQnhBkPb0uWcp1gNqQAUocybCzHvoiG3fUzAe259CrK09qR
+pX8sZhgK3eHlfx4ycyMiIQeg66AHlgVCJ2fKa6fl1vnh6adJEPULmn6vZnevvUke
+I6U1VcYTKm5dPMrOlY/fGimKlyWvivzVv1laa5TAR2Dt4CfdQncOz+rkXmWjLjkD
+87WMiTgtKybsmMLb2yCGSgLSArlSWhbMA0MaZSzAwE9PJKCCMvTANo5644zc8jBe
+NQIDAQAB
+-----END PUBLIC KEY-----" | sudo tee /etc/cvmfs/keys/ardc.edu.au/neurodesk.ardc.edu.au.pub
+
+
+sudo cvmfs_server add-replica -o $USER http://203.101.226.164/cvmfs/neurodesk.ardc.edu.au /etc/cvmfs/keys/ardc.edu.au
+
+# CVMFS will store everything in /srv/cvmfs so make sure there is enough space or create a symlink to a bigger storage volume
+# e.g.:
+
+
+
+sudo cvmfs_server snapshot neurodesk.ardc.edu.au
+
+
+echo "/var/log/cvmfs/*.log {
+    weekly
+    missingok
+    notifempty
+}" | sudo tee /etc/logrotate.d/cvmfs
+
+
+echo '*/5 * * * * root output=$(/usr/bin/cvmfs_server snapshot -a -i 2>&1) || echo "$output" ' | sudo tee /etc/cron.d/cvmfs_stratum1_snapshot
+
+sudo yum install iptables
+sudo iptables -t nat -A PREROUTING -p tcp -m tcp --dport 80 -j REDIRECT --to-ports 8000
+
+sudo systemctl disable firewalld 
+sudo systemctl stop firewalld 
+# make sure that port 80 is open in the real firewall
+
+sudo cvmfs_server update-geodb</code>
+</pre><blockquote>
+</blockquote>
 </div>
 </main>
 </div>
