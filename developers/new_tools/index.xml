@@ -118,9 +118,9 @@ Use the guide below to add a tool to &lt;em>neurodesktop&lt;/em> or &lt;em>neuro
 &lt;li>Fork &lt;a href="https://github.com/NeuroDesk/neurocontainers">https://github.com/NeuroDesk/neurocontainers&lt;/a> into your account.&lt;/li>
 &lt;li>Go to your neurocontainers fork.&lt;/li>
 &lt;li>If Actions tab is missing, go to Settings &amp;gt; Actions. Select Allow all actions. Then Save.&lt;/li>
-&lt;li>In the actions tab, select &amp;ldquo;I understand my workflows, go ahead and enable them&amp;rdquo;
-Pushes to the recipes in your fork will now trigger actions to build the respective docker container, and push them to your Github Packages.&lt;/li>
+&lt;li>In the actions tab, select &amp;ldquo;I understand my workflows, go ahead and enable them&amp;rdquo;&lt;/li>
 &lt;/ol>
+&lt;p>Pushes to the recipes in your fork will now trigger actions to build the respective docker container, and push them to your Github Packages.&lt;/p>
 &lt;/div>
 &lt;/li>
 &lt;/ol>
