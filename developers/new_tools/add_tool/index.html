@@ -21,12 +21,12 @@
 ">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://neurodesk.github.io/developers/new_tools/add_tool/"><meta property="article:section" content="developers">
-<meta property="article:modified_time" content="2021-12-01T09:19:04+10:00"><meta property="og:site_name" content="NeuroDesk">
+<meta property="article:modified_time" content="2021-12-02T00:33:40+10:00"><meta property="og:site_name" content="NeuroDesk">
 <meta itemprop=name content="Add tools">
 <meta itemprop=description content="Add a tool to neurodesktop
 ">
-<meta itemprop=dateModified content="2021-12-01T09:19:04+10:00">
-<meta itemprop=wordCount content="910">
+<meta itemprop=dateModified content="2021-12-02T00:33:40+10:00">
+<meta itemprop=wordCount content="981">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="Add tools">
 <meta name=twitter:description content="Add a tool to neurodesktop
@@ -266,8 +266,20 @@ Use the guide below to add a tool to <em>neurodesktop</em> or <em>neurocontainer
 <p>To build a container:</p>
 <ol>
 <li>Pull-in latest changes from Neurodocker upstream into our fork: <a href=https://github.com/NeuroDesk/neurodocker>https://github.com/NeuroDesk/neurodocker</a> - add recipe to neurodocker if relevant for their project (<a href=https://github.com/NeuroDesk/neurodocker>https://github.com/NeuroDesk/neurodocker</a>) and create a pull request to neurodocker (add new tool in a branch!)</li>
-<li>Clone the neurocontainers repository <a href=https://github.com/NeuroDesk/neurocontainers>https://github.com/NeuroDesk/neurocontainers</a></li>
+<li>Clone the neurocontainers repository:
+<div class="alert alert-primary" role=alert>
+<p>Optional: Fork neurocontainers and setup github actions</p>
+<ol>
+<li>Fork <a href=https://github.com/NeuroDesk/neurocontainers>https://github.com/NeuroDesk/neurocontainers</a> into your account.</li>
+<li>Go to your neurocontainers fork.</li>
+<li>If Actions tab is missing, go to Settings > Actions. Select Allow all actions. Then Save.</li>
+<li>In the actions tab, select &ldquo;I understand my workflows, go ahead and enable them&rdquo;
+Pushes to the recipes in your fork will now trigger actions to build the respective docker container, and push them to your Github Packages.</li>
 </ol>
+</div>
+</li>
+</ol>
+<p><a href=https://github.com/NeuroDesk/neurocontainers>https://github.com/NeuroDesk/neurocontainers</a></p>
 <pre class="language-shell command-line" data-prompt=$><code>git clone https://github.com/NeuroDesk/neurocontainers/</code></pre>
 <ol start=3>
 <li>Copy the directory template and rename to <em>newapp</em> in <code>neurocontainers/recipes</code></li>
@@ -365,16 +377,14 @@ ml toolName/toolVersion</code></pre>
 <p>Check in the dev build if everything is ok before releasing a new version of Neurodesktop:</p>
 </li>
 </ol>
-<pre class="language-shell command-line" data-prompt=$><code>
-sudo docker pull vnmd/neurodesktop-dev:latest && sudo docker run   --shm-size=1gb -it --privileged --name neurodesktop   -v ~/neurodesktop-storage:/neurodesktop-storage   -e HOST_UID="$(id -u)" -e HOST_GID="$(id -g)"   -p 8080:8080 -h neurodesktop-dev   vnmd/neurodesktop-dev:latest
-</code></pre>
+<pre class="language-shell command-line" data-prompt=$><code>sudo docker pull vnmd/neurodesktop-dev:latest && sudo docker run   --shm-size=1gb -it --privileged --name neurodesktop   -v ~/neurodesktop-storage:/neurodesktop-storage   -e HOST_UID="$(id -u)" -e HOST_GID="$(id -g)"   -p 8080:8080 -h neurodesktop-dev   vnmd/neurodesktop-dev:latest</code></pre>
 <ol start=21>
 <li>Consider contributing a tutorial about the new tool: <a href=https://github.com/NeuroDesk/neurodesk.github.io/tree/hugo-docsy/content/en/tutorials>https://github.com/NeuroDesk/neurodesk.github.io/tree/hugo-docsy/content/en/tutorials</a></li>
 </ol>
 <div class="text-muted mt-5 pt-3 border-top">
 Last modified
-December 1, 2021
-: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/1416fc1731beca67b70f2c3196bfbe51b60d2064>add instructions for freeing up space on CI (1416fc1)</a>
+December 2, 2021
+: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/b4f13d77136aed8f05af74e0991659111df22019>Add instructions for forking neurocontianers (b4f13d7)</a>
 </div>
 </div>
 </main>

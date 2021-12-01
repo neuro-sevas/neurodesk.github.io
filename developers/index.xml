@@ -111,8 +111,20 @@ Use the guide below to add a tool to &lt;em>neurodesktop&lt;/em> or &lt;em>neuro
 &lt;p>To build a container:&lt;/p>
 &lt;ol>
 &lt;li>Pull-in latest changes from Neurodocker upstream into our fork: &lt;a href="https://github.com/NeuroDesk/neurodocker">https://github.com/NeuroDesk/neurodocker&lt;/a> - add recipe to neurodocker if relevant for their project (&lt;a href="https://github.com/NeuroDesk/neurodocker">https://github.com/NeuroDesk/neurodocker&lt;/a>) and create a pull request to neurodocker (add new tool in a branch!)&lt;/li>
-&lt;li>Clone the neurocontainers repository &lt;a href="https://github.com/NeuroDesk/neurocontainers">https://github.com/NeuroDesk/neurocontainers&lt;/a>&lt;/li>
+&lt;li>Clone the neurocontainers repository:
+&lt;div class="alert alert-primary" role="alert">
+&lt;p>Optional: Fork neurocontainers and setup github actions&lt;/p>
+&lt;ol>
+&lt;li>Fork &lt;a href="https://github.com/NeuroDesk/neurocontainers">https://github.com/NeuroDesk/neurocontainers&lt;/a> into your account.&lt;/li>
+&lt;li>Go to your neurocontainers fork.&lt;/li>
+&lt;li>If Actions tab is missing, go to Settings &amp;gt; Actions. Select Allow all actions. Then Save.&lt;/li>
+&lt;li>In the actions tab, select &amp;ldquo;I understand my workflows, go ahead and enable them&amp;rdquo;
+Pushes to the recipes in your fork will now trigger actions to build the respective docker container, and push them to your Github Packages.&lt;/li>
 &lt;/ol>
+&lt;/div>
+&lt;/li>
+&lt;/ol>
+&lt;p>&lt;a href="https://github.com/NeuroDesk/neurocontainers">https://github.com/NeuroDesk/neurocontainers&lt;/a>&lt;/p>
 &lt;pre class="language-shell command-line" data-prompt="$">&lt;code>git clone https://github.com/NeuroDesk/neurocontainers/&lt;/code>&lt;/pre>
 &lt;ol start="3">
 &lt;li>Copy the directory template and rename to &lt;em>newapp&lt;/em> in &lt;code>neurocontainers/recipes&lt;/code>&lt;/li>
@@ -210,9 +222,7 @@ ml toolName/toolVersion&lt;/code>&lt;/pre>
 &lt;p>Check in the dev build if everything is ok before releasing a new version of Neurodesktop:&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;pre class="language-shell command-line" data-prompt="$">&lt;code>
-sudo docker pull vnmd/neurodesktop-dev:latest &amp;&amp; sudo docker run --shm-size=1gb -it --privileged --name neurodesktop -v ~/neurodesktop-storage:/neurodesktop-storage -e HOST_UID="$(id -u)" -e HOST_GID="$(id -g)" -p 8080:8080 -h neurodesktop-dev vnmd/neurodesktop-dev:latest
-&lt;/code>&lt;/pre>
+&lt;pre class="language-shell command-line" data-prompt="$">&lt;code>sudo docker pull vnmd/neurodesktop-dev:latest &amp;&amp; sudo docker run --shm-size=1gb -it --privileged --name neurodesktop -v ~/neurodesktop-storage:/neurodesktop-storage -e HOST_UID="$(id -u)" -e HOST_GID="$(id -g)" -p 8080:8080 -h neurodesktop-dev vnmd/neurodesktop-dev:latest&lt;/code>&lt;/pre>
 &lt;ol start="21">
 &lt;li>Consider contributing a tutorial about the new tool: &lt;a href="https://github.com/NeuroDesk/neurodesk.github.io/tree/hugo-docsy/content/en/tutorials">https://github.com/NeuroDesk/neurodesk.github.io/tree/hugo-docsy/content/en/tutorials&lt;/a>&lt;/li>
 &lt;/ol></description></item><item><title>Developers: Local Hugo Docsy</title><link>https://neurodesk.github.io/developers/documentation/local-hugo-docsy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/developers/documentation/local-hugo-docsy/</guid><description>
