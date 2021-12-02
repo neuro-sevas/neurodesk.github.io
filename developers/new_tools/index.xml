@@ -110,7 +110,13 @@ Use the guide below to add a tool to &lt;em>neurodesktop&lt;/em> or &lt;em>neuro
 &lt;h2 id="build-container">Build container&lt;/h2>
 &lt;p>To build a container:&lt;/p>
 &lt;ol>
-&lt;li>Pull-in latest changes from Neurodocker upstream into our fork: &lt;a href="https://github.com/NeuroDesk/neurodocker">https://github.com/NeuroDesk/neurodocker&lt;/a> - add recipe to neurodocker if relevant for their project (&lt;a href="https://github.com/NeuroDesk/neurodocker">https://github.com/NeuroDesk/neurodocker&lt;/a>) and create a pull request to neurodocker (add new tool in a branch!)&lt;/li>
+&lt;li>Sync/modify Neurodocker, the dependency we are using to build containers:
+&lt;ol>
+&lt;li>Press &amp;ldquo;Fetch upstream&amp;rdquo; in &lt;a href="https://github.com/NeuroDesk/neurodocker">https://github.com/NeuroDesk/neurodocker&lt;/a> to check if our fork of Neurodocker is already up-to-date&lt;/li>
+&lt;li>If there are upstream commits that are not synced yet, open an issue in &lt;a href="https://github.com/NeuroDesk/neurocontainers/issues">https://github.com/NeuroDesk/neurocontainers/issues&lt;/a>, requesting one of Neurodesk admins to pull-in latest changes from Neurodocker upstream into our fork of Neurodocker&lt;/li>
+&lt;li>If relevant to your project, add recipe to neurodocker (&lt;a href="https://github.com/NeuroDesk/neurodocker">https://github.com/NeuroDesk/neurodocker&lt;/a>) and create a pull request to neurodocker (add new tool in a branch!)&lt;/li>
+&lt;/ol>
+&lt;/li>
 &lt;li>Clone the neurocontainers repository:
 &lt;div class="alert alert-primary" role="alert">
 &lt;p>Optional: Fork neurocontainers and setup github actions&lt;/p>
