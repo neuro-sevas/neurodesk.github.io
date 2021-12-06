@@ -21,12 +21,12 @@
 ">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://neurodesk.github.io/developers/new_tools/add_tool/"><meta property="article:section" content="developers">
-<meta property="article:modified_time" content="2021-12-02T10:19:50+10:00"><meta property="og:site_name" content="NeuroDesk">
+<meta property="article:modified_time" content="2021-12-02T22:36:53+11:00"><meta property="og:site_name" content="NeuroDesk">
 <meta itemprop=name content="Add tools">
 <meta itemprop=description content="Add a tool to neurodesktop
 ">
-<meta itemprop=dateModified content="2021-12-02T10:19:50+10:00">
-<meta itemprop=wordCount content="1027">
+<meta itemprop=dateModified content="2021-12-02T22:36:53+11:00">
+<meta itemprop=wordCount content="1085">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="Add tools">
 <meta name=twitter:description content="Add a tool to neurodesktop
@@ -263,7 +263,12 @@ Use the guide below to add a tool to <em>neurodesktop</em> or <em>neurocontainer
 <h2 id=adding-new-recipes>Adding new recipes</h2>
 <p>Refer to <a href=https://github.com/NeuroDesk/neurodocker>neurodocker</a> for more information on neurodocker recipes</p>
 <h2 id=build-container>Build container</h2>
-<p>To build a container:</p>
+<p>To build a container, set up environment with:</p>
+<ol>
+<li>Docker, the version in our CI environment</li>
+<li>Python, the version in our CI environment</li>
+</ol>
+<p>And then follow these steps:</p>
 <ol>
 <li>Sync/modify Neurodocker, the dependency we are using to build containers:
 <ol>
@@ -309,7 +314,15 @@ sh update-builders.sh</code></pre>
 Note this, significantly increases CI run time, only use in cases of space errors.</p>
 </blockquote>
 <ol start=6>
-<li>Build the container locally (e.g. running the build script with the &ndash;debug flag: <a href=https://github.com/NeuroDesk/neurocontainers/blob/master/recipes/lcmodel/build.sh>https://github.com/NeuroDesk/neurocontainers/blob/master/recipes/lcmodel/build.sh</a>)</li>
+<li>Build and test the container locally</li>
+</ol>
+<ol>
+<li>clone our fork of Neurodocker: git clone <a href=https://github.com/NeuroDesk/neurodocker/>https://github.com/NeuroDesk/neurodocker/</a></li>
+<li>install neurodocker: cd neurodocker; python -m pip install .</li>
+<li>run the build script with the &ndash;debug flag: <a href=https://github.com/NeuroDesk/neurocontainers/blob/master/recipes/lcmodel/build.sh>https://github.com/NeuroDesk/neurocontainers/blob/master/recipes/lcmodel/build.sh</a></li>
+<li>test running some commands within the container that should be avaialble in your local docker container repository</li>
+</ol>
+<ol start=7>
 <li>updated changes in local git repository</li>
 </ol>
 <pre class="language-shell command-line" data-prompt=$><code>git add recipes/newapp/build.sh recipes/newapp/README.md .github/workflows/newapp.yml
@@ -390,7 +403,7 @@ ml toolName/toolVersion</code></pre>
 <div class="text-muted mt-5 pt-3 border-top">
 Last modified
 December 2, 2021
-: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/6e881025e2037adab09c1a463c57c89e442683b4>Fix formatting for nested bullet points (6e88102)</a>
+: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/8968b796f7ada48776eeaace99c13de8f8c4aeb5>Update add_tool.md (8968b79)</a>
 </div>
 </div>
 </main>

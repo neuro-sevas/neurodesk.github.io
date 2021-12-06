@@ -108,7 +108,12 @@ Use the guide below to add a tool to &lt;em>neurodesktop&lt;/em> or &lt;em>neuro
 &lt;h2 id="adding-new-recipes">Adding new recipes&lt;/h2>
 &lt;p>Refer to &lt;a href="https://github.com/NeuroDesk/neurodocker">neurodocker&lt;/a> for more information on neurodocker recipes&lt;/p>
 &lt;h2 id="build-container">Build container&lt;/h2>
-&lt;p>To build a container:&lt;/p>
+&lt;p>To build a container, set up environment with:&lt;/p>
+&lt;ol>
+&lt;li>Docker, the version in our CI environment&lt;/li>
+&lt;li>Python, the version in our CI environment&lt;/li>
+&lt;/ol>
+&lt;p>And then follow these steps:&lt;/p>
 &lt;ol>
 &lt;li>Sync/modify Neurodocker, the dependency we are using to build containers:
 &lt;ol>
@@ -154,7 +159,15 @@ sh update-builders.sh&lt;/code>&lt;/pre>
 Note this, significantly increases CI run time, only use in cases of space errors.&lt;/p>
 &lt;/blockquote>
 &lt;ol start="6">
-&lt;li>Build the container locally (e.g. running the build script with the &amp;ndash;debug flag: &lt;a href="https://github.com/NeuroDesk/neurocontainers/blob/master/recipes/lcmodel/build.sh">https://github.com/NeuroDesk/neurocontainers/blob/master/recipes/lcmodel/build.sh&lt;/a>)&lt;/li>
+&lt;li>Build and test the container locally&lt;/li>
+&lt;/ol>
+&lt;ol>
+&lt;li>clone our fork of Neurodocker: git clone &lt;a href="https://github.com/NeuroDesk/neurodocker/">https://github.com/NeuroDesk/neurodocker/&lt;/a>&lt;/li>
+&lt;li>install neurodocker: cd neurodocker; python -m pip install .&lt;/li>
+&lt;li>run the build script with the &amp;ndash;debug flag: &lt;a href="https://github.com/NeuroDesk/neurocontainers/blob/master/recipes/lcmodel/build.sh">https://github.com/NeuroDesk/neurocontainers/blob/master/recipes/lcmodel/build.sh&lt;/a>&lt;/li>
+&lt;li>test running some commands within the container that should be avaialble in your local docker container repository&lt;/li>
+&lt;/ol>
+&lt;ol start="7">
 &lt;li>updated changes in local git repository&lt;/li>
 &lt;/ol>
 &lt;pre class="language-shell command-line" data-prompt="$">&lt;code>git add recipes/newapp/build.sh recipes/newapp/README.md .github/workflows/newapp.yml
