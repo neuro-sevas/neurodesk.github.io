@@ -165,6 +165,17 @@ To check which user is being use, open the terminal in the neurodesktop VS Code 
 &lt;p>Close this VS Code window. Use steps in &lt;a href="https://neurodesk.github.io/docs/neurodesktop/visual-studio-code/#connecting-to-neurodesktop">previous section&lt;/a> to connect normally&lt;/p></description></item><item><title>Docs: Troubleshooting</title><link>https://neurodesk.github.io/docs/neurodesktop/troubleshooting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/troubleshooting/</guid><description>
 &lt;p>Neurodesk is an open-source project that is always evolving. If you are experiencing an issue not listed here, please open a &lt;a href="https://github.com/NeuroDesk/neurodesk.github.io/issues">new issue&lt;/a>, so that we can aim to solve it and update our help documentation.&lt;/p>
 &lt;p>To ask questions or suggest new features, &lt;a href="https://github.com/NeuroDesk/neurodesk.github.io/discussions">join the discussion&lt;/a> on github.&lt;/p>
+&lt;h2 id="docker-cannot-connect-to-the-docker-daemon-at-unixvarrundockersock-is-the-docker-daemon-running">docker: Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?.&lt;/h2>
+&lt;p>This is usually a docker-related error, not related to neurodesktop itself. To troubleshoot docker, we can try a simpler container first:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">docker run hello-world
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Try the following solutions (in this order, until the above command works)&lt;/p>
+&lt;ol>
+&lt;li>Win/Mac: Open docker GUI and accept T&amp;amp;Cs. Check that the docker engine is running&lt;/li>
+&lt;li>Close and open the terminal and retry.&lt;/li>
+&lt;li>Log out and login again, or restart the machine (current user environment doesnt fully know docker is running)&lt;/li>
+&lt;li>Add your user to the OS docker group (current user doesnt have permission to run docker)&lt;/li>
+&lt;li>docker.sock permissions need to be changed (raise a github issue &lt;a href="https://github.com/NeuroDesk/neurodesktop/issues/new/choose">here&lt;/a>)&lt;/li>
+&lt;/ol>
 &lt;h2 id="windows-users-wsl-not-installed-properly">Windows users: WSL not installed properly&lt;/h2>
 &lt;p>The Docker engine relies on the Windows subsystem for Linux (&lt;a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">WSL&lt;/a>) to run on a windows machine.&lt;/p>
 &lt;div class="alert alert-primary" role="alert">
