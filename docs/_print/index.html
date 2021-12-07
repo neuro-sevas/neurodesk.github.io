@@ -229,8 +229,8 @@ To get started, see: <a href=/docs/neurodesktop/>Neurodesktop</a></p>
   --shm-size=1gb -it --privileged --name neurodesktop \
   -v ~/neurodesktop-storage:/neurodesktop-storage \
   -e HOST_UID="$(id -u)" -e HOST_GID="$(id -g)" \
-  -p 8080:8080 -h neurodesktop-20211028 \
-  vnmd/neurodesktop:20211028</code>
+  -p 8080:8080 -h neurodesktop-20211207 \
+  vnmd/neurodesktop:20211207</code>
 </pre>
 <p>(notice: if you get errors in neurodesktop then check if the ~/neurodesktop-storage directory is writable to all users, otherwise run <code>chmod a+rwx ~/neurodesktop-storage</code>)</p>
 <ol start=4>
@@ -310,13 +310,22 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io</code>
   -e HOST_UID="$(id -u)" -e HOST_GID="$(id -g)" \
   -e NVIDIA_VISIBLE_DEVICES=all \
   -e NVIDIA_DISABLE_REQUIRE=1 \
-  -p 8080:8080 -h neurodesktop-20211028 \
-  vnmd/neurodesktop:20211028</code>
+  -p 8080:8080 -h neurodesktop-20211207 \
+  vnmd/neurodesktop:20211207</code>
 </pre>
 <p>Then inside the neurodesktop container run:</p>
 <pre class="language-shell command-line" data-prompt=$>
-<code>sudo apt update
-sudo apt install libcudart10.1</code>
+<code>
+sudo apt update
+sudo apt install libcudart10.1
+</code>
+</pre>
+<p>For a GPU with Nvidia driver Version > 495.29.05:</p>
+<pre class="language-shell command-line" data-prompt=$>
+<code>
+wget https://developer.download.nvidia.com/compute/cuda/11.5.0/local_installers/cuda_11.5.0_495.29.05_linux.run
+sudo sh ./cuda_11.5.0_495.29.05_linux.run
+</code>
 </pre>
 <h4 id=running-tensorflow-w-gpu>Running tensorflow (w/ GPU)</h4>
 <h5 id=using-tensorflow-python>Using tensorflow (python)</h5>
@@ -362,7 +371,7 @@ print("Num GPUs Available: ", len(tf.config.list_physical_devices('GPU')))</code
 <p>Open a terminal, and type the folowing command to automatically download the neurodesktop container and run it</p>
 </li>
 </ol>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>docker run --shm-size<span style=color:#ce5c00;font-weight:700>=</span>1gb -it --privileged --name neurodesktop -v ~/neurodesktop-storage:/neurodesktop-storage -p 8080:8080 -h neurodesktop-20211028 vnmd/neurodesktop:20211028
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>docker run --shm-size<span style=color:#ce5c00;font-weight:700>=</span>1gb -it --privileged --name neurodesktop -v ~/neurodesktop-storage:/neurodesktop-storage -p 8080:8080 -h neurodesktop-20211207 vnmd/neurodesktop:20211207
 </code></pre></div>
 <p>(notice: There is a bug in docker 3.3.0 for Mac that makes this command not run correctly and there will be no application menu when you start the desktop. Update your docker version when you see this!)</p>
 <p>if you get errors in neurodesktop then check if the ~/neurodesktop-storage directory is writable to all users, otherwise run <code>chmod a+rwx ~/neurodesktop-storage</code></p>
@@ -421,7 +430,7 @@ The docker installation will reboot your computer a few times and there might be
 </li>
 </ol>
 <pre class="language-batch command-line" data-prompt=">">
-<code>docker run --shm-size=1gb -it --privileged --name neurodesktop -v C:/neurodesktop-storage:/neurodesktop-storage -p 8080:8080 -h neurodesktop-20211028 vnmd/neurodesktop:20211028</code>
+<code>docker run --shm-size=1gb -it --privileged --name neurodesktop -v C:/neurodesktop-storage:/neurodesktop-storage -p 8080:8080 -h neurodesktop-20211207 vnmd/neurodesktop:20211207</code>
 </pre>
 <ol start=3>
 <li>Once neurodesktop is downloaded i.e. <code>guacd[77]: INFO: Listening on host 127.0.0.1, port 4822</code> is displayed in terminal, open a browser and go to:</li>
@@ -523,8 +532,8 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io</code>
   --shm-size=1gb -it --privileged --name neurodesktop \
   -v ~/neurodesktop-storage:/neurodesktop-storage \
   -e HOST_UID="$(id -u)" -e HOST_GID="$(id -g)" \
-  -p 8080:8080 -h neurodesktop-20211028 \
-  vnmd/neurodesktop:20211028</code>
+  -p 8080:8080 -h neurodesktop-20211207 \
+  vnmd/neurodesktop:20211207</code>
 </pre>
 <p>(notice: if you get errors in neurodesktop then check if the ~/neurodesktop-storage directory is writable to all users, otherwise run <code>chmod a+rwx ~/neurodesktop-storage</code>)</p>
 <ol start=5>
@@ -606,7 +615,7 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io</code>
 <h2 id=how-to-force-a-complete-container-download-to-your-system>How to force a complete container download to your system</h2>
 <p>To increase speed and reliability of Neurodesktop we mount the application containers from a CVMFS mount and download only the files required to run your current task. Although we aim to keep everything on there reproducible, there might be a reason that you want to fully download the containers to your system. You can force this behaviour by adding another parameter to the docker call: <code>-e CVMFS_DISABLE=true</code></p>
 <p>For windows an example would look like this:</p>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>docker run --shm-size<span style=color:#ce5c00;font-weight:700>=</span>1gb -it --privileged --name neurodesktop -v C:/neurodesktop-storage:/neurodesktop-storage -e <span style=color:#000>CVMFS_DISABLE</span><span style=color:#ce5c00;font-weight:700>=</span><span style=color:#204a87>true</span> -p 8080:8080 -h neurodesktop-20211028 vnmd/neurodesktop:20211028
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>docker run --shm-size<span style=color:#ce5c00;font-weight:700>=</span>1gb -it --privileged --name neurodesktop -v C:/neurodesktop-storage:/neurodesktop-storage -e <span style=color:#000>CVMFS_DISABLE</span><span style=color:#ce5c00;font-weight:700>=</span><span style=color:#204a87>true</span> -p 8080:8080 -h neurodesktop-20211207 vnmd/neurodesktop:20211207
 </code></pre></div>
 </div>
 <div class=td-content style=page-break-before:always>

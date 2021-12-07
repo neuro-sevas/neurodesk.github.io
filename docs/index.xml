@@ -65,8 +65,8 @@ Run &lt;code>bash build.sh&lt;/code>&lt;br>
 --shm-size=1gb -it --privileged --name neurodesktop \
 -v ~/neurodesktop-storage:/neurodesktop-storage \
 -e HOST_UID="$(id -u)" -e HOST_GID="$(id -g)" \
--p 8080:8080 -h neurodesktop-20211028 \
-vnmd/neurodesktop:20211028&lt;/code>
+-p 8080:8080 -h neurodesktop-20211207 \
+vnmd/neurodesktop:20211207&lt;/code>
 &lt;/pre>
 &lt;!-- neurodesktop version found in neurodesk.github.io/data/neurodesktop.toml -->
 &lt;p>(notice: if you get errors in neurodesktop then check if the ~/neurodesktop-storage directory is writable to all users, otherwise run &lt;code>chmod a+rwx ~/neurodesktop-storage&lt;/code>)&lt;/p>
@@ -147,14 +147,23 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io&lt;/code>
 -e HOST_UID="$(id -u)" -e HOST_GID="$(id -g)" \
 -e NVIDIA_VISIBLE_DEVICES=all \
 -e NVIDIA_DISABLE_REQUIRE=1 \
--p 8080:8080 -h neurodesktop-20211028 \
-vnmd/neurodesktop:20211028&lt;/code>
+-p 8080:8080 -h neurodesktop-20211207 \
+vnmd/neurodesktop:20211207&lt;/code>
 &lt;/pre>
 &lt;!-- neurodesktop version found in neurodesk.github.io/data/neurodesktop.toml -->
 &lt;p>Then inside the neurodesktop container run:&lt;/p>
 &lt;pre class="language-shell command-line" data-prompt="$">
-&lt;code>sudo apt update
-sudo apt install libcudart10.1&lt;/code>
+&lt;code>
+sudo apt update
+sudo apt install libcudart10.1
+&lt;/code>
+&lt;/pre>
+&lt;p>For a GPU with Nvidia driver Version &amp;gt; 495.29.05:&lt;/p>
+&lt;pre class="language-shell command-line" data-prompt="$">
+&lt;code>
+wget https://developer.download.nvidia.com/compute/cuda/11.5.0/local_installers/cuda_11.5.0_495.29.05_linux.run
+sudo sh ./cuda_11.5.0_495.29.05_linux.run
+&lt;/code>
 &lt;/pre>
 &lt;h4 id="running-tensorflow-w-gpu">Running tensorflow (w/ GPU)&lt;/h4>
 &lt;h5 id="using-tensorflow-python">Using tensorflow (python)&lt;/h5>
@@ -196,7 +205,7 @@ print("Num GPUs Available: ", len(tf.config.list_physical_devices('GPU')))&lt;/c
 &lt;p>Open a terminal, and type the folowing command to automatically download the neurodesktop container and run it&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">docker run --shm-size&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>1gb -it --privileged --name neurodesktop -v ~/neurodesktop-storage:/neurodesktop-storage -p 8080:8080 -h neurodesktop-20211028 vnmd/neurodesktop:20211028
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">docker run --shm-size&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>1gb -it --privileged --name neurodesktop -v ~/neurodesktop-storage:/neurodesktop-storage -p 8080:8080 -h neurodesktop-20211207 vnmd/neurodesktop:20211207
 &lt;/code>&lt;/pre>&lt;/div>&lt;!-- neurodesktop version found in neurodesk.github.io/data/neurodesktop.toml -->
 &lt;p>(notice: There is a bug in docker 3.3.0 for Mac that makes this command not run correctly and there will be no application menu when you start the desktop. Update your docker version when you see this!)&lt;/p>
 &lt;p>if you get errors in neurodesktop then check if the ~/neurodesktop-storage directory is writable to all users, otherwise run &lt;code>chmod a+rwx ~/neurodesktop-storage&lt;/code>&lt;/p>
@@ -250,7 +259,7 @@ print("Num GPUs Available: ", len(tf.config.list_physical_devices('GPU')))&lt;/c
 &lt;h2 id="how-to-force-a-complete-container-download-to-your-system">How to force a complete container download to your system&lt;/h2>
 &lt;p>To increase speed and reliability of Neurodesktop we mount the application containers from a CVMFS mount and download only the files required to run your current task. Although we aim to keep everything on there reproducible, there might be a reason that you want to fully download the containers to your system. You can force this behaviour by adding another parameter to the docker call: &lt;code>-e CVMFS_DISABLE=true&lt;/code>&lt;/p>
 &lt;p>For windows an example would look like this:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">docker run --shm-size&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>1gb -it --privileged --name neurodesktop -v C:/neurodesktop-storage:/neurodesktop-storage -e &lt;span style="color:#000">CVMFS_DISABLE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#204a87">true&lt;/span> -p 8080:8080 -h neurodesktop-20211028 vnmd/neurodesktop:20211028
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">docker run --shm-size&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>1gb -it --privileged --name neurodesktop -v C:/neurodesktop-storage:/neurodesktop-storage -e &lt;span style="color:#000">CVMFS_DISABLE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#204a87">true&lt;/span> -p 8080:8080 -h neurodesktop-20211207 vnmd/neurodesktop:20211207
 &lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Windows</title><link>https://neurodesk.github.io/docs/neurocommand/getting-started/windows/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurocommand/getting-started/windows/</guid><description>
 &lt;h2 id="wsl-w-ubuntu--lxde">WSL (w/ Ubuntu + LXDE)&lt;/h2>
 &lt;p>For more information on WSL: &lt;a href="https://docs.microsoft.com/en-us/windows/wsl">https://docs.microsoft.com/en-us/windows/wsl&lt;/a>&lt;/p>
@@ -341,7 +350,7 @@ The docker installation will reboot your computer a few times and there might be
 &lt;/li>
 &lt;/ol>
 &lt;pre class="language-batch command-line" data-prompt=">">
-&lt;code>docker run --shm-size=1gb -it --privileged --name neurodesktop -v C:/neurodesktop-storage:/neurodesktop-storage -p 8080:8080 -h neurodesktop-20211028 vnmd/neurodesktop:20211028&lt;/code>
+&lt;code>docker run --shm-size=1gb -it --privileged --name neurodesktop -v C:/neurodesktop-storage:/neurodesktop-storage -p 8080:8080 -h neurodesktop-20211207 vnmd/neurodesktop:20211207&lt;/code>
 &lt;/pre>
 &lt;!-- neurodesktop version found in neurodesk.github.io/data/neurodesktop.toml -->
 &lt;ol start="3">
@@ -671,8 +680,8 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io&lt;/code>
 --shm-size=1gb -it --privileged --name neurodesktop \
 -v ~/neurodesktop-storage:/neurodesktop-storage \
 -e HOST_UID="$(id -u)" -e HOST_GID="$(id -g)" \
--p 8080:8080 -h neurodesktop-20211028 \
-vnmd/neurodesktop:20211028&lt;/code>
+-p 8080:8080 -h neurodesktop-20211207 \
+vnmd/neurodesktop:20211207&lt;/code>
 &lt;/pre>
 &lt;!-- neurodesktop version found in neurodesk.github.io/data/neurodesktop.toml -->
 &lt;p>(notice: if you get errors in neurodesktop then check if the ~/neurodesktop-storage directory is writable to all users, otherwise run &lt;code>chmod a+rwx ~/neurodesktop-storage&lt;/code>)&lt;/p>

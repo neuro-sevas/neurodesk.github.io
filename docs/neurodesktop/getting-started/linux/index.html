@@ -21,12 +21,12 @@
 ">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://neurodesk.github.io/docs/neurodesktop/getting-started/linux/"><meta property="article:section" content="docs">
-<meta property="article:modified_time" content="2021-10-27T11:54:04+10:00"><meta property="og:site_name" content="NeuroDesk">
+<meta property="article:modified_time" content="2021-12-07T20:39:33+10:00"><meta property="og:site_name" content="NeuroDesk">
 <meta itemprop=name content="Linux">
 <meta itemprop=description content="Install neurodesktop on Linux
 ">
-<meta itemprop=dateModified content="2021-10-27T11:54:04+10:00">
-<meta itemprop=wordCount content="462">
+<meta itemprop=dateModified content="2021-12-07T20:39:33+10:00">
+<meta itemprop=wordCount content="476">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="Linux">
 <meta name=twitter:description content="Install neurodesktop on Linux
@@ -207,8 +207,8 @@
   --shm-size=1gb -it --privileged --name neurodesktop \
   -v ~/neurodesktop-storage:/neurodesktop-storage \
   -e HOST_UID="$(id -u)" -e HOST_GID="$(id -g)" \
-  -p 8080:8080 -h neurodesktop-20211028 \
-  vnmd/neurodesktop:20211028</code>
+  -p 8080:8080 -h neurodesktop-20211207 \
+  vnmd/neurodesktop:20211207</code>
 </pre>
 <p>(notice: if you get errors in neurodesktop then check if the ~/neurodesktop-storage directory is writable to all users, otherwise run <code>chmod a+rwx ~/neurodesktop-storage</code>)</p>
 <ol start=4>
@@ -288,13 +288,22 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io</code>
   -e HOST_UID="$(id -u)" -e HOST_GID="$(id -g)" \
   -e NVIDIA_VISIBLE_DEVICES=all \
   -e NVIDIA_DISABLE_REQUIRE=1 \
-  -p 8080:8080 -h neurodesktop-20211028 \
-  vnmd/neurodesktop:20211028</code>
+  -p 8080:8080 -h neurodesktop-20211207 \
+  vnmd/neurodesktop:20211207</code>
 </pre>
 <p>Then inside the neurodesktop container run:</p>
 <pre class="language-shell command-line" data-prompt=$>
-<code>sudo apt update
-sudo apt install libcudart10.1</code>
+<code>
+sudo apt update
+sudo apt install libcudart10.1
+</code>
+</pre>
+<p>For a GPU with Nvidia driver Version > 495.29.05:</p>
+<pre class="language-shell command-line" data-prompt=$>
+<code>
+wget https://developer.download.nvidia.com/compute/cuda/11.5.0/local_installers/cuda_11.5.0_495.29.05_linux.run
+sudo sh ./cuda_11.5.0_495.29.05_linux.run
+</code>
 </pre>
 <h4 id=running-tensorflow-w-gpu>Running tensorflow (w/ GPU)</h4>
 <h5 id=using-tensorflow-python>Using tensorflow (python)</h5>
@@ -321,8 +330,8 @@ print("Num GPUs Available: ", len(tf.config.list_physical_devices('GPU')))</code
 <p><img src=https://user-images.githubusercontent.com/4021595/135449288-6c3e9bbd-fe5f-4f43-aa4a-8a798ba629e6.png alt=image></p>
 <div class="text-muted mt-5 pt-3 border-top">
 Last modified
-October 27, 2021
-: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/fe2ca6019e68b0641c69f92770c2c4100faa0674>Move linux docker installation to separate section (fe2ca60)</a>
+December 7, 2021
+: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/d081957baf2131d640e4056439689066872882ea>added more gpu setup details (d081957)</a>
 </div>
 </div>
 </main>
