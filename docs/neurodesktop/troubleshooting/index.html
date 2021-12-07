@@ -19,11 +19,11 @@
 <meta property="og:description" content="Are you experiencing issues with neurodesktop?">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://neurodesk.github.io/docs/neurodesktop/troubleshooting/"><meta property="article:section" content="docs">
-<meta property="article:modified_time" content="2021-12-06T12:51:01+10:00"><meta property="og:site_name" content="NeuroDesk">
+<meta property="article:modified_time" content="2021-12-07T15:21:34+10:00"><meta property="og:site_name" content="NeuroDesk">
 <meta itemprop=name content="Troubleshooting">
 <meta itemprop=description content="Are you experiencing issues with neurodesktop?">
-<meta itemprop=dateModified content="2021-12-06T12:51:01+10:00">
-<meta itemprop=wordCount content="375">
+<meta itemprop=dateModified content="2021-12-07T15:21:34+10:00">
+<meta itemprop=wordCount content="397">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="Troubleshooting">
 <meta name=twitter:description content="Are you experiencing issues with neurodesktop?">
@@ -159,7 +159,8 @@
 <ul>
 <li><a href=#docker-cannot-connect-to-the-docker-daemon-at-unixvarrundockersock-is-the-docker-daemon-running>docker: Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?.</a></li>
 <li><a href=#windows-users-wsl-not-installed-properly>Windows users: WSL not installed properly</a></li>
-<li><a href=#not-enough-free-space-on-the-partition-in-windows-and-wsl2>Not enough free space on the partition in Windows and WSL2</a></li>
+<li><a href=#windows-users-not-enough-free-space-on-the-partition-in-windows-and-wsl2>Windows users: Not enough free space on the partition in Windows and WSL2</a></li>
+<li><a href=#windows-users-failure-to-connect-to-neurodesktop-in-firefox>Windows users: Failure to connect to Neurodesktop in Firefox</a></li>
 <li><a href=#trouble-installing-neurodesk-images>Trouble installing neurodesk images</a></li>
 </ul>
 </nav></div>
@@ -194,8 +195,10 @@ We recommend the <em>manual</em> install instructions, as the simplified install
 <p>However, if WSL is missing or incorrectly configured, the <em>Resources</em> tab of the Docker settings may look something like this:</p>
 <p><img src=/Troubleshooting/Docker_WSL_incorrect.png alt=Docker_WSL_incorrect title=Docker_WSL_incorrect></p>
 <p>If this is the case, follow the manual install instructions to install <a href=https://docs.microsoft.com/en-us/windows/wsl/install-win10>WSL 2</a> (including installation of Ubuntu through Microsoft Store).</p>
-<h2 id=not-enough-free-space-on-the-partition-in-windows-and-wsl2>Not enough free space on the partition in Windows and WSL2</h2>
+<h2 id=windows-users-not-enough-free-space-on-the-partition-in-windows-and-wsl2>Windows users: Not enough free space on the partition in Windows and WSL2</h2>
 <p>This could help: <a href=https://yjmantilla.github.io/tutorials/wsl2-move-vhdx.html>https://yjmantilla.github.io/tutorials/wsl2-move-vhdx.html</a></p>
+<h2 id=windows-users-failure-to-connect-to-neurodesktop-in-firefox>Windows users: Failure to connect to Neurodesktop in Firefox</h2>
+<p>We recommend using Microsoft Edge or Google Chrome to access Neurodesktop.</p>
 <h2 id=trouble-installing-neurodesk-images>Trouble installing neurodesk images</h2>
 <p>This may be a memory issue. First, ensure that there is enough free space on the disk. If there is, try resetting docker settings and data. To do this:</p>
 <ol>
@@ -208,8 +211,8 @@ We recommend the <em>manual</em> install instructions, as the simplified install
 <p><img src=/Troubleshooting/Docker_update.png alt=Docker_update title=Docker_update></p>
 <div class="text-muted mt-5 pt-3 border-top">
 Last modified
-December 6, 2021
-: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/423ac6b1a3b7e15764c4b30a067b52fd276a45de>Add instructions for fixing Docker daemon errors (423ac6b)</a>
+December 7, 2021
+: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/902d4ae8b787b9b0947b8107614840bbbb066db2>Added notes on firefox to the Windows install and Troubleshooting pages. (902d4ae)</a>
 </div>
 </div>
 </main>

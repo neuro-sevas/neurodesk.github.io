@@ -187,8 +187,10 @@ We recommend the &lt;em>manual&lt;/em> install instructions, as the simplified i
 &lt;p>However, if WSL is missing or incorrectly configured, the &lt;em>Resources&lt;/em> tab of the Docker settings may look something like this:&lt;/p>
 &lt;p>&lt;img src="https://neurodesk.github.io/Troubleshooting/Docker_WSL_incorrect.png" alt="Docker_WSL_incorrect" title="Docker_WSL_incorrect">&lt;/p>
 &lt;p>If this is the case, follow the manual install instructions to install &lt;a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">WSL 2&lt;/a> (including installation of Ubuntu through Microsoft Store).&lt;/p>
-&lt;h2 id="not-enough-free-space-on-the-partition-in-windows-and-wsl2">Not enough free space on the partition in Windows and WSL2&lt;/h2>
+&lt;h2 id="windows-users-not-enough-free-space-on-the-partition-in-windows-and-wsl2">Windows users: Not enough free space on the partition in Windows and WSL2&lt;/h2>
 &lt;p>This could help: &lt;a href="https://yjmantilla.github.io/tutorials/wsl2-move-vhdx.html">https://yjmantilla.github.io/tutorials/wsl2-move-vhdx.html&lt;/a>&lt;/p>
+&lt;h2 id="windows-users-failure-to-connect-to-neurodesktop-in-firefox">Windows users: Failure to connect to Neurodesktop in Firefox&lt;/h2>
+&lt;p>We recommend using Microsoft Edge or Google Chrome to access Neurodesktop.&lt;/p>
 &lt;h2 id="trouble-installing-neurodesk-images">Trouble installing neurodesk images&lt;/h2>
 &lt;p>This may be a memory issue. First, ensure that there is enough free space on the disk. If there is, try resetting docker settings and data. To do this:&lt;/p>
 &lt;ol>

@@ -215,6 +215,10 @@ The docker installation will reboot your computer a few times and there might be
 &lt;/ol>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">http://localhost:8080/#/?username=user&amp;amp;password=password
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>or open a VNC Client and connect to port 5901 (for this -p 5901:5901 has to be added to the docker call)&lt;/p>
+&lt;div class="alert alert-primary" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+We do not recommend the use of the Firefox browser for accessing Neurodesktop, as this may lead to performance issues.
+&lt;/div>
 &lt;ol start="4">
 &lt;li>neurodesktop is ready to use!&lt;/li>
 &lt;/ol>

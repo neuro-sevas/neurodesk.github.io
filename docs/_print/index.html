@@ -428,6 +428,10 @@ The docker installation will reboot your computer a few times and there might be
 </ol>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>http://localhost:8080/#/?username=user&amp;password=password
 </code></pre></div><p>or open a VNC Client and connect to port 5901 (for this -p 5901:5901 has to be added to the docker call)</p>
+<div class="alert alert-primary" role=alert>
+<h4 class=alert-heading>Note</h4>
+We do not recommend the use of the Firefox browser for accessing Neurodesktop, as this may lead to performance issues.
+</div>
 <ol start=4>
 <li>neurodesktop is ready to use!</li>
 </ol>
@@ -785,8 +789,10 @@ We recommend the <em>manual</em> install instructions, as the simplified install
 <p>However, if WSL is missing or incorrectly configured, the <em>Resources</em> tab of the Docker settings may look something like this:</p>
 <p><img src=/Troubleshooting/Docker_WSL_incorrect.png alt=Docker_WSL_incorrect title=Docker_WSL_incorrect></p>
 <p>If this is the case, follow the manual install instructions to install <a href=https://docs.microsoft.com/en-us/windows/wsl/install-win10>WSL 2</a> (including installation of Ubuntu through Microsoft Store).</p>
-<h2 id=not-enough-free-space-on-the-partition-in-windows-and-wsl2>Not enough free space on the partition in Windows and WSL2</h2>
+<h2 id=windows-users-not-enough-free-space-on-the-partition-in-windows-and-wsl2>Windows users: Not enough free space on the partition in Windows and WSL2</h2>
 <p>This could help: <a href=https://yjmantilla.github.io/tutorials/wsl2-move-vhdx.html>https://yjmantilla.github.io/tutorials/wsl2-move-vhdx.html</a></p>
+<h2 id=windows-users-failure-to-connect-to-neurodesktop-in-firefox>Windows users: Failure to connect to Neurodesktop in Firefox</h2>
+<p>We recommend using Microsoft Edge or Google Chrome to access Neurodesktop.</p>
 <h2 id=trouble-installing-neurodesk-images>Trouble installing neurodesk images</h2>
 <p>This may be a memory issue. First, ensure that there is enough free space on the disk. If there is, try resetting docker settings and data. To do this:</p>
 <ol>
