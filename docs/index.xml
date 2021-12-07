@@ -773,6 +773,15 @@ We recommend the &lt;em>manual&lt;/em> install instructions, as the simplified i
 &lt;p>If you are still experiencing issues after this, you may need to update docker to the latest version. This can be achieved through &amp;ldquo;settings&amp;rdquo; in the docker engine, or (on windows) by right clicking on the docker tray icon:&lt;/p>
 &lt;p>&lt;img src="https://neurodesk.github.io/Troubleshooting/Docker_update.png" alt="Docker_update" title="Docker_update">&lt;/p></description></item><item><title>Docs: Release History</title><link>https://neurodesk.github.io/docs/neurodesktop/release-history/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/release-history/</guid><description>
 &lt;!-- don't forget to copy addition to blog/releases -->
+&lt;h2 id="20211207">20211207&lt;/h2>
+&lt;ul>
+&lt;li>Physio toolbox compiled and added to SPM + update of SPM&lt;/li>
+&lt;li>added brainstorm&lt;/li>
+&lt;li>new neurodesktop container management scripts for Linux, Mac and Windows: &lt;a href="https://github.com/NeuroDesk/neurodesktop">https://github.com/NeuroDesk/neurodesktop&lt;/a>&lt;/li>
+&lt;li>added fieldtrip&lt;/li>
+&lt;li>Datalad is now in the main image, so datalad run should work&lt;/li>
+&lt;li>added Oshy-X segmentation tool&lt;/li>
+&lt;/ul>
 &lt;h2 id="20211028">20211028&lt;/h2>
 &lt;ul>
 &lt;li>added EEGLAB&lt;/li>
