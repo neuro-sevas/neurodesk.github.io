@@ -22,12 +22,12 @@
 ">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://neurodesk.github.io/docs/neurodesktop/getting-started/cloud/"><meta property="article:section" content="docs">
-<meta property="article:modified_time" content="2021-12-08T10:00:50+10:00"><meta property="og:site_name" content="NeuroDesk">
+<meta property="article:modified_time" content="2021-12-08T15:52:35+10:00"><meta property="og:site_name" content="NeuroDesk">
 <meta itemprop=name content="Cloud">
 <meta itemprop=description content="Run neurodesktop using Oracle or Azure cloud computing
 ">
-<meta itemprop=dateModified content="2021-12-08T10:00:50+10:00">
-<meta itemprop=wordCount content="401">
+<meta itemprop=dateModified content="2021-12-08T15:52:35+10:00">
+<meta itemprop=wordCount content="426">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="Cloud">
 <meta name=twitter:description content="Run neurodesktop using Oracle or Azure cloud computing
@@ -71,7 +71,7 @@
 </li>
 </ul>
 </div>
-<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.2a0c415d3a3279e547ff0d08b69deac8.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.28b46e833f2bc8acbd2a2156f0c52f44.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 </div>
 </nav>
 </header>
@@ -81,7 +81,7 @@
 <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
 <div id=td-sidebar-menu class=td-sidebar__inner>
 <form class="td-sidebar__search d-flex align-items-center">
-<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.2a0c415d3a3279e547ff0d08b69deac8.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.28b46e833f2bc8acbd2a2156f0c52f44.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type=button data-toggle=collapse data-target=#td-section-nav aria-controls=td-docs-nav aria-expanded=false aria-label="Toggle section navigation">
 </button>
 </form>
@@ -170,7 +170,13 @@
 <div class=td-toc><nav id=TableOfContents>
 <ul>
 <li><a href=#minimum-system-requirements>Minimum System Requirements</a></li>
-<li><a href=#quickstart>Quickstart</a></li>
+<li><a href=#quickstart>Quickstart</a>
+<ul>
+<li><a href=#1-connect-to-cloud-server>1. Connect to cloud server</a></li>
+<li><a href=#2-install-docker>2. Install Docker</a></li>
+<li><a href=#3-run-neurodesktop>3. Run Neurodesktop</a></li>
+</ul>
+</li>
 <li><a href=#stopping-neurodesktop>Stopping neurodesktop:</a></li>
 <li><a href=#portforwarding-to-an-ios-ipad>Portforwarding to an iOS ipad</a></li>
 <li><a href=#cloud-provider-specific-tutorials>Cloud-provider specific Tutorials</a></li>
@@ -189,20 +195,19 @@
 <li>Docker requirements. Details found under <a href=https://docs.docker.com/get-docker/>https://docs.docker.com/get-docker/</a></li>
 </ol>
 <h2 id=quickstart>Quickstart</h2>
-<ol>
-<li>Open an SSH connection to your cloud instance with port forwarding (USER should be substituted with a username that has admin privileges on the cloud instance, and IP should be substituted with the IP address of the cloud instance)</li>
-</ol>
+<h3 id=1-connect-to-cloud-server>1. Connect to cloud server</h3>
+<p>Open an SSH connection to your cloud instance with port forwarding (USER should be substituted with a username that has admin privileges on the cloud instance, and IP should be substituted with the IP address of the cloud instance)</p>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>ssh -L 8080:127.0.0.1:8080 USER@IP
-</code></pre></div><ol start=2>
-<li>
+</code></pre></div><h3 id=2-install-docker>2. Install Docker</h3>
 <p>Install Docker on the cloud instance from here: <a href=https://docs.docker.com/get-docker/>https://docs.docker.com/get-docker/</a>. Additional information available here: <a href=https://neurodesk.github.io/docs/neurodesktop/getting-started/linux/#installing-docker>https://neurodesk.github.io/docs/neurodesktop/getting-started/linux/#installing-docker</a></p>
-</li>
-<li>
+<h3 id=3-run-neurodesktop>3. Run Neurodesktop</h3>
 <p>Create a local folder on the cloud instance where the downloaded applications will be stored, e.g. ~/neurodesktop-storage</p>
-</li>
-<li>
-<p>Type the folowing command on the cloud instance to automatically download the neurodesktop container and run it (Mac, Windows, Linux commands listed below)</p>
-</li>
+<h4 id=option-1-neurodesktoprun>Option 1: NeuroDesktop.run</h4>
+<p>Download and run the following executable
+<a href=https://github.com/NeuroDesk/neurodesktop/raw/main/Linux_run_Neurodesk/NeuroDesktop.run>https://github.com/NeuroDesk/neurodesktop/raw/main/Linux_run_Neurodesk/NeuroDesktop.run</a></p>
+<h4 id=option-2-using-terminal>Option 2: Using Terminal</h4>
+<ol>
+<li>Type the folowing command on the cloud instance to automatically download the neurodesktop container and run it (Mac, Windows, Linux commands listed below)</li>
 </ol>
 <pre class="language-shell command-line" data-prompt=$ data-output=2-9>
 <code>sudo docker run \
@@ -213,7 +218,7 @@
   vnmd/neurodesktop:20211207</code>
 </pre>
 <p>(notice: if you get errors in neurodesktop then check if the ~/neurodesktop-storage directory is writable to all users, otherwise run <code>chmod a+rwx ~/neurodesktop-storage</code>)</p>
-<ol start=5>
+<ol start=2>
 <li>
 <p>Once neurodesktop is downloaded to the cloud instance (<code>guacd[77]: INFO: Listening on host 127.0.0.1, port 4822</code> is displayed in terminal), leave the terminal open and neurodesktop running (i.e., do not press CTRL+C)</p>
 </li>
@@ -223,14 +228,14 @@
 </ol>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>http://localhost:8080/#/?username=user&amp;password=password
 </code></pre></div><p>or open a VNC Client and connect to port 5901 (for this -p 5901:5901 has to be added to the docker call)</p>
-<ol start=7>
+<ol start=4>
 <li>neurodesktop is ready to use!</li>
 </ol>
 <ul>
 <li>User is <code>user</code></li>
 <li>Password is <code>password</code></li>
 </ul>
-<ol start=8>
+<ol start=5>
 <li>if your computer hibernated/rebooted/etc., if the network connnection has been temprarily lost, or if you want to connect to the same instance of Neurodesktop from another computer, only repeat steps 1 and 6, and you will be reconnected to neurodesktop</li>
 </ol>
 <h2 id=stopping-neurodesktop>Stopping neurodesktop:</h2>
@@ -271,7 +276,7 @@
 </tbody>
 </table>
 <div class="text-muted mt-5 pt-3 border-top">
-Last modified December 8, 2021: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/2b1e4a7a713d2816e13d76656a8e19df28a91158>remove code formatting (2b1e4a7)</a>
+Last modified December 8, 2021: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/1df79fbeb800246e373fd041f392ab4129685953>Add instructions for using the neurodesktop executables (1df79fb)</a>
 </div>
 </div>
 </main>

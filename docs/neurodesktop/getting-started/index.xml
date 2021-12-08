@@ -5,16 +5,17 @@
 &lt;li>Docker requirements. Details found under &lt;a href="https://docs.docker.com/get-docker/">https://docs.docker.com/get-docker/&lt;/a>&lt;/li>
 &lt;/ol>
 &lt;h2 id="quickstart">Quickstart&lt;/h2>
-&lt;ol>
-&lt;li>
+&lt;h3 id="1-install-docker">1. Install Docker&lt;/h3>
 &lt;p>Install Docker from here: &lt;a href="https://docs.docker.com/get-docker/">https://docs.docker.com/get-docker/&lt;/a>. Additional information available &lt;a href="#installing-docker">below&lt;/a>&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Create a local folder where the downloaded applications will be stored, e.g. &lt;code>~/neurodesktop-storage&lt;/code>&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Open a terminal, and type the folowing command to automatically download the neurodesktop container and run it (Mac, Windows, Linux commands listed below)&lt;/p>
-&lt;/li>
+&lt;h3 id="2-run-neurodesktop">2. Run Neurodesktop&lt;/h3>
+&lt;p>Before the first run, create a local folder where the downloaded applications will be stored, e.g. &lt;code>~/neurodesktop-storage&lt;/code>&lt;/p>
+&lt;p>Then use one of the following options to run Neurodesktop:&lt;/p>
+&lt;h4 id="option-1-neurodesktoprun">Option 1: NeuroDesktop.run&lt;/h4>
+&lt;p>Download and run the following executable
+&lt;a href="https://github.com/NeuroDesk/neurodesktop/raw/main/Linux_run_Neurodesk/NeuroDesktop.run">https://github.com/NeuroDesk/neurodesktop/raw/main/Linux_run_Neurodesk/NeuroDesktop.run&lt;/a>&lt;/p>
+&lt;h4 id="option-2-using-terminal">Option 2: Using Terminal&lt;/h4>
+&lt;ol>
+&lt;li>Open a terminal, and type the folowing command to automatically download the neurodesktop container and run it (Mac, Windows, Linux commands listed below)&lt;/li>
 &lt;/ol>
 &lt;pre class="language-shell command-line" data-prompt="$" data-output="2-6">
 &lt;code>sudo docker run \
@@ -26,12 +27,12 @@ vnmd/neurodesktop:20211207&lt;/code>
 &lt;/pre>
 &lt;!-- neurodesktop version found in neurodesk.github.io/data/neurodesktop.toml -->
 &lt;p>(notice: if you get errors in neurodesktop then check if the ~/neurodesktop-storage directory is writable to all users, otherwise run &lt;code>chmod a+rwx ~/neurodesktop-storage&lt;/code>)&lt;/p>
-&lt;ol start="4">
+&lt;ol start="3">
 &lt;li>Once neurodesktop is downloaded i.e. &lt;code>guacd[77]: INFO: Listening on host 127.0.0.1, port 4822&lt;/code> is displayed in terminal, open a browser and go to:&lt;/li>
 &lt;/ol>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">http://localhost:8080/#/?username=user&amp;amp;password=password
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>or open a VNC Client and connect to port 5901 (for this -p 5901:5901 has to be added to the docker call)&lt;/p>
-&lt;ol start="5">
+&lt;ol start="4">
 &lt;li>neurodesktop is ready to use!&lt;/li>
 &lt;/ol>
 &lt;ul>
@@ -202,13 +203,13 @@ print("Num GPUs Available: ", len(tf.config.list_physical_devices('GPU')))&lt;/c
 &lt;li>Docker requirements. Details found under &lt;a href="https://docs.docker.com/get-docker/">https://docs.docker.com/get-docker/&lt;/a>&lt;/li>
 &lt;li>If installing docker using WSL, atleast 20GB space recommended for WSL with Ubuntu&lt;/li>
 &lt;/ol>
-&lt;div class="alert alert-primary" role="alert">
-&lt;h4 class="alert-heading">Note&lt;/h4>
-The docker installation will reboot your computer a few times and there might be warnings regardings WSL2 and this also might require a few more installation steps that unfortunatley differ for every system. Please get in touch if you are stuck and have a look at our troubleshoot page.
-&lt;/div>
 &lt;h2 id="quickstart">Quickstart&lt;/h2>
 &lt;h3 id="1-install-docker">1. Install Docker&lt;/h3>
-&lt;p>Install Docker from here: &lt;a href="https://docs.docker.com/get-docker/">https://docs.docker.com/get-docker/&lt;/a>&lt;/p>
+&lt;p>Install Docker from here: &lt;a href="https://docs.docker.com/get-docker/">https://docs.docker.com/get-docker/&lt;/a>
+&lt;div class="alert alert-primary" role="alert">
+The docker installation will reboot your computer a few times and there might be warnings regardings WSL2 and this also might require a few more installation steps that unfortunatley differ for every system. Please get in touch if you are stuck and have a look at our troubleshoot page.
+&lt;/div>
+&lt;/p>
 &lt;h3 id="2-run-neurodesktop">2. Run Neurodesktop&lt;/h3>
 &lt;p>Use one of the following options to run Neurodesktop:&lt;/p>
 &lt;h4 id="option-1-neurodesktopexe">Option 1: NeuroDesktop.exe&lt;/h4>
@@ -264,20 +265,19 @@ We do not recommend the use of the Firefox browser for accessing Neurodesktop, a
 &lt;li>Docker requirements. Details found under &lt;a href="https://docs.docker.com/get-docker/">https://docs.docker.com/get-docker/&lt;/a>&lt;/li>
 &lt;/ol>
 &lt;h2 id="quickstart">Quickstart&lt;/h2>
-&lt;ol>
-&lt;li>Open an SSH connection to your cloud instance with port forwarding (USER should be substituted with a username that has admin privileges on the cloud instance, and IP should be substituted with the IP address of the cloud instance)&lt;/li>
-&lt;/ol>
+&lt;h3 id="1-connect-to-cloud-server">1. Connect to cloud server&lt;/h3>
+&lt;p>Open an SSH connection to your cloud instance with port forwarding (USER should be substituted with a username that has admin privileges on the cloud instance, and IP should be substituted with the IP address of the cloud instance)&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">ssh -L 8080:127.0.0.1:8080 USER@IP
-&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="2">
-&lt;li>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="2-install-docker">2. Install Docker&lt;/h3>
 &lt;p>Install Docker on the cloud instance from here: &lt;a href="https://docs.docker.com/get-docker/">https://docs.docker.com/get-docker/&lt;/a>. Additional information available here: &lt;a href="https://neurodesk.github.io/docs/neurodesktop/getting-started/linux/#installing-docker">https://neurodesk.github.io/docs/neurodesktop/getting-started/linux/#installing-docker&lt;/a>&lt;/p>
-&lt;/li>
-&lt;li>
+&lt;h3 id="3-run-neurodesktop">3. Run Neurodesktop&lt;/h3>
 &lt;p>Create a local folder on the cloud instance where the downloaded applications will be stored, e.g. ~/neurodesktop-storage&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Type the folowing command on the cloud instance to automatically download the neurodesktop container and run it (Mac, Windows, Linux commands listed below)&lt;/p>
-&lt;/li>
+&lt;h4 id="option-1-neurodesktoprun">Option 1: NeuroDesktop.run&lt;/h4>
+&lt;p>Download and run the following executable
+&lt;a href="https://github.com/NeuroDesk/neurodesktop/raw/main/Linux_run_Neurodesk/NeuroDesktop.run">https://github.com/NeuroDesk/neurodesktop/raw/main/Linux_run_Neurodesk/NeuroDesktop.run&lt;/a>&lt;/p>
+&lt;h4 id="option-2-using-terminal">Option 2: Using Terminal&lt;/h4>
+&lt;ol>
+&lt;li>Type the folowing command on the cloud instance to automatically download the neurodesktop container and run it (Mac, Windows, Linux commands listed below)&lt;/li>
 &lt;/ol>
 &lt;pre class="language-shell command-line" data-prompt="$" data-output="2-9">
 &lt;code>sudo docker run \
@@ -289,7 +289,7 @@ vnmd/neurodesktop:20211207&lt;/code>
 &lt;/pre>
 &lt;!-- neurodesktop version found in neurodesk.github.io/data/neurodesktop.toml -->
 &lt;p>(notice: if you get errors in neurodesktop then check if the ~/neurodesktop-storage directory is writable to all users, otherwise run &lt;code>chmod a+rwx ~/neurodesktop-storage&lt;/code>)&lt;/p>
-&lt;ol start="5">
+&lt;ol start="2">
 &lt;li>
 &lt;p>Once neurodesktop is downloaded to the cloud instance (&lt;code>guacd[77]: INFO: Listening on host 127.0.0.1, port 4822&lt;/code> is displayed in terminal), leave the terminal open and neurodesktop running (i.e., do not press CTRL+C)&lt;/p>
 &lt;/li>
@@ -299,14 +299,14 @@ vnmd/neurodesktop:20211207&lt;/code>
 &lt;/ol>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">http://localhost:8080/#/?username=user&amp;amp;password=password
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>or open a VNC Client and connect to port 5901 (for this -p 5901:5901 has to be added to the docker call)&lt;/p>
-&lt;ol start="7">
+&lt;ol start="4">
 &lt;li>neurodesktop is ready to use!&lt;/li>
 &lt;/ol>
 &lt;ul>
 &lt;li>User is &lt;code>user&lt;/code>&lt;/li>
 &lt;li>Password is &lt;code>password&lt;/code>&lt;/li>
 &lt;/ul>
-&lt;ol start="8">
+&lt;ol start="5">
 &lt;li>if your computer hibernated/rebooted/etc., if the network connnection has been temprarily lost, or if you want to connect to the same instance of Neurodesktop from another computer, only repeat steps 1 and 6, and you will be reconnected to neurodesktop&lt;/li>
 &lt;/ol>
 &lt;h2 id="stopping-neurodesktop">Stopping neurodesktop:&lt;/h2>
