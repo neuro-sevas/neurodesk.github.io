@@ -148,6 +148,7 @@ cp -R template newapp&lt;/code>&lt;/pre>
 &lt;pre class="language-shell command-line" data-prompt="$" data-output="2-3">&lt;code>cd newapp
 (edit build.sh as required)
 (edit README.md as required)&lt;/code>&lt;/pre>
+&lt;p>Upload your application to object storage first if needed, so you can then download it in build.sh (ask for instructions about this if you don&amp;rsquo;t know the key, and never share it anywhere public!)&lt;/p>
 &lt;ol start="5">
 &lt;li>Run update-builders.sh - This will auto-create the CI workflow for the application (or manually duplicate the template file and rename all occurances of template to &lt;em>newapp&lt;/em>)&lt;/li>
 &lt;/ol>
@@ -159,16 +160,23 @@ sh update-builders.sh&lt;/code>&lt;/pre>
 Note this, significantly increases CI run time, only use in cases of space errors.&lt;/p>
 &lt;/blockquote>
 &lt;ol start="6">
-&lt;li>Build and test the container locally&lt;/li>
-&lt;/ol>
+&lt;li>
+&lt;p>Build and test the container locally&lt;/p>
 &lt;ol>
 &lt;li>clone our fork of Neurodocker: git clone &lt;a href="https://github.com/NeuroDesk/neurodocker/">https://github.com/NeuroDesk/neurodocker/&lt;/a>&lt;/li>
 &lt;li>install neurodocker: cd neurodocker; python -m pip install .&lt;/li>
 &lt;li>run the build script with the &amp;ndash;debug flag: &lt;a href="https://github.com/NeuroDesk/neurocontainers/blob/master/recipes/lcmodel/build.sh">https://github.com/NeuroDesk/neurocontainers/blob/master/recipes/lcmodel/build.sh&lt;/a>&lt;/li>
-&lt;li>test running some commands within the container that should be avaialble in your local docker container repository&lt;/li>
 &lt;/ol>
-&lt;ol start="7">
-&lt;li>updated changes in local git repository&lt;/li>
+&lt;pre class="language-shell command-line" data-prompt="$">&lt;code>chmod +x build.sh
+./build.sh -debug&lt;/code>&lt;/pre>
+&lt;ol start="4">
+&lt;li>test running some commands within the container that should be available in your local docker container repository&lt;/li>
+&lt;li>if your application requires a Matlab Runtime and you get an error about shared library &amp;ldquo;libmwlaunchermain.so&amp;rdquo; not found, check which version of the runtime was installed by the build script&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>
+&lt;p>Update changes in local git repository&lt;/p>
+&lt;/li>
 &lt;/ol>
 &lt;pre class="language-shell command-line" data-prompt="$">&lt;code>git add recipes/newapp/build.sh recipes/newapp/README.md .github/workflows/newapp.yml
 git config user.email "the email that you use for github"

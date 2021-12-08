@@ -66,7 +66,7 @@
 </ul>
 </div>
 <div class="navbar-nav d-none d-lg-block">
-<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.c29676a6d3373c266a963d8da935c6e7.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.908ad2ae805f3106c17c2185d2d16026.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 </div>
 </nav>
 </header>
@@ -390,6 +390,7 @@ cp -R template newapp</code></pre>
 <pre class="language-shell command-line" data-prompt=$ data-output=2-3><code>cd newapp
 (edit build.sh as required)
 (edit README.md as required)</code></pre>
+<p>Upload your application to object storage first if needed, so you can then download it in build.sh (ask for instructions about this if you don&rsquo;t know the key, and never share it anywhere public!)</p>
 <ol start=5>
 <li>Run update-builders.sh - This will auto-create the CI workflow for the application (or manually duplicate the template file and rename all occurances of template to <em>newapp</em>)</li>
 </ol>
@@ -401,16 +402,23 @@ sh update-builders.sh</code></pre>
 Note this, significantly increases CI run time, only use in cases of space errors.</p>
 </blockquote>
 <ol start=6>
-<li>Build and test the container locally</li>
-</ol>
+<li>
+<p>Build and test the container locally</p>
 <ol>
 <li>clone our fork of Neurodocker: git clone <a href=https://github.com/NeuroDesk/neurodocker/>https://github.com/NeuroDesk/neurodocker/</a></li>
 <li>install neurodocker: cd neurodocker; python -m pip install .</li>
 <li>run the build script with the &ndash;debug flag: <a href=https://github.com/NeuroDesk/neurocontainers/blob/master/recipes/lcmodel/build.sh>https://github.com/NeuroDesk/neurocontainers/blob/master/recipes/lcmodel/build.sh</a></li>
-<li>test running some commands within the container that should be avaialble in your local docker container repository</li>
 </ol>
-<ol start=7>
-<li>updated changes in local git repository</li>
+<pre class="language-shell command-line" data-prompt=$><code>chmod +x build.sh
+./build.sh -debug</code></pre>
+<ol start=4>
+<li>test running some commands within the container that should be available in your local docker container repository</li>
+<li>if your application requires a Matlab Runtime and you get an error about shared library &ldquo;libmwlaunchermain.so&rdquo; not found, check which version of the runtime was installed by the build script</li>
+</ol>
+</li>
+<li>
+<p>Update changes in local git repository</p>
+</li>
 </ol>
 <pre class="language-shell command-line" data-prompt=$><code>git add recipes/newapp/build.sh recipes/newapp/README.md .github/workflows/newapp.yml
 git config user.email "the email that you use for github"
