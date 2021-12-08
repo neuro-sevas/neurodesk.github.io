@@ -22,12 +22,12 @@
 ">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://neurodesk.github.io/docs/neurodesktop/getting-started/windows/"><meta property="article:section" content="docs">
-<meta property="article:modified_time" content="2021-12-07T15:21:34+10:00"><meta property="og:site_name" content="NeuroDesk">
+<meta property="article:modified_time" content="2021-12-08T15:32:45+10:00"><meta property="og:site_name" content="NeuroDesk">
 <meta itemprop=name content="Windows">
 <meta itemprop=description content="Install neurodesktop on Windows
 ">
-<meta itemprop=dateModified content="2021-12-07T15:21:34+10:00">
-<meta itemprop=wordCount content="255">
+<meta itemprop=dateModified content="2021-12-08T15:32:45+10:00">
+<meta itemprop=wordCount content="284">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="Windows">
 <meta name=twitter:description content="Install neurodesktop on Windows
@@ -71,7 +71,7 @@
 </li>
 </ul>
 </div>
-<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.ffab4f5b474cf13ec89d9b430103c566.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.2a0c415d3a3279e547ff0d08b69deac8.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 </div>
 </nav>
 </header>
@@ -81,7 +81,7 @@
 <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
 <div id=td-sidebar-menu class=td-sidebar__inner>
 <form class="td-sidebar__search d-flex align-items-center">
-<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.ffab4f5b474cf13ec89d9b430103c566.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.2a0c415d3a3279e547ff0d08b69deac8.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type=button data-toggle=collapse data-target=#td-section-nav aria-controls=td-docs-nav aria-expanded=false aria-label="Toggle section navigation">
 </button>
 </form>
@@ -170,7 +170,12 @@
 <div class=td-toc><nav id=TableOfContents>
 <ul>
 <li><a href=#minimum-system-requirements>Minimum System Requirements</a></li>
-<li><a href=#quickstart>Quickstart</a></li>
+<li><a href=#quickstart>Quickstart</a>
+<ul>
+<li><a href=#1-install-docker>1. Install Docker</a></li>
+<li><a href=#2-run-neurodesktop>2. Run Neurodesktop</a></li>
+</ul>
+</li>
 <li><a href=#stopping-neurodesktop>Stopping neurodesktop:</a></li>
 </ul>
 </nav></div>
@@ -192,18 +197,21 @@
 The docker installation will reboot your computer a few times and there might be warnings regardings WSL2 and this also might require a few more installation steps that unfortunatley differ for every system. Please get in touch if you are stuck and have a look at our troubleshoot page.
 </div>
 <h2 id=quickstart>Quickstart</h2>
-<ol>
-<li>
+<h3 id=1-install-docker>1. Install Docker</h3>
 <p>Install Docker from here: <a href=https://docs.docker.com/get-docker/>https://docs.docker.com/get-docker/</a></p>
-</li>
-<li>
-<p>Open a terminal (e.g. Powershell), and type the folowing command to automatically download the neurodesktop container and run it</p>
-</li>
+<h3 id=2-run-neurodesktop>2. Run Neurodesktop</h3>
+<p>Use one of the following options to run Neurodesktop:</p>
+<h4 id=option-1-neurodesktopexe>Option 1: NeuroDesktop.exe</h4>
+<p>Download and run the following executable
+<a href=https://github.com/NeuroDesk/neurodesktop/raw/main/Windows_run_Neurodesk/NeuroDesktop.exe>https://github.com/NeuroDesk/neurodesktop/raw/main/Windows_run_Neurodesk/NeuroDesktop.exe</a></p>
+<h4 id=option-2-using-terminal>Option 2: Using Terminal</h4>
+<ol>
+<li>Open a terminal (e.g. Powershell), and type the folowing command to automatically download the neurodesktop container and run it</li>
 </ol>
 <pre class="language-batch command-line" data-prompt=">">
 <code>docker run --shm-size=1gb -it --privileged --name neurodesktop -v C:/neurodesktop-storage:/neurodesktop-storage -p 8080:8080 -h neurodesktop-20211207 vnmd/neurodesktop:20211207</code>
 </pre>
-<ol start=3>
+<ol start=2>
 <li>Once neurodesktop is downloaded i.e. <code>guacd[77]: INFO: Listening on host 127.0.0.1, port 4822</code> is displayed in terminal, open a browser and go to:</li>
 </ol>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>http://localhost:8080/#/?username=user&amp;password=password
@@ -212,7 +220,7 @@ The docker installation will reboot your computer a few times and there might be
 <h4 class=alert-heading>Note</h4>
 We do not recommend the use of the Firefox browser for accessing Neurodesktop, as this may lead to performance issues.
 </div>
-<ol start=4>
+<ol start=3>
 <li>neurodesktop is ready to use!</li>
 </ol>
 <ul>
@@ -239,7 +247,7 @@ We do not recommend the use of the Firefox browser for accessing Neurodesktop, a
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>docker rm neurodesktop
 </code></pre></div>
 <div class="text-muted mt-5 pt-3 border-top">
-Last modified December 7, 2021: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/902d4ae8b787b9b0947b8107614840bbbb066db2>Added notes on firefox to the Windows install and Troubleshooting pages. (902d4ae)</a>
+Last modified December 8, 2021: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/3e4531ec7a9e4cffbe96edab4d1a30a9607c3b08>Link to neurodesktop.exe from windows doc (3e4531e)</a>
 </div>
 </div>
 </main>
