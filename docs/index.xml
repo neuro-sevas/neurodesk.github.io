@@ -633,10 +633,8 @@ To check which user is being use, open the terminal in the neurodesktop VS Code 
 &lt;ol>
 &lt;li>Open an SSH connection to your cloud instance with port forwarding (USER should be substituted with a username that has admin privileges on the cloud instance, and IP should be substituted with the IP address of the cloud instance)&lt;/li>
 &lt;/ol>
-&lt;pre class="language-shell command-line" data-prompt="$">
-&lt;code>ssh -L 8080:127.0.0.1:8080 USER@IP&lt;/code>
-&lt;/pre>
-&lt;ol start="2">
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">ssh -L 8080:127.0.0.1:8080 USER@IP
+&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="2">
 &lt;li>
 &lt;p>Install Docker on the cloud instance from here: &lt;a href="https://docs.docker.com/get-docker/">https://docs.docker.com/get-docker/&lt;/a>. Additional information available here: &lt;a href="https://neurodesk.github.io/docs/neurodesktop/getting-started/linux/#installing-docker">https://neurodesk.github.io/docs/neurodesktop/getting-started/linux/#installing-docker&lt;/a>&lt;/p>
 &lt;/li>
