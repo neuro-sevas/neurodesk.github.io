@@ -15,4 +15,9 @@
 &lt;h3 id="start-local-hugo-server">Start local hugo server&lt;/h3>
 &lt;p>Extract hugo binary (hugo.exe) to your neurodesk.github.io dir&lt;/p>
 &lt;p>Run server for windows: &lt;code>.\hugo.exe server --disableFastRender&lt;/code>&lt;/p>
-&lt;p>Once started, dev website will be accessible via http://localhost:1313&lt;/p></description></item></channel></rss>
+&lt;p>Once started, dev website will be accessible via http://localhost:1313&lt;/p>
+&lt;h3 id="update-docsy-theme-submodule">Update docsy theme submodule&lt;/h3>
+&lt;pre class="language-shell command-line" data-prompt="$">&lt;code>git submodule update --remote
+git add themes/
+git commit -m "Updating theme submodule"
+git push origin hugo-docsy&lt;/code>&lt;/pre></description></item></channel></rss>

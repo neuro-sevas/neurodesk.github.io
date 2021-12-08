@@ -66,7 +66,7 @@
 </li>
 </ul>
 </div>
-<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.73bcd97cdbc0a7993272ed93258fe48d.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.ffab4f5b474cf13ec89d9b430103c566.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 </div>
 </nav>
 </header>
@@ -115,6 +115,11 @@ This is the multi-page printable view of this section.
 <p>Extract hugo binary (hugo.exe) to your neurodesk.github.io dir</p>
 <p>Run server for windows: <code>.\hugo.exe server --disableFastRender</code></p>
 <p>Once started, dev website will be accessible via http://localhost:1313</p>
+<h3 id=update-docsy-theme-submodule>Update docsy theme submodule</h3>
+<pre class="language-shell command-line" data-prompt=$><code>git submodule update --remote
+git add themes/
+git commit -m "Updating theme submodule"
+git push origin hugo-docsy</code></pre>
 </div>
 </main>
 </div>
