@@ -271,9 +271,9 @@ We do not recommend the use of the Firefox browser for accessing Neurodesktop, a
 &lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="2-install-docker">2. Install Docker&lt;/h3>
 &lt;p>Install Docker on the cloud instance from here: &lt;a href="https://docs.docker.com/get-docker/">https://docs.docker.com/get-docker/&lt;/a>. Additional information available here: &lt;a href="https://neurodesk.github.io/docs/neurodesktop/getting-started/linux/#installing-docker">https://neurodesk.github.io/docs/neurodesktop/getting-started/linux/#installing-docker&lt;/a>&lt;/p>
 &lt;h3 id="3-run-neurodesktop">3. Run Neurodesktop&lt;/h3>
-&lt;p>Create a local folder on the cloud instance where the downloaded applications will be stored, e.g. ~/neurodesktop-storage&lt;/p>
+&lt;p>Create a local folder on the cloud instance to store persistent data (data that will not disappear if neurodesktop is stopped), e.g. ~/neurodesktop-storage&lt;/p>
 &lt;h4 id="option-1-neurodesktoprun">Option 1: NeuroDesktop.run&lt;/h4>
-&lt;p>Download and run the following executable on the cloud instance
+&lt;p>Download and run the following executable
 &lt;a href="https://github.com/NeuroDesk/neurodesktop/raw/main/Linux_run_Neurodesk/NeuroDesktop.run">https://github.com/NeuroDesk/neurodesktop/raw/main/Linux_run_Neurodesk/NeuroDesktop.run&lt;/a>&lt;/p>
 &lt;h4 id="option-2-using-terminal">Option 2: Using Terminal&lt;/h4>
 &lt;ol>
