@@ -77,8 +77,7 @@ If you get errors in neurodesktop then check if the ~/neurodesktop-storage direc
 &lt;li>Once neurodesktop is downloaded i.e. &lt;code>guacd[77]: INFO: Listening on host 127.0.0.1, port 4822&lt;/code> is displayed in terminal, open a browser and go to:&lt;/li>
 &lt;/ol>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">http://localhost:8080/#/?username=user&amp;amp;password=password
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>or open a VNC Client and connect to port 5901 (for this -p 5901:5901 has to be added to the docker call)&lt;/p>
-&lt;ol start="4">
+&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="4">
 &lt;li>neurodesktop is ready to use!&lt;/li>
 &lt;/ol>
 &lt;ul>
@@ -190,7 +189,30 @@ python&lt;/code>
 &lt;code>import tensorflow as tf
 print("Num GPUs Available: ", len(tf.config.list_physical_devices('GPU')))&lt;/code>
 &lt;/pre>
-&lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/135449288-6c3e9bbd-fe5f-4f43-aa4a-8a798ba629e6.png" alt="image">&lt;/p></description></item><item><title>Docs: MacOS</title><link>https://neurodesk.github.io/docs/neurodesktop/getting-started/mac/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/getting-started/mac/</guid><description>
+&lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/135449288-6c3e9bbd-fe5f-4f43-aa4a-8a798ba629e6.png" alt="image">&lt;/p>
+&lt;h2 id="using-an-rdp-client">Using an RDP Client&lt;/h2>
+&lt;p>Startup Neurodesktop using the following command:&lt;/p>
+&lt;pre class="language-shell command-line" data-prompt="$" data-output="2-6">
+&lt;code>sudo docker run \
+--shm-size=1gb -it --privileged --name neurodesktop \
+-v ~/neurodesktop-storage:/neurodesktop-storage \
+-e HOST_UID="$(id -u)" -e HOST_GID="$(id -g)" \
+-p 3390:3389 -p 8080:8080 -h neurodesktop-20211207 \
+vnmd/neurodesktop:20211207&lt;/code>
+&lt;/pre>
+&lt;div class="alert alert-primary" role="alert">
+If you want to connect via RDP using a different port, replace 3390 in the previous and next step with your port
+&lt;/div>
+&lt;p>Open your RDP client and connect to Computer &lt;code>localhost:3390&lt;/code>&lt;/p>
+&lt;p>Use the following details to login if prompted&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">username: user
+password: password
+&lt;/code>&lt;/pre>&lt;/div>&lt;!--
+## Using a VNC Client
+&lt;pre class="language-batch command-line" data-prompt=">">
+&lt;code>docker run --shm-size=1gb -it --privileged --name neurodesktop -v C:/neurodesktop-storage:/neurodesktop-storage -e VNC_ENABLE=1 -p 5901:5901 -p 8080:8080 -h neurodesktop-20211207 vnmd/neurodesktop:20211207&lt;/code>
+&lt;/pre>
+or open a VNC Client and connect to port 5901 (for this -p 5901:5901 has to be added to the docker call) --></description></item><item><title>Docs: MacOS</title><link>https://neurodesk.github.io/docs/neurodesktop/getting-started/mac/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/getting-started/mac/</guid><description>
 &lt;h2 id="minimum-system-requirements">Minimum System Requirements&lt;/h2>
 &lt;ol>
 &lt;li>At least 3GB free space for neurodesktop base image&lt;/li>
@@ -361,7 +383,7 @@ The docker installation will reboot your computer a few times and there might be
 &lt;li>Once neurodesktop is downloaded i.e. &lt;code>guacd[77]: INFO: Listening on host 127.0.0.1, port 4822&lt;/code> is displayed in terminal, open a browser and go to:&lt;/li>
 &lt;/ol>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">http://localhost:8080/#/?username=user&amp;amp;password=password
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>or open a VNC Client and connect to port 5901 (for this -p 5901:5901 has to be added to the docker call)&lt;/p>
+&lt;/code>&lt;/pre>&lt;/div>
 &lt;div class="alert alert-primary" role="alert">
 &lt;h4 class="alert-heading">Note&lt;/h4>
 We do not recommend the use of the Firefox browser for accessing Neurodesktop, as this may lead to performance issues.
@@ -391,7 +413,29 @@ We do not recommend the use of the Firefox browser for accessing Neurodesktop, a
 &lt;li>Type:&lt;/li>
 &lt;/ol>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">docker rm neurodesktop
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: CVMFS</title><link>https://neurodesk.github.io/docs/neurocontainers/cvmfs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurocontainers/cvmfs/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="using-an-rdp-client">Using an RDP Client&lt;/h2>
+&lt;p>Startup Neurodesktop using the following command:&lt;/p>
+&lt;pre class="language-batch command-line" data-prompt=">">
+&lt;code>docker run --shm-size=1gb -it --privileged --name neurodesktop -v C:/neurodesktop-storage:/neurodesktop-storage -p 3390:3389 -p 8080:8080 -h neurodesktop-20211207 vnmd/neurodesktop:20211207&lt;/code>
+&lt;/pre>
+&lt;div class="alert alert-primary" role="alert">
+If you want to connect via RDP using a different port, replace 3390 in the previous and next step with your port
+&lt;/div>
+&lt;p>Open Windows Remote Desktop Connection and connect to Computer &lt;code>localhost:3390&lt;/code> as shown below.&lt;/p>
+&lt;p>&lt;img src="https://neurodesk.github.io/neurodesktop/getting-started/win-rdp-1.png" alt="win-rdp-1" title="win-rdp-1">&lt;/p>
+&lt;p>Resolution and multi-monitor settings can be set from the Display tab.&lt;/p>
+&lt;p>Once ready, click Connect. This will take you to the following prompt&lt;/p>
+&lt;p>&lt;img src="https://neurodesk.github.io/neurodesktop/getting-started/win-rdp-2.png" alt="win-rdp-1" title="win-rdp-2">&lt;/p>
+&lt;p>Use the following details to login&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">Session: Xorg
+username: user
+password: password
+&lt;/code>&lt;/pre>&lt;/div>&lt;!--
+## Using a VNC Client
+&lt;pre class="language-batch command-line" data-prompt=">">
+&lt;code>docker run --shm-size=1gb -it --privileged --name neurodesktop -v C:/neurodesktop-storage:/neurodesktop-storage -e VNC_ENABLE=1 -p 5901:5901 -p 8080:8080 -h neurodesktop-20211207 vnmd/neurodesktop:20211207&lt;/code>
+&lt;/pre>
+or open a VNC Client and connect to port 5901 (for this -p 5901:5901 has to be added to the docker call) --></description></item><item><title>Docs: CVMFS</title><link>https://neurodesk.github.io/docs/neurocontainers/cvmfs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurocontainers/cvmfs/</guid><description>
 &lt;h1 id="install-cvmfs">Install CVMFS&lt;/h1>
 &lt;p>First you need to install CVMFS. Follow the official instructions here: &lt;a href="https://cvmfs.readthedocs.io/en/stable/cpt-quickstart.html#getting-the-software">https://cvmfs.readthedocs.io/en/stable/cpt-quickstart.html#getting-the-software&lt;/a>&lt;/p>
 &lt;p>one example for Windows Subsystem for Linux (WSL) could look like this:&lt;/p>
@@ -669,8 +713,7 @@ If you get errors in neurodesktop then check if the ~/neurodesktop-storage direc
 &lt;/li>
 &lt;/ol>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">http://localhost:8080/#/?username=user&amp;amp;password=password
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>or open a VNC Client and connect to port 5901 (for this -p 5901:5901 has to be added to the docker call)&lt;/p>
-&lt;ol start="4">
+&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="4">
 &lt;li>neurodesktop is ready to use!&lt;/li>
 &lt;/ol>
 &lt;ul>
@@ -716,7 +759,27 @@ If you get errors in neurodesktop then check if the ~/neurodesktop-storage direc
 &lt;td>&lt;a href="https://henryjburg.medium.com/neurodesk-running-on-azure-3e38c590a152">https://henryjburg.medium.com/neurodesk-running-on-azure-3e38c590a152&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;/tbody>
-&lt;/table></description></item><item><title>Docs: Troubleshooting</title><link>https://neurodesk.github.io/docs/neurodesktop/troubleshooting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/troubleshooting/</guid><description>
+&lt;/table>
+&lt;h2 id="using-an-rdp-client">Using an RDP Client&lt;/h2>
+&lt;p>Open an SSH connection to your cloud instance with the following command&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">ssh -L 3390:127.0.0.1:3390 USER@IP
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Startup Neurodesktop using the following command:&lt;/p>
+&lt;pre class="language-shell command-line" data-prompt="$" data-output="2-6">
+&lt;code>sudo docker run \
+--shm-size=1gb -it --privileged --name neurodesktop \
+-v ~/neurodesktop-storage:/neurodesktop-storage \
+-e HOST_UID="$(id -u)" -e HOST_GID="$(id -g)" \
+-p 3390:3389 -p 8080:8080 -h neurodesktop-20211207 \
+vnmd/neurodesktop:20211207&lt;/code>
+&lt;/pre>
+&lt;div class="alert alert-primary" role="alert">
+If you want to connect via RDP using a different port, replace 3390 in the previous two steps and next step with your port
+&lt;/div>
+&lt;p>Open your RDP client and connect to Computer &lt;code>localhost:3390&lt;/code>&lt;/p>
+&lt;p>Use the following details to login if prompted&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">username: user
+password: password
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Troubleshooting</title><link>https://neurodesk.github.io/docs/neurodesktop/troubleshooting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/troubleshooting/</guid><description>
 &lt;p>Neurodesk is an open-source project that is always evolving. If you are experiencing an issue not listed here, please open a &lt;a href="https://github.com/NeuroDesk/neurodesk.github.io/issues">new issue&lt;/a>, so that we can aim to solve it and update our help documentation.&lt;/p>
 &lt;p>To ask questions or suggest new features, &lt;a href="https://github.com/NeuroDesk/neurodesk.github.io/discussions">join the discussion&lt;/a> on github.&lt;/p>
 &lt;h2 id="docker-cannot-connect-to-the-docker-daemon-at-unixvarrundockersock-is-the-docker-daemon-running">docker: Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?.&lt;/h2>

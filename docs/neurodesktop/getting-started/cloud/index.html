@@ -22,12 +22,12 @@
 ">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://neurodesk.github.io/docs/neurodesktop/getting-started/cloud/"><meta property="article:section" content="docs">
-<meta property="article:modified_time" content="2021-12-09T14:07:30+11:00"><meta property="og:site_name" content="NeuroDesk">
+<meta property="article:modified_time" content="2021-12-10T23:51:07+10:00"><meta property="og:site_name" content="NeuroDesk">
 <meta itemprop=name content="Cloud">
 <meta itemprop=description content="Run neurodesktop using Oracle or Azure cloud computing
 ">
-<meta itemprop=dateModified content="2021-12-09T14:07:30+11:00">
-<meta itemprop=wordCount content="430">
+<meta itemprop=dateModified content="2021-12-10T23:51:07+10:00">
+<meta itemprop=wordCount content="507">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="Cloud">
 <meta name=twitter:description content="Run neurodesktop using Oracle or Azure cloud computing
@@ -68,7 +68,7 @@
 </li>
 </ul>
 </div>
-<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.fad8fa15ff91b219a50bb7424e18c65d.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.9a5d7d57c33bc251876c9f49ee3ef527.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 </div>
 </nav>
 </header>
@@ -78,7 +78,7 @@
 <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
 <div id=td-sidebar-menu class=td-sidebar__inner>
 <form class="td-sidebar__search d-flex align-items-center">
-<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.fad8fa15ff91b219a50bb7424e18c65d.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.9a5d7d57c33bc251876c9f49ee3ef527.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type=button data-toggle=collapse data-target=#td-section-nav aria-controls=td-docs-nav aria-expanded=false aria-label="Toggle section navigation">
 </button>
 </form>
@@ -177,6 +177,7 @@
 <li><a href=#stopping-neurodesktop>Stopping neurodesktop:</a></li>
 <li><a href=#portforwarding-to-an-ios-ipad>Portforwarding to an iOS ipad</a></li>
 <li><a href=#cloud-provider-specific-tutorials>Cloud-provider specific Tutorials</a></li>
+<li><a href=#using-an-rdp-client>Using an RDP Client</a></li>
 </ul>
 </nav></div>
 </aside>
@@ -226,8 +227,7 @@ If you get errors in neurodesktop then check if the ~/neurodesktop-storage direc
 </li>
 </ol>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>http://localhost:8080/#/?username=user&amp;password=password
-</code></pre></div><p>or open a VNC Client and connect to port 5901 (for this -p 5901:5901 has to be added to the docker call)</p>
-<ol start=4>
+</code></pre></div><ol start=4>
 <li>neurodesktop is ready to use!</li>
 </ol>
 <ul>
@@ -274,8 +274,28 @@ If you get errors in neurodesktop then check if the ~/neurodesktop-storage direc
 </tr>
 </tbody>
 </table>
+<h2 id=using-an-rdp-client>Using an RDP Client</h2>
+<p>Open an SSH connection to your cloud instance with the following command</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>ssh -L 3390:127.0.0.1:3390 USER@IP
+</code></pre></div><p>Startup Neurodesktop using the following command:</p>
+<pre class="language-shell command-line" data-prompt=$ data-output=2-6>
+<code>sudo docker run \
+  --shm-size=1gb -it --privileged --name neurodesktop \
+  -v ~/neurodesktop-storage:/neurodesktop-storage \
+  -e HOST_UID="$(id -u)" -e HOST_GID="$(id -g)" \
+  -p 3390:3389 -p 8080:8080 -h neurodesktop-20211207 \
+  vnmd/neurodesktop:20211207</code>
+</pre>
+<div class="alert alert-primary" role=alert>
+If you want to connect via RDP using a different port, replace 3390 in the previous two steps and next step with your port
+</div>
+<p>Open your RDP client and connect to Computer <code>localhost:3390</code></p>
+<p>Use the following details to login if prompted</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>username: user
+password: password
+</code></pre></div>
 <div class="text-muted mt-5 pt-3 border-top">
-Last modified December 9, 2021: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/0d3a13a63a3a85461aef95aab978c8eb9b964978>Update cloud.md (0d3a13a)</a>
+Last modified December 10, 2021: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/aefa121752edd0becc31b5ae15d819d9023ddbec>Add generic RDP client instructions for Linux and Cloud (aefa121)</a>
 </div>
 </div>
 </main>
