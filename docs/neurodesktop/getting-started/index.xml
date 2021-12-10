@@ -192,8 +192,7 @@ There is a bug in docker 3.3.0 for Mac that makes this command not run correctly
 &lt;li>Once neurodesktop is downloaded i.e. &lt;code>guacd[77]: INFO: Listening on host 127.0.0.1, port 4822&lt;/code> is displayed in terminal, open a browser and go to:&lt;/li>
 &lt;/ol>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">http://localhost:8080/#/?username=user&amp;amp;password=password
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>or open a VNC Client and connect to port 5901 (for this -p 5901:5901 has to be added to the docker call)&lt;/p>
-&lt;ol start="3">
+&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="3">
 &lt;li>neurodesktop is ready to use!&lt;/li>
 &lt;/ol>
 &lt;ul>
@@ -218,7 +217,23 @@ There is a bug in docker 3.3.0 for Mac that makes this command not run correctly
 &lt;li>Type:&lt;/li>
 &lt;/ol>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">docker rm neurodesktop
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Windows</title><link>https://neurodesk.github.io/docs/neurodesktop/getting-started/windows/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/getting-started/windows/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="using-an-rdp-client">Using an RDP Client&lt;/h2>
+&lt;p>Startup Neurodesktop using the following command:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">docker run --shm-size&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>1gb -it --privileged --name neurodesktop -v ~/neurodesktop-storage:/neurodesktop-storage -p 3390:3389 -p 8080:8080 -h neurodesktop-20211207 vnmd/neurodesktop:20211207
+&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="alert alert-primary" role="alert">
+If you want to connect via RDP using a different port, replace 3390 in the previous and next step with your port
+&lt;/div>
+&lt;p>Open your RDP client and connect to Computer &lt;code>localhost:3390&lt;/code>&lt;/p>
+&lt;p>Use the following details to login if prompted&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">username: user
+password: password
+&lt;/code>&lt;/pre>&lt;/div>&lt;!--
+## Using a VNC Client
+&lt;pre class="language-batch command-line" data-prompt=">">
+&lt;code>docker run --shm-size=1gb -it --privileged --name neurodesktop -v C:/neurodesktop-storage:/neurodesktop-storage -e VNC_ENABLE=1 -p 5901:5901 -p 8080:8080 -h neurodesktop-20211207 vnmd/neurodesktop:20211207&lt;/code>
+&lt;/pre>
+or open a VNC Client and connect to port 5901 (for this -p 5901:5901 has to be added to the docker call) --></description></item><item><title>Docs: Windows</title><link>https://neurodesk.github.io/docs/neurodesktop/getting-started/windows/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/getting-started/windows/</guid><description>
 &lt;h2 id="minimum-system-requirements">Minimum System Requirements&lt;/h2>
 &lt;ol>
 &lt;li>At least 3GB free space for neurodesktop base image&lt;/li>

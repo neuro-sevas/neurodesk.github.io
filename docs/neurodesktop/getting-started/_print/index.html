@@ -66,7 +66,7 @@
 </li>
 </ul>
 </div>
-<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.9a5d7d57c33bc251876c9f49ee3ef527.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.e4b18f97e5988c41f19f1a79c0fb8dbd.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 </div>
 </nav>
 </header>
@@ -289,8 +289,7 @@ There is a bug in docker 3.3.0 for Mac that makes this command not run correctly
 <li>Once neurodesktop is downloaded i.e. <code>guacd[77]: INFO: Listening on host 127.0.0.1, port 4822</code> is displayed in terminal, open a browser and go to:</li>
 </ol>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>http://localhost:8080/#/?username=user&amp;password=password
-</code></pre></div><p>or open a VNC Client and connect to port 5901 (for this -p 5901:5901 has to be added to the docker call)</p>
-<ol start=3>
+</code></pre></div><ol start=3>
 <li>neurodesktop is ready to use!</li>
 </ol>
 <ul>
@@ -315,6 +314,17 @@ There is a bug in docker 3.3.0 for Mac that makes this command not run correctly
 <li>Type:</li>
 </ol>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>docker rm neurodesktop
+</code></pre></div><h2 id=using-an-rdp-client>Using an RDP Client</h2>
+<p>Startup Neurodesktop using the following command:</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>docker run --shm-size<span style=color:#ce5c00;font-weight:700>=</span>1gb -it --privileged --name neurodesktop -v ~/neurodesktop-storage:/neurodesktop-storage -p 3390:3389 -p 8080:8080 -h neurodesktop-20211207 vnmd/neurodesktop:20211207
+</code></pre></div>
+<div class="alert alert-primary" role=alert>
+If you want to connect via RDP using a different port, replace 3390 in the previous and next step with your port
+</div>
+<p>Open your RDP client and connect to Computer <code>localhost:3390</code></p>
+<p>Use the following details to login if prompted</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>username: user
+password: password
 </code></pre></div>
 </div>
 <div class=td-content style=page-break-before:always>

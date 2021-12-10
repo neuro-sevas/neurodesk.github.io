@@ -22,12 +22,12 @@
 ">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://neurodesk.github.io/docs/neurodesktop/getting-started/mac/"><meta property="article:section" content="docs">
-<meta property="article:modified_time" content="2021-12-08T15:59:57+10:00"><meta property="og:site_name" content="NeuroDesk">
+<meta property="article:modified_time" content="2021-12-10T23:53:22+10:00"><meta property="og:site_name" content="NeuroDesk">
 <meta itemprop=name content="MacOS">
 <meta itemprop=description content="Install neurodesktop on MacOS
 ">
-<meta itemprop=dateModified content="2021-12-08T15:59:57+10:00">
-<meta itemprop=wordCount content="245">
+<meta itemprop=dateModified content="2021-12-10T23:53:22+10:00">
+<meta itemprop=wordCount content="334">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="MacOS">
 <meta name=twitter:description content="Install neurodesktop on MacOS
@@ -68,7 +68,7 @@
 </li>
 </ul>
 </div>
-<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.9a5d7d57c33bc251876c9f49ee3ef527.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.e4b18f97e5988c41f19f1a79c0fb8dbd.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 </div>
 </nav>
 </header>
@@ -78,7 +78,7 @@
 <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
 <div id=td-sidebar-menu class=td-sidebar__inner>
 <form class="td-sidebar__search d-flex align-items-center">
-<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.9a5d7d57c33bc251876c9f49ee3ef527.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.e4b18f97e5988c41f19f1a79c0fb8dbd.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type=button data-toggle=collapse data-target=#td-section-nav aria-controls=td-docs-nav aria-expanded=false aria-label="Toggle section navigation">
 </button>
 </form>
@@ -174,6 +174,7 @@
 </ul>
 </li>
 <li><a href=#stopping-neurodesktop>Stopping neurodesktop:</a></li>
+<li><a href=#using-an-rdp-client>Using an RDP Client</a></li>
 </ul>
 </nav></div>
 </aside>
@@ -206,8 +207,7 @@ There is a bug in docker 3.3.0 for Mac that makes this command not run correctly
 <li>Once neurodesktop is downloaded i.e. <code>guacd[77]: INFO: Listening on host 127.0.0.1, port 4822</code> is displayed in terminal, open a browser and go to:</li>
 </ol>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>http://localhost:8080/#/?username=user&amp;password=password
-</code></pre></div><p>or open a VNC Client and connect to port 5901 (for this -p 5901:5901 has to be added to the docker call)</p>
-<ol start=3>
+</code></pre></div><ol start=3>
 <li>neurodesktop is ready to use!</li>
 </ol>
 <ul>
@@ -232,9 +232,20 @@ There is a bug in docker 3.3.0 for Mac that makes this command not run correctly
 <li>Type:</li>
 </ol>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>docker rm neurodesktop
+</code></pre></div><h2 id=using-an-rdp-client>Using an RDP Client</h2>
+<p>Startup Neurodesktop using the following command:</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>docker run --shm-size<span style=color:#ce5c00;font-weight:700>=</span>1gb -it --privileged --name neurodesktop -v ~/neurodesktop-storage:/neurodesktop-storage -p 3390:3389 -p 8080:8080 -h neurodesktop-20211207 vnmd/neurodesktop:20211207
+</code></pre></div>
+<div class="alert alert-primary" role=alert>
+If you want to connect via RDP using a different port, replace 3390 in the previous and next step with your port
+</div>
+<p>Open your RDP client and connect to Computer <code>localhost:3390</code></p>
+<p>Use the following details to login if prompted</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>username: user
+password: password
 </code></pre></div>
 <div class="text-muted mt-5 pt-3 border-top">
-Last modified December 8, 2021: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/9eb6a2089c59e8ec3f63f57171f3b2a196f15c87>Update formatting with alerts (9eb6a20)</a>
+Last modified December 10, 2021: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/85ad7bce11aa1a9f558c7d9c16a95319bc05394e>Generic RDP client instructions for Mac (85ad7bc)</a>
 </div>
 </div>
 </main>
