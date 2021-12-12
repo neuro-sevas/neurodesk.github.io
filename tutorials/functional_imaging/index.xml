@@ -33,7 +33,7 @@
 &lt;h2 id="copy-your-own-data">Copy your own data&lt;/h2>
 &lt;ul>
 &lt;li>On Windows, the folder &lt;code>C:\neurodesktop-storage&lt;/code> should have been automatically created when starting NeuroDesk&lt;/li>
-&lt;li>This is your direct link to the NeuroDesk environment, and anything you put in there should end up within the NeuroDesk desktop in &lt;code>/home/user/Desktop/neurodesktop-storage/&lt;/code>&lt;/li>
+&lt;li>This is your direct link to the NeuroDesk environment, and anything you put in there should end up within the NeuroDesk desktop in &lt;code>/neurodesktop-storage/&lt;/code>&lt;/li>
 &lt;/ul>
 &lt;h2 id="example-running-physio-in-the-gui">Example: Running PhysIO in the GUI&lt;/h2>
 &lt;ol>
@@ -51,7 +51,7 @@
 &lt;li>For now, load an existing example (or previously created SPM Batch File) as follows: It is most convenient to change the working directory of SPM to the location of the physiological logfiles
 &lt;ul>
 &lt;li>In the Batch Editor GUI, lowest row, choose &amp;lsquo;CD&amp;rsquo; from the &amp;lsquo;Utils..&amp;rsquo; dropdown menu&lt;/li>
-&lt;li>Navigate to any of the example folders, e.g., &lt;code>/home/Desktop/neurodesktop-storage/examples/Philips/ECG3T/&lt;/code> and select it&lt;/li>
+&lt;li>Navigate to any of the example folders, e.g., &lt;code>/opt/spm12/examples/Philips/ECG3T/&lt;/code> and select it&lt;/li>
 &lt;li>NB: you can skip this part, if you later manually update all input files in the Batch Editor window (resp/cardiac/scan timing and realignment parameter file further down)&lt;/li>
 &lt;li>Any other example should also work the same way, just CD to its folder before the next step&lt;/li>
 &lt;/ul>
