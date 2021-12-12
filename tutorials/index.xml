@@ -15,7 +15,7 @@ you are not familiar with the terminal at all, check the DataLad Handbook&amp;rs
 &lt;p>A DataLad &lt;em>dataset&lt;/em> can be any collection of files in folders, so it could be
 many things including an analysis project. Let&amp;rsquo;s go to the Neurodesktop storage
 and create a dataset for some project. Open a terminal and enter these commands:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">$ cd Desktop/neurodesktop-storage
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">$ cd /neurodesktop-storage
 $ datalad create -c yoda SomeProject
 [INFO ] Creating a new annex repo at /home/user/Desktop/neurodesktop-storage/SomeProject
 [INFO ] Running procedure cfg_yoda
@@ -105,7 +105,7 @@ To see that, you will need to pretend you are someone else (or you of future!)
 and install the dataset somewhere else. Note that &lt;code>-s&lt;/code> argument is probably a
 URL if you were really someone else.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">$ cd ~
-$ datalad install -s ~/Desktop/neurodesktop-storage/SomeProject
+$ datalad install -s /neurodesktop-storage/SomeProject
 install(ok): /home/user/SomeProject (dataset)
 $ cd SomeProject
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Because a DataLad dataset is a Git repository, people who download your dataset

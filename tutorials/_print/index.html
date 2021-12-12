@@ -66,7 +66,7 @@
 </li>
 </ul>
 </div>
-<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.6f1156b0768450c4cb4c892764118044.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.de738da1e988ba13194d96fd194162ef.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 </div>
 </nav>
 </header>
@@ -492,7 +492,7 @@ you are not familiar with the terminal at all, check the DataLad Handbook&rsquo;
 <p>A DataLad <em>dataset</em> can be any collection of files in folders, so it could be
 many things including an analysis project. Let&rsquo;s go to the Neurodesktop storage
 and create a dataset for some project. Open a terminal and enter these commands:</p>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>$ cd Desktop/neurodesktop-storage
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>$ cd /neurodesktop-storage
 
 $ datalad create -c yoda SomeProject
 [INFO   ] Creating a new annex repo at /home/user/Desktop/neurodesktop-storage/SomeProject
@@ -590,7 +590,7 @@ and install the dataset somewhere else. Note that <code>-s</code> argument is pr
 URL if you were really someone else.</p>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>$ cd ~
 
-$ datalad install -s ~/Desktop/neurodesktop-storage/SomeProject
+$ datalad install -s /neurodesktop-storage/SomeProject
 install(ok): /home/user/SomeProject (dataset)
 
 $ cd SomeProject
