@@ -836,7 +836,8 @@ We recommend the &lt;em>manual&lt;/em> install instructions, as the simplified i
 &lt;h2 id="development">development&lt;/h2>
 &lt;ul>
 &lt;li>neurodesktop can now be accessed via native RDP client as well (e.g. for multi-monitor support): &lt;a href="https://neurodesk.github.io/docs/neurodesktop/getting-started/windows/#using-an-rdp-client">https://neurodesk.github.io/docs/neurodesktop/getting-started/windows/#using-an-rdp-client&lt;/a>&lt;/li>
-&lt;li>&lt;/li>
+&lt;li>there is a new Help button in the menu :)&lt;/li>
+&lt;li>updates of ants 2.3.4 (now includes Scripts as well) + newly added 2.3.5&lt;/li>
 &lt;/ul>
 &lt;h2 id="20211207">20211207&lt;/h2>
 &lt;ul>
@@ -846,6 +847,7 @@ We recommend the &lt;em>manual&lt;/em> install instructions, as the simplified i
 &lt;li>added fieldtrip&lt;/li>
 &lt;li>Datalad is now in the main image, so datalad run should work&lt;/li>
 &lt;li>added Oshy-X segmentation tool&lt;/li>
+&lt;li>updated freesurfer 7.2.0&lt;/li>
 &lt;/ul>
 &lt;h2 id="20211028">20211028&lt;/h2>
 &lt;ul>
