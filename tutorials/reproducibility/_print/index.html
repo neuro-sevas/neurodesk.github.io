@@ -66,7 +66,7 @@
 </li>
 </ul>
 </div>
-<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.a58252007b21a103735692bb26f73ee3.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.04085ec5ca6c4a12356f0116bf55ba86.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 </div>
 </nav>
 </header>
@@ -183,7 +183,7 @@ Removing hello.txt
 <div class="alert alert-primary" role=alert>
 <h4 class=alert-heading>git</h4>
 <code>git clean</code> is for removing new, untracked files. For
-resetting existing, modified files to the last saved version, you woul need
+resetting existing, modified files to the last saved version, you would need
 <code>git reset --hard</code>.
 </div>
 <p>When the dataset is clean, we are ready to <code>datalad run</code>!</p>
@@ -217,7 +217,7 @@ install(ok): /home/user/SomeProject (dataset)
 
 $ cd SomeProject
 </code></pre></div><p>Because a DataLad dataset is a Git repository, people who download your dataset
-can see exactly how <code>outputs/hello.txt</code> was created using git&rsquo;s logs.</p>
+can see exactly how <code>outputs/hello.txt</code> was created using Git&rsquo;s logs.</p>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>$ git log outputs/hello.txt
 commit 52cff839596ff6e33aadf925d15ab26a607317de (HEAD -&gt; master, origin/master, origin/HEAD)
 Author: Neurodesk User &lt;user@neurodesk.github.io&gt;
@@ -254,7 +254,7 @@ action summary:
 </code></pre></div>
 <div class="alert alert-primary" role=alert>
 <h4 class=alert-heading>git</h4>
-In Git, each commit (save state) is assigned a very
+In Git, each commit (save state) is assigned a long,
 unique machine-generated ID. <code>52cf</code> refers to the commit with ID that starts
 with those characters. Usually 4 is the minimum needed to uniquely identify a
 commit. Of course, this ID is probably different for you, so change this
@@ -269,8 +269,8 @@ are many great resources on Git online, like this <a href=https://git-scm.com/bo
 <li>DataLad is only available on the terminal. For a detailed introduction on the
 Bash terminal, check the <a href=https://mywiki.wooledge.org/BashGuide>BashGuide</a>.</li>
 <li>For even more reproducibility, you can include <em>containers</em> with your dataset
-to run analyses in. DataLad has an extension to support container script
-execution. See <a href=http://handbook.datalad.org/en/latest/basics/101-133-containersrun.html>here</a>.</li>
+to run analyses in. DataLad has an extension to support script execution in
+containers. See <a href=http://handbook.datalad.org/en/latest/basics/101-133-containersrun.html>here</a>.</li>
 </ul>
 </div>
 </main>
