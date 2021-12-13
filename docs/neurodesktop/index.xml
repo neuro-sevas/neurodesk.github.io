@@ -206,6 +206,8 @@ We recommend the &lt;em>manual&lt;/em> install instructions, as the simplified i
 &lt;li>neurodesktop can now be accessed via native RDP client as well (e.g. for multi-monitor support): &lt;a href="https://neurodesk.github.io/docs/neurodesktop/getting-started/windows/#using-an-rdp-client">https://neurodesk.github.io/docs/neurodesktop/getting-started/windows/#using-an-rdp-client&lt;/a>&lt;/li>
 &lt;li>there is a new Help button in the menu :)&lt;/li>
 &lt;li>updates of ants 2.3.4 (now includes Scripts as well) + newly added 2.3.5&lt;/li>
+&lt;li>new version of QSMxT 1.1.8 20211211&lt;/li>
+&lt;li>new version of Spinal Cord Toolbox 5.4&lt;/li>
 &lt;/ul>
 &lt;h2 id="20211207">20211207&lt;/h2>
 &lt;ul>
