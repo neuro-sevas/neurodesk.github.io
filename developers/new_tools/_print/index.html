@@ -2,7 +2,7 @@
 <head>
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
-<meta name=generator content="Hugo 0.90.1">
+<meta name=generator content="Hugo 0.91.0">
 <link rel=canonical type=text/html href=https://neurodesk.github.io/developers/new_tools/>
 <link rel=alternate type=application/rss+xml href=https://neurodesk.github.io/developers/new_tools/index.xml>
 <meta name=robots content="noindex, nofollow">
@@ -66,7 +66,7 @@
 </li>
 </ul>
 </div>
-<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.d5d838563ecfb2e2bef29f2ac126ef57.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.7a54d90314801167c350b7f1fe7765a2.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 </div>
 </nav>
 </header>
@@ -327,27 +327,19 @@ ml toolName/toolVersion</code></pre>
 ml toolName/toolVersion</code></pre>
 </div>
 <ol start=14>
-<li>
-<p>Test the new container. Run some commands, to see all is good</p>
-</li>
-<li>
-<p>Fork <a href=https://github.com/NeuroDesk/neurocommand/>https://github.com/NeuroDesk/neurocommand/</a> to your Github account</p>
-</li>
-<li>
-<p>Edit an entry for your package in your fork of neurocommand/blob/main/neurodesk/apps.json based on one of the other entries (generating one menu item for opening a terminal inside the containers, and one menu item for the GUI, if relevant). Notice that in the json file, the version field should contain the <em>buildDate</em></p>
-</li>
-<li>
-<p>Include an icon file in your fork of neurocommand/tree/main/neurodesk/icons</p>
-</li>
-<li>
-<p>Send a pull request from your fork of neurocommand to <a href=https://github.com/NeuroDesk/neurocommand/>https://github.com/NeuroDesk/neurocommand/</a></p>
-</li>
-<li>
-<p>When the pull request is merged by Neurodesk admins, it will trigger an action to build the singularity container, distribute it in all object storage locations and on CVMFS, and it will update the menus in the desktop image on the next daily build</p>
-</li>
-<li>
-<p>Check in the dev build if everything is ok before releasing a new version of Neurodesktop:</p>
-</li>
+<li>Test the new container. Run some commands, to see all is good</li>
+</ol>
+<p>If the container doesn&rsquo;t work yet, it&rsquo;s sometimes useful to try and troubleshoot it and install missing libraries. This can be achieved by running it in a writable mode with fakeroot enabled:</p>
+<pre class="language-shell command-line" data-prompt=$><code>
+SINGULARITY_BINDPATH=''; singularity shell --writable --fakeroot /neurodesktop-storage/containers/toolName_toolVersion_buildDate/toolName_toolVersion_buildDate.simg
+</code></pre>
+<ol start=15>
+<li>Fork <a href=https://github.com/NeuroDesk/neurocommand/>https://github.com/NeuroDesk/neurocommand/</a> to your Github account</li>
+<li>Edit an entry for your package in your fork of neurocommand/blob/main/neurodesk/apps.json based on one of the other entries (generating one menu item for opening a terminal inside the containers, and one menu item for the GUI, if relevant). Notice that in the json file, the version field should contain the <em>buildDate</em></li>
+<li>Include an icon file in your fork of neurocommand/tree/main/neurodesk/icons</li>
+<li>Send a pull request from your fork of neurocommand to <a href=https://github.com/NeuroDesk/neurocommand/>https://github.com/NeuroDesk/neurocommand/</a></li>
+<li>When the pull request is merged by Neurodesk admins, it will trigger an action to build the singularity container, distribute it in all object storage locations and on CVMFS, and it will update the menus in the desktop image on the next daily build</li>
+<li>Check in the dev build if everything is ok before releasing a new version of Neurodesktop:</li>
 </ol>
 <pre class="language-shell command-line" data-prompt=$><code>sudo docker pull vnmd/neurodesktop-dev:latest && sudo docker run   --shm-size=1gb -it --privileged --name neurodesktop   -v ~/neurodesktop-storage:/neurodesktop-storage   -e HOST_UID="$(id -u)" -e HOST_GID="$(id -g)"   -p 8080:8080 -h neurodesktop-dev   vnmd/neurodesktop-dev:latest</code></pre>
 <ol start=21>
