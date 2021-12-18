@@ -66,7 +66,7 @@
 </li>
 </ul>
 </div>
-<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.7a54d90314801167c350b7f1fe7765a2.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.46fdac942f9505cbe181b91f5dee5a0f.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 </div>
 </nav>
 </header>
@@ -477,9 +477,7 @@ ml toolName/toolVersion</code></pre>
 <li>Test the new container. Run some commands, to see all is good</li>
 </ol>
 <p>If the container doesn&rsquo;t work yet, it&rsquo;s sometimes useful to try and troubleshoot it and install missing libraries. This can be achieved by running it in a writable mode with fakeroot enabled:</p>
-<pre class="language-shell command-line" data-prompt=$><code>
-SINGULARITY_BINDPATH=''; singularity shell --writable --fakeroot /neurodesktop-storage/containers/toolName_toolVersion_buildDate/toolName_toolVersion_buildDate.simg
-</code></pre>
+<pre class="language-shell command-line" data-prompt=$><code>SINGULARITY_BINDPATH=''; singularity shell --writable --fakeroot /neurodesktop-storage/containers/toolName_toolVersion_buildDate/toolName_toolVersion_buildDate.simg</code></pre>
 <ol start=15>
 <li>Fork <a href=https://github.com/NeuroDesk/neurocommand/>https://github.com/NeuroDesk/neurocommand/</a> to your Github account</li>
 <li>Edit an entry for your package in your fork of neurocommand/blob/main/neurodesk/apps.json based on one of the other entries (generating one menu item for opening a terminal inside the containers, and one menu item for the GUI, if relevant). Notice that in the json file, the version field should contain the <em>buildDate</em></li>

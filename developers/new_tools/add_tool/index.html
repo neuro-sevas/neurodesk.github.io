@@ -22,11 +22,11 @@
 ">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://neurodesk.github.io/developers/new_tools/add_tool/"><meta property="article:section" content="developers">
-<meta property="article:modified_time" content="2021-12-19T08:12:54+10:00"><meta property="og:site_name" content="NeuroDesk">
+<meta property="article:modified_time" content="2021-12-19T08:22:46+10:00"><meta property="og:site_name" content="NeuroDesk">
 <meta itemprop=name content="Add tools">
 <meta itemprop=description content="Add a tool to neurodesktop
 ">
-<meta itemprop=dateModified content="2021-12-19T08:12:54+10:00">
+<meta itemprop=dateModified content="2021-12-19T08:22:46+10:00">
 <meta itemprop=wordCount content="1192">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="Add tools">
@@ -68,7 +68,7 @@
 </li>
 </ul>
 </div>
-<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.7a54d90314801167c350b7f1fe7765a2.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.46fdac942f9505cbe181b91f5dee5a0f.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 </div>
 </nav>
 </header>
@@ -78,7 +78,7 @@
 <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
 <div id=td-sidebar-menu class=td-sidebar__inner>
 <form class="td-sidebar__search d-flex align-items-center">
-<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.7a54d90314801167c350b7f1fe7765a2.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.46fdac942f9505cbe181b91f5dee5a0f.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type=button data-toggle=collapse data-target=#td-section-nav aria-controls=td-docs-nav aria-expanded=false aria-label="Toggle section navigation">
 </button>
 </form>
@@ -390,9 +390,7 @@ ml toolName/toolVersion</code></pre>
 <li>Test the new container. Run some commands, to see all is good</li>
 </ol>
 <p>If the container doesn&rsquo;t work yet, it&rsquo;s sometimes useful to try and troubleshoot it and install missing libraries. This can be achieved by running it in a writable mode with fakeroot enabled:</p>
-<pre class="language-shell command-line" data-prompt=$><code>
-SINGULARITY_BINDPATH=''; singularity shell --writable --fakeroot /neurodesktop-storage/containers/toolName_toolVersion_buildDate/toolName_toolVersion_buildDate.simg
-</code></pre>
+<pre class="language-shell command-line" data-prompt=$><code>SINGULARITY_BINDPATH=''; singularity shell --writable --fakeroot /neurodesktop-storage/containers/toolName_toolVersion_buildDate/toolName_toolVersion_buildDate.simg</code></pre>
 <ol start=15>
 <li>Fork <a href=https://github.com/NeuroDesk/neurocommand/>https://github.com/NeuroDesk/neurocommand/</a> to your Github account</li>
 <li>Edit an entry for your package in your fork of neurocommand/blob/main/neurodesk/apps.json based on one of the other entries (generating one menu item for opening a terminal inside the containers, and one menu item for the GUI, if relevant). Notice that in the json file, the version field should contain the <em>buildDate</em></li>
@@ -406,7 +404,7 @@ SINGULARITY_BINDPATH=''; singularity shell --writable --fakeroot /neurodesktop-s
 <li>Consider contributing a tutorial about the new tool: <a href=https://github.com/NeuroDesk/neurodesk.github.io/tree/hugo-docsy/content/en/tutorials>https://github.com/NeuroDesk/neurodesk.github.io/tree/hugo-docsy/content/en/tutorials</a></li>
 </ol>
 <div class="text-muted mt-5 pt-3 border-top">
-Last modified December 19, 2021: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/8a298da4f31831ccd03925d61301b31fed596e89>added example for troubleshooting container live (8a298da4)</a>
+Last modified December 19, 2021: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/4171f23c927a827451258165ec29640b8f3efc7b>Update add_tool.md (4171f23c)</a>
 </div>
 </div>
 </main>
