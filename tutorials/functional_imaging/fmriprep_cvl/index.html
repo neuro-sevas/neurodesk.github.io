@@ -14,22 +14,22 @@
 <link rel=icon type=image/png href=/favicons/android-96x96.png sizes=96x96>
 <link rel=icon type=image/png href=/favicons/android-144x144.png sizes=144x144>
 <link rel=icon type=image/png href=/favicons/android-192x192.png sizes=192x192>
-<title>Using fmriprep with neurodesk on HPC (CVL) | NeuroDesk</title>
+<title>Using fmriprep with neurodesk on an HPC | NeuroDesk</title>
 <meta name=description content="A brief guide to using fmriprep with neurodesk, using data from the STRIAVISE project.
 ">
-<meta property="og:title" content="Using fmriprep with neurodesk on HPC (CVL)">
+<meta property="og:title" content="Using fmriprep with neurodesk on an HPC">
 <meta property="og:description" content="A brief guide to using fmriprep with neurodesk, using data from the STRIAVISE project.
 ">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://neurodesk.github.io/tutorials/functional_imaging/fmriprep_cvl/"><meta property="article:section" content="tutorials">
-<meta property="article:modified_time" content="2021-12-16T16:08:42+10:00"><meta property="og:site_name" content="NeuroDesk">
-<meta itemprop=name content="Using fmriprep with neurodesk on HPC (CVL)">
+<meta property="article:modified_time" content="2021-12-19T09:53:44+10:00"><meta property="og:site_name" content="NeuroDesk">
+<meta itemprop=name content="Using fmriprep with neurodesk on an HPC">
 <meta itemprop=description content="A brief guide to using fmriprep with neurodesk, using data from the STRIAVISE project.
 ">
-<meta itemprop=dateModified content="2021-12-16T16:08:42+10:00">
-<meta itemprop=wordCount content="544">
+<meta itemprop=dateModified content="2021-12-19T09:53:44+10:00">
+<meta itemprop=wordCount content="543">
 <meta itemprop=keywords content="fmriprep,documentation,preprocessing,"><meta name=twitter:card content="summary">
-<meta name=twitter:title content="Using fmriprep with neurodesk on HPC (CVL)">
+<meta name=twitter:title content="Using fmriprep with neurodesk on an HPC">
 <meta name=twitter:description content="A brief guide to using fmriprep with neurodesk, using data from the STRIAVISE project.
 ">
 <link rel=preload href=/scss/main.min.73d5be94f5e99c5a61460fa5b435757ce8ab87f13970655d157965b5df2b9419.css as=style>
@@ -68,7 +68,7 @@
 </li>
 </ul>
 </div>
-<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.46fdac942f9505cbe181b91f5dee5a0f.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.db9146d149d65f9fd4877a313fc7d77e.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 </div>
 </nav>
 </header>
@@ -78,7 +78,7 @@
 <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
 <div id=td-sidebar-menu class=td-sidebar__inner>
 <form class="td-sidebar__search d-flex align-items-center">
-<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.46fdac942f9505cbe181b91f5dee5a0f.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.db9146d149d65f9fd4877a313fc7d77e.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type=button data-toggle=collapse data-target=#td-section-nav aria-controls=td-docs-nav aria-expanded=false aria-label="Toggle section navigation">
 </button>
 </form>
@@ -98,7 +98,7 @@
 <a href=/tutorials/functional_imaging/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-tutorialsfunctional_imaging><span>Functional Imaging</span></a>
 <ul class="ul-2 foldable">
 <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id=m-tutorialsfunctional_imagingfmriprep_cvl-li>
-<a href=/tutorials/functional_imaging/fmriprep_cvl/ title="Using fmriprep with neurodesk on HPC (CVL)" class="align-left pl-0 active td-sidebar-link td-sidebar-link__page" id=m-tutorialsfunctional_imagingfmriprep_cvl><span class=td-sidebar-nav-active-item>fmriprep</span></a>
+<a href=/tutorials/functional_imaging/fmriprep_cvl/ title="Using fmriprep with neurodesk on an HPC" class="align-left pl-0 active td-sidebar-link td-sidebar-link__page" id=m-tutorialsfunctional_imagingfmriprep_cvl><span class=td-sidebar-nav-active-item>fmriprep</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-tutorialsfunctional_imagingphysio-li>
 <a href=/tutorials/functional_imaging/physio/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-tutorialsfunctional_imagingphysio><span>PhysIO</span></a>
 </li>
@@ -147,7 +147,7 @@
 <a href=https://github.com/NeuroDesk/neurodesk.github.io/tree/hugo-docsy/content/en/tutorials/functional_imaging/fmriprep_cvl.md class=td-page-meta--view target=_blank rel=noopener><i class="fa fa-file-alt fa-fw"></i> View page source</a>
 <a href=https://github.com/NeuroDesk/neurodesk.github.io/edit/hugo-docsy/content/en/tutorials/functional_imaging/fmriprep_cvl.md class=td-page-meta--edit target=_blank rel=noopener><i class="fa fa-edit fa-fw"></i> Edit this page</a>
 <a href="https://github.com/NeuroDesk/neurodesk.github.io/new/hugo-docsy/content/en/tutorials/functional_imaging/fmriprep_cvl.md?filename=change-me.md&value=---%0Atitle%3A+%22Long+Page+Title%22%0AlinkTitle%3A+%22Short+Nav+Title%22%0Aweight%3A+100%0Adescription%3A+%3E-%0A+++++Page+description+for+heading+and+indexes.%0A---%0A%0A%23%23+Heading%0A%0AEdit+this+template+to+create+your+new+page.%0A%0A%2A+Give+it+a+good+name%2C+ending+in+%60.md%60+-+e.g.+%60getting-started.md%60%0A%2A+Edit+the+%22front+matter%22+section+at+the+top+of+the+page+%28weight+controls+how+its+ordered+amongst+other+pages+in+the+same+directory%3B+lowest+number+first%29.%0A%2A+Add+a+good+commit+message+at+the+bottom+of+the+page+%28%3C80+characters%3B+use+the+extended+description+field+for+more+detail%29.%0A%2A+Create+a+new+branch+so+you+can+preview+your+new+file+and+request+a+review+via+Pull+Request.%0A" class=td-page-meta--child target=_blank rel=noopener><i class="fa fa-edit fa-fw"></i> Create child page</a>
-<a href="https://github.com/NeuroDesk/neurodesk.github.io/issues/new?title=Using%20fmriprep%20with%20neurodesk%20on%20HPC%20%28CVL%29" class=td-page-meta--issue target=_blank rel=noopener><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+<a href="https://github.com/NeuroDesk/neurodesk.github.io/issues/new?title=Using%20fmriprep%20with%20neurodesk%20on%20an%20HPC" class=td-page-meta--issue target=_blank rel=noopener><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
 <a href=https://github.com/NeuroDesk/neurodesk.github.io/issues/new class=td-page-meta--project-issue target=_blank rel=noopener><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
 <a id=print href=https://neurodesk.github.io/tutorials/functional_imaging/_print/><i class="fa fa-print fa-fw"></i> Print entire section</a>
 </div>
@@ -161,7 +161,7 @@
 </aside>
 <main class="col-12 col-md-9 col-xl-8 pl-md-5" role=main>
 <div class=td-content>
-<h1>Using fmriprep with neurodesk on HPC (CVL)</h1>
+<h1>Using fmriprep with neurodesk on an HPC</h1>
 <div class=lead>A brief guide to using fmriprep with neurodesk, using data from the STRIAVISE project.</div>
 <header class=article-meta>
 </header>
@@ -177,7 +177,7 @@
 <hr>
 <h1 id=assumptions>Assumptions</h1>
 <ul>
-<li><input disabled type=checkbox> Your data is already in BIDS format (<a href=https://github.com/NeuroDesk/neurodesk.github.io)>https://github.com/NeuroDesk/neurodesk.github.io)</a>.</li>
+<li><input disabled type=checkbox> Your data is already in BIDS format</li>
 <li><input disabled type=checkbox> You plan to run fmriprep using Neurodesk</li>
 <li><input disabled type=checkbox> You have a local copy of the freesurfer license file (freesurfer.txt)</li>
 </ul>
@@ -192,25 +192,25 @@
 <li>save that file with your chosen name without an extension, e.g. run_fmriprep</li>
 <li>paste in the following and update with your details</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=color:#a40000>#</span><span style=color:#000;font-weight:700>!</span><span style=color:#ce5c00;font-weight:700>/</span><span style=color:#000>bin</span><span style=color:#ce5c00;font-weight:700>/</span><span style=color:#000>bash</span>
-<span style=color:#a40000>#</span>
-<span style=color:#a40000>#</span> <span style=color:#000>written</span> <span style=color:#000>by</span> <span style=color:#000>A</span><span style=color:#000;font-weight:700>.</span> <span style=color:#000>Name</span> <span style=color:#ce5c00;font-weight:700>-</span> <span style=color:#000>the</span> <span style=color:#000>purpose</span> <span style=color:#000>of</span> <span style=color:#000>this</span> <span style=color:#000>code</span> <span style=color:#000>is</span> <span style=color:#000>to</span> <span style=color:#000>run</span> <span style=color:#000>fmriprep</span> <span style=color:#000>with</span> <span style=color:#000>neurodesk</span>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#8f5902;font-style:italic>#!/bin/bash
+</span><span style=color:#8f5902;font-style:italic></span><span style=color:#8f5902;font-style:italic>#</span>
+<span style=color:#8f5902;font-style:italic># written by A. Name - the purpose of this code is to run fmriprep with neurodesk</span>
 
-<span style=color:#000>export</span> <span style=color:#000>ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS</span><span style=color:#000;font-weight:700>=</span><span style=color:#0000cf;font-weight:700>6</span> <span style=color:#a40000>#</span> <span style=color:#000>specify</span> <span style=color:#000>the</span> <span style=color:#000>number</span> <span style=color:#000>of</span> <span style=color:#000>threads</span> <span style=color:#000>you</span> <span style=color:#000>want</span> <span style=color:#000>to</span> <span style=color:#000>use</span>
+<span style=color:#204a87>export</span> <span style=color:#000>ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS</span><span style=color:#ce5c00;font-weight:700>=</span><span style=color:#0000cf;font-weight:700>6</span> <span style=color:#8f5902;font-style:italic># specify the number of threads you want to use</span>
 
-<span style=color:#000>fmriprep</span> <span style=color:#ce5c00;font-weight:700>/</span><span style=color:#000>path</span><span style=color:#ce5c00;font-weight:700>/</span><span style=color:#000>to</span><span style=color:#ce5c00;font-weight:700>/</span><span style=color:#000>your</span><span style=color:#ce5c00;font-weight:700>/</span><span style=color:#000>data</span> <span style=color:#a40000>\</span> <span style=color:#a40000>#</span> <span style=color:#000>this</span> <span style=color:#000>is</span> <span style=color:#000>the</span> <span style=color:#000>top</span> <span style=color:#000>level</span> <span style=color:#000>of</span> <span style=color:#000>your</span> <span style=color:#000>data</span> <span style=color:#000>folder</span>
-         <span style=color:#ce5c00;font-weight:700>/</span><span style=color:#000>path</span><span style=color:#ce5c00;font-weight:700>/</span><span style=color:#000>to</span><span style=color:#ce5c00;font-weight:700>/</span><span style=color:#000>your</span><span style=color:#ce5c00;font-weight:700>/</span><span style=color:#000>data</span><span style=color:#ce5c00;font-weight:700>/</span><span style=color:#000>derivatives</span> <span style=color:#a40000>\</span> <span style=color:#a40000>#</span> <span style=color:#000>where</span> <span style=color:#000>you</span> <span style=color:#000>want</span> <span style=color:#000>fmriprep</span> <span style=color:#000>output</span> <span style=color:#000>to</span> <span style=color:#000>be</span> <span style=color:#000>saved</span>
-         <span style=color:#000>participant</span> <span style=color:#a40000>\</span> <span style=color:#a40000>#</span> <span style=color:#000>this</span> <span style=color:#000>tells</span> <span style=color:#000>fmriprep</span> <span style=color:#000>to</span> <span style=color:#000>analyse</span> <span style=color:#000>at</span> <span style=color:#000>the</span> <span style=color:#000>participant</span> <span style=color:#000>level</span>
-         <span style=color:#ce5c00;font-weight:700>--</span><span style=color:#000>fs</span><span style=color:#ce5c00;font-weight:700>-</span><span style=color:#000>license</span><span style=color:#ce5c00;font-weight:700>-</span><span style=color:#000>file</span> <span style=color:#ce5c00;font-weight:700>/</span><span style=color:#000>path</span><span style=color:#ce5c00;font-weight:700>/</span><span style=color:#000>to</span><span style=color:#ce5c00;font-weight:700>/</span><span style=color:#000>your</span><span style=color:#ce5c00;font-weight:700>/</span><span style=color:#000>freesurfer</span><span style=color:#000;font-weight:700>.</span><span style=color:#000>txt</span> <span style=color:#a40000>\</span> <span style=color:#a40000>#</span> <span style=color:#000>where</span> <span style=color:#000>the</span> <span style=color:#000>freesurfer</span> <span style=color:#000>license</span> <span style=color:#000>file</span> <span style=color:#000>is</span>
-         <span style=color:#ce5c00;font-weight:700>--</span><span style=color:#000>output</span><span style=color:#ce5c00;font-weight:700>-</span><span style=color:#000>spaces</span> <span style=color:#000>T1w</span> <span style=color:#000>MNI152NLin2009cAsym</span> <span style=color:#000>fsaverage</span> <span style=color:#000>fsnative</span> <span style=color:#a40000>\</span> 
-         <span style=color:#ce5c00;font-weight:700>--</span><span style=color:#000>participant</span><span style=color:#ce5c00;font-weight:700>-</span><span style=color:#000>label</span> <span style=color:#0000cf;font-weight:700>01</span> <span style=color:#a40000>\</span> <span style=color:#a40000>#</span> <span style=color:#000>put</span> <span style=color:#000>what</span> <span style=color:#000>ever</span> <span style=color:#000>participant</span> <span style=color:#000>labels</span> <span style=color:#000>you</span> <span style=color:#000>want</span> <span style=color:#000>to</span> <span style=color:#000>analyse</span>
-         <span style=color:#ce5c00;font-weight:700>--</span><span style=color:#000>nprocs</span> <span style=color:#0000cf;font-weight:700>6</span> <span style=color:#ce5c00;font-weight:700>--</span><span style=color:#000>mem</span> <span style=color:#0000cf;font-weight:700>10000</span> <span style=color:#a40000>\</span> <span style=color:#a40000>#</span> <span style=color:#000>fmriprep</span> <span style=color:#000>can</span> <span style=color:#000>be</span> <span style=color:#000>greedy</span> <span style=color:#000>on</span> <span style=color:#000>the</span> <span style=color:#000>hpc</span><span style=color:#000;font-weight:700>,</span> <span style=color:#000>make</span> <span style=color:#000>sure</span> <span style=color:#000>it</span> <span style=color:#000>is</span> <span style=color:#000>not</span>
-         <span style=color:#ce5c00;font-weight:700>--</span><span style=color:#000>skip_bids_validation</span> <span style=color:#a40000>\</span> <span style=color:#a40000>#</span> <span style=color:#000>its</span> <span style=color:#000>normally</span> <span style=color:#000>fine</span> <span style=color:#000>to</span> <span style=color:#000>skip</span> <span style=color:#000>this</span> <span style=color:#000>but</span> <span style=color:#000>do</span> <span style=color:#000>make</span> <span style=color:#000>sure</span> <span style=color:#000>your</span> <span style=color:#000>data</span> <span style=color:#000>are</span> <span style=color:#000>BIDS</span> <span style=color:#000>enough</span>
-         <span style=color:#ce5c00;font-weight:700>-</span><span style=color:#000>v</span> <span style=color:#a40000>#</span> <span style=color:#000>be</span> <span style=color:#000>verbal</span> <span style=color:#000>fmriprep</span><span style=color:#000;font-weight:700>,</span> <span style=color:#000>tell</span> <span style=color:#000>me</span> <span style=color:#000>what</span> <span style=color:#000>you</span> <span style=color:#000>are</span> <span style=color:#000>doing</span>
+fmriprep /path/to/your/data <span style=color:#4e9a06>\ </span><span style=color:#8f5902;font-style:italic># this is the top level of your data folder</span>
+         /path/to/your/data/derivatives <span style=color:#4e9a06>\ </span><span style=color:#8f5902;font-style:italic># where you want fmriprep output to be saved</span>
+         participant <span style=color:#4e9a06>\ </span><span style=color:#8f5902;font-style:italic># this tells fmriprep to analyse at the participant level</span>
+         --fs-license-file /path/to/your/freesurfer.txt <span style=color:#4e9a06>\ </span><span style=color:#8f5902;font-style:italic># where the freesurfer license file is</span>
+         --output-spaces T1w MNI152NLin2009cAsym fsaverage fsnative <span style=color:#4e9a06>\ </span>
+         --participant-label <span style=color:#0000cf;font-weight:700>01</span> <span style=color:#4e9a06>\ </span><span style=color:#8f5902;font-style:italic># put what ever participant labels you want to analyse</span>
+         --nprocs <span style=color:#0000cf;font-weight:700>6</span> --mem <span style=color:#0000cf;font-weight:700>10000</span> <span style=color:#4e9a06>\ </span><span style=color:#8f5902;font-style:italic># fmriprep can be greedy on the hpc, make sure it is not</span>
+         --skip_bids_validation <span style=color:#4e9a06>\ </span><span style=color:#8f5902;font-style:italic># its normally fine to skip this but do make sure your data are BIDS enough</span>
+         -v <span style=color:#8f5902;font-style:italic># be verbal fmriprep, tell me what you are doing</span>
 </code></pre></div><p>To make the file executable, navigate to this file via the command line in terminal and type</p>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=color:#000>chmod</span> <span style=color:#000>u</span><span style=color:#ce5c00;font-weight:700>+</span><span style=color:#000>x</span> <span style=color:#000>run_fmriprep</span> <span style=color:#a40000>#</span> <span style=color:#000>this</span> <span style=color:#000>tells</span> <span style=color:#000>the</span> <span style=color:#000>system</span> <span style=color:#000>to</span> <span style=color:#000>make</span> <span style=color:#000>your</span> <span style=color:#000>new</span> <span style=color:#000>file</span> <span style=color:#000>executable</span>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>chmod u+x run_fmriprep <span style=color:#8f5902;font-style:italic># this tells the system to make your new file executable</span>
 </code></pre></div><p>Then to run your new executable, return to your terminal window for fmriprep (that opened when you navigated to fmriprep) and type:</p>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=color:#000;font-weight:700>.</span><span style=color:#ce5c00;font-weight:700>/</span><span style=color:#000>run_fmriprep</span>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>./run_fmriprep
 </code></pre></div><p>fmriprep should now be merrily working away on your data :)</p>
 <hr>
 <h2 id=some-common-pitfalls-i-have-learned-from-my-mistakes-and-sometimes-from-others>Some common pitfalls I have learned from my mistakes (and sometimes from others)</h2>
@@ -226,7 +226,7 @@
 </li>
 </ol>
 <div class="text-muted mt-5 pt-3 border-top">
-Last modified December 16, 2021: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/7930376721215aa1b10f882f7af55a6fe18062d1>removed image from fmriprep_cvl (79303767)</a>
+Last modified December 19, 2021: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/2c0b91d1b15b2d5c4d87d4e98463f8d496a540a5>minor fixes (2c0b91d1)</a>
 </div>
 </div>
 </main>
