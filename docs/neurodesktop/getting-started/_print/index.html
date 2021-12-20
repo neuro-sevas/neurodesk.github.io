@@ -66,7 +66,7 @@
 </li>
 </ul>
 </div>
-<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.db9146d149d65f9fd4877a313fc7d77e.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.e815637c7b6f6e93c3ab68db249d1b1f.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 </div>
 </nav>
 </header>
@@ -122,8 +122,8 @@ This is the multi-page printable view of this section.
   --shm-size=1gb -it --privileged --name neurodesktop \
   -v ~/neurodesktop-storage:/neurodesktop-storage \
   -e HOST_UID="$(id -u)" -e HOST_GID="$(id -g)" \
-  -p 8080:8080 -h neurodesktop-20211207 \
-  vnmd/neurodesktop:20211207</code>
+  -p 8080:8080 -h neurodesktop-20211220 \
+  vnmd/neurodesktop:20211220</code>
 </pre>
 <div class="alert alert-primary" role=alert>
 If you get errors in neurodesktop then check if the ~/neurodesktop-storage directory is writable to all users, otherwise run <code>chmod a+rwx ~/neurodesktop-storage</code>
@@ -204,8 +204,8 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io</code>
   -e HOST_UID="$(id -u)" -e HOST_GID="$(id -g)" \
   -e NVIDIA_VISIBLE_DEVICES=all \
   -e NVIDIA_DISABLE_REQUIRE=1 \
-  -p 8080:8080 -h neurodesktop-20211207 \
-  vnmd/neurodesktop:20211207</code>
+  -p 8080:8080 -h neurodesktop-20211220 \
+  vnmd/neurodesktop:20211220</code>
 </pre>
 <p>Then inside the neurodesktop container run:</p>
 <pre class="language-shell command-line" data-prompt=$>
@@ -251,8 +251,8 @@ print("Num GPUs Available: ", len(tf.config.list_physical_devices('GPU')))</code
   --shm-size=1gb -it --privileged --name neurodesktop \
   -v ~/neurodesktop-storage:/neurodesktop-storage \
   -e HOST_UID="$(id -u)" -e HOST_GID="$(id -g)" \
-  -p 3390:3389 -p 8080:8080 -h neurodesktop-20211207 \
-  vnmd/neurodesktop:20211207</code>
+  -p 3390:3389 -p 8080:8080 -h neurodesktop-20211220 \
+  vnmd/neurodesktop:20211220</code>
 </pre>
 <div class="alert alert-primary" role=alert>
 If you want to connect via RDP using a different port, replace 3390 in the previous and next step with your port
@@ -279,7 +279,7 @@ password: password
 <ol>
 <li>Open a terminal, and type the folowing command to automatically download the neurodesktop container and run it</li>
 </ol>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>docker run --shm-size<span style=color:#ce5c00;font-weight:700>=</span>1gb -it --privileged --name neurodesktop -v ~/neurodesktop-storage:/neurodesktop-storage -p 8080:8080 -h neurodesktop-20211207 vnmd/neurodesktop:20211207
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>docker run --shm-size<span style=color:#ce5c00;font-weight:700>=</span>1gb -it --privileged --name neurodesktop -v ~/neurodesktop-storage:/neurodesktop-storage -p 8080:8080 -h neurodesktop-20211220 vnmd/neurodesktop:20211220
 </code></pre></div>
 <div class="alert alert-primary" role=alert>
 There is a bug in docker 3.3.0 for Mac that makes this command not run correctly and there will be no application menu when you start the desktop. Update your docker version when you see this!
@@ -316,7 +316,7 @@ There is a bug in docker 3.3.0 for Mac that makes this command not run correctly
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>docker rm neurodesktop
 </code></pre></div><h2 id=using-an-rdp-client>Using an RDP Client</h2>
 <p>Startup Neurodesktop using the following command:</p>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>docker run --shm-size<span style=color:#ce5c00;font-weight:700>=</span>1gb -it --privileged --name neurodesktop -v ~/neurodesktop-storage:/neurodesktop-storage -p 3390:3389 -p 8080:8080 -h neurodesktop-20211207 vnmd/neurodesktop:20211207
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>docker run --shm-size<span style=color:#ce5c00;font-weight:700>=</span>1gb -it --privileged --name neurodesktop -v ~/neurodesktop-storage:/neurodesktop-storage -p 3390:3389 -p 8080:8080 -h neurodesktop-20211220 vnmd/neurodesktop:20211220
 </code></pre></div>
 <div class="alert alert-primary" role=alert>
 If you want to connect via RDP using a different port, replace 3390 in the previous and next step with your port
@@ -353,7 +353,7 @@ The docker installation will reboot your computer a few times and there might be
 <li>Open a terminal (e.g. Powershell), and type the folowing command to automatically download the neurodesktop container and run it</li>
 </ol>
 <pre class="language-batch command-line" data-prompt=">">
-<code>docker run --shm-size=1gb -it --privileged --name neurodesktop -v C:/neurodesktop-storage:/neurodesktop-storage -p 8080:8080 -h neurodesktop-20211207 vnmd/neurodesktop:20211207</code>
+<code>docker run --shm-size=1gb -it --privileged --name neurodesktop -v C:/neurodesktop-storage:/neurodesktop-storage -p 8080:8080 -h neurodesktop-20211220 vnmd/neurodesktop:20211220</code>
 </pre>
 <ol start=2>
 <li>Once neurodesktop is downloaded i.e. <code>guacd[77]: INFO: Listening on host 127.0.0.1, port 4822</code> is displayed in terminal, open a browser and go to:</li>
@@ -392,7 +392,7 @@ We do not recommend the use of the Firefox browser for accessing Neurodesktop, a
 </code></pre></div><h2 id=using-an-rdp-client>Using an RDP Client</h2>
 <p>Startup Neurodesktop using the following command:</p>
 <pre class="language-batch command-line" data-prompt=">">
-<code>docker run --shm-size=1gb -it --privileged --name neurodesktop -v C:/neurodesktop-storage:/neurodesktop-storage -p 3390:3389 -p 8080:8080 -h neurodesktop-20211207 vnmd/neurodesktop:20211207</code>
+<code>docker run --shm-size=1gb -it --privileged --name neurodesktop -v C:/neurodesktop-storage:/neurodesktop-storage -p 3390:3389 -p 8080:8080 -h neurodesktop-20211220 vnmd/neurodesktop:20211220</code>
 </pre>
 <div class="alert alert-primary" role=alert>
 If you want to connect via RDP using a different port, replace 3390 in the previous and next step with your port
@@ -441,8 +441,8 @@ password: password
   --shm-size=1gb -it --privileged --name neurodesktop \
   -v ~/neurodesktop-storage:/neurodesktop-storage \
   -e HOST_UID="$(id -u)" -e HOST_GID="$(id -g)" \
-  -p 8080:8080 -h neurodesktop-20211207 \
-  vnmd/neurodesktop:20211207</code>
+  -p 8080:8080 -h neurodesktop-20211220 \
+  vnmd/neurodesktop:20211220</code>
 </pre>
 <div class="alert alert-primary" role=alert>
 If you get errors in neurodesktop then check if the ~/neurodesktop-storage directory is writable to all users, otherwise run <code>chmod a+rwx ~/neurodesktop-storage</code>
@@ -512,8 +512,8 @@ If you get errors in neurodesktop then check if the ~/neurodesktop-storage direc
   --shm-size=1gb -it --privileged --name neurodesktop \
   -v ~/neurodesktop-storage:/neurodesktop-storage \
   -e HOST_UID="$(id -u)" -e HOST_GID="$(id -g)" \
-  -p 3390:3389 -p 8080:8080 -h neurodesktop-20211207 \
-  vnmd/neurodesktop:20211207</code>
+  -p 3390:3389 -p 8080:8080 -h neurodesktop-20211220 \
+  vnmd/neurodesktop:20211220</code>
 </pre>
 <div class="alert alert-primary" role=alert>
 If you want to connect via RDP using a different port, replace 3390 in the previous two steps and next step with your port
