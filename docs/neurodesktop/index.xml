@@ -201,6 +201,12 @@ We recommend the &lt;em>manual&lt;/em> install instructions, as the simplified i
 &lt;p>&lt;img src="https://neurodesk.github.io/Troubleshooting/Docker_troubleshooting.png" alt="Docker_troubleshooting" title="Docker_troubleshooting">&lt;/p>
 &lt;p>If you are still experiencing issues after this, you may need to update docker to the latest version. This can be achieved through &amp;ldquo;settings&amp;rdquo; in the docker engine, or (on windows) by right clicking on the docker tray icon:&lt;/p>
 &lt;p>&lt;img src="https://neurodesk.github.io/Troubleshooting/Docker_update.png" alt="Docker_update" title="Docker_update">&lt;/p></description></item><item><title>Docs: Release History</title><link>https://neurodesk.github.io/docs/neurodesktop/release-history/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/release-history/</guid><description>
+&lt;h2 id="development">Development&lt;/h2>
+&lt;ul>
+&lt;li>vesselapp 0.3.1 20211216&lt;/li>
+&lt;li>palm bash /neurocommand/local/fetch_and_run.sh palm alpha119 20211220&lt;/li>
+&lt;li>niistat bash /neurocommand/local/fetch_and_run.sh niistat 1.0.20191216 20211220&lt;/li>
+&lt;/ul>
 &lt;h2 id="20211220">20211220&lt;/h2>
 &lt;ul>
 &lt;li>neurodesktop can now be accessed via native RDP client as well (e.g. for multi-monitor support): &lt;a href="https://neurodesk.github.io/docs/neurodesktop/getting-started/windows/#using-an-rdp-client">https://neurodesk.github.io/docs/neurodesktop/getting-started/windows/#using-an-rdp-client&lt;/a>&lt;/li>
