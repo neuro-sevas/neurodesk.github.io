@@ -207,12 +207,33 @@ If you want to connect via RDP using a different port, replace 3390 in the previ
 &lt;p>Use the following details to login if prompted&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">username: user
 password: password
-&lt;/code>&lt;/pre>&lt;/div>&lt;!--
-## Using a VNC Client
-&lt;pre class="language-batch command-line" data-prompt=">">
-&lt;code>docker run --shm-size=1gb -it --privileged --name neurodesktop -v C:/neurodesktop-storage:/neurodesktop-storage -e VNC_ENABLE=1 -p 5901:5901 -p 8080:8080 -h neurodesktop-20211220 vnmd/neurodesktop:20211220&lt;/code>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="using-vnc">Using VNC&lt;/h2>
+&lt;p>To enable VNC and disable RDP&lt;/p>
+&lt;pre class="language-shell command-line" data-prompt="$" data-output="2-6">
+&lt;code>sudo docker run \
+--shm-size=1gb -it --privileged --name neurodesktop \
+-v ~/neurodesktop-storage:/neurodesktop-storage \
+-e VNC_ENABLE=true -e HOST_UID="$(id -u)" -e HOST_GID="$(id -g)" \
+-p 8080:8080 -h neurodesktop-20211220 \
+vnmd/neurodesktop:20211220&lt;/code>
 &lt;/pre>
-or open a VNC Client and connect to port 5901 (for this -p 5901:5901 has to be added to the docker call) --></description></item><item><title>Docs: MacOS</title><link>https://neurodesk.github.io/docs/neurodesktop/getting-started/mac/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/getting-started/mac/</guid><description>
+&lt;div class="alert alert-primary" role="alert">
+&lt;p>VNC allows for multiple desktop connections to same instance&lt;/p>
+&lt;p>Note: Neurodesktop VNC on the browser currently does not support auto-resolution&lt;/p>
+&lt;/div>
+&lt;h3 id="using-vnc-client">Using VNC Client&lt;/h3>
+&lt;div class="alert alert-warning" role="alert">
+Needs testing
+&lt;/div>
+&lt;pre class="language-shell command-line" data-prompt="$" data-output="2-6">
+&lt;code>sudo docker run \
+--shm-size=1gb -it --privileged --name neurodesktop \
+-v ~/neurodesktop-storage:/neurodesktop-storage \
+-e VNC_ENABLE=true -e HOST_UID="$(id -u)" -e HOST_GID="$(id -g)" \
+-p 5901:5901 -p 8080:8080 -h neurodesktop-20211220 \
+vnmd/neurodesktop:20211220&lt;/code>
+&lt;/pre>
+&lt;p>Open a VNC Client and connect to port 5901&lt;/p></description></item><item><title>Docs: MacOS</title><link>https://neurodesk.github.io/docs/neurodesktop/getting-started/mac/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/getting-started/mac/</guid><description>
 &lt;h2 id="minimum-system-requirements">Minimum System Requirements&lt;/h2>
 &lt;ol>
 &lt;li>At least 3GB free space for neurodesktop base image&lt;/li>
@@ -445,12 +466,23 @@ If you want to connect via RDP using a different port, replace 3390 in the previ
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">Session: Xorg
 username: user
 password: password
-&lt;/code>&lt;/pre>&lt;/div>&lt;!--
-## Using a VNC Client
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="using-vnc">Using VNC&lt;/h2>
+&lt;p>To enable VNC and disable RDP&lt;/p>
 &lt;pre class="language-batch command-line" data-prompt=">">
-&lt;code>docker run --shm-size=1gb -it --privileged --name neurodesktop -v C:/neurodesktop-storage:/neurodesktop-storage -e VNC_ENABLE=1 -p 5901:5901 -p 8080:8080 -h neurodesktop-20211220 vnmd/neurodesktop:20211220&lt;/code>
+&lt;code>docker run --shm-size=1gb -it --privileged --name neurodesktop -v C:/neurodesktop-storage:/neurodesktop-storage -e VNC_ENABLE=true -p 8080:8080 -h neurodesktop-20211220 vnmd/neurodesktop:20211220&lt;/code>
 &lt;/pre>
-or open a VNC Client and connect to port 5901 (for this -p 5901:5901 has to be added to the docker call) --></description></item><item><title>Docs: CVMFS</title><link>https://neurodesk.github.io/docs/neurocontainers/cvmfs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurocontainers/cvmfs/</guid><description>
+&lt;div class="alert alert-primary" role="alert">
+&lt;p>VNC allows for multiple desktop connections to same instance&lt;/p>
+&lt;p>Note: Neurodesktop VNC on the browser currently does not support auto-resolution&lt;/p>
+&lt;/div>
+&lt;h3 id="using-vnc-client">Using VNC Client&lt;/h3>
+&lt;div class="alert alert-warning" role="alert">
+Needs testing
+&lt;/div>
+&lt;pre class="language-batch command-line" data-prompt=">">
+&lt;code>docker run --shm-size=1gb -it --privileged --name neurodesktop -v C:/neurodesktop-storage:/neurodesktop-storage -e VNC_ENABLE=true -p 5901:5901 -p 8080:8080 -h neurodesktop-20211220 vnmd/neurodesktop:20211220&lt;/code>
+&lt;/pre>
+&lt;p>Open a VNC Client and connect to port 5901&lt;/p></description></item><item><title>Docs: CVMFS</title><link>https://neurodesk.github.io/docs/neurocontainers/cvmfs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurocontainers/cvmfs/</guid><description>
 &lt;h1 id="install-cvmfs">Install CVMFS&lt;/h1>
 &lt;p>First you need to install CVMFS. Follow the official instructions here: &lt;a href="https://cvmfs.readthedocs.io/en/stable/cpt-quickstart.html#getting-the-software">https://cvmfs.readthedocs.io/en/stable/cpt-quickstart.html#getting-the-software&lt;/a>&lt;/p>
 &lt;p>one example for Windows Subsystem for Linux (WSL) could look like this:&lt;/p>
@@ -794,7 +826,33 @@ If you want to connect via RDP using a different port, replace 3390 in the previ
 &lt;p>Use the following details to login if prompted&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">username: user
 password: password
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Troubleshooting</title><link>https://neurodesk.github.io/docs/neurodesktop/troubleshooting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/troubleshooting/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="using-vnc">Using VNC&lt;/h2>
+&lt;p>To enable VNC and disable RDP&lt;/p>
+&lt;pre class="language-shell command-line" data-prompt="$" data-output="2-6">
+&lt;code>sudo docker run \
+--shm-size=1gb -it --privileged --name neurodesktop \
+-v ~/neurodesktop-storage:/neurodesktop-storage \
+-e VNC_ENABLE=true -e HOST_UID="$(id -u)" -e HOST_GID="$(id -g)" \
+-p 8080:8080 -h neurodesktop-20211220 \
+vnmd/neurodesktop:20211220&lt;/code>
+&lt;/pre>
+&lt;div class="alert alert-primary" role="alert">
+&lt;p>VNC allows for multiple desktop connections to same instance&lt;/p>
+&lt;p>Note: Neurodesktop VNC on the browser currently does not support auto-resolution&lt;/p>
+&lt;/div>
+&lt;h3 id="using-vnc-client">Using VNC Client&lt;/h3>
+&lt;div class="alert alert-warning" role="alert">
+Needs testing
+&lt;/div>
+&lt;pre class="language-shell command-line" data-prompt="$" data-output="2-6">
+&lt;code>sudo docker run \
+--shm-size=1gb -it --privileged --name neurodesktop \
+-v ~/neurodesktop-storage:/neurodesktop-storage \
+-e VNC_ENABLE=true -e HOST_UID="$(id -u)" -e HOST_GID="$(id -g)" \
+-p 5901:5901 -p 8080:8080 -h neurodesktop-20211220 \
+vnmd/neurodesktop:20211220&lt;/code>
+&lt;/pre>
+&lt;p>Open a VNC Client and connect to port 5901&lt;/p></description></item><item><title>Docs: Troubleshooting</title><link>https://neurodesk.github.io/docs/neurodesktop/troubleshooting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/troubleshooting/</guid><description>
 &lt;p>Neurodesk is an open-source project that is always evolving. If you are experiencing an issue not listed here, please open a &lt;a href="https://github.com/NeuroDesk/neurodesk.github.io/issues">new issue&lt;/a>, so that we can aim to solve it and update our help documentation.&lt;/p>
 &lt;p>To ask questions or suggest new features, &lt;a href="https://github.com/NeuroDesk/neurodesk.github.io/discussions">join the discussion&lt;/a> on github.&lt;/p>
 &lt;h2 id="docker-cannot-connect-to-the-docker-daemon-at-unixvarrundockersock-is-the-docker-daemon-running">docker: Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?.&lt;/h2>
