@@ -22,12 +22,12 @@
 ">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://neurodesk.github.io/docs/neurodesktop/getting-started/cloud/"><meta property="article:section" content="docs">
-<meta property="article:modified_time" content="2022-01-05T00:21:29+10:00"><meta property="og:site_name" content="NeuroDesk">
+<meta property="article:modified_time" content="2022-01-05T11:08:38+10:00"><meta property="og:site_name" content="NeuroDesk">
 <meta itemprop=name content="Cloud">
 <meta itemprop=description content="Run neurodesktop using Oracle or Azure cloud computing
 ">
-<meta itemprop=dateModified content="2022-01-05T00:21:29+10:00">
-<meta itemprop=wordCount content="607">
+<meta itemprop=dateModified content="2022-01-05T11:08:38+10:00">
+<meta itemprop=wordCount content="620">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="Cloud">
 <meta name=twitter:description content="Run neurodesktop using Oracle or Azure cloud computing
@@ -68,7 +68,7 @@
 </li>
 </ul>
 </div>
-<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.7c450c0cdfb7d465605535448b573a4a.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.029b913a78640e138a5b8b96c5904e97.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 </div>
 </nav>
 </header>
@@ -78,7 +78,7 @@
 <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
 <div id=td-sidebar-menu class=td-sidebar__inner>
 <form class="td-sidebar__search d-flex align-items-center">
-<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.7c450c0cdfb7d465605535448b573a4a.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.029b913a78640e138a5b8b96c5904e97.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type=button data-toggle=collapse data-target=#td-section-nav aria-controls=td-docs-nav aria-expanded=false aria-label="Toggle section navigation">
 </button>
 </form>
@@ -180,7 +180,7 @@
 <li><a href=#using-an-rdp-client>Using an RDP Client</a></li>
 <li><a href=#using-vnc>Using VNC</a>
 <ul>
-<li><a href=#using-vnc-client>Using VNC Client</a></li>
+<li><a href=#using-a-vnc-client>Using a VNC Client</a></li>
 </ul>
 </li>
 </ul>
@@ -299,7 +299,7 @@ If you want to connect via RDP using a different port, replace 3390 in the previ
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>username: user
 password: password
 </code></pre></div><h2 id=using-vnc>Using VNC</h2>
-<p>To enable VNC and disable RDP</p>
+<p>To enable VNC and disable RDP, startup Neurodesktop using the following command:</p>
 <pre class="language-shell command-line" data-prompt=$ data-output=2-6>
 <code>sudo docker run \
   --shm-size=1gb -it --privileged --name neurodesktop \
@@ -312,10 +312,11 @@ password: password
 <p>VNC allows for multiple desktop connections to same instance</p>
 <p>Note: Neurodesktop VNC on the browser currently does not support auto-resolution</p>
 </div>
-<h3 id=using-vnc-client>Using VNC Client</h3>
+<h3 id=using-a-vnc-client>Using a VNC Client</h3>
 <div class="alert alert-warning" role=alert>
 Needs testing
 </div>
+<p>Startup Neurodesktop using the following command:</p>
 <pre class="language-shell command-line" data-prompt=$ data-output=2-6>
 <code>sudo docker run \
   --shm-size=1gb -it --privileged --name neurodesktop \
@@ -326,7 +327,7 @@ Needs testing
 </pre>
 <p>Open a VNC Client and connect to port 5901</p>
 <div class="text-muted mt-5 pt-3 border-top">
-Last modified January 5, 2022: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/7309728ca54c8b1028c9f6eaf34a1a907e439cf5>Add instructions for enabling vnc for neurodesktop (7309728c)</a>
+Last modified January 5, 2022: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/58efc425a3a4e8711dfa59d4a1906fcc251791a4>Update VNC instructions (58efc425)</a>
 </div>
 </div>
 </main>

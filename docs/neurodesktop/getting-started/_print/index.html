@@ -66,7 +66,7 @@
 </li>
 </ul>
 </div>
-<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.7c450c0cdfb7d465605535448b573a4a.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.029b913a78640e138a5b8b96c5904e97.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 </div>
 </nav>
 </header>
@@ -262,7 +262,7 @@ If you want to connect via RDP using a different port, replace 3390 in the previ
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>username: user
 password: password
 </code></pre></div><h2 id=using-vnc>Using VNC</h2>
-<p>To enable VNC and disable RDP</p>
+<p>To enable VNC and disable RDP, startup Neurodesktop using the following command:</p>
 <pre class="language-shell command-line" data-prompt=$ data-output=2-6>
 <code>sudo docker run \
   --shm-size=1gb -it --privileged --name neurodesktop \
@@ -275,10 +275,11 @@ password: password
 <p>VNC allows for multiple desktop connections to same instance</p>
 <p>Note: Neurodesktop VNC on the browser currently does not support auto-resolution</p>
 </div>
-<h3 id=using-vnc-client>Using VNC Client</h3>
+<h3 id=using-a-vnc-client>Using a VNC Client</h3>
 <div class="alert alert-warning" role=alert>
 Needs testing
 </div>
+<p>Startup Neurodesktop using the following command:</p>
 <pre class="language-shell command-line" data-prompt=$ data-output=2-6>
 <code>sudo docker run \
   --shm-size=1gb -it --privileged --name neurodesktop \
@@ -351,7 +352,21 @@ If you want to connect via RDP using a different port, replace 3390 in the previ
 <p>Use the following details to login if prompted</p>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>username: user
 password: password
+</code></pre></div><h2 id=using-vnc>Using VNC</h2>
+<p>To enable VNC and disable RDP, startup Neurodesktop using the following command:</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>docker run --shm-size<span style=color:#ce5c00;font-weight:700>=</span>1gb -it --privileged --name neurodesktop -v ~/neurodesktop-storage:/neurodesktop-storage -e <span style=color:#000>VNC_ENABLE</span><span style=color:#ce5c00;font-weight:700>=</span><span style=color:#204a87>true</span> -p 8080:8080 -h neurodesktop-20211220 vnmd/neurodesktop:20211220
 </code></pre></div>
+<div class="alert alert-primary" role=alert>
+<p>VNC allows for multiple desktop connections to same instance</p>
+<p>Note: Neurodesktop VNC on the browser currently does not support auto-resolution</p>
+</div>
+<h3 id=using-a-vnc-client>Using a VNC Client</h3>
+<div class="alert alert-warning" role=alert>
+Needs testing
+</div>
+<p>Startup Neurodesktop using the following command:</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>docker run --shm-size<span style=color:#ce5c00;font-weight:700>=</span>1gb -it --privileged --name neurodesktop -v ~/neurodesktop-storage:/neurodesktop-storage -e <span style=color:#000>VNC_ENABLE</span><span style=color:#ce5c00;font-weight:700>=</span><span style=color:#204a87>true</span> -p 5901:5901 -p 8080:8080 -h neurodesktop-20211220 vnmd/neurodesktop:20211220
+</code></pre></div><p>Open a VNC Client and connect to port 5901</p>
 </div>
 <div class=td-content style=page-break-before:always>
 <h1 id=pg-87642ad7e9eab5f4f32e180883213db4>3 - Windows</h1>
@@ -433,7 +448,7 @@ If you want to connect via RDP using a different port, replace 3390 in the previ
 username: user
 password: password
 </code></pre></div><h2 id=using-vnc>Using VNC</h2>
-<p>To enable VNC and disable RDP</p>
+<p>To enable VNC and disable RDP, startup Neurodesktop using the following command:</p>
 <pre class="language-batch command-line" data-prompt=">">
 <code>docker run --shm-size=1gb -it --privileged --name neurodesktop -v C:/neurodesktop-storage:/neurodesktop-storage -e VNC_ENABLE=true -p 8080:8080 -h neurodesktop-20211220 vnmd/neurodesktop:20211220</code>
 </pre>
@@ -441,10 +456,11 @@ password: password
 <p>VNC allows for multiple desktop connections to same instance</p>
 <p>Note: Neurodesktop VNC on the browser currently does not support auto-resolution</p>
 </div>
-<h3 id=using-vnc-client>Using VNC Client</h3>
+<h3 id=using-a-vnc-client>Using a VNC Client</h3>
 <div class="alert alert-warning" role=alert>
 Needs testing
 </div>
+<p>Startup Neurodesktop using the following command:</p>
 <pre class="language-batch command-line" data-prompt=">">
 <code>docker run --shm-size=1gb -it --privileged --name neurodesktop -v C:/neurodesktop-storage:/neurodesktop-storage -e VNC_ENABLE=true -p 5901:5901 -p 8080:8080 -h neurodesktop-20211220 vnmd/neurodesktop:20211220</code>
 </pre>
@@ -565,7 +581,7 @@ If you want to connect via RDP using a different port, replace 3390 in the previ
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>username: user
 password: password
 </code></pre></div><h2 id=using-vnc>Using VNC</h2>
-<p>To enable VNC and disable RDP</p>
+<p>To enable VNC and disable RDP, startup Neurodesktop using the following command:</p>
 <pre class="language-shell command-line" data-prompt=$ data-output=2-6>
 <code>sudo docker run \
   --shm-size=1gb -it --privileged --name neurodesktop \
@@ -578,10 +594,11 @@ password: password
 <p>VNC allows for multiple desktop connections to same instance</p>
 <p>Note: Neurodesktop VNC on the browser currently does not support auto-resolution</p>
 </div>
-<h3 id=using-vnc-client>Using VNC Client</h3>
+<h3 id=using-a-vnc-client>Using a VNC Client</h3>
 <div class="alert alert-warning" role=alert>
 Needs testing
 </div>
+<p>Startup Neurodesktop using the following command:</p>
 <pre class="language-shell command-line" data-prompt=$ data-output=2-6>
 <code>sudo docker run \
   --shm-size=1gb -it --privileged --name neurodesktop \
