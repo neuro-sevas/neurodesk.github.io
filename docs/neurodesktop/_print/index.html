@@ -66,7 +66,7 @@
 </li>
 </ul>
 </div>
-<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.26c0398d00d55a5748b1a373b30ea378.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.d5de351b9e1f39c109b849c55b6daf81.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 </div>
 </nav>
 </header>
@@ -145,7 +145,15 @@ If you get errors in neurodesktop then check if the ~/neurodesktop-storage direc
 <li>Once neurodesktop is downloaded i.e. <code>guacd[77]: INFO: Listening on host 127.0.0.1, port 4822</code> is displayed in terminal, open a browser and go to:</li>
 </ol>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>http://localhost:8080/#/?username=user&amp;password=password
-</code></pre></div><ol start=4>
+</code></pre></div>
+<div class="alert alert-primary" role=alert>
+<p>If using Chrome, a pop-up may open with the text:</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>&#34;http://localhost:8080 wants to
+See text and images copied to the clipboard&#34;.
+</code></pre></div><p>You should press &ldquo;Allow&rdquo;</p>
+<div class="alert alert-primary" role=alert>
+<pre><code>&lt;ol start=&quot;4&quot;&gt;
+</code></pre>
 <li>neurodesktop is ready to use!</li>
 </ol>
 <ul>
@@ -268,7 +276,8 @@ print("Num GPUs Available: ", len(tf.config.list_physical_devices('GPU')))</code
   vnmd/neurodesktop:20211220</code>
 </pre>
 <div class="alert alert-primary" role=alert>
-If you want to connect via RDP using a different port, replace 3390 in the previous and next step with your port
+<pre><code>If you want to connect via RDP using a different port, replace 3390 in the previous and next step with your port
+</code></pre>
 </div>
 <p>Open your RDP client and connect to Computer <code>localhost:3390</code></p>
 <p>Use the following details to login if prompted</p>
@@ -285,12 +294,14 @@ password: password
   vnmd/neurodesktop:20211220</code>
 </pre>
 <div class="alert alert-primary" role=alert>
-<p>VNC allows for multiple desktop connections to same instance</p>
+<pre><code>&lt;p&gt;VNC allows for multiple desktop connections to same instance&lt;/p&gt;
+</code></pre>
 <p>Note: Neurodesktop VNC on the browser currently does not support auto-resolution</p>
 </div>
 <h3 id=using-a-vnc-client>Using a VNC Client</h3>
 <div class="alert alert-warning" role=alert>
-Needs testing
+<pre><code>Needs testing
+</code></pre>
 </div>
 <p>Startup Neurodesktop using the following command:</p>
 <pre class="language-shell command-line" data-prompt=$ data-output=2-6>
@@ -302,6 +313,8 @@ Needs testing
   vnmd/neurodesktop:20211220</code>
 </pre>
 <p>Open a VNC Client and connect to port 5901</p>
+</div>
+</div>
 </div>
 <div class=td-content style=page-break-before:always>
 <h1 id=pg-b38c91c080a0eb8d1b287cce61a2913d>1.2 - MacOS</h1>
