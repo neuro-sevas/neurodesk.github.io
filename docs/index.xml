@@ -737,18 +737,18 @@ To check which user is being use, open the terminal in the neurodesktop VS Code 
 &lt;/ol>
 &lt;h2 id="quickstart">Quickstart&lt;/h2>
 &lt;h3 id="1-connect-to-cloud-server">1. Connect to cloud server&lt;/h3>
-&lt;p>Open an SSH connection to your cloud instance with port forwarding (USER should be substituted with a username that has admin privileges on the cloud instance, and IP should be substituted with the IP address of the cloud instance)&lt;/p>
+&lt;p>On the computer from which you want to access Neurodesktop, open an SSH connection to your cloud instance with port forwarding (USER should be substituted with a username that has admin privileges on the cloud instance, and IP should be substituted with the IP address of the cloud instance)&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">ssh -L 8080:127.0.0.1:8080 USER@IP
 &lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="2-install-docker">2. Install Docker&lt;/h3>
 &lt;p>Install Docker on the cloud instance from here: &lt;a href="https://docs.docker.com/get-docker/">https://docs.docker.com/get-docker/&lt;/a>. Additional information available here: &lt;a href="https://neurodesk.github.io/docs/neurodesktop/getting-started/linux/#installing-docker">https://neurodesk.github.io/docs/neurodesktop/getting-started/linux/#installing-docker&lt;/a>&lt;/p>
 &lt;h3 id="3-run-neurodesktop">3. Run Neurodesktop&lt;/h3>
 &lt;p>Create a local folder ~/neurodesktop-storage on the cloud instance to store persistent data (data that will not disappear if neurodesktop is stopped)&lt;/p>
 &lt;h4 id="option-1-neurodesktoprun">Option 1: NeuroDesktop.run&lt;/h4>
-&lt;p>Download and run the following executable
+&lt;p>Download and run the following executable on the cloud instance
 &lt;a href="https://github.com/NeuroDesk/neurodesktop/raw/main/Linux_run_Neurodesk/NeuroDesktop.run">https://github.com/NeuroDesk/neurodesktop/raw/main/Linux_run_Neurodesk/NeuroDesktop.run&lt;/a>&lt;/p>
 &lt;h4 id="option-2-using-terminal">Option 2: Using Terminal&lt;/h4>
 &lt;ol>
-&lt;li>Type the folowing command on the cloud instance to automatically download the neurodesktop container and run it (Mac, Windows, Linux commands listed below)&lt;/li>
+&lt;li>Type the folowing command on the cloud instance to automatically download the neurodesktop container and run it&lt;/li>
 &lt;/ol>
 &lt;pre class="language-shell command-line" data-prompt="$" data-output="2-9">
 &lt;code>sudo docker run \
@@ -767,11 +767,12 @@ If you get errors in neurodesktop then check if the ~/neurodesktop-storage direc
 &lt;p>Once neurodesktop is downloaded to the cloud instance (&lt;code>guacd[77]: INFO: Listening on host 127.0.0.1, port 4822&lt;/code> is displayed in terminal), leave the terminal open and neurodesktop running (i.e., do not press CTRL+C)&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>Open a browser on your computer, and go to:&lt;/p>
+&lt;p>Open a browser on the computer from which you want to access Neurodesktop, and go to:&lt;/p>
 &lt;/li>
 &lt;/ol>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">http://localhost:8080/#/?username=user&amp;amp;password=password
-&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="4">
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>If the computer runs Linux, check specific instructions at &lt;a href="https://neurodesk.github.io/docs/neurodesktop/getting-started/linux/">https://neurodesk.github.io/docs/neurodesktop/getting-started/linux/&lt;/a>, Option 2, Step 3.&lt;/p>
+&lt;ol start="4">
 &lt;li>neurodesktop is ready to use!&lt;/li>
 &lt;/ol>
 &lt;ul>
