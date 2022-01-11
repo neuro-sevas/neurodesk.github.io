@@ -18,7 +18,7 @@
 &lt;h2 id="how-to-force-a-complete-container-download-to-your-system">How to force a complete container download to your system&lt;/h2>
 &lt;p>To increase speed and reliability of Neurodesktop we mount the application containers from a CVMFS mount and download only the files required to run your current task. Although we aim to keep everything on there reproducible, there might be a reason that you want to fully download the containers to your system. You can force this behaviour by adding another parameter to the docker call: &lt;code>-e CVMFS_DISABLE=true&lt;/code>&lt;/p>
 &lt;p>For windows an example would look like this:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">docker run --shm-size&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>1gb -it --privileged --name neurodesktop -v C:/neurodesktop-storage:/neurodesktop-storage -e &lt;span style="color:#000">CVMFS_DISABLE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#204a87">true&lt;/span> -p 8080:8080 -h neurodesktop-20211220 vnmd/neurodesktop:20211220
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">docker run --shm-size&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>1gb -it --privileged --name neurodesktop -v C:/neurodesktop-storage:/neurodesktop-storage -e &lt;span style="color:#000">CVMFS_DISABLE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#204a87">true&lt;/span> -p 8080:8080 -h neurodesktop-20220111 vnmd/neurodesktop:20220111
 &lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: What's in the box?</title><link>https://neurodesk.github.io/docs/neurodesktop/whatsinthebox/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/whatsinthebox/</guid><description>
 &lt;p>Neurodesktop comes with the essential software required for neuroimaging data analysis pre-installed. Each release is built with the most recent version of these packages available at the build date. Some example packages include:&lt;/p>
 &lt;ul>
@@ -201,11 +201,14 @@ We recommend the &lt;em>manual&lt;/em> install instructions, as the simplified i
 &lt;p>&lt;img src="https://neurodesk.github.io/Troubleshooting/Docker_troubleshooting.png" alt="Docker_troubleshooting" title="Docker_troubleshooting">&lt;/p>
 &lt;p>If you are still experiencing issues after this, you may need to update docker to the latest version. This can be achieved through &amp;ldquo;settings&amp;rdquo; in the docker engine, or (on windows) by right clicking on the docker tray icon:&lt;/p>
 &lt;p>&lt;img src="https://neurodesk.github.io/Troubleshooting/Docker_update.png" alt="Docker_update" title="Docker_update">&lt;/p></description></item><item><title>Docs: Release History</title><link>https://neurodesk.github.io/docs/neurodesktop/release-history/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/release-history/</guid><description>
-&lt;h2 id="development">Development&lt;/h2>
+&lt;h2 id="20220111">20220111&lt;/h2>
 &lt;ul>
-&lt;li>vesselapp 0.3.1 20211216&lt;/li>
-&lt;li>palm bash /neurocommand/local/fetch_and_run.sh palm alpha119 20211220&lt;/li>
-&lt;li>niistat bash /neurocommand/local/fetch_and_run.sh niistat 1.0.20191216 20211220&lt;/li>
+&lt;li>a deep learning based vessel segmentation algorithm &amp;ldquo;vesselapp&amp;rdquo; was added in version 0.3.1&lt;/li>
+&lt;li>palm - Permutation Analysis of Linear Models - was added in version alpha119&lt;/li>
+&lt;li>niistat running in octave was added with version 1.0.20191216&lt;/li>
+&lt;li>MRIcroGL was updated to a version with included python support, so the scripting is now working&lt;/li>
+&lt;li>rabies - Rodent Automated Bold Improvement of EPI Sequences was added with version 0.3.5&lt;/li>
+&lt;li>oshyx was updated to 0.3&lt;/li>
 &lt;/ul>
 &lt;h2 id="20211220">20211220&lt;/h2>
 &lt;ul>
