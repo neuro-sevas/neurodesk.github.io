@@ -22,12 +22,12 @@
 ">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://neurodesk.github.io/docs/neurodesktop/getting-started/linux/"><meta property="article:section" content="docs">
-<meta property="article:modified_time" content="2022-01-11T16:01:57+11:00"><meta property="og:site_name" content="NeuroDesk">
+<meta property="article:modified_time" content="2022-01-12T15:19:32+10:00"><meta property="og:site_name" content="NeuroDesk">
 <meta itemprop=name content="Linux">
 <meta itemprop=description content="Install neurodesktop on Linux
 ">
-<meta itemprop=dateModified content="2022-01-11T16:01:57+11:00">
-<meta itemprop=wordCount content="708">
+<meta itemprop=dateModified content="2022-01-12T15:19:32+10:00">
+<meta itemprop=wordCount content="706">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="Linux">
 <meta name=twitter:description content="Install neurodesktop on Linux
@@ -68,7 +68,7 @@
 </li>
 </ul>
 </div>
-<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.755426cba3b516336e1de19d6c604afe.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.2a27b8e2035e40441a760c22b02c5757.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 </div>
 </nav>
 </header>
@@ -78,7 +78,7 @@
 <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
 <div id=td-sidebar-menu class=td-sidebar__inner>
 <form class="td-sidebar__search d-flex align-items-center">
-<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.755426cba3b516336e1de19d6c604afe.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.2a27b8e2035e40441a760c22b02c5757.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type=button data-toggle=collapse data-target=#td-section-nav aria-controls=td-docs-nav aria-expanded=false aria-label="Toggle section navigation">
 </button>
 </form>
@@ -173,6 +173,25 @@
 <li><a href=#2-run-neurodesktop>2. Run Neurodesktop</a></li>
 </ul>
 </li>
+<li><a href=#stopping-neurodesktop>Stopping neurodesktop:</a></li>
+<li><a href=#installing-docker>Installing Docker</a>
+<ul>
+<li><a href=#rhelcentos-yum-based>RHEL/CentOS (yum-based)</a></li>
+<li><a href=#ubuntudebian-apt-based>Ubuntu/Debian (apt-based)</a></li>
+</ul>
+</li>
+<li><a href=#gpu-support>GPU support</a>
+<ul>
+<li><a href=#rhelcentos-yum-based-1>RHEL/CentOS (yum-based)</a></li>
+<li><a href=#running-neurodesktop-container-with-gpu>Running neurodesktop container with GPU</a></li>
+</ul>
+</li>
+<li><a href=#using-an-rdp-client>Using an RDP Client</a></li>
+<li><a href=#using-vnc>Using VNC</a>
+<ul>
+<li><a href=#using-a-vnc-client>Using a VNC Client</a></li>
+</ul>
+</li>
 </ul>
 </nav></div>
 </aside>
@@ -221,9 +240,8 @@ If you get errors in neurodesktop then check if the ~/neurodesktop-storage direc
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>&#34;http://localhost:8080 wants to
 See text and images copied to the clipboard&#34;.
 </code></pre></div><p>You should press &ldquo;Allow&rdquo;</p>
-<div class="alert alert-primary" role=alert>
-<pre><code>&lt;ol start=&quot;4&quot;&gt;
-</code></pre>
+</div>
+<ol start=4>
 <li>neurodesktop is ready to use!</li>
 </ol>
 <ul>
@@ -346,8 +364,7 @@ print("Num GPUs Available: ", len(tf.config.list_physical_devices('GPU')))</code
   vnmd/neurodesktop:20220111</code>
 </pre>
 <div class="alert alert-primary" role=alert>
-<pre><code>If you want to connect via RDP using a different port, replace 3390 in the previous and next step with your port
-</code></pre>
+If you want to connect via RDP using a different port, replace 3390 in the previous and next step with your port
 </div>
 <p>Open your RDP client and connect to Computer <code>localhost:3390</code></p>
 <p>Use the following details to login if prompted</p>
@@ -364,14 +381,12 @@ password: password
   vnmd/neurodesktop:20220111</code>
 </pre>
 <div class="alert alert-primary" role=alert>
-<pre><code>&lt;p&gt;VNC allows for multiple desktop connections to same instance&lt;/p&gt;
-</code></pre>
+<p>VNC allows for multiple desktop connections to same instance</p>
 <p>Note: Neurodesktop VNC on the browser currently does not support auto-resolution</p>
 </div>
 <h3 id=using-a-vnc-client>Using a VNC Client</h3>
 <div class="alert alert-warning" role=alert>
-<pre><code>Needs testing
-</code></pre>
+Needs testing
 </div>
 <p>Startup Neurodesktop using the following command:</p>
 <pre class="language-shell command-line" data-prompt=$ data-output=2-6>
@@ -383,10 +398,8 @@ password: password
   vnmd/neurodesktop:20220111</code>
 </pre>
 <p>Open a VNC Client and connect to port 5901</p>
-</div>
-</div>
 <div class="text-muted mt-5 pt-3 border-top">
-Last modified January 11, 2022: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/0cfa11811fa3e50dbf077cc93ce05de479b4e4ad>Update linux.md (0cfa1181)</a>
+Last modified January 12, 2022: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/f9859a412dc14f1eba3c39bc0185ea709fde1203>bugfix: close alert in linux doc (f9859a41)</a>
 </div>
 </div>
 </main>
