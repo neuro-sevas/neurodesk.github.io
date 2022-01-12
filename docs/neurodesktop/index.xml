@@ -100,8 +100,12 @@
 &lt;p>We also provide the globus client, so you can transfer large amounts of data between globus endpoints and Neurodesktop. You can configure it by running:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">/opt/globusconnectpersonal/globusconnectpersonal-*/globusconnectpersonal
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Once authenticated you can go to the globus file-manager &lt;a href="https://app.globus.org/file-manager">https://app.globus.org/file-manager&lt;/a> and your neurodesktop instance will be an endpoint for globus.&lt;/p>
-&lt;h1 id="mounting-network-storage-on-your-host-computer">Mounting network storage on your host-computer&lt;/h1>
+&lt;h1 id="mounting-external-storage-on-your-host-computer">Mounting external storage on your host-computer&lt;/h1>
 &lt;p>The -v C:/neurodesktop-storage:/neurodesktop-storage part of the docker command links the directory &amp;ldquo;neurodesktop-storage&amp;rdquo; on the “C drive” of your Windows computer to the directory /neurodesktop-storage inside the Desktop environment. Everything you store in there will be available inside the desktop and on the host computer. You can also mount additional directories by adding another -v parameter set (e.g. -v D:/moredata:/data) - this will mount the directory moredata from your D drive to /data inside neurodesktop. Improtant: the mountpoint inside neurodesktop should be named /data (or anything from this list: &lt;a href="https://github.com/NeuroDesk/neurocontainers/blob/master/recipes/globalMountPointList.txt">https://github.com/NeuroDesk/neurocontainers/blob/master/recipes/globalMountPointList.txt&lt;/a>) - otherwise most of the tools will not be able to access the data.&lt;/p>
+&lt;p>Here is an example for Windows adding another storage directory:&lt;/p>
+&lt;pre class="language-batch command-line" data-prompt=">">
+&lt;code>docker run --shm-size=1gb -it --privileged --name neurodesktop -v C:/neurodesktop-storage:/neurodesktop-storage -v D:/moredata:/data -p 8080:8080 -h neurodesktop-20220111 vnmd/neurodesktop:20220111&lt;/code>
+&lt;/pre>
 &lt;h1 id="mount-volume-using-sshfs">Mount volume using SSHFS&lt;/h1>
 &lt;p>It is theoretically possible to mount an SSH target inside Neurodesktop, but it&amp;rsquo;s not a very reliable way of mounting storage:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">sshfs -o allow_root USER@TARGET_HOST:TARGET_PATH SOURCE_PATH
