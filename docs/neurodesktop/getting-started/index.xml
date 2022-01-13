@@ -367,7 +367,62 @@ Needs testing
 &lt;code>docker run --shm-size=1gb -it --privileged --name neurodesktop -v C:/neurodesktop-storage:/neurodesktop-storage -e VNC_ENABLE=true -p 5901:5901 -p 8080:8080 -h neurodesktop-20220111 vnmd/neurodesktop:20220111&lt;/code>
 &lt;/pre>
 &lt;p>Open a VNC Client and connect to port 5901&lt;/p></description></item><item><title>Docs: HPC</title><link>https://neurodesk.github.io/docs/neurodesktop/getting-started/hpc/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/getting-started/hpc/</guid><description>
-&lt;p>One way of running this project on HPCs is via &lt;a href="https://neurodesk.github.io/docs/neurocommand/getting-started/linux/">https://neurodesk.github.io/docs/neurocommand/getting-started/linux/&lt;/a>&lt;/p></description></item><item><title>Docs: Cloud</title><link>https://neurodesk.github.io/docs/neurodesktop/getting-started/cloud/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/getting-started/cloud/</guid><description>
+&lt;p>One way of running this project on HPCs is via &lt;a href="https://neurodesk.github.io/docs/neurocommand/getting-started/linux/">https://neurodesk.github.io/docs/neurocommand/getting-started/linux/&lt;/a>&lt;/p></description></item><item><title>Docs: Visual Studio Code</title><link>https://neurodesk.github.io/docs/neurodesktop/getting-started/visual-studio-code/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/getting-started/visual-studio-code/</guid><description>
+&lt;p>Following guide is for connecting to a Neurodesktop using a VS Code installation running on your host machine.&lt;/p>
+&lt;blockquote>
+&lt;p>Additional instructions if your Neurodesktop is running remotely (i.e. Cloud, HPC, VM)&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="pre-requisites">Pre-requisites&lt;/h2>
+&lt;p>Visual Studio Code &lt;em>(&lt;a href="https://code.visualstudio.com">https://code.visualstudio.com&lt;/a>)&lt;/em> installed on your host. Standalone version should work fine&lt;/p>
+&lt;p>Install the following VS Code extensions:&lt;/p>
+&lt;ul>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> &lt;a href="https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker">Docker extension&lt;/a> (Required)&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> &lt;a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack">Remote development extension pack&lt;/a>. Includes the following extensions
+&lt;ul>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> &lt;a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers">Remote - Containers&lt;/a> (Required)&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> &lt;a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh">Remote - SSH&lt;/a> (For remote servers)&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> &lt;a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl">Remote - WSL&lt;/a> (For windows hosts)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="for-remote-servers">For Remote servers&lt;/h2>
+&lt;p>Open VS Code&lt;/p>
+&lt;p>Open the Command Palette (Ctrl+Shift+P)&lt;/p>
+&lt;p>Find &lt;code>Remote-SSH: Connect to Host...&lt;/code> and select your remote host&lt;/p>
+&lt;blockquote>
+&lt;p>More information on remote hosts available at &lt;a href="https://code.visualstudio.com/docs/remote/ssh">https://code.visualstudio.com/docs/remote/ssh&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>This will open a new VS Code instance connected to the remote host via SSH. You may close the previous VS Code instance.&lt;/p>
+&lt;p>Follow the steps in the next section using the new VS Code instance&lt;/p>
+&lt;h2 id="connecting-to-neurodesktop">Connecting to Neurodesktop&lt;/h2>
+&lt;p>Open VS Code and open a Folder (File &amp;gt; Open Folder)&lt;/p>
+&lt;blockquote>
+&lt;p>This can be any folder (e.g. home or project folder). VS Code runs into errors if no folder is opened.&lt;/p>
+&lt;/blockquote>
+&lt;p>Open the Command Palette (Ctrl+Shift+P).&lt;/p>
+&lt;p>Select &lt;code>Remote-Containers: Attach to Running Container&lt;/code> from the dropdown panel&lt;/p>
+&lt;p>Start typing in &amp;lsquo;neurodesktop. Select &lt;code>/neurodesktop&lt;/code> from the list&lt;/p>
+&lt;p>This should open a VS Code Window connected to the neurodesktop as a Dev Container.&lt;/p>
+&lt;blockquote>
+&lt;p>First time connection will take about a minute, as VS code has to install the VS Code server onto the container. Repeat connections should be faster&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="first-time-connection">First time connection&lt;/h3>
+&lt;blockquote>
+&lt;p>First time connection will default to using neurodesktop root user. We want to default connection to be as the normal user to avoid permission issues.
+To check which user is being use, open the terminal in the neurodesktop VS Code and check if the user is &lt;code>user&lt;/code> or &lt;code>root&lt;/code>&lt;/p>
+&lt;/blockquote>
+&lt;p>Follow the following steps to configure your VS Code to connect to neurodesktop as normal user by default&lt;/p>
+&lt;p>Open the Command Palette (Ctrl+Shift+P).&lt;/p>
+&lt;p>Select &lt;code>Remote-Containers: Open Container Configuration File&lt;/code> from the dropdown panel&lt;/p>
+&lt;p>This will open a &lt;code>neurodesktop%3alatest.json&lt;/code> file. Overwrite the file with the following contents&lt;/p>
+&lt;pre class=""
+>&lt;code
+>{
+&amp;#34;workspaceFolder&amp;#34;: &amp;#34;/home/user&amp;#34;,
+&amp;#34;remoteUser&amp;#34;: &amp;#34;user&amp;#34;
+}
+&lt;/code>&lt;/pre>
+&lt;p>Close this VS Code window. Use steps in &lt;a href="https://neurodesk.github.io/docs/neurodesktop/visual-studio-code/#connecting-to-neurodesktop">previous section&lt;/a> to connect normally&lt;/p></description></item><item><title>Docs: Cloud</title><link>https://neurodesk.github.io/docs/neurodesktop/getting-started/cloud/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/getting-started/cloud/</guid><description>
 &lt;h2 id="minimum-system-requirements">Minimum System Requirements&lt;/h2>
 &lt;ol>
 &lt;li>At least 3GB free space for neurodesktop base image&lt;/li>

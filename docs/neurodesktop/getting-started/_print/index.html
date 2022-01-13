@@ -66,7 +66,7 @@
 </li>
 </ul>
 </div>
-<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.c6e50dd617498a36ba3d2217c3bf8d22.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.dd306aa51aa8de5838e5758a32083699.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 </div>
 </nav>
 </header>
@@ -90,8 +90,9 @@ This is the multi-page printable view of this section.
 <li>2: <a href=#pg-b38c91c080a0eb8d1b287cce61a2913d>MacOS</a></li>
 <li>3: <a href=#pg-87642ad7e9eab5f4f32e180883213db4>Windows</a></li>
 <li>4: <a href=#pg-f18fe8cf2e51f4592753190891413c14>HPC</a></li>
-<li>5: <a href=#pg-2cb39ae1fe927afd991445cce7b9f813>Cloud</a></li>
-<li>6: <a href=#pg-784674433df25a8a2fea1ab0994fd949>Demo</a></li>
+<li>5: <a href=#pg-e87d15c10c240bf068b41cfa086457a9>Visual Studio Code</a></li>
+<li>6: <a href=#pg-2cb39ae1fe927afd991445cce7b9f813>Cloud</a></li>
+<li>7: <a href=#pg-784674433df25a8a2fea1ab0994fd949>Demo</a></li>
 </ul>
 <div class=content>
 </div>
@@ -479,7 +480,64 @@ Needs testing
 <p>One way of running this project on HPCs is via <a href=https://neurodesk.github.io/docs/neurocommand/getting-started/linux/>https://neurodesk.github.io/docs/neurocommand/getting-started/linux/</a></p>
 </div>
 <div class=td-content style=page-break-before:always>
-<h1 id=pg-2cb39ae1fe927afd991445cce7b9f813>5 - Cloud</h1>
+<h1 id=pg-e87d15c10c240bf068b41cfa086457a9>5 - Visual Studio Code</h1>
+<div class=lead>Guide connecting your VS Code environment to Neurodesktop</div>
+<p>Following guide is for connecting to a Neurodesktop using a VS Code installation running on your host machine.</p>
+<blockquote>
+<p>Additional instructions if your Neurodesktop is running remotely (i.e. Cloud, HPC, VM)</p>
+</blockquote>
+<h2 id=pre-requisites>Pre-requisites</h2>
+<p>Visual Studio Code <em>(<a href=https://code.visualstudio.com>https://code.visualstudio.com</a>)</em> installed on your host. Standalone version should work fine</p>
+<p>Install the following VS Code extensions:</p>
+<ul>
+<li><input checked disabled type=checkbox> <a href="https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker">Docker extension</a> (Required)</li>
+<li><input disabled type=checkbox> <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack">Remote development extension pack</a>. Includes the following extensions
+<ul>
+<li><input checked disabled type=checkbox> <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers">Remote - Containers</a> (Required)</li>
+<li><input disabled type=checkbox> <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh">Remote - SSH</a> (For remote servers)</li>
+<li><input disabled type=checkbox> <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl">Remote - WSL</a> (For windows hosts)</li>
+</ul>
+</li>
+</ul>
+<h2 id=for-remote-servers>For Remote servers</h2>
+<p>Open VS Code</p>
+<p>Open the Command Palette (Ctrl+Shift+P)</p>
+<p>Find <code>Remote-SSH: Connect to Host...</code> and select your remote host</p>
+<blockquote>
+<p>More information on remote hosts available at <a href=https://code.visualstudio.com/docs/remote/ssh>https://code.visualstudio.com/docs/remote/ssh</a></p>
+</blockquote>
+<p>This will open a new VS Code instance connected to the remote host via SSH. You may close the previous VS Code instance.</p>
+<p>Follow the steps in the next section using the new VS Code instance</p>
+<h2 id=connecting-to-neurodesktop>Connecting to Neurodesktop</h2>
+<p>Open VS Code and open a Folder (File > Open Folder)</p>
+<blockquote>
+<p>This can be any folder (e.g. home or project folder). VS Code runs into errors if no folder is opened.</p>
+</blockquote>
+<p>Open the Command Palette (Ctrl+Shift+P).</p>
+<p>Select <code>Remote-Containers: Attach to Running Container</code> from the dropdown panel</p>
+<p>Start typing in &lsquo;neurodesktop. Select <code>/neurodesktop</code> from the list</p>
+<p>This should open a VS Code Window connected to the neurodesktop as a Dev Container.</p>
+<blockquote>
+<p>First time connection will take about a minute, as VS code has to install the VS Code server onto the container. Repeat connections should be faster</p>
+</blockquote>
+<h3 id=first-time-connection>First time connection</h3>
+<blockquote>
+<p>First time connection will default to using neurodesktop root user. We want to default connection to be as the normal user to avoid permission issues.
+To check which user is being use, open the terminal in the neurodesktop VS Code and check if the user is <code>user</code> or <code>root</code></p>
+</blockquote>
+<p>Follow the following steps to configure your VS Code to connect to neurodesktop as normal user by default</p>
+<p>Open the Command Palette (Ctrl+Shift+P).</p>
+<p>Select <code>Remote-Containers: Open Container Configuration File</code> from the dropdown panel</p>
+<p>This will open a <code>neurodesktop%3alatest.json</code> file. Overwrite the file with the following contents</p>
+<pre><code>{
+	&#34;workspaceFolder&#34;: &#34;/home/user&#34;,
+	&#34;remoteUser&#34;: &#34;user&#34;
+}
+</code></pre>
+<p>Close this VS Code window. Use steps in <a href=https://neurodesk.github.io/docs/neurodesktop/visual-studio-code/#connecting-to-neurodesktop>previous section</a> to connect normally</p>
+</div>
+<div class=td-content style=page-break-before:always>
+<h1 id=pg-2cb39ae1fe927afd991445cce7b9f813>6 - Cloud</h1>
 <div class=lead>Run neurodesktop using Oracle or Azure cloud computing</div>
 <h2 id=minimum-system-requirements>Minimum System Requirements</h2>
 <ol>
@@ -618,7 +676,7 @@ Needs testing
 <p>Open a VNC Client and connect to port 5901</p>
 </div>
 <div class=td-content style=page-break-before:always>
-<h1 id=pg-784674433df25a8a2fea1ab0994fd949>6 - Demo</h1>
+<h1 id=pg-784674433df25a8a2fea1ab0994fd949>7 - Demo</h1>
 <div class=lead>Run a demo of neurodesktop <em>without</em> installing Docker</div>
 <div class="pageinfo pageinfo-primary">
 <p>We are working on a demo that directly runs in your browser without the need to install anything. But it&rsquo;s not quite ready yet &mldr;</p>

@@ -65,7 +65,7 @@
 &lt;/ul>
 &lt;/li>
 &lt;/ul>
-&lt;p>The neurodesktop environment is built to be light and fast to download and start-up. Most additional programs are therefore downloaded when they are first used. A list of these additional packages can be found &lt;a href="https://github.com/NeuroDesk/neurodesk/blob/master/cvmfs/log.txt">here&lt;/a>&lt;/p></description></item><item><title>Docs: Storage</title><link>https://neurodesk.github.io/docs/neurodesktop/storage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/storage/</guid><description>
+&lt;p>The neurodesktop environment is built to be light and fast to download and start-up. Most additional programs are therefore downloaded when they are first used. A list of these packages can be found &lt;a href="https://neurodesk.github.io/applications/">here&lt;/a>&lt;/p></description></item><item><title>Docs: Storage</title><link>https://neurodesk.github.io/docs/neurodesktop/storage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/storage/</guid><description>
 &lt;h1 id="cloud-storage">Cloud-storage&lt;/h1>
 &lt;p>The easiest way to get your data into Neurodesktop is to use a cloud storage provider like CloudStor, Dropbox, OneDrive and their sync tools like OwnCloud, Nextcloud or very flexible tools like rclone or davfs2. Another good option could be to utilize Globus for large amounts of data.&lt;/p>
 &lt;h2 id="nextcloud-and-owncloud-desktop-clients">Nextcloud and Owncloud desktop clients&lt;/h2>
@@ -111,62 +111,7 @@
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">sshfs -o allow_root USER@TARGET_HOST:TARGET_PATH SOURCE_PATH
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>A better option is to use &lt;code>scp&lt;/code> and copy data from an SSH endpoint:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">scp /neurodesk/myfile user@remoteserver:/data/
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Visual Studio Code</title><link>https://neurodesk.github.io/docs/neurodesktop/visual-studio-code/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/visual-studio-code/</guid><description>
-&lt;p>Following guide is for connecting to a Neurodesktop using a VS Code installation running on your host machine.&lt;/p>
-&lt;blockquote>
-&lt;p>Additional instructions if your Neurodesktop is running remotely (i.e. Cloud, HPC, VM)&lt;/p>
-&lt;/blockquote>
-&lt;h2 id="pre-requisites">Pre-requisites&lt;/h2>
-&lt;p>Visual Studio Code &lt;em>(&lt;a href="https://code.visualstudio.com">https://code.visualstudio.com&lt;/a>)&lt;/em> installed on your host. Standalone version should work fine&lt;/p>
-&lt;p>Install the following VS Code extensions:&lt;/p>
-&lt;ul>
-&lt;li>&lt;input checked="" disabled="" type="checkbox"> &lt;a href="https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker">Docker extension&lt;/a> (Required)&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> &lt;a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack">Remote development extension pack&lt;/a>. Includes the following extensions
-&lt;ul>
-&lt;li>&lt;input checked="" disabled="" type="checkbox"> &lt;a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers">Remote - Containers&lt;/a> (Required)&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> &lt;a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh">Remote - SSH&lt;/a> (For remote servers)&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> &lt;a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl">Remote - WSL&lt;/a> (For windows hosts)&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul>
-&lt;h2 id="for-remote-servers">For Remote servers&lt;/h2>
-&lt;p>Open VS Code&lt;/p>
-&lt;p>Open the Command Palette (Ctrl+Shift+P)&lt;/p>
-&lt;p>Find &lt;code>Remote-SSH: Connect to Host...&lt;/code> and select your remote host&lt;/p>
-&lt;blockquote>
-&lt;p>More information on remote hosts available at &lt;a href="https://code.visualstudio.com/docs/remote/ssh">https://code.visualstudio.com/docs/remote/ssh&lt;/a>&lt;/p>
-&lt;/blockquote>
-&lt;p>This will open a new VS Code instance connected to the remote host via SSH. You may close the previous VS Code instance.&lt;/p>
-&lt;p>Follow the steps in the next section using the new VS Code instance&lt;/p>
-&lt;h2 id="connecting-to-neurodesktop">Connecting to Neurodesktop&lt;/h2>
-&lt;p>Open VS Code and open a Folder (File &amp;gt; Open Folder)&lt;/p>
-&lt;blockquote>
-&lt;p>This can be any folder (e.g. home or project folder). VS Code runs into errors if no folder is opened.&lt;/p>
-&lt;/blockquote>
-&lt;p>Open the Command Palette (Ctrl+Shift+P).&lt;/p>
-&lt;p>Select &lt;code>Remote-Containers: Attach to Running Container&lt;/code> from the dropdown panel&lt;/p>
-&lt;p>Start typing in &amp;lsquo;neurodesktop. Select &lt;code>/neurodesktop&lt;/code> from the list&lt;/p>
-&lt;p>This should open a VS Code Window connected to the neurodesktop as a Dev Container.&lt;/p>
-&lt;blockquote>
-&lt;p>First time connection will take about a minute, as VS code has to install the VS Code server onto the container. Repeat connections should be faster&lt;/p>
-&lt;/blockquote>
-&lt;h3 id="first-time-connection">First time connection&lt;/h3>
-&lt;blockquote>
-&lt;p>First time connection will default to using neurodesktop root user. We want to default connection to be as the normal user to avoid permission issues.
-To check which user is being use, open the terminal in the neurodesktop VS Code and check if the user is &lt;code>user&lt;/code> or &lt;code>root&lt;/code>&lt;/p>
-&lt;/blockquote>
-&lt;p>Follow the following steps to configure your VS Code to connect to neurodesktop as normal user by default&lt;/p>
-&lt;p>Open the Command Palette (Ctrl+Shift+P).&lt;/p>
-&lt;p>Select &lt;code>Remote-Containers: Open Container Configuration File&lt;/code> from the dropdown panel&lt;/p>
-&lt;p>This will open a &lt;code>neurodesktop%3alatest.json&lt;/code> file. Overwrite the file with the following contents&lt;/p>
-&lt;pre class=""
->&lt;code
->{
-&amp;#34;workspaceFolder&amp;#34;: &amp;#34;/home/user&amp;#34;,
-&amp;#34;remoteUser&amp;#34;: &amp;#34;user&amp;#34;
-}
-&lt;/code>&lt;/pre>
-&lt;p>Close this VS Code window. Use steps in &lt;a href="https://neurodesk.github.io/docs/neurodesktop/visual-studio-code/#connecting-to-neurodesktop">previous section&lt;/a> to connect normally&lt;/p></description></item><item><title>Docs: Troubleshooting</title><link>https://neurodesk.github.io/docs/neurodesktop/troubleshooting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/troubleshooting/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Troubleshooting</title><link>https://neurodesk.github.io/docs/neurodesktop/troubleshooting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/troubleshooting/</guid><description>
 &lt;p>Neurodesk is an open-source project that is always evolving. If you are experiencing an issue not listed here, please open a &lt;a href="https://github.com/NeuroDesk/neurodesk.github.io/issues">new issue&lt;/a>, so that we can aim to solve it and update our help documentation.&lt;/p>
 &lt;p>To ask questions or suggest new features, &lt;a href="https://github.com/NeuroDesk/neurodesk.github.io/discussions">join the discussion&lt;/a> on github.&lt;/p>
 &lt;h2 id="docker-cannot-connect-to-the-docker-daemon-at-unixvarrundockersock-is-the-docker-daemon-running">docker: Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?.&lt;/h2>

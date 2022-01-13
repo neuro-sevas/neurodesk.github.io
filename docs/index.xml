@@ -405,7 +405,7 @@ Change &lt;code>port=3389&lt;/code> to &lt;code>port=3390&lt;/code> and save&lt;
 &lt;/ul>
 &lt;/li>
 &lt;/ul>
-&lt;p>The neurodesktop environment is built to be light and fast to download and start-up. Most additional programs are therefore downloaded when they are first used. A list of these additional packages can be found &lt;a href="https://github.com/NeuroDesk/neurodesk/blob/master/cvmfs/log.txt">here&lt;/a>&lt;/p></description></item><item><title>Docs: Windows</title><link>https://neurodesk.github.io/docs/neurodesktop/getting-started/windows/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/getting-started/windows/</guid><description>
+&lt;p>The neurodesktop environment is built to be light and fast to download and start-up. Most additional programs are therefore downloaded when they are first used. A list of these packages can be found &lt;a href="https://neurodesk.github.io/applications/">here&lt;/a>&lt;/p></description></item><item><title>Docs: Windows</title><link>https://neurodesk.github.io/docs/neurodesktop/getting-started/windows/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/getting-started/windows/</guid><description>
 &lt;h2 id="minimum-system-requirements">Minimum System Requirements&lt;/h2>
 &lt;ol>
 &lt;li>At least 3GB free space for neurodesktop base image&lt;/li>
@@ -685,7 +685,7 @@ git clone https://github.com/NeuroDesk/transparent-singularity &lt;span style="c
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">sshfs -o allow_root USER@TARGET_HOST:TARGET_PATH SOURCE_PATH
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>A better option is to use &lt;code>scp&lt;/code> and copy data from an SSH endpoint:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">scp /neurodesk/myfile user@remoteserver:/data/
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Visual Studio Code</title><link>https://neurodesk.github.io/docs/neurodesktop/visual-studio-code/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/visual-studio-code/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Visual Studio Code</title><link>https://neurodesk.github.io/docs/neurodesktop/getting-started/visual-studio-code/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/getting-started/visual-studio-code/</guid><description>
 &lt;p>Following guide is for connecting to a Neurodesktop using a VS Code installation running on your host machine.&lt;/p>
 &lt;blockquote>
 &lt;p>Additional instructions if your Neurodesktop is running remotely (i.e. Cloud, HPC, VM)&lt;/p>
