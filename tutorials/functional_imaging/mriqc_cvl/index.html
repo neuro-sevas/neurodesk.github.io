@@ -3,9 +3,7 @@
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
 <meta name=generator content="Hugo 0.92.0">
-<link rel=canonical type=text/html href=https://neurodesk.github.io/tutorials/functional_imaging/>
-<link rel=alternate type=application/rss+xml href=https://neurodesk.github.io/tutorials/functional_imaging/index.xml>
-<meta name=robots content="noindex, nofollow">
+<meta name=robots content="index, follow">
 <link rel="shortcut icon" href=/favicons/favicon.ico>
 <link rel=apple-touch-icon href=/favicons/apple-touch-icon-180x180.png sizes=180x180>
 <link rel=icon type=image/png href=/favicons/favicon-16x16.png sizes=16x16>
@@ -16,19 +14,23 @@
 <link rel=icon type=image/png href=/favicons/android-96x96.png sizes=96x96>
 <link rel=icon type=image/png href=/favicons/android-144x144.png sizes=144x144>
 <link rel=icon type=image/png href=/favicons/android-192x192.png sizes=192x192>
-<title>Functional Imaging | NeuroDesk</title>
-<meta name=description content="Tutorials about processing functional MRI data
+<title>Using mriqc with neurodesk on HPC | NeuroDesk</title>
+<meta name=description content="A brief guide to using mriqc with neurodesk, using data from the STRIAVISE project.
 ">
-<meta property="og:title" content="Functional Imaging">
-<meta property="og:description" content="Tutorials about processing functional MRI data
+<meta property="og:title" content="Using mriqc with neurodesk on HPC">
+<meta property="og:description" content="A brief guide to using mriqc with neurodesk, using data from the STRIAVISE project.
 ">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://neurodesk.github.io/tutorials/functional_imaging/"><meta property="og:site_name" content="NeuroDesk">
-<meta itemprop=name content="Functional Imaging">
-<meta itemprop=description content="Tutorials about processing functional MRI data
-"><meta name=twitter:card content="summary">
-<meta name=twitter:title content="Functional Imaging">
-<meta name=twitter:description content="Tutorials about processing functional MRI data
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://neurodesk.github.io/tutorials/functional_imaging/mriqc_cvl/"><meta property="article:section" content="tutorials">
+<meta property="article:modified_time" content="2022-01-17T16:21:43+10:00"><meta property="og:site_name" content="NeuroDesk">
+<meta itemprop=name content="Using mriqc with neurodesk on HPC">
+<meta itemprop=description content="A brief guide to using mriqc with neurodesk, using data from the STRIAVISE project.
+">
+<meta itemprop=dateModified content="2022-01-17T16:21:43+10:00">
+<meta itemprop=wordCount content="645">
+<meta itemprop=keywords content="mriqc,documentation,preprocessing,"><meta name=twitter:card content="summary">
+<meta name=twitter:title content="Using mriqc with neurodesk on HPC">
+<meta name=twitter:description content="A brief guide to using mriqc with neurodesk, using data from the STRIAVISE project.
 ">
 <link rel=preload href=/scss/main.min.73d5be94f5e99c5a61460fa5b435757ce8ab87f13970655d157965b5df2b9419.css as=style>
 <link href=/scss/main.min.73d5be94f5e99c5a61460fa5b435757ce8ab87f13970655d157965b5df2b9419.css rel=stylesheet integrity>
@@ -38,7 +40,7 @@
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-00000000-0','auto'),ga('send','pageview'))</script>
 <script async src=https://www.google-analytics.com/analytics.js></script>
 </head>
-<body class=td-section>
+<body class=td-page>
 <header>
 <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
 <a class=navbar-brand href=/>
@@ -73,97 +75,98 @@
 <div class="container-fluid td-outer">
 <div class=td-main>
 <div class="row flex-xl-nowrap">
-<div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+<aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+<div id=td-sidebar-menu class=td-sidebar__inner>
+<form class="td-sidebar__search d-flex align-items-center">
+<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.15f47bbf6a6de54965d635ce20489153.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type=button data-toggle=collapse data-target=#td-section-nav aria-controls=td-docs-nav aria-expanded=false aria-label="Toggle section navigation">
+</button>
+</form>
+<nav class="collapse td-sidebar-nav" id=td-section-nav>
+<ul class="td-sidebar-nav__section pr-md-3 ul-0">
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id=m-tutorials-li>
+<a href=/tutorials/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section tree-root" id=m-tutorials><span>Tutorials</span></a>
+<ul class=ul-1>
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-tutorialselectrophysiology-li>
+<a href=/tutorials/electrophysiology/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-tutorialselectrophysiology><span>Electrophysiology</span></a>
+<ul class="ul-2 foldable">
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-tutorialselectrophysiologyeeg_mne-python-li>
+<a href=/tutorials/electrophysiology/eeg_mne-python/ title="Analysing EEG Data with MNE" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-tutorialselectrophysiologyeeg_mne-python><span>MNE-Python: EEG</span></a>
+</li>
+</ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id=m-tutorialsfunctional_imaging-li>
+<a href=/tutorials/functional_imaging/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-tutorialsfunctional_imaging><span>Functional Imaging</span></a>
+<ul class="ul-2 foldable">
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-tutorialsfunctional_imagingfmriprep_cvl-li>
+<a href=/tutorials/functional_imaging/fmriprep_cvl/ title="Using fmriprep with neurodesk on an HPC" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-tutorialsfunctional_imagingfmriprep_cvl><span>fmriprep</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id=m-tutorialsfunctional_imagingmriqc_cvl-li>
+<a href=/tutorials/functional_imaging/mriqc_cvl/ title="Using mriqc with neurodesk on HPC" class="align-left pl-0 active td-sidebar-link td-sidebar-link__page" id=m-tutorialsfunctional_imagingmriqc_cvl><span class=td-sidebar-nav-active-item>mriqc</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-tutorialsfunctional_imagingphysio-li>
+<a href=/tutorials/functional_imaging/physio/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-tutorialsfunctional_imagingphysio><span>PhysIO</span></a>
+</li>
+</ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-tutorialsphase_processing-li>
+<a href=/tutorials/phase_processing/ title="MRI phase Processing" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-tutorialsphase_processing><span>MRI Phase</span></a>
+<ul class="ul-2 foldable">
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-tutorialsphase_processingqsm-li>
+<a href=/tutorials/phase_processing/qsm/ title="Quantitative Susceptibility Mapping" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-tutorialsphase_processingqsm><span>QSM</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-tutorialsphase_processingswi-li>
+<a href=/tutorials/phase_processing/swi/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-tutorialsphase_processingswi><span>SWI</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-tutorialsphase_processingunwrapping-li>
+<a href=/tutorials/phase_processing/unwrapping/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-tutorialsphase_processingunwrapping><span>Unwrapping</span></a>
+</li>
+</ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-tutorialsreproducibility-li>
+<a href=/tutorials/reproducibility/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-tutorialsreproducibility><span>Reproducibility</span></a>
+<ul class="ul-2 foldable">
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-tutorialsreproducibilitydatalad-run-li>
+<a href=/tutorials/reproducibility/datalad-run/ title="Reproducible script execution with DataLad" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-tutorialsreproducibilitydatalad-run><span>datalad run</span></a>
+</li>
+</ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-tutorialsstructural_imaging-li>
+<a href=/tutorials/structural_imaging/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-tutorialsstructural_imaging><span>Structural Imaging</span></a>
+<ul class="ul-2 foldable">
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-tutorialsstructural_imagingfreesurfer-li>
+<a href=/tutorials/structural_imaging/freesurfer/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-tutorialsstructural_imagingfreesurfer><span>FreeSurfer</span></a>
+</li>
+</ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-tutorialsdocumentation-li>
+<a href=/tutorials/documentation/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-tutorialsdocumentation><span>Documentation</span></a>
+<ul class="ul-2 foldable">
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-tutorialsdocumentationworkflowtemplate-li>
+<a href=/tutorials/documentation/workflowtemplate/ title="Template for workflow creation" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-tutorialsdocumentationworkflowtemplate><span>Workflow template</span></a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
 </div>
-<div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+</aside>
+<aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
+<div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+<a href=https://github.com/NeuroDesk/neurodesk.github.io/tree/hugo-docsy/content/en/tutorials/functional_imaging/mriqc_cvl.md class=td-page-meta--view target=_blank rel=noopener><i class="fa fa-file-alt fa-fw"></i> View page source</a>
+<a href=https://github.com/NeuroDesk/neurodesk.github.io/edit/hugo-docsy/content/en/tutorials/functional_imaging/mriqc_cvl.md class=td-page-meta--edit target=_blank rel=noopener><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+<a href="https://github.com/NeuroDesk/neurodesk.github.io/new/hugo-docsy/content/en/tutorials/functional_imaging/mriqc_cvl.md?filename=change-me.md&value=---%0Atitle%3A+%22Long+Page+Title%22%0AlinkTitle%3A+%22Short+Nav+Title%22%0Aweight%3A+100%0Adescription%3A+%3E-%0A+++++Page+description+for+heading+and+indexes.%0A---%0A%0A%23%23+Heading%0A%0AEdit+this+template+to+create+your+new+page.%0A%0A%2A+Give+it+a+good+name%2C+ending+in+%60.md%60+-+e.g.+%60getting-started.md%60%0A%2A+Edit+the+%22front+matter%22+section+at+the+top+of+the+page+%28weight+controls+how+its+ordered+amongst+other+pages+in+the+same+directory%3B+lowest+number+first%29.%0A%2A+Add+a+good+commit+message+at+the+bottom+of+the+page+%28%3C80+characters%3B+use+the+extended+description+field+for+more+detail%29.%0A%2A+Create+a+new+branch+so+you+can+preview+your+new+file+and+request+a+review+via+Pull+Request.%0A" class=td-page-meta--child target=_blank rel=noopener><i class="fa fa-edit fa-fw"></i> Create child page</a>
+<a href="https://github.com/NeuroDesk/neurodesk.github.io/issues/new?title=Using%20mriqc%20with%20neurodesk%20on%20HPC" class=td-page-meta--issue target=_blank rel=noopener><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+<a href=https://github.com/NeuroDesk/neurodesk.github.io/issues/new class=td-page-meta--project-issue target=_blank rel=noopener><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
+<a id=print href=https://neurodesk.github.io/tutorials/functional_imaging/_print/><i class="fa fa-print fa-fw"></i> Print entire section</a>
 </div>
+<div class=td-toc><nav id=TableOfContents>
+<ul>
+<li><a href=#open-mriqc>Open mriqc</a></li>
+<li><a href=#setting-up-mriqc-command>Setting up mriqc command</a></li>
+<li><a href=#some-common-pitfalls-i-have-learned-from-my-mistakes-and-sometimes-from-others>Some common pitfalls I have learned from my mistakes (and sometimes from others)</a></li>
+</ul>
+</nav></div>
+</aside>
 <main class="col-12 col-md-9 col-xl-8 pl-md-5" role=main>
 <div class=td-content>
-<div class="pageinfo pageinfo-primary d-print-none">
-<p>
-This is the multi-page printable view of this section.
-<a href=# onclick="return print(),!1">Click here to print</a>.
-</p><p>
-<a href=/tutorials/functional_imaging/>Return to the regular view of this page</a>.
-</p>
-</div>
-<h1 class=title>Functional Imaging</h1>
-<div class=lead>Tutorials about processing functional MRI data</div>
-<ul>
-<li>1: <a href=#pg-dd982111decec7207955837c64096fcd>Using fmriprep with neurodesk on an HPC</a></li>
-<li>2: <a href=#pg-ab10fff7c4446094d664d50ded4ff0b2>Using mriqc with neurodesk on HPC</a></li>
-<li>3: <a href=#pg-8dfbf581aa47092d3c6ae308716ee073>PhysIO</a></li>
-</ul>
-<div class=content>
-</div>
-</div>
-<div class=td-content>
-<h1 id=pg-dd982111decec7207955837c64096fcd>1 - Using fmriprep with neurodesk on an HPC</h1>
-<div class=lead>A brief guide to using fmriprep with neurodesk, using data from the STRIAVISE project.</div>
-<blockquote>
-<p><em>This tutorial was created by Kelly G. Garner.</em></p>
-<p>Email: <a href=mailto:getkellygarner@gmail.com>getkellygarner@gmail.com</a></p>
-<p>Github: @kel_github</p>
-<p>Twitter: @garnertheory</p>
-</blockquote>
-<blockquote>
-<p>This workflow documents how to use fmriprep with neurodesk and provides some details that may help you troubleshoot some common problems I found along the way.</p>
-</blockquote>
-<hr>
-<h1 id=assumptions>Assumptions</h1>
-<ul>
-<li><input disabled type=checkbox> Your data is already in BIDS format</li>
-<li><input disabled type=checkbox> You plan to run fmriprep using Neurodesk</li>
-<li><input disabled type=checkbox> You have a local copy of the freesurfer license file (freesurfer.txt)</li>
-</ul>
-<hr>
-<h1 id=steps>Steps</h1>
-<h2 id=open-fmriprep>Open fmriprep</h2>
-<p>From the applications go Neurodesk -> Functional Imaging -> fmriprep and select the latest version of fmriprep. This should take you to a terminal window with fmriprep loaded.</p>
-<h2 id=setting-up-fmriprep-command>Setting up fmriprep command</h2>
-<p>If you like, you can enter the following fmriprep command straight into the command line in the newly opened terminal. However, as with increasing options and preferences the command can get rather verbose, I instead opted to create an executable bash script that I can run straight from the command line, with minimal editing inbetween runs. If you&rsquo;re not interested in this option you can skip straight to copying/adjusting the code from <code>fmriprep</code> to <code>-v</code> below.</p>
-<ul>
-<li>open a new file in your editor of choice but really you know it should be Visual Studio Code</li>
-<li>save that file with your chosen name without an extension, e.g. run_fmriprep</li>
-<li>paste in the following and update with your details</li>
-</ul>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#8f5902;font-style:italic>#!/bin/bash
-</span><span style=color:#8f5902;font-style:italic></span><span style=color:#8f5902;font-style:italic>#</span>
-<span style=color:#8f5902;font-style:italic># written by A. Name - the purpose of this code is to run fmriprep with neurodesk</span>
-
-<span style=color:#204a87>export</span> <span style=color:#000>ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS</span><span style=color:#ce5c00;font-weight:700>=</span><span style=color:#0000cf;font-weight:700>6</span> <span style=color:#8f5902;font-style:italic># specify the number of threads you want to use</span>
-
-fmriprep /path/to/your/data <span style=color:#4e9a06>\ </span><span style=color:#8f5902;font-style:italic># this is the top level of your data folder</span>
-         /path/to/your/data/derivatives <span style=color:#4e9a06>\ </span><span style=color:#8f5902;font-style:italic># where you want fmriprep output to be saved</span>
-         participant <span style=color:#4e9a06>\ </span><span style=color:#8f5902;font-style:italic># this tells fmriprep to analyse at the participant level</span>
-         --fs-license-file /path/to/your/freesurfer.txt <span style=color:#4e9a06>\ </span><span style=color:#8f5902;font-style:italic># where the freesurfer license file is</span>
-         --output-spaces T1w MNI152NLin2009cAsym fsaverage fsnative <span style=color:#4e9a06>\ </span>
-         --participant-label <span style=color:#0000cf;font-weight:700>01</span> <span style=color:#4e9a06>\ </span><span style=color:#8f5902;font-style:italic># put what ever participant labels you want to analyse</span>
-         --nprocs <span style=color:#0000cf;font-weight:700>6</span> --mem <span style=color:#0000cf;font-weight:700>10000</span> <span style=color:#4e9a06>\ </span><span style=color:#8f5902;font-style:italic># fmriprep can be greedy on the hpc, make sure it is not</span>
-         --skip_bids_validation <span style=color:#4e9a06>\ </span><span style=color:#8f5902;font-style:italic># its normally fine to skip this but do make sure your data are BIDS enough</span>
-         -v <span style=color:#8f5902;font-style:italic># be verbal fmriprep, tell me what you are doing</span>
-</code></pre></div><p>To make the file executable, navigate to this file via the command line in terminal and type</p>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>chmod u+x run_fmriprep <span style=color:#8f5902;font-style:italic># this tells the system to make your new file executable</span>
-</code></pre></div><p>Then to run your new executable, return to your terminal window for fmriprep (that opened when you navigated to fmriprep) and type:</p>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>./run_fmriprep
-</code></pre></div><p>fmriprep should now be merrily working away on your data :)</p>
-<hr>
-<h2 id=some-common-pitfalls-i-have-learned-from-my-mistakes-and-sometimes-from-others>Some common pitfalls I have learned from my mistakes (and sometimes from others)</h2>
-<ol>
-<li>
-<p>If fmriprep hangs it could well be that you are out of disk space. Sometimes this is because fmriprep created a work directory in your home folder which is often limited on the HPC. Make sure fmriprep knows to use a work drectory in your scratch. you can specify this in the fmriprep command by using -w /path/to/the/work/directory/you/made</p>
-</li>
-<li>
-<p>I learned this from TomCat (@thomshaw92) - fmriprep can get confused between subjects when run in parallel. Parallelise with caution.</p>
-</li>
-<li>
-<p>If running on a HPC, make sure to set the processor and memory limits, if not your job will get killed because it hogs all the resources.</p>
-</li>
-</ol>
-</div>
-<div class=td-content style=page-break-before:always>
-<h1 id=pg-ab10fff7c4446094d664d50ded4ff0b2>2 - Using mriqc with neurodesk on HPC</h1>
+<h1>Using mriqc with neurodesk on HPC</h1>
 <div class=lead>A brief guide to using mriqc with neurodesk, using data from the STRIAVISE project.</div>
+<header class=article-meta>
+</header>
 <blockquote>
 <p><em>This tutorial was created by Kelly G. Garner.</em></p>
 <p>Email: <a href=mailto:getkellygarner@gmailc.om>getkellygarner@gmail.com</a></p>
@@ -225,81 +228,9 @@ fmriprep /path/to/your/data <span style=color:#4e9a06>\ </span><span style=color
 <ol>
 <li>If running on a HPC, make sure to set the processor and memory limits, if not your job will get killed because mriqc hogs all the resources.</li>
 </ol>
+<div class="text-muted mt-5 pt-3 border-top">
+Last modified January 17, 2022: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/9f3b3f551f536edec8be863a89d4b3a336a5f7ec>attempting fix on image insertion (9f3b3f55)</a>
 </div>
-<div class=td-content style=page-break-before:always>
-<h1 id=pg-8dfbf581aa47092d3c6ae308716ee073>3 - PhysIO</h1>
-<div class=lead>Example workflow for the PhysIO Toolbox</div>
-<h2 id=purpose>Purpose</h2>
-<p>The general purpose of the PhysIO toolbox is model-based physiological noise correction of fMRI data using peripheral measures of respiration and cardiac pulsation (respiratory bellows, ECG, pulse oximeter/plethysmograph).</p>
-<p>It incorporates noise models of</p>
-<ul>
-<li>cardiac/respiratory phase (RETROICOR, Glover et al. 2000), as well as</li>
-<li>heart rate variability and respiratory volume per time (cardiac response function, Chang et. al, 2009, respiratory response function, Birn et al. 2006),</li>
-<li>and extended motion models (e.g., censoring/scrubbing)</li>
-</ul>
-<p>While the toolbox is particularly well integrated with SPM via the Batch Editor GUI, its output text files can be incorporated into any major neuroimaging analysis package for nuisance regression, e.g., within a GLM.</p>
-<p>Core design goals for the toolbox were: flexibility, robustness, and quality assurance to enable physiological noise correction for large-scale and multi-center studies.</p>
-<p>Some highlights:</p>
-<ul>
-<li>Robust automatic preprocessing of peripheral recordings via iterative peak detection, validated in noisy data and patients, and extended processing of respiratory data (Harrison et al., 2021)</li>
-<li>Flexible support of peripheral data formats (BIDS, Siemens, Philips, GE, BioPac, HCP, &mldr;) and noise models (RETROICOR, RVHRCOR).</li>
-<li>Fully automated noise correction and performance assessment for group studies.</li>
-<li>Integration in fMRI pre-processing pipelines as SPM Toolbox (Batch Editor GUI).</li>
-</ul>
-<p>The accompanying technical paper about the toolbox concept and methodology can be found at: <a href=https://doi.org/10.1016/j.jneumeth.2016.10.019>https://doi.org/10.1016/j.jneumeth.2016.10.019</a></p>
-<p>See more info about PhysIO (incl. relevant papers to cite and FAQ) in the online <a href=https://github.com/translationalneuromodeling/tapas/tree/master/PhysIO#readme>README</a> on GitHub. PhysIO is part of the TAPAS Software Collection GitHub, and its Matlab version is exclusively hosted there.</p>
-<p>NeuroDesk offers the possibility of running PhysIO without installing Matlab or requiring a Matlab license. The functionality should be equivalent, though debugging and extending the toolbox, as well as unreleased development features, will only be available in the Matlab version of PhysIO.</p>
-<h2 id=download-example-data>Download Example Data</h2>
-<p>The example data should already be present in NeuroDesk in the following folder <code>/opt/spm12</code></p>
-<p>If you cannot find the example data there:</p>
-<ol>
-<li>Download the latest version from the <a href=https://github.com/translationalneuromodeling/tapas/blob/master/misc/log_tapas.txt>location mentioned in the TAPAS distribution</a>
-<ul>
-<li>e.g., <a href=https://www.tapas.tnu-zurich.com/examples_v5.0.0.zip>https://www.tapas.tnu-zurich.com/examples_v5.0.0.zip</a></li>
-</ul>
-</li>
-<li>Follow the instructions for copying your own data in the next section</li>
-</ol>
-<h2 id=copy-your-own-data>Copy your own data</h2>
-<ul>
-<li>On Windows, the folder <code>C:\neurodesktop-storage</code> should have been automatically created when starting NeuroDesk</li>
-<li>This is your direct link to the NeuroDesk environment, and anything you put in there should end up within the NeuroDesk desktop in <code>/neurodesktop-storage/</code></li>
-</ul>
-<h2 id=example-running-physio-in-the-gui>Example: Running PhysIO in the GUI</h2>
-<ol>
-<li>Open the PhysIO GUI (Neurodesk -> Functional Imaging -> physio -> physioGUI r7771, see screenshot:</li>
-</ol>
-<p><img src=/FunctionalImaging_Tutorial/physio_screenshot1.jpg alt="PhysIO GUI in NeuroDesk" title=physio_screenshot></p>
-<ol start=2>
-<li>SPM should automatically open up (might take a while). Select &lsquo;fMRI&rsquo; from the modality selection screen.</li>
-<li>Press the &ldquo;Batch Editor&rdquo; button (see screenshot with open Batch Editor, red highlights)</li>
-</ol>
-<p><img src=/FunctionalImaging_Tutorial/physio_screenshot2.jpg alt="NeuroDesk with SPM Batch Editor PhysIO" title=physio_screenshot2></p>
-<pre><code>- NB: If you later want to create a new PhysIO batch with all parameters, from scratch or explore the options, select from the Batch Editor Menu top row, SPM -&gt; Tools -&gt; TAPAS PhysIO Toolbox (see screenshot, read highlights)
-</code></pre>
-<ol start=4>
-<li>For now, load an existing example (or previously created SPM Batch File) as follows: It is most convenient to change the working directory of SPM to the location of the physiological logfiles
-<ul>
-<li>In the Batch Editor GUI, lowest row, choose &lsquo;CD&rsquo; from the &lsquo;Utils..&rsquo; dropdown menu</li>
-<li>Navigate to any of the example folders, e.g., <code>/opt/spm12/examples/Philips/ECG3T/</code> and select it</li>
-<li>NB: you can skip this part, if you later manually update all input files in the Batch Editor window (resp/cardiac/scan timing and realignment parameter file further down)</li>
-<li>Any other example should also work the same way, just CD to its folder before the next step</li>
-</ul>
-</li>
-<li>Select File -> Load Batch from the top row menu of the Batch Editor window
-<ul>
-<li>make sure you select the matlab batch file <code>*_spm_job.&lt;m|mat></code>, (e.g., <code>philips_ecg3t_spm_job.m</code> and <code>philips_ecg3t_spm_job.mat</code> are identical, either is fine), but not the script.</li>
-</ul>
-</li>
-<li>Press The green &ldquo;Play&rdquo; button in the top icon menu row of the Batch Editor Window</li>
-<li>Several output figures should appear, with the last being a grayscale plot of the nuisance regressor design matrix</li>
-</ol>
-<p><img src=/FunctionalImaging_Tutorial/physio_screenshot3.jpg alt="Output Nuisance Regressor Matrix PhysIO" title=physio_screenshot3></p>
-<ol start=8>
-<li>Congratulations, your first successful physiological noise model has been created! If you don&rsquo;t see the mentioned figure, chances are certain input files were not found (e.g., wrong file location specified). You can always check the text output in the &ldquo;bash&rdquo; window associated with the SPM window for any error messages.</li>
-</ol>
-<h2 id=further-info-on-physio>Further Info on PhysIO</h2>
-<p>Please check out the <a href=https://github.com/translationalneuromodeling/tapas/tree/master/PhysIO#readme>README</a> and <a href=https://gitlab.ethz.ch/physio/physio-doc/-/wikis/FAQ>FAQ</a></p>
 </div>
 </main>
 </div>

@@ -66,7 +66,7 @@
 </li>
 </ul>
 </div>
-<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.375bcc4ee7f099008cb811f53c6e3a1f.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.15f47bbf6a6de54965d635ce20489153.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 </div>
 </nav>
 </header>
@@ -97,7 +97,8 @@ This is the multi-page printable view of this section.
 <li>2: <a href=#pg-6e967e290a5f03717d740223a55e01ae>Functional Imaging</a></li>
 <ul>
 <li>2.1: <a href=#pg-dd982111decec7207955837c64096fcd>Using fmriprep with neurodesk on an HPC</a></li>
-<li>2.2: <a href=#pg-8dfbf581aa47092d3c6ae308716ee073>PhysIO</a></li>
+<li>2.2: <a href=#pg-ab10fff7c4446094d664d50ded4ff0b2>Using mriqc with neurodesk on HPC</a></li>
+<li>2.3: <a href=#pg-8dfbf581aa47092d3c6ae308716ee073>PhysIO</a></li>
 </ul>
 <li>3: <a href=#pg-692ee0c0d1d645ba985513777e1a945e>MRI phase Processing</a></li>
 <ul>
@@ -348,7 +349,72 @@ fmriprep /path/to/your/data <span style=color:#4e9a06>\ </span><span style=color
 </ol>
 </div>
 <div class=td-content style=page-break-before:always>
-<h1 id=pg-8dfbf581aa47092d3c6ae308716ee073>2.2 - PhysIO</h1>
+<h1 id=pg-ab10fff7c4446094d664d50ded4ff0b2>2.2 - Using mriqc with neurodesk on HPC</h1>
+<div class=lead>A brief guide to using mriqc with neurodesk, using data from the STRIAVISE project.</div>
+<blockquote>
+<p><em>This tutorial was created by Kelly G. Garner.</em></p>
+<p>Email: <a href=mailto:getkellygarner@gmailc.om>getkellygarner@gmail.com</a></p>
+<p>Github: <a href=https://github.com/kel-github>@kel_github</a></p>
+<p>Twitter: <a href=https://twitter.com/garner_theory>@garnertheory</a></p>
+</blockquote>
+<blockquote>
+<p>This workflow documents how to use mriqc with neurodesk and provides some details that may help you troubleshoot some common problems I found along the way.</p>
+</blockquote>
+<hr>
+<h1 id=assumptions>Assumptions</h1>
+<ul>
+<li><input disabled type=checkbox> Your data is already in BIDS format</li>
+<li><input disabled type=checkbox> You plan to run mriqc using Neurodesk</li>
+</ul>
+<hr>
+<h1 id=steps>Steps</h1>
+<h2 id=open-mriqc>Open mriqc</h2>
+<p>From the applications go Neurodesk -> Functional Imaging -> mriqc and select the latest version of mriqc. This should take you to a terminal window with mriqc loaded. <p></p>
+<p><img src=/mriqc_cvl/mriqc_terminal.png alt=mriqc_terminal title=mriqc_terminal> </p>
+<h2 id=setting-up-mriqc-command>Setting up mriqc command</h2>
+<p>If you like, you can enter the following mriqc commands straight into the command line in the newly opened terminal. However, as with increasing options and preferences the command can get rather verbose, so I instead opted to create executable bash scripts that I can run straight from the command line, with minimal editing inbetween runs. I made one for running mriqc at the participant level, and one for running at the group level (for the group report, once all the participants are done). If you&rsquo;re not interested in this option you can skip straight to copying/adjusting the code from <code>mriqc</code> to <code>-v</code> below.</p>
+<ul>
+<li>open a new file in your editor of choice (e.g. Visual Studio Code)</li>
+<li>save that file with your chosen name without an extension, e.g. run_mriqc_participant or run_mriqc_group</li>
+<li>paste in the following and update with your details</li>
+</ul>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=color:#a40000>#</span><span style=color:#000;font-weight:700>!</span><span style=color:#ce5c00;font-weight:700>/</span><span style=color:#000>bin</span><span style=color:#ce5c00;font-weight:700>/</span><span style=color:#000>bash</span>
+<span style=color:#a40000>#</span>
+<span style=color:#a40000>#</span> <span style=color:#000>written</span> <span style=color:#000>by</span> <span style=color:#000>A</span><span style=color:#000;font-weight:700>.</span> <span style=color:#000>Name</span> <span style=color:#ce5c00;font-weight:700>-</span> <span style=color:#000>the</span> <span style=color:#000>purpose</span> <span style=color:#000>of</span> <span style=color:#000>this</span> <span style=color:#000>code</span> <span style=color:#000>is</span> <span style=color:#000>to</span> <span style=color:#000>run</span> <span style=color:#000>mriqc</span> <span style=color:#000>with</span> <span style=color:#000>neurodesk</span>
+
+<span style=color:#000>export</span> <span style=color:#000>ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS</span><span style=color:#000;font-weight:700>=</span><span style=color:#0000cf;font-weight:700>6</span> <span style=color:#a40000>#</span> <span style=color:#000>specify</span> <span style=color:#000>the</span> <span style=color:#000>number</span> <span style=color:#000>of</span> <span style=color:#000>threads</span> <span style=color:#000>you</span> <span style=color:#000>want</span> <span style=color:#000>to</span> <span style=color:#000>use</span>
+
+<span style=color:#000>mriqc</span> <span style=color:#ce5c00;font-weight:700>/</span><span style=color:#000>path</span><span style=color:#ce5c00;font-weight:700>/</span><span style=color:#000>to</span><span style=color:#ce5c00;font-weight:700>/</span><span style=color:#000>your</span><span style=color:#ce5c00;font-weight:700>/</span><span style=color:#000>data</span> <span style=color:#a40000>\</span> <span style=color:#a40000>#</span> <span style=color:#000>this</span> <span style=color:#000>is</span> <span style=color:#000>the</span> <span style=color:#000>top</span> <span style=color:#000>level</span> <span style=color:#000>of</span> <span style=color:#000>your</span> <span style=color:#000>data</span> <span style=color:#000>folder</span>
+         <span style=color:#ce5c00;font-weight:700>/</span><span style=color:#000>path</span><span style=color:#ce5c00;font-weight:700>/</span><span style=color:#000>to</span><span style=color:#ce5c00;font-weight:700>/</span><span style=color:#000>your</span><span style=color:#ce5c00;font-weight:700>/</span><span style=color:#000>data</span><span style=color:#ce5c00;font-weight:700>/</span><span style=color:#000>derivatives</span> <span style=color:#a40000>\</span> <span style=color:#a40000>#</span> <span style=color:#000>where</span> <span style=color:#000>you</span> <span style=color:#000>want</span> <span style=color:#000>mriqc</span> <span style=color:#000>output</span> <span style=color:#000>to</span> <span style=color:#000>be</span> <span style=color:#000>saved</span>
+         <span style=color:#000>participant</span> <span style=color:#a40000>\</span> <span style=color:#a40000>#</span> <span style=color:#000>this</span> <span style=color:#000>tells</span> <span style=color:#000>mriqc</span> <span style=color:#000>to</span> <span style=color:#000>analyse</span> <span style=color:#000>at</span> <span style=color:#000>the</span> <span style=color:#000>participant</span> <span style=color:#000>level</span>
+         <span style=color:#ce5c00;font-weight:700>--</span><span style=color:#000>participant</span><span style=color:#ce5c00;font-weight:700>-</span><span style=color:#000>label</span> <span style=color:#0000cf;font-weight:700>01</span> <span style=color:#a40000>\</span> <span style=color:#a40000>#</span> <span style=color:#000>put</span> <span style=color:#000>what</span> <span style=color:#000>ever</span> <span style=color:#000>participant</span> <span style=color:#000>labels</span> <span style=color:#000>you</span> <span style=color:#000>want</span> <span style=color:#000>to</span> <span style=color:#000>analyse</span>
+         <span style=color:#ce5c00;font-weight:700>--</span><span style=color:#000>work</span><span style=color:#ce5c00;font-weight:700>-</span><span style=color:#000>dir</span> <span style=color:#ce5c00;font-weight:700>/</span><span style=color:#000>path</span><span style=color:#ce5c00;font-weight:700>/</span><span style=color:#000>to</span><span style=color:#ce5c00;font-weight:700>/</span><span style=color:#000>work</span><span style=color:#ce5c00;font-weight:700>/</span><span style=color:#000>directory</span> <span style=color:#a40000>\</span> <span style=color:#a40000>#</span><span style=color:#000>useful</span> <span style=color:#000>to</span> <span style=color:#000>specify</span> <span style=color:#000>so</span> <span style=color:#000>your</span> <span style=color:#000>home</span> <span style=color:#000>directory</span> <span style=color:#000>definitely</span> <span style=color:#000>doesnt</span> <span style=color:#000>get</span> <span style=color:#000>clogged</span>
+         <span style=color:#ce5c00;font-weight:700>--</span><span style=color:#000>nprocs</span> <span style=color:#0000cf;font-weight:700>6</span> <span style=color:#ce5c00;font-weight:700>--</span><span style=color:#000>mem_gb</span> <span style=color:#0000cf;font-weight:700>10000</span> <span style=color:#a40000>\</span> <span style=color:#a40000>#</span> <span style=color:#000>mriqc</span> <span style=color:#000>can</span> <span style=color:#000>be</span> <span style=color:#000>greedy</span> <span style=color:#000>on</span> <span style=color:#000>the</span> <span style=color:#000>hpc</span><span style=color:#000;font-weight:700>,</span> <span style=color:#000>make</span> <span style=color:#000>sure</span> <span style=color:#000>it</span> <span style=color:#000>is</span> <span style=color:#000>not</span>
+         <span style=color:#ce5c00;font-weight:700>-</span><span style=color:#000>v</span> <span style=color:#a40000>#</span> <span style=color:#000>be</span> <span style=color:#000>verbal</span> <span style=color:#000>mriqc</span><span style=color:#000;font-weight:700>,</span> <span style=color:#000>tell</span> <span style=color:#000>me</span> <span style=color:#000>what</span> <span style=color:#000>you</span> <span style=color:#000>are</span> <span style=color:#000>doing</span>
+</code></pre></div><p>OR: if you have run all the participants and you just want the group level report, use these mriqc commands instead:</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>mriqc /path/to/your/data \ # this is the top level of your data folder
+         /path/to/your/data/derivatives \ # where you want mriqc output to be saved. As you are running the group level analysis this folder should be prepopulated with the results of the participant level analysis
+         group \ # this tells mriqc to agive you the group report
+         -w /path/to/work/directory \ #useful to specify so your home directory definitely doesnt get clogged
+         --nprocs 6 --mem_gb 10000 \ # mriqc can be greedy on the hpc, make sure it is not
+         -v # be verbal mriqc, tell me what you are doing
+</code></pre></div><p>To make either of yours files executable, navigate via the terminal to the same folder in which this file is saved. If you list the files in the folder by using the command <code>ls</code> you should see your file with the name printed in white.</p>
+<p><img src=/mriqc_cvl/pre_exec.png alt=pre_exec title=pre_exec> </p>
+<p>Now type the following command:</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=color:#000>chmod</span> <span style=color:#000>u</span><span style=color:#ce5c00;font-weight:700>+</span><span style=color:#000>x</span> <span style=color:#000>run_mriqc_participant</span> <span style=color:#a40000>#</span> <span style=color:#000>this</span> <span style=color:#000>tells</span> <span style=color:#000>the</span> <span style=color:#000>system</span> <span style=color:#000>to</span> <span style=color:#000>make</span> <span style=color:#000>your</span> <span style=color:#000>new</span> <span style=color:#000>file</span> <span style=color:#000>executable</span>
+</code></pre></div><p>To know this worked, list the files again. If you have successfully made your file executable then it will be listed in green.</p>
+<p><img src=/mriqc_cvl/mriqc_post_exec.png alt=mriqc_post_exec title=mriqc_post_exec> </p>
+<p>Then to run your new executable, return to your terminal window for mriqc (that opened when you navigated to mriqc), navigate to the directory where your executable file is stored and type:</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=color:#000;font-weight:700>.</span><span style=color:#ce5c00;font-weight:700>/</span><span style=color:#000>name_of_your_mriqc_file</span>
+</code></pre></div><p>mriqc should now be merrily working away on your data :)</p>
+<hr>
+<h2 id=some-common-pitfalls-i-have-learned-from-my-mistakes-and-sometimes-from-others>Some common pitfalls I have learned from my mistakes (and sometimes from others)</h2>
+<ol>
+<li>If running on a HPC, make sure to set the processor and memory limits, if not your job will get killed because mriqc hogs all the resources.</li>
+</ol>
+</div>
+<div class=td-content style=page-break-before:always>
+<h1 id=pg-8dfbf581aa47092d3c6ae308716ee073>2.3 - PhysIO</h1>
 <div class=lead>Example workflow for the PhysIO Toolbox</div>
 <h2 id=purpose>Purpose</h2>
 <p>The general purpose of the PhysIO toolbox is model-based physiological noise correction of fMRI data using peripheral measures of respiration and cardiac pulsation (respiratory bellows, ECG, pulse oximeter/plethysmograph).</p>
