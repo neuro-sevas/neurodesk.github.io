@@ -66,7 +66,7 @@
 </li>
 </ul>
 </div>
-<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.4941dcde2187aac4135b0c27188f7aa3.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.3eb3889e6706bc5132c78bd410123537.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 </div>
 </nav>
 </header>
@@ -147,98 +147,42 @@ fsleyes</code>
 <h1 id=install-cvmfs>Install CVMFS</h1>
 <p>First you need to install CVMFS. Follow the official instructions here: <a href=https://cvmfs.readthedocs.io/en/stable/cpt-quickstart.html#getting-the-software>https://cvmfs.readthedocs.io/en/stable/cpt-quickstart.html#getting-the-software</a></p>
 <p>one example for Windows Subsystem for Linux (WSL) could look like this:</p>
-<div class=highlight><div style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
-<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
-<pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">4
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">5
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">6
-</span></code></pre></td>
-<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
-<pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>sudo apt-get install lsb-release
+<pre class="language-batch command-line" data-prompt=">">
+<code>sudo apt-get install lsb-release
 wget https://ecsft.cern.ch/dist/cvmfs/cvmfs-release/cvmfs-release-latest_all.deb
 sudo dpkg -i cvmfs-release-latest_all.deb
 rm -f cvmfs-release-latest_all.deb
 sudo apt-get update
-sudo apt-get install cvmfs
-</code></pre></td></tr></table>
-</div>
-</div><h1 id=configure-cvmfs>Configure CVMFS</h1>
+sudo apt-get install cvmfs</code>
+</pre>
+<h1 id=configure-cvmfs>Configure CVMFS</h1>
 <p>Once installed create the keys and configure the servers used:</p>
-<div class=highlight><div style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
-<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
-<pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">12
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">13
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">14
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">15
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">16
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">17
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">18
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">19
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">20
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">21
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">22
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">23
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">24
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">25
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">26
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">27
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">28
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">29
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">30
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">31
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">32
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">33
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">34
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">35
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">36
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">37
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">38
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">39
-</span></code></pre></td>
-<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
-<pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>sudo mkdir -p /etc/cvmfs/keys/ardc.edu.au/
+<pre class="language-batch command-line" data-prompt=">">
+<code>sudo mkdir -p /etc/cvmfs/keys/ardc.edu.au/
 
 
-<span style=color:#204a87>echo</span> <span style=color:#4e9a06>&#34;-----BEGIN PUBLIC KEY-----
-</span><span style=color:#4e9a06>MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwUPEmxDp217SAtZxaBep
-</span><span style=color:#4e9a06>Bi2TQcLoh5AJ//HSIz68ypjOGFjwExGlHb95Frhu1SpcH5OASbV+jJ60oEBLi3sD
-</span><span style=color:#4e9a06>qA6rGYt9kVi90lWvEjQnhBkPb0uWcp1gNqQAUocybCzHvoiG3fUzAe259CrK09qR
-</span><span style=color:#4e9a06>pX8sZhgK3eHlfx4ycyMiIQeg66AHlgVCJ2fKa6fl1vnh6adJEPULmn6vZnevvUke
-</span><span style=color:#4e9a06>I6U1VcYTKm5dPMrOlY/fGimKlyWvivzVv1laa5TAR2Dt4CfdQncOz+rkXmWjLjkD
-</span><span style=color:#4e9a06>87WMiTgtKybsmMLb2yCGSgLSArlSWhbMA0MaZSzAwE9PJKCCMvTANo5644zc8jBe
-</span><span style=color:#4e9a06>NQIDAQAB
-</span><span style=color:#4e9a06>-----END PUBLIC KEY-----&#34;</span> <span style=color:#000;font-weight:700>|</span> sudo tee /etc/cvmfs/keys/ardc.edu.au/neurodesk.ardc.edu.au.pub
+echo "-----BEGIN PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwUPEmxDp217SAtZxaBep
+Bi2TQcLoh5AJ//HSIz68ypjOGFjwExGlHb95Frhu1SpcH5OASbV+jJ60oEBLi3sD
+qA6rGYt9kVi90lWvEjQnhBkPb0uWcp1gNqQAUocybCzHvoiG3fUzAe259CrK09qR
+pX8sZhgK3eHlfx4ycyMiIQeg66AHlgVCJ2fKa6fl1vnh6adJEPULmn6vZnevvUke
+I6U1VcYTKm5dPMrOlY/fGimKlyWvivzVv1laa5TAR2Dt4CfdQncOz+rkXmWjLjkD
+87WMiTgtKybsmMLb2yCGSgLSArlSWhbMA0MaZSzAwE9PJKCCMvTANo5644zc8jBe
+NQIDAQAB
+-----END PUBLIC KEY-----" | sudo tee /etc/cvmfs/keys/ardc.edu.au/neurodesk.ardc.edu.au.pub
 
+echo "CVMFS_USE_GEOAPI=yes" | sudo tee /etc/cvmfs/config.d/neurodesk.ardc.edu.au.conf
 
-<span style=color:#204a87>echo</span> <span style=color:#4e9a06>&#34;CVMFS_USE_GEOAPI=yes&#34;</span> <span style=color:#000;font-weight:700>|</span> sudo tee /etc/cvmfs/config.d/neurodesk.ardc.edu.au.conf
+echo 'CVMFS_SERVER_URL="http://203.101.231.144/cvmfs/@fqrn@;http://150.136.239.221/cvmfs/@fqrn@;http://132.145.96.34/cvmfs/@fqrn@;http://140.238.170.185/cvmfs/@fqrn@;http://130.61.74.69/cvmfs/@fqrn@;http://152.67.114.42/cvmfs/@fqrn@"' | sudo tee -a /etc/cvmfs/config.d/neurodesk.ardc.edu.au.conf 
 
-<span style=color:#204a87>echo</span> <span style=color:#4e9a06>&#39;CVMFS_SERVER_URL=&#34;http://203.101.231.144/cvmfs/@fqrn@;http://150.136.239.221/cvmfs/@fqrn@;http://132.145.96.34/cvmfs/@fqrn@;http://140.238.170.185/cvmfs/@fqrn@;http://130.61.74.69/cvmfs/@fqrn@;http://152.67.114.42/cvmfs/@fqrn@&#34;&#39;</span> <span style=color:#000;font-weight:700>|</span> sudo tee -a /etc/cvmfs/config.d/neurodesk.ardc.edu.au.conf 
+echo 'CVMFS_KEYS_DIR="/etc/cvmfs/keys/ardc.edu.au/"' | sudo tee -a /etc/cvmfs/config.d/neurodesk.ardc.edu.au.conf
 
-
-<span style=color:#204a87>echo</span> <span style=color:#4e9a06>&#39;CVMFS_KEYS_DIR=&#34;/etc/cvmfs/keys/ardc.edu.au/&#34;&#39;</span> <span style=color:#000;font-weight:700>|</span> sudo tee -a /etc/cvmfs/config.d/neurodesk.ardc.edu.au.conf
-
-
-
-<span style=color:#204a87>echo</span> <span style=color:#4e9a06>&#34;CVMFS_HTTP_PROXY=DIRECT&#34;</span> <span style=color:#000;font-weight:700>|</span> sudo tee  /etc/cvmfs/default.local
-<span style=color:#204a87>echo</span> <span style=color:#4e9a06>&#34;CVMFS_QUOTA_LIMIT=5000&#34;</span> <span style=color:#000;font-weight:700>|</span> sudo tee -a  /etc/cvmfs/default.local
+echo "CVMFS_HTTP_PROXY=DIRECT" | sudo tee  /etc/cvmfs/default.local
+echo "CVMFS_QUOTA_LIMIT=5000" | sudo tee -a  /etc/cvmfs/default.local
 
 sudo cvmfs_config setup
 
-<span style=color:#8f5902;font-style:italic># this is only necessary for WSL:</span>
+# this is only necessary for WSL:
 sudo cvmfs_config wsl2_start
 
 sudo cvmfs_config chksetup
@@ -248,26 +192,36 @@ ls /cvmfs/neurodesk.ardc.edu.au
 sudo cvmfs_talk -i neurodesk.ardc.edu.au host probe
 sudo cvmfs_talk -i neurodesk.ardc.edu.au host info
 
-cvmfs_config stat -v neurodesk.ardc.edu.au
-</code></pre></td></tr></table>
-</div>
-</div><h1 id=use-of-neurodesk-cvmfs-containers>use of Neurodesk CVMFS containers</h1>
+cvmfs_config stat -v neurodesk.ardc.edu.au</code>
+</pre>
+<h1 id=use-of-neurodesk-cvmfs-containers>use of Neurodesk CVMFS containers</h1>
 <p>The containers are now available in /cvmfs/neurodesk.ardc.edu.au/containers/ and can be started with:</p>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>singularity shell /cvmfs/neurodesk.ardc.edu.au/containers/itksnap_3.8.0_20201208/itksnap_3.8.0_20201208.simg
-</code></pre></div><p>make sure that SINGULARITY_BINDPATH include the directories you want to work with:</p>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#204a87>export</span> <span style=color:#000>SINGULARITY_BINDPATH</span><span style=color:#ce5c00;font-weight:700>=</span><span style=color:#4e9a06>&#39;/cvmfs,/mnt,/home&#39;</span>
-</code></pre></div><h1 id=wsl-doesnt-support-homedirectory---so-dont-mount-this>WSL doesn&rsquo;t support homedirectory - so don&rsquo;t mount this</h1>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>singularity shell --no-home /cvmfs/neurodesk.ardc.edu.au/containers/itksnap_3.8.0_20201208/itksnap_3.8.0_20201208.simg
-</code></pre></div><p>or configure permanently:</p>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>sudo vi /etc/singularity/singularity.conf
-</code></pre></div><p>set</p>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>mount home = no
-</code></pre></div><h1 id=use-of-containers-in-the-module-system>use of containers in the module system:</h1>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>export SINGULARITY_BINDPATH=&#39;/cvmfs,/mnt,/home&#39;
+<pre class="language-batch command-line" data-prompt=">">
+<code>singularity shell /cvmfs/neurodesk.ardc.edu.au/containers/itksnap_3.8.0_20201208/itksnap_3.8.0_20201208.simg</code>
+</pre>
+<p>make sure that SINGULARITY_BINDPATH include the directories you want to work with:</p>
+<pre class="language-batch command-line" data-prompt=">">
+<code>export SINGULARITY_BINDPATH='/cvmfs,/mnt,/home'</code>
+</pre>
+<h1 id=wsl-doesnt-support-homedirectory---so-dont-mount-this>WSL doesn&rsquo;t support homedirectory - so don&rsquo;t mount this</h1>
+<pre class="language-batch command-line" data-prompt=">">
+<code>singularity shell --no-home /cvmfs/neurodesk.ardc.edu.au/containers/itksnap_3.8.0_20201208/itksnap_3.8.0_20201208.simg</code>
+</pre>
+<p>or configure permanently:</p>
+<pre class="language-batch command-line" data-prompt=">">
+<code>sudo vi /etc/singularity/singularity.conf</code>
+</pre>
+<p>set</p>
+<pre class="language-batch command-line" data-prompt=">">
+<code>mount home = no</code>
+</pre>
+<h1 id=use-of-containers-in-the-module-system>use of containers in the module system:</h1>
+<pre class="language-batch command-line" data-prompt=">">
+<code>export SINGULARITY_BINDPATH='/cvmfs,/mnt,/home'
 module use /cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/*
 ml fsl
-fslmaths
-</code></pre></div>
+fslmaths</code>
+</pre>
 </div>
 <div class=td-content style=page-break-before:always>
 <h1 id=pg-e6e34ad7485d3730bc92bfaf63f2eb30>3 - Datalad</h1>
