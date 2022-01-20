@@ -1,4 +1,46 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>NeuroDesk – Neurocontainers</title><link>https://neurodesk.github.io/docs/neurocontainers/</link><description>Recent content in Neurocontainers on NeuroDesk</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://neurodesk.github.io/docs/neurocontainers/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: CVMFS</title><link>https://neurodesk.github.io/docs/neurocontainers/cvmfs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurocontainers/cvmfs/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>NeuroDesk – Neurocontainers</title><link>https://neurodesk.github.io/docs/neurocontainers/</link><description>Recent content in Neurocontainers on NeuroDesk</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://neurodesk.github.io/docs/neurocontainers/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Windows 11 and Windows Subsystem for Linux</title><link>https://neurodesk.github.io/docs/neurocontainers/windows11-wsl/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurocontainers/windows11-wsl/</guid><description>
+&lt;h1 id="1-install-wsl">1. Install WSL&lt;/h1>
+&lt;p>Follow the instructions to enable Windows Subsystem for Linux 2 in Windows 11: &lt;a href="https://docs.microsoft.com/en-us/windows/wsl/install">https://docs.microsoft.com/en-us/windows/wsl/install&lt;/a>&lt;/p>
+&lt;h1 id="2-configure-cvfms-singularity-and-lmod-only-needs-to-be-done-once">2. Configure CVFMS, Singularity and LMOD (only needs to be done once)&lt;/h1>
+&lt;h2 id="singularity">Singularity&lt;/h2>
+&lt;h1 id="install-singularity">Install singularity&lt;/h1>
+&lt;pre class="language-batch command-line" data-prompt=">">
+&lt;code>export SINGULARITY_VERSION=3.9.3 VERSION=1.17.2 OS=linux ARCH=amd64
+wget -q https://dl.google.com/go/go$VERSION.$OS-$ARCH.tar.gz
+sudo tar -C /usr/local -xzvf go$VERSION.$OS-$ARCH.tar.gz
+rm go$VERSION.$OS-$ARCH.tar.gz
+export GOPATH=${HOME}/go
+export PATH=/usr/local/go/bin:${PATH}:${GOPATH}/bin
+mkdir -p $GOPATH/src/github.com/sylabs
+cd $GOPATH/src/github.com/sylabs
+wget -q https://github.com/sylabs/singularity/releases/download/v${SINGULARITY_VERSION}/singularity-ce-${SINGULARITY_VERSION}.tar.gz
+tar -xzvf singularity-ce-${SINGULARITY_VERSION}.tar.gz
+cd singularity-ce-${SINGULARITY_VERSION}
+./mconfig --prefix=/usr/local/singularity
+make -C builddir
+make -C builddir install
+cd ..
+rm -rf singularity-ce-${SINGULARITY_VERSION}
+rm -rf /usr/local/go $GOPATH
+ln -s /usr/local/singularity/bin/singularity /bin/
+&lt;/code>
+&lt;/pre>
+&lt;h2 id="cvmfs">CVMFS&lt;/h2>
+&lt;p>Follow the instructions here: &lt;a href="https://neurodesk.github.io/docs/neurocontainers/cvmfs/">https://neurodesk.github.io/docs/neurocontainers/cvmfs/&lt;/a>&lt;/p>
+&lt;h2 id="lmod">LMOD&lt;/h2>
+&lt;pre class="language-batch command-line" data-prompt=">">
+&lt;code>apt install lmod
+&lt;/code>
+&lt;/pre>
+&lt;h1 id="3-use-neurodesk-containers">3. Use Neurodesk containers&lt;/h1>
+&lt;pre class="language-batch command-line" data-prompt=">">
+&lt;code>module use /cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/*
+ml av
+ml fsl
+fsleyes
+&lt;/code>
+&lt;/pre>&lt;blockquote>
+&lt;/blockquote></description></item><item><title>Docs: CVMFS</title><link>https://neurodesk.github.io/docs/neurocontainers/cvmfs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurocontainers/cvmfs/</guid><description>
 &lt;h1 id="install-cvmfs">Install CVMFS&lt;/h1>
 &lt;p>First you need to install CVMFS. Follow the official instructions here: &lt;a href="https://cvmfs.readthedocs.io/en/stable/cpt-quickstart.html#getting-the-software">https://cvmfs.readthedocs.io/en/stable/cpt-quickstart.html#getting-the-software&lt;/a>&lt;/p>
 &lt;p>one example for Windows Subsystem for Linux (WSL) could look like this:&lt;/p>
@@ -106,7 +148,8 @@ cvmfs_config stat -v neurodesk.ardc.edu.au
 module use /cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/*
 ml fsl
 fslmaths
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Docker</title><link>https://neurodesk.github.io/docs/neurocontainers/docker/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurocontainers/docker/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Datalad</title><link>https://neurodesk.github.io/docs/neurocontainers/datalad/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurocontainers/datalad/</guid><description>
+&lt;p>Once this is completed: &lt;a href="https://github.com/ReproNim/containers/issues/64#issuecomment-999126787">https://github.com/ReproNim/containers/issues/64#issuecomment-999126787&lt;/a>&lt;/p></description></item><item><title>Docs: Docker</title><link>https://neurodesk.github.io/docs/neurocontainers/docker/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurocontainers/docker/</guid><description>
 &lt;p>Our containers are automatically built in &lt;a href="https://github.com/NeuroDesk/neurocontainers/">https://github.com/NeuroDesk/neurocontainers/&lt;/a> and hosted on &lt;a href="https://hub.docker.com/orgs/vnmd/repositories">dockerhub&lt;/a> or on &lt;a href="https://github.com/NeuroDesk/neurocontainers/packages">github&lt;/a>&lt;/p>
 &lt;h2 id="pull-docker-containers">Pull Docker containers&lt;/h2>
 &lt;p>e.g. for a julia container

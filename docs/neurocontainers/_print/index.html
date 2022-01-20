@@ -66,7 +66,7 @@
 </li>
 </ul>
 </div>
-<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.15f47bbf6a6de54965d635ce20489153.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.4b0724282fddf8b42dad032f01229d74.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 </div>
 </nav>
 </header>
@@ -86,15 +86,63 @@ This is the multi-page printable view of this section.
 <h1 class=title>Neurocontainers</h1>
 <div class=lead>What neurocontainers are about</div>
 <ul>
-<li>1: <a href=#pg-895ed1135b9cdc0df128fddec565e375>CVMFS</a></li>
-<li>2: <a href=#pg-f18a87ac25493d50d810709d157e5b03>Docker</a></li>
-<li>3: <a href=#pg-dde076c9513b160da47a52346f74d655>Singularity</a></li>
+<li>1: <a href=#pg-032a02c0f4ba2de0dd4a701cff6790fe>Windows 11 and Windows Subsystem for Linux</a></li>
+<li>2: <a href=#pg-895ed1135b9cdc0df128fddec565e375>CVMFS</a></li>
+<li>3: <a href=#pg-e6e34ad7485d3730bc92bfaf63f2eb30>Datalad</a></li>
+<li>4: <a href=#pg-f18a87ac25493d50d810709d157e5b03>Docker</a></li>
+<li>5: <a href=#pg-dde076c9513b160da47a52346f74d655>Singularity</a></li>
 </ul>
 <div class=content>
 </div>
 </div>
 <div class=td-content>
-<h1 id=pg-895ed1135b9cdc0df128fddec565e375>1 - CVMFS</h1>
+<h1 id=pg-032a02c0f4ba2de0dd4a701cff6790fe>1 - Windows 11 and Windows Subsystem for Linux</h1>
+<div class=lead>Use Neurocontainers on Windows 11 with WSL and Wayland Display Server</div>
+<h1 id=1-install-wsl>1. Install WSL</h1>
+<p>Follow the instructions to enable Windows Subsystem for Linux 2 in Windows 11: <a href=https://docs.microsoft.com/en-us/windows/wsl/install>https://docs.microsoft.com/en-us/windows/wsl/install</a></p>
+<h1 id=2-configure-cvfms-singularity-and-lmod-only-needs-to-be-done-once>2. Configure CVFMS, Singularity and LMOD (only needs to be done once)</h1>
+<h2 id=singularity>Singularity</h2>
+<h1 id=install-singularity>Install singularity</h1>
+<pre class="language-batch command-line" data-prompt=">">
+<code>export SINGULARITY_VERSION=3.9.3 VERSION=1.17.2 OS=linux ARCH=amd64
+wget -q https://dl.google.com/go/go$VERSION.$OS-$ARCH.tar.gz 
+sudo tar -C /usr/local -xzvf go$VERSION.$OS-$ARCH.tar.gz 
+rm go$VERSION.$OS-$ARCH.tar.gz 
+export GOPATH=${HOME}/go 
+export PATH=/usr/local/go/bin:${PATH}:${GOPATH}/bin 
+mkdir -p $GOPATH/src/github.com/sylabs 
+cd $GOPATH/src/github.com/sylabs 
+wget -q https://github.com/sylabs/singularity/releases/download/v${SINGULARITY_VERSION}/singularity-ce-${SINGULARITY_VERSION}.tar.gz 
+tar -xzvf singularity-ce-${SINGULARITY_VERSION}.tar.gz 
+cd singularity-ce-${SINGULARITY_VERSION} 
+./mconfig --prefix=/usr/local/singularity 
+make -C builddir 
+make -C builddir install 
+cd .. 
+rm -rf singularity-ce-${SINGULARITY_VERSION} 
+rm -rf /usr/local/go $GOPATH 
+ln -s /usr/local/singularity/bin/singularity /bin/ 
+</code>
+</pre>
+<h2 id=cvmfs>CVMFS</h2>
+<p>Follow the instructions here: <a href=https://neurodesk.github.io/docs/neurocontainers/cvmfs/>https://neurodesk.github.io/docs/neurocontainers/cvmfs/</a></p>
+<h2 id=lmod>LMOD</h2>
+<pre class="language-batch command-line" data-prompt=">">
+<code>apt install lmod
+</code>
+</pre>
+<h1 id=3-use-neurodesk-containers>3. Use Neurodesk containers</h1>
+<pre class="language-batch command-line" data-prompt=">">
+<code>module use /cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/*
+ml av
+ml fsl
+fsleyes
+</code>
+</pre><blockquote>
+</blockquote>
+</div>
+<div class=td-content style=page-break-before:always>
+<h1 id=pg-895ed1135b9cdc0df128fddec565e375>2 - CVMFS</h1>
 <div class=lead>Neurodesk Singularity Containers on CVMFS</div>
 <h1 id=install-cvmfs>Install CVMFS</h1>
 <p>First you need to install CVMFS. Follow the official instructions here: <a href=https://cvmfs.readthedocs.io/en/stable/cpt-quickstart.html#getting-the-software>https://cvmfs.readthedocs.io/en/stable/cpt-quickstart.html#getting-the-software</a></p>
@@ -222,7 +270,12 @@ fslmaths
 </code></pre></div>
 </div>
 <div class=td-content style=page-break-before:always>
-<h1 id=pg-f18a87ac25493d50d810709d157e5b03>2 - Docker</h1>
+<h1 id=pg-e6e34ad7485d3730bc92bfaf63f2eb30>3 - Datalad</h1>
+<div class=lead>Neurodesktop containers can be used in datalad container run</div>
+<p>Once this is completed: <a href=https://github.com/ReproNim/containers/issues/64#issuecomment-999126787>https://github.com/ReproNim/containers/issues/64#issuecomment-999126787</a></p>
+</div>
+<div class=td-content style=page-break-before:always>
+<h1 id=pg-f18a87ac25493d50d810709d157e5b03>4 - Docker</h1>
 <div class=lead>Neurodesk Docker containers</div>
 <p>Our containers are automatically built in <a href=https://github.com/NeuroDesk/neurocontainers/>https://github.com/NeuroDesk/neurocontainers/</a> and hosted on <a href=https://hub.docker.com/orgs/vnmd/repositories>dockerhub</a> or on <a href=https://github.com/NeuroDesk/neurocontainers/packages>github</a></p>
 <h2 id=pull-docker-containers>Pull Docker containers</h2>
@@ -234,7 +287,7 @@ docker</p>
 </code></pre></div><p>Replace <code>julia_1.6.1</code> with your selected application</p>
 </div>
 <div class=td-content style=page-break-before:always>
-<h1 id=pg-dde076c9513b160da47a52346f74d655>3 - Singularity</h1>
+<h1 id=pg-dde076c9513b160da47a52346f74d655>5 - Singularity</h1>
 <div class=lead>Neurodesk Singularity Containers</div>
 <p>Our docker containers are converted to singularity containers and stored on Object storage.</p>
 <h2 id=download-singularity-containers>Download Singularity Containers</h2>
