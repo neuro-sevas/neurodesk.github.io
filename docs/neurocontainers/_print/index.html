@@ -98,10 +98,10 @@ This is the multi-page printable view of this section.
 <div class=td-content>
 <h1 id=pg-032a02c0f4ba2de0dd4a701cff6790fe>1 - Windows 11 and Windows Subsystem for Linux</h1>
 <div class=lead>Use Neurocontainers on Windows 11 with WSL and Wayland Display Server</div>
-<h1 id=1-install-wsl>1. Install WSL</h1>
+<h2 id=1-install-wsl>1. Install WSL</h2>
 <p>Follow the instructions to enable Windows Subsystem for Linux 2 in Windows 11: <a href=https://docs.microsoft.com/en-us/windows/wsl/install>https://docs.microsoft.com/en-us/windows/wsl/install</a></p>
-<h1 id=2-configure-cvfms-singularity-and-lmod-only-needs-to-be-done-once>2. Configure CVFMS, Singularity and LMOD (only needs to be done once)</h1>
-<h2 id=install-singularity>Install singularity</h2>
+<h2 id=2-configure-cvfms-singularity-and-lmod-only-needs-to-be-done-once>2. Configure CVFMS, Singularity and LMOD (only needs to be done once)</h2>
+<h3 id=install-singularity>Install singularity</h3>
 <pre class="language-batch command-line" data-prompt=">">
 <code>export SINGULARITY_VERSION=3.9.3 VERSION=1.17.2 OS=linux ARCH=amd64
 wget -q https://dl.google.com/go/go$VERSION.$OS-$ARCH.tar.gz 
@@ -122,17 +122,17 @@ rm -rf singularity-ce-${SINGULARITY_VERSION}
 rm -rf /usr/local/go $GOPATH 
 ln -s /usr/local/singularity/bin/singularity /bin/ </code>
 </pre>
-<h2 id=setup-bindpaths-for-singularity-eg-in-bashrc>Setup Bindpaths for Singularity (e.g. in .bashrc)</h2>
+<h3 id=setup-bindpaths-for-singularity-eg-in-bashrc>Setup Bindpaths for Singularity (e.g. in .bashrc)</h3>
 <pre class="language-batch command-line" data-prompt=">">
 <code>export SINGULARITY_BINDPATH='/cvmfs,/mnt,/home'</code>
 </pre>
-<h2 id=cvmfs>CVMFS</h2>
+<h3 id=cvmfs>CVMFS</h3>
 <p>Follow the instructions here: <a href=https://neurodesk.github.io/docs/neurocontainers/cvmfs/>https://neurodesk.github.io/docs/neurocontainers/cvmfs/</a></p>
-<h2 id=lmod>LMOD</h2>
+<h3 id=lmod>LMOD</h3>
 <pre class="language-batch command-line" data-prompt=">">
 <code>apt install lmod</code>
 </pre>
-<h1 id=3-use-neurodesk-containers>3. Use Neurodesk containers</h1>
+<h2 id=3-use-neurodesk-containers>3. Use Neurodesk containers</h2>
 <pre class="language-batch command-line" data-prompt=">">
 <code>module use /cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/*
 ml av
