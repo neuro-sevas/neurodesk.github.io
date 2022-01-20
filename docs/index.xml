@@ -524,25 +524,25 @@ make -C builddir install
 cd ..
 rm -rf singularity-ce-${SINGULARITY_VERSION}
 rm -rf /usr/local/go $GOPATH
-ln -s /usr/local/singularity/bin/singularity /bin/
-&lt;/code>
+ln -s /usr/local/singularity/bin/singularity /bin/ &lt;/code>
+&lt;/pre>
+&lt;h2 id="setup-bindpaths-for-singularity-eg-in-bashrc">Setup Bindpaths for Singularity (e.g. in .bashrc)&lt;/h2>
+&lt;pre class="language-batch command-line" data-prompt=">">
+&lt;code>export SINGULARITY_BINDPATH='/cvmfs,/mnt,/home'&lt;/code>
 &lt;/pre>
 &lt;h2 id="cvmfs">CVMFS&lt;/h2>
 &lt;p>Follow the instructions here: &lt;a href="https://neurodesk.github.io/docs/neurocontainers/cvmfs/">https://neurodesk.github.io/docs/neurocontainers/cvmfs/&lt;/a>&lt;/p>
 &lt;h2 id="lmod">LMOD&lt;/h2>
 &lt;pre class="language-batch command-line" data-prompt=">">
-&lt;code>apt install lmod
-&lt;/code>
+&lt;code>apt install lmod&lt;/code>
 &lt;/pre>
 &lt;h1 id="3-use-neurodesk-containers">3. Use Neurodesk containers&lt;/h1>
 &lt;pre class="language-batch command-line" data-prompt=">">
 &lt;code>module use /cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/*
 ml av
 ml fsl
-fsleyes
-&lt;/code>
-&lt;/pre>&lt;blockquote>
-&lt;/blockquote></description></item><item><title>Docs: CVMFS</title><link>https://neurodesk.github.io/docs/neurocontainers/cvmfs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurocontainers/cvmfs/</guid><description>
+fsleyes&lt;/code>
+&lt;/pre></description></item><item><title>Docs: CVMFS</title><link>https://neurodesk.github.io/docs/neurocontainers/cvmfs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurocontainers/cvmfs/</guid><description>
 &lt;h1 id="install-cvmfs">Install CVMFS&lt;/h1>
 &lt;p>First you need to install CVMFS. Follow the official instructions here: &lt;a href="https://cvmfs.readthedocs.io/en/stable/cpt-quickstart.html#getting-the-software">https://cvmfs.readthedocs.io/en/stable/cpt-quickstart.html#getting-the-software&lt;/a>&lt;/p>
 &lt;p>one example for Windows Subsystem for Linux (WSL) could look like this:&lt;/p>
