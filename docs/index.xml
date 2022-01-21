@@ -506,7 +506,9 @@ Needs testing
 &lt;h2 id="2-configure-cvfms-singularity-and-lmod-only-needs-to-be-done-once">2. Configure CVFMS, Singularity and LMOD (only needs to be done once)&lt;/h2>
 &lt;h3 id="install-singularity">Install singularity&lt;/h3>
 &lt;pre class="language-batch command-line" data-prompt=">">
-&lt;code>export SINGULARITY_VERSION=3.9.3 VERSION=1.17.2 OS=linux ARCH=amd64
+&lt;code>
+sudo apt install make
+export SINGULARITY_VERSION=3.9.3 VERSION=1.17.2 OS=linux ARCH=amd64
 wget -q https://dl.google.com/go/go$VERSION.$OS-$ARCH.tar.gz
 sudo tar -C /usr/local -xzvf go$VERSION.$OS-$ARCH.tar.gz
 rm go$VERSION.$OS-$ARCH.tar.gz
@@ -519,11 +521,10 @@ tar -xzvf singularity-ce-${SINGULARITY_VERSION}.tar.gz
 cd singularity-ce-${SINGULARITY_VERSION}
 ./mconfig --prefix=/usr/local/singularity
 make -C builddir
-make -C builddir install
+sudo make -C builddir install
 cd ..
-rm -rf singularity-ce-${SINGULARITY_VERSION}
-rm -rf /usr/local/go $GOPATH
-ln -s /usr/local/singularity/bin/singularity /bin/ &lt;/code>
+sudo rm -rf singularity-ce-${SINGULARITY_VERSION}
+sudo rm -rf /usr/local/go $GOPATH &lt;/code>
 &lt;/pre>
 &lt;h3 id="setup-bindpaths-for-singularity-eg-in-bashrc">Setup Bindpaths for Singularity (e.g. in .bashrc)&lt;/h3>
 &lt;pre class="language-batch command-line" data-prompt=">">
