@@ -22,12 +22,12 @@
 ">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://neurodesk.github.io/docs/neurodesktop/getting-started/windows/"><meta property="article:section" content="docs">
-<meta property="article:modified_time" content="2022-01-05T11:08:38+10:00"><meta property="og:site_name" content="NeuroDesk">
+<meta property="article:modified_time" content="2022-01-27T18:41:53+11:00"><meta property="og:site_name" content="NeuroDesk">
 <meta itemprop=name content="Windows">
 <meta itemprop=description content="Install neurodesktop on Windows
 ">
-<meta itemprop=dateModified content="2022-01-05T11:08:38+10:00">
-<meta itemprop=wordCount content="449">
+<meta itemprop=dateModified content="2022-01-27T18:41:53+11:00">
+<meta itemprop=wordCount content="477">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="Windows">
 <meta name=twitter:description content="Install neurodesktop on Windows
@@ -68,7 +68,7 @@
 </li>
 </ul>
 </div>
-<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.35f1bc7c971e5b3b0c701e918fc307a8.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.e6f716831c48cea7b64a493810ba2cf3.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 </div>
 </nav>
 </header>
@@ -78,7 +78,7 @@
 <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
 <div id=td-sidebar-menu class=td-sidebar__inner>
 <form class="td-sidebar__search d-flex align-items-center">
-<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.35f1bc7c971e5b3b0c701e918fc307a8.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.e6f716831c48cea7b64a493810ba2cf3.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type=button data-toggle=collapse data-target=#td-section-nav aria-controls=td-docs-nav aria-expanded=false aria-label="Toggle section navigation">
 </button>
 </form>
@@ -179,7 +179,7 @@
 <li><a href=#2-run-neurodesktop>2. Run Neurodesktop</a></li>
 </ul>
 </li>
-<li><a href=#stopping-neurodesktop>Stopping neurodesktop:</a></li>
+<li><a href=#deleting-neurodesktop>Deleting neurodesktop:</a></li>
 <li><a href=#using-an-rdp-client>Using an RDP Client</a></li>
 <li><a href=#using-vnc>Using VNC</a>
 <ul>
@@ -236,8 +236,12 @@ We do not recommend the use of the Firefox browser for accessing Neurodesktop, a
 <li>User is <code>user</code></li>
 <li>Password is <code>password</code></li>
 </ul>
-<h2 id=stopping-neurodesktop>Stopping neurodesktop:</h2>
+<h2 id=deleting-neurodesktop>Deleting neurodesktop:</h2>
 <p>When done processing your data it is important to stop and remove the container - otherwise the next start or container update will give an error ("&mldr; The container name &ldquo;/neurodesktop&rdquo; is already in use&mldr;")</p>
+<div class="alert alert-primary" role=alert>
+<h4 class=alert-heading>Note</h4>
+Notice that any data that were saved outside of /neurodesktop-storage would be lost. Please make sure to move all your data to that folder before deleting neurodesktop.
+</div>
 <ol>
 <li>
 <p>Click on the terminal from which you ran neurodesktop</p>
@@ -290,7 +294,7 @@ Needs testing
 </pre>
 <p>Open a VNC Client and connect to port 5901</p>
 <div class="text-muted mt-5 pt-3 border-top">
-Last modified January 5, 2022: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/58efc425a3a4e8711dfa59d4a1906fcc251791a4>Update VNC instructions (58efc425)</a>
+Last modified January 27, 2022: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/1092563e39a146f29985c52a799cf4b55b2b470b>Update windows.md (1092563e)</a>
 </div>
 </div>
 </main>
