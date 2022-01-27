@@ -281,8 +281,12 @@ There is a bug in docker 3.3.0 for Mac that makes this command not run correctly
 &lt;li>User is &lt;code>user&lt;/code>&lt;/li>
 &lt;li>Password is &lt;code>password&lt;/code>&lt;/li>
 &lt;/ul>
-&lt;h2 id="stopping-neurodesktop">Stopping neurodesktop:&lt;/h2>
+&lt;h2 id="deleting-neurodesktop">Deleting neurodesktop:&lt;/h2>
 &lt;p>When done processing your data it is important to stop and remove the container - otherwise the next start or container update will give an error (&amp;quot;&amp;hellip; The container name &amp;ldquo;/neurodesktop&amp;rdquo; is already in use&amp;hellip;&amp;quot;)&lt;/p>
+&lt;div class="alert alert-primary" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+Notice that any data that were saved outside of /neurodesktop-storage would be lost. Please make sure to move all your data to that folder before deleting neurodesktop.
+&lt;/div>
 &lt;ol>
 &lt;li>
 &lt;p>Click on the terminal from which you ran neurodesktop&lt;/p>
