@@ -106,7 +106,34 @@ cvmfs_config stat -v neurodesk.ardc.edu.au&lt;/code>
 module use /cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/*
 ml fsl
 fslmaths&lt;/code>
-&lt;/pre></description></item><item><title>Docs: Datalad</title><link>https://neurodesk.github.io/docs/neurocontainers/datalad/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurocontainers/datalad/</guid><description>
+&lt;/pre></description></item><item><title>Docs: CVMFS-HPC</title><link>https://neurodesk.github.io/docs/neurocontainers/cvmfs-hpc/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurocontainers/cvmfs-hpc/</guid><description>
+&lt;p>Ideally the HPC admins would mount our CVMFS repositories for you, but if you just like to try it out there is a way of using it completely in user-space using Parrot (I tested this on a Centos 7 HPC):&lt;/p>
+&lt;h1 id="install-parrot">Install Parrot&lt;/h1>
+&lt;p>Install Parrot in your homedirectory in for example ~/tools:&lt;/p>
+&lt;pre class="language-batch command-line" data-prompt=">">
+&lt;code>cd ~
+cd ~/tools
+wget http://ccl.cse.nd.edu/software/files/cctools-7.4.2-x86_64-centos7.tar.gz
+tar xvf cctools-7.4.2-x86_64-centos7.tar.gz
+export PATH=~/tools/cctools-7.4.2-x86_64-centos7.tar.gz-dir/bin:$PATH
+export PYTHONPATH=~/tools/cctools-7.4.2-x86_64-centos7.tar.gz-dir/lib/python3.6/site-packages:${PYTHONPATH}
+export PARROT_ALLOW_SWITCHING_CVMFS_REPOSITORIES=yes
+export HTTP_PROXY='DIRECT;'
+export NEURODESK_S1="http://152.67.114.42/cvmfs"
+export PARROT_CVMFS_REPO="&lt;default-repositories> neurodesk.ardc.edu.au:url=${NEURODESK_S1}/neurodesk.ardc.edu.au,pubkey=~/tools/neurodesk.ardc.edu.au.pub"
+echo "-----BEGIN PUBLIC KEY-----" | tee ~/tools/neurodesk.ardc.edu.au.pub
+echo "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwUPEmxDp217SAtZxaBep" | tee -a ~/tools/neurodesk.ardc.edu.au.pub
+echo "Bi2TQcLoh5AJ//HSIz68ypjOGFjwExGlHb95Frhu1SpcH5OASbV+jJ60oEBLi3sD" | tee -a ~/tools/neurodesk.ardc.edu.au.pub
+echo "qA6rGYt9kVi90lWvEjQnhBkPb0uWcp1gNqQAUocybCzHvoiG3fUzAe259CrK09qR" | tee -a ~/tools/neurodesk.ardc.edu.au.pub
+echo "pX8sZhgK3eHlfx4ycyMiIQeg66AHlgVCJ2fKa6fl1vnh6adJEPULmn6vZnevvUke" | tee -a ~/tools/neurodesk.ardc.edu.au.pub
+echo "I6U1VcYTKm5dPMrOlY/fGimKlyWvivzVv1laa5TAR2Dt4CfdQncOz+rkXmWjLjkD" | tee -a ~/tools/neurodesk.ardc.edu.au.pub
+echo "87WMiTgtKybsmMLb2yCGSgLSArlSWhbMA0MaZSzAwE9PJKCCMvTANo5644zc8jBe" | tee -a ~/tools/neurodesk.ardc.edu.au.pub
+echo "NQIDAQAB" | tee -a ~/tools/neurodesk.ardc.edu.au.pub
+echo "-----END PUBLIC KEY-----" | tee -a ~/tools/neurodesk.ardc.edu.au.pub
+parrot_run bash
+ls ls /cvmfs/neurodesk.ardc.edu.au&lt;/code>
+&lt;/pre>&lt;blockquote>
+&lt;/blockquote></description></item><item><title>Docs: Datalad</title><link>https://neurodesk.github.io/docs/neurocontainers/datalad/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurocontainers/datalad/</guid><description>
 &lt;p>Once this is completed: &lt;a href="https://github.com/ReproNim/containers/issues/64#issuecomment-999126787">https://github.com/ReproNim/containers/issues/64#issuecomment-999126787&lt;/a>&lt;/p></description></item><item><title>Docs: Docker</title><link>https://neurodesk.github.io/docs/neurocontainers/docker/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurocontainers/docker/</guid><description>
 &lt;p>Our containers are automatically built in &lt;a href="https://github.com/NeuroDesk/neurocontainers/">https://github.com/NeuroDesk/neurocontainers/&lt;/a> and hosted on &lt;a href="https://hub.docker.com/orgs/vnmd/repositories">dockerhub&lt;/a> or on &lt;a href="https://github.com/NeuroDesk/neurocontainers/packages">github&lt;/a>&lt;/p>
 &lt;h2 id="pull-docker-containers">Pull Docker containers&lt;/h2>
