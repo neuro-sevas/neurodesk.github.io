@@ -175,16 +175,16 @@ containers. See &lt;a href="http://handbook.datalad.org/en/latest/basics/101-133
 &lt;ol>
 &lt;li>Navigate to Neurodesk-&amp;gt;Electrophysiology-&amp;gt;fieldtrip-&amp;gt;fieldtrip20211114 in the menu:&lt;/li>
 &lt;/ol>
-&lt;p>&lt;img src="https://neurodesk.github.io/static/fieldtrip/1_menu.png" alt="1_menu" title="1_menu">&lt;/p>
+&lt;p>&lt;img src="https://neurodesk.github.io/fieldtrip/1_menu.png" alt="1_menu" title="1_menu">&lt;/p>
 &lt;p>Once this window is loaded, you are ready to go:&lt;/p>
-&lt;p>&lt;img src="https://neurodesk.github.io/static/fieldtrip/2_container.PNG" alt="2_container" title="2_container">&lt;/p>
+&lt;p>&lt;img src="https://neurodesk.github.io/fieldtrip/2_container.PNG" alt="2_container" title="2_container">&lt;/p>
 &lt;br/>
 &lt;ol start="2">
 &lt;li>Type the following into the command window (replacing &amp;ldquo;yourscript.m&amp;rdquo; with the name of your custom script - note that you may also need to supply the full path):&lt;/li>
 &lt;/ol>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">run_fieldtrip.sh /opt/MCR/v99 yourscript.m
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>For example, here we ran a script to browser some raw data:&lt;/p>
-&lt;p>&lt;img src="https://neurodesk.github.io/static/fieldtrip/3_running.PNG" alt="3_running" title="3_running">&lt;/p>
+&lt;p>&lt;img src="https://neurodesk.github.io/fieldtrip/3_running.PNG" alt="3_running" title="3_running">&lt;/p>
 &lt;p>The fieldtrip GUI is displayed automatically and functions as it normally would when running inside Matlab.&lt;/p></description></item><item><title>Tutorials: Using fmriprep with neurodesk on an HPC</title><link>https://neurodesk.github.io/tutorials/functional_imaging/fmriprep_cvl/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/tutorials/functional_imaging/fmriprep_cvl/</guid><description>
 &lt;blockquote>
 &lt;p>&lt;em>This tutorial was created by Kelly G. Garner.&lt;/em>&lt;/p>
