@@ -1007,7 +1007,43 @@ We recommend the &lt;em>manual&lt;/em> install instructions, as the simplified i
 &lt;/ol>
 &lt;p>&lt;img src="https://neurodesk.github.io/Troubleshooting/Docker_troubleshooting.png" alt="Docker_troubleshooting" title="Docker_troubleshooting">&lt;/p>
 &lt;p>If you are still experiencing issues after this, you may need to update docker to the latest version. This can be achieved through &amp;ldquo;settings&amp;rdquo; in the docker engine, or (on windows) by right clicking on the docker tray icon:&lt;/p>
-&lt;p>&lt;img src="https://neurodesk.github.io/Troubleshooting/Docker_update.png" alt="Docker_update" title="Docker_update">&lt;/p></description></item><item><title>Docs: Release History</title><link>https://neurodesk.github.io/docs/neurodesktop/release-history/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/release-history/</guid><description>
+&lt;p>&lt;img src="https://neurodesk.github.io/Troubleshooting/Docker_update.png" alt="Docker_update" title="Docker_update">&lt;/p>
+&lt;p>##Windows Users: I got an error message &amp;lsquo;X killed&amp;rsquo;
+This may be due to Docker not having access to enough RAM from your PC/system.&lt;/p>
+&lt;p>If you are using WSL2 backend in Docker, then this is managed by Windows settings. Try the following steps to check how much RAM Docker has access to and increase the amount if necessary.&lt;/p>
+&lt;ol>
+&lt;li>Run Docker&lt;/li>
+&lt;li>Open a terminal (ie. Powershell) in the PC you want to use to run Neurodesktop (not in Neurodesktop itself) and type the following command:&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">docker info
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>This will generate information about your Docker installation (make sure Docker is running during this step)&lt;/p>
+&lt;ol start="3">
+&lt;li>Look for the line that says&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">Total Memory: **.**GiB
+&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="4">
+&lt;li>If this value is ~2GB, try increasing it*:
+&lt;ul>
+&lt;li>Create a .wslconfig file in your user directory (for more detail instructions see: &lt;a href="https://docs.microsoft.com/en-us/windows/wsl/wsl-config">https://docs.microsoft.com/en-us/windows/wsl/wsl-config&lt;/a>)&lt;/li>
+&lt;li>In the .wslconfig file include the following lines:&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">[wsl2]
+memory=32GB
+&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>Quit Docker (make sure it&amp;rsquo;s not running in the background, ie. system tray, check task manager)&lt;/li>
+&lt;li>In the terminal, run the following command&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">&lt;/code>&lt;/pre>&lt;/div>This will list any running distributions. For the update to be successful, WSL needs to have comletely stopped running (ie. no distributions running)
+&lt;ul>
+&lt;li>Restart Docker and rerun steps 1-3 to confirm it was successful
+If you are not using WSL2, you can check and manage your RAM allocation in the Docker desktop application.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Open the Docker application and navigate to settings &amp;gt; resources &amp;gt; advances&lt;/li>
+&lt;li>Scroll down to the Memory option and use the sliding bar to adjust the setting&lt;/li>
+&lt;li>Click apply and restart&lt;/li>
+&lt;/ol>
+&lt;p>*RAM requirements will vary based on the tools/data you are using. If the system you&amp;rsquo;re using has limited RAM, test out a few different amounts by running the above steps and then your analyses in Neurodesktop. Version 20220208 onwards has a memory monitor in the taskbar - you can use this to check how much memory Neurodesktop has access to and how much is being used by the analyses being run.&lt;/p></description></item><item><title>Docs: Release History</title><link>https://neurodesk.github.io/docs/neurodesktop/release-history/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/release-history/</guid><description>
 &lt;h2 id="20220128">20220128&lt;/h2>
 &lt;ul>
 &lt;li>update of Spinalcordtoolbox to 5.5&lt;/li>
