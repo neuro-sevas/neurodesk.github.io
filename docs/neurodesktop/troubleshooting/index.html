@@ -20,11 +20,11 @@
 <meta property="og:description" content="Are you experiencing issues with neurodesktop?">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://neurodesk.github.io/docs/neurodesktop/troubleshooting/"><meta property="article:section" content="docs">
-<meta property="article:modified_time" content="2022-02-15T17:52:48+10:30"><meta property="og:site_name" content="NeuroDesk">
+<meta property="article:modified_time" content="2022-02-15T19:11:36+10:30"><meta property="og:site_name" content="NeuroDesk">
 <meta itemprop=name content="Troubleshooting">
 <meta itemprop=description content="Are you experiencing issues with neurodesktop?">
-<meta itemprop=dateModified content="2022-02-15T17:52:48+10:30">
-<meta itemprop=wordCount content="718">
+<meta itemprop=dateModified content="2022-02-15T19:11:36+10:30">
+<meta itemprop=wordCount content="721">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="Troubleshooting">
 <meta name=twitter:description content="Are you experiencing issues with neurodesktop?">
@@ -64,7 +64,7 @@
 </li>
 </ul>
 </div>
-<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.5288e14070b4b3b0c849f6811d976075.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.b415ef17592c832634f1e6ce551d0ba8.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 </div>
 </nav>
 </header>
@@ -74,7 +74,7 @@
 <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
 <div id=td-sidebar-menu class=td-sidebar__inner>
 <form class="td-sidebar__search d-flex align-items-center">
-<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.5288e14070b4b3b0c849f6811d976075.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.b415ef17592c832634f1e6ce551d0ba8.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type=button data-toggle=collapse data-target=#td-section-nav aria-controls=td-docs-nav aria-expanded=false aria-label="Toggle section navigation">
 </button>
 </form>
@@ -247,7 +247,8 @@ memory=32GB
 <li>Quit Docker (make sure it&rsquo;s not running in the background, ie. system tray, check task manager)</li>
 <li>In the terminal, run the following command</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback></code></pre></div>This will list any running distributions. For the update to be successful, WSL needs to have comletely stopped running (ie. no distributions running)
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>wsl --running --list
+</code></pre></div>This will list any running distributions. For the update to be successful, WSL needs to have comletely stopped running (ie. no distributions running)
 <ul>
 <li>Restart Docker and rerun steps 1-3 to confirm it was successful
 If you are not using WSL2, you can check and manage your RAM allocation in the Docker desktop application.</li>
@@ -259,7 +260,7 @@ If you are not using WSL2, you can check and manage your RAM allocation in the D
 </ol>
 <p>*RAM requirements will vary based on the tools/data you are using. If the system you&rsquo;re using has limited RAM, test out a few different amounts by running the above steps and then your analyses in Neurodesktop. Version 20220208 onwards has a memory monitor in the taskbar - you can use this to check how much memory Neurodesktop has access to and how much is being used by the analyses being run.</p>
 <div class="text-muted mt-5 pt-3 border-top">
-Last modified February 15, 2022: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/e4f37660914817a07251d779fec5870cb172ba64>added FAQ for memory problem in Windows (e4f37660)</a>
+Last modified February 15, 2022: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/fb677e5f8a4831dd40c82775280177accdedcfc7>fixed error in instructions (fb677e5f)</a>
 </div>
 </div>
 </main>
