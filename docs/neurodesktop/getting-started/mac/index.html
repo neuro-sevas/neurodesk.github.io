@@ -22,12 +22,12 @@
 ">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://neurodesk.github.io/docs/neurodesktop/getting-started/mac/"><meta property="article:section" content="docs">
-<meta property="article:modified_time" content="2022-01-27T18:42:42+11:00"><meta property="og:site_name" content="NeuroDesk">
+<meta property="article:modified_time" content="2022-02-15T10:17:46+10:00"><meta property="og:site_name" content="NeuroDesk">
 <meta itemprop=name content="MacOS">
 <meta itemprop=description content="Install neurodesktop on MacOS
 ">
-<meta itemprop=dateModified content="2022-01-27T18:42:42+11:00">
-<meta itemprop=wordCount content="409">
+<meta itemprop=dateModified content="2022-02-15T10:17:46+10:00">
+<meta itemprop=wordCount content="418">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="MacOS">
 <meta name=twitter:description content="Install neurodesktop on MacOS
@@ -68,7 +68,7 @@
 </li>
 </ul>
 </div>
-<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.896d558fce85a09a66e00e26c3cb4e5f.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.07ad08756eb0ec120ffb8e79e795598b.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 </div>
 </nav>
 </header>
@@ -78,7 +78,7 @@
 <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
 <div id=td-sidebar-menu class=td-sidebar__inner>
 <form class="td-sidebar__search d-flex align-items-center">
-<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.896d558fce85a09a66e00e26c3cb4e5f.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.07ad08756eb0ec120ffb8e79e795598b.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type=button data-toggle=collapse data-target=#td-section-nav aria-controls=td-docs-nav aria-expanded=false aria-label="Toggle section navigation">
 </button>
 </form>
@@ -200,6 +200,7 @@
 <h2 id=minimum-system-requirements>Minimum System Requirements</h2>
 <ol>
 <li>At least 3GB free space for neurodesktop base image</li>
+<li>An Intel Mac. M1/ARM Macs are not yet supported.</li>
 <li>Docker requirements. Details found under <a href=https://docs.docker.com/get-docker/>https://docs.docker.com/get-docker/</a></li>
 </ol>
 <h2 id=quickstart>Quickstart</h2>
@@ -276,7 +277,7 @@ Needs testing
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>docker run --shm-size<span style=color:#ce5c00;font-weight:700>=</span>1gb -it --privileged --name neurodesktop -v ~/neurodesktop-storage:/neurodesktop-storage -e <span style=color:#000>VNC_ENABLE</span><span style=color:#ce5c00;font-weight:700>=</span><span style=color:#204a87>true</span> -p 5901:5901 -p 8080:8080 -h neurodesktop-20220128 vnmd/neurodesktop:20220128
 </code></pre></div><p>Open a VNC Client and connect to port 5901</p>
 <div class="text-muted mt-5 pt-3 border-top">
-Last modified January 27, 2022: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/c9ffa0dc2b8e98aa26d5dc3d7e3880ca6645bc9e>Update mac.md (c9ffa0dc)</a>
+Last modified February 15, 2022: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/55a7e0d180f1e4053117bcbf052092c5ca7ca00b>added that M1 macs are not supported (55a7e0d1)</a>
 </div>
 </div>
 </main>
