@@ -66,7 +66,7 @@
 </li>
 </ul>
 </div>
-<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.b415ef17592c832634f1e6ce551d0ba8.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.d2e18f5ebb3249c14acb69205c126005.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 </div>
 </nav>
 </header>
@@ -229,6 +229,21 @@ fmriprep /path/to/your/data <span style=color:#4e9a06>\ </span><span style=color
 <div class=td-content style=page-break-before:always>
 <h1 id=pg-8dfbf581aa47092d3c6ae308716ee073>3 - PhysIO</h1>
 <div class=lead>Example workflow for the PhysIO Toolbox</div>
+<h2 id=origin>Origin</h2>
+<p>The PhysIO Toolbox implements ideas for robust physiological noise modeling in fMRI, outlined in this paper:</p>
+<ol>
+<li>Kasper, L., Bollmann, S., Diaconescu, A.O., Hutton, C., Heinzle, J., Iglesias,
+S., Hauser, T.U., Sebold, M., Manjaly, Z.-M., Pruessmann, K.P., Stephan, K.E., 2017.
+<em>The PhysIO Toolbox for Modeling Physiological Noise in fMRI Data</em>.
+Journal of Neuroscience Methods 276, 56-72. <a href=https://doi.org/10.1016/j.jneumeth.2016.10.019>https://doi.org/10.1016/j.jneumeth.2016.10.019</a></li>
+</ol>
+<p>PhysIO is part of the open-source <a href=https://translationalneuromodeling.github.io/tapas/>TAPAS Software Package</a> for Translational Neuromodeling and Computational Psychiatry, introduced in the following paper:</p>
+<ol start=2>
+<li>Frässle, S., Aponte, E.A., Bollmann, S., Brodersen, K.H., Do, C.T., Harrison, O.K., Harrison, S.J., Heinzle, J., Iglesias, S., Kasper, L., Lomakina, E.I., Mathys, C., Müller-Schrader, M., Pereira, I., Petzschner, F.H., Raman, S., Schöbi, D., Toussaint, B., Weber, L.A., Yao, Y., Stephan, K.E., 2021. <em>TAPAS: an open-source software package for Translational Neuromodeling and Computational Psychiatry</em>. Frontiers in Psychiatry 12, 857. <a href=https://doi.org/10.3389/fpsyt.2021.680811>https://doi.org/10.3389/fpsyt.2021.680811</a></li>
+</ol>
+<p>Please cite these works if you use PhysIO and see the <a href=https://gitlab.ethz.ch/physio/physio-doc/-/wikis/FAQ#3-how-do-i-cite-physio>FAQ</a> for details.</p>
+<p>NeuroDesk offers the possibility of running PhysIO without installing Matlab or requiring a Matlab license. The functionality should be equivalent, though debugging and extending the toolbox, as well as unreleased development features, will only be available in the Matlab version of PhysIO, which is exlusively hosted on the <a href=https://github.com/translationalneuromodeling/tapas>TAPAS GitHub</a>.</p>
+<p>More general info about PhysIO besides NeuroDesk usage is found in the <a href=https://github.com/translationalneuromodeling/tapas/tree/master/PhysIO#readme>README</a> on GitHub.</p>
 <h2 id=purpose>Purpose</h2>
 <p>The general purpose of the PhysIO toolbox is model-based physiological noise correction of fMRI data using peripheral measures of respiration and cardiac pulsation (respiratory bellows, ECG, pulse oximeter/plethysmograph).</p>
 <p>It incorporates noise models of</p>
@@ -247,8 +262,6 @@ fmriprep /path/to/your/data <span style=color:#4e9a06>\ </span><span style=color
 <li>Integration in fMRI pre-processing pipelines as SPM Toolbox (Batch Editor GUI).</li>
 </ul>
 <p>The accompanying technical paper about the toolbox concept and methodology can be found at: <a href=https://doi.org/10.1016/j.jneumeth.2016.10.019>https://doi.org/10.1016/j.jneumeth.2016.10.019</a></p>
-<p>See more info about PhysIO (incl. relevant papers to cite and FAQ) in the online <a href=https://github.com/translationalneuromodeling/tapas/tree/master/PhysIO#readme>README</a> on GitHub. PhysIO is part of the TAPAS Software Collection GitHub, and its Matlab version is exclusively hosted there.</p>
-<p>NeuroDesk offers the possibility of running PhysIO without installing Matlab or requiring a Matlab license. The functionality should be equivalent, though debugging and extending the toolbox, as well as unreleased development features, will only be available in the Matlab version of PhysIO.</p>
 <h2 id=download-example-data>Download Example Data</h2>
 <p>The example data should already be present in NeuroDesk in the following folder <code>/opt/spm12</code></p>
 <p>If you cannot find the example data there:</p>

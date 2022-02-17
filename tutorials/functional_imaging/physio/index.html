@@ -22,12 +22,12 @@
 ">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://neurodesk.github.io/tutorials/functional_imaging/physio/"><meta property="article:section" content="tutorials">
-<meta property="article:modified_time" content="2022-02-15T14:49:02+10:00"><meta property="og:site_name" content="NeuroDesk">
+<meta property="article:modified_time" content="2022-02-17T12:34:01-05:00"><meta property="og:site_name" content="NeuroDesk">
 <meta itemprop=name content="PhysIO">
 <meta itemprop=description content="Example workflow for the PhysIO Toolbox
 ">
-<meta itemprop=dateModified content="2022-02-15T14:49:02+10:00">
-<meta itemprop=wordCount content="704">
+<meta itemprop=dateModified content="2022-02-17T12:34:01-05:00">
+<meta itemprop=wordCount content="843">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="PhysIO">
 <meta name=twitter:description content="Example workflow for the PhysIO Toolbox
@@ -68,7 +68,7 @@
 </li>
 </ul>
 </div>
-<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.b415ef17592c832634f1e6ce551d0ba8.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.d2e18f5ebb3249c14acb69205c126005.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 </div>
 </nav>
 </header>
@@ -78,7 +78,7 @@
 <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
 <div id=td-sidebar-menu class=td-sidebar__inner>
 <form class="td-sidebar__search d-flex align-items-center">
-<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.b415ef17592c832634f1e6ce551d0ba8.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.d2e18f5ebb3249c14acb69205c126005.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type=button data-toggle=collapse data-target=#td-section-nav aria-controls=td-docs-nav aria-expanded=false aria-label="Toggle section navigation">
 </button>
 </form>
@@ -157,6 +157,7 @@
 </div>
 <div class=td-toc><nav id=TableOfContents>
 <ul>
+<li><a href=#origin>Origin</a></li>
 <li><a href=#purpose>Purpose</a></li>
 <li><a href=#download-example-data>Download Example Data</a></li>
 <li><a href=#copy-your-own-data>Copy your own data</a></li>
@@ -171,6 +172,21 @@
 <div class=lead>Example workflow for the PhysIO Toolbox</div>
 <header class=article-meta>
 </header>
+<h2 id=origin>Origin</h2>
+<p>The PhysIO Toolbox implements ideas for robust physiological noise modeling in fMRI, outlined in this paper:</p>
+<ol>
+<li>Kasper, L., Bollmann, S., Diaconescu, A.O., Hutton, C., Heinzle, J., Iglesias,
+S., Hauser, T.U., Sebold, M., Manjaly, Z.-M., Pruessmann, K.P., Stephan, K.E., 2017.
+<em>The PhysIO Toolbox for Modeling Physiological Noise in fMRI Data</em>.
+Journal of Neuroscience Methods 276, 56-72. <a href=https://doi.org/10.1016/j.jneumeth.2016.10.019>https://doi.org/10.1016/j.jneumeth.2016.10.019</a></li>
+</ol>
+<p>PhysIO is part of the open-source <a href=https://translationalneuromodeling.github.io/tapas/>TAPAS Software Package</a> for Translational Neuromodeling and Computational Psychiatry, introduced in the following paper:</p>
+<ol start=2>
+<li>Frässle, S., Aponte, E.A., Bollmann, S., Brodersen, K.H., Do, C.T., Harrison, O.K., Harrison, S.J., Heinzle, J., Iglesias, S., Kasper, L., Lomakina, E.I., Mathys, C., Müller-Schrader, M., Pereira, I., Petzschner, F.H., Raman, S., Schöbi, D., Toussaint, B., Weber, L.A., Yao, Y., Stephan, K.E., 2021. <em>TAPAS: an open-source software package for Translational Neuromodeling and Computational Psychiatry</em>. Frontiers in Psychiatry 12, 857. <a href=https://doi.org/10.3389/fpsyt.2021.680811>https://doi.org/10.3389/fpsyt.2021.680811</a></li>
+</ol>
+<p>Please cite these works if you use PhysIO and see the <a href=https://gitlab.ethz.ch/physio/physio-doc/-/wikis/FAQ#3-how-do-i-cite-physio>FAQ</a> for details.</p>
+<p>NeuroDesk offers the possibility of running PhysIO without installing Matlab or requiring a Matlab license. The functionality should be equivalent, though debugging and extending the toolbox, as well as unreleased development features, will only be available in the Matlab version of PhysIO, which is exlusively hosted on the <a href=https://github.com/translationalneuromodeling/tapas>TAPAS GitHub</a>.</p>
+<p>More general info about PhysIO besides NeuroDesk usage is found in the <a href=https://github.com/translationalneuromodeling/tapas/tree/master/PhysIO#readme>README</a> on GitHub.</p>
 <h2 id=purpose>Purpose</h2>
 <p>The general purpose of the PhysIO toolbox is model-based physiological noise correction of fMRI data using peripheral measures of respiration and cardiac pulsation (respiratory bellows, ECG, pulse oximeter/plethysmograph).</p>
 <p>It incorporates noise models of</p>
@@ -189,8 +205,6 @@
 <li>Integration in fMRI pre-processing pipelines as SPM Toolbox (Batch Editor GUI).</li>
 </ul>
 <p>The accompanying technical paper about the toolbox concept and methodology can be found at: <a href=https://doi.org/10.1016/j.jneumeth.2016.10.019>https://doi.org/10.1016/j.jneumeth.2016.10.019</a></p>
-<p>See more info about PhysIO (incl. relevant papers to cite and FAQ) in the online <a href=https://github.com/translationalneuromodeling/tapas/tree/master/PhysIO#readme>README</a> on GitHub. PhysIO is part of the TAPAS Software Collection GitHub, and its Matlab version is exclusively hosted there.</p>
-<p>NeuroDesk offers the possibility of running PhysIO without installing Matlab or requiring a Matlab license. The functionality should be equivalent, though debugging and extending the toolbox, as well as unreleased development features, will only be available in the Matlab version of PhysIO.</p>
 <h2 id=download-example-data>Download Example Data</h2>
 <p>The example data should already be present in NeuroDesk in the following folder <code>/opt/spm12</code></p>
 <p>If you cannot find the example data there:</p>
@@ -243,7 +257,7 @@
 <h2 id=further-info-on-physio>Further Info on PhysIO</h2>
 <p>Please check out the <a href=https://github.com/translationalneuromodeling/tapas/tree/master/PhysIO#readme>README</a> and <a href=https://gitlab.ethz.ch/physio/physio-doc/-/wikis/FAQ>FAQ</a></p>
 <div class="text-muted mt-5 pt-3 border-top">
-Last modified February 15, 2022: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/d7533604c5fb2e7a51d4f803ed3acd2211fb0d0c>Update "Neurodesktop-storage/" to "storage/" (d7533604)</a>
+Last modified February 17, 2022: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/77fde17dc1ad8c782513c9dd2457147de4adc016>Update physio.md, clearer refs to TAPAS and papers (77fde17d)</a>
 </div>
 </div>
 </main>
