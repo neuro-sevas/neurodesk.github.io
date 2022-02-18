@@ -216,6 +216,20 @@ Needs testing
 &lt;h2 id="quickstart">Quickstart&lt;/h2>
 &lt;h3 id="1-install-docker">1. Install Docker&lt;/h3>
 &lt;p>Install Docker from here: &lt;a href="https://docs.docker.com/get-docker/">https://docs.docker.com/get-docker/&lt;/a>&lt;/p>
+&lt;blockquote>
+&lt;p>Docker for MacOS by default runs with 2GB Memory. For actual workloads, 4GB Memory minimum for docker is highly recommended&lt;/p>
+&lt;/blockquote>
+&lt;ol>
+&lt;li>
+&lt;p>Open the Docker Desktop and Navigate to the Resources tab. Instructions found at &lt;a href="https://docs.docker.com/desktop/mac/#resources">https://docs.docker.com/desktop/mac/#resources&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Increase the Memory slider from 2.00 GB to 4.00 GB (or greater)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Increase Swap slider from 1GB to 2GB (or greater)&lt;/p>
+&lt;/li>
+&lt;/ol>
 &lt;h3 id="2-run-neurodesktop">2. Run Neurodesktop&lt;/h3>
 &lt;p>Create a local folder where the downloaded applications will be stored, e.g. ~/neurodesktop-storage&lt;/p>
 &lt;ol>

@@ -22,12 +22,12 @@
 ">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://neurodesk.github.io/docs/neurodesktop/getting-started/mac/"><meta property="article:section" content="docs">
-<meta property="article:modified_time" content="2022-02-15T10:17:46+10:00"><meta property="og:site_name" content="NeuroDesk">
+<meta property="article:modified_time" content="2022-02-18T14:37:24+10:00"><meta property="og:site_name" content="NeuroDesk">
 <meta itemprop=name content="MacOS">
 <meta itemprop=description content="Install neurodesktop on MacOS
 ">
-<meta itemprop=dateModified content="2022-02-15T10:17:46+10:00">
-<meta itemprop=wordCount content="418">
+<meta itemprop=dateModified content="2022-02-18T14:37:24+10:00">
+<meta itemprop=wordCount content="473">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="MacOS">
 <meta name=twitter:description content="Install neurodesktop on MacOS
@@ -68,7 +68,7 @@
 </li>
 </ul>
 </div>
-<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.40ee156beb0dea35f3d328e5827915af.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.931b099a96a8e4cd91a4477b3b331f46.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 </div>
 </nav>
 </header>
@@ -78,7 +78,7 @@
 <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
 <div id=td-sidebar-menu class=td-sidebar__inner>
 <form class="td-sidebar__search d-flex align-items-center">
-<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.40ee156beb0dea35f3d328e5827915af.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.931b099a96a8e4cd91a4477b3b331f46.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type=button data-toggle=collapse data-target=#td-section-nav aria-controls=td-docs-nav aria-expanded=false aria-label="Toggle section navigation">
 </button>
 </form>
@@ -206,6 +206,20 @@
 <h2 id=quickstart>Quickstart</h2>
 <h3 id=1-install-docker>1. Install Docker</h3>
 <p>Install Docker from here: <a href=https://docs.docker.com/get-docker/>https://docs.docker.com/get-docker/</a></p>
+<blockquote>
+<p>Docker for MacOS by default runs with 2GB Memory. For actual workloads, 4GB Memory minimum for docker is highly recommended</p>
+</blockquote>
+<ol>
+<li>
+<p>Open the Docker Desktop and Navigate to the Resources tab. Instructions found at <a href=https://docs.docker.com/desktop/mac/#resources>https://docs.docker.com/desktop/mac/#resources</a></p>
+</li>
+<li>
+<p>Increase the Memory slider from 2.00 GB to 4.00 GB (or greater)</p>
+</li>
+<li>
+<p>Increase Swap slider from 1GB to 2GB (or greater)</p>
+</li>
+</ol>
 <h3 id=2-run-neurodesktop>2. Run Neurodesktop</h3>
 <p>Create a local folder where the downloaded applications will be stored, e.g. ~/neurodesktop-storage</p>
 <ol>
@@ -277,7 +291,7 @@ Needs testing
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>docker run --shm-size<span style=color:#ce5c00;font-weight:700>=</span>1gb -it --privileged --name neurodesktop -v ~/neurodesktop-storage:/neurodesktop-storage -e <span style=color:#000>VNC_ENABLE</span><span style=color:#ce5c00;font-weight:700>=</span><span style=color:#204a87>true</span> -p 5901:5901 -p 8080:8080 -h neurodesktop-20220128 vnmd/neurodesktop:20220128
 </code></pre></div><p>Open a VNC Client and connect to port 5901</p>
 <div class="text-muted mt-5 pt-3 border-top">
-Last modified February 15, 2022: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/55a7e0d180f1e4053117bcbf052092c5ca7ca00b>added that M1 macs are not supported (55a7e0d1)</a>
+Last modified February 18, 2022: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/5838d6703d485026a1a9124b026675fe375cb0c9>Add MacOS recommended docker memory setting (5838d670)</a>
 </div>
 </div>
 </main>

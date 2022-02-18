@@ -66,7 +66,7 @@
 </li>
 </ul>
 </div>
-<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.40ee156beb0dea35f3d328e5827915af.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.931b099a96a8e4cd91a4477b3b331f46.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 </div>
 </nav>
 </header>
@@ -464,6 +464,20 @@ Needs testing
 <h2 id=quickstart>Quickstart</h2>
 <h3 id=1-install-docker>1. Install Docker</h3>
 <p>Install Docker from here: <a href=https://docs.docker.com/get-docker/>https://docs.docker.com/get-docker/</a></p>
+<blockquote>
+<p>Docker for MacOS by default runs with 2GB Memory. For actual workloads, 4GB Memory minimum for docker is highly recommended</p>
+</blockquote>
+<ol>
+<li>
+<p>Open the Docker Desktop and Navigate to the Resources tab. Instructions found at <a href=https://docs.docker.com/desktop/mac/#resources>https://docs.docker.com/desktop/mac/#resources</a></p>
+</li>
+<li>
+<p>Increase the Memory slider from 2.00 GB to 4.00 GB (or greater)</p>
+</li>
+<li>
+<p>Increase Swap slider from 1GB to 2GB (or greater)</p>
+</li>
+</ol>
 <h3 id=2-run-neurodesktop>2. Run Neurodesktop</h3>
 <p>Create a local folder where the downloaded applications will be stored, e.g. ~/neurodesktop-storage</p>
 <ol>
