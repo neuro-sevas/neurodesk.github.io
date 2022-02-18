@@ -66,7 +66,7 @@
 </li>
 </ul>
 </div>
-<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.da616bd9d1fda106f5f7dcd25db05382.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.3563484760413f81e896e131a0b54661.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 </div>
 </nav>
 </header>
@@ -76,7 +76,7 @@
 <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
 <div id=td-sidebar-menu class=td-sidebar__inner>
 <form class="td-sidebar__search d-flex align-items-center">
-<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.da616bd9d1fda106f5f7dcd25db05382.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.3563484760413f81e896e131a0b54661.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type=button data-toggle=collapse data-target=#td-section-nav aria-controls=td-docs-nav aria-expanded=false aria-label="Toggle section navigation">
 </button>
 </form>
@@ -186,12 +186,15 @@
 </header>
 <h2 id=what-is-neurodesk>What is Neurodesk?</h2>
 <p>Neurodesk provides a containerised data analysis environment to facilitate reproducible analysis of neuroimaging data. Analysis pipelines for neuroimaging data typically rely on specific versions of packages and software, and are dependent on their native operating system. These dependencies mean that a working analysis pipeline may fail or produce different results on a new computer, or even on the same computer after a software update. Neurodesk provides a platform in which anyone, anywhere, using any computer can reproduce your original research findings given the original data and analysis code.</p>
-<p>More information: <a href=/docs/overview/>A Neurodesk Overview</a>
-A 2 minute video explaining what Neurodesk is: <a href="https://www.youtube.com/watch?v=JLv_5fycugw">Neurodesk in 2 minutes</a>
-A 15 minute video explaining what Neurodesk is: <a href=https://youtu.be/2ATgTOsiGdY>Neurodesk in 15 minutes</a>
-A 35 minute video explaining the technical details of Neurodesk: <a href=https://youtu.be/V5gAA9NiX_s>Neurodesk in 35 minutes - behind the scenes</a></p>
+<p>More information:</p>
+<ul>
+<li><a href=/docs/overview/>A Neurodesk Overview</a></li>
+<li>A 2 minute video explaining what Neurodesk is: <a href="https://www.youtube.com/watch?v=JLv_5fycugw">Neurodesk in 2 minutes</a></li>
+<li>A 15 minute video explaining what Neurodesk is: <a href=https://youtu.be/2ATgTOsiGdY>Neurodesk in 15 minutes</a></li>
+<li>A 35 minute video explaining the technical details of Neurodesk: <a href=https://youtu.be/V5gAA9NiX_s>Neurodesk in 35 minutes - behind the scenes</a></li>
+</ul>
 <h2 id=can-i-run-neurodesk-on-an-hpc-without-docker>Can I run Neurodesk on an HPC without Docker?</h2>
-<p>Yes, our project aims to run on the hardware you have access to. However, without docker support you cannot use our desktop interface <a href=/docs/Neurodesktop>NeuroDesktop</a> but you can still use the command line interface <a href=https://neurodesk.github.io/docs/neurocommand/getting-started/linux/#command-line-mode-eg-running-on-an-hpc-or-cvl>NeuroCommand on HPC</a>. This works well for batch processing on HPCs once you developed your pipeline in our desktop interface. If your HPC provides a desktop interface you can use all our graphical applications without any issues and the GUIs even work via SSH x-forwarding - it&rsquo;s not the most performant experience, but it works well enough.</p>
+<p>Yes, our project aims to run on the hardware you have access to. However, without docker support you cannot use our desktop interface <a href=/docs/neurodesktop/getting-started>NeuroDesktop</a> but you can still use the command line interface <a href=https://neurodesk.github.io/docs/neurocommand/getting-started/linux/#command-line-mode-eg-running-on-an-hpc-or-cvl>NeuroCommand on HPC</a>. This works well for batch processing on HPCs once you developed your pipeline in our desktop interface. If your HPC provides a desktop interface you can use all our graphical applications without any issues and the GUIs even work via SSH x-forwarding - it&rsquo;s not the most performant experience, but it works well enough.</p>
 <h2 id=is-there-reduced-performance-when-using-containers>Is there reduced performance when using containers?</h2>
 <p>If you are running containers on Linux there is no performance penalty - on an HPC with a Lustre filesystem it can even be faster to run our containers than running natively on the filesystem (because meta data operations are shifted to the compute node - more information can be found here: Rioux, Pierre, Gregory Kiar, Alexandre Hutton, Alan C. Evans, and Shawn T. Brown. ‘Deploying Large Fixed File Datasets with SquashFS and Singularity’. ArXiv:2002.06129 [Cs], 14 February 2020. <a href=http://arxiv.org/abs/2002.06129.)>http://arxiv.org/abs/2002.06129.)</a>. However, running Neurodesktop on Windows and Mac will have a performance penality, because Linux runs in a Hypervisor on these systems.</p>
 <h1 id=how-can-i-see-how-much-resources-neurodesk-containers-need>How can I see how much resources Neurodesk containers need?</h1>
@@ -199,7 +202,7 @@ A 35 minute video explaining the technical details of Neurodesk: <a href=https:/
 <div class=section-index>
 </div>
 <div class="text-muted mt-5 pt-3 border-top">
-Last modified February 18, 2022: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/fb5c4f981db80ba063344f0a697c31c17ba9710a>added FAQ (fb5c4f98)</a>
+Last modified February 18, 2022: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/5cebf00a88ec4c66ff317cd8d4c2d5c06147cb57>fix links (5cebf00a)</a>
 </div>
 </div>
 </main>
