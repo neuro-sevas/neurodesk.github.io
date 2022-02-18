@@ -66,7 +66,7 @@
 </li>
 </ul>
 </div>
-<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.3563484760413f81e896e131a0b54661.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.96150542655fd28d8e31968cdd6922e8.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 </div>
 </nav>
 </header>
@@ -76,7 +76,7 @@
 <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
 <div id=td-sidebar-menu class=td-sidebar__inner>
 <form class="td-sidebar__search d-flex align-items-center">
-<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.3563484760413f81e896e131a0b54661.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.96150542655fd28d8e31968cdd6922e8.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type=button data-toggle=collapse data-target=#td-section-nav aria-controls=td-docs-nav aria-expanded=false aria-label="Toggle section navigation">
 </button>
 </form>
@@ -199,10 +199,16 @@
 <p>If you are running containers on Linux there is no performance penalty - on an HPC with a Lustre filesystem it can even be faster to run our containers than running natively on the filesystem (because meta data operations are shifted to the compute node - more information can be found here: Rioux, Pierre, Gregory Kiar, Alexandre Hutton, Alan C. Evans, and Shawn T. Brown. ‘Deploying Large Fixed File Datasets with SquashFS and Singularity’. ArXiv:2002.06129 [Cs], 14 February 2020. <a href=http://arxiv.org/abs/2002.06129.)>http://arxiv.org/abs/2002.06129.)</a>. However, running Neurodesktop on Windows and Mac will have a performance penality, because Linux runs in a Hypervisor on these systems.</p>
 <h1 id=how-can-i-see-how-much-resources-neurodesk-containers-need>How can I see how much resources Neurodesk containers need?</h1>
 <p>In Linux the containers run as normal processes and you can use htop and top to inspect the resource footprint. For Windows and Mac this is a bit intransparent and we wrote some information here: <a href=https://neurodesk.github.io/docs/neurodesktop/troubleshooting/#i-got-an-error-message-x-killed>Troubleshooting</a></p>
+<h1 id=how-do-i-get-my-files-in-their>How do I get my files in their?</h1>
+<p>It depends where you are running Neurodesk and where your files are. We provide many different ways from drag-and-drop, to cloud storage to file mounts. An overview about Storage can be found here: [Storage in Neurodesk]https://neurodesk.github.io/docs/neurodesktop/storage/</p>
+<h1 id=what-applications-are-included-in-neurodesk>What applications are included in Neurodesk?</h1>
+<p>We provide certain applications as part of the Neurodesktop image (<a href=https://neurodesk.github.io/docs/neurodesktop/whatsinthebox/>https://neurodesk.github.io/docs/neurodesktop/whatsinthebox/</a>) - these are applications that don&rsquo;t work well in containers. The majority of softare applications is provided via containers and a full list can be found here: <a href=https://neurodesk.github.io/applications/>https://neurodesk.github.io/applications/</a></p>
+<h1 id=can-i-just-use-the-plain-containers>Can I just use the plain containers?</h1>
+<p>Yes, there are multiple ways of using the containers direclty and we provide an overview here: <a href=https://neurodesk.github.io/docs/neurocontainers/>https://neurodesk.github.io/docs/neurocontainers/</a></p>
 <div class=section-index>
 </div>
 <div class="text-muted mt-5 pt-3 border-top">
-Last modified February 18, 2022: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/5cebf00a88ec4c66ff317cd8d4c2d5c06147cb57>fix links (5cebf00a)</a>
+Last modified February 18, 2022: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/494476075e45d293bb963742be3e64347ea1208e>added more to FAQ (49447607)</a>
 </div>
 </div>
 </main>
