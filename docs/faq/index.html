@@ -175,6 +175,11 @@
 <li><a href=#what-is-neurodesk>What is Neurodesk?</a></li>
 <li><a href=#can-i-run-neurodesk-on-an-hpc-without-docker>Can I run Neurodesk on an HPC without Docker?</a></li>
 <li><a href=#is-there-reduced-performance-when-using-containers>Is there reduced performance when using containers?</a></li>
+<li><a href=#how-can-i-see-how-much-resources-neurodesk-containers-need>How can I see how much resources Neurodesk containers need?</a></li>
+<li><a href=#how-do-i-get-my-files-in-their>How do I get my files in their?</a></li>
+<li><a href=#what-applications-are-included-in-neurodesk>What applications are included in Neurodesk?</a></li>
+<li><a href=#can-i-just-use-the-plain-containers>Can I just use the plain containers?</a></li>
+<li><a href=#how-can-i-contribute-new-containers>How can I contribute new containers?</a></li>
 </ul>
 </nav></div>
 </aside>
@@ -197,20 +202,20 @@
 <p>Yes, our project aims to run on the hardware you have access to. However, without docker support you cannot use our desktop interface <a href=/docs/neurodesktop/getting-started>NeuroDesktop</a> but you can still use the command line interface <a href=https://neurodesk.github.io/docs/neurocommand/getting-started/linux/#command-line-mode-eg-running-on-an-hpc-or-cvl>NeuroCommand on HPC</a>. This works well for batch processing on HPCs once you developed your pipeline in our desktop interface. If your HPC provides a desktop interface you can use all our graphical applications without any issues and the GUIs even work via SSH x-forwarding - it&rsquo;s not the most performant experience, but it works well enough.</p>
 <h2 id=is-there-reduced-performance-when-using-containers>Is there reduced performance when using containers?</h2>
 <p>If you are running containers on Linux there is no performance penalty - on an HPC with a Lustre filesystem it can even be faster to run our containers than running natively on the filesystem (because meta data operations are shifted to the compute node - more information can be found here: Rioux, Pierre, Gregory Kiar, Alexandre Hutton, Alan C. Evans, and Shawn T. Brown. ‘Deploying Large Fixed File Datasets with SquashFS and Singularity’. ArXiv:2002.06129 [Cs], 14 February 2020. <a href=http://arxiv.org/abs/2002.06129.)>http://arxiv.org/abs/2002.06129.)</a>. However, running Neurodesktop on Windows and Mac will have a performance penality, because Linux runs in a Hypervisor on these systems.</p>
-<h1 id=how-can-i-see-how-much-resources-neurodesk-containers-need>How can I see how much resources Neurodesk containers need?</h1>
+<h2 id=how-can-i-see-how-much-resources-neurodesk-containers-need>How can I see how much resources Neurodesk containers need?</h2>
 <p>In Linux the containers run as normal processes and you can use htop and top to inspect the resource footprint. For Windows and Mac this is a bit intransparent and we wrote some information here: <a href=https://neurodesk.github.io/docs/neurodesktop/troubleshooting/#i-got-an-error-message-x-killed>Troubleshooting</a></p>
-<h1 id=how-do-i-get-my-files-in-their>How do I get my files in their?</h1>
+<h2 id=how-do-i-get-my-files-in-their>How do I get my files in their?</h2>
 <p>It depends where you are running Neurodesk and where your files are. We provide many different ways from drag-and-drop, to cloud storage to file mounts. An overview about Storage can be found here: <a href=https://neurodesk.github.io/docs/neurodesktop/storage/>Storage in Neurodesk</a></p>
-<h1 id=what-applications-are-included-in-neurodesk>What applications are included in Neurodesk?</h1>
+<h2 id=what-applications-are-included-in-neurodesk>What applications are included in Neurodesk?</h2>
 <p>We provide certain applications as part of the Neurodesktop image (<a href=https://neurodesk.github.io/docs/neurodesktop/whatsinthebox/>https://neurodesk.github.io/docs/neurodesktop/whatsinthebox/</a>) - these are applications that don&rsquo;t work well in containers. The majority of softare applications is provided via containers and a full list can be found here: <a href=https://neurodesk.github.io/applications/>https://neurodesk.github.io/applications/</a></p>
-<h1 id=can-i-just-use-the-plain-containers>Can I just use the plain containers?</h1>
+<h2 id=can-i-just-use-the-plain-containers>Can I just use the plain containers?</h2>
 <p>Yes, there are multiple ways of using the containers direclty and we provide an overview here: <a href=https://neurodesk.github.io/docs/neurocontainers/>https://neurodesk.github.io/docs/neurocontainers/</a></p>
-<h1 id=how-can-i-contribute-new-containers>How can I contribute new containers?</h1>
+<h2 id=how-can-i-contribute-new-containers>How can I contribute new containers?</h2>
 <p>We are still working on making this easier, but the current workflow to add new applications is described here: <a href=https://neurodesk.github.io/developers/new_tools/add_tool/>https://neurodesk.github.io/developers/new_tools/add_tool/</a></p>
 <div class=section-index>
 </div>
 <div class="text-muted mt-5 pt-3 border-top">
-Last modified February 18, 2022: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/5a1e9b409203b1ffaf9fe99df0c0a3757471a441>added one more FAQ (5a1e9b40)</a>
+Last modified February 18, 2022: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/f5fad6554f85aa41c3a8513760e00aa71a441d98>fixed headline formatting (f5fad655)</a>
 </div>
 </div>
 </main>
