@@ -150,8 +150,8 @@ We recommend the &lt;em>manual&lt;/em> install instructions, as the simplified i
 &lt;p>&lt;img src="https://neurodesk.github.io/Troubleshooting/Docker_troubleshooting.png" alt="Docker_troubleshooting" title="Docker_troubleshooting">&lt;/p>
 &lt;p>If you are still experiencing issues after this, you may need to update docker to the latest version. This can be achieved through &amp;ldquo;settings&amp;rdquo; in the docker engine, or (on windows) by right clicking on the docker tray icon:&lt;/p>
 &lt;p>&lt;img src="https://neurodesk.github.io/Troubleshooting/Docker_update.png" alt="Docker_update" title="Docker_update">&lt;/p>
-&lt;p>##Windows Users: I got an error message &amp;lsquo;X killed&amp;rsquo;
-This may be due to Docker not having access to enough RAM from your PC/system.&lt;/p>
+&lt;h2 id="i-got-an-error-message-x-killed">I got an error message &amp;lsquo;X killed&amp;rsquo;&lt;/h2>
+&lt;p>This may be due to Docker not having access to enough RAM from your PC/system.&lt;/p>
 &lt;p>If you are using WSL2 backend in Docker, then this is managed by Windows settings. Try the following steps to check how much RAM Docker has access to and increase the amount if necessary.&lt;/p>
 &lt;ol>
 &lt;li>Run Docker&lt;/li>
