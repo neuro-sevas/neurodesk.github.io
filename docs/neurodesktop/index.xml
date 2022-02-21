@@ -211,6 +211,14 @@ memory=32GB
 &lt;li>Click apply and restart&lt;/li>
 &lt;/ol>
 &lt;p>*RAM requirements will vary based on the tools/data you are using. If the system you&amp;rsquo;re using has limited RAM, test out a few different amounts by running the above steps and then your analyses in Neurodesktop. Version 20220208 onwards has a memory monitor in the taskbar - you can use this to check how much memory Neurodesktop has access to and how much is being used by the analyses being run.&lt;/p></description></item><item><title>Docs: Release History</title><link>https://neurodesk.github.io/docs/neurodesktop/release-history/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/release-history/</guid><description>
+&lt;h2 id="20220221">20220221&lt;/h2>
+&lt;ul>
+&lt;li>update for PhysIO toolbox (physiological noise correction for fMRI) to r2021a including the latest SPM r8224&lt;/li>
+&lt;li>update of lcmodel to include basis sets for 1.5-9.4T&lt;/li>
+&lt;li>added a memory display plugin to illustrate how much memory is available to the container and how much is consumed&lt;/li>
+&lt;li>added a version checker to help with identifying if a new version is available&lt;/li>
+&lt;li>added file upload via guacamole (+ update of guacamole to 1.4) - users can now drag and drop their files onto guacamole and they get copied to the desktop&lt;/li>
+&lt;/ul>
 &lt;h2 id="20220128">20220128&lt;/h2>
 &lt;ul>
 &lt;li>update of Spinalcordtoolbox to 5.5&lt;/li>
