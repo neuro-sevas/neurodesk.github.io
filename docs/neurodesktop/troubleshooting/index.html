@@ -20,11 +20,11 @@
 <meta property="og:description" content="Are you experiencing issues with neurodesktop?">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://neurodesk.github.io/docs/neurodesktop/troubleshooting/"><meta property="article:section" content="docs">
-<meta property="article:modified_time" content="2022-02-21T09:57:22+10:00"><meta property="og:site_name" content="NeuroDesk">
+<meta property="article:modified_time" content="2022-02-21T10:00:17+10:00"><meta property="og:site_name" content="NeuroDesk">
 <meta itemprop=name content="Troubleshooting">
 <meta itemprop=description content="Are you experiencing issues with neurodesktop?">
-<meta itemprop=dateModified content="2022-02-21T09:57:22+10:00">
-<meta itemprop=wordCount content="803">
+<meta itemprop=dateModified content="2022-02-21T10:00:17+10:00">
+<meta itemprop=wordCount content="852">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="Troubleshooting">
 <meta name=twitter:description content="Are you experiencing issues with neurodesktop?">
@@ -64,7 +64,7 @@
 </li>
 </ul>
 </div>
-<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.a70bd570b559db72ae1cf2dddb383803.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.f3705bfcc401787c1133c8efd4ef215c.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 </div>
 </nav>
 </header>
@@ -74,7 +74,7 @@
 <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
 <div id=td-sidebar-menu class=td-sidebar__inner>
 <form class="td-sidebar__search d-flex align-items-center">
-<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.a70bd570b559db72ae1cf2dddb383803.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.f3705bfcc401787c1133c8efd4ef215c.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type=button data-toggle=collapse data-target=#td-section-nav aria-controls=td-docs-nav aria-expanded=false aria-label="Toggle section navigation">
 </button>
 </form>
@@ -171,6 +171,7 @@
 <div class=td-toc><nav id=TableOfContents>
 <ul>
 <li><a href=#the-clipboard-in-firefox-is-not-working-correctly>The clipboard in Firefox is not working correctly</a></li>
+<li><a href=#the-clipboard-doesnt-work-in-chrome-or-edge>The clipboard doesn&rsquo;t work in chrome or edge</a></li>
 <li><a href=#docker-cannot-connect-to-the-docker-daemon-at-unixvarrundockersock-is-the-docker-daemon-running>docker: Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?.</a></li>
 <li><a href=#windows-users-wsl-not-installed-properly>Windows users: WSL not installed properly</a></li>
 <li><a href=#windows-users-not-enough-free-space-on-the-partition-in-windows-and-wsl2>Windows users: Not enough free space on the partition in Windows and WSL2</a></li>
@@ -201,6 +202,9 @@
 </li>
 </ul>
 <p>Then close firefox and restart. Then the clipboard should work as one would expect.</p>
+<h2 id=the-clipboard-doesnt-work-in-chrome-or-edge>The clipboard doesn&rsquo;t work in chrome or edge</h2>
+<p>The browsers have a security feature to protect you from something stealing your clipboard content. Depending on your security settings you have to enable it explicitly - it&rsquo;s a little icon in the browser address bar that looks like a clipboard:
+<img src=https://user-images.githubusercontent.com/4021595/154870249-731f8fe3-474f-43ff-aac4-c460893e4246.png alt=image></p>
 <h2 id=docker-cannot-connect-to-the-docker-daemon-at-unixvarrundockersock-is-the-docker-daemon-running>docker: Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?.</h2>
 <p>This is usually a docker-related error, not related to neurodesktop itself. To troubleshoot docker, we can try a simpler container first:</p>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>docker run hello-world
@@ -275,7 +279,7 @@ If you are not using WSL2, you can check and manage your RAM allocation in the D
 </ol>
 <p>*RAM requirements will vary based on the tools/data you are using. If the system you&rsquo;re using has limited RAM, test out a few different amounts by running the above steps and then your analyses in Neurodesktop. Version 20220208 onwards has a memory monitor in the taskbar - you can use this to check how much memory Neurodesktop has access to and how much is being used by the analyses being run.</p>
 <div class="text-muted mt-5 pt-3 border-top">
-Last modified February 21, 2022: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/73c11ef56af2bf69e27d044ae06ad9de9311e295>documented clipboard problems in firefox as described in https://github.com/NeuroDesk/neurodesktop/issues/81 (73c11ef5)</a>
+Last modified February 21, 2022: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/c7fae9af09bdfab0693f804a40c7e01b74d43fc2>added edge as well (c7fae9af)</a>
 </div>
 </div>
 </main>
