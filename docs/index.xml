@@ -83,7 +83,12 @@ If you get errors in neurodesktop then check if the ~/neurodesktop-storage direc
 See text and images copied to the clipboard&amp;#34;.
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>You should press &amp;ldquo;Allow&amp;rdquo;&lt;/p>
 &lt;/div>
-&lt;ol start="4">
+&lt;div class="alert alert-primary" role="alert">
+&lt;p>If using Firefox, you might not be able to paste clipboard content into the virtual desktop from the host computer. In that case, please follow the instructions here:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">https://neurodesk.github.io/docs/neurodesktop/troubleshooting/#the-clipboard-in-firefox-is-not-working-correctly
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="alert alert-primary" role="alert">
+&lt;pre>&lt;code>&amp;lt;ol start=&amp;quot;4&amp;quot;&amp;gt;
+&lt;/code>&lt;/pre>
 &lt;li>neurodesktop is ready to use!&lt;/li>
 &lt;/ol>
 &lt;ul>
@@ -94,7 +99,8 @@ See text and images copied to the clipboard&amp;#34;.
 &lt;p>When done processing your data it is important to stop and remove the container - otherwise the next start or container update will give an error (&amp;quot;&amp;hellip; The container name &amp;ldquo;/neurodesktop&amp;rdquo; is already in use&amp;hellip;&amp;quot;)&lt;/p>
 &lt;div class="alert alert-primary" role="alert">
 &lt;h4 class="alert-heading">Note&lt;/h4>
-Notice that any data that were saved outside of /neurodesktop-storage would be lost. Please make sure to move all your data to that folder before deleting neurodesktop.
+&lt;pre>&lt;code>Notice that any data that were saved outside of /neurodesktop-storage would be lost. Please make sure to move all your data to that folder before deleting neurodesktop.
+&lt;/code>&lt;/pre>
 &lt;/div>
 &lt;ol>
 &lt;li>
@@ -202,7 +208,7 @@ print("Num GPUs Available: ", len(tf.config.list_physical_devices('GPU')))&lt;/c
 &lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/135449288-6c3e9bbd-fe5f-4f43-aa4a-8a798ba629e6.png" alt="image">&lt;/p>
 &lt;h2 id="using-an-rdp-client">Using an RDP Client&lt;/h2>
 &lt;p>Startup Neurodesktop using the following command:&lt;/p>
-&lt;p>&lt;pre class="language-shell command-line" data-prompt="$" data-output="2-6">
+&lt;pre class="language-shell command-line" data-prompt="$" data-output="2-6">
 &lt;code>sudo docker run \
 --shm-size=1gb -it --privileged --name neurodesktop \
 -v ~/neurodesktop-storage:/neurodesktop-storage \
@@ -210,9 +216,9 @@ print("Num GPUs Available: ", len(tf.config.list_physical_devices('GPU')))&lt;/c
 -p 8080:8080 -p 3390:3389 \
 -h neurodesktop-20220128 vnmd/neurodesktop:20220128&lt;/code>&lt;/pre>
 &lt;div class="alert alert-primary" role="alert">
-If you want to connect via RDP using a different port, replace 3390 in the previous and next step with your port
+&lt;pre>&lt;code>If you want to connect via RDP using a different port, replace 3390 in the previous and next step with your port
+&lt;/code>&lt;/pre>
 &lt;/div>
-&lt;/p>
 &lt;p>Open your RDP client and connect to Computer &lt;code>localhost:3390&lt;/code>&lt;/p>
 &lt;p>Use the following details to login if prompted&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">username: user
@@ -235,12 +241,14 @@ password: password
 -p 8080:8080 \
 -h neurodesktop-20220128 vnmd/neurodesktop:20220128 --vnc --rdp&lt;/code>&lt;/pre>
 &lt;div class="alert alert-primary" role="alert">
-&lt;p>VNC allows for multiple desktop connections to same instance&lt;/p>
+&lt;pre>&lt;code>&amp;lt;p&amp;gt;VNC allows for multiple desktop connections to same instance&amp;lt;/p&amp;gt;
+&lt;/code>&lt;/pre>
 &lt;p>Note: Neurodesktop VNC on the browser currently does not support auto-resolution&lt;/p>
 &lt;/div>
 &lt;h3 id="using-a-vnc-client">Using a VNC Client&lt;/h3>
 &lt;div class="alert alert-warning" role="alert">
-Needs testing
+&lt;pre>&lt;code>Needs testing
+&lt;/code>&lt;/pre>
 &lt;/div>
 &lt;p>Startup Neurodesktop using the following command:&lt;/p>
 &lt;pre class="language-shell command-line" data-prompt="$" data-output="2-6">
@@ -250,7 +258,9 @@ Needs testing
 -e HOST_UID=&amp;#34;$(id -u)&amp;#34; -e HOST_GID=&amp;#34;$(id -g)&amp;#34;\
 -p 8080:8080 -p 5901:5901 \
 -h neurodesktop-20220128 vnmd/neurodesktop:20220128 --vnc&lt;/code>&lt;/pre>
-&lt;p>Open a VNC Client and connect to port 5901&lt;/p></description></item><item><title>Docs: MacOS</title><link>https://neurodesk.github.io/docs/neurodesktop/getting-started/mac/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/getting-started/mac/</guid><description>
+&lt;p>Open a VNC Client and connect to port 5901&lt;/p>
+&lt;/div>
+&lt;/div></description></item><item><title>Docs: MacOS</title><link>https://neurodesk.github.io/docs/neurodesktop/getting-started/mac/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/getting-started/mac/</guid><description>
 &lt;h2 id="minimum-system-requirements">Minimum System Requirements&lt;/h2>
 &lt;ol>
 &lt;li>At least 3GB free space for neurodesktop base image&lt;/li>

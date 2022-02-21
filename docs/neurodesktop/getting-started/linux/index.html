@@ -22,12 +22,12 @@
 ">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://neurodesk.github.io/docs/neurodesktop/getting-started/linux/"><meta property="article:section" content="docs">
-<meta property="article:modified_time" content="2022-01-27T18:43:31+11:00"><meta property="og:site_name" content="NeuroDesk">
+<meta property="article:modified_time" content="2022-02-21T13:31:35+11:00"><meta property="og:site_name" content="NeuroDesk">
 <meta itemprop=name content="Linux">
 <meta itemprop=description content="Install neurodesktop on Linux
 ">
-<meta itemprop=dateModified content="2022-01-27T18:43:31+11:00">
-<meta itemprop=wordCount content="767">
+<meta itemprop=dateModified content="2022-02-21T13:31:35+11:00">
+<meta itemprop=wordCount content="798">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="Linux">
 <meta name=twitter:description content="Install neurodesktop on Linux
@@ -68,7 +68,7 @@
 </li>
 </ul>
 </div>
-<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.9d3cdea269a9db6705691979594de050.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.35f573027759533a1ee4f40bb5c62940.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 </div>
 </nav>
 </header>
@@ -78,7 +78,7 @@
 <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
 <div id=td-sidebar-menu class=td-sidebar__inner>
 <form class="td-sidebar__search d-flex align-items-center">
-<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.9d3cdea269a9db6705691979594de050.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.35f573027759533a1ee4f40bb5c62940.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type=button data-toggle=collapse data-target=#td-section-nav aria-controls=td-docs-nav aria-expanded=false aria-label="Toggle section navigation">
 </button>
 </form>
@@ -181,25 +181,6 @@
 <li><a href=#2-run-neurodesktop>2. Run Neurodesktop</a></li>
 </ul>
 </li>
-<li><a href=#deleting-neurodesktop>Deleting neurodesktop:</a></li>
-<li><a href=#installing-docker>Installing Docker</a>
-<ul>
-<li><a href=#rhelcentos-yum-based>RHEL/CentOS (yum-based)</a></li>
-<li><a href=#ubuntudebian-apt-based>Ubuntu/Debian (apt-based)</a></li>
-</ul>
-</li>
-<li><a href=#gpu-support>GPU support</a>
-<ul>
-<li><a href=#rhelcentos-yum-based-1>RHEL/CentOS (yum-based)</a></li>
-<li><a href=#running-neurodesktop-container-with-gpu>Running neurodesktop container with GPU</a></li>
-</ul>
-</li>
-<li><a href=#using-an-rdp-client>Using an RDP Client</a></li>
-<li><a href=#using-vnc>Using VNC</a>
-<ul>
-<li><a href=#using-a-vnc-client>Using a VNC Client</a></li>
-</ul>
-</li>
 </ul>
 </nav></div>
 </aside>
@@ -248,7 +229,12 @@ If you get errors in neurodesktop then check if the ~/neurodesktop-storage direc
 See text and images copied to the clipboard&#34;.
 </code></pre></div><p>You should press &ldquo;Allow&rdquo;</p>
 </div>
-<ol start=4>
+<div class="alert alert-primary" role=alert>
+<p>If using Firefox, you might not be able to paste clipboard content into the virtual desktop from the host computer. In that case, please follow the instructions here:</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>https://neurodesk.github.io/docs/neurodesktop/troubleshooting/#the-clipboard-in-firefox-is-not-working-correctly
+</code></pre></div><div class="alert alert-primary" role=alert>
+<pre><code>&lt;ol start=&quot;4&quot;&gt;
+</code></pre>
 <li>neurodesktop is ready to use!</li>
 </ol>
 <ul>
@@ -259,7 +245,8 @@ See text and images copied to the clipboard&#34;.
 <p>When done processing your data it is important to stop and remove the container - otherwise the next start or container update will give an error ("&mldr; The container name &ldquo;/neurodesktop&rdquo; is already in use&mldr;")</p>
 <div class="alert alert-primary" role=alert>
 <h4 class=alert-heading>Note</h4>
-Notice that any data that were saved outside of /neurodesktop-storage would be lost. Please make sure to move all your data to that folder before deleting neurodesktop.
+<pre><code>Notice that any data that were saved outside of /neurodesktop-storage would be lost. Please make sure to move all your data to that folder before deleting neurodesktop.
+</code></pre>
 </div>
 <ol>
 <li>
@@ -366,7 +353,7 @@ print("Num GPUs Available: ", len(tf.config.list_physical_devices('GPU')))</code
 <p><img src=https://user-images.githubusercontent.com/4021595/135449288-6c3e9bbd-fe5f-4f43-aa4a-8a798ba629e6.png alt=image></p>
 <h2 id=using-an-rdp-client>Using an RDP Client</h2>
 <p>Startup Neurodesktop using the following command:</p>
-<p><pre class="language-shell command-line" data-prompt=$ data-output=2-6>
+<pre class="language-shell command-line" data-prompt=$ data-output=2-6>
 <code>sudo docker run \
   --shm-size=1gb -it --privileged --name neurodesktop \
   -v ~/neurodesktop-storage:/neurodesktop-storage \
@@ -374,9 +361,9 @@ print("Num GPUs Available: ", len(tf.config.list_physical_devices('GPU')))</code
   -p 8080:8080 -p 3390:3389 \
   -h neurodesktop-20220128 vnmd/neurodesktop:20220128</code></pre>
 <div class="alert alert-primary" role=alert>
-If you want to connect via RDP using a different port, replace 3390 in the previous and next step with your port
+<pre><code>If you want to connect via RDP using a different port, replace 3390 in the previous and next step with your port
+</code></pre>
 </div>
-</p>
 <p>Open your RDP client and connect to Computer <code>localhost:3390</code></p>
 <p>Use the following details to login if prompted</p>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>username: user
@@ -399,12 +386,14 @@ password: password
   -p 8080:8080 \
   -h neurodesktop-20220128 vnmd/neurodesktop:20220128 --vnc --rdp</code></pre>
 <div class="alert alert-primary" role=alert>
-<p>VNC allows for multiple desktop connections to same instance</p>
+<pre><code>&lt;p&gt;VNC allows for multiple desktop connections to same instance&lt;/p&gt;
+</code></pre>
 <p>Note: Neurodesktop VNC on the browser currently does not support auto-resolution</p>
 </div>
 <h3 id=using-a-vnc-client>Using a VNC Client</h3>
 <div class="alert alert-warning" role=alert>
-Needs testing
+<pre><code>Needs testing
+</code></pre>
 </div>
 <p>Startup Neurodesktop using the following command:</p>
 <pre class="language-shell command-line" data-prompt=$ data-output=2-6>
@@ -415,8 +404,10 @@ Needs testing
   -p 8080:8080 -p 5901:5901 \
   -h neurodesktop-20220128 vnmd/neurodesktop:20220128 --vnc</code></pre>
 <p>Open a VNC Client and connect to port 5901</p>
+</div>
+</div>
 <div class="text-muted mt-5 pt-3 border-top">
-Last modified January 27, 2022: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/c31461dac872886f933c7300c7a7ca3537944a32>Update linux.md (c31461da)</a>
+Last modified February 21, 2022: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/8c4e50e3582b3166919b4bc6e6b5904977a6ae56>Update linux.md (8c4e50e3)</a>
 </div>
 </div>
 </main>
