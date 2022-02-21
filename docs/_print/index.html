@@ -66,7 +66,7 @@
 </li>
 </ul>
 </div>
-<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.842e94c101fd8e13dd776734fc785ff7.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.4aaf59984bdaedd5d477cfaac28b6abe.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 </div>
 </nav>
 </header>
@@ -1006,6 +1006,13 @@ Needs testing
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>sshfs -o allow_root USER@TARGET_HOST:TARGET_PATH SOURCE_PATH
 </code></pre></div><p>A better option is to use <code>scp</code> and copy data from an SSH endpoint:</p>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>scp /neurodesk/myfile user@remoteserver:/data/
+</code></pre></div><p>An alternative is to mount the SSHFS target into a parent directory on your local machine or VM and then use the -v option in the docker run command to bind the parent directory of the SSHFS mount. NOTE: the SSHFS <em>has</em> to be mounted to a subdirectory inside a parent directory which is then bound to the docker container. If you directly bind to the mounted directory itself, your Neurodesktop container will stop being able to access it if the SSHFS mount disconnects and will not be able to access it again without restarting the Neurodesktop container.</p>
+<p>For example, on a local Linux machine or VM:</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>sshfs -o allow_root USER@TARGET_HOST:TARGET_PATH/MyData SOURCE_PATH/SSHFS_Mounts/MyData
+</code></pre></div><p>Then add the following line to the docker run command when starting Neurodesktop (note the rshared flag):</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>-v /SSHFS_Mounts:/data:rshared <span style=color:#4e9a06>\
+</span></code></pre></div><p>TIP: If you use key pair authentication instead of password for your SSHFS mount, you can use the reconnect flag to reconnect automatically if the connection drops:</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>sshfs -o <span style=color:#000>IdentityFile</span><span style=color:#ce5c00;font-weight:700>=</span>~/.ssh/id_rsa,allow_root,ServerAliveInterval<span style=color:#ce5c00;font-weight:700>=</span>5,ServerAliveCountMax<span style=color:#ce5c00;font-weight:700>=</span><span style=color:#0000cf;font-weight:700>3</span> USER@TARGET_HOST:TARGET_PATH/MyData SOURCE_PATH/SSHFS_Mounts/MyData
 </code></pre></div>
 </div>
 <div class=td-content style=page-break-before:always>
