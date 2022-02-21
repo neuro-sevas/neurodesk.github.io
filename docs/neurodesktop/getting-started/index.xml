@@ -40,9 +40,8 @@ See text and images copied to the clipboard&amp;#34;.
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>You should press &amp;ldquo;Allow&amp;rdquo;&lt;/p>
 &lt;/div>
 &lt;div class="alert alert-primary" role="alert">
-&lt;p>If using Firefox, you might not be able to paste clipboard content into the virtual desktop from the host computer. In that case, please follow the instructions here:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">https://neurodesk.github.io/docs/neurodesktop/troubleshooting/#the-clipboard-in-firefox-is-not-working-correctly
-&lt;/code>&lt;/pre>&lt;/div>
+If using Firefox, you might not be able to paste clipboard content into the virtual desktop from the host computer. In that case, please follow the instructions here:
+&lt;a href="https://neurodesk.github.io/docs/neurodesktop/troubleshooting/#the-clipboard-in-firefox-is-not-working-correctly">https://neurodesk.github.io/docs/neurodesktop/troubleshooting/#the-clipboard-in-firefox-is-not-working-correctly&lt;/a>
 &lt;/div>
 &lt;ol start="4">
 &lt;li>neurodesktop is ready to use!&lt;/li>
