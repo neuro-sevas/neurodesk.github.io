@@ -66,7 +66,7 @@
 </li>
 </ul>
 </div>
-<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.35f573027759533a1ee4f40bb5c62940.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.cdeec52921c62c3142cdef2223a882db.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 </div>
 </nav>
 </header>
@@ -939,9 +939,15 @@ We recommend the <em>manual</em> install instructions, as the simplified install
 <p><img src=/Troubleshooting/Docker_troubleshooting.png alt=Docker_troubleshooting title=Docker_troubleshooting></p>
 <p>If you are still experiencing issues after this, you may need to update docker to the latest version. This can be achieved through &ldquo;settings&rdquo; in the docker engine, or (on windows) by right clicking on the docker tray icon:</p>
 <p><img src=/Troubleshooting/Docker_update.png alt=Docker_update title=Docker_update></p>
-<h2 id=i-got-an-error-message-x-killed>I got an error message &lsquo;X killed&rsquo;</h2>
-<p>This may be due to Docker not having access to enough RAM from your PC/system.</p>
-<p>If you are using WSL2 backend in Docker, then this is managed by Windows settings. Try the following steps to check how much RAM Docker has access to and increase the amount if necessary.</p>
+<h2 id=i-got-an-error-message-x-killed-or-not-enough-memory>I got an error message &lsquo;X killed&rsquo; or not enough memory</h2>
+<p>This may be due to Docker not having access to enough RAM from your host computer.</p>
+<h3 id=if-you-are-using-docker-on-macos>If you are using Docker on MacOS</h3>
+<ol>
+<li>The memory amount is managed via the Docker settings:
+<img src=https://user-images.githubusercontent.com/4021595/154880061-cff2dde0-632d-4d8c-b627-28df6b074f48.png alt=image></li>
+</ol>
+<h3 id=if-you-are-using-docker-on-windows-10-with-the-wsl2-backend>If you are using Docker on Windows 10 with the WSL2 backend</h3>
+<p>then this is managed by Windows settings. Try the following steps to check how much RAM Docker has access to and increase the amount if necessary.</p>
 <ol>
 <li>Run Docker</li>
 <li>Open a terminal (ie. Powershell) in the PC you want to use to run Neurodesktop (not in Neurodesktop itself) and type the following command:</li>
@@ -967,10 +973,12 @@ memory=32GB
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>wsl --running --list
 </code></pre></div>This will list any running distributions. For the update to be successful, WSL needs to have comletely stopped running (ie. no distributions running)
 <ul>
-<li>Restart Docker and rerun steps 1-3 to confirm it was successful
-If you are not using WSL2, you can check and manage your RAM allocation in the Docker desktop application.</li>
+<li>Restart Docker and rerun steps 1-3 to confirm it was successful</li>
 </ul>
 </li>
+</ol>
+<h3 id=if-you-are-not-using-wsl2-you-can-check-and-manage-your-ram-allocation-in-the-docker-desktop-application>If you are not using WSL2, you can check and manage your RAM allocation in the Docker desktop application.</h3>
+<ol>
 <li>Open the Docker application and navigate to settings > resources > advances</li>
 <li>Scroll down to the Memory option and use the sliding bar to adjust the setting</li>
 <li>Click apply and restart</li>

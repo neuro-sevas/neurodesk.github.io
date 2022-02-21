@@ -20,11 +20,11 @@
 <meta property="og:description" content="Are you experiencing issues with neurodesktop?">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://neurodesk.github.io/docs/neurodesktop/troubleshooting/"><meta property="article:section" content="docs">
-<meta property="article:modified_time" content="2022-02-21T12:13:34+10:00"><meta property="og:site_name" content="NeuroDesk">
+<meta property="article:modified_time" content="2022-02-21T12:39:55+10:00"><meta property="og:site_name" content="NeuroDesk">
 <meta itemprop=name content="Troubleshooting">
 <meta itemprop=description content="Are you experiencing issues with neurodesktop?">
-<meta itemprop=dateModified content="2022-02-21T12:13:34+10:00">
-<meta itemprop=wordCount content="852">
+<meta itemprop=dateModified content="2022-02-21T12:39:55+10:00">
+<meta itemprop=wordCount content="877">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="Troubleshooting">
 <meta name=twitter:description content="Are you experiencing issues with neurodesktop?">
@@ -64,7 +64,7 @@
 </li>
 </ul>
 </div>
-<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.35f573027759533a1ee4f40bb5c62940.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.cdeec52921c62c3142cdef2223a882db.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 </div>
 </nav>
 </header>
@@ -74,7 +74,7 @@
 <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
 <div id=td-sidebar-menu class=td-sidebar__inner>
 <form class="td-sidebar__search d-flex align-items-center">
-<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.35f573027759533a1ee4f40bb5c62940.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.cdeec52921c62c3142cdef2223a882db.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type=button data-toggle=collapse data-target=#td-section-nav aria-controls=td-docs-nav aria-expanded=false aria-label="Toggle section navigation">
 </button>
 </form>
@@ -177,7 +177,13 @@
 <li><a href=#windows-users-not-enough-free-space-on-the-partition-in-windows-and-wsl2>Windows users: Not enough free space on the partition in Windows and WSL2</a></li>
 <li><a href=#windows-users-failure-to-connect-to-neurodesktop-in-firefox>Windows users: Failure to connect to Neurodesktop in Firefox</a></li>
 <li><a href=#trouble-installing-neurodesk-images>Trouble installing neurodesk images</a></li>
-<li><a href=#i-got-an-error-message-x-killed>I got an error message &lsquo;X killed&rsquo;</a></li>
+<li><a href=#i-got-an-error-message-x-killed-or-not-enough-memory>I got an error message &lsquo;X killed&rsquo; or not enough memory</a>
+<ul>
+<li><a href=#if-you-are-using-docker-on-macos>If you are using Docker on MacOS</a></li>
+<li><a href=#if-you-are-using-docker-on-windows-10-with-the-wsl2-backend>If you are using Docker on Windows 10 with the WSL2 backend</a></li>
+<li><a href=#if-you-are-not-using-wsl2-you-can-check-and-manage-your-ram-allocation-in-the-docker-desktop-application>If you are not using WSL2, you can check and manage your RAM allocation in the Docker desktop application.</a></li>
+</ul>
+</li>
 </ul>
 </nav></div>
 </aside>
@@ -241,9 +247,15 @@ We recommend the <em>manual</em> install instructions, as the simplified install
 <p><img src=/Troubleshooting/Docker_troubleshooting.png alt=Docker_troubleshooting title=Docker_troubleshooting></p>
 <p>If you are still experiencing issues after this, you may need to update docker to the latest version. This can be achieved through &ldquo;settings&rdquo; in the docker engine, or (on windows) by right clicking on the docker tray icon:</p>
 <p><img src=/Troubleshooting/Docker_update.png alt=Docker_update title=Docker_update></p>
-<h2 id=i-got-an-error-message-x-killed>I got an error message &lsquo;X killed&rsquo;</h2>
-<p>This may be due to Docker not having access to enough RAM from your PC/system.</p>
-<p>If you are using WSL2 backend in Docker, then this is managed by Windows settings. Try the following steps to check how much RAM Docker has access to and increase the amount if necessary.</p>
+<h2 id=i-got-an-error-message-x-killed-or-not-enough-memory>I got an error message &lsquo;X killed&rsquo; or not enough memory</h2>
+<p>This may be due to Docker not having access to enough RAM from your host computer.</p>
+<h3 id=if-you-are-using-docker-on-macos>If you are using Docker on MacOS</h3>
+<ol>
+<li>The memory amount is managed via the Docker settings:
+<img src=https://user-images.githubusercontent.com/4021595/154880061-cff2dde0-632d-4d8c-b627-28df6b074f48.png alt=image></li>
+</ol>
+<h3 id=if-you-are-using-docker-on-windows-10-with-the-wsl2-backend>If you are using Docker on Windows 10 with the WSL2 backend</h3>
+<p>then this is managed by Windows settings. Try the following steps to check how much RAM Docker has access to and increase the amount if necessary.</p>
 <ol>
 <li>Run Docker</li>
 <li>Open a terminal (ie. Powershell) in the PC you want to use to run Neurodesktop (not in Neurodesktop itself) and type the following command:</li>
@@ -269,17 +281,19 @@ memory=32GB
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>wsl --running --list
 </code></pre></div>This will list any running distributions. For the update to be successful, WSL needs to have comletely stopped running (ie. no distributions running)
 <ul>
-<li>Restart Docker and rerun steps 1-3 to confirm it was successful
-If you are not using WSL2, you can check and manage your RAM allocation in the Docker desktop application.</li>
+<li>Restart Docker and rerun steps 1-3 to confirm it was successful</li>
 </ul>
 </li>
+</ol>
+<h3 id=if-you-are-not-using-wsl2-you-can-check-and-manage-your-ram-allocation-in-the-docker-desktop-application>If you are not using WSL2, you can check and manage your RAM allocation in the Docker desktop application.</h3>
+<ol>
 <li>Open the Docker application and navigate to settings > resources > advances</li>
 <li>Scroll down to the Memory option and use the sliding bar to adjust the setting</li>
 <li>Click apply and restart</li>
 </ol>
 <p>*RAM requirements will vary based on the tools/data you are using. If the system you&rsquo;re using has limited RAM, test out a few different amounts by running the above steps and then your analyses in Neurodesktop. Version 20220208 onwards has a memory monitor in the taskbar - you can use this to check how much memory Neurodesktop has access to and how much is being used by the analyses being run.</p>
 <div class="text-muted mt-5 pt-3 border-top">
-Last modified February 21, 2022: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/22a9f5809c2605f31e591bca65bd85e507d79d18>space under image (22a9f580)</a>
+Last modified February 21, 2022: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/1e08bd511eda40c621d46541e7311fd066b9bad5>added mac and printscreen (1e08bd51)</a>
 </div>
 </div>
 </main>

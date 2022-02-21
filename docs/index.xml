@@ -990,9 +990,15 @@ We recommend the &lt;em>manual&lt;/em> install instructions, as the simplified i
 &lt;p>&lt;img src="https://neurodesk.github.io/Troubleshooting/Docker_troubleshooting.png" alt="Docker_troubleshooting" title="Docker_troubleshooting">&lt;/p>
 &lt;p>If you are still experiencing issues after this, you may need to update docker to the latest version. This can be achieved through &amp;ldquo;settings&amp;rdquo; in the docker engine, or (on windows) by right clicking on the docker tray icon:&lt;/p>
 &lt;p>&lt;img src="https://neurodesk.github.io/Troubleshooting/Docker_update.png" alt="Docker_update" title="Docker_update">&lt;/p>
-&lt;h2 id="i-got-an-error-message-x-killed">I got an error message &amp;lsquo;X killed&amp;rsquo;&lt;/h2>
-&lt;p>This may be due to Docker not having access to enough RAM from your PC/system.&lt;/p>
-&lt;p>If you are using WSL2 backend in Docker, then this is managed by Windows settings. Try the following steps to check how much RAM Docker has access to and increase the amount if necessary.&lt;/p>
+&lt;h2 id="i-got-an-error-message-x-killed-or-not-enough-memory">I got an error message &amp;lsquo;X killed&amp;rsquo; or not enough memory&lt;/h2>
+&lt;p>This may be due to Docker not having access to enough RAM from your host computer.&lt;/p>
+&lt;h3 id="if-you-are-using-docker-on-macos">If you are using Docker on MacOS&lt;/h3>
+&lt;ol>
+&lt;li>The memory amount is managed via the Docker settings:
+&lt;img src="https://user-images.githubusercontent.com/4021595/154880061-cff2dde0-632d-4d8c-b627-28df6b074f48.png" alt="image">&lt;/li>
+&lt;/ol>
+&lt;h3 id="if-you-are-using-docker-on-windows-10-with-the-wsl2-backend">If you are using Docker on Windows 10 with the WSL2 backend&lt;/h3>
+&lt;p>then this is managed by Windows settings. Try the following steps to check how much RAM Docker has access to and increase the amount if necessary.&lt;/p>
 &lt;ol>
 &lt;li>Run Docker&lt;/li>
 &lt;li>Open a terminal (ie. Powershell) in the PC you want to use to run Neurodesktop (not in Neurodesktop itself) and type the following command:&lt;/li>
@@ -1018,10 +1024,12 @@ memory=32GB
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">wsl --running --list
 &lt;/code>&lt;/pre>&lt;/div>This will list any running distributions. For the update to be successful, WSL needs to have comletely stopped running (ie. no distributions running)
 &lt;ul>
-&lt;li>Restart Docker and rerun steps 1-3 to confirm it was successful
-If you are not using WSL2, you can check and manage your RAM allocation in the Docker desktop application.&lt;/li>
+&lt;li>Restart Docker and rerun steps 1-3 to confirm it was successful&lt;/li>
 &lt;/ul>
 &lt;/li>
+&lt;/ol>
+&lt;h3 id="if-you-are-not-using-wsl2-you-can-check-and-manage-your-ram-allocation-in-the-docker-desktop-application">If you are not using WSL2, you can check and manage your RAM allocation in the Docker desktop application.&lt;/h3>
+&lt;ol>
 &lt;li>Open the Docker application and navigate to settings &amp;gt; resources &amp;gt; advances&lt;/li>
 &lt;li>Scroll down to the Memory option and use the sliding bar to adjust the setting&lt;/li>
 &lt;li>Click apply and restart&lt;/li>
