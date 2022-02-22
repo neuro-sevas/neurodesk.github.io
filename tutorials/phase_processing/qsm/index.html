@@ -22,12 +22,12 @@
 ">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://neurodesk.github.io/tutorials/phase_processing/qsm/"><meta property="article:section" content="tutorials">
-<meta property="article:modified_time" content="2022-02-15T14:49:02+10:00"><meta property="og:site_name" content="NeuroDesk">
+<meta property="article:modified_time" content="2022-02-22T19:20:15+10:00"><meta property="og:site_name" content="NeuroDesk">
 <meta itemprop=name content="Quantitative Susceptibility Mapping">
 <meta itemprop=description content="Example workflow for Quantitative Susceptibility Mapping
 ">
-<meta itemprop=dateModified content="2022-02-15T14:49:02+10:00">
-<meta itemprop=wordCount content="302">
+<meta itemprop=dateModified content="2022-02-22T19:20:15+10:00">
+<meta itemprop=wordCount content="264">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="Quantitative Susceptibility Mapping">
 <meta name=twitter:description content="Example workflow for Quantitative Susceptibility Mapping
@@ -68,7 +68,7 @@
 </li>
 </ul>
 </div>
-<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.cdfb227c79a6509ae271418b7b2cf76d.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.e087f397d0f37df49c49ebccb556ef1d.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 </div>
 </nav>
 </header>
@@ -78,7 +78,7 @@
 <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
 <div id=td-sidebar-menu class=td-sidebar__inner>
 <form class="td-sidebar__search d-flex align-items-center">
-<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.cdfb227c79a6509ae271418b7b2cf76d.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.e087f397d0f37df49c49ebccb556ef1d.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type=button data-toggle=collapse data-target=#td-section-nav aria-controls=td-docs-nav aria-expanded=false aria-label="Toggle section navigation">
 </button>
 </form>
@@ -186,33 +186,35 @@
 <li>Automatically segment T1w data and register them to the QSM space to extract quantitative values in anatomical regions of interest.</li>
 <li>Export quantitative data to CSV for all subjects using the automated segmentations, or a custom segmentation in the group space (we recommend ITK snap).</li>
 </ol>
-<p>If you use QSMxT for a study, please cite <a href=https://doi.org/10.1101/2021.05.05.442850>https://doi.org/10.1101/2021.05.05.442850</a>.</p>
+<p>If you use QSMxT for a study, please cite <a href=https://doi.org/10.1101/2021.05.05.442850>https://doi.org/10.1101/2021.05.05.442850</a> (for QSMxT) and <a href=http://www.ncbi.nlm.nih.gov/pubmed/25731991>http://www.ncbi.nlm.nih.gov/pubmed/25731991</a> (for TGVQSM)</p>
 <h2 id=download-demo-data>Download demo data</h2>
 <p>Open a terminal and run:</p>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>pip install osfclient
-cd /storage/
-osf -p ru43c clone /storage/qsmxt-demo
-unzip /storage/qsmxt-demo/osfstorage/GRE_2subj_1mm_TE20ms/sub1/GR_M_5_QSM_p2_1mmIso_TE20.zip -d /storage/qsmxt-demo/dicoms
-unzip /storage/qsmxt-demo/osfstorage/GRE_2subj_1mm_TE20ms/sub1/GR_P_6_QSM_p2_1mmIso_TE20.zip -d /storage/qsmxt-demo/dicoms
-unzip /storage/qsmxt-demo/osfstorage/GRE_2subj_1mm_TE20ms/sub2/GR_M_5_QSM_p2_1mmIso_TE20.zip -d /storage/qsmxt-demo/dicoms
-unzip /storage/qsmxt-demo/osfstorage/GRE_2subj_1mm_TE20ms/sub2/GR_P_6_QSM_p2_1mmIso_TE20.zip -d /storage/qsmxt-demo/dicoms
+export PATH=$PATH:~/.local/bin
+cd /neurodesktop-storage/
+osf -p ru43c clone /neurodesktop-storage/qsmxt-demo
+unzip /neurodesktop-storage/qsmxt-demo/osfstorage/GRE_2subj_1mm_TE20ms/sub1/GR_M_5_QSM_p2_1mmIso_TE20.zip -d /neurodesktop-storage/qsmxt-demo/dicoms
+unzip /neurodesktop-storage/qsmxt-demo/osfstorage/GRE_2subj_1mm_TE20ms/sub1/GR_P_6_QSM_p2_1mmIso_TE20.zip -d /neurodesktop-storage/qsmxt-demo/dicoms
+unzip /neurodesktop-storage/qsmxt-demo/osfstorage/GRE_2subj_1mm_TE20ms/sub2/GR_M_5_QSM_p2_1mmIso_TE20.zip -d /neurodesktop-storage/qsmxt-demo/dicoms
+unzip /neurodesktop-storage/qsmxt-demo/osfstorage/GRE_2subj_1mm_TE20ms/sub2/GR_P_6_QSM_p2_1mmIso_TE20.zip -d /neurodesktop-storage/qsmxt-demo/dicoms
 </code></pre></div><h2 id=qsmxt-usage>QSMxT Usage</h2>
-<p>Start QSMxT (in this demo we used 1.1.6) from the applications menu in the desktop (<em>Neurodesk</em> > <em>Quantitative Imaging</em> > <em>qsmxt</em>)</p>
+<p>Start QSMxT (in this demo we used 1.1.9) from the applications menu in the desktop (<em>Neurodesk</em> > <em>Quantitative Imaging</em> > <em>qsmxt</em>)</p>
 <ol>
 <li>Convert DICOM data to BIDS:
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#204a87>cd</span> /storage/qsmxt-demo
-python3 /opt/QSMxT/run_0_dicomSort.py /storage/qsmxt-demo/dicoms 00_dicom
-python3 /opt/QSMxT/run_1_dicomToBids.py 00_dicom 01_bids
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#204a87>cd</span> /neurodesktop-storage/qsmxt-demo
+python3 /opt/QSMxT/run_0_dicomSort.py /neurodesktop-storage/qsmxt-demo/dicoms 00_dicom
+python3 /opt/QSMxT/run_1_dicomConvert.py 00_dicom 01_bids
 </code></pre></div></li>
 </ol>
-<p>After this step check if the data were correctly recognized and converted to BIDS. Otherwise make a copy of /opt/QSMxT/bidsmap.yaml - adjust based on provenance example in 01_bids/code/bidscoin/bidsmap.yaml (see for example what it detected under extra_files) - and run again with the parameter <code>--heuristic bidsmap.yaml</code>. If the data were acquired on a GE scanner the complex data needs to be corrected by applying an FFT shift, this can be done with <code>python /opt/QSMxT/run_1_fixGEphaseFFTshift.py 01_bids/sub*/ses*/anat/*_run-1_*.nii.gz</code> .</p>
+<p>This will bring up an interactive question to ask you which sequence is your QSM data. Enter the number and hit Enter. Then confirm the renaming if that&rsquo;s correct.</p>
+<p><img src=https://user-images.githubusercontent.com/4021595/155101275-958feeb4-092e-4220-b443-d2aa3cc18133.png alt=image></p>
 <ol start=2>
 <li>Run QSM pipeline:
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>python3 /opt/QSMxT/run_2_qsm.py 01_bids 02_qsm_output
 </code></pre></div></li>
 </ol>
 <div class="text-muted mt-5 pt-3 border-top">
-Last modified February 15, 2022: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/d7533604c5fb2e7a51d4f803ed3acd2211fb0d0c>Update "Neurodesktop-storage/" to "storage/" (d7533604)</a>
+Last modified February 22, 2022: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/3d8210d92c0b73ea8c1fb0054265b8d11b705080>updated to QSMxT 1.1.9 (3d8210d9)</a>
 </div>
 </div>
 </main>
