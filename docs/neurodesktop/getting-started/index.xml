@@ -44,12 +44,20 @@ If using Firefox, you might not be able to paste clipboard content into the virt
 &lt;a href="https://neurodesk.github.io/docs/neurodesktop/troubleshooting/#the-clipboard-in-firefox-is-not-working-correctly">https://neurodesk.github.io/docs/neurodesktop/troubleshooting/#the-clipboard-in-firefox-is-not-working-correctly&lt;/a>
 &lt;/div>
 &lt;ol start="4">
-&lt;li>neurodesktop is ready to use!&lt;/li>
+&lt;li>
+&lt;p>Press on &amp;ldquo;Desktop Auto-Resolution&amp;rdquo; under &amp;ldquo;ALL CONNECTIONS&amp;rdquo;&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>If it is the first time you use Neruodesktop, wait until the desktop appears (it may take a few seconds). Otherwise, it should appear instantaneously.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Neurodesk is ready to use! Click &amp;ldquo;What&amp;rsquo;s next?&amp;rdquo; on the left of this page for further instructions.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>For an optimal experience, switch your browser to full-screen mode by following the instructions for your browser here:
+&lt;a href="https://www.thewindowsclub.com/open-chrome-edge-or-firefox-browser-in-full-screen-mode">https://www.thewindowsclub.com/open-chrome-edge-or-firefox-browser-in-full-screen-mode&lt;/a>&lt;/p>
+&lt;/li>
 &lt;/ol>
-&lt;ul>
-&lt;li>User is &lt;code>user&lt;/code>&lt;/li>
-&lt;li>Password is &lt;code>password&lt;/code>&lt;/li>
-&lt;/ul>
 &lt;h2 id="deleting-neurodesktop">Deleting neurodesktop:&lt;/h2>
 &lt;p>When done processing your data it is important to stop and remove the container - otherwise the next start or container update will give an error (&amp;quot;&amp;hellip; The container name &amp;ldquo;/neurodesktop&amp;rdquo; is already in use&amp;hellip;&amp;quot;)&lt;/p>
 &lt;div class="alert alert-primary" role="alert">
