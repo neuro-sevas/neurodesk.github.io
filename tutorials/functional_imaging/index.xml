@@ -163,7 +163,7 @@ Journal of Neuroscience Methods 276, 56-72. &lt;a href="https://doi.org/10.1016/
 &lt;h2 id="copy-your-own-data">Copy your own data&lt;/h2>
 &lt;ul>
 &lt;li>On Windows, the folder &lt;code>C:\neurodesktop-storage&lt;/code> should have been automatically created when starting NeuroDesk&lt;/li>
-&lt;li>This is your direct link to the NeuroDesk environment, and anything you put in there should end up within the NeuroDesk desktop in &lt;code>/storage/&lt;/code>&lt;/li>
+&lt;li>This is your direct link to the NeuroDesk environment, and anything you put in there should end up within the NeuroDesk desktop in &lt;code>/neurodesktop-storage/&lt;/code> and on your desktop under &lt;code>storage&lt;/code>&lt;/li>
 &lt;/ul>
 &lt;h2 id="example-running-physio-in-the-gui">Example: Running PhysIO in the GUI&lt;/h2>
 &lt;ol>

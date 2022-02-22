@@ -22,11 +22,11 @@
 ">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://neurodesk.github.io/tutorials/phase_processing/swi/"><meta property="article:section" content="tutorials">
-<meta property="article:modified_time" content="2022-02-15T14:49:02+10:00"><meta property="og:site_name" content="NeuroDesk">
+<meta property="article:modified_time" content="2022-02-22T19:43:10+10:00"><meta property="og:site_name" content="NeuroDesk">
 <meta itemprop=name content="SWI">
 <meta itemprop=description content="Example workflow for SWI processing
 ">
-<meta itemprop=dateModified content="2022-02-15T14:49:02+10:00">
+<meta itemprop=dateModified content="2022-02-22T19:43:10+10:00">
 <meta itemprop=wordCount content="141">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="SWI">
@@ -68,7 +68,7 @@
 </li>
 </ul>
 </div>
-<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.e087f397d0f37df49c49ebccb556ef1d.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.2b800cc2eef3c5dd9af73fc82e29d85d.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 </div>
 </nav>
 </header>
@@ -78,7 +78,7 @@
 <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
 <div id=td-sidebar-menu class=td-sidebar__inner>
 <form class="td-sidebar__search d-flex align-items-center">
-<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.e087f397d0f37df49c49ebccb556ef1d.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.2b800cc2eef3c5dd9af73fc82e29d85d.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type=button data-toggle=collapse data-target=#td-section-nav aria-controls=td-docs-nav aria-expanded=false aria-label="Toggle section navigation">
 </button>
 </form>
@@ -125,6 +125,13 @@
 <a href=/tutorials/reproducibility/datalad-run/ title="Reproducible script execution with DataLad" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-tutorialsreproducibilitydatalad-run><span>datalad run</span></a>
 </li>
 </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-tutorialsspectroscopy-li>
+<a href=/tutorials/spectroscopy/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-tutorialsspectroscopy><span>Spectroscopy</span></a>
+<ul class="ul-2 foldable">
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-tutorialsspectroscopylcmodel-li>
+<a href=/tutorials/spectroscopy/lcmodel/ title="Spectroscopy with lcmodel" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-tutorialsspectroscopylcmodel><span>lcmodel</span></a>
+</li>
+</ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-tutorialsstructural_imaging-li>
 <a href=/tutorials/structural_imaging/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-tutorialsstructural_imaging><span>Structural Imaging</span></a>
 <ul class="ul-2 foldable">
@@ -165,19 +172,19 @@
 <h2 id=download-demo-data>Download demo data</h2>
 <p>Open a terminal and run:</p>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>pip install osfclient
-cd /storage/
-osf -p ru43c fetch 01_bids.zip /storage/swi-demo/01_bids.zip
+cd /neurodesktop-storage/
+osf -p ru43c fetch 01_bids.zip /neurodesktop-storage/swi-demo/01_bids.zip
 
-unzip /storage/swi-demo/01_bids.zip -d /storage/swi-demo/
+unzip /neurodesktop-storage/swi-demo/01_bids.zip -d /neurodesktop-storage/swi-demo/
 </code></pre></div><p>Open the CLEARSWI tool from the application menu:</p>
 <p>paste this julia script in a julia file and execute:</p>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>cd /storage/
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>cd /neurodesktop-storage/
 vi clearswi.jl
 </code></pre></div><p>hit a or i and then paste this:</p>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>using CLEARSWI
 
 TEs = [20] 
-nifti_folder = &#34;/storage/swi-demo/01_bids/sub-170705134431std1312211075243167001/ses-1/anat&#34;
+nifti_folder = &#34;/neurodesktop-storage/swi-demo/01_bids/sub-170705134431std1312211075243167001/ses-1/anat&#34;
 magfile = joinpath(nifti_folder, &#34;sub-170705134431std1312211075243167001_ses-1_acq-qsm_run-1_magnitude.nii.gz&#34;)
 phasefile = joinpath(nifti_folder, &#34;sub-170705134431std1312211075243167001_ses-1_acq-qsmPH00_run-1_phase.nii.gz&#34;) 
 
@@ -189,14 +196,14 @@ swi = calculateSWI(data);
 # mip = createIntensityProjection(swi, minimum); # minimum intensity projection, other Julia functions can be used instead of minimum
 mip = createMIP(swi); # shorthand for createIntensityProjection(swi, minimum)
 
-savenii(swi, &#34;/storage/swi-demo/swi.nii&#34;; header=mag.header) 
-savenii(mip, &#34;/storage/swi-demo/mip.nii&#34;; header=mag.header)
+savenii(swi, &#34;/neurodesktop-storage/swi-demo/swi.nii&#34;; header=mag.header) 
+savenii(mip, &#34;/neurodesktop-storage/swi-demo/mip.nii&#34;; header=mag.header)
 </code></pre></div><p>hit SHIFT-Z-Z and run:</p>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>julia clearswi.jl
 </code></pre></div><p>Open ITK snap from the Visualization Application&rsquo;s menu and inspect the results (the outputs are in swi-demo/swi.nii and mip.nii)
 <img src=https://user-images.githubusercontent.com/4021595/137708852-6b7dd2c7-3e6f-42fd-88e6-06afe87a72a9.png alt=image></p>
 <div class="text-muted mt-5 pt-3 border-top">
-Last modified February 15, 2022: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/d7533604c5fb2e7a51d4f803ed3acd2211fb0d0c>Update "Neurodesktop-storage/" to "storage/" (d7533604)</a>
+Last modified February 22, 2022: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/7802c1f8c1e90c3cde6ea85a44c5a5c9abb7373d>fixed all storage links to be backwards compatible with older neurodesk versions (7802c1f8)</a>
 </div>
 </div>
 </main>

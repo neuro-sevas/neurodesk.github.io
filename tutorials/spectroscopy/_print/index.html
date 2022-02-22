@@ -3,8 +3,8 @@
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
 <meta name=generator content="Hugo 0.92.2">
-<link rel=canonical type=text/html href=https://neurodesk.github.io/docs/overview/>
-<link rel=alternate type=application/rss+xml href=https://neurodesk.github.io/docs/overview/index.xml>
+<link rel=canonical type=text/html href=https://neurodesk.github.io/tutorials/spectroscopy/>
+<link rel=alternate type=application/rss+xml href=https://neurodesk.github.io/tutorials/spectroscopy/index.xml>
 <meta name=robots content="noindex, nofollow">
 <link rel="shortcut icon" href=/favicons/favicon.ico>
 <link rel=apple-touch-icon href=/favicons/apple-touch-icon-180x180.png sizes=180x180>
@@ -16,19 +16,19 @@
 <link rel=icon type=image/png href=/favicons/android-96x96.png sizes=96x96>
 <link rel=icon type=image/png href=/favicons/android-144x144.png sizes=144x144>
 <link rel=icon type=image/png href=/favicons/android-192x192.png sizes=192x192>
-<title>Neurodesk Overview | NeuroDesk</title>
-<meta name=description content="A flexible, scalable and easy to use data analysis environment for reproducible neuroimaging.
+<title>Spectroscopy | NeuroDesk</title>
+<meta name=description content="Tutorials about performing MR spectroscopy analyses
 ">
-<meta property="og:title" content="Neurodesk Overview">
-<meta property="og:description" content="A flexible, scalable and easy to use data analysis environment for reproducible neuroimaging.
+<meta property="og:title" content="Spectroscopy">
+<meta property="og:description" content="Tutorials about performing MR spectroscopy analyses
 ">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://neurodesk.github.io/docs/overview/"><meta property="og:site_name" content="NeuroDesk">
-<meta itemprop=name content="Neurodesk Overview">
-<meta itemprop=description content="A flexible, scalable and easy to use data analysis environment for reproducible neuroimaging.
+<meta property="og:url" content="https://neurodesk.github.io/tutorials/spectroscopy/"><meta property="og:site_name" content="NeuroDesk">
+<meta itemprop=name content="Spectroscopy">
+<meta itemprop=description content="Tutorials about performing MR spectroscopy analyses
 "><meta name=twitter:card content="summary">
-<meta name=twitter:title content="Neurodesk Overview">
-<meta name=twitter:description content="A flexible, scalable and easy to use data analysis environment for reproducible neuroimaging.
+<meta name=twitter:title content="Spectroscopy">
+<meta name=twitter:description content="Tutorials about performing MR spectroscopy analyses
 ">
 <link rel=preload href=/scss/main.min.73d5be94f5e99c5a61460fa5b435757ce8ab87f13970655d157965b5df2b9419.css as=style>
 <link href=/scss/main.min.73d5be94f5e99c5a61460fa5b435757ce8ab87f13970655d157965b5df2b9419.css rel=stylesheet integrity>
@@ -47,7 +47,7 @@
 <div class="td-navbar-nav-scroll ml-md-auto" id=main_navbar>
 <ul class="navbar-nav mt-2 mt-lg-0">
 <li class="nav-item mr-4 mb-2 mb-lg-0">
-<a class="nav-link active" href=/docs/><span class=active>Documentation</span></a>
+<a class=nav-link href=/docs/><span>Documentation</span></a>
 </li>
 <li class="nav-item mr-4 mb-2 mb-lg-0">
 <a class=nav-link href=/applications/><span>Applications</span></a>
@@ -56,7 +56,7 @@
 <a class=nav-link href=/developers/><span>Developers</span></a>
 </li>
 <li class="nav-item mr-4 mb-2 mb-lg-0">
-<a class=nav-link href=/tutorials/><span>Tutorials</span></a>
+<a class="nav-link active" href=/tutorials/><span class=active>Tutorials</span></a>
 </li>
 <li class="nav-item mr-4 mb-2 mb-lg-0">
 <a class=nav-link href=https://github.com/NeuroDesk target=_blank><i class="fab fa-github"></i><span>GitHub</span></a>
@@ -73,6 +73,10 @@
 <div class="container-fluid td-outer">
 <div class=td-main>
 <div class="row flex-xl-nowrap">
+<div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+</div>
+<div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+</div>
 <main class="col-12 col-md-9 col-xl-8 pl-md-5" role=main>
 <div class=td-content>
 <div class="pageinfo pageinfo-primary d-print-none">
@@ -80,52 +84,25 @@
 This is the multi-page printable view of this section.
 <a href=# onclick="return print(),!1">Click here to print</a>.
 </p><p>
-<a href=/docs/overview/>Return to the regular view of this page</a>.
+<a href=/tutorials/spectroscopy/>Return to the regular view of this page</a>.
 </p>
 </div>
-<h1 class=title>Neurodesk Overview</h1>
-<div class=lead>A flexible, scalable and easy to use data analysis environment for reproducible neuroimaging.</div>
+<h1 class=title>Spectroscopy</h1>
+<div class=lead>Tutorials about performing MR spectroscopy analyses</div>
 <ul>
+<li>1: <a href=#pg-760d47cbb109546f814f11be568e5a05>Spectroscopy with lcmodel</a></li>
 </ul>
 <div class=content>
-<h2 id=video-tutorial>Video tutorial</h2>
-<p>Click <a href="https://www.youtube.com/watch?v=JLv_5fycugw">here</a> to watch a 2 minute tutorial video from OHBM 2021</p>
-<h2 id=introduction>Introduction</h2>
-<p>Neurodesk provides a containerised data analysis environment to facilitate reproducible analysis of neuroimaging data. At Neurodesk, we believe that reproducibility should be a fundamental principle underlying neuroscientific data analysis (1). Analysis pipelines for neuroimaging data typically rely on specific versions of packages and software, and are dependent on their native operating system. These dependencies mean that a working analysis pipeline may fail or produce different results on a new computer, or even on the same computer after a software update. Neurodesk provides a platform in which anyone, anywhere, using any computer can reproduce your original research findings given the original data and analysis code.</p>
-<h2 id=what-is-a-container>What is a container?</h2>
-<p>The Neurodesk environment allows users to build and use containers for analysing neuroimaging data. Containers can be compared to virtual machines, in that they allow users to create a virtual, isolated computing environment with an operating system separate to that of the host machine. However, containers differ from virtual machines in that they virtualise software rather than hardware. Practically, this means that container images require few system resources to install, start-up quickly, and are easily portable between computers.</p>
-<p>We recomment watching <a href="https://www.youtube.com/watch?v=HelrQnm3v4g">this excellent short video</a> from the Australian Research Data Commons (ARDC) on research applications of software containers.
-To read more about Docker containers, visit <a href=https://www.docker.com/resources/what-container>the Docker webpage</a></p>
-<h2 id=the-neurodesk-ecosystem>The Neurodesk ecosystem</h2>
-<p>The Neurodesk ecosystem includes a number of tools for containerised analysis of neuroimaging data. These include:</p>
-<p><img src=/NeurodeskArchitecture.png alt=architecture title=architecture></p>
-<h3 id=neurodesktop>Neurodesktop</h3>
-<blockquote>
-<p>If you’re new to Neurodesk, we recommend you begin with Neurodesktop.</p>
-</blockquote>
-<p><em>Neurodesktop</em> is a compact Docker container with a browser-accessible virtual desktop that allows you develop and implement data analysis pipelines as though you’re on your own computer. The <em>neurodesktop</em> container has the basic tools required for the analysis of fMRI and EEG data pre-installed.
-To get started, see: <a href=/docs/neurodesktop/>Neurodesktop</a></p>
-<h3 id=neurocommand>Neurocommand</h3>
-<p><em>Neurocommand</em> offers the option to install and manage multiple distinct containers for more advanced users who prefer a command-line interface. <em>Neurocommand</em> is the recommended interface for users seeking to use Neurodesk in high performance computing (HPC) environments.</p>
-<p>To get started, see: <a href=/docs/neurocommand/>Neurocommand</a></p>
-<h3 id=transparent-singularity>Transparent-singularity</h3>
-<p>The applications pre-installed in <em>neurodesktop</em> and <em>neurocommand</em> are accessible through <em>transparent-singularity</em>, which allows users to transparently use containerised software as through it were installed natively.</p>
-<p>To find out more about this open-source project, see: <a href=https://github.com/NeuroDesk/transparent-singularity>transparent-singularity</a></p>
-<h3 id=neurocontainers>Neurocontainers</h3>
-<p>The <em>neurocontainers</em> repository contains build scripts for sub-containers which are wrapped around executables for neuroimaging data-analysis software. These neurocontainers can be used in combination with neurocommand or transparent-singularity.</p>
-<p>To get started, see: <a href=/docs/neurocontainers/>Neurocontainers</a></p>
-<h3 id=neurodocker>Neurodocker</h3>
-<p><em>Neurodocker</em> is a command-line program that generates custom Dockerfiles and Singularity recipes for neuroimaging and minifies existing containers.</p>
-<p>To find out more about this open-source project, see: <a href=https://github.com/NeuroDesk/neurodocker>Neurodocker</a></p>
-<h2 id=references>References</h2>
-<ol>
-<li>
-<ol>
-<li>National Academies of Sciences, Engineering, and Medicine. 2019. Reproducibility and Replicability in Science. Washington, DC: The National Academies Press. <a href=https://doi.org/10.17226/25303>https://doi.org/10.17226/25303</a>.</li>
-</ol>
-</li>
-</ol>
 </div>
+</div>
+<div class=td-content>
+<h1 id=pg-760d47cbb109546f814f11be568e5a05>1 - Spectroscopy with lcmodel</h1>
+<div class=lead>Using lcmodel, you can analyze MR spectroscopy data.</div>
+<blockquote>
+<p><em>This tutorial was created by Steffen Bollmann.</em></p>
+<p>Github: @stebo85</p>
+<p>Twitter: @sbollmann_MRI</p>
+</blockquote>
 </div>
 </main>
 </div>

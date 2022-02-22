@@ -46,17 +46,17 @@ python3 /opt/QSMxT/run_1_dicomConvert.py 00_dicom 01_bids
 &lt;h2 id="download-demo-data">Download demo data&lt;/h2>
 &lt;p>Open a terminal and run:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">pip install osfclient
-cd /storage/
-osf -p ru43c fetch 01_bids.zip /storage/swi-demo/01_bids.zip
-unzip /storage/swi-demo/01_bids.zip -d /storage/swi-demo/
+cd /neurodesktop-storage/
+osf -p ru43c fetch 01_bids.zip /neurodesktop-storage/swi-demo/01_bids.zip
+unzip /neurodesktop-storage/swi-demo/01_bids.zip -d /neurodesktop-storage/swi-demo/
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Open the CLEARSWI tool from the application menu:&lt;/p>
 &lt;p>paste this julia script in a julia file and execute:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">cd /storage/
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">cd /neurodesktop-storage/
 vi clearswi.jl
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>hit a or i and then paste this:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">using CLEARSWI
 TEs = [20]
-nifti_folder = &amp;#34;/storage/swi-demo/01_bids/sub-170705134431std1312211075243167001/ses-1/anat&amp;#34;
+nifti_folder = &amp;#34;/neurodesktop-storage/swi-demo/01_bids/sub-170705134431std1312211075243167001/ses-1/anat&amp;#34;
 magfile = joinpath(nifti_folder, &amp;#34;sub-170705134431std1312211075243167001_ses-1_acq-qsm_run-1_magnitude.nii.gz&amp;#34;)
 phasefile = joinpath(nifti_folder, &amp;#34;sub-170705134431std1312211075243167001_ses-1_acq-qsmPH00_run-1_phase.nii.gz&amp;#34;)
 mag = readmag(magfile);
@@ -65,8 +65,8 @@ data = Data(mag, phase, mag.header, TEs);
 swi = calculateSWI(data);
 # mip = createIntensityProjection(swi, minimum); # minimum intensity projection, other Julia functions can be used instead of minimum
 mip = createMIP(swi); # shorthand for createIntensityProjection(swi, minimum)
-savenii(swi, &amp;#34;/storage/swi-demo/swi.nii&amp;#34;; header=mag.header)
-savenii(mip, &amp;#34;/storage/swi-demo/mip.nii&amp;#34;; header=mag.header)
+savenii(swi, &amp;#34;/neurodesktop-storage/swi-demo/swi.nii&amp;#34;; header=mag.header)
+savenii(mip, &amp;#34;/neurodesktop-storage/swi-demo/mip.nii&amp;#34;; header=mag.header)
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>hit SHIFT-Z-Z and run:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">julia clearswi.jl
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Open ITK snap from the Visualization Application&amp;rsquo;s menu and inspect the results (the outputs are in swi-demo/swi.nii and mip.nii)
@@ -74,15 +74,15 @@ savenii(mip, &amp;#34;/storage/swi-demo/mip.nii&amp;#34;; header=mag.header)
 &lt;h2 id="download-demo-data">Download demo data&lt;/h2>
 &lt;p>Open a terminal and run:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">pip install osfclient
-cd /storage/
-osf -p ru43c fetch 01_bids.zip /storage/swi-demo/01_bids.zip
-unzip /storage/swi-demo/01_bids.zip -d /storage/swi-demo/
-mkdir /storage/romeo-demo/
-cp /storage/swi-demo/01_bids/sub-170705134431std1312211075243167001/ses-1/anat/sub-170705134431std1312211075243167001_ses-1_acq-qsmPH00_run-1_phase.nii.gz /storage/romeo-demo/phase.nii.gz
-cp /storage/swi-demo/01_bids/sub-170705134431std1312211075243167001/ses-1/anat/sub-170705134431std1312211075243167001_ses-1_acq-qsm_run-1_magnitude.nii.gz /storage/romeo-demo/mag.nii.gz
-gunzip /storage/romeo-demo/mag.nii.gz
-gunzip /storage/romeo-demo/phase.nii.gz
+cd /neurodesktop-storage/
+osf -p ru43c fetch 01_bids.zip /neurodesktop-storage/swi-demo/01_bids.zip
+unzip /neurodesktop-storage/swi-demo/01_bids.zip -d /neurodesktop-storage/swi-demo/
+mkdir /neurodesktop-storage/romeo-demo/
+cp /neurodesktop-storage/swi-demo/01_bids/sub-170705134431std1312211075243167001/ses-1/anat/sub-170705134431std1312211075243167001_ses-1_acq-qsmPH00_run-1_phase.nii.gz /neurodesktop-storage/romeo-demo/phase.nii.gz
+cp /neurodesktop-storage/swi-demo/01_bids/sub-170705134431std1312211075243167001/ses-1/anat/sub-170705134431std1312211075243167001_ses-1_acq-qsm_run-1_magnitude.nii.gz /neurodesktop-storage/romeo-demo/mag.nii.gz
+gunzip /neurodesktop-storage/romeo-demo/mag.nii.gz
+gunzip /neurodesktop-storage/romeo-demo/phase.nii.gz
 &lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="using-romeo-for-phase-unwrapping">Using ROMEO for phase unwrapping&lt;/h3>
 &lt;p>Open the ROMEO tool from the application menu and run:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">romeo -p /storage/romeo-demo/phase.nii -m /storage/romeo-demo/mag.nii -k nomask -o /storage/romeo-demo/
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">romeo -p /neurodesktop-storage/romeo-demo/phase.nii -m /neurodesktop-storage/romeo-demo/mag.nii -k nomask -o /neurodesktop-storage/romeo-demo/
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://neurodesk.github.io/MRIPhase_Tutorial/romeo.PNG" alt="Romeo" title="Romeo">&lt;/p></description></item></channel></rss>
