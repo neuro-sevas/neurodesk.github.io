@@ -66,7 +66,7 @@
 </li>
 </ul>
 </div>
-<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.1403dbf006362301f5b9ae12ca3ca47a.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.cd080ac68daab691e23c886f1b18cb44.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 </div>
 </nav>
 </header>
@@ -331,9 +331,9 @@ ax.legend()
 <div class=lead>A brief guide to using fmriprep with neurodesk, using data from the STRIAVISE project.</div>
 <blockquote>
 <p><em>This tutorial was created by Kelly G. Garner.</em></p>
-<p>Email: <a href=mailto:getkellygarner@gmail.com>getkellygarner@gmail.com</a></p>
-<p>Github: @kel_github</p>
-<p>Twitter: @garnertheory</p>
+<p>Email: <a href=mailto:getkellygarner@gmailc.om>getkellygarner@gmail.com</a></p>
+<p>Github: <a href=https://github.com/kel-github>@kel_github</a></p>
+<p>Twitter: <a href=https://twitter.com/garner_theory>@garnertheory</a></p>
 </blockquote>
 <blockquote>
 <p>This workflow documents how to use fmriprep with neurodesk and provides some details that may help you troubleshoot some common problems I found along the way.</p>
@@ -458,6 +458,11 @@ fmriprep /path/to/your/data <span style=color:#4e9a06>\ </span><span style=color
 <div class=td-content style=page-break-before:always>
 <h1 id=pg-8dfbf581aa47092d3c6ae308716ee073>2.3 - PhysIO</h1>
 <div class=lead>Example workflow for the PhysIO Toolbox</div>
+<blockquote>
+<p><em>This tutorial was created by Lars Kasper.</em></p>
+<p>Github: @mrikasper</p>
+<p>Twitter: @mrikasper</p>
+</blockquote>
 <h2 id=origin>Origin</h2>
 <p>The PhysIO Toolbox implements ideas for robust physiological noise modeling in fMRI, outlined in this paper:</p>
 <ol>
@@ -550,6 +555,12 @@ Journal of Neuroscience Methods 276, 56-72. <a href=https://doi.org/10.1016/j.jn
 <div class=td-content>
 <h1 id=pg-ed3153aa84e753252b1a096df3880cc5>3.1 - Quantitative Susceptibility Mapping</h1>
 <div class=lead>Example workflow for Quantitative Susceptibility Mapping</div>
+<blockquote>
+<p><em>This tutorial was created by Steffen Bollmann.</em></p>
+<p>Github: <a href=https://github.com/stebo85>@stebo85</a>
+Web: <a href=https://mri.sbollmann.net/>mri.sbollmann.net</a>
+Twitter: <a href=https://twitter.com/sbollmann_MRI>@sbollmann_MRI</a></p>
+</blockquote>
 <h2 id=quantitative-susceptibility-mapping-in-qsmxt>Quantitative Susceptibility Mapping in QSMxT</h2>
 <p>Neurodesk includes QSMxT, a complete and end-to-end QSM processing and analysis framework that excels at automatically reconstructing and processing QSM for large groups of participants.</p>
 <p>QSMxT provides pipelines implemented in Python that:</p>
@@ -601,6 +612,12 @@ python3 /opt/QSMxT/run_1_dicomConvert.py 00_dicom 01_bids
 <div class=td-content style=page-break-before:always>
 <h1 id=pg-3174433b4a44ad886176920795e9074f>3.2 - SWI</h1>
 <div class=lead>Example workflow for SWI processing</div>
+<blockquote>
+<p><em>This tutorial was created by Steffen Bollmann.</em></p>
+<p>Github: <a href=https://github.com/stebo85>@stebo85</a>
+Web: <a href=https://mri.sbollmann.net/>mri.sbollmann.net</a>
+Twitter: <a href=https://twitter.com/sbollmann_MRI>@sbollmann_MRI</a></p>
+</blockquote>
 <h2 id=download-demo-data>Download demo data</h2>
 <p>Open a terminal and run:</p>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>pip install osfclient
@@ -638,6 +655,12 @@ savenii(mip, &#34;/neurodesktop-storage/swi-demo/mip.nii&#34;; header=mag.header
 <div class=td-content style=page-break-before:always>
 <h1 id=pg-359022268721811f542c4065f38891ed>3.3 - Unwrapping</h1>
 <div class=lead>MRI Phase Unwrapping</div>
+<blockquote>
+<p><em>This tutorial was created by Steffen Bollmann.</em></p>
+<p>Github: <a href=https://github.com/stebo85>@stebo85</a>
+Web: <a href=https://mri.sbollmann.net/>mri.sbollmann.net</a>
+Twitter: <a href=https://twitter.com/sbollmann_MRI>@sbollmann_MRI</a></p>
+</blockquote>
 <h2 id=download-demo-data>Download demo data</h2>
 <p>Open a terminal and run:</p>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>pip install osfclient
@@ -851,8 +874,9 @@ containers. See <a href=http://handbook.datalad.org/en/latest/basics/101-133-con
 <div class=lead>Using lcmodel, you can analyze MR spectroscopy data.</div>
 <blockquote>
 <p><em>This tutorial was created by Steffen Bollmann.</em></p>
-<p>Github: @stebo85</p>
-<p>Twitter: @sbollmann_MRI</p>
+<p>Github: <a href=https://github.com/stebo85>@stebo85</a>
+Web: <a href=https://mri.sbollmann.net/>mri.sbollmann.net</a>
+Twitter: <a href=https://twitter.com/sbollmann_MRI>@sbollmann_MRI</a></p>
 </blockquote>
 </div>
 <div class=td-content style=page-break-before:always>
@@ -862,6 +886,12 @@ containers. See <a href=http://handbook.datalad.org/en/latest/basics/101-133-con
 <div class=td-content>
 <h1 id=pg-0fe48d9b685f097a75026e660a1fae15>6.1 - FreeSurfer</h1>
 <div class=lead>Example workflow for FreeSurfer</div>
+<blockquote>
+<p><em>This tutorial was created by Steffen Bollmann.</em></p>
+<p>Github: <a href=https://github.com/stebo85>@stebo85</a>
+Web: <a href=https://mri.sbollmann.net/>mri.sbollmann.net</a>
+Twitter: <a href=https://twitter.com/sbollmann_MRI>@sbollmann_MRI</a></p>
+</blockquote>
 <h2 id=download-demo-data>Download demo data</h2>
 <p>Open a terminal and run:</p>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>pip install osfclient

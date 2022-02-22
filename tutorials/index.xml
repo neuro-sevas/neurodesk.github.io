@@ -193,9 +193,9 @@ containers. See &lt;a href="http://handbook.datalad.org/en/latest/basics/101-133
 &lt;/ol></description></item><item><title>Tutorials: Using fmriprep with neurodesk on an HPC</title><link>https://neurodesk.github.io/tutorials/functional_imaging/fmriprep_cvl/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/tutorials/functional_imaging/fmriprep_cvl/</guid><description>
 &lt;blockquote>
 &lt;p>&lt;em>This tutorial was created by Kelly G. Garner.&lt;/em>&lt;/p>
-&lt;p>Email: &lt;a href="mailto:getkellygarner@gmail.com">getkellygarner@gmail.com&lt;/a>&lt;/p>
-&lt;p>Github: @kel_github&lt;/p>
-&lt;p>Twitter: @garnertheory&lt;/p>
+&lt;p>Email: &lt;a href="mailto:getkellygarner@gmailc.om">getkellygarner@gmail.com&lt;/a>&lt;/p>
+&lt;p>Github: &lt;a href="https://github.com/kel-github">@kel_github&lt;/a>&lt;/p>
+&lt;p>Twitter: &lt;a href="https://twitter.com/garner_theory">@garnertheory&lt;/a>&lt;/p>
 &lt;/blockquote>
 &lt;blockquote>
 &lt;p>This workflow documents how to use fmriprep with neurodesk and provides some details that may help you troubleshoot some common problems I found along the way.&lt;/p>
@@ -249,6 +249,12 @@ participant &lt;span style="color:#4e9a06">\ &lt;/span>&lt;span style="color:#8f
 &lt;p>If running on a HPC, make sure to set the processor and memory limits, if not your job will get killed because it hogs all the resources.&lt;/p>
 &lt;/li>
 &lt;/ol></description></item><item><title>Tutorials: FreeSurfer</title><link>https://neurodesk.github.io/tutorials/structural_imaging/freesurfer/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/tutorials/structural_imaging/freesurfer/</guid><description>
+&lt;blockquote>
+&lt;p>&lt;em>This tutorial was created by Steffen Bollmann.&lt;/em>&lt;/p>
+&lt;p>Github: &lt;a href="https://github.com/stebo85">@stebo85&lt;/a>
+Web: &lt;a href="https://mri.sbollmann.net/">mri.sbollmann.net&lt;/a>
+Twitter: &lt;a href="https://twitter.com/sbollmann_MRI">@sbollmann_MRI&lt;/a>&lt;/p>
+&lt;/blockquote>
 &lt;h2 id="download-demo-data">Download demo data&lt;/h2>
 &lt;p>Open a terminal and run:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">pip install osfclient
@@ -272,8 +278,9 @@ export SUBJECTS_DIR=/neurodesktop-storage/freesurfer-output
 &lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Tutorials: Spectroscopy with lcmodel</title><link>https://neurodesk.github.io/tutorials/spectroscopy/lcmodel/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/tutorials/spectroscopy/lcmodel/</guid><description>
 &lt;blockquote>
 &lt;p>&lt;em>This tutorial was created by Steffen Bollmann.&lt;/em>&lt;/p>
-&lt;p>Github: @stebo85&lt;/p>
-&lt;p>Twitter: @sbollmann_MRI&lt;/p>
+&lt;p>Github: &lt;a href="https://github.com/stebo85">@stebo85&lt;/a>
+Web: &lt;a href="https://mri.sbollmann.net/">mri.sbollmann.net&lt;/a>
+Twitter: &lt;a href="https://twitter.com/sbollmann_MRI">@sbollmann_MRI&lt;/a>&lt;/p>
 &lt;/blockquote></description></item><item><title>Tutorials: Analysing EEG Data with MNE</title><link>https://neurodesk.github.io/tutorials/electrophysiology/eeg_mne-python/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/tutorials/electrophysiology/eeg_mne-python/</guid><description>
 &lt;h2 id="getting-started">Getting started&lt;/h2>
 &lt;p>To begin, navigate to Neurodesk-&amp;gt;Electrophysiology-&amp;gt;mne-&amp;gt;vscodeGUI 0.23.4 in the menu. This version of vscode has been installed in a software container together with the a conda environment containing MNE-python. Note that if you open any other version of vscode in Neurodesk, you will not be able to access the MNE conda environment.&lt;/p>
@@ -469,6 +476,11 @@ group \ # this tells mriqc to agive you the group report
 &lt;ol>
 &lt;li>If running on a HPC, make sure to set the processor and memory limits, if not your job will get killed because mriqc hogs all the resources.&lt;/li>
 &lt;/ol></description></item><item><title>Tutorials: PhysIO</title><link>https://neurodesk.github.io/tutorials/functional_imaging/physio/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/tutorials/functional_imaging/physio/</guid><description>
+&lt;blockquote>
+&lt;p>&lt;em>This tutorial was created by Lars Kasper.&lt;/em>&lt;/p>
+&lt;p>Github: @mrikasper&lt;/p>
+&lt;p>Twitter: @mrikasper&lt;/p>
+&lt;/blockquote>
 &lt;h2 id="origin">Origin&lt;/h2>
 &lt;p>The PhysIO Toolbox implements ideas for robust physiological noise modeling in fMRI, outlined in this paper:&lt;/p>
 &lt;ol>
@@ -553,6 +565,12 @@ Journal of Neuroscience Methods 276, 56-72. &lt;a href="https://doi.org/10.1016/
 &lt;/ol>
 &lt;h2 id="further-info-on-physio">Further Info on PhysIO&lt;/h2>
 &lt;p>Please check out the &lt;a href="https://github.com/translationalneuromodeling/tapas/tree/master/PhysIO#readme">README&lt;/a> and &lt;a href="https://gitlab.ethz.ch/physio/physio-doc/-/wikis/FAQ">FAQ&lt;/a>&lt;/p></description></item><item><title>Tutorials: Quantitative Susceptibility Mapping</title><link>https://neurodesk.github.io/tutorials/phase_processing/qsm/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/tutorials/phase_processing/qsm/</guid><description>
+&lt;blockquote>
+&lt;p>&lt;em>This tutorial was created by Steffen Bollmann.&lt;/em>&lt;/p>
+&lt;p>Github: &lt;a href="https://github.com/stebo85">@stebo85&lt;/a>
+Web: &lt;a href="https://mri.sbollmann.net/">mri.sbollmann.net&lt;/a>
+Twitter: &lt;a href="https://twitter.com/sbollmann_MRI">@sbollmann_MRI&lt;/a>&lt;/p>
+&lt;/blockquote>
 &lt;h2 id="quantitative-susceptibility-mapping-in-qsmxt">Quantitative Susceptibility Mapping in QSMxT&lt;/h2>
 &lt;p>Neurodesk includes QSMxT, a complete and end-to-end QSM processing and analysis framework that excels at automatically reconstructing and processing QSM for large groups of participants.&lt;/p>
 &lt;p>QSMxT provides pipelines implemented in Python that:&lt;/p>
@@ -600,6 +618,12 @@ python3 /opt/QSMxT/run_1_dicomConvert.py 00_dicom 01_bids
 &lt;p>Then you can open a viewer (Visualization -&amp;gt; mricrogl -&amp;gt; mricroglGUI) and you can find the QSM outputs in /neurodesktop-storage/qsmxt-demo/02_qsm_output/qsm_final/_run_run-1/&lt;/p>
 &lt;p>for example: sub-170705-134431-std-1312211075243167001_ses-1_run-1_part-phase_T2starw_scaled_qsm_000_composite_average.nii&lt;/p>
 &lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/155106388-72a691a4-c0a4-4cc6-a2ac-c9271888b82d.png" alt="image">&lt;/p></description></item><item><title>Tutorials: SWI</title><link>https://neurodesk.github.io/tutorials/phase_processing/swi/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/tutorials/phase_processing/swi/</guid><description>
+&lt;blockquote>
+&lt;p>&lt;em>This tutorial was created by Steffen Bollmann.&lt;/em>&lt;/p>
+&lt;p>Github: &lt;a href="https://github.com/stebo85">@stebo85&lt;/a>
+Web: &lt;a href="https://mri.sbollmann.net/">mri.sbollmann.net&lt;/a>
+Twitter: &lt;a href="https://twitter.com/sbollmann_MRI">@sbollmann_MRI&lt;/a>&lt;/p>
+&lt;/blockquote>
 &lt;h2 id="download-demo-data">Download demo data&lt;/h2>
 &lt;p>Open a terminal and run:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">pip install osfclient
@@ -628,6 +652,12 @@ savenii(mip, &amp;#34;/neurodesktop-storage/swi-demo/mip.nii&amp;#34;; header=ma
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">julia clearswi.jl
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Open ITK snap from the Visualization Application&amp;rsquo;s menu and inspect the results (the outputs are in swi-demo/swi.nii and mip.nii)
 &lt;img src="https://user-images.githubusercontent.com/4021595/137708852-6b7dd2c7-3e6f-42fd-88e6-06afe87a72a9.png" alt="image">&lt;/p></description></item><item><title>Tutorials: Unwrapping</title><link>https://neurodesk.github.io/tutorials/phase_processing/unwrapping/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/tutorials/phase_processing/unwrapping/</guid><description>
+&lt;blockquote>
+&lt;p>&lt;em>This tutorial was created by Steffen Bollmann.&lt;/em>&lt;/p>
+&lt;p>Github: &lt;a href="https://github.com/stebo85">@stebo85&lt;/a>
+Web: &lt;a href="https://mri.sbollmann.net/">mri.sbollmann.net&lt;/a>
+Twitter: &lt;a href="https://twitter.com/sbollmann_MRI">@sbollmann_MRI&lt;/a>&lt;/p>
+&lt;/blockquote>
 &lt;h2 id="download-demo-data">Download demo data&lt;/h2>
 &lt;p>Open a terminal and run:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">pip install osfclient
