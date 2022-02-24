@@ -254,16 +254,32 @@ There is a bug in docker 3.3.0 for Mac that makes this command not run correctly
 &lt;/div>
 &lt;p>if you get errors in neurodesktop then check if the ~/neurodesktop-storage directory is writable to all users, otherwise run &lt;code>chmod a+rwx ~/neurodesktop-storage&lt;/code>&lt;/p>
 &lt;ol start="2">
-&lt;li>Once neurodesktop is downloaded i.e. &lt;code>guacd[77]: INFO: Listening on host 127.0.0.1, port 4822&lt;/code> is displayed in terminal, open a browser and go to:&lt;/li>
+&lt;li>
+&lt;p>Once neurodesktop is downloaded i.e. &lt;code>guacd[77]: INFO: Listening on host 127.0.0.1, port 4822&lt;/code> is displayed in terminal, leave the terminal open and neurodesktop running (i.e., do not press CTRL+C)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Open a browser and go to:&lt;/p>
+&lt;/li>
 &lt;/ol>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">http://localhost:8080/#/?username=user&amp;amp;password=password
-&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="3">
-&lt;li>neurodesktop is ready to use!&lt;/li>
+&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="alert alert-primary" role="alert">
+We recommend to use Chrome over Firefox as it has an option to hide the Toolbar in full screen mode (go to the the menu bar, click on View, and uncheck &amp;ldquo;Always Show Toolbar in Full Screen&amp;rdquo;). This allows for Neurodesktop to truly occupy the whole of your screen.
+&lt;/div>
+&lt;ol start="3">
+&lt;li>
+&lt;p>Press on &amp;ldquo;Desktop Auto-Resolution&amp;rdquo; under &amp;ldquo;ALL CONNECTIONS&amp;rdquo;&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>If it is the first time you use Neruodesktop, wait until the desktop appears (it may take a few seconds). Otherwise, it should appear instantaneously.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Neurodesk is ready to use! Click &amp;ldquo;What&amp;rsquo;s next?&amp;rdquo; on the left of this page for further instructions.&lt;/p>
+&lt;/li>
 &lt;/ol>
-&lt;ul>
-&lt;li>User is &lt;code>user&lt;/code>&lt;/li>
-&lt;li>Password is &lt;code>password&lt;/code>&lt;/li>
-&lt;/ul>
+&lt;div class="alert alert-primary" role="alert">
+The browser can be closed anytime, and Neurodesktop will continue to run in the background. To reconnect to Neurodesktop, simply start over from step 3 above.
+&lt;/div>
 &lt;h2 id="deleting-neurodesktop">Deleting neurodesktop:&lt;/h2>
 &lt;p>When done processing your data it is important to stop and remove the container - otherwise the next start or container update will give an error (&amp;quot;&amp;hellip; The container name &amp;ldquo;/neurodesktop&amp;rdquo; is already in use&amp;hellip;&amp;quot;)&lt;/p>
 &lt;div class="alert alert-primary" role="alert">
