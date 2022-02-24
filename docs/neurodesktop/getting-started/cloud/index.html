@@ -22,12 +22,12 @@
 ">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://neurodesk.github.io/docs/neurodesktop/getting-started/cloud/"><meta property="article:section" content="docs">
-<meta property="article:modified_time" content="2022-02-25T03:06:00+11:00"><meta property="og:site_name" content="NeuroDesk">
+<meta property="article:modified_time" content="2022-02-25T08:08:02+10:00"><meta property="og:site_name" content="NeuroDesk">
 <meta itemprop=name content="Cloud">
 <meta itemprop=description content="Run neurodesktop using Oracle or Azure cloud computing
 ">
-<meta itemprop=dateModified content="2022-02-25T03:06:00+11:00">
-<meta itemprop=wordCount content="847">
+<meta itemprop=dateModified content="2022-02-25T08:08:02+10:00">
+<meta itemprop=wordCount content="852">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="Cloud">
 <meta name=twitter:description content="Run neurodesktop using Oracle or Azure cloud computing
@@ -68,7 +68,7 @@
 </li>
 </ul>
 </div>
-<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.046ab86984686b0ad6ee5b74bdd4ad79.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.2794ead9e3102c87022abf0be75f2b76.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 </div>
 </nav>
 </header>
@@ -78,7 +78,7 @@
 <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
 <div id=td-sidebar-menu class=td-sidebar__inner>
 <form class="td-sidebar__search d-flex align-items-center">
-<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.046ab86984686b0ad6ee5b74bdd4ad79.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.2794ead9e3102c87022abf0be75f2b76.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type=button data-toggle=collapse data-target=#td-section-nav aria-controls=td-docs-nav aria-expanded=false aria-label="Toggle section navigation">
 </button>
 </form>
@@ -235,7 +235,7 @@ If you get errors in neurodesktop then check if the ~/neurodesktop-storage direc
 <p>Once neurodesktop is downloaded to the cloud instance (<code>guacd[77]: INFO: Listening on host 127.0.0.1, port 4822</code> is displayed in terminal), leave the terminal open and neurodesktop running (i.e., do not press CTRL+C)</p>
 </li>
 <li>
-<p>If it is required to set up an SSH tunnel to access the cloud instance, please set up such a tunnel from the computer from which you want to access Neurodesktop</p>
+<p>If it is required to set up an SSH tunnel to access the cloud instance, please set up such a tunnel from the computer from which you want to access Neurodesktop (e.g. <code>ssh -L 8080:127.0.0.1:8080 USER@IP</code>)</p>
 </li>
 <li>
 <p>Open a browser on the computer from which you want to access Neurodesktop, and go to:</p>
@@ -360,7 +360,7 @@ Needs testing
   -h neurodesktop-20220222 vnmd/neurodesktop:20220222 --vnc</code></pre>
 <p>Open a VNC Client and connect to port 5901</p>
 <div class="text-muted mt-5 pt-3 border-top">
-Last modified February 25, 2022: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/a29387a77dccc9806c1bfb8f1cd9f78a3722029c>Update cloud.md (a29387a7)</a>
+Last modified February 25, 2022: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/2caa0b2e6e71e339a71bc2af5fd10c0c84d92b5c>added tunnel example (2caa0b2e)</a>
 </div>
 </div>
 </main>

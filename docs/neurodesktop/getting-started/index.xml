@@ -550,7 +550,7 @@ If you get errors in neurodesktop then check if the ~/neurodesktop-storage direc
 &lt;p>Once neurodesktop is downloaded to the cloud instance (&lt;code>guacd[77]: INFO: Listening on host 127.0.0.1, port 4822&lt;/code> is displayed in terminal), leave the terminal open and neurodesktop running (i.e., do not press CTRL+C)&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>If it is required to set up an SSH tunnel to access the cloud instance, please set up such a tunnel from the computer from which you want to access Neurodesktop&lt;/p>
+&lt;p>If it is required to set up an SSH tunnel to access the cloud instance, please set up such a tunnel from the computer from which you want to access Neurodesktop (e.g. &lt;code>ssh -L 8080:127.0.0.1:8080 USER@IP&lt;/code>)&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Open a browser on the computer from which you want to access Neurodesktop, and go to:&lt;/p>
