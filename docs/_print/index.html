@@ -66,7 +66,7 @@
 </li>
 </ul>
 </div>
-<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.3db16bc4e2b00ded70efdb26a0b4d24b.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.920adb5a902bbb913380ae362fedb1fe.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 </div>
 </nav>
 </header>
@@ -261,7 +261,7 @@ To get started, see: <a href=/docs/neurodesktop/>Neurodesktop</a></p>
 <a href=https://github.com/NeuroDesk/neurodesktop/raw/main/Linux_run_Neurodesk/NeuroDesktop.run>https://github.com/NeuroDesk/neurodesktop/raw/main/Linux_run_Neurodesk/NeuroDesktop.run</a></p>
 <h4 id=option-2-using-terminal>Option 2: Using Terminal</h4>
 <ol>
-<li>Open a terminal, and type the folowing command to automatically download the neurodesktop container and run it (Mac, Windows, Linux commands listed below)</li>
+<li>Open a terminal, and type the folowing command to automatically download the neurodesktop container and run it</li>
 </ol>
 <pre class="language-shell command-line" data-prompt=$ data-output=2-6>
 <code>sudo docker run \
@@ -273,8 +273,13 @@ To get started, see: <a href=/docs/neurodesktop/>Neurodesktop</a></p>
 <div class="alert alert-primary" role=alert>
 If you get errors in neurodesktop then check if the ~/neurodesktop-storage directory is writable to all users, otherwise run <code>chmod a+rwx ~/neurodesktop-storage</code>
 </div>
-<ol start=3>
-<li>Once neurodesktop is downloaded i.e. <code>guacd[77]: INFO: Listening on host 127.0.0.1, port 4822</code> is displayed in terminal, open a browser and go to:</li>
+<ol start=2>
+<li>
+<p>Once neurodesktop is downloaded i.e. <code>guacd[77]: INFO: Listening on host 127.0.0.1, port 4822</code> is displayed in terminal, leave the terminal open and neurodesktop running (i.e., do not press CTRL+C)</p>
+</li>
+<li>
+<p>Open a browser and go to:</p>
+</li>
 </ol>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>http://localhost:8080/#/?username=user&amp;password=password
 </code></pre></div>
@@ -303,6 +308,9 @@ If using Firefox, you might not be able to paste clipboard content into the virt
 <a href=https://www.thewindowsclub.com/open-chrome-edge-or-firefox-browser-in-full-screen-mode>https://www.thewindowsclub.com/open-chrome-edge-or-firefox-browser-in-full-screen-mode</a></p>
 </li>
 </ol>
+<div class="alert alert-primary" role=alert>
+The browser can be closed anytime, and Neurodesktop will continue running in the background. To reconnect to Neurodesktop, simply start over from step 3 above.
+</div>
 <h2 id=deleting-neurodesktop>Deleting neurodesktop:</h2>
 <p>When done processing your data it is important to stop and remove the container - otherwise the next start or container update will give an error ("&mldr; The container name &ldquo;/neurodesktop&rdquo; is already in use&mldr;")</p>
 <div class="alert alert-primary" role=alert>

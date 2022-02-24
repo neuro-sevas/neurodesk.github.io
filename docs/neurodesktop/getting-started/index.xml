@@ -15,7 +15,7 @@
 &lt;a href="https://github.com/NeuroDesk/neurodesktop/raw/main/Linux_run_Neurodesk/NeuroDesktop.run">https://github.com/NeuroDesk/neurodesktop/raw/main/Linux_run_Neurodesk/NeuroDesktop.run&lt;/a>&lt;/p>
 &lt;h4 id="option-2-using-terminal">Option 2: Using Terminal&lt;/h4>
 &lt;ol>
-&lt;li>Open a terminal, and type the folowing command to automatically download the neurodesktop container and run it (Mac, Windows, Linux commands listed below)&lt;/li>
+&lt;li>Open a terminal, and type the folowing command to automatically download the neurodesktop container and run it&lt;/li>
 &lt;/ol>
 &lt;pre class="language-shell command-line" data-prompt="$" data-output="2-6">
 &lt;code>sudo docker run \
@@ -28,8 +28,13 @@
 &lt;div class="alert alert-primary" role="alert">
 If you get errors in neurodesktop then check if the ~/neurodesktop-storage directory is writable to all users, otherwise run &lt;code>chmod a+rwx ~/neurodesktop-storage&lt;/code>
 &lt;/div>
-&lt;ol start="3">
-&lt;li>Once neurodesktop is downloaded i.e. &lt;code>guacd[77]: INFO: Listening on host 127.0.0.1, port 4822&lt;/code> is displayed in terminal, open a browser and go to:&lt;/li>
+&lt;ol start="2">
+&lt;li>
+&lt;p>Once neurodesktop is downloaded i.e. &lt;code>guacd[77]: INFO: Listening on host 127.0.0.1, port 4822&lt;/code> is displayed in terminal, leave the terminal open and neurodesktop running (i.e., do not press CTRL+C)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Open a browser and go to:&lt;/p>
+&lt;/li>
 &lt;/ol>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">http://localhost:8080/#/?username=user&amp;amp;password=password
 &lt;/code>&lt;/pre>&lt;/div>
@@ -58,6 +63,9 @@ If using Firefox, you might not be able to paste clipboard content into the virt
 &lt;a href="https://www.thewindowsclub.com/open-chrome-edge-or-firefox-browser-in-full-screen-mode">https://www.thewindowsclub.com/open-chrome-edge-or-firefox-browser-in-full-screen-mode&lt;/a>&lt;/p>
 &lt;/li>
 &lt;/ol>
+&lt;div class="alert alert-primary" role="alert">
+The browser can be closed anytime, and Neurodesktop will continue running in the background. To reconnect to Neurodesktop, simply start over from step 3 above.
+&lt;/div>
 &lt;h2 id="deleting-neurodesktop">Deleting neurodesktop:&lt;/h2>
 &lt;p>When done processing your data it is important to stop and remove the container - otherwise the next start or container update will give an error (&amp;quot;&amp;hellip; The container name &amp;ldquo;/neurodesktop&amp;rdquo; is already in use&amp;hellip;&amp;quot;)&lt;/p>
 &lt;div class="alert alert-primary" role="alert">
