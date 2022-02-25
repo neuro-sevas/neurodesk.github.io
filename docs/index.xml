@@ -904,7 +904,7 @@ The browser can be closed anytime, and Neurodesktop will continue running in the
 The same applies if your computer hibernated/rebooted/etc. or if the network connnection has been temprarily lost.
 &lt;/div>
 &lt;div class="alert alert-primary" role="alert">
-If you want to connect to the same instance of Neurodesktop from another computer, close the browser in the current computer, and simply start over from step 4 on another computer (notice only one computer can access Neurodesktop at a time).
+If you want to connect to the same instance of Neurodesktop from another computer, close the browser in the current computer, and simply start over from step 4 on the other computer (note that only one computer can access Neurodesktop at a time using the default RDP protocol; for access from multiple computers simultaneously, please re-run Neurodesktop with VNC enabled as explained further below).
 &lt;/div>
 &lt;h2 id="deleting-neurodesktop">Deleting neurodesktop:&lt;/h2>
 &lt;p>When done processing your data it is important to stop and remove the container - otherwise the next start or container update will give an error (&amp;quot;&amp;hellip; The container name &amp;ldquo;/neurodesktop&amp;rdquo; is already in use&amp;hellip;&amp;quot;)&lt;/p>
