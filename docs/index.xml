@@ -316,7 +316,7 @@ There is a bug in docker 3.3.0 for Mac that makes this command not run correctly
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">http://localhost:8080/#/?username=user&amp;amp;password=password
 &lt;/code>&lt;/pre>&lt;/div>
 &lt;div class="alert alert-primary" role="alert">
-We recommend to use Chrome over Firefox as it has an option to hide the Toolbar in full screen mode (go to the the menu bar, click on View, and uncheck &amp;ldquo;Always Show Toolbar in Full Screen&amp;rdquo;). This allows for Neurodesktop to truly occupy the whole of your screen.
+We recommend to use Chrome over Firefox as it has an option to hide the Toolbar in full screen mode (go to the menu bar, click on View, and uncheck &amp;ldquo;Always Show Toolbar in Full Screen&amp;rdquo;). This allows for Neurodesktop to truly utilise the whole of your screen.
 &lt;/div>
 &lt;ol start="3">
 &lt;li>
