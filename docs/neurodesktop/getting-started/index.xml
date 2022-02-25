@@ -532,7 +532,7 @@ To check which user is being use, open the terminal in the neurodesktop VS Code 
 &lt;a href="https://github.com/NeuroDesk/neurodesktop/raw/main/Linux_run_Neurodesk/NeuroDesktop.run">https://github.com/NeuroDesk/neurodesktop/raw/main/Linux_run_Neurodesk/NeuroDesktop.run&lt;/a>&lt;/p>
 &lt;h4 id="option-2-using-terminal">Option 2: Using Terminal&lt;/h4>
 &lt;ol>
-&lt;li>Type the folowing command on the cloud instance to automatically download the neurodesktop container and run it&lt;/li>
+&lt;li>Open a terminal on the cloud instance, and type the folowing command to automatically download the neurodesktop container and run it&lt;/li>
 &lt;/ol>
 &lt;pre class="language-shell command-line" data-prompt="$" data-output="2-6">
 &lt;code>sudo docker run \
@@ -546,9 +546,12 @@ To check which user is being use, open the terminal in the neurodesktop VS Code 
 If you get errors in neurodesktop then check if the ~/neurodesktop-storage directory is writable to all users, otherwise run &lt;code>chmod a+rwx ~/neurodesktop-storage&lt;/code>
 &lt;/div>
 &lt;ol start="2">
-&lt;li>
-&lt;p>Once neurodesktop is downloaded to the cloud instance (&lt;code>guacd[77]: INFO: Listening on host 127.0.0.1, port 4822&lt;/code> is displayed in terminal), leave the terminal open and neurodesktop running (i.e., do not press CTRL+C)&lt;/p>
-&lt;/li>
+&lt;li>Once neurodesktop is downloaded to the cloud instance (&lt;code>guacd[77]: INFO: Listening on host 127.0.0.1, port 4822&lt;/code> is displayed in terminal), leave the terminal open and neurodesktop running (i.e., do not press CTRL+C)&lt;/li>
+&lt;/ol>
+&lt;div class="alert alert-primary" role="alert">
+Even if your connection to the cloud instance is broken, and the terminal does not respond anymore, Neurodesktop will still continue running on the cloud insance. When the connection to the cloud instance is re-established, please start over the instructions from step 3 below.
+&lt;/div>
+&lt;ol start="3">
 &lt;li>
 &lt;p>If it is required to set up an SSH tunnel to access the cloud instance, please set up such a tunnel from the computer from which you want to access Neurodesktop (e.g. &lt;code>ssh -L 8080:127.0.0.1:8080 USER@IP&lt;/code>)&lt;/p>
 &lt;/li>
@@ -574,11 +577,13 @@ If you get errors in neurodesktop then check if the ~/neurodesktop-storage direc
 &lt;/li>
 &lt;/ol>
 &lt;div class="alert alert-primary" role="alert">
-The browser can be closed anytime, and Neurodesktop will continue running in the background. To reconnect to Neurodesktop, simply start over from step 4 above.
-The same applies if your computer hibernated/rebooted/etc. or if the network connnection has been temprarily lost.
+The browser can be closed anytime, and Neurodesktop will continue running on the cloud instance. To reconnect to Neurodesktop, simply start over from step 4 above.
 &lt;/div>
 &lt;div class="alert alert-primary" role="alert">
-If you want to connect to the same instance of Neurodesktop from another computer, close the browser in the current computer, and simply start over from step 4 on the other computer (note that only one computer can access Neurodesktop at a time using the default RDP protocol; for access from multiple computers simultaneously, please re-run Neurodesktop with VNC enabled as explained further below).
+If your computer hibernates/reboots/etc. or if the network connnection has been temporarily lost, Neurodesktop still continues running on the cloud instance. To reconnect to Neurodesktop, start over from step 3 above.
+&lt;/div>
+&lt;div class="alert alert-primary" role="alert">
+If you want to connect to the same instance of Neurodesktop from another computer, close the browser in the current computer, and start over from step 3 on the other computer (note that only one computer can access Neurodesktop at a time using the default RDP protocol; for access from multiple computers simultaneously, please re-run Neurodesktop with VNC enabled as explained further below).
 &lt;/div>
 &lt;h2 id="deleting-neurodesktop">Deleting neurodesktop:&lt;/h2>
 &lt;p>When done processing your data it is important to stop and remove the container - otherwise the next start or container update will give an error (&amp;quot;&amp;hellip; The container name &amp;ldquo;/neurodesktop&amp;rdquo; is already in use&amp;hellip;&amp;quot;)&lt;/p>
