@@ -458,7 +458,10 @@ Needs testing
 &lt;p>Then create the desktop in the desired availability zone and wait until everything is completed:
 &lt;img src="https://user-images.githubusercontent.com/4021595/150286126-2d8f60af-7499-4c69-998a-668c9c34d8c9.png" alt="image">&lt;/p>
 &lt;p>Then open the desktop:
-&lt;img src="https://user-images.githubusercontent.com/4021595/150286383-1c1b8d20-c772-4598-a81b-1ef9e11526b8.png" alt="image">&lt;/p></description></item><item><title>Docs: Visual Studio Code</title><link>https://neurodesk.github.io/docs/neurodesktop/getting-started/visual-studio-code/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/getting-started/visual-studio-code/</guid><description>
+&lt;img src="https://user-images.githubusercontent.com/4021595/150286383-1c1b8d20-c772-4598-a81b-1ef9e11526b8.png" alt="image">&lt;/p>
+&lt;p>To launch the various applications available in Neurodesktop, follow the instructions here:
+&lt;a href="https://neurodesk.github.io/docs/neurodesktop/whats-next/#how-to-launch-applications">https://neurodesk.github.io/docs/neurodesktop/whats-next/#how-to-launch-applications&lt;/a>&lt;/p>
+&lt;p>Good luck!&lt;/p></description></item><item><title>Docs: Visual Studio Code</title><link>https://neurodesk.github.io/docs/neurodesktop/getting-started/visual-studio-code/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/getting-started/visual-studio-code/</guid><description>
 &lt;p>Following guide is for connecting to a Neurodesktop using a VS Code installation running on your host machine.&lt;/p>
 &lt;blockquote>
 &lt;p>Additional instructions if your Neurodesktop is running remotely (i.e. Cloud, HPC, VM)&lt;/p>

@@ -709,7 +709,10 @@ docker&lt;/p>
 &lt;p>Then create the desktop in the desired availability zone and wait until everything is completed:
 &lt;img src="https://user-images.githubusercontent.com/4021595/150286126-2d8f60af-7499-4c69-998a-668c9c34d8c9.png" alt="image">&lt;/p>
 &lt;p>Then open the desktop:
-&lt;img src="https://user-images.githubusercontent.com/4021595/150286383-1c1b8d20-c772-4598-a81b-1ef9e11526b8.png" alt="image">&lt;/p></description></item><item><title>Docs: Singularity</title><link>https://neurodesk.github.io/docs/neurocontainers/singularity/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurocontainers/singularity/</guid><description>
+&lt;img src="https://user-images.githubusercontent.com/4021595/150286383-1c1b8d20-c772-4598-a81b-1ef9e11526b8.png" alt="image">&lt;/p>
+&lt;p>To launch the various applications available in Neurodesktop, follow the instructions here:
+&lt;a href="https://neurodesk.github.io/docs/neurodesktop/whats-next/#how-to-launch-applications">https://neurodesk.github.io/docs/neurodesktop/whats-next/#how-to-launch-applications&lt;/a>&lt;/p>
+&lt;p>Good luck!&lt;/p></description></item><item><title>Docs: Singularity</title><link>https://neurodesk.github.io/docs/neurocontainers/singularity/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurocontainers/singularity/</guid><description>
 &lt;p>Our docker containers are converted to singularity containers and stored on Object storage.&lt;/p>
 &lt;h2 id="download-singularity-containers">Download Singularity Containers&lt;/h2>
 &lt;p>First get an overview which containers are available as Singularity containers:
