@@ -51,7 +51,10 @@ python3 /opt/QSMxT/run_1_dicomConvert.py 00_dicom 01_bids
 &lt;/ol>
 &lt;p>Then you can open a viewer (Visualization -&amp;gt; mricrogl -&amp;gt; mricroglGUI) and you can find the QSM outputs in /neurodesktop-storage/qsmxt-demo/02_qsm_output/qsm_final/_run_run-1/&lt;/p>
 &lt;p>for example: sub-170705-134431-std-1312211075243167001_ses-1_run-1_part-phase_T2starw_scaled_qsm_000_composite_average.nii&lt;/p>
-&lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/155106388-72a691a4-c0a4-4cc6-a2ac-c9271888b82d.png" alt="image">&lt;/p></description></item><item><title>Tutorials: SWI</title><link>https://neurodesk.github.io/tutorials/phase_processing/swi/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/tutorials/phase_processing/swi/</guid><description>
+&lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/155106388-72a691a4-c0a4-4cc6-a2ac-c9271888b82d.png" alt="image">&lt;/p>
+&lt;blockquote>
+&lt;p>Please note that the demo dataset does not have a T1w scan for anatomical segmentation and therefore the subsequent steps in QSMxT (e.g. &lt;code>python3 /opt/QSMxT/run_3_segment.py 01_bids 03_segmentation&lt;/code>) will NOT work.&lt;/p>
+&lt;/blockquote></description></item><item><title>Tutorials: SWI</title><link>https://neurodesk.github.io/tutorials/phase_processing/swi/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/tutorials/phase_processing/swi/</guid><description>
 &lt;blockquote>
 &lt;p>&lt;em>This tutorial was created by Steffen Bollmann.&lt;/em>&lt;/p>
 &lt;p>Github: &lt;a href="https://github.com/stebo85">@stebo85&lt;/a>

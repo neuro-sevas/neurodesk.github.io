@@ -66,7 +66,7 @@
 </li>
 </ul>
 </div>
-<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.d5f89c450817fcfd0ea093f0742b6e23.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.6217555c594700466b10c909a77835a7.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 </div>
 </nav>
 </header>
@@ -751,6 +751,9 @@ python3 /opt/QSMxT/run_1_dicomConvert.py 00_dicom 01_bids
 <p>Then you can open a viewer (Visualization -> mricrogl -> mricroglGUI) and you can find the QSM outputs in /neurodesktop-storage/qsmxt-demo/02_qsm_output/qsm_final/_run_run-1/</p>
 <p>for example: sub-170705-134431-std-1312211075243167001_ses-1_run-1_part-phase_T2starw_scaled_qsm_000_composite_average.nii</p>
 <p><img src=https://user-images.githubusercontent.com/4021595/155106388-72a691a4-c0a4-4cc6-a2ac-c9271888b82d.png alt=image></p>
+<blockquote>
+<p>Please note that the demo dataset does not have a T1w scan for anatomical segmentation and therefore the subsequent steps in QSMxT (e.g. <code>python3 /opt/QSMxT/run_3_segment.py 01_bids 03_segmentation</code>) will NOT work.</p>
+</blockquote>
 </div>
 <div class=td-content style=page-break-before:always>
 <h1 id=pg-3174433b4a44ad886176920795e9074f>3.2 - SWI</h1>

@@ -22,12 +22,12 @@
 ">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://neurodesk.github.io/tutorials/phase_processing/qsm/"><meta property="article:section" content="tutorials">
-<meta property="article:modified_time" content="2022-02-28T11:55:25+10:00"><meta property="og:site_name" content="NeuroDesk">
+<meta property="article:modified_time" content="2022-02-28T12:16:07+10:00"><meta property="og:site_name" content="NeuroDesk">
 <meta itemprop=name content="Quantitative Susceptibility Mapping">
 <meta itemprop=description content="Example workflow for Quantitative Susceptibility Mapping
 ">
-<meta itemprop=dateModified content="2022-02-28T11:55:25+10:00">
-<meta itemprop=wordCount content="351">
+<meta itemprop=dateModified content="2022-02-28T12:16:07+10:00">
+<meta itemprop=wordCount content="381">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="Quantitative Susceptibility Mapping">
 <meta name=twitter:description content="Example workflow for Quantitative Susceptibility Mapping
@@ -68,7 +68,7 @@
 </li>
 </ul>
 </div>
-<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.d5f89c450817fcfd0ea093f0742b6e23.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.6217555c594700466b10c909a77835a7.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 </div>
 </nav>
 </header>
@@ -78,7 +78,7 @@
 <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
 <div id=td-sidebar-menu class=td-sidebar__inner>
 <form class="td-sidebar__search d-flex align-items-center">
-<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.d5f89c450817fcfd0ea093f0742b6e23.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.6217555c594700466b10c909a77835a7.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type=button data-toggle=collapse data-target=#td-section-nav aria-controls=td-docs-nav aria-expanded=false aria-label="Toggle section navigation">
 </button>
 </form>
@@ -231,8 +231,11 @@ python3 /opt/QSMxT/run_1_dicomConvert.py 00_dicom 01_bids
 <p>Then you can open a viewer (Visualization -> mricrogl -> mricroglGUI) and you can find the QSM outputs in /neurodesktop-storage/qsmxt-demo/02_qsm_output/qsm_final/_run_run-1/</p>
 <p>for example: sub-170705-134431-std-1312211075243167001_ses-1_run-1_part-phase_T2starw_scaled_qsm_000_composite_average.nii</p>
 <p><img src=https://user-images.githubusercontent.com/4021595/155106388-72a691a4-c0a4-4cc6-a2ac-c9271888b82d.png alt=image></p>
+<blockquote>
+<p>Please note that the demo dataset does not have a T1w scan for anatomical segmentation and therefore the subsequent steps in QSMxT (e.g. <code>python3 /opt/QSMxT/run_3_segment.py 01_bids 03_segmentation</code>) will NOT work.</p>
+</blockquote>
 <div class="text-muted mt-5 pt-3 border-top">
-Last modified February 28, 2022: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/bcc9738a185bf68cb5da55abefd7832c42f24a97>clarified sorting of dicoms (bcc9738a)</a>
+Last modified February 28, 2022: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/e0ddd3b5016c11197bfd8f7f190f2c2fb357c85c>added note about lack of anatomical data (e0ddd3b5)</a>
 </div>
 </div>
 </main>
