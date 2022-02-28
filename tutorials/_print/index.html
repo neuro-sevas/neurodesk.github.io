@@ -66,7 +66,7 @@
 </li>
 </ul>
 </div>
-<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.88da2ff264eeab4609f0e10bfd0fa6ba.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.d5f89c450817fcfd0ea093f0742b6e23.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 </div>
 </nav>
 </header>
@@ -741,8 +741,8 @@ python3 /opt/QSMxT/run_0_dicomSort.py /neurodesktop-storage/qsmxt-demo/dicoms 00
 python3 /opt/QSMxT/run_1_dicomConvert.py 00_dicom 01_bids
 </code></pre></div></li>
 </ol>
-<p>This will bring up an interactive question to ask you which sequence is your QSM data. Enter the number and hit Enter. Then confirm the renaming if that&rsquo;s correct.</p>
-<p><img src=https://user-images.githubusercontent.com/4021595/155101275-958feeb4-092e-4220-b443-d2aa3cc18133.png alt=image></p>
+<p>This will bring up an interactive question to ask you which sequence your QSM data are. It will automatically detect the QSM sequence if it has qsm or t2star in the protocol name or you can use the command line argument <code>--t2starw_series_patterns</code> to specify. This demo data comes without a structural scan (automatically recognized with t1w in the name, or specified with <code>--t1w_series_patterns</code>, so hit Enter to continue when it asks you to identify which scan the T1w scan is:</p>
+<p><img src=https://user-images.githubusercontent.com/4021595/155911430-d2b7e904-6a8a-426c-bc27-e2167dd03a4d.png alt={DE1B0DF7-49B8-47F8-ACFF-B205F70BE58B}></p>
 <ol start=2>
 <li>Run QSM pipeline:
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>python3 /opt/QSMxT/run_2_qsm.py 01_bids 02_qsm_output
