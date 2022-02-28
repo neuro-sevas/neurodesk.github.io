@@ -20,11 +20,11 @@
 <meta property="og:description" content="Congratulations! You've installed Neurodesktop. What happens next?">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://neurodesk.github.io/docs/neurodesktop/whats-next/"><meta property="article:section" content="docs">
-<meta property="article:modified_time" content="2021-09-23T19:01:05+10:00"><meta property="og:site_name" content="NeuroDesk">
+<meta property="article:modified_time" content="2022-02-28T18:12:11+11:00"><meta property="og:site_name" content="NeuroDesk">
 <meta itemprop=name content="What's next?">
 <meta itemprop=description content="Congratulations! You've installed Neurodesktop. What happens next?">
-<meta itemprop=dateModified content="2021-09-23T19:01:05+10:00">
-<meta itemprop=wordCount content="612">
+<meta itemprop=dateModified content="2022-02-28T18:12:11+11:00">
+<meta itemprop=wordCount content="693">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="What's next?">
 <meta name=twitter:description content="Congratulations! You've installed Neurodesktop. What happens next?">
@@ -64,7 +64,7 @@
 </li>
 </ul>
 </div>
-<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.8b12627798f7a833dbbfef41e6ea8029.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.3b4d0ede03bc6825e5360cae47bb780a.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 </div>
 </nav>
 </header>
@@ -74,7 +74,7 @@
 <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
 <div id=td-sidebar-menu class=td-sidebar__inner>
 <form class="td-sidebar__search d-flex align-items-center">
-<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.8b12627798f7a833dbbfef41e6ea8029.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.3b4d0ede03bc6825e5360cae47bb780a.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type=button data-toggle=collapse data-target=#td-section-nav aria-controls=td-docs-nav aria-expanded=false aria-label="Toggle section navigation">
 </button>
 </form>
@@ -197,7 +197,10 @@
 <h2 id=how-to-access-files-from-your-host-computer>How to access files from your Host computer</h2>
 <p>There are various ways of connecting your data to to Neurodesktop. For more information see our Storage section: <a href=/docs/neurodesktop/storage>Storage</a></p>
 <h2 id=how-to-launch-applications>How to launch applications</h2>
-<p>Click on the Launcher icon in bottom-left corner and navigate to the &ldquo;Neurodesk&rdquo; menu, then select the application and version you wish to launch. If it is the first time you launch the application, it will be downloaded to your desktop environment. The application is ready to use when the &ldquo;Singularity>&rdquo; prompt appears in the terminal window that opens. If you chose in the menu the GUI of the application (e.g., fsleyesGUI 6.0.3), it will open automatically. If you chose that application itself (e.g., fsl 6.0.3), a terminal window will open, and you can use it to run any of the utilities packaged with the application, including the graphical utilities (e.g., typing &ldquo;fsl&rdquo; to run FSL&rsquo;s main menu).</p>
+<p>Click on the Launcher icon in bottom-left corner, navigate to the &ldquo;Neurodesk&rdquo; menu and then to the relevant submenu (or &ldquo;All Applications&rdquo; for an alphabetical list of all applications). Navigate to the desired application, and then click on a menu entry. If it is the first time you launch an application, it may take a few seconds until it starts (please be patient!).</p>
+<p>If you choose a menu entry with &ldquo;GUI&rdquo; at the end (e.g., fsleyesGUI 6.0.3), the main GUI interface of the application will open.</p>
+<p>If you choose a menu entry without &ldquo;GUI&rdquo; at the end (e.g., fsl 6.0.3), a terminal window will open, and you can use it to run any of the utilities packaged with the application, including the graphical utilities (e.g., typing &ldquo;fsl&rdquo; to run FSL&rsquo;s main menu). Notice that the terminal that opens only allows to run utilities from the single application chosen.</p>
+<p>To be able to run utilities from multiple applications in the same terminal (or in the same script), please open a terminal by clicking on the terminal icon in the bottom toolbar of Neurodesktop. You will then be able to use the &lsquo;module&rsquo; command in order to load the desired applications.</p>
 <h2 id=how-to-keep-your-modifications-in-the-container>How to keep your modifications in the container</h2>
 <p>We designed neurodesk with reproducibility as a main goal, so the desktop containers should not be modified if one aims for full reproducibility. However, there is one good option to keep your settings across different container versions: You can write a shell script that installs additional packages and modifies the environment so it&rsquo;s perfect for you. This script can then be re-executed in a new desktop version and will enable a reprudcible customization.</p>
 <p>Another option is to &ldquo;save&rdquo; your docker container including all changes you made. This could be useful when your changes are too difficult to write a shell script or when you do not care about reproducibilty as much and you just want to get the job done. To do this you can commit (<a href=https://docs.docker.com/engine/reference/commandline/commit/>https://docs.docker.com/engine/reference/commandline/commit/</a>) your container and by uploading the container to your own docker hub you could even share it.</p>
@@ -207,7 +210,7 @@
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>docker run --shm-size<span style=color:#ce5c00;font-weight:700>=</span>1gb -it --privileged --name neurodesktop -v C:/neurodesktop-storage:/neurodesktop-storage -e <span style=color:#000>CVMFS_DISABLE</span><span style=color:#ce5c00;font-weight:700>=</span><span style=color:#204a87>true</span> -p 8080:8080 -h neurodesktop-20220222 vnmd/neurodesktop:20220222
 </code></pre></div>
 <div class="text-muted mt-5 pt-3 border-top">
-Last modified September 23, 2021: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/86d464dbdf974387d279f5f10497f3e2dea49cf5>more code annotations and new release (86d464db)</a>
+Last modified February 28, 2022: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/4879b079b369fdfee151ace352b92dd45c94dfd3>Update whats next.md (4879b079)</a>
 </div>
 </div>
 </main>
