@@ -56,7 +56,7 @@
 <a class=nav-link href=https://github.com/NeuroDesk target=_blank><i class="fab fa-github"></i><span>GitHub</span></a>
 </li><li class="nav-item mr-4 mb-2 mb-lg-0">
 <a class=nav-link href=https://twitter.com/neuro_desk target=_blank><i class="fab fa-twitter"></i><span>News/Twitter</span></a>
-</li></ul></div><div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.5e107e364bfe139035317ff5bfa12219.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+</li></ul></div><div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.b4d38cc892cf7851b3b3a95873b08565.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 </div></nav></header><div class="container-fluid td-outer">
 <div class=td-main>
 <div class="row flex-xl-nowrap">
@@ -127,11 +127,12 @@ Use the guide below to add a tool to <em>neurodesktop</em> or <em>neurocontainer
 <td>fsl</td><td>no</td><td>no</td><td>no</td><td>no</td><td>no</td><td>container</td></tr><tr>
 <td>mrtrix</td><td>no</td><td>no</td><td>no</td><td>no</td><td>no</td><td>container</td></tr><tr>
 <td>freesurfer</td><td>no</td><td>no</td><td>no</td><td>no</td><td>no</td><td>container</td></tr></tbody></table><h2 id=adding-new-recipes>Adding new recipes</h2><p>Refer to <a href=https://github.com/NeuroDesk/neurodocker>neurodocker</a> for more information on neurodocker recipes</p><h2 id=build-container>Build container</h2><p>To build a container, set up environment with:</p><ol>
-<li>Docker (same version installed on our CI environment)</li><li>Python (same version installed on the CI environment, and launched by &lsquo;python&rsquo;)</li><li>Python pip (same version installed on the CI environment, and launched by &lsquo;python -m pip&rsquo;)</li><li>git</li></ol><p>And then follow these steps:</p><ol>
+<li>Docker</li><li>Python 3 (and launched by &lsquo;python&rsquo;)</li><li>Python pip3 (and launched by &lsquo;python -m pip&rsquo;)</li><li>git</li></ol><p>And then follow these steps:</p><ol>
 <li>Sync/modify Neurodocker, the dependency we are using to build containers:
 <ol>
-<li>Press &ldquo;Fetch upstream&rdquo; in <a href=https://github.com/NeuroDesk/neurodocker>https://github.com/NeuroDesk/neurodocker</a> to check if our fork of Neurodocker is already up-to-date</li><li>If there are upstream commits that are not synced yet, open an issue in <a href=https://github.com/NeuroDesk/neurocontainers/issues>https://github.com/NeuroDesk/neurocontainers/issues</a>, requesting to pull-in latest changes from Neurodocker upstream into our fork of Neurodocker. One of the admins will attend the issue and perform the operation.</li><li>If relevant to your project, add an option to neurodocker that installs new software (<a href=https://github.com/NeuroDesk/neurodocker>https://github.com/NeuroDesk/neurodocker</a>) and create a pull request to neurodocker&rsquo;s main responsitory (add new tool in a branch!).</li><li>clone our fork of Neurodocker:</li></ol></li></ol><pre class="language-shell command-line" data-prompt=$><code>git clone https://github.com/NeuroDesk/neurodocker/
-</code></pre><p>v. install neurodocker</p><pre class="language-shell command-line" data-prompt=$><code>cd neurodocker
+<li>If you have the permissions to do so: Press &ldquo;Fetch upstream&rdquo; in <a href=https://github.com/NeuroDesk/neurodocker>https://github.com/NeuroDesk/neurodocker</a> to check if our fork of Neurodocker is already up-to-date. Otherwise, open an issue in <a href=https://github.com/NeuroDesk/neurocontainers/issues>https://github.com/NeuroDesk/neurocontainers/issues</a>, requesting to pull-in latest changes from Neurodocker upstream into our fork of Neurodocker. One of the admins will attend the issue and perform the operation.</li><li>If relevant to your project, add an option to neurodocker that installs new software (<a href=https://github.com/NeuroDesk/neurodocker>https://github.com/NeuroDesk/neurodocker</a>) and create a pull request to neurodocker&rsquo;s main responsitory (add new tool in a branch!).</li><li>clone our fork of Neurodocker:</li></ol></li></ol><pre class="language-shell command-line" data-prompt=$><code>git clone https://github.com/NeuroDesk/neurodocker/
+</code></pre><ol start=4>
+<li>install neurodocker</li></ol><pre class="language-shell command-line" data-prompt=$><code>cd neurodocker
 python -m pip install .
 cd ..</code></pre><ol start=2>
 <li>Clone the neurocontainers repository:
@@ -146,7 +147,7 @@ cp -R template newapp</code></pre><ol start=4>
 sh update-builders.sh</code></pre><blockquote>
 <p>if the CI build runs out of space, add the application to the following txt to add additional space.
 <a href=https://github.com/NeuroDesk/neurocontainers/blob/master/.github/workflows/free-up-space-list.txt>https://github.com/NeuroDesk/neurocontainers/blob/master/.github/workflows/free-up-space-list.txt</a>.
-Note this, significantly increases CI run time, only use in cases of space errors.</p></blockquote><ol start=6>
+Note: this increases CI run time, only use in cases of out-of-space errors.</p></blockquote><ol start=6>
 <li>
 <p>Build and test the container locally</p><ol>
 <li>run the build script with the debug flag:</li></ol><pre class="language-shell command-line" data-prompt=$><code>cd recipes/newapp

@@ -110,17 +110,16 @@ Use the guide below to add a tool to &lt;em>neurodesktop&lt;/em> or &lt;em>neuro
 &lt;h2 id="build-container">Build container&lt;/h2>
 &lt;p>To build a container, set up environment with:&lt;/p>
 &lt;ol>
-&lt;li>Docker (same version installed on our CI environment)&lt;/li>
-&lt;li>Python (same version installed on the CI environment, and launched by &amp;lsquo;python&amp;rsquo;)&lt;/li>
-&lt;li>Python pip (same version installed on the CI environment, and launched by &amp;lsquo;python -m pip&amp;rsquo;)&lt;/li>
+&lt;li>Docker&lt;/li>
+&lt;li>Python 3 (and launched by &amp;lsquo;python&amp;rsquo;)&lt;/li>
+&lt;li>Python pip3 (and launched by &amp;lsquo;python -m pip&amp;rsquo;)&lt;/li>
 &lt;li>git&lt;/li>
 &lt;/ol>
 &lt;p>And then follow these steps:&lt;/p>
 &lt;ol>
 &lt;li>Sync/modify Neurodocker, the dependency we are using to build containers:
 &lt;ol>
-&lt;li>Press &amp;ldquo;Fetch upstream&amp;rdquo; in &lt;a href="https://github.com/NeuroDesk/neurodocker">https://github.com/NeuroDesk/neurodocker&lt;/a> to check if our fork of Neurodocker is already up-to-date&lt;/li>
-&lt;li>If there are upstream commits that are not synced yet, open an issue in &lt;a href="https://github.com/NeuroDesk/neurocontainers/issues">https://github.com/NeuroDesk/neurocontainers/issues&lt;/a>, requesting to pull-in latest changes from Neurodocker upstream into our fork of Neurodocker. One of the admins will attend the issue and perform the operation.&lt;/li>
+&lt;li>If you have the permissions to do so: Press &amp;ldquo;Fetch upstream&amp;rdquo; in &lt;a href="https://github.com/NeuroDesk/neurodocker">https://github.com/NeuroDesk/neurodocker&lt;/a> to check if our fork of Neurodocker is already up-to-date. Otherwise, open an issue in &lt;a href="https://github.com/NeuroDesk/neurocontainers/issues">https://github.com/NeuroDesk/neurocontainers/issues&lt;/a>, requesting to pull-in latest changes from Neurodocker upstream into our fork of Neurodocker. One of the admins will attend the issue and perform the operation.&lt;/li>
 &lt;li>If relevant to your project, add an option to neurodocker that installs new software (&lt;a href="https://github.com/NeuroDesk/neurodocker">https://github.com/NeuroDesk/neurodocker&lt;/a>) and create a pull request to neurodocker&amp;rsquo;s main responsitory (add new tool in a branch!).&lt;/li>
 &lt;li>clone our fork of Neurodocker:&lt;/li>
 &lt;/ol>
@@ -128,7 +127,9 @@ Use the guide below to add a tool to &lt;em>neurodesktop&lt;/em> or &lt;em>neuro
 &lt;/ol>
 &lt;pre class="language-shell command-line" data-prompt="$">&lt;code>git clone https://github.com/NeuroDesk/neurodocker/
 &lt;/code>&lt;/pre>
-&lt;p>v. install neurodocker&lt;/p>
+&lt;ol start="4">
+&lt;li>install neurodocker&lt;/li>
+&lt;/ol>
 &lt;pre class="language-shell command-line" data-prompt="$">&lt;code>cd neurodocker
 python -m pip install .
 cd ..&lt;/code>&lt;/pre>
@@ -166,7 +167,7 @@ sh update-builders.sh&lt;/code>&lt;/pre>
 &lt;blockquote>
 &lt;p>if the CI build runs out of space, add the application to the following txt to add additional space.
 &lt;a href="https://github.com/NeuroDesk/neurocontainers/blob/master/.github/workflows/free-up-space-list.txt">https://github.com/NeuroDesk/neurocontainers/blob/master/.github/workflows/free-up-space-list.txt&lt;/a>.
-Note this, significantly increases CI run time, only use in cases of space errors.&lt;/p>
+Note: this increases CI run time, only use in cases of out-of-space errors.&lt;/p>
 &lt;/blockquote>
 &lt;ol start="6">
 &lt;li>
