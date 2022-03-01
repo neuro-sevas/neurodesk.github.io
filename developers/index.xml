@@ -119,18 +119,25 @@ Use the guide below to add a tool to &lt;em>neurodesktop&lt;/em> or &lt;em>neuro
 &lt;ol>
 &lt;li>Press &amp;ldquo;Fetch upstream&amp;rdquo; in &lt;a href="https://github.com/NeuroDesk/neurodocker">https://github.com/NeuroDesk/neurodocker&lt;/a> to check if our fork of Neurodocker is already up-to-date&lt;/li>
 &lt;li>If there are upstream commits that are not synced yet, open an issue in &lt;a href="https://github.com/NeuroDesk/neurocontainers/issues">https://github.com/NeuroDesk/neurocontainers/issues&lt;/a>, requesting to pull-in latest changes from Neurodocker upstream into our fork of Neurodocker. One of the admins will attend the issue and perform the operation.&lt;/li>
-&lt;li>If relevant to your project, add recipe to neurodocker (&lt;a href="https://github.com/NeuroDesk/neurodocker">https://github.com/NeuroDesk/neurodocker&lt;/a>) and create a pull request to neurodocker (add new tool in a branch!)&lt;/li>
+&lt;li>If relevant to your project, add an option to neurodocker that installs new software (&lt;a href="https://github.com/NeuroDesk/neurodocker">https://github.com/NeuroDesk/neurodocker&lt;/a>) and create a pull request to neurodocker&amp;rsquo;s main responsitory (add new tool in a branch!).&lt;/li>
+&lt;li>clone our fork of Neurodocker:&lt;/li>
 &lt;/ol>
 &lt;/li>
+&lt;/ol>
+&lt;pre class="language-shell command-line" data-prompt="$">&lt;code>git clone https://github.com/NeuroDesk/neurodocker/
+&lt;/code>&lt;/pre>
+&lt;p>v. install neurodocker&lt;/p>
+&lt;pre class="language-shell command-line" data-prompt="$">&lt;code>cd neurodocker
+python -m pip install .
+cd ..&lt;/code>&lt;/pre>
+&lt;ol start="2">
 &lt;li>Clone the neurocontainers repository:
 &lt;div class="alert alert-primary" role="alert">
 &lt;p>Optional: Fork neurocontainers and setup github actions&lt;/p>
-&lt;ol>
-&lt;li>Fork &lt;a href="https://github.com/NeuroDesk/neurocontainers">https://github.com/NeuroDesk/neurocontainers&lt;/a> into your account.&lt;/li>
-&lt;li>Go to your neurocontainers fork.&lt;/li>
-&lt;li>If Actions tab is missing, go to Settings &amp;gt; Actions. Select Allow all actions. Then Save.&lt;/li>
-&lt;li>In the actions tab, select &amp;ldquo;I understand my workflows, go ahead and enable them&amp;rdquo;&lt;/li>
-&lt;/ol>
+&lt;p>i. Fork &lt;a href="https://github.com/NeuroDesk/neurocontainers">https://github.com/NeuroDesk/neurocontainers&lt;/a> into your account.&lt;/p>
+&lt;p>ii. Go to your neurocontainers fork.&lt;/p>
+&lt;p>iii. If Actions tab is missing, go to Settings &amp;gt; Actions. Select Allow all actions. Then Save.&lt;/p>
+&lt;p>iv. In the actions tab, select &amp;ldquo;I understand my workflows, go ahead and enable them&amp;rdquo;&lt;/p>
 &lt;p>Pushes to the recipes in your fork will now trigger actions to build the respective docker container, and push them to your Github Packages.&lt;/p>
 &lt;/div>
 &lt;/li>
@@ -163,13 +170,12 @@ Note this, significantly increases CI run time, only use in cases of space error
 &lt;li>
 &lt;p>Build and test the container locally&lt;/p>
 &lt;ol>
-&lt;li>clone our fork of Neurodocker: git clone &lt;a href="https://github.com/NeuroDesk/neurodocker/">https://github.com/NeuroDesk/neurodocker/&lt;/a>&lt;/li>
-&lt;li>install neurodocker: cd neurodocker; python -m pip install .&lt;/li>
-&lt;li>run the build script with the &amp;ndash;debug flag: &lt;a href="https://github.com/NeuroDesk/neurocontainers/blob/master/recipes/lcmodel/build.sh">https://github.com/NeuroDesk/neurocontainers/blob/master/recipes/lcmodel/build.sh&lt;/a>&lt;/li>
+&lt;li>run the build script with the debug flag:&lt;/li>
 &lt;/ol>
-&lt;pre class="language-shell command-line" data-prompt="$">&lt;code>chmod +x build.sh
-./build.sh -debug&lt;/code>&lt;/pre>
-&lt;ol start="4">
+&lt;pre class="language-shell command-line" data-prompt="$">&lt;code>cd recipes/newapp
+chmod +x build.sh
+./build.sh -ds&lt;/code>&lt;/pre>
+&lt;ol start="2">
 &lt;li>test running some commands within the container that should be available in your local docker container repository&lt;/li>
 &lt;li>if your application requires a Matlab Runtime and you get an error about shared library &amp;ldquo;libmwlaunchermain.so&amp;rdquo; not found, check which version of the runtime was installed by the build script&lt;/li>
 &lt;/ol>
