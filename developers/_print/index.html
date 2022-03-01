@@ -56,7 +56,7 @@
 <a class=nav-link href=https://github.com/NeuroDesk target=_blank><i class="fab fa-github"></i><span>GitHub</span></a>
 </li><li class="nav-item mr-4 mb-2 mb-lg-0">
 <a class=nav-link href=https://twitter.com/neuro_desk target=_blank><i class="fab fa-twitter"></i><span>News/Twitter</span></a>
-</li></ul></div><div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.fc3e44305f7e4a116f402d5ea2bf6303.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+</li></ul></div><div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.44358658fde0ebb9dabbbe3e38898e7c.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 </div></nav></header><div class="container-fluid td-outer">
 <div class=td-main>
 <div class="row flex-xl-nowrap">
@@ -153,16 +153,10 @@ Note this, significantly increases CI run time, only use in cases of space error
 git config user.email "the email that you use for github"
 git config user.name "your name"
 git commit</code></pre><ol start=8>
-<li>Generate git personal access token (if you don’t have one already)</li></ol><div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback><span style=display:flex><span>Browse to https://github.com/NeuroDesk/neurocontainers/
-</span></span><span style=display:flex><span>Press on your picture in upper right corner --&gt; Setting --&gt; Developer Settings --&gt; Personal Access Token
-</span></span><span style=display:flex><span>Press on “generate personal access token”
-</span></span><span style=display:flex><span>Write something in “Notes” (doesn’t matter what, it’s for your own use)
-</span></span><span style=display:flex><span>Check “repo”
-</span></span><span style=display:flex><span>Check “Workflow”
-</span></span><span style=display:flex><span>Press “Generate Token” at the bottom
-</span></span><span style=display:flex><span>Copy the token displayed on the screen into a file, so you’ll have it later
-</span></span></code></pre></div><ol start=9>
-<li>Test the container locally, and if successful push repo to trigger the automatic build on GitHub</li></ol><pre class="language-shell command-line" data-prompt=$><code>git pull
+<li>
+<p>Generate git personal access token (if you don’t have one already)</p><ol>
+<li>Browse to <a href=https://github.com/NeuroDesk/neurocontainers/>https://github.com/NeuroDesk/neurocontainers/</a></li><li>Press on your picture in upper right corner &ndash;> Setting &ndash;> Developer Settings &ndash;> Personal Access Token</li><li>Press on “generate personal access token”</li><li>Write something in “Notes” (doesn’t matter what, it’s for your own use)</li><li>Check “repo”</li><li>Check “Workflow”</li><li>Press “Generate Token” at the bottom</li><li>Copy the token displayed to somewhere safe, as you will have to user it later</li></ol></li><li>
+<p>Test the container locally, and if successful push repo to trigger the automatic build on GitHub. When asked for your Github password, please provide the personal access token obtained in the previous stage.</p></li></ol><pre class="language-shell command-line" data-prompt=$><code>git pull
 git push</code></pre><ol start=10>
 <li>
 <p>Go to <a href=https://github.com/neurodesk/neurocontainers/actions>https://github.com/neurodesk/neurocontainers/actions</a>. Check that the most recent workflow run in the list terminated successfully (green). Otherwise, click on it, click on “build docker”, and the line that caused the error will be highlighted</p></li><li>

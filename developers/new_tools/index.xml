@@ -183,18 +183,22 @@ git config user.email "the email that you use for github"
 git config user.name "your name"
 git commit&lt;/code>&lt;/pre>
 &lt;ol start="8">
-&lt;li>Generate git personal access token (if you don’t have one already)&lt;/li>
+&lt;li>
+&lt;p>Generate git personal access token (if you don’t have one already)&lt;/p>
+&lt;ol>
+&lt;li>Browse to &lt;a href="https://github.com/NeuroDesk/neurocontainers/">https://github.com/NeuroDesk/neurocontainers/&lt;/a>&lt;/li>
+&lt;li>Press on your picture in upper right corner &amp;ndash;&amp;gt; Setting &amp;ndash;&amp;gt; Developer Settings &amp;ndash;&amp;gt; Personal Access Token&lt;/li>
+&lt;li>Press on “generate personal access token”&lt;/li>
+&lt;li>Write something in “Notes” (doesn’t matter what, it’s for your own use)&lt;/li>
+&lt;li>Check “repo”&lt;/li>
+&lt;li>Check “Workflow”&lt;/li>
+&lt;li>Press “Generate Token” at the bottom&lt;/li>
+&lt;li>Copy the token displayed to somewhere safe, as you will have to user it later&lt;/li>
 &lt;/ol>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>Browse to https://github.com/NeuroDesk/neurocontainers/
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Press on your picture in upper right corner --&amp;gt; Setting --&amp;gt; Developer Settings --&amp;gt; Personal Access Token
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Press on “generate personal access token”
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Write something in “Notes” (doesn’t matter what, it’s for your own use)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Check “repo”
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Check “Workflow”
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Press “Generate Token” at the bottom
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Copy the token displayed on the screen into a file, so you’ll have it later
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="9">
-&lt;li>Test the container locally, and if successful push repo to trigger the automatic build on GitHub&lt;/li>
+&lt;/li>
+&lt;li>
+&lt;p>Test the container locally, and if successful push repo to trigger the automatic build on GitHub. When asked for your Github password, please provide the personal access token obtained in the previous stage.&lt;/p>
+&lt;/li>
 &lt;/ol>
 &lt;pre class="language-shell command-line" data-prompt="$">&lt;code>git pull
 git push&lt;/code>&lt;/pre>
