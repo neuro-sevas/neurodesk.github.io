@@ -56,7 +56,7 @@
 <a class=nav-link href=https://github.com/NeuroDesk target=_blank><i class="fab fa-github"></i><span>GitHub</span></a>
 </li><li class="nav-item mr-4 mb-2 mb-lg-0">
 <a class=nav-link href=https://twitter.com/neuro_desk target=_blank><i class="fab fa-twitter"></i><span>News/Twitter</span></a>
-</li></ul></div><div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.6e0627d99d40ba0b7482c7cc1b4603b6.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+</li></ul></div><div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.fc3e44305f7e4a116f402d5ea2bf6303.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 </div></nav></header><div class="container-fluid td-outer">
 <div class=td-main>
 <div class="row flex-xl-nowrap">
@@ -165,7 +165,7 @@ git commit</code></pre><ol start=8>
 <li>Test the container locally, and if successful push repo to trigger the automatic build on GitHub</li></ol><pre class="language-shell command-line" data-prompt=$><code>git pull
 git push</code></pre><ol start=10>
 <li>
-<p>Go to neurocontainers/actions. Check that the most recent workflow run in the list terminated successfully (green). Otherwise, click on it, click on “build docker”, and the line that caused the error will be highlighted</p></li><li>
+<p>Go to <a href=https://github.com/neurodesk/neurocontainers/actions>https://github.com/neurodesk/neurocontainers/actions</a>. Check that the most recent workflow run in the list terminated successfully (green). Otherwise, click on it, click on “build docker”, and the line that caused the error will be highlighted</p></li><li>
 <p>Find your new package under <a href="https://github.com/orgs/NeuroDesk/packages?repo_name=neurocontainers">https://github.com/orgs/NeuroDesk/packages?repo_name=neurocontainers</a></p><p>Enter the name of the package in the search box, and verify that the full package name shows up in the format <em>toolName_toolVersion</em></p></li><li>
 <p>Obtain <em>buildDate</em> by clicking on the full package name that came up in the search. The build date will be the newest date shown under <strong>Recent tagged image versions</strong></p></li><li>
 <p>Use <em>toolName</em>, <em>toolVersion</em> and <em>buildDate</em> from the previous two steps to manually download the package by typing the following in a terminal open in Neurodesktop</p></li></ol><pre class="language-shell command-line" data-prompt=$><code>bash /neurocommand/local/fetch_and_run.sh toolName toolVersion buildDate

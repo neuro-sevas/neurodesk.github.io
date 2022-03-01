@@ -200,7 +200,7 @@ git commit&lt;/code>&lt;/pre>
 git push&lt;/code>&lt;/pre>
 &lt;ol start="10">
 &lt;li>
-&lt;p>Go to neurocontainers/actions. Check that the most recent workflow run in the list terminated successfully (green). Otherwise, click on it, click on “build docker”, and the line that caused the error will be highlighted&lt;/p>
+&lt;p>Go to &lt;a href="https://github.com/neurodesk/neurocontainers/actions">https://github.com/neurodesk/neurocontainers/actions&lt;/a>. Check that the most recent workflow run in the list terminated successfully (green). Otherwise, click on it, click on “build docker”, and the line that caused the error will be highlighted&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Find your new package under &lt;a href="https://github.com/orgs/NeuroDesk/packages?repo_name=neurocontainers">https://github.com/orgs/NeuroDesk/packages?repo_name=neurocontainers&lt;/a>&lt;/p>
