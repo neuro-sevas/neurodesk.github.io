@@ -21,8 +21,8 @@
 &lt;h2 id="how-to-force-a-complete-container-download-to-your-system">How to force a complete container download to your system&lt;/h2>
 &lt;p>To increase speed and reliability of Neurodesktop we mount the application containers from a CVMFS mount and download only the files required to run your current task. Although we aim to keep everything on there reproducible, there might be a reason that you want to fully download the containers to your system. You can force this behaviour by adding another parameter to the docker call: &lt;code>-e CVMFS_DISABLE=true&lt;/code>&lt;/p>
 &lt;p>For windows an example would look like this:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">docker run --shm-size&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>1gb -it --privileged --name neurodesktop -v C:/neurodesktop-storage:/neurodesktop-storage -e &lt;span style="color:#000">CVMFS_DISABLE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#204a87">true&lt;/span> -p 8080:8080 -h neurodesktop-20220222 vnmd/neurodesktop:20220222
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: What's in the box?</title><link>https://neurodesk.github.io/docs/neurodesktop/whatsinthebox/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/whatsinthebox/</guid><description>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>docker run --shm-size&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>1gb -it --privileged --name neurodesktop -v C:/neurodesktop-storage:/neurodesktop-storage -e &lt;span style="color:#000">CVMFS_DISABLE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#204a87">true&lt;/span> -p 8080:8080 -h neurodesktop-20220222 vnmd/neurodesktop:20220222
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: What's in the box?</title><link>https://neurodesk.github.io/docs/neurodesktop/whatsinthebox/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/whatsinthebox/</guid><description>
 &lt;p>Neurodesktop comes with the essential software required for neuroimaging data analysis pre-installed. Each release is built with the most recent version of these packages available at the build date. Some example packages include:&lt;/p>
 &lt;ul>
 &lt;li>Editors and Programming:
@@ -74,12 +74,12 @@
 &lt;h2 id="nextcloud-and-owncloud-desktop-clients">Nextcloud and Owncloud desktop clients&lt;/h2>
 &lt;p>Under the menu item &amp;ldquo;Accessories&amp;rdquo; you can find &amp;ldquo;Nextcloud&amp;rdquo; and &amp;ldquo;ownCloud&amp;rdquo; desktop sync clients that you can configure with your cloud service accounts.&lt;/p>
 &lt;p>To connect for example to your AARNET cloudstor account you can start the ownCloud client and enter the Server Address:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">https://cloudstor.aarnet.edu.au/plus/
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Then generate an app-password here: &lt;a href="https://cloudstor.aarnet.edu.au/plus/settings/personal?sectionid=security">https://cloudstor.aarnet.edu.au/plus/settings/personal?sectionid=security&lt;/a>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>https://cloudstor.aarnet.edu.au/plus/
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Then generate an app-password here: &lt;a href="https://cloudstor.aarnet.edu.au/plus/settings/personal?sectionid=security">https://cloudstor.aarnet.edu.au/plus/settings/personal?sectionid=security&lt;/a>&lt;/p>
 &lt;h2 id="mounting-webdav-storage-using-davfs2">Mounting webdav storage using davfs2&lt;/h2>
 &lt;p>Another option is to directly mount webdav storage. Here is an example how to mount CloudStor into Neurodesktop:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">sudo mount -t davfs https://cloudstor.aarnet.edu.au/plus/remote.php/webdav/ /data/
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>It then asks you for a username and password, which you can generate here: &lt;a href="https://cloudstor.aarnet.edu.au/plus/settings/personal?sectionid=security">https://cloudstor.aarnet.edu.au/plus/settings/personal?sectionid=security&lt;/a>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>sudo mount -t davfs https://cloudstor.aarnet.edu.au/plus/remote.php/webdav/ /data/
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>It then asks you for a username and password, which you can generate here: &lt;a href="https://cloudstor.aarnet.edu.au/plus/settings/personal?sectionid=security">https://cloudstor.aarnet.edu.au/plus/settings/personal?sectionid=security&lt;/a>&lt;/p>
 &lt;h2 id="rclone">Rclone&lt;/h2>
 &lt;p>Rclone is a command line tool that enables the interaction with various cloud services. Here is an example how to setup rclone with CloudStor Aarnet:&lt;/p>
 &lt;ul>
@@ -101,8 +101,8 @@
 &lt;/ul>
 &lt;h2 id="globus">Globus&lt;/h2>
 &lt;p>We also provide the globus client, so you can transfer large amounts of data between globus endpoints and Neurodesktop. You can configure it by running:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">/opt/globusconnectpersonal/globusconnectpersonal-*/globusconnectpersonal
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Once authenticated you can go to the globus file-manager &lt;a href="https://app.globus.org/file-manager">https://app.globus.org/file-manager&lt;/a> and your neurodesktop instance will be an endpoint for globus.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>/opt/globusconnectpersonal/globusconnectpersonal-*/globusconnectpersonal
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Once authenticated you can go to the globus file-manager &lt;a href="https://app.globus.org/file-manager">https://app.globus.org/file-manager&lt;/a> and your neurodesktop instance will be an endpoint for globus.&lt;/p>
 &lt;h1 id="mounting-external-storage-on-your-host-computer">Mounting external storage on your host-computer&lt;/h1>
 &lt;p>The -v C:/neurodesktop-storage:/neurodesktop-storage part of the docker command links the directory &amp;ldquo;neurodesktop-storage&amp;rdquo; on the “C drive” of your Windows computer to the directory /neurodesktop-storage inside the Desktop environment. Everything you store in there will be available inside the desktop and on the host computer. You can also mount additional directories by adding another -v parameter set (e.g. -v D:/moredata:/data) - this will mount the directory moredata from your D drive to /data inside neurodesktop. Improtant: the mountpoint inside neurodesktop should be named /data (or anything from this list: &lt;a href="https://github.com/NeuroDesk/neurocontainers/blob/master/recipes/globalMountPointList.txt">https://github.com/NeuroDesk/neurocontainers/blob/master/recipes/globalMountPointList.txt&lt;/a>) - otherwise most of the tools will not be able to access the data.&lt;/p>
 &lt;p>Here is an example for Windows adding another storage directory:&lt;/p>
@@ -111,17 +111,17 @@
 &lt;/pre>
 &lt;h1 id="mount-volume-using-sshfs">Mount volume using SSHFS&lt;/h1>
 &lt;p>It is theoretically possible to mount an SSH target inside Neurodesktop, but it&amp;rsquo;s not a very reliable way of mounting storage:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">sshfs -o allow_root USER@TARGET_HOST:TARGET_PATH SOURCE_PATH
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>A better option is to use &lt;code>scp&lt;/code> and copy data from an SSH endpoint:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">scp /neurodesk/myfile user@remoteserver:/data/
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>An alternative is to mount the SSHFS target into a parent directory on your local machine or VM and then use the -v option in the docker run command to bind the parent directory of the SSHFS mount. NOTE: the SSHFS &lt;em>has&lt;/em> to be mounted to a subdirectory inside a parent directory which is then bound to the docker container. If you directly bind to the mounted directory itself, your Neurodesktop container will stop being able to access it if the SSHFS mount disconnects and will not be able to access it again without restarting the Neurodesktop container.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>sshfs -o allow_root USER@TARGET_HOST:TARGET_PATH SOURCE_PATH
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>A better option is to use &lt;code>scp&lt;/code> and copy data from an SSH endpoint:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>scp /neurodesk/myfile user@remoteserver:/data/
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>An alternative is to mount the SSHFS target into a parent directory on your local machine or VM and then use the -v option in the docker run command to bind the parent directory of the SSHFS mount. NOTE: the SSHFS &lt;em>has&lt;/em> to be mounted to a subdirectory inside a parent directory which is then bound to the docker container. If you directly bind to the mounted directory itself, your Neurodesktop container will stop being able to access it if the SSHFS mount disconnects and will not be able to access it again without restarting the Neurodesktop container.&lt;/p>
 &lt;p>For example, on a local Linux machine or VM:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">sshfs -o allow_root USER@TARGET_HOST:TARGET_PATH/MyData SOURCE_PATH/SSHFS_Mounts/MyData
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Then add the following line to the docker run command when starting Neurodesktop (note the rshared flag):&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">-v /SSHFS_Mounts:/data:rshared &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>TIP: If you use key pair authentication instead of password for your SSHFS mount, you can use the reconnect flag to reconnect automatically if the connection drops:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">sshfs -o &lt;span style="color:#000">IdentityFile&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>~/.ssh/id_rsa,allow_root,ServerAliveInterval&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>5,ServerAliveCountMax&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">3&lt;/span> USER@TARGET_HOST:TARGET_PATH/MyData SOURCE_PATH/SSHFS_Mounts/MyData
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Troubleshooting</title><link>https://neurodesk.github.io/docs/neurodesktop/troubleshooting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/troubleshooting/</guid><description>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>sshfs -o allow_root USER@TARGET_HOST:TARGET_PATH/MyData SOURCE_PATH/SSHFS_Mounts/MyData
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Then add the following line to the docker run command when starting Neurodesktop (note the rshared flag):&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>-v /SSHFS_Mounts:/data:rshared &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>TIP: If you use key pair authentication instead of password for your SSHFS mount, you can use the reconnect flag to reconnect automatically if the connection drops:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>sshfs -o &lt;span style="color:#000">IdentityFile&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>~/.ssh/id_rsa,allow_root,ServerAliveInterval&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>5,ServerAliveCountMax&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">3&lt;/span> USER@TARGET_HOST:TARGET_PATH/MyData SOURCE_PATH/SSHFS_Mounts/MyData
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Troubleshooting</title><link>https://neurodesk.github.io/docs/neurodesktop/troubleshooting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/troubleshooting/</guid><description>
 &lt;p>Neurodesk is an open-source project that is always evolving. If you are experiencing an issue not listed here, please open a &lt;a href="https://github.com/NeuroDesk/neurodesk.github.io/issues">new issue&lt;/a>, so that we can aim to solve it and update our help documentation.&lt;/p>
 &lt;p>To ask questions or suggest new features, &lt;a href="https://github.com/NeuroDesk/neurodesk.github.io/discussions">join the discussion&lt;/a> on github.&lt;/p>
 &lt;h2 id="the-clipboard-in-firefox-is-not-working-correctly">The clipboard in Firefox is not working correctly&lt;/h2>
@@ -142,8 +142,8 @@
 &lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/154870249-731f8fe3-474f-43ff-aac4-c460893e4246.png" alt="image">&lt;/p>
 &lt;h2 id="docker-cannot-connect-to-the-docker-daemon-at-unixvarrundockersock-is-the-docker-daemon-running">docker: Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?.&lt;/h2>
 &lt;p>This is usually a docker-related error, not related to neurodesktop itself. To troubleshoot docker, we can try a simpler container first:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">docker run hello-world
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Try the following solutions (in this order, until the above command works)&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>docker run hello-world
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Try the following solutions (in this order, until the above command works)&lt;/p>
 &lt;ol>
 &lt;li>Win/Mac: Open docker GUI and accept T&amp;amp;Cs. Check that the docker engine is running&lt;/li>
 &lt;li>Close and open the terminal and retry.&lt;/li>
@@ -189,26 +189,26 @@ We recommend the &lt;em>manual&lt;/em> install instructions, as the simplified i
 &lt;li>Run Docker&lt;/li>
 &lt;li>Open a terminal (ie. Powershell) in the PC you want to use to run Neurodesktop (not in Neurodesktop itself) and type the following command:&lt;/li>
 &lt;/ol>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">docker info
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>This will generate information about your Docker installation (make sure Docker is running during this step)&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>docker info
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This will generate information about your Docker installation (make sure Docker is running during this step)&lt;/p>
 &lt;ol start="3">
 &lt;li>Look for the line that says&lt;/li>
 &lt;/ol>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">Total Memory: **.**GiB
-&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="4">
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>Total Memory: **.**GiB
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="4">
 &lt;li>If this value is ~2GB, try increasing it*:
 &lt;ul>
 &lt;li>Create a .wslconfig file in your user directory (for more detail instructions see: &lt;a href="https://docs.microsoft.com/en-us/windows/wsl/wsl-config">https://docs.microsoft.com/en-us/windows/wsl/wsl-config&lt;/a>)&lt;/li>
 &lt;li>In the .wslconfig file include the following lines:&lt;/li>
 &lt;/ul>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">[wsl2]
-memory=32GB
-&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>[wsl2]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>memory=32GB
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
 &lt;li>Quit Docker (make sure it&amp;rsquo;s not running in the background, ie. system tray, check task manager)&lt;/li>
 &lt;li>In the terminal, run the following command&lt;/li>
 &lt;/ul>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">wsl --running --list
-&lt;/code>&lt;/pre>&lt;/div>This will list any running distributions. For the update to be successful, WSL needs to have comletely stopped running (ie. no distributions running)
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>wsl --running --list
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>This will list any running distributions. For the update to be successful, WSL needs to have comletely stopped running (ie. no distributions running)
 &lt;ul>
 &lt;li>Restart Docker and rerun steps 1-3 to confirm it was successful&lt;/li>
 &lt;/ul>

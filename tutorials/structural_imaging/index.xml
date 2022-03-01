@@ -7,22 +7,23 @@ Twitter: &lt;a href="https://twitter.com/sbollmann_MRI">@sbollmann_MRI&lt;/a>&lt
 &lt;/blockquote>
 &lt;h2 id="download-demo-data">Download demo data&lt;/h2>
 &lt;p>Open a terminal and run:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">pip install osfclient
-osf -p bt4ez fetch TOMCAT_DIB/sub-01/ses-01_7T/anat/sub-01_ses-01_7T_T1w_defaced.nii.gz /neurodesktop-storage/sub-01_ses-01_7T_T1w_defaced.nii.gz
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="freesurfer-license-file">FreeSurfer License file:&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>pip install osfclient
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>osf -p bt4ez fetch TOMCAT_DIB/sub-01/ses-01_7T/anat/sub-01_ses-01_7T_T1w_defaced.nii.gz /neurodesktop-storage/sub-01_ses-01_7T_T1w_defaced.nii.gz
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="freesurfer-license-file">FreeSurfer License file:&lt;/h2>
 &lt;p>Before using Freesurfer you need to request a license here (&lt;a href="https://surfer.nmr.mgh.harvard.edu/registration.html">https://surfer.nmr.mgh.harvard.edu/registration.html&lt;/a>) and store it in your homedirectory as ~/.license&lt;/p>
 &lt;h2 id="freesurfer-example">FreeSurfer Example&lt;/h2>
 &lt;p>Open FreeSurfer (Neurodesk -&amp;gt; Image Segmentation -&amp;gt; Freesurfer -&amp;gt; Freesurfer 7.1.1)&lt;/p>
 &lt;p>Setup FreeSurfer license (for example - replace with your license):&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">echo &amp;#34;Steffen.Bollmann@cai.uq.edu.au
-&amp;gt; 21029
-&amp;gt; *Cqyn12sqTCxo
-&amp;gt; FSxgcvGkNR59Y&amp;#34; &amp;gt;&amp;gt; ~/.license
-export FS_LICENSE=~/.license
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Setup FreeSurfer:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">mkdir /neurodesktop-storage/freesurfer-output
-source /opt/freesurfer-7.1.1/SetUpFreeSurfer.sh
-export SUBJECTS_DIR=/neurodesktop-storage/freesurfer-output
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Run Recon all pipeline:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">recon-all -subject test-subject -i /neurodesktop-storage/sub-01_ses-01_7T_T1w_defaced.nii.gz -all
-&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>echo &amp;#34;Steffen.Bollmann@cai.uq.edu.au
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;gt; 21029
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;gt; *Cqyn12sqTCxo
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;gt; FSxgcvGkNR59Y&amp;#34; &amp;gt;&amp;gt; ~/.license
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>export FS_LICENSE=~/.license
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Setup FreeSurfer:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>mkdir /neurodesktop-storage/freesurfer-output
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>source /opt/freesurfer-7.1.1/SetUpFreeSurfer.sh
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>export SUBJECTS_DIR=/neurodesktop-storage/freesurfer-output
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Run Recon all pipeline:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>recon-all -subject test-subject -i /neurodesktop-storage/sub-01_ses-01_7T_T1w_defaced.nii.gz -all
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

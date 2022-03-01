@@ -7,10 +7,10 @@ Twitter: &lt;a href="https://twitter.com/sbollmann_MRI">@sbollmann_MRI&lt;/a>&lt
 &lt;/blockquote>
 &lt;p>Open lcmodel from the menu: Applications -&amp;gt; Spectroscopy -&amp;gt; lcmodel -&amp;gt; lcmodel 6.3&lt;/p>
 &lt;p>run&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">setup_lcmodel.sh
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>then run&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">lcmgui
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>We packed example data into the container (&lt;a href="https://zenodo.org/record/3904443/">https://zenodo.org/record/3904443/&lt;/a>) and we will use this to show a basic analysis.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>setup_lcmodel.sh
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>then run&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>lcmgui
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>We packed example data into the container (&lt;a href="https://zenodo.org/record/3904443/">https://zenodo.org/record/3904443/&lt;/a>) and we will use this to show a basic analysis.&lt;/p>
 &lt;p>The example data comes in the Varian fid format, so click on Varian:&lt;/p>
 &lt;img width="522" alt="image" src="https://user-images.githubusercontent.com/4021595/155111509-967055c2-7ee1-4bf5-b645-6a0b1eee3328.png">
 &lt;p>and then select the fid data in: /opt/datasets/Spectra_hippocampus(rat)_TE02/s_20131015_03_BDL106_scan0/isise_01.fid&lt;/p>

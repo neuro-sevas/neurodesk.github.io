@@ -80,13 +80,13 @@ If you get errors in neurodesktop then check if the ~/neurodesktop-storage direc
 &lt;p>Open a browser and go to:&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">http://localhost:8080/#/?username=user&amp;amp;password=password
-&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>http://localhost:8080/#/?username=user&amp;amp;password=password
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;div class="alert alert-primary" role="alert">
 &lt;p>If using Chrome, a pop-up may open with the text:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">&amp;#34;http://localhost:8080 wants to
-See text and images copied to the clipboard&amp;#34;.
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>You should press &amp;ldquo;Allow&amp;rdquo;&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>&amp;#34;http://localhost:8080 wants to
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>See text and images copied to the clipboard&amp;#34;.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>You should press &amp;ldquo;Allow&amp;rdquo;&lt;/p>
 &lt;/div>
 &lt;div class="alert alert-primary" role="alert">
 If using Firefox, you might not be able to paste clipboard content into the virtual desktop from the host computer. In that case, please follow the instructions here:
@@ -235,9 +235,9 @@ If you want to connect via RDP using a different port, replace 3390 in the previ
 &lt;/p>
 &lt;p>Open your RDP client and connect to Computer &lt;code>localhost:3390&lt;/code>&lt;/p>
 &lt;p>Use the following details to login if prompted&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">username: user
-password: password
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="using-vnc">Using VNC&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>username: user
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>password: password
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="using-vnc">Using VNC&lt;/h2>
 &lt;p>To enable VNC and disable RDP, startup Neurodesktop using the following command:&lt;/p>
 &lt;pre class="language-shell command-line" data-prompt="$" data-output="2-6">
 &lt;code>sudo docker run \
@@ -299,8 +299,8 @@ Needs testing
 &lt;ol>
 &lt;li>Open a terminal, and type the folowing command to automatically download the neurodesktop container and run it&lt;/li>
 &lt;/ol>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">docker run --shm-size&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>1gb -it --privileged --name neurodesktop -v ~/neurodesktop-storage:/neurodesktop-storage -p 8080:8080 -h neurodesktop-20220222 vnmd/neurodesktop:20220222
-&lt;/code>&lt;/pre>&lt;/div>&lt;!-- neurodesktop version found in neurodesk.github.io/data/neurodesktop.toml -->
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>docker run --shm-size&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>1gb -it --privileged --name neurodesktop -v ~/neurodesktop-storage:/neurodesktop-storage -p 8080:8080 -h neurodesktop-20220222 vnmd/neurodesktop:20220222
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;!-- neurodesktop version found in neurodesk.github.io/data/neurodesktop.toml -->
 &lt;div class="alert alert-primary" role="alert">
 There is a bug in docker 3.3.0 for Mac that makes this command not run correctly and there will be no application menu when you start the desktop. Update your docker version when you see this!
 &lt;/div>
@@ -313,8 +313,8 @@ There is a bug in docker 3.3.0 for Mac that makes this command not run correctly
 &lt;p>Open a browser and go to:&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">http://localhost:8080/#/?username=user&amp;amp;password=password
-&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>http://localhost:8080/#/?username=user&amp;amp;password=password
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;div class="alert alert-primary" role="alert">
 We recommend to use Chrome over Firefox as it has an option to hide the Toolbar in full screen mode (go to the menu bar, click on View, and uncheck &amp;ldquo;Always Show Toolbar in Full Screen&amp;rdquo;). This allows for Neurodesktop to truly utilise the whole of your screen.
 &lt;/div>
@@ -349,26 +349,26 @@ Notice that any data that were saved outside of /neurodesktop-storage would be l
 &lt;p>Type:&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">docker stop neurodesktop
-&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="4">
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>docker stop neurodesktop
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="4">
 &lt;li>Type:&lt;/li>
 &lt;/ol>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">docker rm neurodesktop
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="using-an-rdp-client">Using an RDP Client&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>docker rm neurodesktop
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="using-an-rdp-client">Using an RDP Client&lt;/h2>
 &lt;p>Startup Neurodesktop using the following command:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">docker run --shm-size&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>1gb -it --privileged --name neurodesktop -v ~/neurodesktop-storage:/neurodesktop-storage -p 3390:3389 -p 8080:8080 -h neurodesktop-20220222 vnmd/neurodesktop:20220222
-&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>docker run --shm-size&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>1gb -it --privileged --name neurodesktop -v ~/neurodesktop-storage:/neurodesktop-storage -p 3390:3389 -p 8080:8080 -h neurodesktop-20220222 vnmd/neurodesktop:20220222
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;div class="alert alert-primary" role="alert">
 If you want to connect via RDP using a different port, replace 3390 in the previous and next step with your port
 &lt;/div>
 &lt;p>Open your RDP client and connect to Computer &lt;code>localhost:3390&lt;/code>&lt;/p>
 &lt;p>Use the following details to login if prompted&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">username: user
-password: password
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="using-vnc">Using VNC&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>username: user
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>password: password
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="using-vnc">Using VNC&lt;/h2>
 &lt;p>To enable VNC and disable RDP, startup Neurodesktop using the following command:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">docker run --shm-size&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>1gb -it --privileged --name neurodesktop -v ~/neurodesktop-storage:/neurodesktop-storage -e &lt;span style="color:#000">VNC_ENABLE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#204a87">true&lt;/span> -p 8080:8080 -h neurodesktop-20220222 vnmd/neurodesktop:20220222
-&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>docker run --shm-size&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>1gb -it --privileged --name neurodesktop -v ~/neurodesktop-storage:/neurodesktop-storage -e &lt;span style="color:#000">VNC_ENABLE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#204a87">true&lt;/span> -p 8080:8080 -h neurodesktop-20220222 vnmd/neurodesktop:20220222
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;div class="alert alert-primary" role="alert">
 &lt;p>VNC allows for multiple desktop connections to same instance&lt;/p>
 &lt;p>Note: Neurodesktop VNC on the browser currently does not support auto-resolution&lt;/p>
@@ -378,8 +378,8 @@ password: password
 Needs testing
 &lt;/div>
 &lt;p>Startup Neurodesktop using the following command:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">docker run --shm-size&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>1gb -it --privileged --name neurodesktop -v ~/neurodesktop-storage:/neurodesktop-storage -e &lt;span style="color:#000">VNC_ENABLE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#204a87">true&lt;/span> -p 5901:5901 -p 8080:8080 -h neurodesktop-20220222 vnmd/neurodesktop:20220222
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Open a VNC Client and connect to port 5901&lt;/p></description></item><item><title>Docs: What's next?</title><link>https://neurodesk.github.io/docs/neurodesktop/whats-next/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/whats-next/</guid><description>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>docker run --shm-size&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>1gb -it --privileged --name neurodesktop -v ~/neurodesktop-storage:/neurodesktop-storage -e &lt;span style="color:#000">VNC_ENABLE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#204a87">true&lt;/span> -p 5901:5901 -p 8080:8080 -h neurodesktop-20220222 vnmd/neurodesktop:20220222
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Open a VNC Client and connect to port 5901&lt;/p></description></item><item><title>Docs: What's next?</title><link>https://neurodesk.github.io/docs/neurodesktop/whats-next/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/whats-next/</guid><description>
 &lt;p>Now that you’ve installed and launched neurodesktop, you should see a virtual desktop environment in your browser, which might look something like this:&lt;/p>
 &lt;p>&lt;img src="https://neurodesk.github.io/Desktop.png" alt="desktop" title="desktop">&lt;/p>
 &lt;p>In this linux desktop environment, you can access the menu, launch programs, write analysis code, use version control software (i.e. git) and develop analysis pipelines as though you were on your own computer.&lt;/p>
@@ -402,8 +402,8 @@ Needs testing
 &lt;h2 id="how-to-force-a-complete-container-download-to-your-system">How to force a complete container download to your system&lt;/h2>
 &lt;p>To increase speed and reliability of Neurodesktop we mount the application containers from a CVMFS mount and download only the files required to run your current task. Although we aim to keep everything on there reproducible, there might be a reason that you want to fully download the containers to your system. You can force this behaviour by adding another parameter to the docker call: &lt;code>-e CVMFS_DISABLE=true&lt;/code>&lt;/p>
 &lt;p>For windows an example would look like this:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">docker run --shm-size&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>1gb -it --privileged --name neurodesktop -v C:/neurodesktop-storage:/neurodesktop-storage -e &lt;span style="color:#000">CVMFS_DISABLE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#204a87">true&lt;/span> -p 8080:8080 -h neurodesktop-20220222 vnmd/neurodesktop:20220222
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Windows</title><link>https://neurodesk.github.io/docs/neurocommand/getting-started/windows/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurocommand/getting-started/windows/</guid><description>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>docker run --shm-size&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>1gb -it --privileged --name neurodesktop -v C:/neurodesktop-storage:/neurodesktop-storage -e &lt;span style="color:#000">CVMFS_DISABLE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#204a87">true&lt;/span> -p 8080:8080 -h neurodesktop-20220222 vnmd/neurodesktop:20220222
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Windows</title><link>https://neurodesk.github.io/docs/neurocommand/getting-started/windows/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurocommand/getting-started/windows/</guid><description>
 &lt;h2 id="wsl-w-ubuntu--lxde">WSL (w/ Ubuntu + LXDE)&lt;/h2>
 &lt;p>For more information on WSL: &lt;a href="https://docs.microsoft.com/en-us/windows/wsl">https://docs.microsoft.com/en-us/windows/wsl&lt;/a>&lt;/p>
 &lt;h3 id="setting-up">Setting up&lt;/h3>
@@ -507,8 +507,8 @@ The docker installation will reboot your computer a few times and there might be
 &lt;p>Open a browser and go to:&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">http://localhost:8080/#/?username=user&amp;amp;password=password
-&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>http://localhost:8080/#/?username=user&amp;amp;password=password
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;div class="alert alert-primary" role="alert">
 &lt;h4 class="alert-heading">Note&lt;/h4>
 We do not recommend the use of the Firefox browser for accessing Neurodesktop on Windows 10, as firefox is not able to access localhost where neurodesk is running.
@@ -548,12 +548,12 @@ Notice that any data that were saved outside of /neurodesktop-storage would be l
 &lt;p>Type:&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">docker stop neurodesktop
-&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="4">
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>docker stop neurodesktop
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="4">
 &lt;li>Type:&lt;/li>
 &lt;/ol>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">docker rm neurodesktop
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="using-an-rdp-client">Using an RDP Client&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>docker rm neurodesktop
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="using-an-rdp-client">Using an RDP Client&lt;/h2>
 &lt;p>Startup Neurodesktop using the following command:&lt;/p>
 &lt;pre class="language-batch command-line" data-prompt=">">
 &lt;code>docker run --shm-size=1gb -it --privileged --name neurodesktop -v C:/neurodesktop-storage:/neurodesktop-storage -p 3390:3389 -p 8080:8080 -h neurodesktop-20220222 vnmd/neurodesktop:20220222&lt;/code>
@@ -567,10 +567,10 @@ If you want to connect via RDP using a different port, replace 3390 in the previ
 &lt;p>Once ready, click Connect. This will take you to the following prompt&lt;/p>
 &lt;p>&lt;img src="https://neurodesk.github.io/neurodesktop/getting-started/win-rdp-2.png" alt="win-rdp-1" title="win-rdp-2">&lt;/p>
 &lt;p>Use the following details to login&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">Session: Xorg
-username: user
-password: password
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="using-vnc">Using VNC&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>Session: Xorg
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>username: user
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>password: password
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="using-vnc">Using VNC&lt;/h2>
 &lt;p>To enable VNC and disable RDP, startup Neurodesktop using the following command:&lt;/p>
 &lt;pre class="language-batch command-line" data-prompt=">">
 &lt;code>docker run --shm-size=1gb -it --privileged --name neurodesktop -v C:/neurodesktop-storage:/neurodesktop-storage -e VNC_ENABLE=true -p 8080:8080 -h neurodesktop-20220222 vnmd/neurodesktop:20220222&lt;/code>
@@ -701,10 +701,10 @@ fslmaths&lt;/code>
 &lt;h2 id="pull-docker-containers">Pull Docker containers&lt;/h2>
 &lt;p>e.g. for a julia container
 docker&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">docker pull vnmd/julia_1.6.1
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>build singularity image from dockerhub&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">singularity build julia_1.6.1.simg docker://vnmd/julia_1.6.1
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Replace &lt;code>julia_1.6.1&lt;/code> with your selected application. You can find the available containers here: &lt;a href="https://neurodesk.github.io/applications/">https://neurodesk.github.io/applications/&lt;/a>&lt;/p></description></item><item><title>Docs: HPC</title><link>https://neurodesk.github.io/docs/neurodesktop/getting-started/hpc/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/getting-started/hpc/</guid><description>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>docker pull vnmd/julia_1.6.1
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>build singularity image from dockerhub&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>singularity build julia_1.6.1.simg docker://vnmd/julia_1.6.1
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Replace &lt;code>julia_1.6.1&lt;/code> with your selected application. You can find the available containers here: &lt;a href="https://neurodesk.github.io/applications/">https://neurodesk.github.io/applications/&lt;/a>&lt;/p></description></item><item><title>Docs: HPC</title><link>https://neurodesk.github.io/docs/neurodesktop/getting-started/hpc/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/getting-started/hpc/</guid><description>
 &lt;p>One way of running this project on HPCs is via &lt;a href="https://neurodesk.github.io/docs/neurocommand/getting-started/linux/">https://neurodesk.github.io/docs/neurocommand/getting-started/linux/&lt;/a>&lt;/p></description></item><item><title>Docs: Nectar Virtual Desktop Service</title><link>https://neurodesk.github.io/docs/neurodesktop/getting-started/nectar/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/getting-started/nectar/</guid><description>
 &lt;p>Go to &lt;a href="https://desktop.rc.nectar.org.au/">https://desktop.rc.nectar.org.au/&lt;/a> and login with your AAF credentials, then create a new workspace.&lt;/p>
 &lt;p>Select Neurodesktop from the Library:
@@ -720,35 +720,35 @@ docker&lt;/p>
 &lt;h2 id="download-singularity-containers">Download Singularity Containers&lt;/h2>
 &lt;p>First get an overview which containers are available as Singularity containers:
 &lt;a href="https://github.com/NeuroDesk/neurodesk/blob/master/cvmfs/log.txt">https://github.com/NeuroDesk/neurodesk/blob/master/cvmfs/log.txt&lt;/a>&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">curl -s https://raw.githubusercontent.com/NeuroDesk/neurodesk/master/cvmfs/log.txt
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>assign the container name to a variable:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">container&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>itksnap_3.8.0_20201208
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Then download the containers. An easy way is to use CURL (e.g. downloading from the US location):&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">curl -X GET https://objectstorage.us-ashburn-1.oraclecloud.com/n/sd63xuke79z3/b/neurodesk/o/&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">container&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>.simg -O
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>or from australia&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">curl -X GET https://objectstorage.ap-sydney-1.oraclecloud.com/n/sd63xuke79z3/b/neurodesk/o/&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">container&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>.simg -O
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>A faster way is pulling from multiple storage locations at once using aria2:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">aria2c https://objectstorage.us-ashburn-1.oraclecloud.com/n/sd63xuke79z3/b/neurodesk/o/&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">container&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>.simg https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/sd63xuke79z3/b/neurodesk/o/&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">container&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>.simg https://objectstorage.ap-sydney-1.oraclecloud.com/n/sd63xuke79z3/b/neurodesk/o/&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">container&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>.simg https://swift.rc.nectar.org.au/v1/AUTH_dead991e1fa847e3afcca2d3a7041f5d/neurodesk/&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">container&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>.simg
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="transparent-singularity">Transparent Singularity&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>curl -s https://raw.githubusercontent.com/NeuroDesk/neurodesk/master/cvmfs/log.txt
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>assign the container name to a variable:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">container&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>itksnap_3.8.0_20201208
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Then download the containers. An easy way is to use CURL (e.g. downloading from the US location):&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>curl -X GET https://objectstorage.us-ashburn-1.oraclecloud.com/n/sd63xuke79z3/b/neurodesk/o/&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">container&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>.simg -O
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>or from australia&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>curl -X GET https://objectstorage.ap-sydney-1.oraclecloud.com/n/sd63xuke79z3/b/neurodesk/o/&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">container&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>.simg -O
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>A faster way is pulling from multiple storage locations at once using aria2:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>aria2c https://objectstorage.us-ashburn-1.oraclecloud.com/n/sd63xuke79z3/b/neurodesk/o/&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">container&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>.simg https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/sd63xuke79z3/b/neurodesk/o/&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">container&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>.simg https://objectstorage.ap-sydney-1.oraclecloud.com/n/sd63xuke79z3/b/neurodesk/o/&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">container&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>.simg https://swift.rc.nectar.org.au/v1/AUTH_dead991e1fa847e3afcca2d3a7041f5d/neurodesk/&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">container&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>.simg
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="transparent-singularity">Transparent Singularity&lt;/h2>
 &lt;p>The singularity containers can be also be used in combination with our &lt;a href="https://neurodesk.github.io/developers/transparent_singularity//">Transparent Singularity Tool&lt;/a> tool, that wraps the executables inside a container to make them easily available for pipelines. More information can be found here:&lt;/p>
 &lt;p>one example to do this is:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">curl -s https://raw.githubusercontent.com/NeuroDesk/neurodesk/master/cvmfs/log.txt
-&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">container&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>itksnap_3.8.0_20201208
-git clone https://github.com/NeuroDesk/transparent-singularity &lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">container&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>
-&lt;span style="color:#204a87">cd&lt;/span> &lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">container&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>
-./run_transparent_singularity.sh &lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">container&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Storage</title><link>https://neurodesk.github.io/docs/neurodesktop/storage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/storage/</guid><description>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>curl -s https://raw.githubusercontent.com/NeuroDesk/neurodesk/master/cvmfs/log.txt
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">container&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>itksnap_3.8.0_20201208
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git clone https://github.com/NeuroDesk/transparent-singularity &lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">container&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">cd&lt;/span> &lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">container&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>./run_transparent_singularity.sh &lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">container&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Storage</title><link>https://neurodesk.github.io/docs/neurodesktop/storage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/storage/</guid><description>
 &lt;h1 id="cloud-storage">Cloud-storage&lt;/h1>
 &lt;p>The easiest way to get your data into Neurodesktop is to use a cloud storage provider like CloudStor, Dropbox, OneDrive and their sync tools like OwnCloud, Nextcloud or very flexible tools like rclone or davfs2. Another good option could be to utilize Globus for large amounts of data.&lt;/p>
 &lt;h2 id="nextcloud-and-owncloud-desktop-clients">Nextcloud and Owncloud desktop clients&lt;/h2>
 &lt;p>Under the menu item &amp;ldquo;Accessories&amp;rdquo; you can find &amp;ldquo;Nextcloud&amp;rdquo; and &amp;ldquo;ownCloud&amp;rdquo; desktop sync clients that you can configure with your cloud service accounts.&lt;/p>
 &lt;p>To connect for example to your AARNET cloudstor account you can start the ownCloud client and enter the Server Address:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">https://cloudstor.aarnet.edu.au/plus/
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Then generate an app-password here: &lt;a href="https://cloudstor.aarnet.edu.au/plus/settings/personal?sectionid=security">https://cloudstor.aarnet.edu.au/plus/settings/personal?sectionid=security&lt;/a>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>https://cloudstor.aarnet.edu.au/plus/
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Then generate an app-password here: &lt;a href="https://cloudstor.aarnet.edu.au/plus/settings/personal?sectionid=security">https://cloudstor.aarnet.edu.au/plus/settings/personal?sectionid=security&lt;/a>&lt;/p>
 &lt;h2 id="mounting-webdav-storage-using-davfs2">Mounting webdav storage using davfs2&lt;/h2>
 &lt;p>Another option is to directly mount webdav storage. Here is an example how to mount CloudStor into Neurodesktop:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">sudo mount -t davfs https://cloudstor.aarnet.edu.au/plus/remote.php/webdav/ /data/
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>It then asks you for a username and password, which you can generate here: &lt;a href="https://cloudstor.aarnet.edu.au/plus/settings/personal?sectionid=security">https://cloudstor.aarnet.edu.au/plus/settings/personal?sectionid=security&lt;/a>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>sudo mount -t davfs https://cloudstor.aarnet.edu.au/plus/remote.php/webdav/ /data/
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>It then asks you for a username and password, which you can generate here: &lt;a href="https://cloudstor.aarnet.edu.au/plus/settings/personal?sectionid=security">https://cloudstor.aarnet.edu.au/plus/settings/personal?sectionid=security&lt;/a>&lt;/p>
 &lt;h2 id="rclone">Rclone&lt;/h2>
 &lt;p>Rclone is a command line tool that enables the interaction with various cloud services. Here is an example how to setup rclone with CloudStor Aarnet:&lt;/p>
 &lt;ul>
@@ -770,8 +770,8 @@ git clone https://github.com/NeuroDesk/transparent-singularity &lt;span style="c
 &lt;/ul>
 &lt;h2 id="globus">Globus&lt;/h2>
 &lt;p>We also provide the globus client, so you can transfer large amounts of data between globus endpoints and Neurodesktop. You can configure it by running:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">/opt/globusconnectpersonal/globusconnectpersonal-*/globusconnectpersonal
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Once authenticated you can go to the globus file-manager &lt;a href="https://app.globus.org/file-manager">https://app.globus.org/file-manager&lt;/a> and your neurodesktop instance will be an endpoint for globus.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>/opt/globusconnectpersonal/globusconnectpersonal-*/globusconnectpersonal
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Once authenticated you can go to the globus file-manager &lt;a href="https://app.globus.org/file-manager">https://app.globus.org/file-manager&lt;/a> and your neurodesktop instance will be an endpoint for globus.&lt;/p>
 &lt;h1 id="mounting-external-storage-on-your-host-computer">Mounting external storage on your host-computer&lt;/h1>
 &lt;p>The -v C:/neurodesktop-storage:/neurodesktop-storage part of the docker command links the directory &amp;ldquo;neurodesktop-storage&amp;rdquo; on the “C drive” of your Windows computer to the directory /neurodesktop-storage inside the Desktop environment. Everything you store in there will be available inside the desktop and on the host computer. You can also mount additional directories by adding another -v parameter set (e.g. -v D:/moredata:/data) - this will mount the directory moredata from your D drive to /data inside neurodesktop. Improtant: the mountpoint inside neurodesktop should be named /data (or anything from this list: &lt;a href="https://github.com/NeuroDesk/neurocontainers/blob/master/recipes/globalMountPointList.txt">https://github.com/NeuroDesk/neurocontainers/blob/master/recipes/globalMountPointList.txt&lt;/a>) - otherwise most of the tools will not be able to access the data.&lt;/p>
 &lt;p>Here is an example for Windows adding another storage directory:&lt;/p>
@@ -780,17 +780,17 @@ git clone https://github.com/NeuroDesk/transparent-singularity &lt;span style="c
 &lt;/pre>
 &lt;h1 id="mount-volume-using-sshfs">Mount volume using SSHFS&lt;/h1>
 &lt;p>It is theoretically possible to mount an SSH target inside Neurodesktop, but it&amp;rsquo;s not a very reliable way of mounting storage:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">sshfs -o allow_root USER@TARGET_HOST:TARGET_PATH SOURCE_PATH
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>A better option is to use &lt;code>scp&lt;/code> and copy data from an SSH endpoint:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">scp /neurodesk/myfile user@remoteserver:/data/
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>An alternative is to mount the SSHFS target into a parent directory on your local machine or VM and then use the -v option in the docker run command to bind the parent directory of the SSHFS mount. NOTE: the SSHFS &lt;em>has&lt;/em> to be mounted to a subdirectory inside a parent directory which is then bound to the docker container. If you directly bind to the mounted directory itself, your Neurodesktop container will stop being able to access it if the SSHFS mount disconnects and will not be able to access it again without restarting the Neurodesktop container.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>sshfs -o allow_root USER@TARGET_HOST:TARGET_PATH SOURCE_PATH
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>A better option is to use &lt;code>scp&lt;/code> and copy data from an SSH endpoint:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>scp /neurodesk/myfile user@remoteserver:/data/
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>An alternative is to mount the SSHFS target into a parent directory on your local machine or VM and then use the -v option in the docker run command to bind the parent directory of the SSHFS mount. NOTE: the SSHFS &lt;em>has&lt;/em> to be mounted to a subdirectory inside a parent directory which is then bound to the docker container. If you directly bind to the mounted directory itself, your Neurodesktop container will stop being able to access it if the SSHFS mount disconnects and will not be able to access it again without restarting the Neurodesktop container.&lt;/p>
 &lt;p>For example, on a local Linux machine or VM:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">sshfs -o allow_root USER@TARGET_HOST:TARGET_PATH/MyData SOURCE_PATH/SSHFS_Mounts/MyData
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Then add the following line to the docker run command when starting Neurodesktop (note the rshared flag):&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">-v /SSHFS_Mounts:/data:rshared &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>TIP: If you use key pair authentication instead of password for your SSHFS mount, you can use the reconnect flag to reconnect automatically if the connection drops:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">sshfs -o &lt;span style="color:#000">IdentityFile&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>~/.ssh/id_rsa,allow_root,ServerAliveInterval&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>5,ServerAliveCountMax&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">3&lt;/span> USER@TARGET_HOST:TARGET_PATH/MyData SOURCE_PATH/SSHFS_Mounts/MyData
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Visual Studio Code</title><link>https://neurodesk.github.io/docs/neurodesktop/getting-started/visual-studio-code/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/getting-started/visual-studio-code/</guid><description>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>sshfs -o allow_root USER@TARGET_HOST:TARGET_PATH/MyData SOURCE_PATH/SSHFS_Mounts/MyData
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Then add the following line to the docker run command when starting Neurodesktop (note the rshared flag):&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>-v /SSHFS_Mounts:/data:rshared &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>TIP: If you use key pair authentication instead of password for your SSHFS mount, you can use the reconnect flag to reconnect automatically if the connection drops:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>sshfs -o &lt;span style="color:#000">IdentityFile&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>~/.ssh/id_rsa,allow_root,ServerAliveInterval&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>5,ServerAliveCountMax&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">3&lt;/span> USER@TARGET_HOST:TARGET_PATH/MyData SOURCE_PATH/SSHFS_Mounts/MyData
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Visual Studio Code</title><link>https://neurodesk.github.io/docs/neurodesktop/getting-started/visual-studio-code/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/getting-started/visual-studio-code/</guid><description>
 &lt;p>Following guide is for connecting to a Neurodesktop using a VS Code installation running on your host machine.&lt;/p>
 &lt;blockquote>
 &lt;p>Additional instructions if your Neurodesktop is running remotely (i.e. Cloud, HPC, VM)&lt;/p>
@@ -824,7 +824,7 @@ git clone https://github.com/NeuroDesk/transparent-singularity &lt;span style="c
 &lt;/blockquote>
 &lt;p>Open the Command Palette (Ctrl+Shift+P).&lt;/p>
 &lt;p>Select &lt;code>Remote-Containers: Attach to Running Container&lt;/code> from the dropdown panel&lt;/p>
-&lt;p>Start typing in &amp;lsquo;neurodesktop. Select &lt;code>/neurodesktop&lt;/code> from the list&lt;/p>
+&lt;p>Start typing in &amp;rsquo;neurodesktop. Select &lt;code>/neurodesktop&lt;/code> from the list&lt;/p>
 &lt;p>This should open a VS Code Window connected to the neurodesktop as a Dev Container.&lt;/p>
 &lt;blockquote>
 &lt;p>First time connection will take about a minute, as VS code has to install the VS Code server onto the container. Repeat connections should be faster&lt;/p>
@@ -854,8 +854,8 @@ To check which user is being use, open the terminal in the neurodesktop VS Code 
 &lt;h2 id="quickstart">Quickstart&lt;/h2>
 &lt;h3 id="1-connect-to-cloud-server">1. Connect to cloud server&lt;/h3>
 &lt;p>On the computer from which you want to access Neurodesktop, open an SSH connection to your cloud instance with port forwarding (USER should be substituted with a username that has admin privileges on the cloud instance, and IP should be substituted with the IP address of the cloud instance)&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">ssh -L 8080:127.0.0.1:8080 USER@IP
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="2-install-docker">2. Install Docker&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>ssh -L 8080:127.0.0.1:8080 USER@IP
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="2-install-docker">2. Install Docker&lt;/h3>
 &lt;p>Install Docker on the cloud instance from here: &lt;a href="https://docs.docker.com/get-docker/">https://docs.docker.com/get-docker/&lt;/a>. Additional information available here: &lt;a href="https://neurodesk.github.io/docs/neurodesktop/getting-started/linux/#installing-docker">https://neurodesk.github.io/docs/neurodesktop/getting-started/linux/#installing-docker&lt;/a>&lt;/p>
 &lt;h3 id="3-run-neurodesktop">3. Run Neurodesktop&lt;/h3>
 &lt;p>Create a local folder ~/neurodesktop-storage on the cloud instance to store persistent data (data that will not disappear if neurodesktop is stopped)&lt;/p>
@@ -891,8 +891,8 @@ Even if your connection to the cloud instance is broken, and the terminal does n
 &lt;p>Open a browser on the computer from which you want to access Neurodesktop, and go to:&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">http://localhost:8080/#/?username=user&amp;amp;password=password
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>If the computer runs Linux, check specific instructions at &lt;a href="https://neurodesk.github.io/docs/neurodesktop/getting-started/linux/">https://neurodesk.github.io/docs/neurodesktop/getting-started/linux/&lt;/a>, Option 2, Step 3.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>http://localhost:8080/#/?username=user&amp;amp;password=password
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>If the computer runs Linux, check specific instructions at &lt;a href="https://neurodesk.github.io/docs/neurodesktop/getting-started/linux/">https://neurodesk.github.io/docs/neurodesktop/getting-started/linux/&lt;/a>, Option 2, Step 3.&lt;/p>
 &lt;ol start="5">
 &lt;li>
 &lt;p>Press on &amp;ldquo;Desktop Auto-Resolution&amp;rdquo; under &amp;ldquo;ALL CONNECTIONS&amp;rdquo;&lt;/p>
@@ -960,8 +960,8 @@ Notice that any data that were saved outside of /neurodesktop-storage would be l
 &lt;/table>
 &lt;h2 id="using-an-rdp-client">Using an RDP Client&lt;/h2>
 &lt;p>Open an SSH connection to your cloud instance with the following command&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">ssh -L 3390:127.0.0.1:3390 USER@IP
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Startup Neurodesktop using the following command:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>ssh -L 3390:127.0.0.1:3390 USER@IP
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Startup Neurodesktop using the following command:&lt;/p>
 &lt;p>&lt;pre class="language-shell command-line" data-prompt="$" data-output="2-6">
 &lt;code>sudo docker run \
 --shm-size=1gb -it --privileged --name neurodesktop \
@@ -975,9 +975,9 @@ If you want to connect via RDP using a different port, replace 3390 in the previ
 &lt;/p>
 &lt;p>Open your RDP client and connect to Computer &lt;code>localhost:3390&lt;/code>&lt;/p>
 &lt;p>Use the following details to login if prompted&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">username: user
-password: password
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="using-vnc">Using VNC&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>username: user
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>password: password
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="using-vnc">Using VNC&lt;/h2>
 &lt;p>To enable VNC and disable RDP, startup Neurodesktop using the following command:&lt;/p>
 &lt;pre class="language-shell command-line" data-prompt="$" data-output="2-6">
 &lt;code>sudo docker run \
@@ -1031,8 +1031,8 @@ Needs testing
 &lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/154870249-731f8fe3-474f-43ff-aac4-c460893e4246.png" alt="image">&lt;/p>
 &lt;h2 id="docker-cannot-connect-to-the-docker-daemon-at-unixvarrundockersock-is-the-docker-daemon-running">docker: Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?.&lt;/h2>
 &lt;p>This is usually a docker-related error, not related to neurodesktop itself. To troubleshoot docker, we can try a simpler container first:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">docker run hello-world
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Try the following solutions (in this order, until the above command works)&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>docker run hello-world
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Try the following solutions (in this order, until the above command works)&lt;/p>
 &lt;ol>
 &lt;li>Win/Mac: Open docker GUI and accept T&amp;amp;Cs. Check that the docker engine is running&lt;/li>
 &lt;li>Close and open the terminal and retry.&lt;/li>
@@ -1078,26 +1078,26 @@ We recommend the &lt;em>manual&lt;/em> install instructions, as the simplified i
 &lt;li>Run Docker&lt;/li>
 &lt;li>Open a terminal (ie. Powershell) in the PC you want to use to run Neurodesktop (not in Neurodesktop itself) and type the following command:&lt;/li>
 &lt;/ol>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">docker info
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>This will generate information about your Docker installation (make sure Docker is running during this step)&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>docker info
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This will generate information about your Docker installation (make sure Docker is running during this step)&lt;/p>
 &lt;ol start="3">
 &lt;li>Look for the line that says&lt;/li>
 &lt;/ol>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">Total Memory: **.**GiB
-&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="4">
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>Total Memory: **.**GiB
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="4">
 &lt;li>If this value is ~2GB, try increasing it*:
 &lt;ul>
 &lt;li>Create a .wslconfig file in your user directory (for more detail instructions see: &lt;a href="https://docs.microsoft.com/en-us/windows/wsl/wsl-config">https://docs.microsoft.com/en-us/windows/wsl/wsl-config&lt;/a>)&lt;/li>
 &lt;li>In the .wslconfig file include the following lines:&lt;/li>
 &lt;/ul>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">[wsl2]
-memory=32GB
-&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>[wsl2]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>memory=32GB
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
 &lt;li>Quit Docker (make sure it&amp;rsquo;s not running in the background, ie. system tray, check task manager)&lt;/li>
 &lt;li>In the terminal, run the following command&lt;/li>
 &lt;/ul>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">wsl --running --list
-&lt;/code>&lt;/pre>&lt;/div>This will list any running distributions. For the update to be successful, WSL needs to have comletely stopped running (ie. no distributions running)
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>wsl --running --list
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>This will list any running distributions. For the update to be successful, WSL needs to have comletely stopped running (ie. no distributions running)
 &lt;ul>
 &lt;li>Restart Docker and rerun steps 1-3 to confirm it was successful&lt;/li>
 &lt;/ul>
