@@ -110,8 +110,10 @@ Use the guide below to add a tool to &lt;em>neurodesktop&lt;/em> or &lt;em>neuro
 &lt;h2 id="build-container">Build container&lt;/h2>
 &lt;p>To build a container, set up environment with:&lt;/p>
 &lt;ol>
-&lt;li>Docker, the version in our CI environment&lt;/li>
-&lt;li>Python, the version in our CI environment&lt;/li>
+&lt;li>Docker (same version installed on our CI environment)&lt;/li>
+&lt;li>Python (same version installed on the CI environment, and launched by &amp;lsquo;python&amp;rsquo;)&lt;/li>
+&lt;li>Python pip (same version installed on the CI environment, and launched by &amp;lsquo;python -m pip&amp;rsquo;)&lt;/li>
+&lt;li>git&lt;/li>
 &lt;/ol>
 &lt;p>And then follow these steps:&lt;/p>
 &lt;ol>
