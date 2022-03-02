@@ -56,7 +56,7 @@
 <a class=nav-link href=https://github.com/NeuroDesk target=_blank><i class="fab fa-github"></i><span>GitHub</span></a>
 </li><li class="nav-item mr-4 mb-2 mb-lg-0">
 <a class=nav-link href=https://twitter.com/neuro_desk target=_blank><i class="fab fa-twitter"></i><span>News/Twitter</span></a>
-</li></ul></div><div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.cb740798acc3723b8c850a789dbd53a5.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+</li></ul></div><div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.42cb3b682546574b980201bb956a078f.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 </div></nav></header><div class="container-fluid td-outer">
 <div class=td-main>
 <div class="row flex-xl-nowrap">
@@ -76,8 +76,8 @@ This is the multi-page printable view of this section.
 <h1 id=pg-7d2cf5c0520f7ea412450bf2c795e035>1 - Setup CVMFS Proxy</h1><div class=lead>Setup CVMFS Proxy server</div><p>If you want more speed in a region one way could be to setup another Stratum 1 server or a proxy. We currently don&rsquo;t run any proxy servers but it would be important for using it on a cluster.</p><pre class="language-batch command-line" data-prompt=">" data-output=2-4>
 <code>docker run --shm-size=1gb -it --privileged --name neurodesktop `
 -v C:/neurodesktop-storage:/neurodesktop-storage -p 8080:8080 `
--h neurodesktop-20220222 `
-vnmd/neurodesktop:20220222</code>
+-h neurodesktop-20220302 `
+vnmd/neurodesktop:20220302</code>
 </pre><h1 id=setup-a-cvmfs-proxy-server>Setup a CVMFS proxy server</h1><pre class="language-shell command-line" data-prompt=$>
 <code>sudo yum install -y squid</code>
 </pre><p>Open the <code>squid.conf</code>and use the following configuration</p><pre class="language-shell command-line" data-prompt=$>

@@ -58,14 +58,14 @@
 <a class=nav-link href=https://github.com/NeuroDesk target=_blank><i class="fab fa-github"></i><span>GitHub</span></a>
 </li><li class="nav-item mr-4 mb-2 mb-lg-0">
 <a class=nav-link href=https://twitter.com/neuro_desk target=_blank><i class="fab fa-twitter"></i><span>News/Twitter</span></a>
-</li></ul></div><div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.cb740798acc3723b8c850a789dbd53a5.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+</li></ul></div><div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.42cb3b682546574b980201bb956a078f.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 </div></nav></header><div class="container-fluid td-outer">
 <div class=td-main>
 <div class="row flex-xl-nowrap">
 <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
 <div id=td-sidebar-menu class=td-sidebar__inner>
 <form class="td-sidebar__search d-flex align-items-center">
-<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.cb740798acc3723b8c850a789dbd53a5.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.42cb3b682546574b980201bb956a078f.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type=button data-toggle=collapse data-target=#td-section-nav aria-controls=td-docs-nav aria-expanded=false aria-label="Toggle section navigation">
 </button>
 </form><nav class="collapse td-sidebar-nav" id=td-section-nav>
@@ -162,7 +162,7 @@
   -v ~/neurodesktop-storage:/neurodesktop-storage \
   -e HOST_UID=&#34;$(id -u)&#34; -e HOST_GID=&#34;$(id -g)&#34;\
   -p 8080:8080 \
-  -h neurodesktop-20220222 vnmd/neurodesktop:20220222</code></pre><div class="alert alert-primary" role=alert>
+  -h neurodesktop-20220302 vnmd/neurodesktop:20220302</code></pre><div class="alert alert-primary" role=alert>
 If you get errors in neurodesktop then check if the ~/neurodesktop-storage directory is writable to all users, otherwise run <code>chmod a+rwx ~/neurodesktop-storage</code>
 </div><ol start=2>
 <li>
@@ -222,8 +222,8 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io</code>
   -e HOST_UID="$(id -u)" -e HOST_GID="$(id -g)" \
   -e NVIDIA_VISIBLE_DEVICES=all \
   -e NVIDIA_DISABLE_REQUIRE=1 \
-  -p 8080:8080 -h neurodesktop-20220222 \
-  vnmd/neurodesktop:20220222</code>
+  -p 8080:8080 -h neurodesktop-20220302 \
+  vnmd/neurodesktop:20220302</code>
 </pre><p>Then inside the neurodesktop container run:</p><pre class="language-shell command-line" data-prompt=$>
 <code>
 sudo apt update
@@ -254,7 +254,7 @@ print("Num GPUs Available: ", len(tf.config.list_physical_devices('GPU')))</code
   -v ~/neurodesktop-storage:/neurodesktop-storage \
   -e HOST_UID=&#34;$(id -u)&#34; -e HOST_GID=&#34;$(id -g)&#34;\
   -p 8080:8080 -p 3390:3389 \
-  -h neurodesktop-20220222 vnmd/neurodesktop:20220222</code></pre><div class="alert alert-primary" role=alert>
+  -h neurodesktop-20220302 vnmd/neurodesktop:20220302</code></pre><div class="alert alert-primary" role=alert>
 If you want to connect via RDP using a different port, replace 3390 in the previous and next step with your port
 </div></p><p>Open your RDP client and connect to Computer <code>localhost:3390</code></p><p>Use the following details to login if prompted</p><div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback><span style=display:flex><span>username: user
 </span></span><span style=display:flex><span>password: password
@@ -264,13 +264,13 @@ If you want to connect via RDP using a different port, replace 3390 in the previ
   -v ~/neurodesktop-storage:/neurodesktop-storage \
   -e HOST_UID=&#34;$(id -u)&#34; -e HOST_GID=&#34;$(id -g)&#34;\
   -p 8080:8080 \
-  -h neurodesktop-20220222 vnmd/neurodesktop:20220222 --vnc</code></pre><p>To enable both VNC and RDP, startup Neurodesktop using the following command:</p><pre class="language-shell command-line" data-prompt=$ data-output=2-6>
+  -h neurodesktop-20220302 vnmd/neurodesktop:20220302 --vnc</code></pre><p>To enable both VNC and RDP, startup Neurodesktop using the following command:</p><pre class="language-shell command-line" data-prompt=$ data-output=2-6>
 <code>sudo docker run \
   --shm-size=1gb -it --privileged --name neurodesktop \
   -v ~/neurodesktop-storage:/neurodesktop-storage \
   -e HOST_UID=&#34;$(id -u)&#34; -e HOST_GID=&#34;$(id -g)&#34;\
   -p 8080:8080 \
-  -h neurodesktop-20220222 vnmd/neurodesktop:20220222 --vnc --rdp</code></pre><div class="alert alert-primary" role=alert>
+  -h neurodesktop-20220302 vnmd/neurodesktop:20220302 --vnc --rdp</code></pre><div class="alert alert-primary" role=alert>
 <p>VNC allows for multiple desktop connections to same instance</p><p>Note: Neurodesktop VNC on the browser currently does not support auto-resolution</p></div><h3 id=using-a-vnc-client>Using a VNC Client</h3><div class="alert alert-warning" role=alert>
 Needs testing
 </div><p>Startup Neurodesktop using the following command:</p><pre class="language-shell command-line" data-prompt=$ data-output=2-6>
@@ -279,7 +279,7 @@ Needs testing
   -v ~/neurodesktop-storage:/neurodesktop-storage \
   -e HOST_UID=&#34;$(id -u)&#34; -e HOST_GID=&#34;$(id -g)&#34;\
   -p 8080:8080 -p 5901:5901 \
-  -h neurodesktop-20220222 vnmd/neurodesktop:20220222 --vnc</code></pre><p>Open a VNC Client and connect to port 5901</p><div class="text-muted mt-5 pt-3 border-top">
+  -h neurodesktop-20220302 vnmd/neurodesktop:20220302 --vnc</code></pre><p>Open a VNC Client and connect to port 5901</p><div class="text-muted mt-5 pt-3 border-top">
 Last modified February 25, 2022: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/d95036e68079348c3c92cdfabfbbd3ce80411a6a>Update linux.md (d95036e6)</a>
 </div></div></main></div></div><footer class="bg-dark py-5 row d-print-none">
 <div class="container-fluid mx-sm-5">
