@@ -111,7 +111,7 @@ Use the guide below to add a tool to &lt;em>neurodesktop&lt;/em> or &lt;em>neuro
 &lt;p>To build a container, set up environment with:&lt;/p>
 &lt;ol>
 &lt;li>Docker&lt;/li>
-&lt;li>Python 3 (and launched by &amp;lsquo;python&amp;rsquo;)&lt;/li>
+&lt;li>Python (search for &amp;ldquo;python_requires&amp;rdquo; in &lt;a href="https://github.com/NeuroDesk/neurodocker/blob/master/setup.cfg">https://github.com/NeuroDesk/neurodocker/blob/master/setup.cfg&lt;/a> for minimal version required. If you have several versions of Python installed in the environment, typing &amp;lsquo;python&amp;rsquo; in the terminal should launch this specific version)&lt;/li>
 &lt;li>Python pip3 (and launched by &amp;lsquo;python -m pip&amp;rsquo;)&lt;/li>
 &lt;li>git&lt;/li>
 &lt;/ol>
