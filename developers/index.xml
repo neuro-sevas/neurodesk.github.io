@@ -234,6 +234,7 @@ If the full package name that comes up in the step 11 is itksnap_3.8.0, and the 
 &lt;p>The command to use in a terminal open in Neurodesktop is:&lt;/p>
 &lt;pre class="language-shell command-line" data-prompt="$">&lt;code>bash /neurocommand/local/fetch_and_run.sh itksnap 3.8.0 20210322
 (when you see the "Singularity>" prompt, type exit and ENTER)
+module use /neurodesktop-storage/containers/modules
 ml toolName/toolVersion&lt;/code>&lt;/pre>
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">Depreciation notice&lt;/h4>
