@@ -156,7 +156,7 @@ cp -R template newapp&lt;/code>&lt;/pre>
 &lt;li>Modify &lt;code>build.sh&lt;/code> in &lt;code>neurocontainers/recipes/newapp&lt;/code> to build your application and update README.md (make sure the version is correct in the README!)&lt;/li>
 &lt;/ol>
 &lt;pre class="language-shell command-line" data-prompt="$" data-output="2-3">&lt;code>cd newapp
-(edit build.sh as required)
+(edit build.sh as required; notice that the example build script in the template has instructions to build a conatiner for datalad, that may or may not suite your exact needs)
 (edit README.md as required)&lt;/code>&lt;/pre>
 &lt;p>Upload your application to object storage first if needed, so you can then download it in build.sh (ask for instructions about this if you don&amp;rsquo;t know the key, and never share it anywhere public!)&lt;/p>
 &lt;ol start="5">
@@ -249,7 +249,7 @@ ml toolName/toolVersion&lt;/code>&lt;/pre>
 &lt;ol start="15">
 &lt;li>Fork &lt;a href="https://github.com/NeuroDesk/neurocommand/">https://github.com/NeuroDesk/neurocommand/&lt;/a> to your Github account&lt;/li>
 &lt;li>Edit an entry for your package in your fork of neurocommand/blob/main/neurodesk/apps.json based on one of the other entries (generating one menu item for opening a terminal inside the containers, and one menu item for the GUI, if relevant). Notice that in the json file, the version field should contain the &lt;em>buildDate&lt;/em>&lt;/li>
-&lt;li>Include an icon file in your fork of neurocommand/tree/main/neurodesk/icons&lt;/li>
+&lt;li>Include an icon file in your fork of neurocommand/neurodesk/icons&lt;/li>
 &lt;li>Send a pull request from your fork of neurocommand to &lt;a href="https://github.com/NeuroDesk/neurocommand/">https://github.com/NeuroDesk/neurocommand/&lt;/a>&lt;/li>
 &lt;li>When the pull request is merged by Neurodesk admins, it will trigger an action to build the singularity container, distribute it in all object storage locations and on CVMFS, and it will update the menus in the desktop image on the next daily build&lt;/li>
 &lt;li>Check in the dev build if everything is ok before releasing a new version of Neurodesktop:&lt;/li>

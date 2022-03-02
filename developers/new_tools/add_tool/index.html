@@ -21,12 +21,12 @@
 ">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://neurodesk.github.io/developers/new_tools/add_tool/"><meta property="article:section" content="developers">
-<meta property="article:modified_time" content="2022-03-02T20:10:45+11:00"><meta property="og:site_name" content="NeuroDesk">
+<meta property="article:modified_time" content="2022-03-03T03:03:45+11:00"><meta property="og:site_name" content="NeuroDesk">
 <meta itemprop=name content="Add tools">
 <meta itemprop=description content="Add a tool to neurodesktop
 ">
-<meta itemprop=dateModified content="2022-03-02T20:10:45+11:00">
-<meta itemprop=wordCount content="1285">
+<meta itemprop=dateModified content="2022-03-03T03:03:45+11:00">
+<meta itemprop=wordCount content="1311">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="Add tools">
 <meta name=twitter:description content="Add a tool to neurodesktop
@@ -58,14 +58,14 @@
 <a class=nav-link href=https://github.com/NeuroDesk target=_blank><i class="fab fa-github"></i><span>GitHub</span></a>
 </li><li class="nav-item mr-4 mb-2 mb-lg-0">
 <a class=nav-link href=https://twitter.com/neuro_desk target=_blank><i class="fab fa-twitter"></i><span>News/Twitter</span></a>
-</li></ul></div><div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.1b3d4fd1646e14bb9d134f785bf58c91.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+</li></ul></div><div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.873b7a7d383c5bd8ac627f83e1c78dde.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 </div></nav></header><div class="container-fluid td-outer">
 <div class=td-main>
 <div class="row flex-xl-nowrap">
 <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
 <div id=td-sidebar-menu class=td-sidebar__inner>
 <form class="td-sidebar__search d-flex align-items-center">
-<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.1b3d4fd1646e14bb9d134f785bf58c91.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.873b7a7d383c5bd8ac627f83e1c78dde.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type=button data-toggle=collapse data-target=#td-section-nav aria-controls=td-docs-nav aria-expanded=false aria-label="Toggle section navigation">
 </button>
 </form><nav class="collapse td-sidebar-nav" id=td-section-nav>
@@ -150,7 +150,7 @@ cd ..</code></pre><ol start=2>
 <li>Copy the directory template and rename to <em>newapp</em> in <code>neurocontainers/recipes</code></li></ol><pre class="language-shell command-line" data-prompt=$><code>cd neurocontainers/recipes
 cp -R template newapp</code></pre><ol start=4>
 <li>Modify <code>build.sh</code> in <code>neurocontainers/recipes/newapp</code> to build your application and update README.md (make sure the version is correct in the README!)</li></ol><pre class="language-shell command-line" data-prompt=$ data-output=2-3><code>cd newapp
-(edit build.sh as required)
+(edit build.sh as required; notice that the example build script in the template has instructions to build a conatiner for datalad, that may or may not suite your exact needs)
 (edit README.md as required)</code></pre><p>Upload your application to object storage first if needed, so you can then download it in build.sh (ask for instructions about this if you don&rsquo;t know the key, and never share it anywhere public!)</p><ol start=5>
 <li>Run update-builders.sh - This will auto-create the CI workflow for the application (or manually duplicate the template file and rename all occurances of template to <em>newapp</em>)</li></ol><pre class="language-shell command-line" data-prompt=$><code>cd ../..
 sh update-builders.sh</code></pre><blockquote>
@@ -185,9 +185,9 @@ ml toolName/toolVersion</code></pre><div class="alert alert-warning" role=alert>
 <h4 class=alert-heading>Depreciation notice</h4><p>For VNM users use:</p><pre class="language-shell command-line" data-prompt=$><code>bash /neurodesk/local/fetch_and_run.sh toolName toolVersion buildDate
 ml toolName/toolVersion</code></pre></div><ol start=14>
 <li>Test the new container. Run some commands, to see all is good</li></ol><p>If the container doesn&rsquo;t work yet, it&rsquo;s sometimes useful to try and troubleshoot it and install missing libraries. This can be achieved by running it in a writable mode with fakeroot enabled:</p><pre class="language-shell command-line" data-prompt=$><code>SINGULARITY_BINDPATH=''; singularity shell --writable --fakeroot /neurodesktop-storage/containers/toolName_toolVersion_buildDate/toolName_toolVersion_buildDate.simg</code></pre><ol start=15>
-<li>Fork <a href=https://github.com/NeuroDesk/neurocommand/>https://github.com/NeuroDesk/neurocommand/</a> to your Github account</li><li>Edit an entry for your package in your fork of neurocommand/blob/main/neurodesk/apps.json based on one of the other entries (generating one menu item for opening a terminal inside the containers, and one menu item for the GUI, if relevant). Notice that in the json file, the version field should contain the <em>buildDate</em></li><li>Include an icon file in your fork of neurocommand/tree/main/neurodesk/icons</li><li>Send a pull request from your fork of neurocommand to <a href=https://github.com/NeuroDesk/neurocommand/>https://github.com/NeuroDesk/neurocommand/</a></li><li>When the pull request is merged by Neurodesk admins, it will trigger an action to build the singularity container, distribute it in all object storage locations and on CVMFS, and it will update the menus in the desktop image on the next daily build</li><li>Check in the dev build if everything is ok before releasing a new version of Neurodesktop:</li></ol><pre class="language-shell command-line" data-prompt=$><code>sudo docker pull vnmd/neurodesktop-dev:latest && sudo docker run   --shm-size=1gb -it --privileged --name neurodesktop   -v ~/neurodesktop-storage:/neurodesktop-storage   -e HOST_UID="$(id -u)" -e HOST_GID="$(id -g)"   -p 8080:8080 -h neurodesktop-dev   vnmd/neurodesktop-dev:latest</code></pre><ol start=21>
+<li>Fork <a href=https://github.com/NeuroDesk/neurocommand/>https://github.com/NeuroDesk/neurocommand/</a> to your Github account</li><li>Edit an entry for your package in your fork of neurocommand/blob/main/neurodesk/apps.json based on one of the other entries (generating one menu item for opening a terminal inside the containers, and one menu item for the GUI, if relevant). Notice that in the json file, the version field should contain the <em>buildDate</em></li><li>Include an icon file in your fork of neurocommand/neurodesk/icons</li><li>Send a pull request from your fork of neurocommand to <a href=https://github.com/NeuroDesk/neurocommand/>https://github.com/NeuroDesk/neurocommand/</a></li><li>When the pull request is merged by Neurodesk admins, it will trigger an action to build the singularity container, distribute it in all object storage locations and on CVMFS, and it will update the menus in the desktop image on the next daily build</li><li>Check in the dev build if everything is ok before releasing a new version of Neurodesktop:</li></ol><pre class="language-shell command-line" data-prompt=$><code>sudo docker pull vnmd/neurodesktop-dev:latest && sudo docker run   --shm-size=1gb -it --privileged --name neurodesktop   -v ~/neurodesktop-storage:/neurodesktop-storage   -e HOST_UID="$(id -u)" -e HOST_GID="$(id -g)"   -p 8080:8080 -h neurodesktop-dev   vnmd/neurodesktop-dev:latest</code></pre><ol start=21>
 <li>Consider contributing a tutorial about the new tool: <a href=https://github.com/NeuroDesk/neurodesk.github.io/tree/hugo-docsy/content/en/tutorials>https://github.com/NeuroDesk/neurodesk.github.io/tree/hugo-docsy/content/en/tutorials</a></li></ol><div class="text-muted mt-5 pt-3 border-top">
-Last modified March 2, 2022: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/0e2d430710175f56aa6e05237f99f5d83f13e810>Update add_tool.md (0e2d4307)</a>
+Last modified March 3, 2022: <a href=https://github.com/NeuroDesk/neurodesk.github.io/commit/28cf0762a6094b71b206101f6efcd46a182d1589>Update add_tool.md (28cf0762)</a>
 </div></div></main></div></div><footer class="bg-dark py-5 row d-print-none">
 <div class="container-fluid mx-sm-5">
 <div class=row>
