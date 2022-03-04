@@ -589,7 +589,7 @@ Needs testing
 &lt;/pre>
 &lt;p>Open a VNC Client and connect to port 5901&lt;/p></description></item><item><title>Docs: HPC</title><link>https://neurodesk.github.io/docs/neurodesktop/getting-started/hpc/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/getting-started/hpc/</guid><description>
 &lt;p>One way of running this project on HPCs is via &lt;a href="https://neurodesk.github.io/docs/neurocommand/getting-started/linux/">https://neurodesk.github.io/docs/neurocommand/getting-started/linux/&lt;/a>&lt;/p></description></item><item><title>Docs: Nectar Virtual Desktop Service</title><link>https://neurodesk.github.io/docs/neurodesktop/getting-started/nectar/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/getting-started/nectar/</guid><description>
-&lt;p>Unfortunately, this option is only available to Australian/NZ researchers. Please accept our apologies otherwise.&lt;/p>
+&lt;p>This option is only available to Australian/NZ researchers.&lt;/p>
 &lt;p>Go to &lt;a href="https://desktop.rc.nectar.org.au/">https://desktop.rc.nectar.org.au/&lt;/a>&lt;/p>
 &lt;p>Click on &amp;ldquo;Sign in&amp;rdquo;.&lt;/p>
 &lt;p>Choose the AAF option if you have an Australian university email or the NZ option if you have a New Zealand university email.&lt;/p>
