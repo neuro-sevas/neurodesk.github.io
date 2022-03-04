@@ -56,7 +56,7 @@
 <a class=nav-link href=https://github.com/NeuroDesk target=_blank><i class="fab fa-github"></i><span>GitHub</span></a>
 </li><li class="nav-item mr-4 mb-2 mb-lg-0">
 <a class=nav-link href=https://twitter.com/neuro_desk target=_blank><i class="fab fa-twitter"></i><span>News/Twitter</span></a>
-</li></ul></div><div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.3fbb67eedc921c03a618b1eca1ba30f8.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+</li></ul></div><div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/offline-search-index.35d55a1b01c806e206737aae766dbe23.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 </div></nav></header><div class="container-fluid td-outer">
 <div class=td-main>
 <div class="row flex-xl-nowrap">
@@ -69,39 +69,9 @@ This is the multi-page printable view of this section.
 </p><p>
 <a href=/docs/neurocontainers/>Return to the regular view of this page</a>.
 </p></div><h1 class=title>Neurocontainers</h1><div class=lead>What neurocontainers are about</div><ul>
-<li>1: <a href=#pg-032a02c0f4ba2de0dd4a701cff6790fe>Windows 11 and Windows Subsystem for Linux</a></li><li>2: <a href=#pg-895ed1135b9cdc0df128fddec565e375>CVMFS</a></li><li>3: <a href=#pg-e6e34ad7485d3730bc92bfaf63f2eb30>Datalad</a></li><li>4: <a href=#pg-f18a87ac25493d50d810709d157e5b03>Docker</a></li><li>5: <a href=#pg-dde076c9513b160da47a52346f74d655>Singularity</a></li></ul><div class=content>
+<li>1: <a href=#pg-895ed1135b9cdc0df128fddec565e375>CVMFS</a></li><li>2: <a href=#pg-e6e34ad7485d3730bc92bfaf63f2eb30>Datalad</a></li><li>3: <a href=#pg-f18a87ac25493d50d810709d157e5b03>Docker</a></li><li>4: <a href=#pg-1242611cf4181d837a23ff9db8482b26>Google Colab</a></li><li>5: <a href=#pg-dde076c9513b160da47a52346f74d655>Singularity</a></li><li>6: <a href=#pg-032a02c0f4ba2de0dd4a701cff6790fe>Windows 11 and Windows Subsystem for Linux</a></li></ul><div class=content>
 </div></div><div class=td-content>
-<h1 id=pg-032a02c0f4ba2de0dd4a701cff6790fe>1 - Windows 11 and Windows Subsystem for Linux</h1><div class=lead>Use Neurocontainers on Windows 11 with WSL and Wayland Display Server</div><h2 id=1-install-wsl>1. Install WSL</h2><p>Follow the instructions to enable Windows Subsystem for Linux 2 in Windows 11: <a href=https://docs.microsoft.com/en-us/windows/wsl/install>https://docs.microsoft.com/en-us/windows/wsl/install</a></p><h2 id=2-configure-cvfms-singularity-and-lmod-only-needs-to-be-done-once>2. Configure CVFMS, Singularity and LMOD (only needs to be done once)</h2><h3 id=install-singularity>Install singularity</h3><pre class="language-batch command-line" data-prompt=">">
-<code>
-sudo apt install make
-export SINGULARITY_VERSION=3.9.3 VERSION=1.17.2 OS=linux ARCH=amd64
-wget -q https://dl.google.com/go/go$VERSION.$OS-$ARCH.tar.gz 
-sudo tar -C /usr/local -xzvf go$VERSION.$OS-$ARCH.tar.gz 
-rm go$VERSION.$OS-$ARCH.tar.gz 
-export GOPATH=${HOME}/go 
-export PATH=/usr/local/go/bin:${PATH}:${GOPATH}/bin 
-mkdir -p $GOPATH/src/github.com/sylabs 
-cd $GOPATH/src/github.com/sylabs 
-wget -q https://github.com/sylabs/singularity/releases/download/v${SINGULARITY_VERSION}/singularity-ce-${SINGULARITY_VERSION}.tar.gz 
-tar -xzvf singularity-ce-${SINGULARITY_VERSION}.tar.gz 
-cd singularity-ce-${SINGULARITY_VERSION} 
-./mconfig --prefix=/usr/local/singularity 
-make -C builddir 
-sudo make -C builddir install 
-cd .. 
-sudo rm -rf singularity-ce-${SINGULARITY_VERSION} 
-sudo rm -rf /usr/local/go $GOPATH </code>
-</pre><h3 id=setup-bindpaths-for-singularity-eg-in-bashrc>Setup Bindpaths for Singularity (e.g. in .bashrc)</h3><pre class="language-batch command-line" data-prompt=">">
-<code>export SINGULARITY_BINDPATH='/cvmfs,/mnt,/home'</code>
-</pre><h3 id=cvmfs>CVMFS</h3><p>Follow the instructions here: <a href=https://neurodesk.github.io/docs/neurocontainers/cvmfs/>https://neurodesk.github.io/docs/neurocontainers/cvmfs/</a></p><h3 id=lmod>LMOD</h3><pre class="language-batch command-line" data-prompt=">">
-<code>apt install lmod</code>
-</pre><h2 id=3-use-neurodesk-containers>3. Use Neurodesk containers</h2><pre class="language-batch command-line" data-prompt=">">
-<code>module use /cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/*
-ml av
-ml fsl
-fsleyes</code>
-</pre></div><div class=td-content style=page-break-before:always>
-<h1 id=pg-895ed1135b9cdc0df128fddec565e375>2 - CVMFS</h1><div class=lead>Neurodesk Singularity Containers on CVMFS</div><h1 id=install-cvmfs>Install CVMFS</h1><p>First you need to install CVMFS. Follow the official instructions here: <a href=https://cvmfs.readthedocs.io/en/stable/cpt-quickstart.html#getting-the-software>https://cvmfs.readthedocs.io/en/stable/cpt-quickstart.html#getting-the-software</a></p><p>one example for Windows Subsystem for Linux (WSL) could look like this:</p><pre class="language-batch command-line" data-prompt=">">
+<h1 id=pg-895ed1135b9cdc0df128fddec565e375>1 - CVMFS</h1><div class=lead>Neurodesk Singularity Containers on CVMFS</div><h1 id=install-cvmfs>Install CVMFS</h1><p>First you need to install CVMFS. Follow the official instructions here: <a href=https://cvmfs.readthedocs.io/en/stable/cpt-quickstart.html#getting-the-software>https://cvmfs.readthedocs.io/en/stable/cpt-quickstart.html#getting-the-software</a></p><p>one example for Windows Subsystem for Linux (WSL) could look like this:</p><pre class="language-batch command-line" data-prompt=">">
 <code>sudo apt-get install lsb-release
 wget https://ecsft.cern.ch/dist/cvmfs/cvmfs-release/cvmfs-release-latest_all.deb
 sudo dpkg -i cvmfs-release-latest_all.deb
@@ -160,11 +130,13 @@ module use /cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/*
 ml fsl
 fslmaths</code>
 </pre></div><div class=td-content style=page-break-before:always>
-<h1 id=pg-e6e34ad7485d3730bc92bfaf63f2eb30>3 - Datalad</h1><div class=lead>Neurodesktop containers can be used in datalad container run</div><p>Once this is completed: <a href=https://github.com/ReproNim/containers/issues/64#issuecomment-999126787>https://github.com/ReproNim/containers/issues/64#issuecomment-999126787</a></p></div><div class=td-content style=page-break-before:always>
-<h1 id=pg-f18a87ac25493d50d810709d157e5b03>4 - Docker</h1><div class=lead>Neurodesk Docker containers</div><p>Our containers are automatically built in <a href=https://github.com/NeuroDesk/neurocontainers/>https://github.com/NeuroDesk/neurocontainers/</a> and hosted on <a href=https://hub.docker.com/orgs/vnmd/repositories>dockerhub</a> or on <a href=https://github.com/NeuroDesk/neurocontainers/packages>github</a></p><h2 id=pull-docker-containers>Pull Docker containers</h2><p>e.g. for a julia container
+<h1 id=pg-e6e34ad7485d3730bc92bfaf63f2eb30>2 - Datalad</h1><div class=lead>Neurodesktop containers can be used in datalad container run</div><p>Once this is completed: <a href=https://github.com/ReproNim/containers/issues/64#issuecomment-999126787>https://github.com/ReproNim/containers/issues/64#issuecomment-999126787</a></p></div><div class=td-content style=page-break-before:always>
+<h1 id=pg-f18a87ac25493d50d810709d157e5b03>3 - Docker</h1><div class=lead>Neurodesk Docker containers</div><p>Our containers are automatically built in <a href=https://github.com/NeuroDesk/neurocontainers/>https://github.com/NeuroDesk/neurocontainers/</a> and hosted on <a href=https://hub.docker.com/orgs/vnmd/repositories>dockerhub</a> or on <a href=https://github.com/NeuroDesk/neurocontainers/packages>github</a></p><h2 id=pull-docker-containers>Pull Docker containers</h2><p>e.g. for a julia container
 docker</p><div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback><span style=display:flex><span>docker pull vnmd/julia_1.6.1
 </span></span></code></pre></div><p>build singularity image from dockerhub</p><div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback><span style=display:flex><span>singularity build julia_1.6.1.simg docker://vnmd/julia_1.6.1
 </span></span></code></pre></div><p>Replace <code>julia_1.6.1</code> with your selected application. You can find the available containers here: <a href=https://neurodesk.github.io/applications/>https://neurodesk.github.io/applications/</a></p></div><div class=td-content style=page-break-before:always>
+<h1 id=pg-1242611cf4181d837a23ff9db8482b26>4 - Google Colab</h1><div class=lead>Neurodesk Singularity Containers for Google Colab</div><p>This notebook demonstrated how to use all Neurodesk applications in Google Colab:
+<a href="https://colab.research.google.com/drive/1g5cnZxj1llRaHmOs4xSglqsXnFkQYuol?usp=sharing">https://colab.research.google.com/drive/1g5cnZxj1llRaHmOs4xSglqsXnFkQYuol?usp=sharing</a></p><p>Enjoy :)</p></div><div class=td-content style=page-break-before:always>
 <h1 id=pg-dde076c9513b160da47a52346f74d655>5 - Singularity</h1><div class=lead>Neurodesk Singularity Containers</div><p>Our docker containers are converted to singularity containers and stored on Object storage.</p><h2 id=download-singularity-containers>Download Singularity Containers</h2><p>First get an overview which containers are available as Singularity containers:
 <a href=https://github.com/NeuroDesk/neurodesk/blob/master/cvmfs/log.txt>https://github.com/NeuroDesk/neurodesk/blob/master/cvmfs/log.txt</a></p><div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>curl -s https://raw.githubusercontent.com/NeuroDesk/neurodesk/master/cvmfs/log.txt
 </span></span></code></pre></div><p>assign the container name to a variable:</p><div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span><span style=color:#204a87>export</span> <span style=color:#000>container</span><span style=color:#ce5c00;font-weight:700>=</span>itksnap_3.8.0_20201208
@@ -176,7 +148,37 @@ docker</p><div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-m
 </span></span><span style=display:flex><span>git clone https://github.com/NeuroDesk/transparent-singularity <span style=color:#4e9a06>${</span><span style=color:#000>container</span><span style=color:#4e9a06>}</span>
 </span></span><span style=display:flex><span><span style=color:#204a87>cd</span> <span style=color:#4e9a06>${</span><span style=color:#000>container</span><span style=color:#4e9a06>}</span>
 </span></span><span style=display:flex><span>./run_transparent_singularity.sh <span style=color:#4e9a06>${</span><span style=color:#000>container</span><span style=color:#4e9a06>}</span>
-</span></span></code></pre></div></div></main></div></div><footer class="bg-dark py-5 row d-print-none">
+</span></span></code></pre></div></div><div class=td-content style=page-break-before:always>
+<h1 id=pg-032a02c0f4ba2de0dd4a701cff6790fe>6 - Windows 11 and Windows Subsystem for Linux</h1><div class=lead>Use Neurocontainers on Windows 11 with WSL and Wayland Display Server</div><h2 id=1-install-wsl>1. Install WSL</h2><p>Follow the instructions to enable Windows Subsystem for Linux 2 in Windows 11: <a href=https://docs.microsoft.com/en-us/windows/wsl/install>https://docs.microsoft.com/en-us/windows/wsl/install</a></p><h2 id=2-configure-cvfms-singularity-and-lmod-only-needs-to-be-done-once>2. Configure CVFMS, Singularity and LMOD (only needs to be done once)</h2><h3 id=install-singularity>Install singularity</h3><pre class="language-batch command-line" data-prompt=">">
+<code>
+sudo apt install make
+export SINGULARITY_VERSION=3.9.3 VERSION=1.17.2 OS=linux ARCH=amd64
+wget -q https://dl.google.com/go/go$VERSION.$OS-$ARCH.tar.gz 
+sudo tar -C /usr/local -xzvf go$VERSION.$OS-$ARCH.tar.gz 
+rm go$VERSION.$OS-$ARCH.tar.gz 
+export GOPATH=${HOME}/go 
+export PATH=/usr/local/go/bin:${PATH}:${GOPATH}/bin 
+mkdir -p $GOPATH/src/github.com/sylabs 
+cd $GOPATH/src/github.com/sylabs 
+wget -q https://github.com/sylabs/singularity/releases/download/v${SINGULARITY_VERSION}/singularity-ce-${SINGULARITY_VERSION}.tar.gz 
+tar -xzvf singularity-ce-${SINGULARITY_VERSION}.tar.gz 
+cd singularity-ce-${SINGULARITY_VERSION} 
+./mconfig --prefix=/usr/local/singularity 
+make -C builddir 
+sudo make -C builddir install 
+cd .. 
+sudo rm -rf singularity-ce-${SINGULARITY_VERSION} 
+sudo rm -rf /usr/local/go $GOPATH </code>
+</pre><h3 id=setup-bindpaths-for-singularity-eg-in-bashrc>Setup Bindpaths for Singularity (e.g. in .bashrc)</h3><pre class="language-batch command-line" data-prompt=">">
+<code>export SINGULARITY_BINDPATH='/cvmfs,/mnt,/home'</code>
+</pre><h3 id=cvmfs>CVMFS</h3><p>Follow the instructions here: <a href=https://neurodesk.github.io/docs/neurocontainers/cvmfs/>https://neurodesk.github.io/docs/neurocontainers/cvmfs/</a></p><h3 id=lmod>LMOD</h3><pre class="language-batch command-line" data-prompt=">">
+<code>apt install lmod</code>
+</pre><h2 id=3-use-neurodesk-containers>3. Use Neurodesk containers</h2><pre class="language-batch command-line" data-prompt=">">
+<code>module use /cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/*
+ml av
+ml fsl
+fsleyes</code>
+</pre></div></main></div></div><footer class="bg-dark py-5 row d-print-none">
 <div class="container-fluid mx-sm-5">
 <div class=row>
 <div class="col-6 col-sm-4 text-xs-center order-sm-2">
