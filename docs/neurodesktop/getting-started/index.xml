@@ -681,7 +681,7 @@ Needs testing
 -e HOST_UID=&amp;#34;$(id -u)&amp;#34; -e HOST_GID=&amp;#34;$(id -g)&amp;#34;\
 -p 8080:8080 -p 5901:5901 \
 -h neurodesktop-20220302 vnmd/neurodesktop:20220302 --vnc&lt;/code>&lt;/pre>
-&lt;p>Open a VNC Client and connect to port 5901&lt;/p></description></item><item><title>Docs: Demo</title><link>https://neurodesk.github.io/docs/neurodesktop/getting-started/demo/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/getting-started/demo/</guid><description>
+&lt;p>Open a VNC Client and connect to port 5901&lt;/p></description></item><item><title>Docs: Play</title><link>https://neurodesk.github.io/docs/neurodesktop/getting-started/play/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/getting-started/play/</guid><description>
 &lt;div class="pageinfo pageinfo-primary">
-&lt;p>We are working on a demo that directly runs in your browser without the need to install anything. But it&amp;rsquo;s not quite ready yet &amp;hellip;&lt;/p>
+&lt;p>We are working on a version of Neurodesk that directly runs in your browser on Oracle cloud resources without the need to install anything. It&amp;rsquo;s almost ready &amp;hellip;&lt;/p>
 &lt;/div></description></item></channel></rss>

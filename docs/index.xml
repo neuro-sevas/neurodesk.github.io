@@ -1135,10 +1135,7 @@ module use /cvmfs/neurodesk.ardc.edu.au/neurodesk-modules/*
 ml fsl
 fslmaths&lt;/code>
 &lt;/pre></description></item><item><title>Docs: Datalad</title><link>https://neurodesk.github.io/docs/neurocontainers/datalad/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurocontainers/datalad/</guid><description>
-&lt;p>Once this is completed: &lt;a href="https://github.com/ReproNim/containers/issues/64#issuecomment-999126787">https://github.com/ReproNim/containers/issues/64#issuecomment-999126787&lt;/a>&lt;/p></description></item><item><title>Docs: Demo</title><link>https://neurodesk.github.io/docs/neurodesktop/getting-started/demo/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/getting-started/demo/</guid><description>
-&lt;div class="pageinfo pageinfo-primary">
-&lt;p>We are working on a demo that directly runs in your browser without the need to install anything. But it&amp;rsquo;s not quite ready yet &amp;hellip;&lt;/p>
-&lt;/div></description></item><item><title>Docs: Docker</title><link>https://neurodesk.github.io/docs/neurocontainers/docker/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurocontainers/docker/</guid><description>
+&lt;p>Once this is completed: &lt;a href="https://github.com/ReproNim/containers/issues/64#issuecomment-999126787">https://github.com/ReproNim/containers/issues/64#issuecomment-999126787&lt;/a>&lt;/p></description></item><item><title>Docs: Docker</title><link>https://neurodesk.github.io/docs/neurocontainers/docker/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurocontainers/docker/</guid><description>
 &lt;p>Our containers are automatically built in &lt;a href="https://github.com/NeuroDesk/neurocontainers/">https://github.com/NeuroDesk/neurocontainers/&lt;/a> and hosted on &lt;a href="https://hub.docker.com/orgs/vnmd/repositories">dockerhub&lt;/a> or on &lt;a href="https://github.com/NeuroDesk/neurocontainers/packages">github&lt;/a>&lt;/p>
 &lt;h2 id="pull-docker-containers">Pull Docker containers&lt;/h2>
 &lt;p>e.g. for a julia container
@@ -1149,7 +1146,10 @@ docker&lt;/p>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Replace &lt;code>julia_1.6.1&lt;/code> with your selected application. You can find the available containers here: &lt;a href="https://neurodesk.github.io/applications/">https://neurodesk.github.io/applications/&lt;/a>&lt;/p></description></item><item><title>Docs: Google Colab</title><link>https://neurodesk.github.io/docs/neurocontainers/googlecolab/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurocontainers/googlecolab/</guid><description>
 &lt;p>This notebook demonstrated how to use all Neurodesk applications in Google Colab:
 &lt;a href="https://colab.research.google.com/drive/1g5cnZxj1llRaHmOs4xSglqsXnFkQYuol?usp=sharing">https://colab.research.google.com/drive/1g5cnZxj1llRaHmOs4xSglqsXnFkQYuol?usp=sharing&lt;/a>&lt;/p>
-&lt;p>Enjoy :)&lt;/p></description></item><item><title>Docs: Singularity</title><link>https://neurodesk.github.io/docs/neurocontainers/singularity/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurocontainers/singularity/</guid><description>
+&lt;p>Enjoy :)&lt;/p></description></item><item><title>Docs: Play</title><link>https://neurodesk.github.io/docs/neurodesktop/getting-started/play/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/getting-started/play/</guid><description>
+&lt;div class="pageinfo pageinfo-primary">
+&lt;p>We are working on a version of Neurodesk that directly runs in your browser on Oracle cloud resources without the need to install anything. It&amp;rsquo;s almost ready &amp;hellip;&lt;/p>
+&lt;/div></description></item><item><title>Docs: Singularity</title><link>https://neurodesk.github.io/docs/neurocontainers/singularity/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurocontainers/singularity/</guid><description>
 &lt;p>Our docker containers are converted to singularity containers and stored on Object storage.&lt;/p>
 &lt;h2 id="download-singularity-containers">Download Singularity Containers&lt;/h2>
 &lt;p>First get an overview which containers are available as Singularity containers:
