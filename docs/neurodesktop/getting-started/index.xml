@@ -452,12 +452,20 @@ Needs testing
 &lt;/pre>
 &lt;p>Open a VNC Client and connect to port 5901&lt;/p></description></item><item><title>Docs: HPC</title><link>https://neurodesk.github.io/docs/neurodesktop/getting-started/hpc/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/getting-started/hpc/</guid><description>
 &lt;p>One way of running this project on HPCs is via &lt;a href="https://neurodesk.github.io/docs/neurocommand/getting-started/linux/">https://neurodesk.github.io/docs/neurocommand/getting-started/linux/&lt;/a>&lt;/p></description></item><item><title>Docs: Nectar Virtual Desktop Service</title><link>https://neurodesk.github.io/docs/neurodesktop/getting-started/nectar/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/docs/neurodesktop/getting-started/nectar/</guid><description>
-&lt;p>Go to &lt;a href="https://desktop.rc.nectar.org.au/">https://desktop.rc.nectar.org.au/&lt;/a> and login with your AAF credentials, then create a new workspace.&lt;/p>
-&lt;p>Select Neurodesktop from the Library:
+&lt;p>Unfortunately, this option is only available to Australian/NZ researchers. Please accept our apologies otherwise.&lt;/p>
+&lt;p>Go to &lt;a href="https://desktop.rc.nectar.org.au/">https://desktop.rc.nectar.org.au/&lt;/a>&lt;/p>
+&lt;p>Click on &amp;ldquo;Sign in&amp;rdquo;.&lt;/p>
+&lt;p>Choose the AAF option if you have an Australian university email or the NZ option if you have a New Zealand university email.&lt;/p>
+&lt;p>Choose your instituion from the list.&lt;/p>
+&lt;p>Provide your email address and password.&lt;/p>
+&lt;p>Click on &amp;ldquo;EXPLORE&amp;rdquo;.&lt;/p>
+&lt;p>Click &amp;ldquo;VIEW DETAILS&amp;rdquo; under Neurodesktop:
 &lt;img src="https://user-images.githubusercontent.com/4021595/150286038-592d6b31-3b9a-4ade-8b2d-824a17ca23b4.png" alt="image">&lt;/p>
-&lt;p>Then create the desktop in the desired availability zone and wait until everything is completed:
+&lt;p>Click &amp;ldquo;CREATE DESKTOP +&amp;rdquo; button on the top right corner.&lt;/p>
+&lt;p>Choose the desired availability zone.&lt;/p>
+&lt;p>Wait until everything is completed:
 &lt;img src="https://user-images.githubusercontent.com/4021595/150286126-2d8f60af-7499-4c69-998a-668c9c34d8c9.png" alt="image">&lt;/p>
-&lt;p>Then open the desktop:
+&lt;p>Click &amp;ldquo;OPEN DESKTOP -&amp;gt;&amp;rdquo;:
 &lt;img src="https://user-images.githubusercontent.com/4021595/150286383-1c1b8d20-c772-4598-a81b-1ef9e11526b8.png" alt="image">&lt;/p>
 &lt;p>To launch the various applications available in Neurodesktop, follow the instructions here:
 &lt;a href="https://neurodesk.github.io/docs/neurodesktop/whats-next/#how-to-launch-applications">https://neurodesk.github.io/docs/neurodesktop/whats-next/#how-to-launch-applications&lt;/a>&lt;/p>
