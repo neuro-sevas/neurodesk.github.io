@@ -262,7 +262,9 @@ ml toolName/toolVersion&lt;/code>&lt;/pre>
 &lt;li>If somebody wants to use the application before the next release of Neurodesktop is out, you can instruct them to use the command in step 21 above instead of the deafult commands given in the user install instructions.&lt;/li>
 &lt;li>Consider contributing a tutorial about the new tool: &lt;a href="https://github.com/NeuroDesk/neurodesk.github.io/tree/hugo-docsy/content/en/tutorials">https://github.com/NeuroDesk/neurodesk.github.io/tree/hugo-docsy/content/en/tutorials&lt;/a>&lt;/li>
 &lt;/ol></description></item><item><title>Developers: Local Hugo Docsy</title><link>https://neurodesk.github.io/developers/documentation/local-hugo-docsy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/developers/documentation/local-hugo-docsy/</guid><description>
-&lt;h2 id="local-hugo-docsy">Local Hugo Docsy&lt;/h2>
+&lt;h2 id="local-hugo-docsy-in-linux-and-wsl2">Local Hugo Docsy in Linux and WSL2&lt;/h2>
+&lt;p>&lt;a href="https://github.com/NeuroDesk/neurodesk.github.io/blob/hugo-docsy/CONTRIBUTING.md">https://github.com/NeuroDesk/neurodesk.github.io/blob/hugo-docsy/CONTRIBUTING.md&lt;/a>&lt;/p>
+&lt;h2 id="local-hugo-docsy-in-windows">Local Hugo Docsy in Windows&lt;/h2>
 &lt;h3 id="clone-repository">Clone repository&lt;/h3>
 &lt;p>Using SSH&lt;/p>
 &lt;p>&lt;code>git clone --recurse-submodules git@github.com:NeuroDesk/neurodesk.github.io.git&lt;/code>&lt;/p>
