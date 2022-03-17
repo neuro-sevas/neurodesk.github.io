@@ -982,7 +982,7 @@ We recommend the &lt;em>manual&lt;/em> install instructions, as the simplified i
 &lt;h2 id="latest">latest&lt;/h2>
 &lt;ul>
 &lt;li>added bidscoin 3.7.0 (converting data to bids)&lt;/li>
-&lt;li>added sigviewer 0.6.4-1 (viewing electrophysiological data)&lt;/li>
+&lt;li>added sigviewer 0.6.4 (viewing electrophysiological data)&lt;/li>
 &lt;li>added niftyreg 1.4.0 (image registration tool)&lt;/li>
 &lt;/ul>
 &lt;h2 id="20220302">20220302&lt;/h2>
