@@ -227,6 +227,7 @@ We recommend the &lt;em>manual&lt;/em> install instructions, as the simplified i
 &lt;li>added sigviewer 0.6.4 (viewing electrophysiological data)&lt;/li>
 &lt;li>added niftyreg 1.4.0 (image registration tool)&lt;/li>
 &lt;li>added mne 1.0.0 (EEG processing pipeline)&lt;/li>
+&lt;li>added vesselvio 1.1.1 (vessel visualisation)&lt;/li>
 &lt;/ul>
 &lt;h2 id="20220302">20220302&lt;/h2>
 &lt;ul>
