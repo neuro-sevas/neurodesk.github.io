@@ -72,10 +72,10 @@ Also notice that the terminal that opens only allows to run utilities from the o
 &lt;h1 id="drag-and-drop-support">Drag and Drop support&lt;/h1>
 &lt;p>You can drag-and-drop files into the browser window to get files into the Neurodesktop. This will then start a file upload:&lt;/p>
 &lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/160577507-b5159bae-13c0-4fbf-85da-0ce55fd481f3.png" alt="{538BB51E-0FEB-46EA-B1B8-FDF122776735}">&lt;/p>
-&lt;p>To download files from the desktop using the same mechanism you need to open the guacamole settings by pressing CTRL-ALT-SHIFT. This will open a menu on the side:
-&lt;img src="https://user-images.githubusercontent.com/4021595/160577828-0f8ba04e-aed7-4c26-a8d2-baf6c4be317a.png" alt="{A12EDB8A-3D01-4524-A7B5-24E5E94FB418}">&lt;/p>
-&lt;p>where you can click on &amp;ldquo;Shared Drive&amp;rdquo;:
-&lt;img src="https://user-images.githubusercontent.com/4021595/160577926-06e48896-9301-426a-b7d5-9d3b2df14504.png" alt="{645953A1-5D11-48C7-9DFB-25D4339EEA34}">&lt;/p>
+&lt;p>To download files from the desktop using the same mechanism you need to open the guacamole settings by pressing CTRL-ALT-SHIFT. This will open a menu on the side:&lt;/p>
+&lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/160577828-0f8ba04e-aed7-4c26-a8d2-baf6c4be317a.png" alt="{A12EDB8A-3D01-4524-A7B5-24E5E94FB418}">&lt;/p>
+&lt;p>where you can click on &amp;ldquo;Shared Drive&amp;rdquo;:&lt;/p>
+&lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/160577926-06e48896-9301-426a-b7d5-9d3b2df14504.png" alt="{645953A1-5D11-48C7-9DFB-25D4339EEA34}">&lt;/p>
 &lt;p>and a click on the file will start the download.&lt;/p>
 &lt;h1 id="data-directory-connection-to-the-host-computer">Data directory connection to the host computer&lt;/h1>
 &lt;p>If you are running Neurodesktop on your own hardware there will be a direct connection between the &amp;ldquo;Storage&amp;rdquo; folder on the Destkop, which is a link to &amp;ldquo;/neurodesktop-storage&amp;rdquo; and a &amp;ldquo;neurodesktop-storage&amp;rdquo; folder on your C-drive (Windows) or home directory (Mac/Linux). This connection can be used for data processing and data transfer.&lt;/p>
