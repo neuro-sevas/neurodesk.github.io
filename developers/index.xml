@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>NeuroDesk – Developers</title><link>https://neurodesk.github.io/developers/</link><description>Recent content in Developers on NeuroDesk</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://neurodesk.github.io/developers/index.xml" rel="self" type="application/rss+xml"/><item><title>Developers: Add tools</title><link>https://neurodesk.github.io/developers/new_tools/add_tool/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/developers/new_tools/add_tool/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>NeuroDesk – Developers</title><link>https://neurodesk.org/developers/</link><description>Recent content in Developers on NeuroDesk</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://neurodesk.org/developers/index.xml" rel="self" type="application/rss+xml"/><item><title>Developers: Add tools</title><link>https://neurodesk.org/developers/new_tools/add_tool/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.org/developers/new_tools/add_tool/</guid><description>
 &lt;p>The goal of &lt;em>neurodesk&lt;/em> is to provide users with a large choice of tools to use in their pipelines.
 Use the guide below to add a tool to &lt;em>neurodesktop&lt;/em> or &lt;em>neurocontainers&lt;/em>.&lt;/p>
 &lt;h2 id="guiding-principles">Guiding principles&lt;/h2>
@@ -261,7 +261,7 @@ ml toolName/toolVersion&lt;/code>&lt;/pre>
 &lt;li>Open an issue in &lt;a href="https://github.com/NeuroDesk/neurocontainers/issues">https://github.com/NeuroDesk/neurocontainers/issues&lt;/a> notifying that your app appears in the start menu and tested. The app will be included in the next release of Neurodesktop, and will be mentioned in the public announcement that accompanies the release. If the app is not in the start menu or not working as expected based on your earlier testing, open an issue as well, and report it.&lt;/li>
 &lt;li>If somebody wants to use the application before the next release of Neurodesktop is out, you can instruct them to use the command in step 21 above instead of the deafult commands given in the user install instructions.&lt;/li>
 &lt;li>Consider contributing a tutorial about the new tool: &lt;a href="https://github.com/NeuroDesk/neurodesk.github.io/tree/hugo-docsy/content/en/tutorials">https://github.com/NeuroDesk/neurodesk.github.io/tree/hugo-docsy/content/en/tutorials&lt;/a>&lt;/li>
-&lt;/ol></description></item><item><title>Developers: Local Hugo Docsy</title><link>https://neurodesk.github.io/developers/documentation/local-hugo-docsy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/developers/documentation/local-hugo-docsy/</guid><description>
+&lt;/ol></description></item><item><title>Developers: Local Hugo Docsy</title><link>https://neurodesk.org/developers/documentation/local-hugo-docsy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.org/developers/documentation/local-hugo-docsy/</guid><description>
 &lt;h2 id="local-hugo-docsy-in-linux-and-wsl2">Local Hugo Docsy in Linux and WSL2&lt;/h2>
 &lt;p>&lt;a href="https://github.com/NeuroDesk/neurodesk.github.io/blob/hugo-docsy/CONTRIBUTING.md">https://github.com/NeuroDesk/neurodesk.github.io/blob/hugo-docsy/CONTRIBUTING.md&lt;/a>&lt;/p>
 &lt;h2 id="local-hugo-docsy-in-windows">Local Hugo Docsy in Windows&lt;/h2>
@@ -285,7 +285,7 @@ ml toolName/toolVersion&lt;/code>&lt;/pre>
 &lt;pre class="language-shell command-line" data-prompt="$">&lt;code>git submodule update --remote
 git add themes/
 git commit -m "Updating theme submodule"
-git push origin hugo-docsy&lt;/code>&lt;/pre></description></item><item><title>Developers: Menu entries</title><link>https://neurodesk.github.io/developers/new_tools/menu_entries/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/developers/new_tools/menu_entries/</guid><description>
+git push origin hugo-docsy&lt;/code>&lt;/pre></description></item><item><title>Developers: Menu entries</title><link>https://neurodesk.org/developers/new_tools/menu_entries/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.org/developers/new_tools/menu_entries/</guid><description>
 &lt;h2 id="menu-entry">Menu entry&lt;/h2>
 &lt;p>As we want to propose several versions of the tools, each piece of software should have its own submenu under &lt;code>VNM Neuroimaging&lt;/code>.
 To do so, you first have to add a submenu to &lt;code>menus/vnm-applications.menu&lt;/code> by adding:&lt;/p>
@@ -362,7 +362,7 @@ Here are two examples for FreeSurfer and FreeView. This first one only installs 
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#c4a000">Type&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">Application&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#c4a000">Categories&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">FreeSurfer&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#c4a000">Terminal&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">true&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Developers: Setup CVMFS Proxy</title><link>https://neurodesk.github.io/developers/cvmfs/proxy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/developers/cvmfs/proxy/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Developers: Setup CVMFS Proxy</title><link>https://neurodesk.org/developers/cvmfs/proxy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.org/developers/cvmfs/proxy/</guid><description>
 &lt;p>If you want more speed in a region one way could be to setup another Stratum 1 server or a proxy. We currently don&amp;rsquo;t run any proxy servers but it would be important for using it on a cluster.&lt;/p>
 &lt;pre class="language-batch command-line" data-prompt=">" data-output="2-4">
 &lt;code>docker run --shm-size=1gb -it --privileged --name neurodesktop `
@@ -408,7 +408,7 @@ sudo systemctl start squid
 sudo systemctl enable squid
 sudo systemctl status squid
 sudo systemctl restart squid&lt;/code>
-&lt;/pre></description></item><item><title>Developers: Neurodesktop Release Process</title><link>https://neurodesk.github.io/developers/architecture/release_process/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/developers/architecture/release_process/</guid><description>
+&lt;/pre></description></item><item><title>Developers: Neurodesktop Release Process</title><link>https://neurodesk.org/developers/architecture/release_process/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.org/developers/architecture/release_process/</guid><description>
 &lt;ol>
 &lt;li>Check if the last automated build ran OK: &lt;a href="https://github.com/NeuroDesk/neurodesktop/actions">https://github.com/NeuroDesk/neurodesktop/actions&lt;/a>&lt;/li>
 &lt;li>Run this build date and test if everything is ok and no regression happened&lt;/li>
@@ -423,7 +423,7 @@ sudo systemctl restart squid&lt;/code>
 &lt;li>Change the version of the latest desktop in &lt;a href="https://github.com/NeuroDesk/neurodesk.github.io/blob/hugo-docsy/data/neurodesktop.toml">https://github.com/NeuroDesk/neurodesk.github.io/blob/hugo-docsy/data/neurodesktop.toml&lt;/a>&lt;/li>
 &lt;li>Commit all changes&lt;/li>
 &lt;li>Tweet a quick summary of the changes and announce new version: &lt;a href="https://twitter.com/neuro_desk">https://twitter.com/neuro_desk&lt;/a>&lt;/li>
-&lt;/ol></description></item><item><title>Developers: CVMFS architecture</title><link>https://neurodesk.github.io/developers/cvmfs/cvmfs_architecture/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/developers/cvmfs/cvmfs_architecture/</guid><description>
+&lt;/ol></description></item><item><title>Developers: CVMFS architecture</title><link>https://neurodesk.org/developers/cvmfs/cvmfs_architecture/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.org/developers/cvmfs/cvmfs_architecture/</guid><description>
 &lt;p>We store our singuarlity containers unpacked on CVMFS. We tried the DUCC tool in the beginning, but it was causing too many issues with dockerhub and we were rate limited. The script to unpack our singularity containers is here: &lt;a href="https://github.com/NeuroDesk/neurocommand/blob/main/cvmfs/sync_containers_to_cvmfs.sh">https://github.com/NeuroDesk/neurocommand/blob/main/cvmfs/sync_containers_to_cvmfs.sh&lt;/a>&lt;/p>
 &lt;p>It gets called by a cronjob on the CVMFS Stratum 0 server and relies on the log.txt file being updated via an action in the neurocommand repository (&lt;a href="https://github.com/NeuroDesk/neurocommand/blob/main/.github/workflows/upload_containers_simg.sh">https://github.com/NeuroDesk/neurocommand/blob/main/.github/workflows/upload_containers_simg.sh&lt;/a>)&lt;/p>
 &lt;p>The Stratum 1 servers then pull this repo from Stratum 0 and our desktops mount these repos (configured here: &lt;a href="https://github.com/NeuroDesk/neurodesktop/blob/main/Dockerfile">https://github.com/NeuroDesk/neurodesktop/blob/main/Dockerfile&lt;/a>)&lt;/p>
@@ -432,7 +432,7 @@ sudo systemctl restart squid&lt;/code>
 &lt;pre class="language-shell command-line" data-prompt="$">&lt;code>sudo cvmfs_talk -i neurodesk.ardc.edu.au host info
 sudo cvmfs_talk -i neurodesk.ardc.edu.au host probe
 cvmfs_config stat -v neurodesk.ardc.edu.au&lt;/code>&lt;/pre>&lt;blockquote>
-&lt;/blockquote></description></item><item><title>Developers: Setup Stratum 0 server</title><link>https://neurodesk.github.io/developers/cvmfs/stratum0/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/developers/cvmfs/stratum0/</guid><description>
+&lt;/blockquote></description></item><item><title>Developers: Setup Stratum 0 server</title><link>https://neurodesk.org/developers/cvmfs/stratum0/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.org/developers/cvmfs/stratum0/</guid><description>
 &lt;h2 id="setup-a-stratum-0-server">Setup a Stratum 0 server:&lt;/h2>
 &lt;h3 id="setup-storage">Setup Storage&lt;/h3>
 &lt;p>(would object storage be better? -&amp;gt; see comment below under next iteration ideas)&lt;/p>
@@ -552,7 +552,7 @@ sudo vi /etc/cron.d/cvmfs_dockerpull
 #cvmfs_ducc convert recipe_neurodesk.yaml
 #cvmfs_ducc convert recipe_unpacked.yaml&lt;/code>
 &lt;/pre>&lt;blockquote>
-&lt;/blockquote></description></item><item><title>Developers: Setup Stratum 1 server</title><link>https://neurodesk.github.io/developers/cvmfs/stratum1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/developers/cvmfs/stratum1/</guid><description>
+&lt;/blockquote></description></item><item><title>Developers: Setup Stratum 1 server</title><link>https://neurodesk.org/developers/cvmfs/stratum1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.org/developers/cvmfs/stratum1/</guid><description>
 &lt;p>The stratum 1 servers for the desktop are configured here: &lt;a href="https://github.com/NeuroDesk/neurodesktop/blob/main/Dockerfile">https://github.com/NeuroDesk/neurodesktop/blob/main/Dockerfile&lt;/a>&lt;/p>
 &lt;p>If you want more speed in a region one way could be to setup another Stratum 1 server or a proxy.&lt;/p>
 &lt;h1 id="setup-a-stratum-1-server">Setup a Stratum 1 server:&lt;/h1>
@@ -607,7 +607,7 @@ sudo systemctl stop firewalld
 # make sure that port 80 is open in the real firewall
 sudo cvmfs_server update-geodb&lt;/code>
 &lt;/pre>&lt;blockquote>
-&lt;/blockquote></description></item><item><title>Developers: Neurodesk Architecture</title><link>https://neurodesk.github.io/developers/architecture/neurodesk-compoents/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/developers/architecture/neurodesk-compoents/</guid><description>
+&lt;/blockquote></description></item><item><title>Developers: Neurodesk Architecture</title><link>https://neurodesk.org/developers/architecture/neurodesk-compoents/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.org/developers/architecture/neurodesk-compoents/</guid><description>
 &lt;h1 id="layers">Layers&lt;/h1>
 &lt;p>Neurodesktop: &lt;a href="https://github.com/NeuroDesk/neurodesktop">https://github.com/NeuroDesk/neurodesktop&lt;/a>&lt;/p>
 &lt;ul>
@@ -642,7 +642,7 @@ sudo cvmfs_server update-geodb&lt;/code>
 &lt;li>provides recipes for our containers built&lt;/li>
 &lt;li>we are providing pull requests back of recipes&lt;/li>
 &lt;li>CI: handled by &lt;a href="https://github.com/ReproNim/neurodocker">neurodocker&lt;/a> - testing of generating container recipes&lt;/li>
-&lt;/ul></description></item><item><title>Developers: Neurodesktop Dev</title><link>https://neurodesk.github.io/developers/architecture/neurodesk-dev/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.github.io/developers/architecture/neurodesk-dev/</guid><description>
+&lt;/ul></description></item><item><title>Developers: Neurodesktop Dev</title><link>https://neurodesk.org/developers/architecture/neurodesk-dev/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.org/developers/architecture/neurodesk-dev/</guid><description>
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">Warning&lt;/h4>
 For development and testing only. Not recommended for production use
