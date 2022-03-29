@@ -102,11 +102,14 @@ docker&lt;/p>
 &lt;h2 id="1-install-wsl">1. Install WSL&lt;/h2>
 &lt;p>Follow the instructions to enable Windows Subsystem for Linux 2 in Windows 11: &lt;a href="https://docs.microsoft.com/en-us/windows/wsl/install">https://docs.microsoft.com/en-us/windows/wsl/install&lt;/a>&lt;/p>
 &lt;h2 id="2-configure-cvfms-singularity-and-lmod-only-needs-to-be-done-once">2. Configure CVFMS, Singularity and LMOD (only needs to be done once)&lt;/h2>
+&lt;h3 id="instal-build-tools">Instal build tools&lt;/h3>
+&lt;pre class="language-batch command-line" data-prompt=">">
+&lt;code>sudo apt update
+sudo apt install make gcc &lt;/code>
+&lt;/pre>
 &lt;h3 id="install-singularity">Install singularity&lt;/h3>
 &lt;pre class="language-batch command-line" data-prompt=">">
-&lt;code>
-sudo apt install make
-export SINGULARITY_VERSION=3.9.3 VERSION=1.17.2 OS=linux ARCH=amd64
+&lt;code>export SINGULARITY_VERSION=3.9.3 VERSION=1.17.2 OS=linux ARCH=amd64
 wget -q https://dl.google.com/go/go$VERSION.$OS-$ARCH.tar.gz
 sudo tar -C /usr/local -xzvf go$VERSION.$OS-$ARCH.tar.gz
 rm go$VERSION.$OS-$ARCH.tar.gz
@@ -126,7 +129,8 @@ sudo rm -rf /usr/local/go $GOPATH &lt;/code>
 &lt;/pre>
 &lt;h3 id="setup-bindpaths-for-singularity-eg-in-bashrc">Setup Bindpaths for Singularity (e.g. in .bashrc)&lt;/h3>
 &lt;pre class="language-batch command-line" data-prompt=">">
-&lt;code>export SINGULARITY_BINDPATH='/cvmfs,/mnt,/home'&lt;/code>
+&lt;code>export PATH="/usr/local/singularity/bin:${PATH}"
+export SINGULARITY_BINDPATH='/cvmfs,/mnt,/home'&lt;/code>
 &lt;/pre>
 &lt;h3 id="cvmfs">CVMFS&lt;/h3>
 &lt;p>Follow the instructions here: &lt;a href="https://neurodesk.org/docs/neurocontainers/cvmfs/">https://neurodesk.org/docs/neurocontainers/cvmfs/&lt;/a>&lt;/p>
