@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>NeuroDesk – MRI phase Processing</title><link>https://neurodesk.org/tutorials/phase_processing/</link><description>Recent content in MRI phase Processing on NeuroDesk</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://neurodesk.org/tutorials/phase_processing/index.xml" rel="self" type="application/rss+xml"/><item><title>Tutorials: Quantitative Susceptibility Mapping</title><link>https://neurodesk.org/tutorials/phase_processing/qsm/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.org/tutorials/phase_processing/qsm/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>NeuroDesk – MRI phase Processing</title><link>https://www.neurodesk.org/tutorials/phase_processing/</link><description>Recent content in MRI phase Processing on NeuroDesk</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://www.neurodesk.org/tutorials/phase_processing/index.xml" rel="self" type="application/rss+xml"/><item><title>Tutorials: Quantitative Susceptibility Mapping</title><link>https://www.neurodesk.org/tutorials/phase_processing/qsm/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.neurodesk.org/tutorials/phase_processing/qsm/</guid><description>
 &lt;blockquote>
 &lt;p>&lt;em>This tutorial was created by Steffen Bollmann.&lt;/em>&lt;/p>
 &lt;p>Github: &lt;a href="https://github.com/stebo85">@stebo85&lt;/a>
@@ -54,7 +54,7 @@ Twitter: &lt;a href="https://twitter.com/sbollmann_MRI">@sbollmann_MRI&lt;/a>&lt
 &lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/155106388-72a691a4-c0a4-4cc6-a2ac-c9271888b82d.png" alt="image">&lt;/p>
 &lt;blockquote>
 &lt;p>Please note that the demo dataset does not have a T1w scan for anatomical segmentation and therefore the subsequent steps in QSMxT (e.g. &lt;code>python3 /opt/QSMxT/run_3_segment.py 01_bids 03_segmentation&lt;/code>) will NOT work.&lt;/p>
-&lt;/blockquote></description></item><item><title>Tutorials: SWI</title><link>https://neurodesk.org/tutorials/phase_processing/swi/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.org/tutorials/phase_processing/swi/</guid><description>
+&lt;/blockquote></description></item><item><title>Tutorials: SWI</title><link>https://www.neurodesk.org/tutorials/phase_processing/swi/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.neurodesk.org/tutorials/phase_processing/swi/</guid><description>
 &lt;blockquote>
 &lt;p>&lt;em>This tutorial was created by Steffen Bollmann.&lt;/em>&lt;/p>
 &lt;p>Github: &lt;a href="https://github.com/stebo85">@stebo85&lt;/a>
@@ -93,7 +93,7 @@ Twitter: &lt;a href="https://twitter.com/sbollmann_MRI">@sbollmann_MRI&lt;/a>&lt
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>hit SHIFT-Z-Z and run:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>julia clearswi.jl
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Open ITK snap from the Visualization Application&amp;rsquo;s menu and inspect the results (the outputs are in swi-demo/swi.nii and mip.nii)
-&lt;img src="https://user-images.githubusercontent.com/4021595/137708852-6b7dd2c7-3e6f-42fd-88e6-06afe87a72a9.png" alt="image">&lt;/p></description></item><item><title>Tutorials: Unwrapping</title><link>https://neurodesk.org/tutorials/phase_processing/unwrapping/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neurodesk.org/tutorials/phase_processing/unwrapping/</guid><description>
+&lt;img src="https://user-images.githubusercontent.com/4021595/137708852-6b7dd2c7-3e6f-42fd-88e6-06afe87a72a9.png" alt="image">&lt;/p></description></item><item><title>Tutorials: Unwrapping</title><link>https://www.neurodesk.org/tutorials/phase_processing/unwrapping/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.neurodesk.org/tutorials/phase_processing/unwrapping/</guid><description>
 &lt;blockquote>
 &lt;p>&lt;em>This tutorial was created by Steffen Bollmann.&lt;/em>&lt;/p>
 &lt;p>Github: &lt;a href="https://github.com/stebo85">@stebo85&lt;/a>
@@ -120,4 +120,4 @@ Twitter: &lt;a href="https://twitter.com/sbollmann_MRI">@sbollmann_MRI&lt;/a>&lt
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="using-romeo-for-phase-unwrapping">Using ROMEO for phase unwrapping&lt;/h3>
 &lt;p>Open the ROMEO tool from the application menu and run:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>romeo -p /neurodesktop-storage/romeo-demo/phase.nii -m /neurodesktop-storage/romeo-demo/mag.nii -k nomask -o /neurodesktop-storage/romeo-demo/
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://neurodesk.org/MRIPhase_Tutorial/romeo.PNG" alt="Romeo" title="Romeo">&lt;/p></description></item></channel></rss>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://www.neurodesk.org/MRIPhase_Tutorial/romeo.PNG" alt="Romeo" title="Romeo">&lt;/p></description></item></channel></rss>
