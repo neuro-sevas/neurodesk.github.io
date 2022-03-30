@@ -1200,7 +1200,7 @@ docker&lt;/p>
 &lt;h2 id="1-install-wsl">1. Install WSL&lt;/h2>
 &lt;p>Follow the instructions to enable Windows Subsystem for Linux 2 in Windows 11: &lt;a href="https://docs.microsoft.com/en-us/windows/wsl/install">https://docs.microsoft.com/en-us/windows/wsl/install&lt;/a>&lt;/p>
 &lt;h2 id="2-configure-cvfms-singularity-and-lmod-only-needs-to-be-done-once">2. Configure CVFMS, Singularity and LMOD (only needs to be done once)&lt;/h2>
-&lt;h3 id="instal-build-tools">Instal build tools&lt;/h3>
+&lt;h3 id="install-build-tools">Install build tools&lt;/h3>
 &lt;pre class="language-batch command-line" data-prompt=">">
 &lt;code>sudo apt update
 sudo apt install make gcc &lt;/code>
