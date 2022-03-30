@@ -5,7 +5,7 @@
 &lt;h2 id="release">Release&lt;/h2>
 &lt;p>Keep a note of the release date of the container image that you installed. Regardless of what operating system you installed neurodesktop into, the release date would have been at the end of the &lt;em>docker run&lt;/em> command:&lt;/p>
 &lt;p>&lt;img src="https://www.neurodesk.org/version.png" alt="version" title="version">&lt;/p>
-&lt;p>We regularly update neurodesktop to make sure it’s running well and has up-to-date software. You can check the &lt;a href="https://neurodesk.org/docs/neurodesktop/release-history/">Release History&lt;/a> page for details of previous releases. If you’d like to update your container at any time, simply switch out the release number for the version you would like. If you’ve finished working on an analysis pipeline and would like to share it with others, you can point them toward the stable release number that you worked in. That way anyone, on any computer around the world can replicate your analysis pipeline in the exact same computing environment that you developed it in.&lt;/p>
+&lt;p>We regularly update neurodesktop to make sure it’s running well and has up-to-date software. You can check the &lt;a href="https://www.neurodesk.org/docs/neurodesktop/release-history/">Release History&lt;/a> page for details of previous releases. If you’d like to update your container at any time, simply switch out the release number for the version you would like. If you’ve finished working on an analysis pipeline and would like to share it with others, you can point them toward the stable release number that you worked in. That way anyone, on any computer around the world can replicate your analysis pipeline in the exact same computing environment that you developed it in.&lt;/p>
 &lt;h2 id="video-tutorial">Video tutorial&lt;/h2>
 &lt;p>Click &lt;a href="https://www.youtube.com/watch?v=JLv_5fycugw">here&lt;/a> to watch a 2 minute tutorial video from OHBM 2021&lt;/p>
 &lt;h2 id="how-to-access-files-from-your-host-computer">How to access files from your Host computer&lt;/h2>
@@ -68,7 +68,7 @@ Also notice that the terminal that opens only allows to run utilities from the o
 &lt;/ul>
 &lt;/li>
 &lt;/ul>
-&lt;p>The neurodesktop environment is built to be light and fast to download and start-up. Most additional programs are therefore downloaded when they are first used. A list of these packages can be found &lt;a href="https://neurodesk.org/applications/">here&lt;/a>&lt;/p></description></item><item><title>Docs: Storage</title><link>https://www.neurodesk.org/docs/neurodesktop/storage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.neurodesk.org/docs/neurodesktop/storage/</guid><description>
+&lt;p>The neurodesktop environment is built to be light and fast to download and start-up. Most additional programs are therefore downloaded when they are first used. A list of these packages can be found &lt;a href="https://www.neurodesk.org/applications/">here&lt;/a>&lt;/p></description></item><item><title>Docs: Storage</title><link>https://www.neurodesk.org/docs/neurodesktop/storage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.neurodesk.org/docs/neurodesktop/storage/</guid><description>
 &lt;h1 id="drag-and-drop-support">Drag and Drop support&lt;/h1>
 &lt;p>You can drag-and-drop files into the browser window to get files into the Neurodesktop. This will then start a file upload:&lt;/p>
 &lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/160577507-b5159bae-13c0-4fbf-85da-0ce55fd481f3.png" alt="{538BB51E-0FEB-46EA-B1B8-FDF122776735}">&lt;/p>
@@ -279,7 +279,7 @@ We recommend the &lt;em>manual&lt;/em> install instructions, as the simplified i
 &lt;/ul>
 &lt;h2 id="20211220">20211220&lt;/h2>
 &lt;ul>
-&lt;li>neurodesktop can now be accessed via native RDP client as well (e.g. for multi-monitor support): &lt;a href="https://neurodesk.org/docs/neurodesktop/getting-started/windows/#using-an-rdp-client">https://neurodesk.org/docs/neurodesktop/getting-started/windows/#using-an-rdp-client&lt;/a>&lt;/li>
+&lt;li>neurodesktop can now be accessed via native RDP client as well (e.g. for multi-monitor support): &lt;a href="https://www.neurodesk.org/docs/neurodesktop/getting-started/windows/#using-an-rdp-client">https://www.neurodesk.org/docs/neurodesktop/getting-started/windows/#using-an-rdp-client&lt;/a>&lt;/li>
 &lt;li>there is a new Help button in the menu :)&lt;/li>
 &lt;li>updates of ants 2.3.4 (now includes Scripts as well, including antsCookTemplatePriors.sh) + newly added version 2.3.5&lt;/li>
 &lt;li>new version of QSMxT 1.1.9 20211219&lt;/li>
@@ -303,7 +303,7 @@ We recommend the &lt;em>manual&lt;/em> install instructions, as the simplified i
 &lt;h2 id="20211018">20211018&lt;/h2>
 &lt;ul>
 &lt;li>added Rstudio, R and multiple R packages (plotly, car, tidyverse, &amp;hellip;)&lt;/li>
-&lt;li>added ClearSWI and ROMEO for MRI phase processing (including new Tutorials: &lt;a href="https://neurodesk.org/tutorials/phase_processing/">https://neurodesk.org/tutorials/phase_processing/&lt;/a>)&lt;/li>
+&lt;li>added ClearSWI and ROMEO for MRI phase processing (including new Tutorials: &lt;a href="https://www.neurodesk.org/tutorials/phase_processing/">https://www.neurodesk.org/tutorials/phase_processing/&lt;/a>)&lt;/li>
 &lt;li>added more categories in applications menu (Body, Electrophysiology, Hippocampus, Phase Processing, Rodent Imaging, Shape Analysis, Spine, Statistics)&lt;/li>
 &lt;li>bugfix: improved startup time of the desktop container (miniconda in homedirectory was causing chmod slowdown)&lt;/li>
 &lt;li>bugfix: ssh, vnc and rdp servers are now restarted in case the container was stopped and started again (e.g. on Standby)&lt;/li>

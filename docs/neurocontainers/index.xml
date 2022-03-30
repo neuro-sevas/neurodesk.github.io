@@ -73,7 +73,7 @@ docker&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>docker pull vnmd/julia_1.6.1
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>build singularity image from dockerhub&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>singularity build julia_1.6.1.simg docker://vnmd/julia_1.6.1
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Replace &lt;code>julia_1.6.1&lt;/code> with your selected application. You can find the available containers here: &lt;a href="https://neurodesk.org/applications/">https://neurodesk.org/applications/&lt;/a>&lt;/p></description></item><item><title>Docs: Google Colab</title><link>https://www.neurodesk.org/docs/neurocontainers/googlecolab/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.neurodesk.org/docs/neurocontainers/googlecolab/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Replace &lt;code>julia_1.6.1&lt;/code> with your selected application. You can find the available containers here: &lt;a href="https://www.neurodesk.org/applications/">https://www.neurodesk.org/applications/&lt;/a>&lt;/p></description></item><item><title>Docs: Google Colab</title><link>https://www.neurodesk.org/docs/neurocontainers/googlecolab/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.neurodesk.org/docs/neurocontainers/googlecolab/</guid><description>
 &lt;p>This notebook demonstrates how to use all Neurodesk applications in Google Colab:
 &lt;a href="https://colab.research.google.com/drive/1g5cnZxj1llRaHmOs4xSglqsXnFkQYuol?usp=sharing">https://colab.research.google.com/drive/1g5cnZxj1llRaHmOs4xSglqsXnFkQYuol?usp=sharing&lt;/a>&lt;/p>
 &lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/156729329-883d33a8-f6ae-4d79-ba71-0e1ced172069.png" alt="image">&lt;/p></description></item><item><title>Docs: Singularity</title><link>https://www.neurodesk.org/docs/neurocontainers/singularity/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.neurodesk.org/docs/neurocontainers/singularity/</guid><description>
@@ -133,7 +133,7 @@ sudo rm -rf /usr/local/go $GOPATH &lt;/code>
 export SINGULARITY_BINDPATH='/cvmfs,/mnt,/home'&lt;/code>
 &lt;/pre>
 &lt;h3 id="cvmfs">CVMFS&lt;/h3>
-&lt;p>Follow the instructions here: &lt;a href="https://neurodesk.org/docs/neurocontainers/cvmfs/">https://neurodesk.org/docs/neurocontainers/cvmfs/&lt;/a>&lt;/p>
+&lt;p>Follow the instructions here: &lt;a href="https://www.neurodesk.org/docs/neurocontainers/cvmfs/">https://www.neurodesk.org/docs/neurocontainers/cvmfs/&lt;/a>&lt;/p>
 &lt;h3 id="lmod">LMOD&lt;/h3>
 &lt;pre class="language-batch command-line" data-prompt=">">
 &lt;code>apt install lmod&lt;/code>

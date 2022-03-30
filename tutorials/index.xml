@@ -920,7 +920,7 @@ Once you've filled out those details, you can delete this comment block.
 &lt;/ol>
 &lt;p>Thanks so much for taking the time to contribute your workflow to the Neurodesk community! If you have any feedback on the process, please let us know on &lt;a href="https://github.com/NeuroDesk/neurodesk.github.io/discussions">github discussions&lt;/a>.&lt;/p>
 &lt;h2 id="formatting-guidelines">Formatting guidelines&lt;/h2>
-&lt;p>You can embelish your text in this tutorial using markdown conventions; text can be &lt;strong>bold&lt;/strong>, &lt;em>italic&lt;/em>, or &lt;del>strikethrough&lt;/del>. You can also add &lt;a href="https://neurodesk.org/">Links&lt;/a>, and you can organise your tutorial with headers, starting at level 2 (the page title is a level 1 header):&lt;/p>
+&lt;p>You can embelish your text in this tutorial using markdown conventions; text can be &lt;strong>bold&lt;/strong>, &lt;em>italic&lt;/em>, or &lt;del>strikethrough&lt;/del>. You can also add &lt;a href="https://www.neurodesk.org/">Links&lt;/a>, and you can organise your tutorial with headers, starting at level 2 (the page title is a level 1 header):&lt;/p>
 &lt;h2 id="level-2-heading">Level 2 heading&lt;/h2>
 &lt;p>You can also include progressively smaller subheadings:&lt;/p>
 &lt;h3 id="level-3-heading">Level 3 heading&lt;/h3>

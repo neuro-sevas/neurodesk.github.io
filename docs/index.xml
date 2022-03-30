@@ -90,7 +90,7 @@ If you get errors in neurodesktop then check if the ~/neurodesktop-storage direc
 &lt;/div>
 &lt;div class="alert alert-primary" role="alert">
 If using Firefox, you might not be able to paste clipboard content into the virtual desktop from the host computer. In that case, please follow the instructions here:
-&lt;a href="https://neurodesk.org/docs/neurodesktop/troubleshooting/#the-clipboard-in-firefox-is-not-working-correctly">https://neurodesk.org/docs/neurodesktop/troubleshooting/#the-clipboard-in-firefox-is-not-working-correctly&lt;/a>
+&lt;a href="https://www.neurodesk.org/docs/neurodesktop/troubleshooting/#the-clipboard-in-firefox-is-not-working-correctly">https://www.neurodesk.org/docs/neurodesktop/troubleshooting/#the-clipboard-in-firefox-is-not-working-correctly&lt;/a>
 &lt;/div>
 &lt;ol start="4">
 &lt;li>
@@ -386,7 +386,7 @@ Needs testing
 &lt;h2 id="release">Release&lt;/h2>
 &lt;p>Keep a note of the release date of the container image that you installed. Regardless of what operating system you installed neurodesktop into, the release date would have been at the end of the &lt;em>docker run&lt;/em> command:&lt;/p>
 &lt;p>&lt;img src="https://www.neurodesk.org/version.png" alt="version" title="version">&lt;/p>
-&lt;p>We regularly update neurodesktop to make sure it’s running well and has up-to-date software. You can check the &lt;a href="https://neurodesk.org/docs/neurodesktop/release-history/">Release History&lt;/a> page for details of previous releases. If you’d like to update your container at any time, simply switch out the release number for the version you would like. If you’ve finished working on an analysis pipeline and would like to share it with others, you can point them toward the stable release number that you worked in. That way anyone, on any computer around the world can replicate your analysis pipeline in the exact same computing environment that you developed it in.&lt;/p>
+&lt;p>We regularly update neurodesktop to make sure it’s running well and has up-to-date software. You can check the &lt;a href="https://www.neurodesk.org/docs/neurodesktop/release-history/">Release History&lt;/a> page for details of previous releases. If you’d like to update your container at any time, simply switch out the release number for the version you would like. If you’ve finished working on an analysis pipeline and would like to share it with others, you can point them toward the stable release number that you worked in. That way anyone, on any computer around the world can replicate your analysis pipeline in the exact same computing environment that you developed it in.&lt;/p>
 &lt;h2 id="video-tutorial">Video tutorial&lt;/h2>
 &lt;p>Click &lt;a href="https://www.youtube.com/watch?v=JLv_5fycugw">here&lt;/a> to watch a 2 minute tutorial video from OHBM 2021&lt;/p>
 &lt;h2 id="how-to-access-files-from-your-host-computer">How to access files from your Host computer&lt;/h2>
@@ -472,7 +472,7 @@ Change &lt;code>port=3389&lt;/code> to &lt;code>port=3390&lt;/code> and save&lt;
 &lt;/ul>
 &lt;/li>
 &lt;/ul>
-&lt;p>The neurodesktop environment is built to be light and fast to download and start-up. Most additional programs are therefore downloaded when they are first used. A list of these packages can be found &lt;a href="https://neurodesk.org/applications/">here&lt;/a>&lt;/p></description></item><item><title>Docs: Windows</title><link>https://www.neurodesk.org/docs/neurodesktop/getting-started/windows/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.neurodesk.org/docs/neurodesktop/getting-started/windows/</guid><description>
+&lt;p>The neurodesktop environment is built to be light and fast to download and start-up. Most additional programs are therefore downloaded when they are first used. A list of these packages can be found &lt;a href="https://www.neurodesk.org/applications/">here&lt;/a>&lt;/p></description></item><item><title>Docs: Windows</title><link>https://www.neurodesk.org/docs/neurodesktop/getting-started/windows/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.neurodesk.org/docs/neurodesktop/getting-started/windows/</guid><description>
 &lt;h2 id="minimum-system-requirements">Minimum System Requirements&lt;/h2>
 &lt;ol>
 &lt;li>At least 3GB free space for neurodesktop base image&lt;/li>
@@ -588,7 +588,7 @@ Needs testing
 &lt;code>docker run --shm-size=1gb -it --privileged --name neurodesktop -v C:/neurodesktop-storage:/neurodesktop-storage -e VNC_ENABLE=true -p 5901:5901 -p 8080:8080 -h neurodesktop-20220329 vnmd/neurodesktop:20220329&lt;/code>
 &lt;/pre>
 &lt;p>Open a VNC Client and connect to port 5901&lt;/p></description></item><item><title>Docs: HPC</title><link>https://www.neurodesk.org/docs/neurodesktop/getting-started/hpc/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.neurodesk.org/docs/neurodesktop/getting-started/hpc/</guid><description>
-&lt;p>One way of running this project on HPCs is via &lt;a href="https://neurodesk.org/docs/neurocommand/getting-started/linux/">https://neurodesk.org/docs/neurocommand/getting-started/linux/&lt;/a>&lt;/p></description></item><item><title>Docs: Nectar Virtual Desktop Service</title><link>https://www.neurodesk.org/docs/neurodesktop/getting-started/nectar/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.neurodesk.org/docs/neurodesktop/getting-started/nectar/</guid><description>
+&lt;p>One way of running this project on HPCs is via &lt;a href="https://www.neurodesk.org/docs/neurocommand/getting-started/linux/">https://www.neurodesk.org/docs/neurocommand/getting-started/linux/&lt;/a>&lt;/p></description></item><item><title>Docs: Nectar Virtual Desktop Service</title><link>https://www.neurodesk.org/docs/neurodesktop/getting-started/nectar/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.neurodesk.org/docs/neurodesktop/getting-started/nectar/</guid><description>
 &lt;p>This option is only available to Australian/NZ researchers.&lt;/p>
 &lt;p>Go to &lt;a href="https://desktop.rc.nectar.org.au/">https://desktop.rc.nectar.org.au/&lt;/a>&lt;/p>
 &lt;p>Click on &amp;ldquo;Sign in&amp;rdquo;.&lt;/p>
@@ -605,7 +605,7 @@ Needs testing
 &lt;p>Click &amp;ldquo;OPEN DESKTOP -&amp;gt;&amp;rdquo;:
 &lt;img src="https://user-images.githubusercontent.com/4021595/150286383-1c1b8d20-c772-4598-a81b-1ef9e11526b8.png" alt="image">&lt;/p>
 &lt;p>To launch the various applications available in Neurodesktop, follow the instructions here:
-&lt;a href="https://neurodesk.org/docs/neurodesktop/whats-next/#how-to-launch-applications">https://neurodesk.org/docs/neurodesktop/whats-next/#how-to-launch-applications&lt;/a>&lt;/p>
+&lt;a href="https://www.neurodesk.org/docs/neurodesktop/whats-next/#how-to-launch-applications">https://www.neurodesk.org/docs/neurodesktop/whats-next/#how-to-launch-applications&lt;/a>&lt;/p>
 &lt;p>Good luck!&lt;/p></description></item><item><title>Docs: Storage</title><link>https://www.neurodesk.org/docs/neurodesktop/storage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.neurodesk.org/docs/neurodesktop/storage/</guid><description>
 &lt;h1 id="drag-and-drop-support">Drag and Drop support&lt;/h1>
 &lt;p>You can drag-and-drop files into the browser window to get files into the Neurodesktop. This will then start a file upload:&lt;/p>
@@ -724,7 +724,7 @@ To check which user is being use, open the terminal in the neurodesktop VS Code 
 &amp;#34;remoteUser&amp;#34;: &amp;#34;user&amp;#34;
 }
 &lt;/code>&lt;/pre>
-&lt;p>Close this VS Code window. Use steps in &lt;a href="https://neurodesk.org/docs/neurodesktop/visual-studio-code/#connecting-to-neurodesktop">previous section&lt;/a> to connect normally&lt;/p></description></item><item><title>Docs: Cloud</title><link>https://www.neurodesk.org/docs/neurodesktop/getting-started/cloud/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.neurodesk.org/docs/neurodesktop/getting-started/cloud/</guid><description>
+&lt;p>Close this VS Code window. Use steps in &lt;a href="https://www.neurodesk.org/docs/neurodesktop/visual-studio-code/#connecting-to-neurodesktop">previous section&lt;/a> to connect normally&lt;/p></description></item><item><title>Docs: Cloud</title><link>https://www.neurodesk.org/docs/neurodesktop/getting-started/cloud/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.neurodesk.org/docs/neurodesktop/getting-started/cloud/</guid><description>
 &lt;h2 id="minimum-system-requirements">Minimum System Requirements&lt;/h2>
 &lt;ol>
 &lt;li>At least 3GB free space for neurodesktop base image&lt;/li>
@@ -735,7 +735,7 @@ To check which user is being use, open the terminal in the neurodesktop VS Code 
 &lt;p>On the computer from which you want to access Neurodesktop, open an SSH connection to your cloud instance with port forwarding (USER should be substituted with a username that has admin privileges on the cloud instance, and IP should be substituted with the IP address of the cloud instance)&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>ssh -L 8080:127.0.0.1:8080 USER@IP
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="2-install-docker">2. Install Docker&lt;/h3>
-&lt;p>Install Docker on the cloud instance from here: &lt;a href="https://docs.docker.com/get-docker/">https://docs.docker.com/get-docker/&lt;/a>. Additional information available here: &lt;a href="https://neurodesk.org/docs/neurodesktop/getting-started/linux/#installing-docker">https://neurodesk.org/docs/neurodesktop/getting-started/linux/#installing-docker&lt;/a>&lt;/p>
+&lt;p>Install Docker on the cloud instance from here: &lt;a href="https://docs.docker.com/get-docker/">https://docs.docker.com/get-docker/&lt;/a>. Additional information available here: &lt;a href="https://www.neurodesk.org/docs/neurodesktop/getting-started/linux/#installing-docker">https://www.neurodesk.org/docs/neurodesktop/getting-started/linux/#installing-docker&lt;/a>&lt;/p>
 &lt;h3 id="3-run-neurodesktop">3. Run Neurodesktop&lt;/h3>
 &lt;p>Create a local folder ~/neurodesktop-storage on the cloud instance to store persistent data (data that will not disappear if neurodesktop is stopped)&lt;/p>
 &lt;h4 id="option-1-neurodesktoprun">Option 1: NeuroDesktop.run&lt;/h4>
@@ -771,7 +771,7 @@ Even if your connection to the cloud instance is broken, and the terminal does n
 &lt;/li>
 &lt;/ol>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>http://localhost:8080/#/?username=user&amp;amp;password=password
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>If the computer runs Linux, check specific instructions at &lt;a href="https://neurodesk.org/docs/neurodesktop/getting-started/linux/">https://neurodesk.org/docs/neurodesktop/getting-started/linux/&lt;/a>, Option 2, Step 3.&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>If the computer runs Linux, check specific instructions at &lt;a href="https://www.neurodesk.org/docs/neurodesktop/getting-started/linux/">https://www.neurodesk.org/docs/neurodesktop/getting-started/linux/&lt;/a>, Option 2, Step 3.&lt;/p>
 &lt;ol start="5">
 &lt;li>
 &lt;p>Press on &amp;ldquo;Desktop Auto-Resolution&amp;rdquo; under &amp;ldquo;ALL CONNECTIONS&amp;rdquo;&lt;/p>
@@ -1037,7 +1037,7 @@ We recommend the &lt;em>manual&lt;/em> install instructions, as the simplified i
 &lt;/ul>
 &lt;h2 id="20211220">20211220&lt;/h2>
 &lt;ul>
-&lt;li>neurodesktop can now be accessed via native RDP client as well (e.g. for multi-monitor support): &lt;a href="https://neurodesk.org/docs/neurodesktop/getting-started/windows/#using-an-rdp-client">https://neurodesk.org/docs/neurodesktop/getting-started/windows/#using-an-rdp-client&lt;/a>&lt;/li>
+&lt;li>neurodesktop can now be accessed via native RDP client as well (e.g. for multi-monitor support): &lt;a href="https://www.neurodesk.org/docs/neurodesktop/getting-started/windows/#using-an-rdp-client">https://www.neurodesk.org/docs/neurodesktop/getting-started/windows/#using-an-rdp-client&lt;/a>&lt;/li>
 &lt;li>there is a new Help button in the menu :)&lt;/li>
 &lt;li>updates of ants 2.3.4 (now includes Scripts as well, including antsCookTemplatePriors.sh) + newly added version 2.3.5&lt;/li>
 &lt;li>new version of QSMxT 1.1.9 20211219&lt;/li>
@@ -1061,7 +1061,7 @@ We recommend the &lt;em>manual&lt;/em> install instructions, as the simplified i
 &lt;h2 id="20211018">20211018&lt;/h2>
 &lt;ul>
 &lt;li>added Rstudio, R and multiple R packages (plotly, car, tidyverse, &amp;hellip;)&lt;/li>
-&lt;li>added ClearSWI and ROMEO for MRI phase processing (including new Tutorials: &lt;a href="https://neurodesk.org/tutorials/phase_processing/">https://neurodesk.org/tutorials/phase_processing/&lt;/a>)&lt;/li>
+&lt;li>added ClearSWI and ROMEO for MRI phase processing (including new Tutorials: &lt;a href="https://www.neurodesk.org/tutorials/phase_processing/">https://www.neurodesk.org/tutorials/phase_processing/&lt;/a>)&lt;/li>
 &lt;li>added more categories in applications menu (Body, Electrophysiology, Hippocampus, Phase Processing, Rodent Imaging, Shape Analysis, Spine, Statistics)&lt;/li>
 &lt;li>bugfix: improved startup time of the desktop container (miniconda in homedirectory was causing chmod slowdown)&lt;/li>
 &lt;li>bugfix: ssh, vnc and rdp servers are now restarted in case the container was stopped and started again (e.g. on Standby)&lt;/li>
@@ -1168,7 +1168,7 @@ docker&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>docker pull vnmd/julia_1.6.1
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>build singularity image from dockerhub&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>singularity build julia_1.6.1.simg docker://vnmd/julia_1.6.1
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Replace &lt;code>julia_1.6.1&lt;/code> with your selected application. You can find the available containers here: &lt;a href="https://neurodesk.org/applications/">https://neurodesk.org/applications/&lt;/a>&lt;/p></description></item><item><title>Docs: Google Colab</title><link>https://www.neurodesk.org/docs/neurocontainers/googlecolab/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.neurodesk.org/docs/neurocontainers/googlecolab/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Replace &lt;code>julia_1.6.1&lt;/code> with your selected application. You can find the available containers here: &lt;a href="https://www.neurodesk.org/applications/">https://www.neurodesk.org/applications/&lt;/a>&lt;/p></description></item><item><title>Docs: Google Colab</title><link>https://www.neurodesk.org/docs/neurocontainers/googlecolab/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.neurodesk.org/docs/neurocontainers/googlecolab/</guid><description>
 &lt;p>This notebook demonstrates how to use all Neurodesk applications in Google Colab:
 &lt;a href="https://colab.research.google.com/drive/1g5cnZxj1llRaHmOs4xSglqsXnFkQYuol?usp=sharing">https://colab.research.google.com/drive/1g5cnZxj1llRaHmOs4xSglqsXnFkQYuol?usp=sharing&lt;/a>&lt;/p>
 &lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/156729329-883d33a8-f6ae-4d79-ba71-0e1ced172069.png" alt="image">&lt;/p></description></item><item><title>Docs: Play</title><link>https://www.neurodesk.org/docs/neurodesktop/getting-started/play/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.neurodesk.org/docs/neurodesktop/getting-started/play/</guid><description>
@@ -1231,7 +1231,7 @@ sudo rm -rf /usr/local/go $GOPATH &lt;/code>
 export SINGULARITY_BINDPATH='/cvmfs,/mnt,/home'&lt;/code>
 &lt;/pre>
 &lt;h3 id="cvmfs">CVMFS&lt;/h3>
-&lt;p>Follow the instructions here: &lt;a href="https://neurodesk.org/docs/neurocontainers/cvmfs/">https://neurodesk.org/docs/neurocontainers/cvmfs/&lt;/a>&lt;/p>
+&lt;p>Follow the instructions here: &lt;a href="https://www.neurodesk.org/docs/neurocontainers/cvmfs/">https://www.neurodesk.org/docs/neurocontainers/cvmfs/&lt;/a>&lt;/p>
 &lt;h3 id="lmod">LMOD&lt;/h3>
 &lt;pre class="language-batch command-line" data-prompt=">">
 &lt;code>apt install lmod&lt;/code>
