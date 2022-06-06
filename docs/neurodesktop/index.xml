@@ -142,7 +142,7 @@ Also notice that the terminal that opens only allows to run utilities from the o
 &lt;h2 id="the-clipboard-in-firefox-is-not-working-correctly">The clipboard in Firefox is not working correctly&lt;/h2>
 &lt;p>Copying something to the clipboard inside the virtual desktop and pasting it outside works, but you cannot paste clipboard content into the virtual desktop from the host computer. This is a &amp;ldquo;feature&amp;rdquo; of firefox and you can disable this &amp;ldquo;feature&amp;rdquo;:&lt;/p>
 &lt;ul>
-&lt;li>goto about:config and &amp;ldquo;Accept the Risk and Continue&amp;rdquo;&lt;/li>
+&lt;li>navigate to &lt;a href="https://about:config">about:config&lt;/a> and &amp;ldquo;Accept the Risk and Continue&amp;rdquo; (&amp;ldquo;about:config&amp;rdquo; needs to be entered in the address bar of firefox and hit enter)&lt;/li>
 &lt;li>now search for clipboard and then set the following to &amp;ldquo;true&amp;rdquo;:
 &lt;ul>
 &lt;li>dom.events.asyncClipboard.clipboardItem&lt;/li>
