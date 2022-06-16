@@ -694,6 +694,7 @@ Needs testing
 -p 8080:8080 -p 5901:5901 \
 -h neurodesktop-20220329 vnmd/neurodesktop:20220329 --vnc&lt;/code>&lt;/pre>
 &lt;p>Open a VNC Client and connect to port 5901&lt;/p></description></item><item><title>Docs: Play</title><link>https://www.neurodesk.org/docs/neurodesktop/getting-started/play/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.neurodesk.org/docs/neurodesktop/getting-started/play/</guid><description>
+&lt;p>Click the link below for your own instance of Neurodesk on your browser running on Oracle cloud resources.&lt;/p>
 &lt;div class="pageinfo pageinfo-primary">
-&lt;p>We are working on a version of Neurodesk that directly runs in your browser on Oracle cloud resources without the need to install anything. It&amp;rsquo;s almost ready &amp;hellip;&lt;/p>
+&lt;p>&lt;a href="https://play.neurodesk.org/v2/gh/neurodesk/jupyter-neurodesktop-image/main?urlpath=neurodesktop">https://play.neurodesk.org/v2/gh/neurodesk/jupyter-neurodesktop-image/main?urlpath=neurodesktop&lt;/a>&lt;/p>
 &lt;/div></description></item></channel></rss>

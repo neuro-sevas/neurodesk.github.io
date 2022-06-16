@@ -1254,8 +1254,9 @@ docker&lt;/p>
 &lt;p>This notebook demonstrates how to use all Neurodesk applications in Google Colab:
 &lt;a href="https://colab.research.google.com/drive/1g5cnZxj1llRaHmOs4xSglqsXnFkQYuol?usp=sharing">https://colab.research.google.com/drive/1g5cnZxj1llRaHmOs4xSglqsXnFkQYuol?usp=sharing&lt;/a>&lt;/p>
 &lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/156729329-883d33a8-f6ae-4d79-ba71-0e1ced172069.png" alt="image">&lt;/p></description></item><item><title>Docs: Play</title><link>https://www.neurodesk.org/docs/neurodesktop/getting-started/play/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.neurodesk.org/docs/neurodesktop/getting-started/play/</guid><description>
+&lt;p>Click the link below for your own instance of Neurodesk on your browser running on Oracle cloud resources.&lt;/p>
 &lt;div class="pageinfo pageinfo-primary">
-&lt;p>We are working on a version of Neurodesk that directly runs in your browser on Oracle cloud resources without the need to install anything. It&amp;rsquo;s almost ready &amp;hellip;&lt;/p>
+&lt;p>&lt;a href="https://play.neurodesk.org/v2/gh/neurodesk/jupyter-neurodesktop-image/main?urlpath=neurodesktop">https://play.neurodesk.org/v2/gh/neurodesk/jupyter-neurodesktop-image/main?urlpath=neurodesktop&lt;/a>&lt;/p>
 &lt;/div></description></item><item><title>Docs: Singularity</title><link>https://www.neurodesk.org/docs/neurocontainers/singularity/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.neurodesk.org/docs/neurocontainers/singularity/</guid><description>
 &lt;p>Our docker containers are converted to singularity containers and stored on Object storage.&lt;/p>
 &lt;h2 id="download-singularity-containers">Download Singularity Containers&lt;/h2>
