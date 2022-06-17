@@ -1257,7 +1257,8 @@ docker&lt;/p>
 &lt;p>Click the link below for your own instance of Neurodesk on your browser running on Oracle cloud resources.&lt;/p>
 &lt;div class="pageinfo pageinfo-primary">
 &lt;p>&lt;a href="https://play.neurodesk.org/v2/gh/neurodesk/jupyter-neurodesktop-image/main?urlpath=neurodesktop">https://play.neurodesk.org/v2/gh/neurodesk/jupyter-neurodesktop-image/main?urlpath=neurodesktop&lt;/a>&lt;/p>
-&lt;/div></description></item><item><title>Docs: Singularity</title><link>https://www.neurodesk.org/docs/neurocontainers/singularity/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.neurodesk.org/docs/neurocontainers/singularity/</guid><description>
+&lt;/div>
+&lt;p>Data uploaded during your session are stored on Oracle Cloud, and will be automatically deleted at the end of the session.&lt;/p></description></item><item><title>Docs: Singularity</title><link>https://www.neurodesk.org/docs/neurocontainers/singularity/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.neurodesk.org/docs/neurocontainers/singularity/</guid><description>
 &lt;p>Our docker containers are converted to singularity containers and stored on Object storage.&lt;/p>
 &lt;h2 id="download-singularity-containers">Download Singularity Containers&lt;/h2>
 &lt;p>First get an overview which containers are available as Singularity containers:

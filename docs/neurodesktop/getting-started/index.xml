@@ -697,4 +697,5 @@ Needs testing
 &lt;p>Click the link below for your own instance of Neurodesk on your browser running on Oracle cloud resources.&lt;/p>
 &lt;div class="pageinfo pageinfo-primary">
 &lt;p>&lt;a href="https://play.neurodesk.org/v2/gh/neurodesk/jupyter-neurodesktop-image/main?urlpath=neurodesktop">https://play.neurodesk.org/v2/gh/neurodesk/jupyter-neurodesktop-image/main?urlpath=neurodesktop&lt;/a>&lt;/p>
-&lt;/div></description></item></channel></rss>
+&lt;/div>
+&lt;p>Data uploaded during your session are stored on Oracle Cloud, and will be automatically deleted at the end of the session.&lt;/p></description></item></channel></rss>
