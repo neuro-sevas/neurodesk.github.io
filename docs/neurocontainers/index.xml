@@ -8,6 +8,7 @@ wget https://ecsft.cern.ch/dist/cvmfs/cvmfs-release/cvmfs-release-latest_all.deb
 sudo dpkg -i cvmfs-release-latest_all.deb
 rm -f cvmfs-release-latest_all.deb
 sudo apt-get update
+sudo apt-get build-essential
 sudo apt-get install cvmfs&lt;/code>
 &lt;/pre>
 &lt;h1 id="configure-cvmfs">Configure CVMFS&lt;/h1>
@@ -37,6 +38,23 @@ sudo cvmfs_talk -i neurodesk.ardc.edu.au host probe
 sudo cvmfs_talk -i neurodesk.ardc.edu.au host info
 cvmfs_config stat -v neurodesk.ardc.edu.au&lt;/code>
 &lt;/pre>
+&lt;h1 id="for-ubuntu-2204-users">For Ubuntu 22.04 users&lt;/h1>
+&lt;p>If configuring CVMFS returns the following error:&lt;/p>
+&lt;pre class="language-batch command-line" data-prompt=">">
+&lt;code>Error: failed to load cvmfs library, tried: './libcvmfs_fuse3_stub.so' '/usr/lib/libcvmfs_fuse3_stub.so' '/usr/lib64/libcvmfs_fuse3_stub.so' './libcvmfs_fuse_stub.so' '/usr/lib/libcvmfs_fuse_stub.so' '/usr/lib64/libcvmfs_fuse_stub.so'
+./libcvmfs_fuse3_stub.so: cannot open shared object file: No such file or directory
+/usr/lib/libcvmfs_fuse3_stub.so: cannot open shared object file: No such file or directory
+/usr/lib64/libcvmfs_fuse3_stub.so: cannot open shared object file: No such file or directory
+./libcvmfs_fuse_stub.so: cannot open shared object file: No such file or directory
+libcrypto.so.1.1: cannot open shared object file: No such file or directory
+/usr/lib64/libcvmfs_fuse_stub.so: cannot open shared object file: No such file or directory
+Failed to read CernVM-FS configuration&lt;/code>
+&lt;/pre>
+&lt;p>A quick workaround is:&lt;/p>
+&lt;pre class="language-batch command-line" data-prompt=">">
+&lt;code>wget https://mirror.umd.edu/ubuntu/ubuntu/pool/main/o/openssl/libssl1.1_1.1.1f-1ubuntu2.13_amd64.deb
+dpkg -i libssl1.1_1.1.1f-1ubuntu2.13_amd64.deb&lt;/code>
+&lt;/pre>
 &lt;h1 id="install-singularityapptainer">install singularity/apptainer&lt;/h1>
 &lt;p>e.g. for Ubuntu/Debian:&lt;/p>
 &lt;pre class="language-batch command-line" data-prompt=">">
@@ -55,11 +73,11 @@ git checkout $VERSION # omit this command to install the latest bleeding edge co
 export VERSION=3.10.0 &amp;&amp; # adjust this as necessary \
 mkdir -p $GOPATH/src/github.com/sylabs &amp;&amp; \
 cd $GOPATH/src/github.com/sylabs &amp;&amp; \
-wget https://github.com/sylabs/singularity/releases/download/v${VERSION}/singularity-${VERSION}.tar.gz &amp;&amp; \
-tar -xzf singularity-${VERSION}.tar.gz &amp;&amp; \
-cd ./singularity &amp;&amp; \
-./mconfig
-./mconfig &amp;&amp; \
+wget https://github.com/sylabs/singularity/releases/download/v${VERSION}/singularity-ce-${VERSION}.tar.gz &amp;&amp; \
+tar -xzf singularity-ce-${VERSION}.tar.gz &amp;&amp; \789
+cd ./singularity-ce-${VERSION} &amp;&amp; \
+./mconfig --without-seccomp --without-conmon
+./mconfig --without-seccomp --without-conmon &amp;&amp; \
 make -C ./builddir &amp;&amp; \
 sudo make -C ./builddir install
 export PATH="/usr/local/singularity/bin:${PATH}"&lt;/code>

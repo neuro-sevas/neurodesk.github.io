@@ -1,4 +1,413 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>NeuroDesk – How to add new tools</title><link>https://www.neurodesk.org/developers/new_tools/</link><description>Recent content in How to add new tools on NeuroDesk</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://www.neurodesk.org/developers/new_tools/index.xml" rel="self" type="application/rss+xml"/><item><title>Developers: Add tools</title><link>https://www.neurodesk.org/developers/new_tools/add_tool/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.neurodesk.org/developers/new_tools/add_tool/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>NeuroDesk – How to add new tools</title><link>https://www.neurodesk.org/developers/new_tools/</link><description>Recent content in How to add new tools on NeuroDesk</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://www.neurodesk.org/developers/new_tools/index.xml" rel="self" type="application/rss+xml"/><item><title>Developers: Get Neurodesk code</title><link>https://www.neurodesk.org/developers/new_tools/cloning/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.neurodesk.org/developers/new_tools/cloning/</guid><description>
+&lt;h1 id="get-neurocontainers-code">Get Neurocontainers code&lt;/h1>
+&lt;p>Neurocontainers uses a &lt;strong>forked-repo&lt;/strong> and &lt;strong>&lt;a href="https://git-scm.com/book/en/v2/Git-Branching-Rebasing">rebase&lt;/a>-oriented
+workflow&lt;/strong>. This means that all contributors create a fork of the &lt;a href="https://github.com/NeuroDesk/neurocontainers/">neurocontainer
+repository&lt;/a> they want to contribute to and then submit pull
+requests to the upstream repository to have their contributions reviewed and
+accepted. We also recommend you work on feature branches.&lt;/p>
+&lt;h2 id="step-1a-create-your-fork">Step 1a: Create your fork&lt;/h2>
+&lt;p>The following steps you&amp;rsquo;ll only need to do the first time you set up a machine
+for contributing to Neurocontainers. You&amp;rsquo;ll need to repeat the steps for
+any additional NeuroDesk projects (&lt;a href="https://github.com/NeuroDesk/">list&lt;/a>) that you work on.&lt;/p>
+&lt;p>The first thing you&amp;rsquo;ll want to do to contribute to NeuroDesk is fork (&lt;a href="https://help.github.com/en/articles/fork-a-repo">see
+how&lt;/a>) the appropriate &lt;a href="https://github.com/NeuroDesk/">NeuroDesk repository&lt;/a>.&lt;/p>
+&lt;h2 id="step-1b-clone-to-your-machine">Step 1b: Clone to your machine&lt;/h2>
+&lt;p>Next, clone your fork to your local machine:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-console" data-lang="console">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902">$&lt;/span> git clone --config pull.rebase https://github.com/YOUR_USERNAME/neurocontainers.git
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">Cloning into &amp;#39;neurocontainers&amp;#39;...
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">remote: Enumerating objects: 6730, done.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">remote: Counting objects: 100% (504/504), done.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">remote: Compressing objects: 100% (229/229), done.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">remote: Total 6730 (delta 308), reused 423 (delta 269), pack-reused 6226
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">Receiving objects: 100% (6730/6730), 1.67 MiB | 196.00 KiB/s, done.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">Resolving deltas: 100% (4222/4222), done.
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>(The &lt;code>--config pull.rebase&lt;/code> option configures Git so that &lt;code>git pull&lt;/code>
+will behave like &lt;code>git pull --rebase&lt;/code> by default. Using
+&lt;code>git pull --rebase&lt;/code> to update your changes to resolve merge conflicts
+is expected by essentially all of open source projects. You can also set that option after cloning using
+&lt;code>git config --add pull.rebase true&lt;/code>, or just be careful to always run
+&lt;code>git pull --rebase&lt;/code>, never &lt;code>git pull&lt;/code>).&lt;/p>
+&lt;p>Note: If you receive an error while cloning, you may not have &lt;a href="https://help.github.com/en/articles/adding-a-new-ssh-key-to-your-github-account">added your ssh
+key to GitHub&lt;/a>.&lt;/p>
+&lt;h2 id="step-1c-connect-your-fork-to-neurocontainers-upstream">Step 1c: Connect your fork to Neurocontainers upstream&lt;/h2>
+&lt;p>Next you&amp;rsquo;ll want to &lt;a href="https://help.github.com/en/articles/configuring-a-remote-for-a-fork">configure an upstream remote
+repository&lt;/a> for your fork of Neurocontainers. This will allow
+you to &lt;a href="https://help.github.com/en/articles/syncing-a-fork">sync changes&lt;/a> from the main project back into
+your fork.&lt;/p>
+&lt;p>First, show the currently configured remote repository:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-console" data-lang="console">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902">$&lt;/span> git remote -v
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">origin git@github.com:YOUR_USERNAME/neurocontainers.git (fetch)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">origin git@github.com:YOUR_USERNAME/neurocontainers.git (push)
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Note: If you&amp;rsquo;ve cloned the repository using Github GUI, you may already
+have the upstream remote repository configured. For example, when you clone
+&lt;a href="https://github.com/NeuroDesk/neurocontainers/">NeuroDesk/neurocontainers&lt;/a> with the GitHub desktop client it configures the remote repository &lt;code>neurocontainer&lt;/code> and you see the following output from
+&lt;code>git remote -v&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-console" data-lang="console">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">origin git@github.com:YOUR_USERNAME/neurocontainer.git (fetch)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">origin git@github.com:YOUR_USERNAME/neurocontainer.git (push)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">neurocontainers https://github.com/NeuroDesk/neurocontainers.git (fetch)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">neurocontainers https://github.com/NeuroDesk/neurocontainers.git (push)
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>If your client hasn&amp;rsquo;t automatically configured a remote for NeuroDesk/eurocontainers, you&amp;rsquo;ll need to with:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-console" data-lang="console">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902">$&lt;/span> git remote add -f upstream https://github.com/NeuroDesk/neurocontainers.git
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Finally, confirm that the new remote repository, upstream, has been configured:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-console" data-lang="console">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902">$&lt;/span> git remote -v
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">origin https://github.com/YOUR_USERNAME/neurocontainers.git (fetch)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">origin https://github.com/YOUR_USERNAME/neurocontainers.git (push)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">upstream https://github.com/NeuroDesk/neurocontainers.git (fetch)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">upstream https://github.com/NeuroDesk/neurocontainers.git (push)
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="step-2-set-up-the-neurocontainers-development-environment">Step 2: Set up the Neurocontainers development environment&lt;/h2>
+&lt;p>If you haven&amp;rsquo;t already, now is a good time to install the Neurocontainers development environment
+(&lt;a href="https://www.neurodesk.org/developers/new_tools/add_tool/">Add tools&lt;/a>).&lt;/p>
+&lt;h2 id="step-3-configure-continuous-integration-for-your-fork">Step 3: Configure continuous integration for your fork&lt;/h2>
+&lt;p>This step is optional, but recommended.&lt;/p>
+&lt;p>Neurocontainers is configured to use &lt;a href="https://docs.github.com/en/actions">GitHub Actions&lt;/a>
+to test and create builds upon each new commit and pull request.
+GitHub Actions is the primary CI that runs frontend and backend
+tests across a wide range of Ubuntu distributions.&lt;/p>
+&lt;p>GitHub Actions is free for open source projects and it&amp;rsquo;s easy to
+configure for your own fork of neurocontainer. After doing so, GitHub Actions
+will run tests for new refs you push to GitHub and email you the outcome
+(you can also view the results in the web interface).&lt;/p>
+&lt;p>Running CI against your fork can help save both your and the
+NeuroDesk maintainers time by making it easy to test a change fully before
+submitting a pull request. We generally recommend a workflow where as
+you make changes, you use a fast edit-refresh cycle running individual
+tests locally until your changes work. But then once you&amp;rsquo;ve gotten
+the tests you&amp;rsquo;d expect to be relevant to your changes working, push a
+branch to run the full test suite in GitHub Actions before
+you create a pull request. While you wait for GitHub Actions jobs
+to run, you can start working on your next task. When the tests finish,
+you can create a pull request that you already know passes the tests.&lt;/p>
+&lt;p>GitHub Actions will run all the jobs by default on your forked repository.
+You can check the &lt;code>Actions&lt;/code> tab of your repository to see the builds.&lt;/p></description></item><item><title>Developers: Using Git</title><link>https://www.neurodesk.org/developers/new_tools/workflow/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.neurodesk.org/developers/new_tools/workflow/</guid><description>
+&lt;h1 id="working-copies">Working copies&lt;/h1>
+&lt;p>When you work on Neurocontainers code, there are three copies of the Neurocontainers Git
+repository that you are generally concerned with:&lt;/p>
+&lt;ul>
+&lt;li>The &lt;code>upstream&lt;/code> remote. This is the &lt;a href="https://github.com/NeuroDesk/neurocontainers">official Neurocontainers
+repository&lt;/a> on GitHub. You probably
+don&amp;rsquo;t have write access to this repository.&lt;/li>
+&lt;li>The &lt;strong>origin&lt;/strong> remote: Your personal remote repository on GitHub.
+You&amp;rsquo;ll use this to share your code and create &lt;a href="../pull_request">pull requests&lt;/a>.&lt;/li>
+&lt;li>local copy: This lives on your laptop or your remote dev instance,
+and is what you&amp;rsquo;ll use to make changes and create commits.&lt;/li>
+&lt;/ul>
+&lt;p>When you work on Neurocontainers code, you will end up moving code between
+the various working copies.&lt;/p>
+&lt;h2 id="workflows">Workflows&lt;/h2>
+&lt;p>Sometimes you need to get commits. Here are some scenarios:&lt;/p>
+&lt;ul>
+&lt;li>You may fork the official Neurocontainers repository to your GitHub fork.&lt;/li>
+&lt;li>You may fetch commits from the official Neurocontainers repository to your local copy.&lt;/li>
+&lt;li>You occasionally may fetch commits from your forked copy.&lt;/li>
+&lt;/ul>
+&lt;p>Sometimes you want to publish commits. Here are some scenarios:&lt;/p>
+&lt;ul>
+&lt;li>You push code from your local copy to your GitHub fork. (You usually
+want to put the commit on a feature branch.)&lt;/li>
+&lt;li>You submit a PR to the official Neurocontainers repo.&lt;/li>
+&lt;/ul>
+&lt;p>Finally, the NeuroDesk core team will occasionally want your changes!&lt;/p>
+&lt;ul>
+&lt;li>The NeuroDesk core team can accept your changes and add them to
+the official repo, usually on the &lt;code>master&lt;/code> branch.&lt;/li>
+&lt;/ul>
+&lt;h2 id="relevant-git-commands">Relevant Git commands&lt;/h2>
+&lt;p>The following commands are useful for moving commits between
+working copies:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>git fetch&lt;/code>: This grabs code from another repository to your local
+copy. (Defaults to fetching from your default remote, &lt;code>origin&lt;/code>).&lt;/li>
+&lt;li>&lt;code>git fetch upstream&lt;/code>: This grabs code from the upstream repository to your local copy.&lt;/li>
+&lt;li>&lt;code>git push&lt;/code>: This pushes code from your local repository to one of the remotes.&lt;/li>
+&lt;li>&lt;code>git remote&lt;/code>: This helps you configure short names for remotes.&lt;/li>
+&lt;li>&lt;code>git pull&lt;/code>: This pulls code, but by default creates a merge commit
+(which you definitely don&amp;rsquo;t want). However, if you&amp;rsquo;ve followed our
+&lt;a href="../cloning">cloning documentation&lt;/a>, this will do
+&lt;code>git pull --rebase&lt;/code> instead, which is the only mode you&amp;rsquo;ll want to
+use when working on Neurodesk.&lt;/li>
+&lt;/ul>
+&lt;h2 id="know-what-branch-youre-working-on">Know what branch you&amp;rsquo;re working on&lt;/h2>
+&lt;p>When using Git, it&amp;rsquo;s important to know which branch you currently have checked
+out because most Git commands implicitly operate on the current branch. You can
+determine the currently checked out branch several ways.&lt;/p>
+&lt;p>One way is with &lt;a href="https://git-scm.com/docs/git-status">git status&lt;/a>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-console" data-lang="console">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902">$&lt;/span> git status
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">On branch newapp
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">nothing to commit, working directory clean
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Another is with &lt;a href="https://git-scm.com/docs/git-branch">git branch&lt;/a> which will display all local
+branches, with a star next to the current branch:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-console" data-lang="console">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902">$&lt;/span> git branch
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">* newapp
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic"> master
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To see even more information about your branches, including remote branches,
+use &lt;code>git branch -vva&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-console" data-lang="console">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902">$&lt;/span> git branch -vva
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">* civet_2.1.1 f736814 [origin/civet_2.1.1] set DEPLOY_PATH
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic"> master a0f0455 [origin/master] Merge pull request #129
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic"> remotes/origin/cat12_with_neurodocker 763f6de works :)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic"> remotes/origin/civet_2.1.1 f736814 set DEPLOY_PATH
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic"> remotes/origin/master a0f0455 Merge pull request #129
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>You can also configure &lt;a href="https://git-scm.com/book/en/v2/Git-in-Other-Environments-Git-in-Bash">Bash&lt;/a> and
+&lt;a href="https://git-scm.com/book/en/v2/Git-in-Other-Environments-Git-in-Zsh">Zsh&lt;/a> to display the current branch in your prompt.&lt;/p>
+&lt;h2 id="keep-your-fork-up-to-date">Keep your fork up to date&lt;/h2>
+&lt;p>You&amp;rsquo;ll want to &lt;a href="https://help.github.com/en/articles/syncing-a-fork">keep your fork&lt;/a> up-to-date with changes
+from Neurocontainers&amp;rsquo;s master repositories.&lt;/p>
+&lt;p>&lt;strong>Note about &lt;code>git pull&lt;/code>&lt;/strong>: Rather than using &lt;code>git pull&lt;/code>, which by default is a shortcut for &lt;code>git fetch &amp;amp;&amp;amp; git merge FETCH_HEAD&lt;/code> (&lt;a href="https://git-scm.com/docs/git-pull">docs&lt;/a>), you
+should use &lt;code>git pull --rebase&lt;/code>, which is like &lt;code>git fetch&lt;/code> and then &lt;code>git rebase&lt;/code>.&lt;/p>
+&lt;p>First, &lt;a href="https://git-scm.com/docs/git-fetch">fetch&lt;/a> changes from Neurocontainers&amp;rsquo;s upstream repository you
+configured in the step above:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-console" data-lang="console">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902">$&lt;/span> git fetch upstream
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Next, check out your &lt;code>master&lt;/code> branch and &lt;a href="https://git-scm.com/docs/git-rebase">rebase&lt;/a> it on top
+of &lt;code>upstream/master&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-console" data-lang="console">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902">$&lt;/span> git checkout master
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">Switched to branch &amp;#39;master&amp;#39;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">&lt;/span>&lt;span style="color:#a40000">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a40000">&lt;/span>&lt;span style="color:#8f5902">$&lt;/span> git rebase upstream/master
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This will rollback any changes you&amp;rsquo;ve made to &lt;code>master&lt;/code>, update it from
+&lt;code>upstream/master&lt;/code>, and then re-apply your changes. Rebasing keeps the commit
+history clean and readable.&lt;/p>
+&lt;p>When you&amp;rsquo;re ready, &lt;a href="https://help.github.com/en/articles/pushing-to-a-remote">push your changes&lt;/a> to your remote fork.
+Make sure you&amp;rsquo;re in branch &lt;code>master&lt;/code> and then run &lt;code>git push&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-console" data-lang="console">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902">$&lt;/span> git checkout master
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902">$&lt;/span> git push origin master
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>You can keep any branch up to date using this method. If you&amp;rsquo;re working on a
+feature branch (see next section), which we recommend, you would change the
+command slightly, using the name of your &lt;code>feature-branch&lt;/code> rather than &lt;code>master&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-console" data-lang="console">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902">$&lt;/span> git checkout feature-branch
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">Switched to branch &amp;#39;feature-branch&amp;#39;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">&lt;/span>&lt;span style="color:#a40000">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a40000">&lt;/span>&lt;span style="color:#8f5902">$&lt;/span> git rebase upstream/master
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a40000">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a40000">&lt;/span>&lt;span style="color:#8f5902">$&lt;/span> git push origin feature-branch
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="work-on-a-feature-branch">Work on a feature branch&lt;/h2>
+&lt;p>One way to keep your work organized is to create a branch for each issue or
+feature. You can and should create as many branches as you&amp;rsquo;d like.&lt;/p>
+&lt;p>First, make sure your &lt;code>master&lt;/code> branch is up-to-date with Neurocontainers upstream (&lt;a href="#keep-your-fork-up-to-date">see
+how&lt;/a>).&lt;/p>
+&lt;p>Next, from your &lt;code>master&lt;/code> branch, create a new tracking branch, providing a
+descriptive name for your feature branch:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-console" data-lang="console">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902">$&lt;/span> git checkout master
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">Switched to branch &amp;#39;master&amp;#39;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">&lt;/span>&lt;span style="color:#a40000">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a40000">&lt;/span>&lt;span style="color:#8f5902">$&lt;/span> git checkout -b issue-1755-fail2ban
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">Switched to a new branch &amp;#39;issue-1755-fail2ban&amp;#39;
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Alternatively, you can create a new branch explicitly based off
+&lt;code>upstream/master&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-console" data-lang="console">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902">$&lt;/span> git checkout -b issue-1755-fail2ban upstream/master
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">Switched to a new branch &amp;#39;issue-1755-fail2ban&amp;#39;
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Now you&amp;rsquo;re ready to work on the issue or feature.&lt;/p>
+&lt;h2 id="stage-changes">Stage changes&lt;/h2>
+&lt;p>Recall that files tracked with Git have three possible states:
+committed, modified, and staged.&lt;/p>
+&lt;p>To prepare a commit, first add the files with changes that you want
+to include in your commit to your staging area. You &lt;em>add&lt;/em> both new files and
+existing ones. You can also remove files from staging when necessary.&lt;/p>
+&lt;h3 id="get-status-of-working-directory">Get status of working directory&lt;/h3>
+&lt;p>To see which files in the working directory have changes that have not been
+staged, use &lt;code>git status&lt;/code>.&lt;/p>
+&lt;p>If you have no changes in the working directory, you&amp;rsquo;ll see something like
+this:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-console" data-lang="console">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902">$&lt;/span> git status
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">On branch issue-123
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">nothing to commit, working directory clean
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>If you have unstaged changes, you&amp;rsquo;ll see something like this:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-console" data-lang="console">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">On branch issue-123
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">Untracked files:
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic"> (use &amp;#34;git add &amp;lt;file&amp;gt;...&amp;#34; to include in what will be committed)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">&lt;/span>&lt;span style="color:#a40000">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a40000">&lt;/span>&lt;span style="color:#000;font-style:italic"> build.sh
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">&lt;/span>&lt;span style="color:#a40000">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a40000">&lt;/span>&lt;span style="color:#000;font-style:italic">nothing added to commit but untracked files present (use &amp;#34;git add&amp;#34; to track)
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="stage-additions-with-git-add">Stage additions with &lt;code>git add&lt;/code>&lt;/h3>
+&lt;p>To add changes to your staging area, use &lt;code>git add &amp;lt;filename&amp;gt;&lt;/code>. Because
+&lt;code>git add&lt;/code> is all about staging the changes you want to commit, you use
+it to add &lt;em>new files&lt;/em> as well as &lt;em>files with changes&lt;/em> to your staging
+area.&lt;/p>
+&lt;p>Continuing our example from above, after we run &lt;code>git add build.sh&lt;/code>, we&amp;rsquo;ll see
+the following from &lt;code>git status&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-console" data-lang="console">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">On branch issue-123
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">Changes to be committed:
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic"> (use &amp;#34;git reset HEAD &amp;lt;file&amp;gt;...&amp;#34; to unstage)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">&lt;/span>&lt;span style="color:#a40000">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a40000">&lt;/span>&lt;span style="color:#000;font-style:italic"> new file: build.sh
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>You can view the changes in files you have staged with &lt;code>git diff --cached&lt;/code>. To
+view changes to files you haven&amp;rsquo;t yet staged, just use &lt;code>git diff&lt;/code>.&lt;/p>
+&lt;p>If you want to add all changes in the working directory, use &lt;code>git add -A&lt;/code>
+(&lt;a href="https://git-scm.com/docs/git-add">documentation&lt;/a>).&lt;/p>
+&lt;p>You can also stage changes using your Github GUI.&lt;/p>
+&lt;p>If you stage a file, you can undo it with &lt;code>git reset HEAD &amp;lt;filename&amp;gt;&lt;/code>. Here&amp;rsquo;s
+an example where we stage a file &lt;code>build.sh&lt;/code> and then unstage it:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-console" data-lang="console">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902">$&lt;/span> git add build.sh
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">On branch issue-1234
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">Changes to be committed:
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic"> (use &amp;#34;git reset HEAD &amp;lt;file&amp;gt;...&amp;#34; to unstage)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">&lt;/span>&lt;span style="color:#a40000">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a40000">&lt;/span>&lt;span style="color:#000;font-style:italic"> new file: build.sh
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">&lt;/span>&lt;span style="color:#a40000">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a40000">&lt;/span>&lt;span style="color:#8f5902">$&lt;/span> git reset HEAD build.sh
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902">$&lt;/span> git status
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">On branch issue-1234
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">Untracked files:
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic"> (use &amp;#34;git add &amp;lt;file&amp;gt;...&amp;#34; to include in what will be committed)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">&lt;/span>&lt;span style="color:#a40000">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a40000">&lt;/span>&lt;span style="color:#000;font-style:italic"> build.sh
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">&lt;/span>&lt;span style="color:#a40000">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a40000">&lt;/span>&lt;span style="color:#000;font-style:italic">nothing added to commit but untracked files present (use &amp;#34;git add&amp;#34; to track)
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="stage-deletions-with-git-rm">Stage deletions with &lt;code>git rm&lt;/code>&lt;/h3>
+&lt;p>To remove existing files from your repository, use &lt;code>git rm&lt;/code>
+(&lt;a href="https://git-scm.com/docs/git-rm">documentation&lt;/a>). This command can either stage the file for
+removal from your repository AND delete it from your working directory or just
+stage the file for deletion and leave it in your working directory.&lt;/p>
+&lt;p>To stage a file for deletion and &lt;strong>remove&lt;/strong> it from your working directory, use
+&lt;code>git rm &amp;lt;filename&amp;gt;&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-console" data-lang="console">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902">$&lt;/span> git rm test.txt
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">rm &amp;#39;test.txt&amp;#39;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">&lt;/span>&lt;span style="color:#a40000">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a40000">&lt;/span>&lt;span style="color:#8f5902">$&lt;/span> git status
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">On branch issue-1234
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">Changes to be committed:
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic"> (use &amp;#34;git reset HEAD &amp;lt;file&amp;gt;...&amp;#34; to unstage)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">&lt;/span>&lt;span style="color:#a40000">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a40000">&lt;/span>&lt;span style="color:#000;font-style:italic"> deleted: test.txt
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">&lt;/span>&lt;span style="color:#a40000">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a40000">&lt;/span>&lt;span style="color:#8f5902">$&lt;/span> ls test.txt
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">ls: No such file or directory
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To stage a file for deletion and &lt;strong>keep&lt;/strong> it in your working directory, use
+&lt;code>git rm --cached &amp;lt;filename&amp;gt;&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-console" data-lang="console">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902">$&lt;/span> git rm --cached test2.txt
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">rm &amp;#39;test2.txt&amp;#39;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">&lt;/span>&lt;span style="color:#a40000">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a40000">&lt;/span>&lt;span style="color:#8f5902">$&lt;/span> git status
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">On branch issue-1234
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">Changes to be committed:
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic"> (use &amp;#34;git reset HEAD &amp;lt;file&amp;gt;...&amp;#34; to unstage)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">&lt;/span>&lt;span style="color:#a40000">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a40000">&lt;/span>&lt;span style="color:#000;font-style:italic"> deleted: test2.txt
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">&lt;/span>&lt;span style="color:#a40000">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a40000">&lt;/span>&lt;span style="color:#8f5902">$&lt;/span> ls test2.txt
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">test2.txt
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>If you stage a file for deletion with the &lt;code>--cached&lt;/code> option, and haven&amp;rsquo;t yet
+run &lt;code>git commit&lt;/code>, you can undo it with &lt;code>git reset HEAD &amp;lt;filename&amp;gt;&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-console" data-lang="console">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902">$&lt;/span> git reset HEAD test2.txt
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Unfortunately, you can&amp;rsquo;t restore a file deleted with &lt;code>git rm&lt;/code> if you didn&amp;rsquo;t use
+the &lt;code>--cache&lt;/code> option. However, &lt;code>git rm&lt;/code> only deletes files it knows about.
+Files you have never added to Git won&amp;rsquo;t be deleted.&lt;/p>
+&lt;h2 id="commit-changes">Commit changes&lt;/h2>
+&lt;p>When you&amp;rsquo;ve staged all your changes, you&amp;rsquo;re ready to commit. You can do this
+with &lt;code>git commit -m &amp;quot;My commit message.&amp;quot;&lt;/code> to include a commit message.&lt;/p>
+&lt;p>Here&amp;rsquo;s an example of committing with the &lt;code>-m&lt;/code> for a one-line commit message:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-console" data-lang="console">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902">$&lt;/span> git commit -m &lt;span style="color:#4e9a06">&amp;#34;Add a test commit for docs.&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">[issue-123 173e17a] Add a test commit for docs.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic"> 1 file changed, 1 insertion(+)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic"> create mode 100644 newfile.py
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>You can also use &lt;code>git commit&lt;/code> without the &lt;code>-m&lt;/code> option and your editor to open,
+allowing you to easily draft a multi-line commit message.&lt;/p>
+&lt;p>How long your commit message should be depends on where you are in your work.
+Using short, one-line messages for commits related to in-progress work makes
+sense. For a commit that you intend to be final or that encompasses a
+significant amount or complex work, you should include a longer message.&lt;/p>
+&lt;p>Keep in mind that your commit should contain a &amp;lsquo;minimal coherent idea&amp;rsquo; and have
+a quality commit message.&lt;/p>
+&lt;p>Here&amp;rsquo;s an example of a longer commit message that will be used for a pull request:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span>Add CIVET 2.1.1 container.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Edit build.sh and README.md to build container for CIVET 2.1.1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Tested on my local Ubuntu development server, but need to test within Neurodesktop.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Fixes #1755.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The first line is the summary. The following paragraphs are full prose and
+explain why and how the change was made. It explains what testing was done
+and asks specifically for further testing. The final paragraph indicates
+that this commit addresses and fixes issue #1755.
+When you submit your pull request, GitHub will detect and link this reference
+to the appropriate issue. Once your commit is merged into &lt;code>upstream/master&lt;/code>, GitHub
+will automatically close the referenced issue. See &lt;a href="https://help.github.com/en/articles/closing-issues-via-commit-messages">Closing issues via commit
+messages&lt;/a> for details.&lt;/p>
+&lt;p>Note in particular that GitHub&amp;rsquo;s regular expressions for this feature
+are sloppy, so phrases like &lt;code>Partially fixes #1234&lt;/code> will automatically
+close the issue. Phrases like &lt;code>Fixes part of #1234&lt;/code> are a good
+alternative.&lt;/p>
+&lt;p>Make as many commits as you need to address the issue or implement your feature.&lt;/p>
+&lt;h2 id="push-your-commits-to-github">Push your commits to GitHub&lt;/h2>
+&lt;p>As you&amp;rsquo;re working, it&amp;rsquo;s a good idea to frequently push your changes to GitHub.
+This ensures your work is backed up should something happen to your local
+machine and allows others to follow your progress. It also allows you to
+&lt;a href="../troubleshooting#working-from-multiple-computers">work from multiple computers&lt;/a> without losing work.&lt;/p>
+&lt;p>Pushing to a feature branch is just like pushing to &lt;code>master&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-console" data-lang="console">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902">$&lt;/span> git push origin &amp;lt;branch-name&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">Counting objects: 6, done.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">Delta compression using up to 4 threads.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">Compressing objects: 100% (4/4), done.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">Writing objects: 100% (6/6), 658 bytes | 0 bytes/s, done.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">Total 6 (delta 3), reused 0 (delta 0)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">remote: Resolving deltas: 100% (3/3), completed with 1 local objects.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">To git@github.com:christi3k/neurocontainers.git
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic"> * [new branch] issue-demo -&amp;gt; issue-demo
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>If you want to see what Git will do without actually performing the push, add
+the &lt;code>-n&lt;/code> (dry-run) option: &lt;code>git push -n origin &amp;lt;branch-name&amp;gt;&lt;/code>. If everything
+looks good, re-run the push command without &lt;code>-n&lt;/code>.&lt;/p>
+&lt;p>If the feature branch does not already exist on GitHub, it will be created when
+you push and you&amp;rsquo;ll see &lt;code>* [new branch]&lt;/code> in the command output.&lt;/p>
+&lt;h2 id="examine-and-tidy-your-commit-history">Examine and tidy your commit history&lt;/h2>
+&lt;p>Examining your commit history prior to submitting your pull request is a good
+idea. Will the person reviewing your commit history be able to clearly understand
+your progression of work?&lt;/p>
+&lt;p>On the command line, you can use the &lt;code>git log&lt;/code> command to display an easy to
+read list of your commits:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-console" data-lang="console">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902">$&lt;/span> git log --all --graph --oneline --decorate
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a40000">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a40000">&lt;/span>&lt;span style="color:#000;font-style:italic">* 4f8d75d (HEAD -&amp;gt; 1754-docs-add-git-workflow) docs: Add details about configuring Travis CI.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">* bfb2433 (origin/1754-docs-add-git-workflow) docs: Add section for keeping fork up-to-date to Git Guide.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">* 4fe10f8 docs: Add sections for creating and configuring fork to Git Guide.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">* 985116b docs: Add graphic client recs to Git Guide.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">* 3c40103 docs: Add stubs for remaining Git Guide sections.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">* fc2c01e docs: Add git guide quickstart.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">| * f0eaee6 (upstream/master) bug: Fix traceback in get_missed_message_token_from_address().
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Alternatively, use your graphical client to view the history for your feature branch.&lt;/p>
+&lt;p>If you need to update any of your commits, you can do so with an interactive
+&lt;a href="https://help.github.com/en/articles/using-git-rebase">rebase&lt;/a>. Common reasons to use an interactive rebase
+include:&lt;/p>
+&lt;ul>
+&lt;li>squashing several commits into fewer commits&lt;/li>
+&lt;li>splitting a single commit into two or more&lt;/li>
+&lt;li>rewriting one or more commit messages&lt;/li>
+&lt;/ul>
+&lt;p>There is ample documentation on how to rebase, so we won&amp;rsquo;t go into details
+here. We recommend starting with GitHub&amp;rsquo;s help article on
+&lt;a href="https://help.github.com/en/articles/using-git-rebase">rebasing&lt;/a> and then consulting Git&amp;rsquo;s documentation for
+&lt;a href="https://git-scm.com/docs/git-rebase">git-rebase&lt;/a> if you need more details.&lt;/p>
+&lt;p>If all you need to do is edit the commit message for your last commit, you can
+do that with &lt;code>git commit --amend&lt;/code>. See &lt;a href="https://git-scm.com/book/en/v2/Git-Basics-Undoing-Things">Git Basics - Undoing
+Things&lt;/a> for details on this and other useful commands.&lt;/p>
+&lt;h2 id="force-push-changes-to-github-after-youve-altered-your-history">Force-push changes to GitHub after you&amp;rsquo;ve altered your history&lt;/h2>
+&lt;p>Any time you alter history for commits you have already pushed to GitHub,
+you&amp;rsquo;ll need to prefix the name of your branch with a &lt;code>+&lt;/code>. Without this, your
+updates will be rejected with a message such as:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-console" data-lang="console">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902">$&lt;/span> git push origin 1754-docs-add-git-workflow
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">To git@github.com:christi3k/neurocontainers.git
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic"> ! [rejected] 1754-docs-add-git-workflow -&amp;gt; 1754-docs-add-git-workflow (non-fast-forward)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">error: failed to push some refs to &amp;#39;git@github.com:christi3k/neurocontainers.git&amp;#39;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">hint: Updates were rejected because the tip of your current branch is behind
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">hint: its remote counterpart. Integrate the remote changes (e.g.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">hint: &amp;#39;git pull ...&amp;#39;) before pushing again.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">hint: See the &amp;#39;Note about fast-forwards&amp;#39; in &amp;#39;git push --help&amp;#39; for details.
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Re-running the command with &lt;code>+&amp;lt;branch&amp;gt;&lt;/code> allows the push to continue by
+re-writing the history for the remote repository:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-console" data-lang="console">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902">$&lt;/span> git push origin +1754-docs-add-git-workflow
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">Counting objects: 12, done.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">Delta compression using up to 4 threads.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">Compressing objects: 100% (12/12), done.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">Writing objects: 100% (12/12), 3.71 KiB | 0 bytes/s, done.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">Total 12 (delta 8), reused 0 (delta 0)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">remote: Resolving deltas: 100% (8/8), completed with 2 local objects.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">To git@github.com:christi3k/neurocontainers.git
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic"> + 2d49e2d...bfb2433 1754-docs-add-git-workflow -&amp;gt; 1754-docs-add-git-workflow (forced update)
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This is perfectly okay to do on your own feature branches, especially if you&amp;rsquo;re
+the only one making changes to the branch. If others are working along with
+you, they might run into complications when they retrieve your changes because
+anyone who has based their changes off a branch you rebase will have to do a
+complicated rebase.&lt;/p></description></item><item><title>Developers: Add tools</title><link>https://www.neurodesk.org/developers/new_tools/add_tool/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.neurodesk.org/developers/new_tools/add_tool/</guid><description>
 &lt;p>The goal of &lt;em>neurodesk&lt;/em> is to provide users with a large choice of tools to use in their pipelines.
 Use the guide below to add a tool to &lt;em>neurodesktop&lt;/em> or &lt;em>neurocontainers&lt;/em>.&lt;/p>
 &lt;h2 id="guiding-principles">Guiding principles&lt;/h2>
@@ -261,7 +670,316 @@ ml toolName/toolVersion&lt;/code>&lt;/pre>
 &lt;li>Open an issue in &lt;a href="https://github.com/NeuroDesk/neurocontainers/issues">https://github.com/NeuroDesk/neurocontainers/issues&lt;/a> notifying that your app appears in the start menu and tested. The app will be included in the next release of Neurodesktop, and will be mentioned in the public announcement that accompanies the release. If the app is not in the start menu or not working as expected based on your earlier testing, open an issue as well, and report it.&lt;/li>
 &lt;li>If somebody wants to use the application before the next release of Neurodesktop is out, you can instruct them to use the command in step 21 above instead of the deafult commands given in the user install instructions.&lt;/li>
 &lt;li>Consider contributing a tutorial about the new tool: &lt;a href="https://github.com/NeuroDesk/neurodesk.github.io/tree/hugo-docsy/content/en/tutorials">https://github.com/NeuroDesk/neurodesk.github.io/tree/hugo-docsy/content/en/tutorials&lt;/a>&lt;/li>
-&lt;/ol></description></item><item><title>Developers: Menu entries</title><link>https://www.neurodesk.org/developers/new_tools/menu_entries/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.neurodesk.org/developers/new_tools/menu_entries/</guid><description>
+&lt;/ol></description></item><item><title>Developers: Fix commit</title><link>https://www.neurodesk.org/developers/new_tools/fix_commit/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.neurodesk.org/developers/new_tools/fix_commit/</guid><description>
+&lt;h2 id="fixing-the-last-commit">Fixing the last commit&lt;/h2>
+&lt;h3 id="changing-the-last-commit-message">Changing the last commit message&lt;/h3>
+&lt;ol>
+&lt;li>&lt;code>git commit --amend -m &amp;quot;New message&amp;quot;&lt;/code>&lt;/li>
+&lt;/ol>
+&lt;h3 id="changing-the-last-commit">Changing the last commit&lt;/h3>
+&lt;ol>
+&lt;li>Make your changes to the files&lt;/li>
+&lt;li>Run &lt;code>git add &amp;lt;filename&amp;gt;&lt;/code> to add one file or &lt;code>git add &amp;lt;filename1&amp;gt; &amp;lt;filename2&amp;gt; ...&lt;/code> to add multiple files&lt;/li>
+&lt;li>&lt;code>git commit --amend&lt;/code>&lt;/li>
+&lt;/ol>
+&lt;h2 id="fixing-older-commits">Fixing older commits&lt;/h2>
+&lt;h3 id="changing-commit-messages">Changing commit messages&lt;/h3>
+&lt;ol>
+&lt;li>&lt;code>git rebase -i HEAD~5&lt;/code> (if, for example, you are editing some of the last five commits)&lt;/li>
+&lt;li>For each commit that you want to change the message, change &lt;code>pick&lt;/code> to &lt;code>reword&lt;/code>, and save&lt;/li>
+&lt;li>Change the commit messages&lt;/li>
+&lt;/ol>
+&lt;h3 id="deleting-old-commits">Deleting old commits&lt;/h3>
+&lt;ol>
+&lt;li>&lt;code>git rebase -i HEAD~n&lt;/code> where &lt;code>n&lt;/code> is the number of commits you are looking at&lt;/li>
+&lt;li>For each commit that you want to delete, change &lt;code>pick&lt;/code> to &lt;code>drop&lt;/code>, and save&lt;/li>
+&lt;/ol>
+&lt;h2 id="squashing-commits">Squashing commits&lt;/h2>
+&lt;p>Sometimes, you want to make one commit out of a bunch of commits. To do this,&lt;/p>
+&lt;ol>
+&lt;li>&lt;code>git rebase -i HEAD~n&lt;/code> where &lt;code>n&lt;/code> is the number of commits you are interested in&lt;/li>
+&lt;li>Change &lt;code>pick&lt;/code> to &lt;code>squash&lt;/code> on the lines containing the commits you want to squash and save&lt;/li>
+&lt;/ol>
+&lt;h2 id="reordering-commits">Reordering commits&lt;/h2>
+&lt;ol>
+&lt;li>&lt;code>git rebase -i HEAD~n&lt;/code> where &lt;code>n&lt;/code> is the number of commits you are interested in&lt;/li>
+&lt;li>Reorder the lines containing the commits and save&lt;/li>
+&lt;/ol>
+&lt;h2 id="pushing-commits-after-tidying-them">Pushing commits after tidying them&lt;/h2>
+&lt;ol>
+&lt;li>&lt;code>git push origin +my-feature-branch&lt;/code> (Note the &lt;code>+&lt;/code> there and substitute your actual branch name.)&lt;/li>
+&lt;/ol></description></item><item><title>Developers: Create a pull request</title><link>https://www.neurodesk.org/developers/new_tools/pull_request/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.neurodesk.org/developers/new_tools/pull_request/</guid><description>
+&lt;h1 id="create-a-pull-request">Create a pull request&lt;/h1>
+&lt;p>When you&amp;rsquo;re ready for feedback, submit a pull request. Pull requests
+are a feature specific to GitHub. They provide a simple, web-based way
+to submit your work (often called &amp;ldquo;patches&amp;rdquo;) to a project. It&amp;rsquo;s called
+a &lt;em>pull request&lt;/em> because you&amp;rsquo;re asking the project to &lt;em>pull changes&lt;/em>
+from your fork.&lt;/p>
+&lt;p>If you&amp;rsquo;re unfamiliar with how to create a pull request, you can check
+out GitHub&amp;rsquo;s documentation on
+&lt;a href="https://help.github.com/en/articles/creating-a-pull-request-from-a-fork">creating a pull request from a fork&lt;/a>. You
+might also find GitHub&amp;rsquo;s article
+&lt;a href="https://help.github.com/en/articles/about-pull-requests">about pull requests&lt;/a> helpful. That all said,
+the tutorial below will walk you through the process.&lt;/p>
+&lt;h2 id="create-a-pull-request-1">Create a pull request&lt;/h2>
+&lt;h3 id="step-0-make-sure-youre-on-a-feature-branch-not-master">Step 0: Make sure you&amp;rsquo;re on a feature branch (not &lt;code>master&lt;/code>)&lt;/h3>
+&lt;p>It is important to &lt;a href="../workflow#work-on-a-feature-branch">work on feature branch&lt;/a> when creating a pull
+request. Your new pull request will be inextricably linked with your
+branch while it is open, so you will need to reserve your branch only
+for changes related to your issue, and avoid introducing extraneous
+changes for other issues or from upstream.&lt;/p>
+&lt;p>If you are working on a branch named &lt;code>master&lt;/code>, you need to create and
+switch to a feature branch before proceeding.&lt;/p>
+&lt;h3 id="step-1-update-your-branch-with-git-rebase">Step 1: Update your branch with git rebase&lt;/h3>
+&lt;p>The best way to update your branch is with &lt;code>git fetch&lt;/code> and &lt;code>git rebase&lt;/code>. Do not
+use &lt;code>git pull&lt;/code> or &lt;code>git merge&lt;/code> as this will create merge commits. See &lt;a href="../workflow#keep-your-fork-up-to-date">keep your
+fork up to date&lt;/a> for details.&lt;/p>
+&lt;p>Here&amp;rsquo;s an example (you would replace &lt;em>issue-123&lt;/em> with the name of your feature branch):&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-console" data-lang="console">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902">$&lt;/span> git checkout issue-123
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">Switched to branch &amp;#39;issue-123&amp;#39;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">&lt;/span>&lt;span style="color:#a40000">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a40000">&lt;/span>&lt;span style="color:#8f5902">$&lt;/span> git fetch upstream
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">remote: Counting objects: 69, done.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">remote: Compressing objects: 100% (23/23), done.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">remote: Total 69 (delta 49), reused 39 (delta 39), pack-reused 7
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">Unpacking objects: 100% (69/69), done.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">From https://github.com/NeuroDesk/neurocontainers/
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic"> 69fa600..43e21f6 master -&amp;gt; upstream/master
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">&lt;/span>&lt;span style="color:#a40000">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a40000">&lt;/span>&lt;span style="color:#8f5902">$&lt;/span> git rebase upstream/master
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a40000">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a40000">&lt;/span>&lt;span style="color:#000;font-style:italic">First, rewinding head to replay your work on top of it...
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">Applying: troubleshooting tip about provisioning
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="step-2-push-your-updated-branch-to-your-remote-fork">Step 2: Push your updated branch to your remote fork&lt;/h3>
+&lt;p>Once you&amp;rsquo;ve updated your local feature branch, push the changes to GitHub:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-console" data-lang="console">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902">$&lt;/span> git push origin issue-123
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">Counting objects: 6, done.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">Delta compression using up to 4 threads.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">Compressing objects: 100% (4/4), done.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">Writing objects: 100% (6/6), 658 bytes | 0 bytes/s, done.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">Total 6 (delta 3), reused 0 (delta 0)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">remote: Resolving deltas: 100% (3/3), completed with 1 local objects.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">To git@github.com:christi3k/neurocontainers.git
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic"> + 2d49e2d...bfb2433 issue-123 -&amp;gt; issue-123
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>If your push is rejected with error &lt;strong>failed to push some refs&lt;/strong> then you need
+to prefix the name of your branch with a &lt;code>+&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-console" data-lang="console">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902">$&lt;/span> git push origin +issue-123
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">Counting objects: 6, done.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">Delta compression using up to 4 threads.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">Compressing objects: 100% (4/4), done.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">Writing objects: 100% (6/6), 658 bytes | 0 bytes/s, done.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">Total 6 (delta 3), reused 0 (delta 0)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">remote: Resolving deltas: 100% (3/3), completed with 1 local objects.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">To git@github.com:christi3k/neurocontainers.git
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic"> + 2d49e2d...bfb2433 issue-123 -&amp;gt; issue-123 (forced update)
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This is perfectly okay to do on your own feature branches, especially if you&amp;rsquo;re
+the only one making changes to the branch. If others are working along with
+you, they might run into complications when they retrieve your changes because
+anyone who has based their changes off a branch you rebase will have to do a
+complicated rebase.&lt;/p>
+&lt;h3 id="step-3-open-the-pull-request">Step 3: Open the pull request&lt;/h3>
+&lt;p>If you&amp;rsquo;ve never created a pull request or need a refresher, take a look at
+GitHub&amp;rsquo;s article &lt;a href="https://help.github.com/en/articles/creating-a-pull-request-from-a-fork">creating a pull request from a
+fork&lt;/a>.
+Note: &lt;strong>Pull request titles are different from commit messages.&lt;/strong> Commit
+messages can be edited with &lt;code>git commit --amend&lt;/code>, &lt;code>git rebase -i&lt;/code>, etc., while
+the title of a pull request can only be edited via GitHub.&lt;/p>
+&lt;h2 id="update-a-pull-request">Update a pull request&lt;/h2>
+&lt;p>As you make progress on your feature or bugfix, your pull request, once
+submitted, will be updated each time you &lt;a href="../workflow#push-your-commits-to-github">push commits&lt;/a> to
+your remote branch. This means you can keep your pull request open as long as
+you need, rather than closing and opening new ones for the same feature or
+bugfix.&lt;/p>
+&lt;p>It&amp;rsquo;s a good idea to keep your pull request mergeable with neurocontainer upstream by
+frequently fetching, rebasing, and pushing changes. See &lt;a href="../workflow#keep-your-fork-up-to-date">keep your fork up to
+date&lt;/a> for details. You might also find this excellent
+article &lt;a href="https://github.com/edx/edx-platform/wiki/How-to-Rebase-a-Pull-Request">How to Rebase a Pull Request&lt;/a> helpful.&lt;/p>
+&lt;p>And, as you address review comments others have made, we recommend posting a
+follow-up comment in which you: a) ask for any clarifications you need, b)
+explain to the reviewer how you solved any problems they mentioned, and c) ask
+for another review.&lt;/p></description></item><item><title>Developers: Troubleshooting</title><link>https://www.neurodesk.org/developers/new_tools/troubleshooting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.neurodesk.org/developers/new_tools/troubleshooting/</guid><description>
+&lt;h2 id="undo-a-merge-commit">Undo a merge commit&lt;/h2>
+&lt;p>A merge commit is a special type of commit that has two parent commits. It&amp;rsquo;s
+created by Git when you merge one branch into another and the last commit on
+your current branch is not a direct ancestor of the branch you are trying to
+merge in. This happens quite often in a busy project like NeuroDesk where there are
+many contributors because upstream/neurocontainer will have new commits while you&amp;rsquo;re
+working on a feature or bugfix. In order for Git to merge your changes and the
+changes that have occurred on neurocontainer/upstream since you first started your work,
+it must perform a three-way merge and create a merge commit.&lt;/p>
+&lt;p>neurocontainer uses a forked-repo, rebase-oriented workflow.&lt;/p>
+&lt;p>A merge commit is usually created when you&amp;rsquo;ve run &lt;code>git pull&lt;/code> or &lt;code>git merge&lt;/code>.
+You&amp;rsquo;ll know you&amp;rsquo;re creating a merge commit if you&amp;rsquo;re prompted for a commit
+message and the default is something like this:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span>Merge branch &amp;#39;master&amp;#39; of https://github.com/NeuroDesk/neurocontainer
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># Please enter a commit message to explain why this merge is necessary,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># especially if it merges an updated upstream into a topic branch.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>#
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># Lines starting with &amp;#39;#&amp;#39; will be ignored, and an empty message aborts
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># the commit.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>And the first entry for &lt;code>git log&lt;/code> will show something like:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-console" data-lang="console">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">commit e5f8211a565a5a5448b93e98ed56415255546f94
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">Merge: 13bea0e e0c10ed
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">Author: Christie Koehler &amp;lt;ck@christi3k.net&amp;gt;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">Date: Mon Oct 10 13:25:51 2016 -0700
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">&lt;/span>&lt;span style="color:#a40000">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a40000">&lt;/span>&lt;span style="color:#000;font-style:italic"> Merge branch &amp;#39;master&amp;#39; of https://github.com/NeuroDesk/neurocontainer
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Some graphical Git clients may also create merge commits.&lt;/p>
+&lt;p>To undo a merge commit, first run &lt;code>git reflog&lt;/code> to identify the commit you want
+to roll back to:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-console" data-lang="console">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902">$&lt;/span> git reflog
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a40000">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a40000">&lt;/span>&lt;span style="color:#000;font-style:italic">e5f8211 HEAD@{0}: pull upstream master: Merge made by the &amp;#39;recursive&amp;#39; strategy.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">13bea0e HEAD@{1}: commit: test commit for docs.
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Reflog output will be long. The most recent Git refs will be listed at the top.
+In the example above &lt;code>e5f8211 HEAD@{0}:&lt;/code> is the merge commit made automatically
+by &lt;code>git pull&lt;/code> and &lt;code>13bea0e HEAD@{1}:&lt;/code> is the last commit I made before running
+&lt;code>git pull&lt;/code>, the commit that I want to rollback to.&lt;/p>
+&lt;p>Once you&amp;rsquo;d identified the ref you want to revert to, you can do so with &lt;a href="https://git-scm.com/docs/git-reset">git
+reset&lt;/a>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-console" data-lang="console">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902">$&lt;/span> git reset --hard 13bea0e
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">HEAD is now at 13bea0e test commit for docs.
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>:::{important}
+&lt;code>git reset --hard &amp;lt;commit&amp;gt;&lt;/code> will discard all changes in your
+working directory and index since the commit you&amp;rsquo;re resetting to with
+&lt;code>&amp;lt;commit&amp;gt;&lt;/code>. &lt;em>This is the main way you can lose work in Git&lt;/em>. If you need
+to keep any changes that are in your working directory or that you have
+committed, use &lt;code>git reset --merge &amp;lt;commit&amp;gt;&lt;/code> instead.
+:::&lt;/p>
+&lt;p>You can also use the relative reflog &lt;code>HEAD@{1}&lt;/code> instead of the commit hash,
+just keep in mind that this changes as you run Git commands.&lt;/p>
+&lt;p>Now when you look at the output of &lt;code>git reflog&lt;/code>, you should see that the tip of your branch points to your
+last commit &lt;code>13bea0e&lt;/code> before the merge:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-console" data-lang="console">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902">$&lt;/span> git reflog
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a40000">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a40000">&lt;/span>&lt;span style="color:#000;font-style:italic">13bea0e HEAD@{2}: reset: moving to HEAD@{1}
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">e5f8211 HEAD@{3}: pull upstream master: Merge made by the &amp;#39;recursive&amp;#39; strategy.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">13bea0e HEAD@{4}: commit: test commit for docs.
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>And the first entry &lt;code>git log&lt;/code> shows is this:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-console" data-lang="console">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">commit 13bea0e40197b1670e927a9eb05aaf50df9e8277
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">Author: Christie Koehler &amp;lt;ck@christi3k.net&amp;gt;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">Date: Mon Oct 10 13:25:38 2016 -0700
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">&lt;/span>&lt;span style="color:#a40000">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a40000">&lt;/span>&lt;span style="color:#000;font-style:italic"> test commit for docs.
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="restore-a-lost-commit">Restore a lost commit&lt;/h2>
+&lt;p>We&amp;rsquo;ve mentioned you can use &lt;code>git reset --hard&lt;/code> to rollback to a previous
+commit. What if you run &lt;code>git reset --hard&lt;/code> and then realize you actually need
+one or more of the commits you just discarded? No problem, you can restore them
+with &lt;code>git cherry-pick&lt;/code> (&lt;a href="https://git-scm.com/docs/git-cherry-pick">docs&lt;/a>).&lt;/p>
+&lt;p>For example, let&amp;rsquo;s say you just committed &amp;ldquo;some work&amp;rdquo; and your &lt;code>git log&lt;/code> looks
+like this:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-console" data-lang="console">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">* 67aea58 (HEAD -&amp;gt; master) some work
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">* 13bea0e test commit for docs.
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>You then mistakenly run &lt;code>git reset --hard 13bea0e&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-console" data-lang="console">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902">$&lt;/span> git reset --hard 13bea0e
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">HEAD is now at 13bea0e test commit for docs.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">&lt;/span>&lt;span style="color:#a40000">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a40000">&lt;/span>&lt;span style="color:#8f5902">$&lt;/span> git log
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">* 13bea0e (HEAD -&amp;gt; master) test commit for docs.
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>And then realize you actually needed to keep commit 67aea58. First, use
+&lt;code>git reflog&lt;/code> to confirm that commit you want to restore and then run
+&lt;code>git cherry-pick &amp;lt;commit&amp;gt;&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-console" data-lang="console">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902">$&lt;/span> git reflog
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">13bea0e HEAD@{0}: reset: moving to 13bea0e
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">67aea58 HEAD@{1}: commit: some work
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">&lt;/span>&lt;span style="color:#a40000">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a40000">&lt;/span>&lt;span style="color:#8f5902">$&lt;/span> git cherry-pick 67aea58
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic"> [master 67aea58] some work
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic"> Date: Thu Oct 13 11:51:19 2016 -0700
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic"> 1 file changed, 1 insertion(+)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic"> create mode 100644 test4.txt
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="recover-from-a-git-rebase-failure">Recover from a &lt;code>git rebase&lt;/code> failure&lt;/h2>
+&lt;p>One situation in which &lt;code>git rebase&lt;/code> will fail and require you to intervene is
+when your change, which Git will try to re-apply on top of new commits from
+which ever branch you are rebasing on top of, is to code that has been changed
+by those new commits.&lt;/p>
+&lt;p>For example, while I&amp;rsquo;m working on a file, another contributor makes a change to
+that file, submits a pull request and has their code merged into &lt;code>master&lt;/code>.
+Usually this is not a problem, but in this case the other contributor made a
+change to a part of the file I also want to change. When I try to bring my
+branch up to date with &lt;code>git fetch&lt;/code> and then &lt;code>git rebase upstream/master&lt;/code>, I see
+the following:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-console" data-lang="console">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">First, rewinding head to replay your work on top of it...
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">Applying: test change for docs
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">Using index info to reconstruct a base tree...
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">M README.md
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">Falling back to patching base and 3-way merge...
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">Auto-merging README.md
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">CONFLICT (content): Merge conflict in README.md
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">error: Failed to merge in the changes.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">Patch failed at 0001 test change for docs
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">The copy of the patch that failed is found in: .git/rebase-apply/patch
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">&lt;/span>&lt;span style="color:#a40000">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a40000">&lt;/span>&lt;span style="color:#000;font-style:italic">When you have resolved this problem, run &amp;#34;git rebase --continue&amp;#34;.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">If you prefer to skip this patch, run &amp;#34;git rebase --skip&amp;#34; instead.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">To check out the original branch and stop rebasing, run &amp;#34;git rebase --abort&amp;#34;.
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This message tells me that Git was not able to apply my changes to README.md
+after bringing in the new commits from upstream/master.&lt;/p>
+&lt;p>Running &lt;code>git status&lt;/code> also gives me some information:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-console" data-lang="console">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">rebase in progress; onto 5ae56e6
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">You are currently rebasing branch &amp;#39;docs-test&amp;#39; on &amp;#39;5ae56e6&amp;#39;.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic"> (fix conflicts and then run &amp;#34;git rebase --continue&amp;#34;)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic"> (use &amp;#34;git rebase --skip&amp;#34; to skip this patch)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic"> (use &amp;#34;git rebase --abort&amp;#34; to check out the original branch)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">&lt;/span>&lt;span style="color:#a40000">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a40000">&lt;/span>&lt;span style="color:#000;font-style:italic">Unmerged paths:
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic"> (use &amp;#34;git reset HEAD &amp;lt;file&amp;gt;...&amp;#34; to unstage)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic"> (use &amp;#34;git add &amp;lt;file&amp;gt;...&amp;#34; to mark resolution)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">&lt;/span>&lt;span style="color:#a40000">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a40000">&lt;/span>&lt;span style="color:#000;font-style:italic"> both modified: README.md
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">&lt;/span>&lt;span style="color:#a40000">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a40000">&lt;/span>&lt;span style="color:#000;font-style:italic">no changes added to commit (use &amp;#34;git add&amp;#34; and/or &amp;#34;git commit -a&amp;#34;)
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To fix, open all the files with conflicts in your editor and decide which edits
+should be applied. Git uses standard conflict-resolution (&lt;code>&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&lt;/code>, &lt;code>=======&lt;/code>,
+and &lt;code>&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&lt;/code>) markers to indicate where in files there are conflicts.&lt;/p>
+&lt;p>Tip: You can see recent changes made to a file by running the following
+commands:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>git fetch upstream
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git log -p upstream/master -- /path/to/file
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>You can use this to compare the changes that you have made to a file with the
+ones in upstream, helping you avoid undoing changes from a previous commit when
+you are rebasing.&lt;/p>
+&lt;p>Once you&amp;rsquo;ve done that, save the file(s), stage them with &lt;code>git add&lt;/code> and then
+continue the rebase with &lt;code>git rebase --continue&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-console" data-lang="console">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902">$&lt;/span> git add README.md
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a40000">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a40000">&lt;/span>&lt;span style="color:#8f5902">$&lt;/span> git rebase --continue
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">Applying: test change for docs
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>For help resolving merge conflicts, see &lt;a href="https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging#Basic-Merge-Conflicts">basic merge
+conflicts&lt;/a>, &lt;a href="https://git-scm.com/book/en/v2/Git-Tools-Advanced-Merging#_advanced_merging">advanced
+merging&lt;/a>, and/or GitHub&amp;rsquo;s help on &lt;a href="https://help.github.com/en/articles/resolving-a-merge-conflict-using-the-command-line">how to resolve a
+merge conflict&lt;/a>.&lt;/p>
+&lt;h2 id="working-from-multiple-computers">Working from multiple computers&lt;/h2>
+&lt;p>Working from multiple computers with neurocontainer and Git is fine, but you&amp;rsquo;ll need to
+pay attention and do a bit of work to ensure all of your work is readily
+available.&lt;/p>
+&lt;p>Recall that most Git operations are local. When you commit your changes with
+&lt;code>git commit&lt;/code> they are safely stored in your &lt;em>local&lt;/em> Git database only. That is,
+until you &lt;em>push&lt;/em> the commits to GitHub, they are only available on the computer
+where you committed them.&lt;/p>
+&lt;p>So, before you stop working for the day, or before you switch computers, push
+all of your commits to GitHub with &lt;code>git push&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-console" data-lang="console">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902">$&lt;/span> git push origin &amp;lt;branchname&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>When you first start working on a new computer, you&amp;rsquo;ll &lt;a href="../cloning#step-1b-clone-to-your-machine">clone the neurocontainer
+repository&lt;/a> and &lt;a href="../cloning#step-1c-connect-your-fork-to-neurocontainers-upstream">connect it to neurocontainer
+upstream&lt;/a>. A clone retrieves all current commits,
+including the ones you pushed to GitHub from your other computer.&lt;/p>
+&lt;p>But if you&amp;rsquo;re switching to another computer on which you have already cloned
+neurocontainer, you need to update your local Git database with new refs from your
+GitHub fork. You do this with &lt;code>git fetch&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-console" data-lang="console">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902">$&lt;/span> git fetch &amp;lt;username&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Ideally you should do this before you have made any commits on the same branch
+on the second computer. Then you can &lt;code>git merge&lt;/code> on whichever branch you need
+to update:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-console" data-lang="console">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902">$&lt;/span> git checkout &amp;lt;my-branch&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">Switched to branch &amp;#39;&amp;lt;my-branch&amp;gt;&amp;#39;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">&lt;/span>&lt;span style="color:#a40000">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a40000">&lt;/span>&lt;span style="color:#8f5902">$&lt;/span> git merge origin/master
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>If you have already made commits on the second computer that you need to
+keep,&lt;/strong> you&amp;rsquo;ll need to use &lt;code>git log FETCH_HEAD&lt;/code> to identify that hashes of the
+commits you want to keep and then &lt;code>git cherry-pick &amp;lt;commit&amp;gt;&lt;/code> those commits into
+whichever branch you need to update.&lt;/p></description></item><item><title>Developers: Menu entries</title><link>https://www.neurodesk.org/developers/new_tools/menu_entries/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.neurodesk.org/developers/new_tools/menu_entries/</guid><description>
 &lt;h2 id="menu-entry">Menu entry&lt;/h2>
 &lt;p>As we want to propose several versions of the tools, each piece of software should have its own submenu under &lt;code>VNM Neuroimaging&lt;/code>.
 To do so, you first have to add a submenu to &lt;code>menus/vnm-applications.menu&lt;/code> by adding:&lt;/p>
