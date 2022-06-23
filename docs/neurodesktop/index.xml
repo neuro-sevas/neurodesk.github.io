@@ -238,7 +238,7 @@ We recommend the &lt;em>manual&lt;/em> install instructions, as the simplified i
 &lt;p>*RAM requirements will vary based on the tools/data you are using. If the system you&amp;rsquo;re using has limited RAM, test out a few different amounts by running the above steps and then your analyses in Neurodesktop. Version 20220208 onwards has a memory monitor in the taskbar - you can use this to check how much memory Neurodesktop has access to and how much is being used by the analyses being run.&lt;/p></description></item><item><title>Docs: Release History</title><link>https://www.neurodesk.org/docs/neurodesktop/release-history/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.neurodesk.org/docs/neurodesktop/release-history/</guid><description>
 &lt;h2 id="latest">latest&lt;/h2>
 &lt;ul>
-&lt;li>in development: vesselvio 1.1.1 (vessel visualisation) contributed by Steffen&lt;/li>
+&lt;li>added laynii 2.2.1 - layer fMRI toolbox (contributed by Renzo Huber)&lt;/li>
 &lt;/ul>
 &lt;h2 id="20220329">20220329&lt;/h2>
 &lt;ul>
