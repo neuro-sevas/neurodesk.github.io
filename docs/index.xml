@@ -1159,10 +1159,10 @@ libcrypto.so.1.1: cannot open shared object file: No such file or directory
 /usr/lib64/libcvmfs_fuse_stub.so: cannot open shared object file: No such file or directory
 Failed to read CernVM-FS configuration&lt;/code>
 &lt;/pre>
-&lt;p>A quick workaround is:&lt;/p>
+&lt;p>A temporary workaround is:&lt;/p>
 &lt;pre class="language-batch command-line" data-prompt=">">
-&lt;code>wget https://mirror.umd.edu/ubuntu/ubuntu/pool/main/o/openssl/libssl1.1_1.1.1f-1ubuntu2.13_amd64.deb
-dpkg -i libssl1.1_1.1.1f-1ubuntu2.13_amd64.deb&lt;/code>
+&lt;code>wget https://mirror.umd.edu/ubuntu/ubuntu/pool/main/o/openssl/libssl1.1_1.1.1f-1ubuntu2.15_amd64.deb
+dpkg -i libssl1.1_1.1.1f-1ubuntu2.15_amd64.deb&lt;/code>
 &lt;/pre>
 &lt;h1 id="install-singularityapptainer">install singularity/apptainer&lt;/h1>
 &lt;p>e.g. for Ubuntu/Debian:&lt;/p>
