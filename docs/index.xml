@@ -1006,6 +1006,7 @@ We recommend the &lt;em>manual&lt;/em> install instructions, as the simplified i
 &lt;h2 id="latest">latest&lt;/h2>
 &lt;ul>
 &lt;li>added laynii 2.2.1 - layer fMRI toolbox (contributed by Renzo Huber)&lt;/li>
+&lt;li>added fieldtrip 20220617 - eeg processing (contributed by David White)&lt;/li>
 &lt;/ul>
 &lt;h2 id="20220329">20220329&lt;/h2>
 &lt;ul>
