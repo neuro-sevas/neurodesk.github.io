@@ -908,7 +908,7 @@ chmod +x build.sh
 &lt;/li>
 &lt;li>
 &lt;p>Update changes in local git repository&lt;/p>
-&lt;pre class="language-shell command-line" data-prompt="$">&lt;code>git add recipes/NEWAPP/build.sh recipes/NEWAPP/README.md .github/workflows/NEWAPP.yml
+&lt;pre class="language-shell command-line" data-prompt="$">&lt;code>git add .github/workflows/NEWAPP.yml recipes/NEWAPP/test.sh recipes/NEWAPP/build.sh recipes/NEWAPP/README.md
 git config user.email "the email that you use for github"
 git config user.name "your name"
 git commit&lt;/code>&lt;/pre>
