@@ -546,6 +546,9 @@ If relevant to your project, add an option to neurodocker that installs new soft
 python -m pip install .
 cd ..&lt;/code>&lt;/pre>
 &lt;/li>
+&lt;li>Run:
+echo &amp;rsquo;export PATH=${PATH}:${HOME}/.local/bin&amp;rsquo; &amp;raquo; ${HOME}/.bashrc&lt;/li>
+&lt;li>Close the terminal, and reopen it for the updated PATH to take effect&lt;/li>
 &lt;/ol>
 &lt;h3 id="clone-the-neurocontainers-repository">Clone the Neurocontainers repository&lt;/h3>
 &lt;ul>
