@@ -28,14 +28,14 @@ Also notice that the terminal that opens only allows to run utilities from the o
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: What's in the box?</title><link>https://www.neurodesk.org/docs/neurodesktop/whatsinthebox/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.neurodesk.org/docs/neurodesktop/whatsinthebox/</guid><description>
 &lt;p>Neurodesktop comes with the essential software required for neuroimaging data analysis pre-installed. Each release is built with the most recent version of these packages available at the build date. Some example packages include:&lt;/p>
 &lt;ul>
-&lt;li>Editors and Programming:
+&lt;li>Editors and Programming (can be found in menu, or launched from command line by typing their name):
 &lt;ul>
-&lt;li>Visual Studio Code&lt;/li>
-&lt;li>Emacs&lt;/li>
-&lt;li>Gedit&lt;/li>
-&lt;li>Vim&lt;/li>
-&lt;li>Python&lt;/li>
-&lt;li>Git&lt;/li>
+&lt;li>code (Visual Studio Code)&lt;/li>
+&lt;li>gedit (simple visual editor)&lt;/li>
+&lt;li>emacs&lt;/li>
+&lt;li>vim&lt;/li>
+&lt;li>python&lt;/li>
+&lt;li>git&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;li>Workflow systems:
