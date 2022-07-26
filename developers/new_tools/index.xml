@@ -587,13 +587,22 @@ Note: this increases CI run time, only use in cases of out-of-space errors.
 &lt;li>
 &lt;p>Build and test the container locally&lt;/p>
 &lt;ol>
-&lt;li>run the build script with the debug flag:
+&lt;li>
+&lt;p>run the build script with the debug flag:&lt;/p>
 &lt;pre class="language-shell command-line" data-prompt="$">&lt;code>cd recipes/newapp
 chmod +x build.sh
 ./build.sh -ds&lt;/code>&lt;/pre>
 &lt;/li>
-&lt;li>test running some commands within the container that should be available in your local docker container repository&lt;/li>
-&lt;li>if your application requires a Matlab Runtime and you get an error about shared library &amp;ldquo;libmwlaunchermain.so&amp;rdquo; not found, check which version of the runtime was installed by the build script&lt;/li>
+&lt;li>
+&lt;p>test running some commands within the container that should be available in your local docker container repository.&lt;/p>
+&lt;p>For example, to open an interactive shell in a container (with the home folder /root binded to /root on host), you may run:&lt;/p>
+&lt;pre class="language-shell command-line" data-prompt="$">&lt;code>sudo docker run -it -v /root:/root --entrypoint /bin/bash NEWAPP_VERSION:TAG
+&lt;/code>&lt;/pre>
+&lt;p>with VERSION being the version of the app, and TAG the version tag of the container (run &amp;lsquo;sudo docker image list&amp;rsquo; to find the tag)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>if your application requires a Matlab Runtime and you get an error about shared library &amp;ldquo;libmwlaunchermain.so&amp;rdquo; not found, check which version of the runtime was installed by the build script&lt;/p>
+&lt;/li>
 &lt;/ol>
 &lt;/li>
 &lt;li>
