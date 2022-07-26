@@ -862,21 +862,21 @@ Follow the steps in &lt;a href="https://www.neurodesk.org/developers/new_tools/c
 &lt;h3 id="create-a-new-app">Create a new app&lt;/h3>
 &lt;ol>
 &lt;li>
-&lt;p>Copy the directory template and rename to &lt;em>newapp&lt;/em> in &lt;code>neurocontainers/recipes&lt;/code>:&lt;/p>
+&lt;p>Copy the directory template and rename to NEWAPP in &lt;code>neurocontainers/recipes&lt;/code> (NEWAPP being the name of the application to be displayed in Neurodesk&amp;rsquo;s menu; notice it shouldn&amp;rsquo;t have any special characters):&lt;/p>
 &lt;pre class="language-shell command-line" data-prompt="$">&lt;code>cd neurocontainers/recipes
-cp -R template newapp&lt;/code>&lt;/pre>
+cp -R template NEWAPP&lt;/code>&lt;/pre>
 &lt;/li>
 &lt;li>
 &lt;p>Create your Container Files:&lt;br>
-Modify &lt;code>build.sh&lt;/code> in &lt;code>neurocontainers/recipes/newapp&lt;/code> to build your application and update &lt;code>README.md&lt;/code> (make sure the version is correct in the README!). Notice that the example build script in the template has instructions to build a conatiner for datalad, that may or may not suite your exact needs&lt;/p>
-&lt;pre class="language-shell command-line" data-prompt="$" data-output="2-3">&lt;code>cd newapp
+Modify &lt;code>build.sh&lt;/code> in &lt;code>neurocontainers/recipes/NEWAPP&lt;/code> to build your application and update &lt;code>README.md&lt;/code> (make sure the version is correct in the README!). Notice that the example build script in the template has instructions to build a conatiner for datalad, that may or may not suite your exact needs&lt;/p>
+&lt;pre class="language-shell command-line" data-prompt="$" data-output="2-3">&lt;code>cd NEWAPP
 (edit build.sh as required)
 (edit README.md as required)&lt;/code>&lt;/pre>
 &lt;p>Upload your application to object storage first if needed, so you can then download it in &lt;code>build.sh&lt;/code> (ask for instructions about this if you don&amp;rsquo;t know the key, and never share it anywhere public!)&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Run &lt;code>update-builders.sh&lt;/code>:
-This will auto-create the CI workflow for the application (or manually duplicate the template file and rename all occurances of template to &lt;em>newapp&lt;/em>)&lt;/p>
+This will auto-create the CI workflow for the application (or manually duplicate the template file and rename all occurances of template to NEWAPP)&lt;/p>
 &lt;pre class="language-shell command-line" data-prompt="$">&lt;code>cd ../..
 sh update-builders.sh&lt;/code>&lt;/pre>
 &lt;div class="alert alert-primary" role="alert">
@@ -890,7 +890,7 @@ Note: this increases CI run time, only use in cases of out-of-space errors.
 &lt;ol>
 &lt;li>
 &lt;p>run the build script with the debug flag:&lt;/p>
-&lt;pre class="language-shell command-line" data-prompt="$">&lt;code>cd recipes/newapp
+&lt;pre class="language-shell command-line" data-prompt="$">&lt;code>cd recipes/NEWAPP
 chmod +x build.sh
 ./build.sh -ds&lt;/code>&lt;/pre>
 &lt;/li>
@@ -908,7 +908,7 @@ chmod +x build.sh
 &lt;/li>
 &lt;li>
 &lt;p>Update changes in local git repository&lt;/p>
-&lt;pre class="language-shell command-line" data-prompt="$">&lt;code>git add recipes/newapp/build.sh recipes/newapp/README.md .github/workflows/newapp.yml
+&lt;pre class="language-shell command-line" data-prompt="$">&lt;code>git add recipes/NEWAPP/build.sh recipes/NEWAPP/README.md .github/workflows/NEWAPP.yml
 git config user.email "the email that you use for github"
 git config user.name "your name"
 git commit&lt;/code>&lt;/pre>
