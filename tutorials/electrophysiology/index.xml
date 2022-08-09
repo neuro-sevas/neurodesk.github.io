@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>NeuroDesk – Electrophysiology</title><link>https://www.neurodesk.org/tutorials/electrophysiology/</link><description>Recent content in Electrophysiology on NeuroDesk</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://www.neurodesk.org/tutorials/electrophysiology/index.xml" rel="self" type="application/rss+xml"/><item><title>Tutorials: Analysing M/EEG Data with FieldTrip</title><link>https://www.neurodesk.org/tutorials/electrophysiology/fieldtrip/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.neurodesk.org/tutorials/electrophysiology/fieldtrip/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>NeuroDesk – Electrophysiology</title><link>https://neuro-sevas/neurodesk.github.io/tutorials/electrophysiology/</link><description>Recent content in Electrophysiology on NeuroDesk</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://neuro-sevas/neurodesk.github.io/tutorials/electrophysiology/index.xml" rel="self" type="application/rss+xml"/><item><title>Tutorials: Analysing M/EEG Data with FieldTrip</title><link>https://neuro-sevas/neurodesk.github.io/tutorials/electrophysiology/fieldtrip/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neuro-sevas/neurodesk.github.io/tutorials/electrophysiology/fieldtrip/</guid><description>
 &lt;blockquote>
 &lt;p>&lt;em>This tutorial was created by Judy D Zhu.&lt;/em>&lt;/p>
 &lt;p>Email: &lt;a href="mailto:judyzhud@gmail.com">judyzhud@gmail.com&lt;/a>&lt;/p>
@@ -12,35 +12,35 @@
 &lt;ol>
 &lt;li>Navigate to Neurodesk-&amp;gt;Electrophysiology-&amp;gt;fieldtrip-&amp;gt;fieldtrip20211114 in the menu:&lt;/li>
 &lt;/ol>
-&lt;p>&lt;img src="https://www.neurodesk.org/fieldtrip/1_menu.png" alt="1_menu" title="1_menu">&lt;/p>
+&lt;p>&lt;img src="https://neuro-sevas/neurodesk.github.io/fieldtrip/1_menu.png" alt="1_menu" title="1_menu">&lt;/p>
 &lt;p>Once this window is loaded, you are ready to go:&lt;/p>
-&lt;p>&lt;img src="https://www.neurodesk.org/fieldtrip/2_container.PNG" alt="2_container" title="2_container">&lt;/p>
+&lt;p>&lt;img src="https://neuro-sevas/neurodesk.github.io/fieldtrip/2_container.PNG" alt="2_container" title="2_container">&lt;/p>
 &lt;br/>
 &lt;ol start="2">
 &lt;li>Type the following into the command window (replacing &amp;ldquo;yourscript.m&amp;rdquo; with the name of your custom script - note that you may also need to supply the full path):&lt;/li>
 &lt;/ol>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>run_fieldtrip.sh /opt/MCR/v99 yourscript.m
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>For example, here we ran a script to browse some raw data:&lt;/p>
-&lt;p>&lt;img src="https://www.neurodesk.org/fieldtrip/3_running.PNG" alt="3_running" title="3_running">&lt;/p>
+&lt;p>&lt;img src="https://neuro-sevas/neurodesk.github.io/fieldtrip/3_running.PNG" alt="3_running" title="3_running">&lt;/p>
 &lt;p>The fieldtrip GUI is displayed automatically and functions as it normally would when running inside Matlab.&lt;/p>
 &lt;p>NOTES:&lt;/p>
 &lt;ol>
 &lt;li>The script specified in the command line can call other scripts&lt;/li>
 &lt;li>The script and the scripts it calls can use all the MATLAB toolboxes included in the compiled version of FieldTrip. If additional MATLAB toolboxes are needed, they need to be put in a filesystem accessible to the FieldTrip container (/neurodesktop-storage, /home/user, etc.), and the path should be added to the MATLAB search path with the addpath function (&lt;a href="https://www.mathworks.com/help/matlab/ref/addpath.html">https://www.mathworks.com/help/matlab/ref/addpath.html&lt;/a>)&lt;/li>
-&lt;/ol></description></item><item><title>Tutorials: Analysing EEG Data with MNE</title><link>https://www.neurodesk.org/tutorials/electrophysiology/eeg_mne-python/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.neurodesk.org/tutorials/electrophysiology/eeg_mne-python/</guid><description>
+&lt;/ol></description></item><item><title>Tutorials: Analysing EEG Data with MNE</title><link>https://neuro-sevas/neurodesk.github.io/tutorials/electrophysiology/eeg_mne-python/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neuro-sevas/neurodesk.github.io/tutorials/electrophysiology/eeg_mne-python/</guid><description>
 &lt;h2 id="getting-started">Getting started&lt;/h2>
 &lt;p>To begin, navigate to Neurodesk-&amp;gt;Electrophysiology-&amp;gt;mne-&amp;gt;vscodeGUI 0.23.4 in the menu. This version of vscode has been installed in a software container together with the a conda environment containing MNE-python. Note that if you open any other version of vscode in Neurodesk, you will not be able to access the MNE conda environment.&lt;/p>
-&lt;p>&lt;img src="https://www.neurodesk.org/EEG_Tutorial/EEGtut0.png" alt="EEGtut0" title="EEGtut0">&lt;/p>
-&lt;p>&lt;img src="https://www.neurodesk.org/EEG_Tutorial/EEGtut1.png" alt="EEGtut1" title="EEGtut1">&lt;/p>
+&lt;p>&lt;img src="https://neuro-sevas/neurodesk.github.io/EEG_Tutorial/EEGtut0.png" alt="EEGtut0" title="EEGtut0">&lt;/p>
+&lt;p>&lt;img src="https://neuro-sevas/neurodesk.github.io/EEG_Tutorial/EEGtut1.png" alt="EEGtut1" title="EEGtut1">&lt;/p>
 &lt;p>Open the folder: “/home/user/Desktop/storage” or a subfolder in which you would like to store this demo. In this folder, create a new file named “EEGDemo.ipynb” or something similar:&lt;/p>
-&lt;p>&lt;img src="https://www.neurodesk.org/EEG_Tutorial/EEGtut2.png" alt="EEGtut2" title="EEGtut2">&lt;/p>
+&lt;p>&lt;img src="https://neuro-sevas/neurodesk.github.io/EEG_Tutorial/EEGtut2.png" alt="EEGtut2" title="EEGtut2">&lt;/p>
 &lt;p>If this is your first time opening a Jupyter notebook on vscode in neurodesktop, you may see the following popup. If so, click “install” to install the vscode extensions for Jupyter.&lt;/p>
-&lt;p>&lt;img src="https://www.neurodesk.org/EEG_Tutorial/EEGtut3.png" alt="EEGtut3" title="EEGtut3">&lt;/p>
+&lt;p>&lt;img src="https://neuro-sevas/neurodesk.github.io/EEG_Tutorial/EEGtut3.png" alt="EEGtut3" title="EEGtut3">&lt;/p>
 &lt;h2 id="select-mne-python-kernel">Select MNE python kernel&lt;/h2>
 &lt;p>Next, we need to direct vscode to use the python kernel associated with MNE. In the top right corner of your empty jupyter notebook, click “Select Kernel”:&lt;/p>
-&lt;p>&lt;img src="https://www.neurodesk.org/EEG_Tutorial/EEGtut4.png" alt="EEGtut4" title="EEGtut4">&lt;/p>
+&lt;p>&lt;img src="https://neuro-sevas/neurodesk.github.io/EEG_Tutorial/EEGtut4.png" alt="EEGtut4" title="EEGtut4">&lt;/p>
 &lt;p>Then, select mne-0.23.4 from the dropdown menu, which should look something like this:&lt;/p>
-&lt;p>&lt;img src="https://www.neurodesk.org/EEG_Tutorial/EEGtut5.png" alt="EEGtut5" title="EEGtut5">&lt;/p>
+&lt;p>&lt;img src="https://neuro-sevas/neurodesk.github.io/EEG_Tutorial/EEGtut5.png" alt="EEGtut5" title="EEGtut5">&lt;/p>
 &lt;h2 id="activate-the-mne-conda-environment-in-the-terminal">Activate the MNE conda environment in the terminal&lt;/h2>
 &lt;p>Next, we&amp;rsquo;ll activate the same MNE environment in a terminal. From the top menu in vscode, select Terminal-&amp;gt;New Terminal, or hit [Ctrl]+[Shift]+[`].&lt;/p>
 &lt;p>If this is your first time using vscode in this container, you may have to initialise conda by typing &lt;code>conda init bash&lt;/code> in the bash terminal. After initialising bash, you will have to close and then reopen the terminal.&lt;/p>
@@ -95,7 +95,7 @@
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Next, lets visualise the data.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>raw.plot()
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This should open an interactive window in which you can scroll through the data. See the MNE documentation for help on how to customise this plot.&lt;/p>
-&lt;p>&lt;img src="https://www.neurodesk.org/EEG_Tutorial/EEGtut6.png" alt="EEGtut6" title="EEGtut6">&lt;/p>
+&lt;p>&lt;img src="https://neuro-sevas/neurodesk.github.io/EEG_Tutorial/EEGtut6.png" alt="EEGtut6" title="EEGtut6">&lt;/p>
 &lt;p>If, upon visual inspection, you decide to exclude one of the channels, you can specify this in raw.info[‘bads’] now. For example:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>raw.info[&amp;#39;bads&amp;#39;] = [&amp;#39;POz&amp;#39;]
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Next, we’ll extract our events. The trigger channel in this file is incorrectly scaled, so we’ll correct that before we extract our events:&lt;/p>
@@ -111,7 +111,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># Plot events
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mne.viz.plot_events(events, raw.info[&amp;#39;sfreq&amp;#39;], raw.first_samp)
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://www.neurodesk.org/EEG_Tutorial/EEGtut7.png" alt="EEGtut7" title="EEGtut7">&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://neuro-sevas/neurodesk.github.io/EEG_Tutorial/EEGtut7.png" alt="EEGtut7" title="EEGtut7">&lt;/p>
 &lt;p>Now that we’ve extracted our events, we can extract our EEG channels and do some simple pre-processing:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span># select
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>eeg_data = raw.copy().pick_types(eeg=True, exclude=[&amp;#39;TRIG&amp;#39;])
@@ -127,7 +127,7 @@
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Let’s visualise our data again now that it’s cleaner:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>#plot results again, this time with some events and scaling.
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>eeg_data_interp.plot(events=events, duration=10.0, scalings=dict(eeg=0.00005), color=&amp;#39;k&amp;#39;, event_color=&amp;#39;r&amp;#39;)
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://www.neurodesk.org/EEG_Tutorial/EEGtut8.png" alt="EEGtut8" title="EEGtut8">&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://neuro-sevas/neurodesk.github.io/EEG_Tutorial/EEGtut8.png" alt="EEGtut8" title="EEGtut8">&lt;/p>
 &lt;p>That’s looking good! We can even see hints of the frequency tagging. It’s about time to epoch our data.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span># Epoch to events of interest
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>event_id = {&amp;#39;attend 6Hz K&amp;#39;: 23, &amp;#39;attend 7.5Hz K&amp;#39;: 27}
@@ -148,7 +148,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>evokeds = dict(attend6=list(epochs[&amp;#39;attend 6Hz K&amp;#39;].iter_evoked()),
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> attend75=list(epochs[&amp;#39;attend 7.5Hz K&amp;#39;].iter_evoked()))
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mne.viz.plot_compare_evokeds(evokeds, combine=&amp;#39;mean&amp;#39;)
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://www.neurodesk.org/EEG_Tutorial/EEGtut9.png" alt="EEGtut9" title="EEGtut9">&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://neuro-sevas/neurodesk.github.io/EEG_Tutorial/EEGtut9.png" alt="EEGtut9" title="EEGtut9">&lt;/p>
 &lt;p>In this plot, we can see that the data are frequency tagged. While these data were collected, the participant was performing an attention task in which two visual stimuli were flickering at 6 Hz and 7.5 Hz respectively. On each trial the participant was cued to monitor one of these two stimuli for brief bursts of motion. From previous research, we expect that the steady-state visual evoked potential (SSVEP) should be larger at the attended frequency than the unattended frequency. Lets check if this is true.&lt;/p>
 &lt;p>We&amp;rsquo;ll begin by exporting our epoched EEG data to a numpy array&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span># Preallocate
@@ -176,5 +176,5 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ax.set_ylim(0, 1e-6)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ax.set_title(&amp;#39;Frequency Spectrum&amp;#39;)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ax.legend()
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://www.neurodesk.org/EEG_Tutorial/EEGtut10.PNG" alt="EEGtut10" title="EEGtut10">&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://neuro-sevas/neurodesk.github.io/EEG_Tutorial/EEGtut10.PNG" alt="EEGtut10" title="EEGtut10">&lt;/p>
 &lt;p>This plot shows that the SSVEPs were indeed modulated by attention in the direction we would expect! Congratulations! You’ve run your first analysis of EEG data in neurodesktop.&lt;/p></description></item></channel></rss>

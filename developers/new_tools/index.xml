@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>NeuroDesk – How to add new tools</title><link>https://www.neurodesk.org/developers/new_tools/</link><description>Recent content in How to add new tools on NeuroDesk</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://www.neurodesk.org/developers/new_tools/index.xml" rel="self" type="application/rss+xml"/><item><title>Developers: Get Neurodesk code</title><link>https://www.neurodesk.org/developers/new_tools/cloning/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.neurodesk.org/developers/new_tools/cloning/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>NeuroDesk – How to add new tools</title><link>https://neuro-sevas/neurodesk.github.io/developers/new_tools/</link><description>Recent content in How to add new tools on NeuroDesk</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://neuro-sevas/neurodesk.github.io/developers/new_tools/index.xml" rel="self" type="application/rss+xml"/><item><title>Developers: Get Neurodesk code</title><link>https://neuro-sevas/neurodesk.github.io/developers/new_tools/cloning/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neuro-sevas/neurodesk.github.io/developers/new_tools/cloning/</guid><description>
 &lt;h1 id="get-neurocontainers-code">Get Neurocontainers code&lt;/h1>
 &lt;p>Neurocontainers uses a &lt;strong>forked-repo&lt;/strong> and &lt;strong>&lt;a href="https://git-scm.com/book/en/v2/Git-Branching-Rebasing">rebase&lt;/a>-oriented
 workflow&lt;/strong>. This means that all contributors create a fork of the &lt;a href="https://github.com/NeuroDesk/neurocontainers/">neurocontainer
@@ -83,7 +83,7 @@ you create a pull request. While you wait for GitHub Actions jobs
 to run, you can start working on your next task. When the tests finish,
 you can create a pull request that you already know passes the tests.&lt;/p>
 &lt;p>GitHub Actions will run all the jobs by default on your forked repository.
-You can check the &lt;code>Actions&lt;/code> tab of your repository to see the builds.&lt;/p></description></item><item><title>Developers: Using Git</title><link>https://www.neurodesk.org/developers/new_tools/workflow/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.neurodesk.org/developers/new_tools/workflow/</guid><description>
+You can check the &lt;code>Actions&lt;/code> tab of your repository to see the builds.&lt;/p></description></item><item><title>Developers: Using Git</title><link>https://neuro-sevas/neurodesk.github.io/developers/new_tools/workflow/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neuro-sevas/neurodesk.github.io/developers/new_tools/workflow/</guid><description>
 &lt;h1 id="working-copies">Working copies&lt;/h1>
 &lt;p>When you work on Neurocontainers code, there are three copies of the Neurocontainers Git
 repository that you are generally concerned with:&lt;/p>
@@ -412,7 +412,7 @@ re-writing the history for the remote repository:&lt;/p>
 the only one making changes to the branch. If others are working along with
 you, they might run into complications when they retrieve your changes because
 anyone who has based their changes off a branch you rebase will have to do a
-complicated rebase.&lt;/p></description></item><item><title>Developers: Add tools</title><link>https://www.neurodesk.org/developers/new_tools/add_tool/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.neurodesk.org/developers/new_tools/add_tool/</guid><description>
+complicated rebase.&lt;/p></description></item><item><title>Developers: Add tools</title><link>https://neuro-sevas/neurodesk.github.io/developers/new_tools/add_tool/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neuro-sevas/neurodesk.github.io/developers/new_tools/add_tool/</guid><description>
 &lt;p>The goal of &lt;em>neurodesk&lt;/em> is to provide users with a large choice of tools to use in their pipelines.
 Use the guide below to add a tool to &lt;em>neurodesktop&lt;/em> or &lt;em>neurocontainers&lt;/em>.&lt;/p>
 &lt;h2 id="guiding-principles">Guiding principles&lt;/h2>
@@ -554,7 +554,7 @@ echo &amp;rsquo;export PATH=${PATH}:${HOME}/.local/bin&amp;rsquo; &amp;raquo; ${
 &lt;ul>
 &lt;li>
 &lt;p>&lt;em>Option A&lt;/em>) Fork neurocontainers and setup github actions:&lt;br>
-Follow the steps in &lt;a href="https://www.neurodesk.org/developers/new_tools/cloning/">Get Neurodesk code&lt;/a>.&lt;/p>
+Follow the steps in &lt;a href="https://neuro-sevas/neurodesk.github.io/developers/new_tools/cloning/">Get Neurodesk code&lt;/a>.&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>&lt;em>Option B&lt;/em>) Clone from NeuroDesk:&lt;/p>
@@ -704,7 +704,7 @@ If the container doesn&amp;rsquo;t work yet, it&amp;rsquo;s sometimes useful to 
 &lt;li>
 &lt;p>Consider contributing a tutorial about the new tool: &lt;a href="https://github.com/NeuroDesk/neurodesk.github.io/tree/hugo-docsy/content/en/tutorials">https://github.com/NeuroDesk/neurodesk.github.io/tree/hugo-docsy/content/en/tutorials&lt;/a>&lt;/p>
 &lt;/li>
-&lt;/ol></description></item><item><title>Developers: Fix commit</title><link>https://www.neurodesk.org/developers/new_tools/fix_commit/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.neurodesk.org/developers/new_tools/fix_commit/</guid><description>
+&lt;/ol></description></item><item><title>Developers: Fix commit</title><link>https://neuro-sevas/neurodesk.github.io/developers/new_tools/fix_commit/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neuro-sevas/neurodesk.github.io/developers/new_tools/fix_commit/</guid><description>
 &lt;h2 id="fixing-the-last-commit">Fixing the last commit&lt;/h2>
 &lt;h3 id="changing-the-last-commit-message">Changing the last commit message&lt;/h3>
 &lt;ol>
@@ -742,7 +742,7 @@ If the container doesn&amp;rsquo;t work yet, it&amp;rsquo;s sometimes useful to 
 &lt;h2 id="pushing-commits-after-tidying-them">Pushing commits after tidying them&lt;/h2>
 &lt;ol>
 &lt;li>&lt;code>git push origin +my-feature-branch&lt;/code> (Note the &lt;code>+&lt;/code> there and substitute your actual branch name.)&lt;/li>
-&lt;/ol></description></item><item><title>Developers: Create a pull request</title><link>https://www.neurodesk.org/developers/new_tools/pull_request/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.neurodesk.org/developers/new_tools/pull_request/</guid><description>
+&lt;/ol></description></item><item><title>Developers: Create a pull request</title><link>https://neuro-sevas/neurodesk.github.io/developers/new_tools/pull_request/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neuro-sevas/neurodesk.github.io/developers/new_tools/pull_request/</guid><description>
 &lt;h1 id="create-a-pull-request">Create a pull request&lt;/h1>
 &lt;p>When you&amp;rsquo;re ready for feedback, submit a pull request. Pull requests
 are a feature specific to GitHub. They provide a simple, web-based way
@@ -831,7 +831,7 @@ article &lt;a href="https://github.com/edx/edx-platform/wiki/How-to-Rebase-a-Pul
 &lt;p>And, as you address review comments others have made, we recommend posting a
 follow-up comment in which you: a) ask for any clarifications you need, b)
 explain to the reviewer how you solved any problems they mentioned, and c) ask
-for another review.&lt;/p></description></item><item><title>Developers: Troubleshooting</title><link>https://www.neurodesk.org/developers/new_tools/troubleshooting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.neurodesk.org/developers/new_tools/troubleshooting/</guid><description>
+for another review.&lt;/p></description></item><item><title>Developers: Troubleshooting</title><link>https://neuro-sevas/neurodesk.github.io/developers/new_tools/troubleshooting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neuro-sevas/neurodesk.github.io/developers/new_tools/troubleshooting/</guid><description>
 &lt;h2 id="undo-a-merge-commit">Undo a merge commit&lt;/h2>
 &lt;p>A merge commit is a special type of commit that has two parent commits. It&amp;rsquo;s
 created by Git when you merge one branch into another and the last commit on
@@ -1013,7 +1013,7 @@ to update:&lt;/p>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>If you have already made commits on the second computer that you need to
 keep,&lt;/strong> you&amp;rsquo;ll need to use &lt;code>git log FETCH_HEAD&lt;/code> to identify that hashes of the
 commits you want to keep and then &lt;code>git cherry-pick &amp;lt;commit&amp;gt;&lt;/code> those commits into
-whichever branch you need to update.&lt;/p></description></item><item><title>Developers: Menu entries</title><link>https://www.neurodesk.org/developers/new_tools/menu_entries/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.neurodesk.org/developers/new_tools/menu_entries/</guid><description>
+whichever branch you need to update.&lt;/p></description></item><item><title>Developers: Menu entries</title><link>https://neuro-sevas/neurodesk.github.io/developers/new_tools/menu_entries/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://neuro-sevas/neurodesk.github.io/developers/new_tools/menu_entries/</guid><description>
 &lt;h2 id="menu-entry">Menu entry&lt;/h2>
 &lt;p>As we want to propose several versions of the tools, each piece of software should have its own submenu under &lt;code>VNM Neuroimaging&lt;/code>.
 To do so, you first have to add a submenu to &lt;code>menus/vnm-applications.menu&lt;/code> by adding:&lt;/p>
